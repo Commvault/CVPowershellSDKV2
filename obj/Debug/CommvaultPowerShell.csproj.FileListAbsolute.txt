@@ -1,0 +1,12 @@
+D:\PSSDK1\PowershellSDKtemp2\bin\CommvaultPowerShell.private.deps.json
+D:\PSSDK1\PowershellSDKtemp2\bin\CommvaultPowerShell.private.dll
+D:\PSSDK1\PowershellSDKtemp2\bin\CommvaultPowerShell.private.pdb
+D:\PSSDK1\PowershellSDKtemp2\bin\Microsoft.CSharp.dll
+D:\PSSDK1\PowershellSDKtemp2\bin\System.Management.Automation.dll
+D:\PSSDK1\PowershellSDKtemp2\obj\Debug\CommvaultPowerShell.csprojAssemblyReference.cache
+D:\PSSDK1\PowershellSDKtemp2\obj\Debug\CommvaultPowerShell.AssemblyInfoInputs.cache
+D:\PSSDK1\PowershellSDKtemp2\obj\Debug\CommvaultPowerShell.AssemblyInfo.cs
+D:\PSSDK1\PowershellSDKtemp2\obj\Debug\CommvaultPowerShell.csproj.CoreCompileInputs.cache
+D:\PSSDK1\PowershellSDKtemp2\obj\Debug\CommvaultPowerShell.csproj.CopyComplete
+D:\PSSDK1\PowershellSDKtemp2\obj\Debug\CommvaultPowerShell.private.dll
+D:\PSSDK1\PowershellSDKtemp2\obj\Debug\CommvaultPowerShell.private.pdb
