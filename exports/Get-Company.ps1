@@ -19,13 +19,13 @@ Get All Companies
 .Description
 Get All Companies
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> Get-Company
 
-{{ Add output here }}
-.Example
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
+AssociatedEntitiesCount Deactivated Id  Name
+----------------------- ----------- --  ----
+4                       False       2   mspNeo_1629783470
+4                       True        3   Sharath Company
+4                       False       429 Reseller
 
 .Outputs
 Commvault.Powershell.Models.ICompanySummary
