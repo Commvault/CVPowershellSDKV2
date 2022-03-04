@@ -19,9 +19,17 @@ Get list of regions
 .Description
 Get list of regions
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> Get-Region
 
-{{ Add output here }}
+AssociatedRegionBasedPlans AssociatedServers DisplayName                                 Id Name                RegionType
+-------------------------- ----------------- -----------                                 -- ----                ----------
+0                          0                 Africa                                      1  Africa              DEFAULT
+0                          40                Asia                                        2  Asia                DEFAULT
+0                          0                 Australia                                   3  Australia           DEFAULT
+0                          0                 Europe                                      4  Europe              DEFAULT
+0                          17                North America                               5  North America       DEFAULT
+0                          0                 South America                               6  South America       DEFAULT
+
 .Example
 PS C:\> {{ Add code here }}
 
