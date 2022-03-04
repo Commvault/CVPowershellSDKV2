@@ -19,13 +19,58 @@ This endpoint is used to return the list of instances.
 .Description
 This endpoint is used to return the list of instances.
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> Get-Instance
 
-{{ Add output here }}
+ApplicationSize DatabaseEngine Id Name                  NotReadyReason                                               Server                  Status    Vendor
+--------------- -------------- -- ----                  --------------                                               ------                  ------    ------
+0               SQL_SERVER     14 SUJEETHEDGE\COMMVAULT Instance is not associated to a valid plan or storage policy DN_sujeethedge_3_sql_DN NOT_READY NOT_APPLICABLE
+0               SQL_SERVER     16 NewmanInstance        Instance not configured with authentication information      bdcsrvtest05            NOT_READY NOT_APPLICABLE
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> Get-Instance | Format-List
 
-{{ Add output here }}
+ApplicationSize         : 0
+ClientId                : 65
+ClientName              : sujeethedge_3_sql
+CommcellName            : 
+CompanyId               : 0
+CompanyName             : 
+DatabaseEngine          : SQL_SERVER
+Id                      : 14
+LastBackupFailureReason : 
+LastBackupJobId         : 0
+LastBackupStatus        : NEVER_BACKED_UP
+LastBackupTime          : 
+Name                    : SUJEETHEDGE\COMMVAULT
+NotReadyReason          : Instance is not associated to a valid plan or storage policy
+PlanId                  : 0
+PlanName                : Not Assigned
+Server                  : DN_sujeethedge_3_sql_DN
+SlaReasonList           : 
+SlaStatus               : 
+Status                  : NOT_READY
+Vendor                  : NOT_APPLICABLE
+
+ApplicationSize         : 0
+ClientId                : 2
+ClientName              : bdcsrvtest05
+CommcellName            : 
+CompanyId               : 0
+CompanyName             : 
+DatabaseEngine          : SQL_SERVER
+Id                      : 16
+LastBackupFailureReason : 
+LastBackupJobId         : 0
+LastBackupStatus        : NEVER_BACKED_UP
+LastBackupTime          : 
+Name                    : NewmanInstance
+NotReadyReason          : Instance not configured with authentication information
+PlanId                  : 0
+PlanName                : Not Assigned
+Server                  : bdcsrvtest05
+SlaReasonList           : 
+SlaStatus               : 
+Status                  : NOT_READY
+Vendor                  : NOT_APPLICABLE
 
 .Outputs
 Commvault.Powershell.Models.IInstanceSummary
