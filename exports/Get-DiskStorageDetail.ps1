@@ -19,9 +19,34 @@ Get details of a disk storage pool based on id
 .Description
 Get details of a disk storage pool based on id
 .Example
-PS C:\> {{ Add code here }}
+PS C:\>  Get-DiskStorageDetail -StoragePoolId 22 | Format-List
 
-{{ Add output here }}
+AssociatedPlanList            : 
+BackupLocations               : {[jnan_test_bdc] E:\Libraryforipv6}
+EncryptionCipher              : NotEncrypted
+EncryptionEncrypt             : 
+EncryptionKeyLength           : 0
+ExternalUserGroupId           : 
+ExternalUserGroupName         : 
+ExternalUserGroupProviderId   : 
+ExternalUserGroupProviderName : 
+GeneralCapacity               : 102398
+GeneralDedupeSavingsPercent   : 
+GeneralFreeSpace              : 65042
+GeneralSizeOnDisk             : 501219328
+Id                            : 22
+KeyProviderId                 : 1
+KeyProviderName               : Built-in
+Name                          : jnanesh_bdc
+RoleId                        : 
+RoleName                      : 
+SecurityIsCreatorAssociation  : 
+SecurityPermissionList        : 
+UserGroupId                   : 
+UserGroupName                 : 
+UserId                        : 
+UserName                      : 
+
 .Example
 PS C:\> {{ Add code here }}
 
