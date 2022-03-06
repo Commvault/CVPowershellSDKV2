@@ -19,9 +19,15 @@ This endpoint is used to return the list of network topology.
 .Description
 This endpoint is used to return the list of network topology.
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> Get-FirewallTopology
 
-{{ Add output here }}
+ClientType TopologyType
+---------- ------------
+SERVER     ONE_WAY
+LAPTOP     ONE_WAY
+SERVER     TWO_WAY
+SERVER     NETWORK_GATEWAY
+
 .Example
 PS C:\> {{ Add code here }}
 
