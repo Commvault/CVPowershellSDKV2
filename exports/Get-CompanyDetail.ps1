@@ -21,9 +21,41 @@ Get details of a company based on id
 .Example
 PS C:\> {{ Add code here }}
 
-{{ Add output here }}
+cmdlet Get-CompanyDetail at command pipeline position 1
+Supply values for the following parameters:
+CompanyId: 87710
+
+Contacts                            : {PAPI_Comp_1646425949\PAPI_Comp_1646425949}
+CreationTime                        : 1646425949
+EmailSettingSenderEmail             : 
+EmailSettingSenderName              : 
+FileExceptionUnix                   : 
+FileExceptionUseCompanyGlobalFilter : True
+FileExceptionWindows                : 
+GeneralAssignLaptopOwners           : LOGGED_IN_ACTIVE_DIRECTORY_USERS
+GeneralAuthcodeForInstallation      : False
+GeneralAutoDiscoverApp              : False
+GeneralEmailSuffix                  : 1646425949.com
+GeneralEnableDataEncryption         : False
+GeneralInfrastructureType           : RENTED_STORAGE
+GeneralNewAlias                     : 
+GeneralResellerMode                 : False
+GeneralServiceCommcells             : 
+GeneralSupportedSolutions           : 
+GeneralUpnInsteadOfEmail            : False
+Id                                  : 87710
+OperatorsOperationType              : 
+Plans                               : {Server plan}
+Security                            : {Tenant Admin}
+SitePrimarySiteName                 : PAPI_Comp_1646425949
+SiteSecondarySiteNames              : {}
+TenantOperators                     : {}
+TwoFactorAuthAll                    : False
+TwoFactorAuthEnable                 : False
+TwoFactorAuthUserGroups             : 
+
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> Get-CompanyDetail | Format-List
 
 {{ Add output here }}
 
