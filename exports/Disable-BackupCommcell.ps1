@@ -19,13 +19,10 @@ Used to disable backup property for commcell
 .Description
 Used to disable backup property for commcell
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> Disable-BackupCommcell | Format-List
+ErrorCode    : 0
+ErrorMessage : 
 
-{{ Add output here }}
-.Example
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
 
 .Outputs
 Commvault.Powershell.Models.IGenericResp
