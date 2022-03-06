@@ -19,9 +19,11 @@ This end point returns the list of servers
 .Description
 This end point returns the list of servers
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> get-server | Format-List
 
-{{ Add output here }}
+Servers      : {JNANESH_CS_1, jnan_test_bdc, jnansetup2, jnancs_sp19_3}
+TotalServers : 4
+
 .Example
 PS C:\> {{ Add code here }}
 
