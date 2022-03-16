@@ -19,9 +19,27 @@ Create a User
 .Description
 Create a User
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> $user = @{
+        userType = "LOCAL"
+        users = @( @{  
+        email ="testuser1@cv.com"  
+        fullName = "testuser1cv"   
+        name = "testuser1cv"   
+        userGroups = @( @{ 
+            id = 1   
+            name = "master"  
+        }) 
+        userSystemGeneratedPassword= $FALSE   
+        password="UGFzc3dvcmRAMTIz"   
+        inviteUser=$FALSE}) 
+}
 
-{{ Add output here }}
+C:\> New-User -Body $user
+
+Guid                                 Id     Name
+----                                 --     ----
+02990306-5EAE-4C05-9C1A-B25B6C98C68D 228037 testuser1cv
+
 .Example
 PS C:\> {{ Add code here }}
 
