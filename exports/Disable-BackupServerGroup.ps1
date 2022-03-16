@@ -19,9 +19,13 @@ Used to disable backup property for a server group
 .Description
 Used to disable backup property for a server group
 .Example
-PS C:\> {{ Add code here }}
+PS C:\> 
+PS C:\> $Servergroups.ServerGroups[11] | Disable-BackupServerGroup
 
-{{ Add output here }}
+ErrorCode ErrorMessage
+--------- ------------
+0         Client group updated successfully
+
 .Example
 PS C:\> {{ Add code here }}
 
