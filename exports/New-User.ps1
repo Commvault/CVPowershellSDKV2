@@ -19,56 +19,20 @@ Create a User
 .Description
 Create a User
 .Example
-PS C:\> $user = @{
-        userType = "LOCAL"
-        users = @( @{  
-        email ="testuser1@cv.com"  
-        fullName = "testuser1cv"   
-        name = "testuser1cv"   
-        userGroups = @( @{ 
-            id = 1   
-            name = "master"  
-        }) 
-        userSystemGeneratedPassword= $FALSE   
-        password="UGFzc3dvcmRAMTIz"   
-        inviteUser=$FALSE}) 
-}
+PS C:\> {{ Add code here }}
 
-C:\> New-User -Body $user
-
-Guid                                 Id     Name
-----                                 --     ----
-02990306-5EAE-4C05-9C1A-B25B6C98C68D 228037 testuser1cv
-
+{{ Add output here }}
 .Example
 PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateUsers
 .Outputs
 Commvault.Powershell.Models.IIdNameGuid
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateUsers>: Used to create single or multiple users.
-  Users <ICreateUser[]>: 
-    Email <String>: Used to provide an email-id to the new user. This email-id is used for logging in the user. Please note that email ids are compulsory for company and local users and optional for external users.
-    [CompanyId <Int32?>]: 
-    [CompanyName <String>]: 
-    [FullName <String>]: Used to provide a name to the new user.
-    [InviteUser <Boolean?>]: User will receive an email to install backup software package on their device if this is set to true.
-    [Name <String>]: Used to provide the new user with a username. This username can be used for logging in the user instead of email-id when duplicate email-ids are present. For external user, it is necessary to provide the domain name along with the username (domainName\\username). To create a company user, the company id or name needs to be provided in the company entity.
-    [Password <String>]: Used to provide a password to the user being created. This will be accepted when the useSystemGeneratePassword tag is false. The password has to be provided in Base64 format.
-    [PlanId <Int32?>]: 
-    [PlanName <String>]: 
-    [UseSystemGeneratePassword <Boolean?>]: Choose to provide a system generated password to the user instead of providing your own password. An email will be sent to the user to reset the password. If it is set to true, password tag need not be provided. If it is set to false, password needs to be provided in the password tag in Base64 format.
-    [UserGroups <IIdName[]>]: Provide a list of userGroups that the user should be a part of. Either id or name or both can be provided.
-      [Id <Int32?>]: 
-      [Name <String>]: 
 
 USERS <ICreateUser[]>: .
   Email <String>: Used to provide an email-id to the new user. This email-id is used for logging in the user. Please note that email ids are compulsory for company and local users and optional for external users.
@@ -89,16 +53,9 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-user
 #>
 function New-User {
 [OutputType([Commvault.Powershell.Models.IIdNameGuid])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateUsers]
-    # Used to create single or multiple users.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreateUser[]]
     # .
@@ -159,7 +116,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-User_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-User_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

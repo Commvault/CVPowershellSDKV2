@@ -12,12 +12,6 @@ Create a new role
 
 ## SYNTAX
 
-### Create (Default)
-```
-New-NewRole -Body <ICreateRole> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
 ```
 New-NewRole -Name <String> -PermissionList <IPermissions[]> [-Enabled] [-VisibleToAll] [-PassThru] [-Confirm]
  [-WhatIf] [<CommonParameters>]
@@ -48,29 +42,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-Create a new role.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateRole
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Enabled
 Used to determine if the role is enabled or disabled.
 If not provided, role will be enabled by default.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -85,7 +63,7 @@ Name of the new role
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -116,7 +94,7 @@ To construct, see NOTES section for PERMISSIONLIST properties and create a hash 
 
 ```yaml
 Type: Commvault.Powershell.Models.IPermissions[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -132,7 +110,7 @@ if not provided, it will be set to false by default.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -178,8 +156,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreateRole
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IIdName
@@ -192,16 +168,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreateRole>: Create a new role.
-  - `Name <String>`: Name of the new role
-  - `PermissionList <IPermissions[]>`: Used to provide the list of permissions associated with the role.
-    - `[CategoryId <Int32?>]`: 
-    - `[CategoryName <String>]`: 
-    - `[PermissionId <Int32?>]`: 
-    - `[PermissionName <String>]`: 
-  - `[Enabled <Boolean?>]`: Used to determine if the role is enabled or disabled. If not provided, role will be enabled by default.
-  - `[VisibleToAll <Boolean?>]`: Determines if the role is visible to everyone. if not provided, it will be set to false by default.
 
 PERMISSIONLIST <IPermissions[]>: Used to provide the list of permissions associated with the role.
   - `[CategoryId <Int32?>]`: 

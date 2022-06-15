@@ -29,8 +29,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreatePlanEntityRule
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -39,23 +37,6 @@ Commvault.Powershell.Models.IIdName
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreatePlanEntityRule>: This object will send details to create new plan rule. User can provide all rule options or can specify a specific rule group. Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-  [CompanyId <Int32?>]: 
-  [CompanyName <String>]: 
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [Rank <Int32?>]: Optional field to suggest priority/rank of the rule. If not present, we will process rule in the same order they are created.
-  [Regions <IIdName[]>]: This will include list of regions that should be evaluated against workload region for plan association.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [ServerGroups <IIdName[]>]: This will include list of Server groups that should be evaluated against workload server group for plan association.
-  [Solutions <IIdName[]>]: This will include list of solutions that should be evaluated against workload for plan association
-  [Tags <IPlanEntityRuleTag[]>]: This will include list of tags that should be evaluated against workload for plan association
-    [Id <Int32?>]: Id for the tag
-    [Name <String>]: Name for the plan rule tag which need to be matched against tag of the workload.
-    [Value <String>]: Possible value that need to matched against value of tag associated to workload.
-  [Workloads <IIdName[]>]: This will include list of apptypes that should be evaluated against workload apptype for plan association.
 
 REGIONS <IIdName[]>: This will include list of regions that should be evaluated against workload region for plan association.
   [Id <Int32?>]: 
@@ -84,75 +65,66 @@ function New-PlanRule {
 [OutputType([Commvault.Powershell.Models.IIdName], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreatePlanEntityRule]
-    # This object will send details to create new plan rule.
-    # User can provide all rule options or can specify a specific rule group.
-    # Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${CompanyId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${CompanyName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Optional field to suggest priority/rank of the rule.
     # If not present, we will process rule in the same order they are created.
     ${Rank},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of regions that should be evaluated against workload region for plan association.
     # To construct, see NOTES section for REGIONS properties and create a hash table.
     ${Regions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of Server groups that should be evaluated against workload server group for plan association.
     # To construct, see NOTES section for SERVERGROUPS properties and create a hash table.
     ${ServerGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of solutions that should be evaluated against workload for plan association
     # To construct, see NOTES section for SOLUTIONS properties and create a hash table.
     ${Solutions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanEntityRuleTag[]]
     # This will include list of tags that should be evaluated against workload for plan association
     # To construct, see NOTES section for TAGS properties and create a hash table.
     ${Tags},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of apptypes that should be evaluated against workload apptype for plan association.
@@ -207,7 +179,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-PlanRule_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-PlanRule_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

@@ -55,13 +55,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -70,7 +71,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -238,193 +239,6 @@ end {
 
 <#
 .Synopsis
-To Backup the virtual machines in vmgroup
-.Description
-To Backup the virtual machines in vmgroup
-.Example
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-.Example
-PS C:\> {{ Add code here }}
-
-{{ Add output here }}
-
-.Inputs
-Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Outputs
-Commvault.Powershell.Models.ICreateTaskRespforBackup
-.Outputs
-Commvault.Powershell.Models.IGenericResp
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
-  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
-  [AgentId <Int32?>]: Id of the agent to be modified
-  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
-  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
-  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
-  [BucketId <Int32?>]: Id of Bucket
-  [CloudStorageId <Int32?>]: Id of cloud Storage
-  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
-  [CredentialName <String>]: 
-  [DomainId <Int32?>]: ID of the AD/LDAP domain
-  [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
-  [GlobalSearchEntity <String>]: name of global search entity
-  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
-  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
-  [Id <Int32?>]: 
-  [InstanceId <Int32?>]: Id of the instance to modify
-  [KmsId <Int32?>]: Id of Key Management Server
-  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
-  [MetadataCacheId <Int32?>]: Id of metadata cache
-  [Name <String>]: 
-  [NodeId <Int32?>]: Id of node
-  [PairId <Int32?>]: 
-  [PlanId <Int32?>]: Id of the plan to fetch details
-  [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
-  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
-  [ReplicationGroupId <String>]: 
-  [RequestId <Int32?>]: Unique identifier for the request
-  [RoleId <Int32?>]: Role Id
-  [RpsId <String>]: 
-  [RuleId <Int32?>]: Id of the rule to update in Plan
-  [ScheduleId <String>]: 
-  [SchedulePolicyId <String>]: 
-  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
-  [ServerId <Int32?>]: Id of the server to modify
-  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
-  [SubclientId <Int32?>]: Id of the subclient to modify
-  [TopologyId <String>]: 
-  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
-  [UserId <Int32?>]: Id of the User whose details have to be fetched
-  [VMGroupId <Int32?>]: Id of the VMgroup to update
-  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
-.Link
-https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/backup-virtualmachine
-#>
-function Backup-VirtualMachine {
-[OutputType([Commvault.Powershell.Models.ICreateTaskRespforBackup], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Backup', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-param(
-    [Parameter(ParameterSetName='Backup', Mandatory)]
-    [Commvault.Powershell.Category('Path')]
-    [System.String]
-    # Id of the Virtual Machine to backup
-    ${VMUuid},
-
-    [Parameter(ParameterSetName='BackupViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Path')]
-    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
-    # Identity Parameter
-    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-    ${InputObject},
-
-    [Parameter()]
-    [Commvault.Powershell.Category('Query')]
-    [System.String]
-    # Backup level , Default :Incremental
-    ${BackupLevel},
-
-    [Parameter(DontShow)]
-    [Commvault.Powershell.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Wait for .NET debugger to attach
-    ${Break},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Commvault.Powershell.Category('Runtime')]
-    [Commvault.Powershell.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be appended to the front of the pipeline
-    ${HttpPipelineAppend},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Commvault.Powershell.Category('Runtime')]
-    [Commvault.Powershell.Runtime.SendAsyncStep[]]
-    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
-    ${HttpPipelinePrepend},
-
-    [Parameter(DontShow)]
-    [Commvault.Powershell.Category('Runtime')]
-    [System.Uri]
-    # The URI for the proxy server to use
-    ${Proxy},
-
-    [Parameter(DontShow)]
-    [ValidateNotNull()]
-    [Commvault.Powershell.Category('Runtime')]
-    [System.Management.Automation.PSCredential]
-    # Credentials for a proxy server to use for the remote call
-    ${ProxyCredential},
-
-    [Parameter(DontShow)]
-    [Commvault.Powershell.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
-)
-
-begin {
-    try {
-        $outBuffer = $null
-        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
-            $PSBoundParameters['OutBuffer'] = 1
-        }
-        $parameterSet = $PSCmdlet.ParameterSetName
-        $mapping = @{
-            Backup = 'CommvaultPowerShell.private\Backup-VirtualMachine_Backup';
-            BackupViaIdentity = 'CommvaultPowerShell.private\Backup-VirtualMachine_BackupViaIdentity';
-        }
-        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
-        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
-        $steppablePipeline.Begin($PSCmdlet)
-    } catch {
-        throw
-    }
-}
-
-process {
-    try {
-        $steppablePipeline.Process($_)
-    } catch {
-        throw
-    }
-}
-
-end {
-    try {
-        $steppablePipeline.End()
-    } catch {
-        throw
-    }
-}
-}
-
-# ----------------------------------------------------------------------------------
-#
-# Copyright Microsoft Corporation
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-# http://www.apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# ----------------------------------------------------------------------------------
-
-<#
-.Synopsis
 Disable Alert Definition
 .Description
 Disable Alert Definition
@@ -458,13 +272,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -473,7 +288,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -762,13 +577,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -777,7 +593,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -1078,13 +894,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -1093,7 +910,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -1263,13 +1080,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -1278,7 +1096,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -1448,13 +1266,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -1463,7 +1282,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -1871,13 +1690,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -1886,7 +1706,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -2526,13 +2346,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -2541,7 +2362,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -2842,13 +2663,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -2857,7 +2679,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -3027,13 +2849,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -3042,7 +2865,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -3360,13 +3183,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -3375,7 +3199,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -3677,13 +3501,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -3692,7 +3517,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -3975,13 +3800,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -3990,7 +3816,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -4279,13 +4105,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -4294,7 +4121,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -4458,13 +4285,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -4473,7 +4301,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -4637,13 +4465,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -4652,7 +4481,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -5042,13 +4871,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -5057,7 +4887,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -5673,13 +5503,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -5688,7 +5519,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -5977,13 +5808,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -5992,7 +5824,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -6156,13 +5988,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -6171,7 +6004,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -6690,13 +6523,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -6705,7 +6539,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -6738,7 +6572,7 @@ param(
 
     [Parameter(ParameterSetName='Get', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.String]
+    [System.Int32]
     # Type of the entity
     ${EntityType},
 
@@ -6875,13 +6709,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -6890,7 +6725,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -7054,13 +6889,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -7069,7 +6905,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -7729,13 +7565,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -7744,7 +7581,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -8035,13 +7872,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -8050,7 +7888,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -8214,13 +8052,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -8229,7 +8068,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -8399,13 +8238,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -8414,7 +8254,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -8584,13 +8424,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -8599,7 +8440,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -8894,13 +8735,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -8909,7 +8751,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -9224,13 +9066,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -9239,7 +9082,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -9526,13 +9369,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -9541,7 +9385,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -9678,6 +9522,200 @@ end {
 
 <#
 .Synopsis
+Get Cloud Storage Details
+.Description
+Get Cloud Storage Details
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.ICloudStorageDetails
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-cloudstorage
+#>
+function Get-CloudStorage {
+[OutputType([Commvault.Powershell.Models.ICloudStorageDetails], [Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='Get', PositionalBinding=$false)]
+param(
+    [Parameter(ParameterSetName='Get', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Id of cloud Storage
+    ${CloudStorageId},
+
+    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Query')]
+    [System.String]
+    # Set to true if want to show inherited security associations
+    ${ShowInheritedAssociation},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Get = 'CommvaultPowerShell.private\Get-CloudStorage_Get';
+            GetViaIdentity = 'CommvaultPowerShell.private\Get-CloudStorage_GetViaIdentity';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
 Get details of a company based on id
 .Description
 Get details of a company based on id
@@ -9711,13 +9749,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -9726,7 +9765,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -9945,6 +9984,192 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
             Get = 'CommvaultPowerShell.private\Get-Company_Get';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Get details of the credential whose credential name is provided
+.Description
+Get details of the credential whose credential name is provided
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.IPathsUr766Kv4CredentialCredentialnameGetResponses200ContentApplicationJsonSchema
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-credentaildetail
+#>
+function Get-CredentailDetail {
+[OutputType([Commvault.Powershell.Models.IPathsUr766Kv4CredentialCredentialnameGetResponses200ContentApplicationJsonSchema])]
+[CmdletBinding(DefaultParameterSetName='Get', PositionalBinding=$false)]
+param(
+    [Parameter(ParameterSetName='Get', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.String]
+    # .
+    ${CredentialName},
+
+    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Get = 'CommvaultPowerShell.private\Get-CredentailDetail_Get';
+            GetViaIdentity = 'CommvaultPowerShell.private\Get-CredentailDetail_GetViaIdentity';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -10253,13 +10478,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -10268,7 +10494,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -11380,13 +11606,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -11395,7 +11622,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -12287,13 +12514,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -12302,7 +12530,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -12696,13 +12924,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -12711,7 +12940,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -12891,13 +13120,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -12906,7 +13136,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -13884,13 +14114,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -13899,7 +14130,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -13993,6 +14224,131 @@ begin {
         $mapping = @{
             Get = 'CommvaultPowerShell.private\Get-LaptopBackupDestination_Get';
             GetViaIdentity = 'CommvaultPowerShell.private\Get-LaptopBackupDestination_GetViaIdentity';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Get list of laptops
+.Description
+Get list of laptops
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Outputs
+Commvault.Powershell.Models.ILaptopsList
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-laptoplist
+#>
+function Get-LaptopList {
+[OutputType([Commvault.Powershell.Models.ILaptopsList])]
+[CmdletBinding(DefaultParameterSetName='Get', PositionalBinding=$false)]
+param(
+    [Parameter()]
+    [Commvault.Powershell.Category('Query')]
+    [System.Management.Automation.SwitchParameter]
+    # .
+    ${AdditionalProperties},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Query')]
+    [System.Management.Automation.SwitchParameter]
+    # .
+    ${Edgemode},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Get = 'CommvaultPowerShell.private\Get-LaptopList_Get';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -14192,13 +14548,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -14207,7 +14564,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -14605,13 +14962,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -14620,7 +14978,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -14776,12 +15134,14 @@ PS C:\> {{ Add code here }}
 {{ Add output here }}
 
 .Outputs
+Commvault.Powershell.Models.IMediaAgentForDdbSummary
+.Outputs
 Commvault.Powershell.Models.IMediaAgentSummary
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-mediaagent
 #>
 function Get-MediaAgent {
-[OutputType([Commvault.Powershell.Models.IMediaAgentSummary])]
+[OutputType([Commvault.Powershell.Models.IMediaAgentSummary], [Commvault.Powershell.Models.IMediaAgentForDdbSummary])]
 [CmdletBinding(DefaultParameterSetName='Get', PositionalBinding=$false)]
 param(
     [Parameter(DontShow)]
@@ -14839,6 +15199,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
             Get = 'CommvaultPowerShell.private\Get-MediaAgent_Get';
+            Get1 = 'CommvaultPowerShell.private\Get-MediaAgent_Get1';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -14917,13 +15278,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -14932,7 +15294,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -15457,13 +15819,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -15472,7 +15835,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -15985,13 +16348,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -16000,7 +16364,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -16171,13 +16535,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -16186,7 +16551,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -16358,13 +16723,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -16373,7 +16739,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -16539,13 +16905,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -16554,7 +16921,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -16722,13 +17089,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -16737,7 +17105,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -16909,13 +17277,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -16924,7 +17293,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -16951,7 +17320,7 @@ function Get-RegionDetail {
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.String]
+    [System.Int32]
     # .
     ${RegionId},
 
@@ -17096,13 +17465,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -17111,7 +17481,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -17144,7 +17514,7 @@ param(
 
     [Parameter(ParameterSetName='Get1', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.String]
+    [System.Int32]
     # Type of the entity
     ${EntityType},
 
@@ -17213,6 +17583,204 @@ begin {
             Get = 'CommvaultPowerShell.private\Get-Region_Get';
             Get1 = 'CommvaultPowerShell.private\Get-Region_Get1';
             GetViaIdentity = 'CommvaultPowerShell.private\Get-Region_GetViaIdentity';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Get details of a replication group based on replicationGroupId
+.Description
+Get details of a replication group based on replicationGroupId
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.IPaths1QetioaV4ReplicationgroupReplicationgroupidGetResponses200ContentApplicationJsonSchema
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-replicationgroupdetail
+#>
+function Get-ReplicationGroupDetail {
+[OutputType([Commvault.Powershell.Models.IPaths1QetioaV4ReplicationgroupReplicationgroupidGetResponses200ContentApplicationJsonSchema])]
+[CmdletBinding(DefaultParameterSetName='Get', PositionalBinding=$false)]
+param(
+    [Parameter(ParameterSetName='Get', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.String]
+    # .
+    ${ReplicationGroupId},
+
+    [Parameter(ParameterSetName='GetViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Query')]
+    [System.Management.Automation.SwitchParameter]
+    # Set to true if you want to see override replication options for a periodic replication group
+    ${OverrideReplicationOptions},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Query')]
+    [System.Management.Automation.SwitchParameter]
+    # Set to true if want to show replication options for a continuous replication group
+    ${ViewReplicationOptions},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Get = 'CommvaultPowerShell.private\Get-ReplicationGroupDetail_Get';
+            GetViaIdentity = 'CommvaultPowerShell.private\Get-ReplicationGroupDetail_GetViaIdentity';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -17410,13 +17978,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -17425,7 +17994,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -17591,13 +18160,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -17606,7 +18176,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -17889,13 +18459,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -17904,7 +18475,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -18080,13 +18651,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -18095,7 +18667,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -18259,13 +18831,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -18274,7 +18847,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -18571,13 +19144,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -18586,7 +19160,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -18752,13 +19326,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -18767,7 +19342,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -19291,13 +19866,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -19306,7 +19882,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -19476,13 +20052,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -19491,7 +20068,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -19667,13 +20244,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -19682,7 +20260,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -20234,13 +20812,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -20249,7 +20828,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -20429,13 +21008,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -20444,7 +21024,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -20652,13 +21232,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -20667,7 +21248,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -20991,6 +21572,200 @@ begin {
         $mapping = @{
             Install = 'CommvaultPowerShell.private\Install-MediaAgent_Install';
             InstallExpanded = 'CommvaultPowerShell.private\Install-MediaAgent_InstallExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Browse the Inventory of your hypervisor
+.Description
+Browse the Inventory of your hypervisor
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Outputs
+Commvault.Powershell.Models.IPathsZ1UvtxV4HypervisorHypervisoridInventoryentitynameBrowseGetResponses200ContentApplicationJsonSchema
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/invoke-browsehypervisorinventory
+#>
+function Invoke-BrowseHypervisorInventory {
+[OutputType([Commvault.Powershell.Models.IPathsZ1UvtxV4HypervisorHypervisoridInventoryentitynameBrowseGetResponses200ContentApplicationJsonSchema], [Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='Browse', PositionalBinding=$false)]
+param(
+    [Parameter(ParameterSetName='Browse', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Hypervisor client ID to browse
+    ${HypervisorId},
+
+    [Parameter(ParameterSetName='Browse', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.String]
+    # Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+    ${InventoryEntityName},
+
+    [Parameter(ParameterSetName='BrowseViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Query')]
+    [System.String]
+    # Type of resource to browse in inventory
+    ${InventoryType},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Browse = 'CommvaultPowerShell.private\Invoke-BrowseHypervisorInventory_Browse';
+            BrowseViaIdentity = 'CommvaultPowerShell.private\Invoke-BrowseHypervisorInventory_BrowseViaIdentity';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -21556,6 +22331,401 @@ end {
 
 <#
 .Synopsis
+To Backup the virtual machines in vmgroup
+.Description
+To Backup the virtual machines in vmgroup
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.ICreateTaskRespforBackup
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/invoke-machine
+#>
+function Invoke-Machine {
+[OutputType([Commvault.Powershell.Models.ICreateTaskRespforBackup], [Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='Machine', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='Machine', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.String]
+    # Id of the Virtual Machine to backup
+    ${VMUuid},
+
+    [Parameter(ParameterSetName='MachineViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Query')]
+    [System.String]
+    # Backup level , Default :Incremental
+    ${BackupLevel},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Machine = 'CommvaultPowerShell.private\Invoke-Machine_Machine';
+            MachineViaIdentity = 'CommvaultPowerShell.private\Invoke-Machine_MachineViaIdentity';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Modify access path details of specific bucket of a specific cloud storage
+.Description
+Modify access path details of specific bucket of a specific cloud storage
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Inputs
+Commvault.Powershell.Models.IPaths1Ja3N3Gv4StorageCloudCloudstorageidBucketBucketidAccesspathAccesspathidPutRequestbodyContentApplicationJsonSchema
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/invoke-modifyaccesspath
+#>
+function Invoke-ModifyAccessPath {
+[OutputType([Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='ModifyExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='Modify', Mandatory)]
+    [Parameter(ParameterSetName='ModifyExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Id of access path (can be fetched from GET Bucket Details API)
+    ${AccessPathId},
+
+    [Parameter(ParameterSetName='Modify', Mandatory)]
+    [Parameter(ParameterSetName='ModifyExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Id of Bucket
+    ${BucketId},
+
+    [Parameter(ParameterSetName='Modify', Mandatory)]
+    [Parameter(ParameterSetName='ModifyExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Id of cloud Storage
+    ${CloudStorageId},
+
+    [Parameter(ParameterSetName='ModifyViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter(ParameterSetName='Modify', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='ModifyViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Body')]
+    [Commvault.Powershell.Models.IPaths1Ja3N3Gv4StorageCloudCloudstorageidBucketBucketidAccesspathAccesspathidPutRequestbodyContentApplicationJsonSchema]
+    # .
+    ${Body},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Modify = 'CommvaultPowerShell.private\Invoke-ModifyAccessPath_Modify';
+            ModifyExpanded = 'CommvaultPowerShell.private\Invoke-ModifyAccessPath_ModifyExpanded';
+            ModifyViaIdentity = 'CommvaultPowerShell.private\Invoke-ModifyAccessPath_ModifyViaIdentity';
+            ModifyViaIdentityExpanded = 'CommvaultPowerShell.private\Invoke-ModifyAccessPath_ModifyViaIdentityExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
 Modify Backup Destination for a Plan
 .Description
 Modify Backup Destination for a Plan
@@ -21597,13 +22767,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -21612,7 +22783,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -21862,13 +23033,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -21877,7 +23049,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -22267,13 +23439,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -22282,7 +23455,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -22632,13 +23805,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -22647,7 +23821,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -22916,13 +24090,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -22931,7 +24106,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -23199,13 +24374,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -23214,7 +24390,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -23441,13 +24617,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -23456,7 +24633,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -23642,6 +24819,277 @@ end {
 
 <#
 .Synopsis
+Modify details like name, encryption, security of a specific cloud storage
+.Description
+Modify details like name, encryption, security of a specific cloud storage
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Inputs
+Commvault.Powershell.Models.IUpdateCloudStorage
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+BODY <IUpdateCloudStorage>: .
+  [EncryptionCipher <String>]: The different types of encryption keys that can be used for encrypting the data. The values are case sensitive
+  [EncryptionEncrypt <Boolean?>]: 
+  [EncryptionKeyLength <Int32?>]: Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128 and 256. DES3 accepts only 192. GOST accepts only 256. 
+  [KeyProviderId <Int32?>]: 
+  [KeyProviderName <String>]: 
+  [NewName <String>]: change the name of the cloud storage
+  [Security <IUpdateSecurityAssoc[]>]: 
+    [RoleId <Int32?>]: 
+    [RoleName <String>]: 
+    [UserGroupId <Int32?>]: 
+    [UserGroupName <String>]: 
+    [UserId <Int32?>]: 
+    [UserName <String>]: 
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+
+SECURITY <IUpdateSecurityAssoc[]>: .
+  [RoleId <Int32?>]: 
+  [RoleName <String>]: 
+  [UserGroupId <Int32?>]: 
+  [UserGroupName <String>]: 
+  [UserId <Int32?>]: 
+  [UserName <String>]: 
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/invoke-modifycloudstorage
+#>
+function Invoke-ModifyCloudStorage {
+[OutputType([Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='ModifyExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='Modify', Mandatory)]
+    [Parameter(ParameterSetName='ModifyExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Id of cloud Storage
+    ${CloudStorageId},
+
+    [Parameter(ParameterSetName='ModifyViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter(ParameterSetName='Modify', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='ModifyViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Body')]
+    [Commvault.Powershell.Models.IUpdateCloudStorage]
+    # .
+    # To construct, see NOTES section for BODY properties and create a hash table.
+    ${Body},
+
+    [Parameter(ParameterSetName='ModifyExpanded')]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # The different types of encryption keys that can be used for encrypting the data.
+    # The values are case sensitive
+    ${EncryptionCipher},
+
+    [Parameter(ParameterSetName='ModifyExpanded')]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.Management.Automation.SwitchParameter]
+    # .
+    ${EncryptionEncrypt},
+
+    [Parameter(ParameterSetName='ModifyExpanded')]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.Int32]
+    # Different keylengths are present for different kinds of ciphers.
+    # Blowfish,Twofish,AES and Serpent all accept both 128 and 256.
+    # DES3 accepts only 192.
+    # GOST accepts only 256.
+    ${EncryptionKeyLength},
+
+    [Parameter(ParameterSetName='ModifyExpanded')]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.Int32]
+    # .
+    ${KeyProviderId},
+
+    [Parameter(ParameterSetName='ModifyExpanded')]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${KeyProviderName},
+
+    [Parameter(ParameterSetName='ModifyExpanded')]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # change the name of the cloud storage
+    ${NewName},
+
+    [Parameter(ParameterSetName='ModifyExpanded')]
+    [Parameter(ParameterSetName='ModifyViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [Commvault.Powershell.Models.IUpdateSecurityAssoc[]]
+    # .
+    # To construct, see NOTES section for SECURITY properties and create a hash table.
+    ${Security},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Modify = 'CommvaultPowerShell.private\Invoke-ModifyCloudStorage_Modify';
+            ModifyExpanded = 'CommvaultPowerShell.private\Invoke-ModifyCloudStorage_ModifyExpanded';
+            ModifyViaIdentity = 'CommvaultPowerShell.private\Invoke-ModifyCloudStorage_ModifyViaIdentity';
+            ModifyViaIdentityExpanded = 'CommvaultPowerShell.private\Invoke-ModifyCloudStorage_ModifyViaIdentityExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
 Modify the properties of an existing company
 .Description
 Modify the properties of an existing company
@@ -23735,13 +25183,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -23750,7 +25199,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -24206,13 +25655,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -24221,7 +25671,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -24788,13 +26238,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -24803,7 +26254,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -25069,13 +26520,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -25084,7 +26536,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -25520,13 +26972,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -25535,7 +26988,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -25992,13 +27445,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -26007,7 +27461,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -26391,13 +27845,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -26406,7 +27861,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -26843,13 +28298,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -26858,7 +28314,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -27073,13 +28529,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -27088,7 +28545,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -27339,13 +28796,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -27354,7 +28812,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -27644,13 +29102,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -27659,7 +29118,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -27882,13 +29341,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -27897,7 +29357,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -28241,13 +29701,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -28256,7 +29717,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -28563,13 +30024,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -28578,7 +30040,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -28872,13 +30334,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -28887,7 +30350,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -29036,8 +30499,61 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 .Outputs
 Commvault.Powershell.Models.IGenericResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/invoke-reconfigurehypervisor
 #>
@@ -29045,6 +30561,19 @@ function Invoke-ReConfigureHypervisor {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='Re', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
+    [Parameter(ParameterSetName='Re', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Hypervisor client ID to reconfigure
+    ${HypervisorId},
+
+    [Parameter(ParameterSetName='ReViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
     [Parameter(DontShow)]
     [Commvault.Powershell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
@@ -29094,6 +30623,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
             Re = 'CommvaultPowerShell.private\Invoke-ReConfigureHypervisor_Re';
+            ReViaIdentity = 'CommvaultPowerShell.private\Invoke-ReConfigureHypervisor_ReViaIdentity';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -29558,13 +31088,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -29573,7 +31104,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -29724,18 +31255,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IPaths4Yo4LoV4StorageCloudCloudstorageidBucketBucketidAccesspathPostRequestbodyContentApplicationJsonSchema
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IPaths4Yo4LoV4StorageCloudCloudstorageidBucketBucketidAccesspathPostRequestbodyContentApplicationJsonSchema>: Used to add a new access path to a bucket
-  [MediaAgentId <Int32?>]: 
-  [MediaAgentName <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -29749,13 +31274,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -29764,7 +31290,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -29789,21 +31315,18 @@ function New-AccessPath {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of Bucket
     ${BucketId},
 
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of cloud Storage
     ${CloudStorageId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -29811,23 +31334,13 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IPaths4Yo4LoV4StorageCloudCloudstorageidBucketBucketidAccesspathPostRequestbodyContentApplicationJsonSchema]
-    # Used to add a new access path to a bucket
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${MediaAgentId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -29887,9 +31400,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-AccessPath_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-AccessPath_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-AccessPath_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-AccessPath_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -29946,8 +31457,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IAlertDefinitonsCreate
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
@@ -29965,35 +31474,6 @@ ASSOCIATIONS <IAlertAssociationIdNameType1[]>: AlertDefinitionsAssociations
   [Id <Int32?>]: id of the associated entity
   [Name <String>]: name of the associated entity
   [Type <String>]: 
-
-BODY <IAlertDefinitonsCreate>: AlertDefinitonsCreate
-  [AlertTargetSendAlertTo <String[]>]: 
-  [AlertTypeCategory <String>]: Defines the category of the alert
-  [AlertTypeCriteria <String>]: Defines the criteria of the alert
-  [AlertTypeParamsList <IAlertDefinitionsCriteriaParams[]>]: 
-    [ParamIndex <Int32?>]: Param order index
-    [Type <Int32?>]: Input value type (default 0 = no input required)
-    [Unit <Int32?>]: Unit of the criteria(For eg. :Hrs,min)
-    [Value <Int32?>]: Value of the criteria (deefault 0 : if no value required)
-  [Associations <IAlertAssociationIdNameType1[]>]: AlertDefinitionsAssociations
-    [Id <Int32?>]: id of the associated entity
-    [Name <String>]: name of the associated entity
-    [Type <String>]: 
-  [LocaleId <Int32?>]: 
-  [LocaleName <String>]: 
-  [Name <String>]: 
-  [RecipientBcc <IAlertTargetIdNameType1[]>]: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-    [Type <String>]: 
-  [RecipientCc <IAlertTargetIdNameType1[]>]: 
-  [RecipientTo <IAlertTargetIdNameType1[]>]: 
-  [RecipientWebHookId <Int32?>]: id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook
-  [SendIndividualNotifications <Boolean?>]: 
-  [TemplateConsoleMessage <String>]: the message template for the console notification
-  [TemplateEmailMessage <String>]: the message template for the email notification. Contains both email subject as well as body
-  [TemplateEventViewerMessage <String>]: the message template for the event viewer notification
-  [TemplateWebhookMessage <String>]: the message template for the webhook notification
 
 RECIPIENTBCC <IAlertTargetIdNameType1[]>: .
   [Id <Int32?>]: 
@@ -30016,85 +31496,78 @@ function New-AlertDefinition {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IAlertDefinitonsCreate]
-    # AlertDefinitonsCreate
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # .
     ${AlertTargetSendAlertTo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Defines the category of the alert
     ${AlertTypeCategory},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Defines the criteria of the alert
     ${AlertTypeCriteria},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[]]
     # .
     # To construct, see NOTES section for ALERTTYPEPARAMSLIST properties and create a hash table.
     ${AlertTypeParamsList},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertAssociationIdNameType1[]]
     # AlertDefinitionsAssociations
     # To construct, see NOTES section for ASSOCIATIONS properties and create a hash table.
     ${Associations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${LocaleId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${LocaleName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertTargetIdNameType1[]]
     # .
     # To construct, see NOTES section for RECIPIENTBCC properties and create a hash table.
     ${RecipientBcc},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertTargetIdNameType1[]]
     # .
     # To construct, see NOTES section for RECIPIENTCC properties and create a hash table.
     ${RecipientCc},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertTargetIdNameType1[]]
     # .
     # To construct, see NOTES section for RECIPIENTTO properties and create a hash table.
     ${RecipientTo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # id of the webhook to be associated with the alert definition.
@@ -30102,32 +31575,32 @@ param(
     # To get a list of webhooks, use api GET Webhook
     ${RecipientWebHookId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # .
     ${SendIndividualNotifications},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the console notification
     ${TemplateConsoleMessage},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the email notification.
     # Contains both email subject as well as body
     ${TemplateEmailMessage},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the event viewer notification
     ${TemplateEventViewerMessage},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the webhook notification
@@ -30187,7 +31660,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-AlertDefinition_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-AlertDefinition_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -30244,8 +31716,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreatevmGroupReq
 .Outputs
 Commvault.Powershell.Models.IApplicationGroupResp
 .Outputs
@@ -30254,29 +31724,6 @@ Commvault.Powershell.Models.IGenericResp
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreatevmGroupReq>: CreatevmGroupReq
-  Name <String>: subclient name 
-  [ContentOverwrite <Boolean?>]: True if content in vmgroup has to be overwritten, by default it will append the content
-  [ContentRuleGroups <IRuleGroupContent[]>]: 
-    [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
-    [Rules <IRuleContent[]>]: 
-      [Condition <String>]: Operation type for VM rules/filters
-      [DisplayName <String>]: The display name of the entity to be added
-      [Guid <String>]: GUID of the entity to be added as content
-      [Name <String>]: name of the VM to be added as content
-      [Type <String>]: 
-      [Value <String>]: value for the few type of VM Content like powerstate
-  [ContentVirtualMachines <IVirtualMachinecontent[]>]: 
-    [Guid <String>]: GUID of the VM to be added as content
-    [Name <String>]: name of the VM to be added as content
-    [Type <String>]: 
-  [HypervisorId <Int32?>]: 
-  [HypervisorName <String>]: 
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [StorageId <Int32?>]: 
-  [StorageName <String>]: 
 
 CONTENTRULEGROUPS <IRuleGroupContent[]>: .
   [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
@@ -30299,70 +31746,63 @@ function New-ApplicationGroup {
 [OutputType([Commvault.Powershell.Models.IApplicationGroupResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreatevmGroupReq]
-    # CreatevmGroupReq
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # subclient name
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if content in vmgroup has to be overwritten, by default it will append the content
     ${ContentOverwrite},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IRuleGroupContent[]]
     # .
     # To construct, see NOTES section for CONTENTRULEGROUPS properties and create a hash table.
     ${ContentRuleGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVirtualMachinecontent[]]
     # .
     # To construct, see NOTES section for CONTENTVIRTUALMACHINES properties and create a hash table.
     ${ContentVirtualMachines},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${HypervisorId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${HypervisorName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${StorageId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -30416,7 +31856,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ApplicationGroup_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ApplicationGroup_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -30475,28 +31914,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreateArchivePlanBackupDestinations
 .Outputs
 Commvault.Powershell.Models.IPlanBackupDestinationResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateArchivePlanBackupDestinations>: .
-  Destinations <ICreateArchivePlanBackupDestination[]>: List of backup destinations to create
-    BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-    [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-    [RegionId <Int32?>]: 
-    [RegionName <String>]: 
-    [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention.
-    [SourceCopyId <Int32?>]: 
-    [SourceCopyName <String>]: 
-    [StoragePoolId <Int32?>]: 
-    [StoragePoolName <String>]: 
-  [RegionId <Int32?>]: 
-  [RegionName <String>]: 
 
 DESTINATIONS <ICreateArchivePlanBackupDestination[]>: List of backup destinations to create
   BackupDestinationName <String>: Backup destination details. Enter the name during creation.
@@ -30521,13 +31944,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -30536,7 +31960,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -30559,16 +31983,14 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-archi
 #>
 function New-ArchiveBackupDestination {
 [OutputType([Commvault.Powershell.Models.IPlanBackupDestinationResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the Plan to modify
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -30576,31 +31998,20 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateArchivePlanBackupDestinations]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreateArchivePlanBackupDestination[]]
     # List of backup destinations to create
     # To construct, see NOTES section for DESTINATIONS properties and create a hash table.
     ${Destinations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${RegionId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -30660,9 +32071,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ArchiveBackupDestination_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ArchiveBackupDestination_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-ArchiveBackupDestination_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-ArchiveBackupDestination_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -30719,8 +32128,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IArchivePlan
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -30741,41 +32148,6 @@ BACKUPDESTINATIONS <ICreateArchivePlanBackupDestination[]>: .
   [StoragePoolId <Int32?>]: 
   [StoragePoolName <String>]: 
 
-BODY <IArchivePlan>: .
-  PlanName <String>: 
-  [AllowPlanOverride <Boolean?>]: Flag to enable overriding of plan. Plan cannot be overriden by default.
-  [ArchiveFrequency <Int32?>]: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-  [ArchiveFrequencyDayOfMonth <Int32?>]: Day on which to run the schedule, applicable for monthly, yearly
-  [ArchiveFrequencyDayOfWeek <String>]: 
-  [ArchiveFrequencyMonthOfYear <String>]: 
-  [ArchiveFrequencyScheduleFrequencyType <String>]: schedule frequency type
-  [ArchiveFrequencyStartTime <Int32?>]: start time of schedule in seconds for daily, weekly, monthly, yearly frequency
-  [ArchiveFrequencyWeekOfMonth <String>]: Specific week of a month
-  [ArchiveFrequencyWeeklyDays <String[]>]: Days of the week for weekly frequency
-  [ArchivingRuleAfterArchiving <String>]: After an archive job, replace the file that meets the archiving rules with a stub or delete the file that meets the archiving rules
-  [ArchivingRuleFileSize <Int32?>]: To archive files based on the size of the file, specify the minimum file size in KB.
-  [ArchivingRuleFileTimestamp <Int32?>]: To archive files based on the last accessed or modified date of each file within the folder, specify the number of days. Should be supplied with fileTimestampMethod.
-  [ArchivingRuleFileTimestampMethod <String>]: 
-  [BackupDestinations <ICreateArchivePlanBackupDestination[]>]: 
-    BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-    [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-    [RegionId <Int32?>]: 
-    [RegionName <String>]: 
-    [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention.
-    [SourceCopyId <Int32?>]: 
-    [SourceCopyName <String>]: 
-    [StoragePoolId <Int32?>]: 
-    [StoragePoolName <String>]: 
-  [OverrideRestrictionArchivingRules <String>]: 
-  [OverrideRestrictionRpo <String>]: 
-  [OverrideRestrictionStoragePool <String>]: 
-  [ParentPlanId <Int32?>]: 
-  [ParentPlanName <String>]: 
-  [RpoArchiveWindow <IDayAndTime[]>]: Archive job will run only in the specified archive window
-    [DayOfWeek <String[]>]: 
-    [EndTime <Int64?>]: Time in seconds since the beginning of the day
-    [StartTime <Int64?>]: Time in seconds since the beginning of the day
-
 RPOARCHIVEWINDOW <IDayAndTime[]>: Archive job will run only in the specified archive window
   [DayOfWeek <String[]>]: 
   [EndTime <Int64?>]: Time in seconds since the beginning of the day
@@ -30787,27 +32159,20 @@ function New-ArchivePlan {
 [OutputType([Commvault.Powershell.Models.IPlanResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IArchivePlan]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable overriding of plan.
     # Plan cannot be overriden by default.
     ${AllowPlanOverride},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Frequency of the schedule based on schedule frequency type eg.
@@ -30815,111 +32180,111 @@ param(
     # for Monthly 2 is it repeats every 2 months
     ${ArchiveFrequency},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Day on which to run the schedule, applicable for monthly, yearly
     ${ArchiveFrequencyDayOfMonth},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ArchiveFrequencyDayOfWeek},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ArchiveFrequencyMonthOfYear},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # schedule frequency type
     ${ArchiveFrequencyScheduleFrequencyType},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # start time of schedule in seconds for daily, weekly, monthly, yearly frequency
     ${ArchiveFrequencyStartTime},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Specific week of a month
     ${ArchiveFrequencyWeekOfMonth},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Days of the week for weekly frequency
     ${ArchiveFrequencyWeeklyDays},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # After an archive job, replace the file that meets the archiving rules with a stub or delete the file that meets the archiving rules
     ${ArchivingRuleAfterArchiving},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # To archive files based on the size of the file, specify the minimum file size in KB.
     ${ArchivingRuleFileSize},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
     # Should be supplied with fileTimestampMethod.
     ${ArchivingRuleFileTimestamp},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ArchivingRuleFileTimestampMethod},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreateArchivePlanBackupDestination[]]
     # .
     # To construct, see NOTES section for BACKUPDESTINATIONS properties and create a hash table.
     ${BackupDestinations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionArchivingRules},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionRpo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionStoragePool},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${ParentPlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ParentPlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Archive job will run only in the specified archive window
@@ -30974,7 +32339,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ArchivePlan_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ArchivePlan_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -31033,55 +32397,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreatePlanBackupDestinations
 .Outputs
 Commvault.Powershell.Models.IPlanBackupDestinationResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreatePlanBackupDestinations>: .
-  Destinations <ICreatePlanBackupDestination[]>: List of backup destinations to create
-    BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-    [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-    [BackupsToCopy <String>]: 
-    [FirstExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [FirstExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [FirstExtendedRetentionRuleType <String>]: 
-    [IsMirrorCopy <Boolean?>]: Is this a mirror copy? Only considered when isSnapCopy is true.
-    [IsSnapCopy <Boolean?>]: Is this a snap copy? If isMirrorCopy is not set, then default is Vault/Replica.
-    [Mappings <ISnapshotCopyMapping[]>]: 
-      [SourceId <Int32?>]: 
-      [SourceName <String>]: 
-      [TargetId <Int32?>]: 
-      [TargetName <String>]: 
-      [Vendor <String>]: Snapshot vendors available for Snap Copy mappings
-    [NetAppCloudTarget <Boolean?>]: Only for snap copy. Enabling this changes SVM Mapping  to NetApp cloud targets only.
-    [OptimizeForInstantClone <Boolean?>]: Flag to specify if primary storage is copy data management enabled.
-    [RegionId <Int32?>]: 
-    [RegionName <String>]: 
-    [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes  precedence.
-    [RetentionRuleType <String>]: Which type of retention rule should be used for the given backup destination
-    [SecondExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [SecondExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [SecondExtendedRetentionRuleType <String>]: 
-    [SnapRecoveryPoints <Int32?>]: Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.
-    [SourceCopyId <Int32?>]: 
-    [SourceCopyName <String>]: 
-    [StoragePoolId <Int32?>]: 
-    [StoragePoolName <String>]: 
-    [ThirdExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [ThirdExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [ThirdExtendedRetentionRuleType <String>]: 
-    [UseExtendedRetentionRules <Boolean?>]: Use extended retention rules
-  [RegionId <Int32?>]: 
-  [RegionName <String>]: 
-  [SnapshotOptionBackupCopyRpoMins <Int32?>]: Backup copy RPO in minutes
-  [SnapshotOptionEnableBackupCopy <Boolean?>]: Flag to enable backup copy
-  [SnapshotOptionRetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.
-  [SnapshotOptionSnapRecoveryPoints <Int32?>]: Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.
 
 DESTINATIONS <ICreatePlanBackupDestination[]>: List of backup destinations to create
   BackupDestinationName <String>: Backup destination details. Enter the name during creation.
@@ -31129,13 +32450,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -31144,7 +32466,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -31167,16 +32489,14 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-backu
 #>
 function New-BackupDestination {
 [OutputType([Commvault.Powershell.Models.IPlanBackupDestinationResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the Plan to modify
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -31184,52 +32504,38 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreatePlanBackupDestinations]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreatePlanBackupDestination[]]
     # List of backup destinations to create
     # To construct, see NOTES section for DESTINATIONS properties and create a hash table.
     ${Destinations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${RegionId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${RegionName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Backup copy RPO in minutes
     ${SnapshotOptionBackupCopyRpoMins},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable backup copy
     ${SnapshotOptionEnableBackupCopy},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Retention period in days.
@@ -31237,8 +32543,7 @@ param(
     # If this and snapRecoveryPoints both are not specified, this takes precedence.
     ${SnapshotOptionRetentionPeriodDays},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Number of snap recovery points for default snap copy for retention.
@@ -31299,9 +32604,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-BackupDestination_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-BackupDestination_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-BackupDestination_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-BackupDestination_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -31360,23 +32663,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreateBackupLocation
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateBackupLocation>: If adding a network access path, Please add credentials or saved credentials. If both are provided, credentials will be taken into consideration.
-  BackupLocation <String>: The mount path on the media agent where the data is to be backed up.
-  [CredentialsName <String>]: username to access the network path
-  [CredentialsPassword <String>]: password to access the network path
-  [MediaAgentId <Int32?>]: 
-  [MediaAgentName <String>]: 
-  [SavedCredentialsId <Int32?>]: 
-  [SavedCredentialsName <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -31390,13 +32682,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -31405,7 +32698,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -31430,14 +32723,12 @@ function New-BackupLocation {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the disk storage to update
     ${StoragePoolId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -31445,59 +32736,43 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateBackupLocation]
-    # If adding a network access path, Please add credentials or saved credentials.
-    # If both are provided, credentials will be taken into consideration.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The mount path on the media agent where the data is to be backed up.
     ${BackupLocation},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # username to access the network path
     ${CredentialsName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # password to access the network path
     ${CredentialsPassword},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${MediaAgentId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${MediaAgentName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SavedCredentialsId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -31557,9 +32832,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-BackupLocation_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-BackupLocation_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-BackupLocation_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-BackupLocation_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -31616,28 +32889,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateBlackoutWindow
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateBlackoutWindow>: betweenDates refers to the dates where the blackout window will be in effect. Dates have to be given in unix time format. time has to be provided in seconds. company refers to company to which the blackout window is associated.Id is given first preference if both are id and name are provided.
-  Name <String>: Name of the blackout window to be created.
-  [BackupOperations <String[]>]: Refers to backup types to include in the blackout window
-  [BetweenDateEnd <Int64?>]: the blackout window is no longer in effect from this point on.
-  [BetweenDateStart <Int64?>]: the blackout window comes into effect at this point.
-  [CompanyId <Int32?>]: 
-  [CompanyName <String>]: 
-  [Days <String[]>]: Days of the week when the blackout window will be in effect.
-  [DoNotSubmitJob <Boolean?>]: Allows or Denies submitting a job when the blackout window is in effect. If set to false, the job is submitted and resumed once the blackout window ends.
-  [Time <IStartEnd[]>]: Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
-    [End <Int64?>]: the blackout window is no longer in effect from this point on.
-    [Start <Int64?>]: the blackout window comes into effect at this point.
-  [Weeks <String[]>]: Refers to the weeks of the month that the blackout window will be in effect.
 
 TIME <IStartEnd[]>: Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
   [End <Int64?>]: the blackout window is no longer in effect from this point on.
@@ -31649,66 +32906,56 @@ function New-BlackoutWindow {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateBlackoutWindow]
-    # betweenDates refers to the dates where the blackout window will be in effect.
-    # Dates have to be given in unix time format.
-    # time has to be provided in seconds.
-    # company refers to company to which the blackout window is associated.Id is given first preference if both are id and name are provided.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the blackout window to be created.
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Refers to backup types to include in the blackout window
     ${BackupOperations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int64]
     # the blackout window is no longer in effect from this point on.
     ${BetweenDateEnd},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int64]
     # the blackout window comes into effect at this point.
     ${BetweenDateStart},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${CompanyId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${CompanyName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Days of the week when the blackout window will be in effect.
     ${Days},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Allows or Denies submitting a job when the blackout window is in effect.
     # If set to false, the job is submitted and resumed once the blackout window ends.
     ${DoNotSubmitJob},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IStartEnd[]]
     # Refers to the time between which the blackout window will be in effect.
@@ -31716,7 +32963,7 @@ param(
     # To construct, see NOTES section for TIME properties and create a hash table.
     ${Time},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Refers to the weeks of the month that the blackout window will be in effect.
@@ -31776,8 +33023,195 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-BlackoutWindow_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-BlackoutWindow_CreateExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Create a new bucket for a specific cloud storage
+.Description
+Create a new bucket for a specific cloud storage
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Outputs
+Commvault.Powershell.Models.IPathsSz5LoqV4StorageCloudCloudstorageidBucketPostResponses200ContentApplicationJsonSchema
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-bucketforcloudstorage
+#>
+function New-BucketforCloudStorage {
+[OutputType([Commvault.Powershell.Models.IPathsSz5LoqV4StorageCloudCloudstorageidBucketPostResponses200ContentApplicationJsonSchema], [Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # .
+    ${CloudStorageId},
+
+    [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            CreateExpanded = 'CommvaultPowerShell.private\New-BucketforCloudStorage_CreateExpanded';
+            CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-BucketforCloudStorage_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -31833,8 +33267,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateCdmPlan
 .Outputs
 Commvault.Powershell.Models.IPlanResp
 .Notes
@@ -31904,81 +33336,6 @@ BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
   [TimezoneId <Int32?>]: 
   [TimezoneName <String>]: 
 
-BODY <ICreateCdmPlan>: .
-  BackupDestinations <ICreatePlanBackupDestination[]>: Copy destinations for the plan. Specify where you want to store your data.
-    BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-    [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-    [BackupsToCopy <String>]: 
-    [FirstExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [FirstExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [FirstExtendedRetentionRuleType <String>]: 
-    [IsMirrorCopy <Boolean?>]: Is this a mirror copy? Only considered when isSnapCopy is true.
-    [IsSnapCopy <Boolean?>]: Is this a snap copy? If isMirrorCopy is not set, then default is Vault/Replica.
-    [Mappings <ISnapshotCopyMapping[]>]: 
-      [SourceId <Int32?>]: 
-      [SourceName <String>]: 
-      [TargetId <Int32?>]: 
-      [TargetName <String>]: 
-      [Vendor <String>]: Snapshot vendors available for Snap Copy mappings
-    [NetAppCloudTarget <Boolean?>]: Only for snap copy. Enabling this changes SVM Mapping  to NetApp cloud targets only.
-    [OptimizeForInstantClone <Boolean?>]: Flag to specify if primary storage is copy data management enabled.
-    [RegionId <Int32?>]: 
-    [RegionName <String>]: 
-    [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes  precedence.
-    [RetentionRuleType <String>]: Which type of retention rule should be used for the given backup destination
-    [SecondExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [SecondExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [SecondExtendedRetentionRuleType <String>]: 
-    [SnapRecoveryPoints <Int32?>]: Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.
-    [SourceCopyId <Int32?>]: 
-    [SourceCopyName <String>]: 
-    [StoragePoolId <Int32?>]: 
-    [StoragePoolName <String>]: 
-    [ThirdExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [ThirdExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [ThirdExtendedRetentionRuleType <String>]: 
-    [UseExtendedRetentionRules <Boolean?>]: Use extended retention rules
-  PlanName <String>: Name of the new plan
-  [BackupFrequencySchedules <IPlanSchedule[]>]: 
-    BackupType <String>: Schedule Backup level
-    ForDatabasesOnly <Boolean>: Boolean to indicate if schedule is for database agents
-    ScheduleOperation <String>: Operation being performed on schedule
-    SchedulePatternScheduleFrequencyType <String>: schedule frequency type
-    [PolicyId <Int32?>]: Schedule policy Id to which the schedule belongs
-    [ScheduleId <Int32?>]: Id of the schedule if available, required for modifying, deleting schedule
-    [ScheduleName <String>]: Name of the schedule, for modify
-    [SchedulePatternDayOfMonth <Int32?>]: Day on which to run the schedule, applicable for monthly, yearly
-    [SchedulePatternDayOfWeek <String>]: 
-    [SchedulePatternDaysBetweenSyntheticFulls <Int32?>]: No of days between two synthetic full jobs
-    [SchedulePatternEndDate <Int32?>]: Schedule end date in epoch format
-    [SchedulePatternExceptions <IScheduleRunException[]>]: Exceptions to when a schedule should not run, either in dates or week of month and days
-      [OnDates <Int32[]>]: list of dates in a month. For ex: 1, 20
-      [OnDayOfTheWeek <String[]>]: On which days, for ex: MONDAY, FRIDAY
-      [OnWeekOfTheMonth <String[]>]: On which week of month, for ex: FIRST, LAST
-    [SchedulePatternFrequency <Int32?>]: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-    [SchedulePatternMonthOfYear <String>]: 
-    [SchedulePatternNoOfTimes <Int32?>]: The number of times you want the schedule to run.
-    [SchedulePatternRepeatIntervalInMinutes <Int32?>]: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
-    [SchedulePatternRepeatUntilTime <Int32?>]: Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
-    [SchedulePatternStartDate <Int32?>]: start date of schedule in epoch format
-    [SchedulePatternStartTime <Int32?>]: start time of schedule in seconds
-    [SchedulePatternWeekOfMonth <String>]: Specific week of a month
-    [SchedulePatternWeeklyDays <String[]>]: Days of the week for weekly frequency
-    [TimezoneId <Int32?>]: 
-    [TimezoneName <String>]: 
-  [DatabaseOptionCommitFrequencyInHours <Int32?>]: Commit frequency in hours
-  [DatabaseOptionLogBackupRpoMins <Int32?>]: Log backup RPO in minutes
-  [DatabaseOptionUseDiskCacheForLogBackups <Boolean?>]: Use disk cache for log backups
-  [RpoBackupWindow <IDayAndTime[]>]: Backup window for incremental backup
-    [DayOfWeek <String[]>]: 
-    [EndTime <Int64?>]: Time in seconds since the beginning of the day
-    [StartTime <Int64?>]: Time in seconds since the beginning of the day
-  [RpoFullBackupWindow <IDayAndTime[]>]: Backup window for full backup
-  [SnapshotOptionBackupCopyRpoMins <Int32?>]: Backup copy RPO in minutes
-  [SnapshotOptionEnableBackupCopy <Boolean?>]: Flag to enable backup copy
-  [SnapshotOptionRetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.
-  [SnapshotOptionSnapRecoveryPoints <Int32?>]: Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.
-
 RPOBACKUPWINDOW <IDayAndTime[]>: Backup window for incremental backup
   [DayOfWeek <String[]>]: 
   [EndTime <Int64?>]: Time in seconds since the beginning of the day
@@ -31993,16 +33350,9 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cdmpl
 #>
 function New-CdmPlan {
 [OutputType([Commvault.Powershell.Models.IPlanResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateCdmPlan]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreatePlanBackupDestination[]]
     # Copy destinations for the plan.
@@ -32010,64 +33360,64 @@ param(
     # To construct, see NOTES section for BACKUPDESTINATIONS properties and create a hash table.
     ${BackupDestinations},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the new plan
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanSchedule[]]
     # .
     # To construct, see NOTES section for BACKUPFREQUENCYSCHEDULES properties and create a hash table.
     ${BackupFrequencySchedules},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Commit frequency in hours
     ${DatabaseOptionCommitFrequencyInHours},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Log backup RPO in minutes
     ${DatabaseOptionLogBackupRpoMins},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Use disk cache for log backups
     ${DatabaseOptionUseDiskCacheForLogBackups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for incremental backup
     # To construct, see NOTES section for RPOBACKUPWINDOW properties and create a hash table.
     ${RpoBackupWindow},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for full backup
     # To construct, see NOTES section for RPOFULLBACKUPWINDOW properties and create a hash table.
     ${RpoFullBackupWindow},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Backup copy RPO in minutes
     ${SnapshotOptionBackupCopyRpoMins},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable backup copy
     ${SnapshotOptionEnableBackupCopy},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Retention period in days.
@@ -32075,7 +33425,7 @@ param(
     # If this and snapRecoveryPoints both are not specified, this takes precedence.
     ${SnapshotOptionRetentionPeriodDays},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Number of snap recovery points for default snap copy for retention.
@@ -32136,7 +33486,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-CdmPlan_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-CdmPlan_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -32195,23 +33544,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreateMetadataCacheConfigurations
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateMetadataCacheConfigurations>: If adding a network access path, Please add credentials or saved credentials. If both are provided, credentials will be taken into consideration.
-  Path <String>: Metadata cache will be stored on this path
-  [CredentialsName <String>]: username to access the network path
-  [CredentialsPassword <String>]: password to access the network path
-  [MediaAgentId <Int32?>]: 
-  [MediaAgentName <String>]: 
-  [SavedCredentialsId <Int32?>]: 
-  [SavedCredentialsName <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -32225,13 +33563,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -32240,7 +33579,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -32265,14 +33604,12 @@ function New-CloudStorageMetaDataCache {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of cloud Storage
     ${CloudStorageId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -32280,59 +33617,43 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateMetadataCacheConfigurations]
-    # If adding a network access path, Please add credentials or saved credentials.
-    # If both are provided, credentials will be taken into consideration.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Metadata cache will be stored on this path
     ${Path},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # username to access the network path
     ${CredentialsName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # password to access the network path
     ${CredentialsPassword},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${MediaAgentId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${MediaAgentName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SavedCredentialsId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -32386,10 +33707,123 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-CloudStorageMetaDataCache_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-CloudStorageMetaDataCache_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-CloudStorageMetaDataCache_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-CloudStorageMetaDataCache_CreateViaIdentityExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Create a Cloud Storage
+.Description
+Create a Cloud Storage
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Outputs
+Commvault.Powershell.Models.ICloudStorageResp
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cloudstorage
+#>
+function New-CloudStorage {
+[OutputType([Commvault.Powershell.Models.ICloudStorageResp], [Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            CreateExpanded = 'CommvaultPowerShell.private\New-CloudStorage_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -32445,27 +33879,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateCompany
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateCompany>: Used to create a new company
-  Alias <String>: The company domain or NetBIOS name
-  Name <String>: name of the company to be created.
-  [ContactName <String>]: Name of the tenant administrator. If provided, email also needs to be provided.
-  [Email <String>]: Email address for the tenant administrator. If provided, contactName for the tenant administrator also needs to be provided
-  [EmailSuffix <String>]: Supported domains for the company
-  [Plans <IIdName[]>]: Select data protection plans to use for the company. The plans that are selected are the plans that the tenant administrator can choose from.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [PrimaryDomain <String>]: The primary domain name of the company being created. Can be added only if an external domain is already present.
-  [SendWelcomeEmail <Boolean?>]: send a welcome email on company creation to the tenant administrator.
-  [ServiceCommcells <IIdName[]>]: Used to add service commcells to the master commcell. Either id or name can be provided. If both are provided, id will be taken into consideration.
 
 PLANS <IIdName[]>: Select data protection plans to use for the company. The plans that are selected are the plans that the tenant administrator can choose from.
   [Id <Int32?>]: 
@@ -32481,46 +33900,39 @@ function New-Company {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateCompany]
-    # Used to create a new company
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The company domain or NetBIOS name
     ${Alias},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # name of the company to be created.
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the tenant administrator.
     # If provided, email also needs to be provided.
     ${ContactName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Email address for the tenant administrator.
     # If provided, contactName for the tenant administrator also needs to be provided
     ${Email},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Supported domains for the company
     ${EmailSuffix},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Select data protection plans to use for the company.
@@ -32528,20 +33940,20 @@ param(
     # To construct, see NOTES section for PLANS properties and create a hash table.
     ${Plans},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The primary domain name of the company being created.
     # Can be added only if an external domain is already present.
     ${PrimaryDomain},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # send a welcome email on company creation to the tenant administrator.
     ${SendWelcomeEmail},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Used to add service commcells to the master commcell.
@@ -32604,8 +34016,126 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-Company_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-Company_CreateExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Create a new credential
+.Description
+Create a new credential
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Outputs
+Commvault.Powershell.Models.IIdType
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-credential
+#>
+function New-Credential {
+[OutputType([Commvault.Powershell.Models.IIdType])]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            CreateExpanded = 'CommvaultPowerShell.private\New-Credential_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -32661,30 +34191,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateDiskStorage
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateDiskStorage>: .
-  EnableDeduplication <Boolean>: enables or disables deduplication
-  Name <String>: Name of the Disk Storage to be created.
-  Storage <IPath[]>: A list of backup locations can be provided for the storage pool being created.
-    [BackupLocation <String>]: 
-    [CredentialsName <String>]: username to access the network path
-    [CredentialsPassword <String>]: password to access the network path
-    [MediaAgentId <Int32?>]: 
-    [MediaAgentName <String>]: 
-    [SavedCredentialsId <Int32?>]: 
-    [SavedCredentialsName <String>]: 
-  [DeduplicationDbStorage <IDedupePath[]>]: A list of dedupe locations can be provided for the storage pool being created. This provides an efficient way to save/store data by eliminating duplicate blocks of data during backups.
-    [MediaAgentId <Int32?>]: 
-    [MediaAgentName <String>]: 
-    [Path <String>]: 
 
 DEDUPLICATIONDBSTORAGE <IDedupePath[]>: A list of dedupe locations can be provided for the storage pool being created. This provides an efficient way to save/store data by eliminating duplicate blocks of data during backups.
   [MediaAgentId <Int32?>]: 
@@ -32704,35 +34216,28 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-disks
 #>
 function New-DiskStorage {
 [OutputType([Commvault.Powershell.Models.IIdName])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateDiskStorage]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # enables or disables deduplication
     ${EnableDeduplication},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the Disk Storage to be created.
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPath[]]
     # A list of backup locations can be provided for the storage pool being created.
     # To construct, see NOTES section for STORAGE properties and create a hash table.
     ${Storage},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDedupePath[]]
     # A list of dedupe locations can be provided for the storage pool being created.
@@ -32794,7 +34299,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-DiskStorage_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-DiskStorage_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -32851,8 +34355,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IHyperScaleStorage
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -32862,12 +34364,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODY <IHyperScaleStorage>: HyperScaleStorage
-  Name <String>: Name of HyperScale Storage
-  Nodes <IIdName[]>: List of Nodes (MediaAgents) of the HyperScale Storage
-    [Id <Int32?>]: 
-    [Name <String>]: 
-
 NODES <IIdName[]>: List of Nodes (MediaAgents) of the HyperScale Storage
   [Id <Int32?>]: 
   [Name <String>]: 
@@ -32876,22 +34372,15 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-hyper
 #>
 function New-HyperScaleStorage {
 [OutputType([Commvault.Powershell.Models.IHyperScaleStorageResp], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IHyperScaleStorage]
-    # HyperScaleStorage
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of HyperScale Storage
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # List of Nodes (MediaAgents) of the HyperScale Storage
@@ -32946,8 +34435,122 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-HyperScaleStorage_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-HyperScaleStorage_CreateExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Create Hypervisor for that particular type
+.Description
+Create Hypervisor for that particular type
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Outputs
+Commvault.Powershell.Models.ICreateHypervisorResp
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-hypervisor
+#>
+function New-Hypervisor {
+[OutputType([Commvault.Powershell.Models.ICreateHypervisorResp], [Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            CreateExpanded = 'CommvaultPowerShell.private\New-Hypervisor_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -33003,8 +34606,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateKubernetesCluster
 .Outputs
 Commvault.Powershell.Models.ICreateClusterResp
 .Outputs
@@ -33017,90 +34618,69 @@ To create the parameters described below, construct a hash table containing the 
 ACCESSNODES <IIdName[]>: .
   [Id <Int32?>]: 
   [Name <String>]: 
-
-BODY <ICreateKubernetesCluster>: .
-  AccessNodes <IIdName[]>: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  Name <String>: The name of the hypervisor group being created
-  Endpointurl <String>: Endpoint url to connect
-  [CredentialsId <Int32?>]: 
-  [CredentialsName <String>]: 
-  [SkipCredentialValidation <Boolean?>]: if credential validation has to be skipped.
-  [Password <String>]: Username to connect in case authentication mode is Username and password
-  [SecretKey <String>]: SecretKey to connect in case authentication mode is service account
-  [ServiceName <String>]: Service Name to connect in case authentication mode is service account
-  [UserName <String>]: Username to connect in case authentication mode is Username and password
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-kubernetescluster
 #>
 function New-Kubernetescluster {
 [OutputType([Commvault.Powershell.Models.ICreateClusterResp], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateKubernetesCluster]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # .
     # To construct, see NOTES section for ACCESSNODES properties and create a hash table.
     ${AccessNodes},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${CredentialsName},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Endpoint url to connect
     ${Endpointurl},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The name of the hypervisor group being created
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${CredentialsId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Username to connect in case authentication mode is Username and password
     ${Password},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SecretKey to connect in case authentication mode is service account
     ${SecretKey},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Service Name to connect in case authentication mode is service account
     ${ServiceName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # if credential validation has to be skipped.
     ${SkipCredentialValidation},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Username to connect in case authentication mode is Username and password
@@ -33154,7 +34734,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-Kubernetescluster_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-Kubernetescluster_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -33213,55 +34792,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreatePlanBackupDestinations
 .Outputs
 Commvault.Powershell.Models.IPlanBackupDestinationResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreatePlanBackupDestinations>: .
-  Destinations <ICreatePlanBackupDestination[]>: List of backup destinations to create
-    BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-    [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-    [BackupsToCopy <String>]: 
-    [FirstExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [FirstExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [FirstExtendedRetentionRuleType <String>]: 
-    [IsMirrorCopy <Boolean?>]: Is this a mirror copy? Only considered when isSnapCopy is true.
-    [IsSnapCopy <Boolean?>]: Is this a snap copy? If isMirrorCopy is not set, then default is Vault/Replica.
-    [Mappings <ISnapshotCopyMapping[]>]: 
-      [SourceId <Int32?>]: 
-      [SourceName <String>]: 
-      [TargetId <Int32?>]: 
-      [TargetName <String>]: 
-      [Vendor <String>]: Snapshot vendors available for Snap Copy mappings
-    [NetAppCloudTarget <Boolean?>]: Only for snap copy. Enabling this changes SVM Mapping  to NetApp cloud targets only.
-    [OptimizeForInstantClone <Boolean?>]: Flag to specify if primary storage is copy data management enabled.
-    [RegionId <Int32?>]: 
-    [RegionName <String>]: 
-    [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes  precedence.
-    [RetentionRuleType <String>]: Which type of retention rule should be used for the given backup destination
-    [SecondExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [SecondExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [SecondExtendedRetentionRuleType <String>]: 
-    [SnapRecoveryPoints <Int32?>]: Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.
-    [SourceCopyId <Int32?>]: 
-    [SourceCopyName <String>]: 
-    [StoragePoolId <Int32?>]: 
-    [StoragePoolName <String>]: 
-    [ThirdExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [ThirdExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [ThirdExtendedRetentionRuleType <String>]: 
-    [UseExtendedRetentionRules <Boolean?>]: Use extended retention rules
-  [RegionId <Int32?>]: 
-  [RegionName <String>]: 
-  [SnapshotOptionBackupCopyRpoMins <Int32?>]: Backup copy RPO in minutes
-  [SnapshotOptionEnableBackupCopy <Boolean?>]: Flag to enable backup copy
-  [SnapshotOptionRetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.
-  [SnapshotOptionSnapRecoveryPoints <Int32?>]: Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.
 
 DESTINATIONS <ICreatePlanBackupDestination[]>: List of backup destinations to create
   BackupDestinationName <String>: Backup destination details. Enter the name during creation.
@@ -33309,13 +34845,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -33324,7 +34861,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -33347,16 +34884,14 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-lapto
 #>
 function New-LaptopBackupDestination {
 [OutputType([Commvault.Powershell.Models.IPlanBackupDestinationResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the Plan to modify
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -33364,52 +34899,38 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreatePlanBackupDestinations]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreatePlanBackupDestination[]]
     # List of backup destinations to create
     # To construct, see NOTES section for DESTINATIONS properties and create a hash table.
     ${Destinations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${RegionId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${RegionName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Backup copy RPO in minutes
     ${SnapshotOptionBackupCopyRpoMins},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable backup copy
     ${SnapshotOptionEnableBackupCopy},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Retention period in days.
@@ -33417,8 +34938,7 @@ param(
     # If this and snapRecoveryPoints both are not specified, this takes precedence.
     ${SnapshotOptionRetentionPeriodDays},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Number of snap recovery points for default snap copy for retention.
@@ -33479,9 +34999,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-LaptopBackupDestination_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-LaptopBackupDestination_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-LaptopBackupDestination_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-LaptopBackupDestination_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -33538,8 +35056,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ILaptopPlan
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -33576,66 +35092,6 @@ ALLOWEDFEATURES <ILaptopPlanAllowedFeatures>: Create/modify allowed features of 
   [IndexServerId <Int32?>]: 
   [IndexServerName <String>]: 
 
-BODY <ILaptopPlan>: Create a new Laptop Plan
-  PlanName <String>: 
-  [Alerts <IIdName[]>]: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [AllowPlanOverride <Boolean?>]: Flag to enable overriding of plan. Plan cannot be overriden by default.
-  [AllowedFeatures <ILaptopPlanAllowedFeatures>]: Create/modify allowed features of laptop plan
-    [Archiving <Boolean?>]: Flag to enable archiving of laptop data
-    [ArchivingRuleAfterArchiving <String>]: After an archive job, replace the file that meets the archiving rules with a stub or delete the file that meets the archiving rules
-    [ArchivingRuleArchiveReadOnlyFiles <Boolean?>]: To archive files based on the Read-Only attribute, set to TRUE
-    [ArchivingRuleFileAccessTimeOlderThan <Int32?>]: To archive files based on the last accessed date of each file within the folder, specify the number of days
-    [ArchivingRuleFileCreatedTimeOlderThan <Int32?>]: To archive files based on the time the files were created within the folder, specify the number of days
-    [ArchivingRuleFileModifiedTimeOlderThan <Int32?>]: To archive files based on the last modified date of each file within the folder, specify the number of days
-    [ArchivingRuleFileSizeGreaterThan <Int32?>]: To archive files based on the size of the file, specify the minimum file size in KB. All files whose size ranges between the minimum and maximum values are archived.
-    [ArchivingRuleMaximumFileSize <Int32?>]: To archive files based on the size of the file, specify the maximum file size in KB. All files whose size ranges between the minimum and maximum values are archived.
-    [ArchivingRuleStartCleaningIfLessThan <Int32?>]: When free disk space falls below specified amount (in percentage), start cleaning up the disk
-    [ArchivingRuleStopCleaningIfupto <Int32?>]: When free disk space more than specified amount (in percentage), stop cleaning up the disk
-    [ClientId <Int32?>]: 
-    [ClientName <String>]: 
-    [Dlp <Boolean?>]: Flag to enable Data loss protection
-    [EdgeDrive <Boolean?>]: Flag to enable Edge Drive
-    [EdgeDriveSettingAuditDriveOperations <Boolean?>]: Enable auditing which logs the activities based on user interaction like creating, editing, moving, renaming, downloading or deleting files.
-    [EdgeDriveSettingCreateNewIndexServer <Boolean?>]: If set to false, uses existing edge index server and requires IndexServer IdName to be passed. If set to true, requires client IdName and indexCachePath to create a new Index Server.
-    [EdgeDriveSettingEdgeDriveQuota <Int32?>]: Maximum number of gigabytes that you can store in the Edge Drive. Giving value as -1 means no quota.
-    [EdgeDriveSettingIndexCachePath <String>]: 
-    [EdgeDriveSettingNotificationsForShares <Boolean?>]: Enables alert notification feature which allows the share user or share owner to subscribe for share notifications when any activities are performed on the Edge Drive or the Collaborative share. The user can receive the notifications on the Web Console or as an email notification.
-    [IndexServerId <Int32?>]: 
-    [IndexServerName <String>]: 
-  [BackupContentFileSystemQuota <Int32?>]: Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.
-  [BackupContentMacExcludedPaths <String[]>]: Paths to exclude for Mac
-  [BackupContentMacIncludedPaths <String[]>]: Paths to include for Mac
-  [BackupContentUnixExcludedPaths <String[]>]: Paths to exclude for UNIX
-  [BackupContentUnixIncludedPaths <String[]>]: Paths to include for UNIX
-  [BackupContentWindowsExcludedPaths <String[]>]: Paths to exclude for Windows
-  [BackupContentWindowsIncludedPaths <String[]>]: Paths to include for Windows
-  [FileVersionDailyVersions <Int32?>]: Custom version rule: Retain daily versions for this many day(s)
-  [FileVersionDays <Int32?>]: Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
-  [FileVersionMonthlyVersions <Int32?>]: Custom version rule: Retain monthly versions for this many month(s)
-  [FileVersionVersions <Int32?>]: Retain this many file versions. This is considered as default if no file retention rule is specified.
-  [FileVersionWeeklyVersions <Int32?>]: Custom version rule: Retain weekly versions for this many week(s)
-  [InviteUsersOrGroups <IPlanUserOrGroups[]>]: The users and user groups who should install the end-user Endpoint package on their devices.
-    [Id <Int32?>]: This gives Id of user or user group or external user group
-    [Name <String>]: This gives name of user or user group or external user group
-    [SendInvite <Boolean?>]: If set to true, will send an invite email to the user or group. Default is true.
-    [Type <String>]: Tells what kind of user or user group it is
-  [NetworkResourceThrottleReceive <Int32?>]: Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit
-  [NetworkResourceThrottleSend <Int32?>]: Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit
-  [OverrideRestrictionBackupContent <String>]: 
-  [OverrideRestrictionRetention <String>]: 
-  [OverrideRestrictionRpo <String>]: 
-  [OverrideRestrictionStoragePool <String>]: 
-  [ParentPlanId <Int32?>]: 
-  [ParentPlanName <String>]: 
-  [PrimaryStorageId <Int32?>]: 
-  [PrimaryStorageName <String>]: 
-  [RetentionDeletedItemRetention <Int32?>]: Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.
-  [SecondaryStorageId <Int32?>]: 
-  [SecondaryStorageName <String>]: 
-  [StorageAndScheduleBackupFrequency <Int32?>]: Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO determines the frequency of your backup jobs. Your RPO is met through automatic options. The time specified in minutes here is your RPO if none of the automatic options are met. Default is 480 minutes (8 hours).
-
 INVITEUSERSORGROUPS <IPlanUserOrGroups[]>: The users and user groups who should install the end-user Endpoint package on their devices.
   [Id <Int32?>]: This gives Id of user or user group or external user group
   [Name <String>]: This gives name of user or user group or external user group
@@ -33648,123 +35104,116 @@ function New-LaptopPlan {
 [OutputType([Commvault.Powershell.Models.IPlanResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ILaptopPlan]
-    # Create a new Laptop Plan
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # .
     # To construct, see NOTES section for ALERTS properties and create a hash table.
     ${Alerts},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable overriding of plan.
     # Plan cannot be overriden by default.
     ${AllowPlanOverride},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ILaptopPlanAllowedFeatures]
     # Create/modify allowed features of laptop plan
     # To construct, see NOTES section for ALLOWEDFEATURES properties and create a hash table.
     ${AllowedFeatures},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Maximum number of gigabytes that you can store in the File System.
     # Giving value as -1 means infinite file system quota.
     ${BackupContentFileSystemQuota},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Mac
     ${BackupContentMacExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Mac
     ${BackupContentMacIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for UNIX
     ${BackupContentUnixExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for UNIX
     ${BackupContentUnixIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Windows
     ${BackupContentWindowsExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Windows
     ${BackupContentWindowsIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Custom version rule: Retain daily versions for this many day(s)
     ${FileVersionDailyVersions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Retain files for this many days.
     # Year(s) or month(s) need to be converted to day(s)
     ${FileVersionDays},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Custom version rule: Retain monthly versions for this many month(s)
     ${FileVersionMonthlyVersions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Retain this many file versions.
     # This is considered as default if no file retention rule is specified.
     ${FileVersionVersions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Custom version rule: Retain weekly versions for this many week(s)
     ${FileVersionWeeklyVersions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanUserOrGroups[]]
     # The users and user groups who should install the end-user Endpoint package on their devices.
     # To construct, see NOTES section for INVITEUSERSORGROUPS properties and create a hash table.
     ${InviteUsersOrGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Maximum kilobits per second to throttle the receiving speed of data.
@@ -33772,7 +35221,7 @@ param(
     # no limit
     ${NetworkResourceThrottleReceive},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Maximum kilobits per second to throttle the emitting speed of data.
@@ -33780,74 +35229,74 @@ param(
     # no limit
     ${NetworkResourceThrottleSend},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionBackupContent},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionRetention},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionRpo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionStoragePool},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${ParentPlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ParentPlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PrimaryStorageId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PrimaryStorageName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Amount of days after deletion of files to keep the items.
     # Giving value as -1 means to retain files indefinitely.
     ${RetentionDeletedItemRetention},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SecondaryStorageId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SecondaryStorageName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption.
@@ -33905,8 +35354,126 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-LaptopPlan_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-LaptopPlan_CreateExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Create LDAP/Active directory for user authentication
+.Description
+Create LDAP/Active directory for user authentication
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-ldap
+#>
+function New-Ldap {
+[OutputType([Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            CreateExpanded = 'CommvaultPowerShell.private\New-Ldap_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -33962,24 +35529,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateRole
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateRole>: Create a new role.
-  Name <String>: Name of the new role
-  PermissionList <IPermissions[]>: Used to provide the list of permissions associated with the role.
-    [CategoryId <Int32?>]: 
-    [CategoryName <String>]: 
-    [PermissionId <Int32?>]: 
-    [PermissionName <String>]: 
-  [Enabled <Boolean?>]: Used to determine if the role is enabled or disabled. If not provided, role will be enabled by default.
-  [VisibleToAll <Boolean?>]: Determines if the role is visible to everyone. if not provided, it will be set to false by default.
 
 PERMISSIONLIST <IPermissions[]>: Used to provide the list of permissions associated with the role.
   [CategoryId <Int32?>]: 
@@ -33991,36 +35546,29 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-newro
 #>
 function New-NewRole {
 [OutputType([Commvault.Powershell.Models.IIdName])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateRole]
-    # Create a new role.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the new role
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPermissions[]]
     # Used to provide the list of permissions associated with the role.
     # To construct, see NOTES section for PERMISSIONLIST properties and create a hash table.
     ${PermissionList},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Used to determine if the role is enabled or disabled.
     # If not provided, role will be enabled by default.
     ${Enabled},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Determines if the role is visible to everyone.
@@ -34081,7 +35629,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-NewRole_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-NewRole_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -34140,19 +35687,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IPaths1PkfazfV4StorageHyperscaleHyperscalestorageidNodesPostRequestbodyContentApplicationJsonSchema
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IPaths1PkfazfV4StorageHyperscaleHyperscalestorageidNodesPostRequestbodyContentApplicationJsonSchema>: .
-  [Nodes <IIdName[]>]: List of Nodes (MediaAgents) one want to add to the specified HyperScale Storage
-    [Id <Int32?>]: 
-    [Name <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -34166,13 +35706,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -34181,7 +35722,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -34210,14 +35751,12 @@ function New-NodeforHyperScaleStorage {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of hyperscale storage
     ${HyperScaleStorageId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -34225,16 +35764,7 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IPaths1PkfazfV4StorageHyperscaleHyperscalestorageidNodesPostRequestbodyContentApplicationJsonSchema]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # List of Nodes (MediaAgents) one want to add to the specified HyperScale Storage
@@ -34295,9 +35825,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-NodeforHyperScaleStorage_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-NodeforHyperScaleStorage_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-NodeforHyperScaleStorage_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-NodeforHyperScaleStorage_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -34356,8 +35884,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreatePlanEntityRule
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -34366,23 +35892,6 @@ Commvault.Powershell.Models.IIdName
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreatePlanEntityRule>: This object will send details to create new plan rule. User can provide all rule options or can specify a specific rule group. Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-  [CompanyId <Int32?>]: 
-  [CompanyName <String>]: 
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [Rank <Int32?>]: Optional field to suggest priority/rank of the rule. If not present, we will process rule in the same order they are created.
-  [Regions <IIdName[]>]: This will include list of regions that should be evaluated against workload region for plan association.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [ServerGroups <IIdName[]>]: This will include list of Server groups that should be evaluated against workload server group for plan association.
-  [Solutions <IIdName[]>]: This will include list of solutions that should be evaluated against workload for plan association
-  [Tags <IPlanEntityRuleTag[]>]: This will include list of tags that should be evaluated against workload for plan association
-    [Id <Int32?>]: Id for the tag
-    [Name <String>]: Name for the plan rule tag which need to be matched against tag of the workload.
-    [Value <String>]: Possible value that need to matched against value of tag associated to workload.
-  [Workloads <IIdName[]>]: This will include list of apptypes that should be evaluated against workload apptype for plan association.
 
 REGIONS <IIdName[]>: This will include list of regions that should be evaluated against workload region for plan association.
   [Id <Int32?>]: 
@@ -34411,75 +35920,66 @@ function New-PlanRule {
 [OutputType([Commvault.Powershell.Models.IIdName], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreatePlanEntityRule]
-    # This object will send details to create new plan rule.
-    # User can provide all rule options or can specify a specific rule group.
-    # Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${CompanyId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${CompanyName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Optional field to suggest priority/rank of the rule.
     # If not present, we will process rule in the same order they are created.
     ${Rank},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of regions that should be evaluated against workload region for plan association.
     # To construct, see NOTES section for REGIONS properties and create a hash table.
     ${Regions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of Server groups that should be evaluated against workload server group for plan association.
     # To construct, see NOTES section for SERVERGROUPS properties and create a hash table.
     ${ServerGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of solutions that should be evaluated against workload for plan association
     # To construct, see NOTES section for SOLUTIONS properties and create a hash table.
     ${Solutions},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanEntityRuleTag[]]
     # This will include list of tags that should be evaluated against workload for plan association
     # To construct, see NOTES section for TAGS properties and create a hash table.
     ${Tags},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of apptypes that should be evaluated against workload apptype for plan association.
@@ -34534,7 +36034,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-PlanRule_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-PlanRule_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -34591,8 +36090,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateRegion
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -34601,16 +36098,6 @@ Commvault.Powershell.Models.IIdName
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateRegion>: Details of the new region
-  Locations <ILocationDetails[]>: List of locations which are part of the region
-    Country <String>: Name of country
-    Latitude <Double>: Latitude for the location
-    Longitude <Double>: Longitude for the location
-    [City <String>]: Name of city
-    [State <String>]: Name of state
-  Name <String>: Region name
-  [Type <String>]: Type of the region
 
 LOCATIONS <ILocationDetails[]>: List of locations which are part of the region
   Country <String>: Name of country
@@ -34623,29 +36110,22 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-regio
 #>
 function New-Region {
 [OutputType([Commvault.Powershell.Models.IIdName], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateRegion]
-    # Details of the new region
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ILocationDetails[]]
     # List of locations which are part of the region
     # To construct, see NOTES section for LOCATIONS properties and create a hash table.
     ${Locations},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Region name
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Type of the region
@@ -34705,8 +36185,126 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-Region_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-Region_CreateExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Create a replication group
+.Description
+Create a replication group
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Outputs
+Commvault.Powershell.Models.IIdName
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-replicationgroup
+#>
+function New-ReplicationGroup {
+[OutputType([Commvault.Powershell.Models.IIdName])]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            CreateExpanded = 'CommvaultPowerShell.private\New-ReplicationGroup_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -34762,8 +36360,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ISamlReq
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -34782,30 +36378,6 @@ ASSOCIATIONDOMAINS <IIdName[]>: Domains associated with SAML
 ASSOCIATIONUSERGROUPS <IIdName[]>: user groups associated with SAML
   [Id <Int32?>]: 
   [Name <String>]: 
-
-BODY <ISamlReq>: Create SAML request
-  Description <String>: SAML description
-  IdentityProviderMetaDataCertificateData <String>: IDP certificate public key
-  IdentityProviderMetaDataEntityId <String>: Identity provider entity
-  IdentityProviderMetaDataLogoutUrl <String>: Identity Provider log-out URL
-  IdentityProviderMetaDataRedirectUrl <String>: Identity provider redirect URL
-  IdentityProviderMetaDataSamlProtocolVersion <String>: SAML Protocol version 
-  Name <String>: SAML name.
-  [AssociationCompanies <IIdName[]>]: Companies associated with SAML
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [AssociationDomains <IIdName[]>]: Domains associated with SAML
-  [AssociationEmailSuffixes <String[]>]: Email suffixes associated with SAML
-  [AssociationUserGroups <IIdName[]>]: user groups associated with SAML
-  [ServiceProviderMetaDataAliasName <String>]: certificate alias name
-  [ServiceProviderMetaDataAutoGenerateSpMetaData <Boolean?>]: 
-  [ServiceProviderMetaDataCertificateData <String>]: certificate alias name.
-  [ServiceProviderMetaDataJksFileContents <String[]>]: jks file contents as byte array
-  [ServiceProviderMetaDataJksPrivateKey <String>]: key store password.
-  [ServiceProviderMetaDataKeyStorePassword <String>]: jks contents key store password.
-  [ServiceProviderMetaDataPrivateKeyPassword <String>]: certificate private key password
-  [ServiceProviderMetaDataServiceProviderEndpoint <String>]: web console URL.
-  [ServiceProviderMetaDataSpAliases <String[]>]: web console URL list.
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-samlapp
 #>
@@ -34813,131 +36385,124 @@ function New-SamlApp {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ISamlReq]
-    # Create SAML request
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SAML description
     ${Description},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # IDP certificate public key
     ${IdentityProviderMetaDataCertificateData},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity provider entity
     ${IdentityProviderMetaDataEntityId},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity Provider log-out URL
     ${IdentityProviderMetaDataLogoutUrl},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity provider redirect URL
     ${IdentityProviderMetaDataRedirectUrl},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SAML Protocol version
     ${IdentityProviderMetaDataSamlProtocolVersion},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SAML name.
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Companies associated with SAML
     # To construct, see NOTES section for ASSOCIATIONCOMPANIES properties and create a hash table.
     ${AssociationCompanies},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Domains associated with SAML
     # To construct, see NOTES section for ASSOCIATIONDOMAINS properties and create a hash table.
     ${AssociationDomains},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Email suffixes associated with SAML
     ${AssociationEmailSuffixes},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # user groups associated with SAML
     # To construct, see NOTES section for ASSOCIATIONUSERGROUPS properties and create a hash table.
     ${AssociationUserGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate alias name
     ${ServiceProviderMetaDataAliasName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # .
     ${ServiceProviderMetaDataAutoGenerateSpMetaData},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate alias name.
     ${ServiceProviderMetaDataCertificateData},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # jks file contents as byte array
     ${ServiceProviderMetaDataJksFileContents},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # key store password.
     ${ServiceProviderMetaDataJksPrivateKey},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # jks contents key store password.
     ${ServiceProviderMetaDataKeyStorePassword},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate private key password
     ${ServiceProviderMetaDataPrivateKeyPassword},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # web console URL.
     ${ServiceProviderMetaDataServiceProviderEndpoint},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # web console URL list.
@@ -34991,7 +36556,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-SamlApp_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-SamlApp_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -35050,25 +36614,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreateServerPlanBackupContent
 .Outputs
 Commvault.Powershell.Models.ICreateServerPlanBackupContentResponse
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateServerPlanBackupContent>: .
-  [BackupContentBackupSystemState <Boolean?>]: Do you want to back up the system state? Applicable only for Windows
-  [BackupContentBackupSystemStateOnlyWithFullBackup <Boolean?>]: Do you want to back up system state only with full backup? Applicable only if the value of backupSystemState is true
-  [BackupContentMacExcludedPaths <String[]>]: Paths to exclude for Mac
-  [BackupContentMacIncludedPaths <String[]>]: Paths to include for Mac
-  [BackupContentUnixExcludedPaths <String[]>]: Paths to exclude for UNIX
-  [BackupContentUnixIncludedPaths <String[]>]: Paths to include for UNIX
-  [BackupContentUseVssForSystemState <Boolean?>]: Do you want to back up system state with VSS? Applicable only if the value of backupSystemState is true
-  [BackupContentWindowsExcludedPaths <String[]>]: Paths to exclude for Windows
-  [BackupContentWindowsIncludedPaths <String[]>]: Paths to include for Windows
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -35082,13 +36633,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -35097,7 +36649,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -35122,14 +36674,12 @@ function New-ServerPlanBackupContent {
 [OutputType([Commvault.Powershell.Models.ICreateServerPlanBackupContentResponse])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the Plan to modify
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -35137,72 +36687,55 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateServerPlanBackupContent]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up the system state Applicable only for Windows
     ${BackupContentBackupSystemState},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up system state only with full backup Applicable only if the value of backupSystemState is true
     ${BackupContentBackupSystemStateOnlyWithFullBackup},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Mac
     ${BackupContentMacExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Mac
     ${BackupContentMacIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for UNIX
     ${BackupContentUnixExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for UNIX
     ${BackupContentUnixIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up system state with VSS Applicable only if the value of backupSystemState is true
     ${BackupContentUseVssForSystemState},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Windows
     ${BackupContentWindowsExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Windows
@@ -35262,9 +36795,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -35323,8 +36854,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreateServerPlanRpo
 .Outputs
 Commvault.Powershell.Models.ICreateServerPlanRpoResponse
 .Notes
@@ -35360,43 +36889,6 @@ BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
   [TimezoneId <Int32?>]: 
   [TimezoneName <String>]: 
 
-BODY <ICreateServerPlanRpo>: .
-  [BackupFrequencySchedules <IPlanSchedule[]>]: 
-    BackupType <String>: Schedule Backup level
-    ForDatabasesOnly <Boolean>: Boolean to indicate if schedule is for database agents
-    ScheduleOperation <String>: Operation being performed on schedule
-    SchedulePatternScheduleFrequencyType <String>: schedule frequency type
-    [PolicyId <Int32?>]: Schedule policy Id to which the schedule belongs
-    [ScheduleId <Int32?>]: Id of the schedule if available, required for modifying, deleting schedule
-    [ScheduleName <String>]: Name of the schedule, for modify
-    [SchedulePatternDayOfMonth <Int32?>]: Day on which to run the schedule, applicable for monthly, yearly
-    [SchedulePatternDayOfWeek <String>]: 
-    [SchedulePatternDaysBetweenSyntheticFulls <Int32?>]: No of days between two synthetic full jobs
-    [SchedulePatternEndDate <Int32?>]: Schedule end date in epoch format
-    [SchedulePatternExceptions <IScheduleRunException[]>]: Exceptions to when a schedule should not run, either in dates or week of month and days
-      [OnDates <Int32[]>]: list of dates in a month. For ex: 1, 20
-      [OnDayOfTheWeek <String[]>]: On which days, for ex: MONDAY, FRIDAY
-      [OnWeekOfTheMonth <String[]>]: On which week of month, for ex: FIRST, LAST
-    [SchedulePatternFrequency <Int32?>]: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-    [SchedulePatternMonthOfYear <String>]: 
-    [SchedulePatternNoOfTimes <Int32?>]: The number of times you want the schedule to run.
-    [SchedulePatternRepeatIntervalInMinutes <Int32?>]: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
-    [SchedulePatternRepeatUntilTime <Int32?>]: Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
-    [SchedulePatternStartDate <Int32?>]: start date of schedule in epoch format
-    [SchedulePatternStartTime <Int32?>]: start time of schedule in seconds
-    [SchedulePatternWeekOfMonth <String>]: Specific week of a month
-    [SchedulePatternWeeklyDays <String[]>]: Days of the week for weekly frequency
-    [TimezoneId <Int32?>]: 
-    [TimezoneName <String>]: 
-  [DatabaseOptionCommitFrequencyInHours <Int32?>]: Commit frequency in hours
-  [DatabaseOptionLogBackupRpoMins <Int32?>]: Log backup RPO in minutes
-  [DatabaseOptionUseDiskCacheForLogBackups <Boolean?>]: Use disk cache for log backups
-  [RpoBackupWindow <IDayAndTime[]>]: Backup window for incremental backup
-    [DayOfWeek <String[]>]: 
-    [EndTime <Int64?>]: Time in seconds since the beginning of the day
-    [StartTime <Int64?>]: Time in seconds since the beginning of the day
-  [RpoFullBackupWindow <IDayAndTime[]>]: Backup window for full backup
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
   [AgentId <Int32?>]: Id of the agent to be modified
@@ -35409,13 +36901,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -35424,7 +36917,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -35459,14 +36952,12 @@ function New-ServerPlanRpo {
 [OutputType([Commvault.Powershell.Models.ICreateServerPlanRpoResponse])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the Server Plan
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -35474,53 +36965,39 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateServerPlanRpo]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanSchedule[]]
     # .
     # To construct, see NOTES section for BACKUPFREQUENCYSCHEDULES properties and create a hash table.
     ${BackupFrequencySchedules},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Commit frequency in hours
     ${DatabaseOptionCommitFrequencyInHours},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Log backup RPO in minutes
     ${DatabaseOptionLogBackupRpoMins},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Use disk cache for log backups
     ${DatabaseOptionUseDiskCacheForLogBackups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for incremental backup
     # To construct, see NOTES section for RPOBACKUPWINDOW properties and create a hash table.
     ${RpoBackupWindow},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for full backup
@@ -35581,9 +37058,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ServerPlanRpo_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ServerPlanRpo_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-ServerPlanRpo_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-ServerPlanRpo_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -35640,8 +37115,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateServerPlan
 .Outputs
 Commvault.Powershell.Models.IPlanResp
 .Notes
@@ -35711,96 +37184,6 @@ BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
   [TimezoneId <Int32?>]: 
   [TimezoneName <String>]: 
 
-BODY <ICreateServerPlan>: .
-  BackupDestinations <ICreatePlanBackupDestination[]>: Backup destinations for the plan. Specify where you want to store your backup data.
-    BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-    [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-    [BackupsToCopy <String>]: 
-    [FirstExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [FirstExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [FirstExtendedRetentionRuleType <String>]: 
-    [IsMirrorCopy <Boolean?>]: Is this a mirror copy? Only considered when isSnapCopy is true.
-    [IsSnapCopy <Boolean?>]: Is this a snap copy? If isMirrorCopy is not set, then default is Vault/Replica.
-    [Mappings <ISnapshotCopyMapping[]>]: 
-      [SourceId <Int32?>]: 
-      [SourceName <String>]: 
-      [TargetId <Int32?>]: 
-      [TargetName <String>]: 
-      [Vendor <String>]: Snapshot vendors available for Snap Copy mappings
-    [NetAppCloudTarget <Boolean?>]: Only for snap copy. Enabling this changes SVM Mapping  to NetApp cloud targets only.
-    [OptimizeForInstantClone <Boolean?>]: Flag to specify if primary storage is copy data management enabled.
-    [RegionId <Int32?>]: 
-    [RegionName <String>]: 
-    [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes  precedence.
-    [RetentionRuleType <String>]: Which type of retention rule should be used for the given backup destination
-    [SecondExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [SecondExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [SecondExtendedRetentionRuleType <String>]: 
-    [SnapRecoveryPoints <Int32?>]: Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.
-    [SourceCopyId <Int32?>]: 
-    [SourceCopyName <String>]: 
-    [StoragePoolId <Int32?>]: 
-    [StoragePoolName <String>]: 
-    [ThirdExtendedRetentionRuleIsInfiniteRetention <Boolean?>]: 
-    [ThirdExtendedRetentionRuleRetentionPeriodDays <Int32?>]: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-    [ThirdExtendedRetentionRuleType <String>]: 
-    [UseExtendedRetentionRules <Boolean?>]: Use extended retention rules
-  PlanName <String>: Name of the new plan
-  [AllowPlanOverride <Boolean?>]: Flag to enable overriding of plan. Plan cannot be overriden by default.
-  [BackupContentBackupSystemState <Boolean?>]: Do you want to back up the system state? Applicable only for Windows
-  [BackupContentBackupSystemStateOnlyWithFullBackup <Boolean?>]: Do you want to back up system state only with full backup? Applicable only if the value of backupSystemState is true
-  [BackupContentMacExcludedPaths <String[]>]: Paths to exclude for Mac
-  [BackupContentMacIncludedPaths <String[]>]: Paths to include for Mac
-  [BackupContentUnixExcludedPaths <String[]>]: Paths to exclude for UNIX
-  [BackupContentUnixIncludedPaths <String[]>]: Paths to include for UNIX
-  [BackupContentUseVssForSystemState <Boolean?>]: Do you want to back up system state with VSS? Applicable only if the value of backupSystemState is true
-  [BackupContentWindowsExcludedPaths <String[]>]: Paths to exclude for Windows
-  [BackupContentWindowsIncludedPaths <String[]>]: Paths to include for Windows
-  [BackupFrequencySchedules <IPlanSchedule[]>]: 
-    BackupType <String>: Schedule Backup level
-    ForDatabasesOnly <Boolean>: Boolean to indicate if schedule is for database agents
-    ScheduleOperation <String>: Operation being performed on schedule
-    SchedulePatternScheduleFrequencyType <String>: schedule frequency type
-    [PolicyId <Int32?>]: Schedule policy Id to which the schedule belongs
-    [ScheduleId <Int32?>]: Id of the schedule if available, required for modifying, deleting schedule
-    [ScheduleName <String>]: Name of the schedule, for modify
-    [SchedulePatternDayOfMonth <Int32?>]: Day on which to run the schedule, applicable for monthly, yearly
-    [SchedulePatternDayOfWeek <String>]: 
-    [SchedulePatternDaysBetweenSyntheticFulls <Int32?>]: No of days between two synthetic full jobs
-    [SchedulePatternEndDate <Int32?>]: Schedule end date in epoch format
-    [SchedulePatternExceptions <IScheduleRunException[]>]: Exceptions to when a schedule should not run, either in dates or week of month and days
-      [OnDates <Int32[]>]: list of dates in a month. For ex: 1, 20
-      [OnDayOfTheWeek <String[]>]: On which days, for ex: MONDAY, FRIDAY
-      [OnWeekOfTheMonth <String[]>]: On which week of month, for ex: FIRST, LAST
-    [SchedulePatternFrequency <Int32?>]: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-    [SchedulePatternMonthOfYear <String>]: 
-    [SchedulePatternNoOfTimes <Int32?>]: The number of times you want the schedule to run.
-    [SchedulePatternRepeatIntervalInMinutes <Int32?>]: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
-    [SchedulePatternRepeatUntilTime <Int32?>]: Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
-    [SchedulePatternStartDate <Int32?>]: start date of schedule in epoch format
-    [SchedulePatternStartTime <Int32?>]: start time of schedule in seconds
-    [SchedulePatternWeekOfMonth <String>]: Specific week of a month
-    [SchedulePatternWeeklyDays <String[]>]: Days of the week for weekly frequency
-    [TimezoneId <Int32?>]: 
-    [TimezoneName <String>]: 
-  [DatabaseOptionCommitFrequencyInHours <Int32?>]: Commit frequency in hours
-  [DatabaseOptionLogBackupRpoMins <Int32?>]: Log backup RPO in minutes
-  [DatabaseOptionUseDiskCacheForLogBackups <Boolean?>]: Use disk cache for log backups
-  [OverrideRestrictionBackupContent <String>]: 
-  [OverrideRestrictionRpo <String>]: 
-  [OverrideRestrictionStoragePool <String>]: 
-  [ParentPlanId <Int32?>]: 
-  [ParentPlanName <String>]: 
-  [RpoBackupWindow <IDayAndTime[]>]: Backup window for incremental backup
-    [DayOfWeek <String[]>]: 
-    [EndTime <Int64?>]: Time in seconds since the beginning of the day
-    [StartTime <Int64?>]: Time in seconds since the beginning of the day
-  [RpoFullBackupWindow <IDayAndTime[]>]: Backup window for full backup
-  [SnapshotOptionBackupCopyRpoMins <Int32?>]: Backup copy RPO in minutes
-  [SnapshotOptionEnableBackupCopy <Boolean?>]: Flag to enable backup copy
-  [SnapshotOptionRetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.
-  [SnapshotOptionSnapRecoveryPoints <Int32?>]: Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.
-
 RPOBACKUPWINDOW <IDayAndTime[]>: Backup window for incremental backup
   [DayOfWeek <String[]>]: 
   [EndTime <Int64?>]: Time in seconds since the beginning of the day
@@ -35815,16 +37198,9 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-serve
 #>
 function New-ServerPlan {
 [OutputType([Commvault.Powershell.Models.IPlanResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateServerPlan]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreatePlanBackupDestination[]]
     # Backup destinations for the plan.
@@ -35832,155 +37208,155 @@ param(
     # To construct, see NOTES section for BACKUPDESTINATIONS properties and create a hash table.
     ${BackupDestinations},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the new plan
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable overriding of plan.
     # Plan cannot be overriden by default.
     ${AllowPlanOverride},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up the system state Applicable only for Windows
     ${BackupContentBackupSystemState},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up system state only with full backup Applicable only if the value of backupSystemState is true
     ${BackupContentBackupSystemStateOnlyWithFullBackup},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Mac
     ${BackupContentMacExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Mac
     ${BackupContentMacIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for UNIX
     ${BackupContentUnixExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for UNIX
     ${BackupContentUnixIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up system state with VSS Applicable only if the value of backupSystemState is true
     ${BackupContentUseVssForSystemState},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Windows
     ${BackupContentWindowsExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Windows
     ${BackupContentWindowsIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanSchedule[]]
     # .
     # To construct, see NOTES section for BACKUPFREQUENCYSCHEDULES properties and create a hash table.
     ${BackupFrequencySchedules},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Commit frequency in hours
     ${DatabaseOptionCommitFrequencyInHours},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Log backup RPO in minutes
     ${DatabaseOptionLogBackupRpoMins},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Use disk cache for log backups
     ${DatabaseOptionUseDiskCacheForLogBackups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionBackupContent},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionRpo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionStoragePool},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${ParentPlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ParentPlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for incremental backup
     # To construct, see NOTES section for RPOBACKUPWINDOW properties and create a hash table.
     ${RpoBackupWindow},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for full backup
     # To construct, see NOTES section for RPOFULLBACKUPWINDOW properties and create a hash table.
     ${RpoFullBackupWindow},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Backup copy RPO in minutes
     ${SnapshotOptionBackupCopyRpoMins},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable backup copy
     ${SnapshotOptionEnableBackupCopy},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Retention period in days.
@@ -35988,7 +37364,7 @@ param(
     # If this and snapRecoveryPoints both are not specified, this takes precedence.
     ${SnapshotOptionRetentionPeriodDays},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Number of snap recovery points for default snap copy for retention.
@@ -36049,7 +37425,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ServerPlan_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ServerPlan_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -36106,23 +37481,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateUserGroup
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateUserGroup>: .
-  Name <String>: To create an active directory usergroup, the domain name should be mentioned along with the usergroup name (domainName\\usergroupName) and localUserGroup value must be given.
-  [Description <String>]: 
-  [EnforceFsQuota <Boolean?>]: Used to determine if a backup data limit will be set for the user group being created
-  [LocalUserGroups <IIdName[]>]: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [QuotaLimitInGb <Int32?>]: if enforceFSQuota is set to true, the quota limit can be set in GBs
 
 LOCALUSERGROUPS <IIdName[]>: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
   [Id <Int32?>]: 
@@ -36134,32 +37498,25 @@ function New-UserGroup {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateUserGroup]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # To create an active directory usergroup, the domain name should be mentioned along with the usergroup name (domainName\\usergroupName) and localUserGroup value must be given.
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${Description},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Used to determine if a backup data limit will be set for the user group being created
     ${EnforceFsQuota},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This option is for AD user groups being created.
@@ -36167,7 +37524,7 @@ param(
     # To construct, see NOTES section for LOCALUSERGROUPS properties and create a hash table.
     ${LocalUserGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # if enforceFSQuota is set to true, the quota limit can be set in GBs
@@ -36227,7 +37584,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-UserGroup_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-UserGroup_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -36284,30 +37640,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateUsers
 .Outputs
 Commvault.Powershell.Models.IIdNameGuid
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateUsers>: Used to create single or multiple users.
-  Users <ICreateUser[]>: 
-    Email <String>: Used to provide an email-id to the new user. This email-id is used for logging in the user. Please note that email ids are compulsory for company and local users and optional for external users.
-    [CompanyId <Int32?>]: 
-    [CompanyName <String>]: 
-    [FullName <String>]: Used to provide a name to the new user.
-    [InviteUser <Boolean?>]: User will receive an email to install backup software package on their device if this is set to true.
-    [Name <String>]: Used to provide the new user with a username. This username can be used for logging in the user instead of email-id when duplicate email-ids are present. For external user, it is necessary to provide the domain name along with the username (domainName\\username). To create a company user, the company id or name needs to be provided in the company entity.
-    [Password <String>]: Used to provide a password to the user being created. This will be accepted when the useSystemGeneratePassword tag is false. The password has to be provided in Base64 format.
-    [PlanId <Int32?>]: 
-    [PlanName <String>]: 
-    [UseSystemGeneratePassword <Boolean?>]: Choose to provide a system generated password to the user instead of providing your own password. An email will be sent to the user to reset the password. If it is set to true, password tag need not be provided. If it is set to false, password needs to be provided in the password tag in Base64 format.
-    [UserGroups <IIdName[]>]: Provide a list of userGroups that the user should be a part of. Either id or name or both can be provided.
-      [Id <Int32?>]: 
-      [Name <String>]: 
 
 USERS <ICreateUser[]>: .
   Email <String>: Used to provide an email-id to the new user. This email-id is used for logging in the user. Please note that email ids are compulsory for company and local users and optional for external users.
@@ -36328,16 +37666,9 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-user
 #>
 function New-User {
 [OutputType([Commvault.Powershell.Models.IIdNameGuid])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateUsers]
-    # Used to create single or multiple users.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreateUser[]]
     # .
@@ -36398,7 +37729,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-User_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-User_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -36455,8 +37785,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreatevmGroupReq
 .Outputs
 Commvault.Powershell.Models.ICreateVMGroupResp
 .Outputs
@@ -36465,29 +37793,6 @@ Commvault.Powershell.Models.IGenericResp
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreatevmGroupReq>: CreatevmGroupReq
-  Name <String>: subclient name 
-  [ContentOverwrite <Boolean?>]: True if content in vmgroup has to be overwritten, by default it will append the content
-  [ContentRuleGroups <IRuleGroupContent[]>]: 
-    [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
-    [Rules <IRuleContent[]>]: 
-      [Condition <String>]: Operation type for VM rules/filters
-      [DisplayName <String>]: The display name of the entity to be added
-      [Guid <String>]: GUID of the entity to be added as content
-      [Name <String>]: name of the VM to be added as content
-      [Type <String>]: 
-      [Value <String>]: value for the few type of VM Content like powerstate
-  [ContentVirtualMachines <IVirtualMachinecontent[]>]: 
-    [Guid <String>]: GUID of the VM to be added as content
-    [Name <String>]: name of the VM to be added as content
-    [Type <String>]: 
-  [HypervisorId <Int32?>]: 
-  [HypervisorName <String>]: 
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [StorageId <Int32?>]: 
-  [StorageName <String>]: 
 
 CONTENTRULEGROUPS <IRuleGroupContent[]>: .
   [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
@@ -36510,70 +37815,63 @@ function New-VMGroup {
 [OutputType([Commvault.Powershell.Models.ICreateVMGroupResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreatevmGroupReq]
-    # CreatevmGroupReq
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # subclient name
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if content in vmgroup has to be overwritten, by default it will append the content
     ${ContentOverwrite},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IRuleGroupContent[]]
     # .
     # To construct, see NOTES section for CONTENTRULEGROUPS properties and create a hash table.
     ${ContentRuleGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVirtualMachinecontent[]]
     # .
     # To construct, see NOTES section for CONTENTVIRTUALMACHINES properties and create a hash table.
     ${ContentVirtualMachines},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${HypervisorId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${HypervisorName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${StorageId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -36627,7 +37925,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-VMGroup_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-VMGroup_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -36684,8 +37981,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IRmCreateRequest
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -36694,18 +37989,6 @@ Commvault.Powershell.Models.IIdName
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IRmCreateRequest>: RMCreateRequest
-  Entities <INameValues[]>: List of personal entities with their values to form the criteria for the request
-    [Name <String>]: 
-    [Value <String>]: 
-    [Values <String[]>]: 
-  Name <String>: Name of the request
-  Requestor <String>: 
-  Type <String>: RMRequestType
-  [DeleteFromBackup <Boolean?>]: 
-  [EnableDocumentChaining <Boolean?>]: If additional entities are found in a document, include documents that contain those additional entities in search results
-  [EnableRedaction <Boolean?>]: This option redacts sensitive information from the files in the request
 
 ENTITIES <INameValues[]>: List of personal entities with their values to form the criteria for the request
   [Name <String>]: 
@@ -36716,53 +37999,46 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-
 #>
 function New- {
 [OutputType([Commvault.Powershell.Models.IIdName], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IRmCreateRequest]
-    # RMCreateRequest
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.INameValues[]]
     # List of personal entities with their values to form the criteria for the request
     # To construct, see NOTES section for ENTITIES properties and create a hash table.
     ${Entities},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the request
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${Requestor},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # RMRequestType
     ${Type},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # .
     ${DeleteFromBackup},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # If additional entities are found in a document, include documents that contain those additional entities in search results
     ${EnableDocumentChaining},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # This option redacts sensitive information from the files in the request
@@ -36816,7 +38092,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -36894,13 +38169,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -36909,7 +38185,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -37085,13 +38361,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -37100,7 +38377,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -37276,13 +38553,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -37291,7 +38569,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -37461,13 +38739,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -37476,7 +38755,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -37646,13 +38925,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -37661,7 +38941,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -37825,13 +39105,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -37840,7 +39121,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -38010,13 +39291,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -38025,7 +39307,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -38201,13 +39483,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -38216,7 +39499,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -38386,13 +39669,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -38401,7 +39685,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -38707,13 +39991,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -38722,7 +40007,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -38859,6 +40144,186 @@ end {
 
 <#
 .Synopsis
+Delete existing cloud storage
+.Description
+Delete existing cloud storage
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/remove-cloudstorage
+#>
+function Remove-CloudStorage {
+[OutputType([Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='Delete', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='Delete', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Id of cloud Storage
+    ${CloudStorageId},
+
+    [Parameter(ParameterSetName='DeleteViaIdentity', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Delete = 'CommvaultPowerShell.private\Remove-CloudStorage_Delete';
+            DeleteViaIdentity = 'CommvaultPowerShell.private\Remove-CloudStorage_DeleteViaIdentity';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
 Used to delete a company which has been deactivated
 .Description
 Used to delete a company which has been deactivated
@@ -38892,13 +40357,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -38907,7 +40373,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -39077,13 +40543,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -39092,7 +40559,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -39262,13 +40729,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -39277,7 +40745,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -39459,13 +40927,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -39474,7 +40943,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -39644,13 +41113,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -39659,7 +41129,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -39829,13 +41299,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -39844,7 +41315,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -40008,13 +41479,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -40023,7 +41495,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -40187,13 +41659,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -40202,7 +41675,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -40372,13 +41845,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -40387,7 +41861,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -40557,13 +42031,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -40572,7 +42047,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -40736,13 +42211,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -40751,7 +42227,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -41383,13 +42859,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -41398,7 +42875,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -41562,13 +43039,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -41577,7 +43055,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -41741,13 +43219,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -41756,7 +43235,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -41920,13 +43399,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -41935,7 +43415,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -42099,13 +43579,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -42114,7 +43595,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -42141,7 +43622,7 @@ function Remove-Region {
 param(
     [Parameter(ParameterSetName='Delete', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.String]
+    [System.Int32]
     # .
     ${RegionId},
 
@@ -42278,13 +43759,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -42293,7 +43775,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -42463,13 +43945,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -42478,7 +43961,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -42642,13 +44125,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -42657,7 +44141,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -42827,13 +44311,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -42842,7 +44327,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -43012,13 +44497,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -43027,7 +44513,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -43220,13 +44706,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -43235,7 +44722,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -43405,13 +44892,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -43420,7 +44908,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -43608,13 +45096,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -43623,7 +45112,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -43811,13 +45300,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -43826,7 +45316,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -43996,13 +45486,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -44011,7 +45502,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -44308,13 +45799,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -44323,7 +45815,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -44857,8 +46349,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IUpdateAdldap
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -44873,29 +46363,6 @@ ATTRIBUTEMAP <ILdapAttribute[]>: List of overridden attribute mappings for the L
   [IsOverridden <Boolean?>]: Denotes if the value of the attribute is overridden
   [Name <String>]: Name of the attribute
 
-BODY <IUpdateAdldap>: Update the properties of an AD/LDAP
-  DirectoryType <String>: Directory type of an AD/LDAP domain
-  Name <String>: The fully qualified domain name, for example, my.domain.example.com
-  [AccessViaClient <Boolean?>]: Denotes if the domain is to be accessed via a proxy
-  [AttributeMap <ILdapAttribute[]>]: List of overridden attribute mappings for the LDAP domain. Valid only if the directoryType is LDAP_SERVER.
-    Id <Int32>: ID of the attribute
-    Value <String>: Current value of the attribute
-    [DefaultValue <String>]: Default value of the attribute
-    [IsOverridden <Boolean?>]: Denotes if the value of the attribute is overridden
-    [Name <String>]: Name of the attribute
-  [BaseDnForCardUsers <String>]: Base DN for card users
-  [EnableSso <Boolean?>]: Denotes if SSO should be enabled for the domain. Valid only for ACTIVE_DIRECTORY.
-  [Host <String>]: The fully qualified domain name that you use to identify this network resource. Required only if directoryType is LDAP_SERVER
-  [LdapQueryParameters <ILdapAttribute[]>]: List of overridden query parameters for the LDAP domain. Valid only if the directory type is LDAP_SERVER
-  [NetbiosName <String>]: The fully qualified domain name that you use to identify this network resource. Required only if directoryType is ACTIVE_DIRECTORY, OPEN_LDAP or ORACLE_DIRECTORY 
-  [OsxServerName <String>]: The fully qualified domain name that you use to identify this network resource. Required only if directoryType is APPLE_DIRECTORY_SERVICE
-  [Password <String>]: Password for the domain user. Should be in Base64 encoded format.
-  [Proxies <IIdName[]>]: List of proxies used to connect to the domain. Available only if accessViaClient is true.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [UseSecureLdap <Boolean?>]: Boolean to indicate if the app use secure LDAP. Valid only for directory types - ACTIVE_DIRECTORY, ORACLE_DIRECTORY and LDAP_SERVER.
-  [Username <String>]: The username for a user who has at least read permission for the domain
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
   [AgentId <Int32?>]: Id of the agent to be modified
@@ -44908,13 +46375,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -44923,7 +46391,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -44959,14 +46427,12 @@ function Set-Adldap {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # ID of the AD/LDAP domain
     ${DomainId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -44974,37 +46440,25 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdateAdldap]
-    # Update the properties of an AD/LDAP
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Directory type of an AD/LDAP domain
     ${DirectoryType},
 
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name, for example, my.domain.example.com
     ${Name},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Denotes if the domain is to be accessed via a proxy
     ${AccessViaClient},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ILdapAttribute[]]
     # List of overridden attribute mappings for the LDAP domain.
@@ -45012,31 +46466,27 @@ param(
     # To construct, see NOTES section for ATTRIBUTEMAP properties and create a hash table.
     ${AttributeMap},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Base DN for card users
     ${BaseDnForCardUsers},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Denotes if SSO should be enabled for the domain.
     # Valid only for ACTIVE_DIRECTORY.
     ${EnableSso},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name that you use to identify this network resource.
     # Required only if directoryType is LDAP_SERVER
     ${Host1},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ILdapAttribute[]]
     # List of overridden query parameters for the LDAP domain.
@@ -45044,32 +46494,28 @@ param(
     # To construct, see NOTES section for LDAPQUERYPARAMETERS properties and create a hash table.
     ${LdapQueryParameters},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name that you use to identify this network resource.
     # Required only if directoryType is ACTIVE_DIRECTORY, OPEN_LDAP or ORACLE_DIRECTORY
     ${NetbiosName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name that you use to identify this network resource.
     # Required only if directoryType is APPLE_DIRECTORY_SERVICE
     ${OsxServerName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Password for the domain user.
     # Should be in Base64 encoded format.
     ${Password},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # List of proxies used to connect to the domain.
@@ -45077,16 +46523,14 @@ param(
     # To construct, see NOTES section for PROXIES properties and create a hash table.
     ${Proxies},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Boolean to indicate if the app use secure LDAP.
     # Valid only for directory types - ACTIVE_DIRECTORY, ORACLE_DIRECTORY and LDAP_SERVER.
     ${UseSecureLdap},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The username for a user who has at least read permission for the domain
@@ -45146,9 +46590,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-Adldap_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-Adldap_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-Adldap_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Adldap_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -45207,20 +46649,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IUpdateTimezoneForClientsReq
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IUpdateTimezoneForClientsReq>: Request body for updating timezone for clients
-  [Clients <IIdName[]>]: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [UpdateAll <Boolean?>]: Boolean which determines if all servers(with no package) should be updated with the company timezone.
 
 CLIENTS <IIdName[]>: .
   [Id <Int32?>]: 
@@ -45238,13 +46672,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -45253,7 +46688,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -45278,14 +46713,12 @@ function Set-CompanyTimezone {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the company whose timezone is used to update timezone of servers (with no packages)
     ${CompanyId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -45293,24 +46726,14 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdateTimezoneForClientsReq]
-    # Request body for updating timezone for clients
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # .
     # To construct, see NOTES section for CLIENTS properties and create a hash table.
     ${Clients},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Boolean which determines if all servers(with no package) should be updated with the company timezone.
@@ -45364,10 +46787,394 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-CompanyTimezone_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-CompanyTimezone_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-CompanyTimezone_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-CompanyTimezone_UpdateViaIdentityExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Edit credential whose name has been provided by credential owner
+.Description
+Edit credential whose name has been provided by credential owner
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.IAny
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-credential
+#>
+function Set-Credential {
+[OutputType([Commvault.Powershell.Models.IAny])]
+[CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.String]
+    # .
+    ${CredentialName},
+
+    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            UpdateExpanded = 'CommvaultPowerShell.private\Set-Credential_UpdateExpanded';
+            UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Credential_UpdateViaIdentityExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Configure SMTP server settings.
+.Description
+Configure SMTP server settings.
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.IConfigureSmtpServerReq
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+BODY <IConfigureSmtpServerReq>: ConfigureSMTPServerReq
+  SenderEmail <String>: The sender email address used for emails sent from the software.
+  SenderName <String>: The sender name used for emails sent from the software.
+  SmtpPort <Int32>: The port number that connects to the mail server.
+  SmtpServerName <String>: The name of the mail server that sends alerts, scheduled reports, log files, and additional information.
+  [EncryptionAlgorithm <String>]: 
+  [Password <String>]: Password must be in base64 encoded format. Similar to username, if authentication on the mail server is required, this option is required.
+  [Username <String>]: This option is used when authentication on the mail server is required
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-emailserver
+#>
+function Set-EmailServer {
+[OutputType([Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='Configure', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Body')]
+    [Commvault.Powershell.Models.IConfigureSmtpServerReq]
+    # ConfigureSMTPServerReq
+    # To construct, see NOTES section for BODY properties and create a hash table.
+    ${Body},
+
+    [Parameter(ParameterSetName='ConfigureExpanded', Mandatory)]
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # The sender email address used for emails sent from the software.
+    ${SenderEmail},
+
+    [Parameter(ParameterSetName='ConfigureExpanded', Mandatory)]
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # The sender name used for emails sent from the software.
+    ${SenderName},
+
+    [Parameter(ParameterSetName='ConfigureExpanded', Mandatory)]
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.Int32]
+    # The port number that connects to the mail server.
+    ${SmtpPort},
+
+    [Parameter(ParameterSetName='ConfigureExpanded', Mandatory)]
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # The name of the mail server that sends alerts, scheduled reports, log files, and additional information.
+    ${SmtpServerName},
+
+    [Parameter(ParameterSetName='ConfigureExpanded')]
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${EncryptionAlgorithm},
+
+    [Parameter(ParameterSetName='ConfigureExpanded')]
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # Password must be in base64 encoded format.
+    # Similar to username, if authentication on the mail server is required, this option is required.
+    ${Password},
+
+    [Parameter(ParameterSetName='ConfigureExpanded')]
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # This option is used when authentication on the mail server is required
+    ${Username},
+
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.Management.Automation.SwitchParameter]
+    # The option to use authentication on the mail server.
+    # This is typically used in external or internet mail server configurations.
+    ${UseAuthentication},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            Configure = 'CommvaultPowerShell.private\Set-EmailServer_Configure';
+            ConfigureExpanded = 'CommvaultPowerShell.private\Set-EmailServer_ConfigureExpanded';
+            UpdateExpanded = 'CommvaultPowerShell.private\Set-EmailServer_UpdateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -45468,13 +47275,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -45483,7 +47291,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -45728,13 +47536,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -45743,7 +47552,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -45947,13 +47756,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -45962,7 +47772,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -46076,6 +47886,188 @@ begin {
             SetExpanded = 'CommvaultPowerShell.private\Set-HypervisorFbr_SetExpanded';
             SetViaIdentity = 'CommvaultPowerShell.private\Set-HypervisorFbr_SetViaIdentity';
             SetViaIdentityExpanded = 'CommvaultPowerShell.private\Set-HypervisorFbr_SetViaIdentityExpanded';
+        }
+        $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
+        $scriptCmd = {& $wrappedCmd @PSBoundParameters}
+        $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
+        $steppablePipeline.Begin($PSCmdlet)
+    } catch {
+        throw
+    }
+}
+
+process {
+    try {
+        $steppablePipeline.Process($_)
+    } catch {
+        throw
+    }
+}
+
+end {
+    try {
+        $steppablePipeline.End()
+    } catch {
+        throw
+    }
+}
+}
+
+# ----------------------------------------------------------------------------------
+#
+# Copyright Microsoft Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# http://www.apache.org/licenses/LICENSE-2.0
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ----------------------------------------------------------------------------------
+
+<#
+.Synopsis
+Updates the Hypervisors
+.Description
+Updates the Hypervisors
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+.Example
+PS C:\> {{ Add code here }}
+
+{{ Add output here }}
+
+.Inputs
+Commvault.Powershell.Models.ICommvaultPowerShellIdentity
+.Outputs
+Commvault.Powershell.Models.IGenericResp
+.Outputs
+Commvault.Powershell.Models.IHypervisorPropertiesResp
+.Notes
+COMPLEX PARAMETER PROPERTIES
+
+To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
+
+INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
+  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int32?>]: Id of the agent to be modified
+  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int32?>]: Id of Bucket
+  [CloudStorageId <Int32?>]: Id of cloud Storage
+  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [CredentialName <String>]: 
+  [DomainId <Int32?>]: ID of the AD/LDAP domain
+  [EntityId <Int32?>]: Unique id for the entity
+  [EntityType <Int32?>]: Type of the entity
+  [GlobalSearchEntity <String>]: name of global search entity
+  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
+  [Id <Int32?>]: 
+  [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
+  [KmsId <Int32?>]: Id of Key Management Server
+  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [Name <String>]: 
+  [NodeId <Int32?>]: Id of node
+  [PairId <Int32?>]: 
+  [PlanId <Int32?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int32?>]: id of recovery target
+  [RegionId <Int32?>]: 
+  [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
+  [ReplicationGroupId <String>]: 
+  [RequestId <Int32?>]: Unique identifier for the request
+  [RoleId <Int32?>]: Role Id
+  [RpsId <String>]: 
+  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [ScheduleId <String>]: 
+  [SchedulePolicyId <String>]: 
+  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int32?>]: Id of the server to modify
+  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int32?>]: Id of the subclient to modify
+  [TopologyId <String>]: 
+  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int32?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
+.Link
+https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-hypervisor
+#>
+function Set-Hypervisor {
+[OutputType([Commvault.Powershell.Models.IHypervisorPropertiesResp], [Commvault.Powershell.Models.IGenericResp])]
+[CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+param(
+    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Id of the Hypervisor to update
+    ${HypervisorId},
+
+    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
+    [Commvault.Powershell.Category('Path')]
+    [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
+    # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+    ${InputObject},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Wait for .NET debugger to attach
+    ${Break},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be appended to the front of the pipeline
+    ${HttpPipelineAppend},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [Commvault.Powershell.Runtime.SendAsyncStep[]]
+    # SendAsync Pipeline Steps to be prepended to the front of the pipeline
+    ${HttpPipelinePrepend},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Uri]
+    # The URI for the proxy server to use
+    ${Proxy},
+
+    [Parameter(DontShow)]
+    [ValidateNotNull()]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.PSCredential]
+    # Credentials for a proxy server to use for the remote call
+    ${ProxyCredential},
+
+    [Parameter(DontShow)]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Use the default credentials for the proxy
+    ${ProxyUseDefaultCredentials}
+)
+
+begin {
+    try {
+        $outBuffer = $null
+        if ($PSBoundParameters.TryGetValue('OutBuffer', [ref]$outBuffer)) {
+            $PSBoundParameters['OutBuffer'] = 1
+        }
+        $parameterSet = $PSCmdlet.ParameterSetName
+        $mapping = @{
+            UpdateExpanded = 'CommvaultPowerShell.private\Set-Hypervisor_UpdateExpanded';
+            UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Hypervisor_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
@@ -46309,13 +48301,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -46324,7 +48317,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -47111,20 +49104,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IUpdatePlanEntityRuleRanks
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IUpdatePlanEntityRuleRanks>: Plan entity rule update rank object. Fields in this object need to be populated to suggest what rank need to be set for the said rule.
-  [Rules <IPlanEntityRuleRank[]>]: Lits of plan entity rule object suggesting their ranks.
-    [Rank <Int32?>]: This will suggest rank/priority of the plan rule.
-    [RuleId <Int32?>]: 
-    [RuleName <String>]: 
 
 RULES <IPlanEntityRuleRank[]>: Lits of plan entity rule object suggesting their ranks.
   [Rank <Int32?>]: This will suggest rank/priority of the plan rule.
@@ -47137,15 +49122,7 @@ function Set-PlanRuleRank {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdatePlanEntityRuleRanks]
-    # Plan entity rule update rank object.
-    # Fields in this object need to be populated to suggest what rank need to be set for the said rule.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanEntityRuleRank[]]
     # Lits of plan entity rule object suggesting their ranks.
@@ -47200,7 +49177,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-PlanRuleRank_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-PlanRuleRank_UpdateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -47402,31 +49378,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IUpdatePlanEntityRule
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IUpdatePlanEntityRule>: Plan entity rule update object. Fields in this object need to be populated to suggest what need to be changed in the rule.         User can provide all rule options or can specify a specific rule group. Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [Rank <Int32?>]: [Optional] - This field will suggest rank/priority of rule.
-  [Regions <IIdName[]>]: This will include list of regions that should be evaluated against workload region for plan association.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [RuleId <Int32?>]: 
-  [RuleName <String>]: 
-  [ServerGroups <IIdName[]>]: This will include list of Server groups that should be evaluated against workload server group for plan association.
-  [Solutions <IIdName[]>]: This will include list of solutions that should be evaluated against workload for plan association.
-  [Tags <IPlanEntityRuleTag[]>]: This will include list of tags that should be evaluated against workload for plan association
-    [Id <Int32?>]: Id for the tag
-    [Name <String>]: Name for the plan rule tag which need to be matched against tag of the workload.
-    [Value <String>]: Possible value that need to matched against value of tag associated to workload.
-  [Workloads <IIdName[]>]: This will include list of apptypes that should be evaluated against workload apptype for plan association.
 
 REGIONS <IIdName[]>: This will include list of regions that should be evaluated against workload region for plan association.
   [Id <Int32?>]: 
@@ -47455,75 +49412,65 @@ function Set-PlanRule {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdatePlanEntityRule]
-    # Plan entity rule update object.
-    # Fields in this object need to be populated to suggest what need to be changed in the rule.
-    # User can provide all rule options or can specify a specific rule group.
-    # Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # [Optional] - This field will suggest rank/priority of rule.
     ${Rank},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of regions that should be evaluated against workload region for plan association.
     # To construct, see NOTES section for REGIONS properties and create a hash table.
     ${Regions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${RuleId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${RuleName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of Server groups that should be evaluated against workload server group for plan association.
     # To construct, see NOTES section for SERVERGROUPS properties and create a hash table.
     ${ServerGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of solutions that should be evaluated against workload for plan association.
     # To construct, see NOTES section for SOLUTIONS properties and create a hash table.
     ${Solutions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanEntityRuleTag[]]
     # This will include list of tags that should be evaluated against workload for plan association
     # To construct, see NOTES section for TAGS properties and create a hash table.
     ${Tags},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of apptypes that should be evaluated against workload apptype for plan association.
@@ -47578,7 +49525,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-PlanRule_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-PlanRule_UpdateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -47623,9 +49569,9 @@ end {
 
 <#
 .Synopsis
-Update details of the region
+Api to set region for an entity.
 .Description
-Update details of the region
+Api to set region for an entity.
 .Example
 PS C:\> {{ Add code here }}
 
@@ -47638,7 +49584,7 @@ PS C:\> {{ Add code here }}
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 .Inputs
-Commvault.Powershell.Models.IUpdateRegion
+Commvault.Powershell.Models.IEntityRegionInfo
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -47646,17 +49592,10 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODY <IUpdateRegion>: For newly added location - country, latitude and longitude are mandatory fields. Any existing location added to locations array needs to have all the existing fields. 
-  [LocationCity <String>]: Name of city for the location
-  [LocationContinent <String>]: Name of continent for the location
-  [LocationCountry <String>]: Name of country for the location
-  [LocationLatitude <Double?>]: Latitude for the location
-  [LocationLongitude <Double?>]: Longitude for the location
-  [LocationState <String>]: Name of state for the location
-  [LocationsOperationType <String>]: Type of operation to be performed for locations
-  [NewName <String>]: New name for the region
-  [ZoneId <Int32?>]: 
-  [ZoneName <String>]: 
+BODY <IEntityRegionInfo>: .
+  [EntityRegionType <String>]: 
+  [RegionId <Int32?>]: 
+  [RegionName <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -47670,13 +49609,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -47685,7 +49625,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -47710,14 +49650,30 @@ function Set-Region {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
+    [Parameter(ParameterSetName='Set', Mandatory)]
+    [Parameter(ParameterSetName='SetExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Unique id for the entity
+    ${EntityId},
+
+    [Parameter(ParameterSetName='Set', Mandatory)]
+    [Parameter(ParameterSetName='SetExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Type of the entity
+    ${EntityType},
+
+    [Parameter(ParameterSetName='SetExpanded')]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded')]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.String]
+    [System.Int32]
     # .
     ${RegionId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='SetViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -47725,15 +49681,27 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='Set', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='SetViaIdentity', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdateRegion]
-    # For newly added location - country, latitude and longitude are mandatory fields.
-    # Any existing location added to locations array needs to have all the existing fields.
-    # 
+    [Commvault.Powershell.Models.IEntityRegionInfo]
+    # .
     # To construct, see NOTES section for BODY properties and create a hash table.
     ${Body},
+
+    [Parameter(ParameterSetName='SetExpanded')]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${EntityRegionType},
+
+    [Parameter(ParameterSetName='SetExpanded')]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${RegionName},
 
     [Parameter(ParameterSetName='UpdateExpanded')]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
@@ -47825,12 +49793,6 @@ param(
     # SendAsync Pipeline Steps to be prepended to the front of the pipeline
     ${HttpPipelinePrepend},
 
-    [Parameter()]
-    [Commvault.Powershell.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Returns true when the command succeeds
-    ${PassThru},
-
     [Parameter(DontShow)]
     [Commvault.Powershell.Category('Runtime')]
     [System.Uri]
@@ -47848,7 +49810,14 @@ param(
     [Commvault.Powershell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
     # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
+    ${ProxyUseDefaultCredentials},
+
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru}
 )
 
 begin {
@@ -47859,9 +49828,11 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-Region_Update';
+            Set = 'CommvaultPowerShell.private\Set-Region_Set';
+            SetExpanded = 'CommvaultPowerShell.private\Set-Region_SetExpanded';
+            SetViaIdentity = 'CommvaultPowerShell.private\Set-Region_SetViaIdentity';
+            SetViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Region_SetViaIdentityExpanded';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-Region_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-Region_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Region_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -47920,8 +49891,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ISamlUpdate
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -47945,40 +49914,6 @@ ATTRIBUTEMAPPINGS <ISamlAttributes[]>: attribute mapping details
   [CustomAttribute <String>]: SAML custom attribute types
   [SamlAttribute <String>]: SAML attribute
 
-BODY <ISamlUpdate>: Updates SAML details
-  [AssociationCompanies <IIdName[]>]: Companies associated with SAML
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [AssociationDomains <IIdName[]>]: Domains associated with SAML
-  [AssociationEmailSuffixes <String[]>]: Email suffixes associated with SAML
-  [AssociationUserGroups <IIdName[]>]: user groups associated with SAML
-  [AttributeMappings <ISamlAttributes[]>]: attribute mapping details
-    [CustomAttribute <String>]: SAML custom attribute types
-    [SamlAttribute <String>]: SAML attribute
-  [AutoCreateUser <Boolean?>]: This auto-creates non-existing user if the user detail match with the identity rule.
-  [Description <String>]: SAML description
-  [Enabled <Boolean?>]: Boolean to indicate whether SAML is enabled.
-  [IdentityProviderMetaDataCertificateData <String>]: IDP certificate public key
-  [IdentityProviderMetaDataEntityId <String>]: Identity provider entity
-  [IdentityProviderMetaDataLogoutUrl <String>]: Identity Provider log-out URL
-  [IdentityProviderMetaDataRedirectUrl <String>]: Identity provider redirect URL
-  [IdentityProviderMetaDataSamlProtocolVersion <String>]: SAML Protocol version 
-  [NameIdAttribute <String>]: nameID in SAML assertion subject is used to perform login.
-  [ServiceProviderMetaDataAliasName <String>]: certificate alias name
-  [ServiceProviderMetaDataAutoGenerateSpMetaData <Boolean?>]: 
-  [ServiceProviderMetaDataCertificateData <String>]: certificate alias name.
-  [ServiceProviderMetaDataJksFileContents <String[]>]: jks file contents as byte array
-  [ServiceProviderMetaDataJksPrivateKey <String>]: key store password.
-  [ServiceProviderMetaDataKeyStorePassword <String>]: jks contents key store password.
-  [ServiceProviderMetaDataPrivateKeyPassword <String>]: certificate private key password
-  [ServiceProviderMetaDataServiceProviderEndpoint <String>]: web console URL.
-  [ServiceProviderMetaDataSpAliases <String[]>]: web console URL list.
-  [UserGroups <ICompanyWithUserGroupAssocDetails[]>]: By default, auto-created users will be associated to the Tenant Users group of the company. Add mapping to override this behaviour for a company.
-    [CompanyInfoId <Int32?>]: 
-    [CompanyInfoName <String>]: 
-    [UserGroupInfoId <Int32?>]: 
-    [UserGroupInfoName <String>]: 
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
   [AgentId <Int32?>]: Id of the agent to be modified
@@ -47991,13 +49926,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -48006,7 +49942,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -48037,14 +49973,12 @@ function Set-SamlApp {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.String]
     # .
     ${Name},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -48052,181 +49986,149 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ISamlUpdate]
-    # Updates SAML details
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Companies associated with SAML
     # To construct, see NOTES section for ASSOCIATIONCOMPANIES properties and create a hash table.
     ${AssociationCompanies},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Domains associated with SAML
     # To construct, see NOTES section for ASSOCIATIONDOMAINS properties and create a hash table.
     ${AssociationDomains},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Email suffixes associated with SAML
     ${AssociationEmailSuffixes},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # user groups associated with SAML
     # To construct, see NOTES section for ASSOCIATIONUSERGROUPS properties and create a hash table.
     ${AssociationUserGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ISamlAttributes[]]
     # attribute mapping details
     # To construct, see NOTES section for ATTRIBUTEMAPPINGS properties and create a hash table.
     ${AttributeMappings},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # This auto-creates non-existing user if the user detail match with the identity rule.
     ${AutoCreateUser},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SAML description
     ${Description},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Boolean to indicate whether SAML is enabled.
     ${Enabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # IDP certificate public key
     ${IdentityProviderMetaDataCertificateData},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity provider entity
     ${IdentityProviderMetaDataEntityId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity Provider log-out URL
     ${IdentityProviderMetaDataLogoutUrl},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity provider redirect URL
     ${IdentityProviderMetaDataRedirectUrl},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SAML Protocol version
     ${IdentityProviderMetaDataSamlProtocolVersion},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # nameID in SAML assertion subject is used to perform login.
     ${NameIdAttribute},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate alias name
     ${ServiceProviderMetaDataAliasName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # .
     ${ServiceProviderMetaDataAutoGenerateSpMetaData},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate alias name.
     ${ServiceProviderMetaDataCertificateData},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # jks file contents as byte array
     ${ServiceProviderMetaDataJksFileContents},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # key store password.
     ${ServiceProviderMetaDataJksPrivateKey},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # jks contents key store password.
     ${ServiceProviderMetaDataKeyStorePassword},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate private key password
     ${ServiceProviderMetaDataPrivateKeyPassword},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # web console URL.
     ${ServiceProviderMetaDataServiceProviderEndpoint},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # web console URL list.
     ${ServiceProviderMetaDataSpAliases},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICompanyWithUserGroupAssocDetails[]]
     # By default, auto-created users will be associated to the Tenant Users group of the company.
@@ -48282,9 +50184,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-SamlApp_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-SamlApp_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-SamlApp_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-SamlApp_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -48343,8 +50243,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IServerPlanUpdateRpo
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -48385,45 +50283,6 @@ BACKUPWINDOW <IDayAndTime[]>: Backup window for incremental backup
   [EndTime <Int64?>]: Time in seconds since the beginning of the day
   [StartTime <Int64?>]: Time in seconds since the beginning of the day
 
-BODY <IServerPlanUpdateRpo>: Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO determines the frequency of your backup jobs.
-  [BackupFrequencySchedules <IPlanSchedule[]>]: 
-    BackupType <String>: Schedule Backup level
-    ForDatabasesOnly <Boolean>: Boolean to indicate if schedule is for database agents
-    ScheduleOperation <String>: Operation being performed on schedule
-    SchedulePatternScheduleFrequencyType <String>: schedule frequency type
-    [PolicyId <Int32?>]: Schedule policy Id to which the schedule belongs
-    [ScheduleId <Int32?>]: Id of the schedule if available, required for modifying, deleting schedule
-    [ScheduleName <String>]: Name of the schedule, for modify
-    [SchedulePatternDayOfMonth <Int32?>]: Day on which to run the schedule, applicable for monthly, yearly
-    [SchedulePatternDayOfWeek <String>]: 
-    [SchedulePatternDaysBetweenSyntheticFulls <Int32?>]: No of days between two synthetic full jobs
-    [SchedulePatternEndDate <Int32?>]: Schedule end date in epoch format
-    [SchedulePatternExceptions <IScheduleRunException[]>]: Exceptions to when a schedule should not run, either in dates or week of month and days
-      [OnDates <Int32[]>]: list of dates in a month. For ex: 1, 20
-      [OnDayOfTheWeek <String[]>]: On which days, for ex: MONDAY, FRIDAY
-      [OnWeekOfTheMonth <String[]>]: On which week of month, for ex: FIRST, LAST
-    [SchedulePatternFrequency <Int32?>]: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-    [SchedulePatternMonthOfYear <String>]: 
-    [SchedulePatternNoOfTimes <Int32?>]: The number of times you want the schedule to run.
-    [SchedulePatternRepeatIntervalInMinutes <Int32?>]: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
-    [SchedulePatternRepeatUntilTime <Int32?>]: Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
-    [SchedulePatternStartDate <Int32?>]: start date of schedule in epoch format
-    [SchedulePatternStartTime <Int32?>]: start time of schedule in seconds
-    [SchedulePatternWeekOfMonth <String>]: Specific week of a month
-    [SchedulePatternWeeklyDays <String[]>]: Days of the week for weekly frequency
-    [TimezoneId <Int32?>]: 
-    [TimezoneName <String>]: 
-  [BackupWindow <IDayAndTime[]>]: Backup window for incremental backup
-    [DayOfWeek <String[]>]: 
-    [EndTime <Int64?>]: Time in seconds since the beginning of the day
-    [StartTime <Int64?>]: Time in seconds since the beginning of the day
-  [FullBackupWindow <IDayAndTime[]>]: Backup window for full backup
-  [SlaEnableAfterDelay <Int32?>]: Time provided in Unix format. Give 0 to reset any existing delay.
-  [SlaExcludeFromSla <Boolean?>]: Flag to set to exclude plan from SLA
-  [SlaExclusionReason <String>]: Reason for exclusion from SLA
-  [SlaPeriod <Int32?>]: SLA Period in Days
-  [SlaUseSystemDefaultSla <Boolean?>]: Flag to set to use System Default Service Level Agreement
-
 FULLBACKUPWINDOW <IDayAndTime[]>: Backup window for full backup
   [DayOfWeek <String[]>]: 
   [EndTime <Int64?>]: Time in seconds since the beginning of the day
@@ -48441,13 +50300,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -48456,7 +50316,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -48481,14 +50341,12 @@ function Set-ServerPlanRpo {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the Server Plan
     ${PlanId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -48496,70 +50354,53 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IServerPlanUpdateRpo]
-    # Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption.
-    # Your RPO determines the frequency of your backup jobs.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanSchedule[]]
     # .
     # To construct, see NOTES section for BACKUPFREQUENCYSCHEDULES properties and create a hash table.
     ${BackupFrequencySchedules},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for incremental backup
     # To construct, see NOTES section for BACKUPWINDOW properties and create a hash table.
     ${BackupWindow},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Backup window for full backup
     # To construct, see NOTES section for FULLBACKUPWINDOW properties and create a hash table.
     ${FullBackupWindow},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Time provided in Unix format.
     # Give 0 to reset any existing delay.
     ${SlaEnableAfterDelay},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to set to exclude plan from SLA
     ${SlaExcludeFromSla},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Reason for exclusion from SLA
     ${SlaExclusionReason},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # SLA Period in Days
     ${SlaPeriod},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to set to use System Default Service Level Agreement
@@ -48613,9 +50454,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-ServerPlanRpo_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-ServerPlanRpo_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-ServerPlanRpo_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-ServerPlanRpo_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -48868,8 +50707,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IUpdatevmGroupReq
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -48915,123 +50752,6 @@ APPLICATIONVALIDATION <IVMAppValidation>: vmAppValidation
   [WindowsUncCredentialsPassword <String>]: password to access the network path
   [WindowsUncSavedCredentialsId <Int32?>]: 
   [WindowsUncSavedCredentialsName <String>]: 
-
-BODY <IUpdatevmGroupReq>: UpdatevmGroupReq
-  [AccessNode <IIdName[]>]: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [ActivityControlEnableBackup <Boolean?>]: true if Backup is enabled
-  [ActivityControlEnableRestore <Boolean?>]: true if Restore is enabled
-  [ApplicationValidation <IVMAppValidation>]: vmAppValidation
-    [CopyId <Int32?>]: 
-    [CopyName <String>]: 
-    [CredentialsName <String>]: username to access the network path
-    [CredentialsPassword <String>]: password to access the network path
-    [KeepValidatedVMSRunning <Boolean?>]: If true then validated VMs will be available until expiration time set on the recovery target
-    [MaximumNoOfThreads <Int32?>]: Number of backup Validation Threads
-    [RecoveryTarget <String>]: Recovery Target for Application Validation
-    [SavedCredentialsId <Int32?>]: 
-    [SavedCredentialsName <String>]: 
-    [ScheduleDescription <String>]: Description for validation schedule
-    [ScheduleId <Int32?>]: 
-    [ScheduleIsScheduleEnabled <Boolean?>]: True if application validation schedule is enabled
-    [ScheduleTaskId <Int32?>]: Job Id for the application validation task. 0 if schedule is disabled
-    [UnixArguments <String>]: Arguments for the script
-    [UnixIsDisabled <Boolean?>]: Is the script disabled
-    [UnixIsUnc <Boolean?>]: True if the script is a UNC script, False if it is a local script
-    [UnixPath <String>]: Path for the validation script
-    [UnixUncCredentialsName <String>]: username to access the network path
-    [UnixUncCredentialsPassword <String>]: password to access the network path
-    [UnixUncSavedCredentialsId <Int32?>]: 
-    [UnixUncSavedCredentialsName <String>]: 
-    [UseSourceVMEsxToMount <Boolean?>]: Use Source VM ESX To Mount
-    [ValidateVMBackups <Boolean?>]: True if VM Backup validation is enabled
-    [WindowArguments <String>]: Arguments for the script
-    [WindowIsDisabled <Boolean?>]: Is the script disabled
-    [WindowIsUnc <Boolean?>]: True if the script is a UNC script, False if it is a local script
-    [WindowPath <String>]: Path for the validation script
-    [WindowsUncCredentialsName <String>]: username to access the network path
-    [WindowsUncCredentialsPassword <String>]: password to access the network path
-    [WindowsUncSavedCredentialsId <Int32?>]: 
-    [WindowsUncSavedCredentialsName <String>]: 
-  [ContentOverwrite <Boolean?>]: True if content in vmgroup has to be overwritten, by default it will append the content
-  [ContentRuleGroups <IRuleGroupContent[]>]: 
-    [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
-    [Rules <IRuleContent[]>]: 
-      [Condition <String>]: Operation type for VM rules/filters
-      [DisplayName <String>]: The display name of the entity to be added
-      [Guid <String>]: GUID of the entity to be added as content
-      [Name <String>]: name of the VM to be added as content
-      [Type <String>]: 
-      [Value <String>]: value for the few type of VM Content like powerstate
-  [ContentVirtualMachines <IVirtualMachinecontent[]>]: 
-    [Guid <String>]: GUID of the VM to be added as content
-    [Name <String>]: name of the VM to be added as content
-    [Type <String>]: 
-  [CredentialsName <String>]: username to access the network path
-  [CredentialsPassword <String>]: password to access the network path
-  [CrossAccountCopyDestinationClientId <Int32?>]: 
-  [CrossAccountCopyDestinationClientName <String>]: 
-  [DiskFilters <IVMDiskFilter[]>]: 
-    [Condition <String>]: Operation type for VM rules/filters
-    [FilterType <String>]: 
-    [Name <String>]: The string to be filtered
-    [VMGuid <String>]: VM Guid of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type from all Vms added in content will be filtered
-  [EnableFileIndexing <Boolean?>]: True if file indexing needs to be enabled
-  [FilterOverwrite <Boolean?>]: True if content in vmgroup has to be overwritten, by default it will append the content
-  [FilterRuleGroups <IRuleGroupContent[]>]: 
-  [FilterVirtualMachines <IVirtualMachinecontent[]>]: 
-  [NewName <String>]: subclient name 
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [SavedCredentialsId <Int32?>]: 
-  [SavedCredentialsName <String>]: 
-  [SecurityAssociations <ISecurityAssoc[]>]: 
-    [ExternalUserGroupId <Int32?>]: User Group Id
-    [ExternalUserGroupName <String>]: External Group Name
-    [ExternalUserGroupProviderId <Int32?>]: Provider id
-    [ExternalUserGroupProviderName <String>]: Provider Name
-    [IsCreatorAssociation <Boolean?>]: 
-    [PermissionList <IPermissionResp[]>]: 
-      [CategoryId <Int32?>]: 
-      [CategoryName <String>]: 
-      [PermissionId <Int32?>]: 
-      [PermissionName <String>]: 
-      [Type <String>]: Returns the type of association.
-    [RoleId <Int32?>]: 
-    [RoleName <String>]: 
-    [UserGroupId <Int32?>]: 
-    [UserGroupName <String>]: 
-    [UserId <Int32?>]: 
-    [UserName <String>]: 
-  [SettingAutoDetectVMOwner <Boolean?>]: True if auto detect VM Owner enabled
-  [SettingCollectFileDetailsFromSnapshotCopy <Boolean?>]: True if metadata collection is enabled for intellisnap jobs. Only applicable for Indexing v1
-  [SettingCollectFileDetailsforGranularRecovery <Boolean?>]: True if metadata collection is enabled. Only applicable for Indexing v1
-  [SettingCustomSnapshotResourceGroup <String>]: Custom snapshot resource group GUID for Azure
-  [SettingDatastoreFreespaceCheck <Boolean?>]: True if Datastore Free space check is enabled
-  [SettingDatastoreFreespaceRequired <Int32?>]: precentage of datastore free space check value
-  [SettingIsApplicationAware <Boolean?>]: Is the VM App Aware
-  [SettingJobStartTime <Int32?>]: Start Time for the VM Group Job
-  [SettingNoOfReaders <Int32?>]: Number of readers for backup
-  [SettingTransportMode <String>]: transport mode based on environment. Values are case sensitive
-  [SettingUseChangedBlockTrackingOnVM <Boolean?>]: True if Changed Block Tracking is enabled
-  [SettingUseVMCheckpointSetting <Boolean?>]: True if use VM CheckPoint setting is enabled
-  [SettingVMBackupType <String>]: 
-  [SnapEngineId <Int32?>]: 
-  [SnapEngineName <String>]: 
-  [SnapMountProxyId <Int32?>]: 
-  [SnapMountProxyName <String>]: 
-  [SnapshotManagementBackupCopyInterface <String>]: 
-  [SnapshotManagementEnableHardwareSnapshot <Boolean?>]: True if hardware snapshot is enabled
-  [SnapshotManagementIsCrossAccountCopyEnabled <Boolean?>]: True if full copy of amazon snapshot to different amazon account is enabled
-  [SnapshotManagementIsCrossAccountEnabled <Boolean?>]: True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled
-  [SnapshotManagementIsIndependentDisksEnabled <Boolean?>]: True if independent disk option is enabled
-  [SnapshotManagementIsRawDeviceMapsEnabled <Boolean?>]: True if raw device maps option is enabled
-  [SnapshotManagementSnapMountEsxHost <String>]: Name of ESX Host
-  [SnapshotManagementUseSeparateProxyForSnapToTape <Boolean?>]: True if separate proxy client is used for snap to tape
-  [SnapshotManagementVMApplicationUserName <String>]: Virtual machine application user name
-  [StorageId <Int32?>]: 
-  [StorageName <String>]: 
 
 CONTENTRULEGROUPS <IRuleGroupContent[]>: .
   [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
@@ -49081,13 +50801,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -49096,7 +50817,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -49140,14 +50861,12 @@ function Set-VMGroup {
 [OutputType([Commvault.Powershell.Models.IGetVMGroupResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the VMgroup to update
     ${VMGroupId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -49155,370 +50874,360 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdatevmGroupReq]
-    # UpdatevmGroupReq
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # .
     # To construct, see NOTES section for ACCESSNODE properties and create a hash table.
     ${AccessNode},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # true if Backup is enabled
     ${ActivityControlEnableBackup},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # true if Restore is enabled
     ${ActivityControlEnableRestore},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVMAppValidation]
     # vmAppValidation
     # To construct, see NOTES section for APPLICATIONVALIDATION properties and create a hash table.
     ${ApplicationValidation},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # Delayed by n Hrs
+    ${BackupActivityControlOptionDelayTime},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Management.Automation.SwitchParameter]
+    # True if the activity will be enabled after a delay time interval
+    ${BackupActivityControlOptionEnableAfterDelay},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Int32]
+    # .
+    ${BackupActivityControlOptionsTimeZoneId},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${BackupActivityControlOptionsTimeZoneName},
+
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if content in vmgroup has to be overwritten, by default it will append the content
     ${ContentOverwrite},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IRuleGroupContent[]]
     # .
     # To construct, see NOTES section for CONTENTRULEGROUPS properties and create a hash table.
     ${ContentRuleGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVirtualMachinecontent[]]
     # .
     # To construct, see NOTES section for CONTENTVIRTUALMACHINES properties and create a hash table.
     ${ContentVirtualMachines},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # username to access the network path
     ${CredentialsName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # password to access the network path
     ${CredentialsPassword},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${CrossAccountCopyDestinationClientId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${CrossAccountCopyDestinationClientName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVMDiskFilter[]]
     # .
     # To construct, see NOTES section for DISKFILTERS properties and create a hash table.
     ${DiskFilters},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if file indexing needs to be enabled
     ${EnableFileIndexing},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if content in vmgroup has to be overwritten, by default it will append the content
     ${FilterOverwrite},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IRuleGroupContent[]]
     # .
     # To construct, see NOTES section for FILTERRULEGROUPS properties and create a hash table.
     ${FilterRuleGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVirtualMachinecontent[]]
     # .
     # To construct, see NOTES section for FILTERVIRTUALMACHINES properties and create a hash table.
     ${FilterVirtualMachines},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # subclient name
     ${NewName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # Delayed by n Hrs
+    ${RestoreActivityControlOptionDelayTime},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Management.Automation.SwitchParameter]
+    # True if the activity will be enabled after a delay time interval
+    ${RestoreActivityControlOptionEnableAfterDelay},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Int32]
+    # .
+    ${RestoreActivityControlOptionsTimeZoneId},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${RestoreActivityControlOptionsTimeZoneName},
+
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SavedCredentialsId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SavedCredentialsName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ISecurityAssoc[]]
     # .
     # To construct, see NOTES section for SECURITYASSOCIATIONS properties and create a hash table.
     ${SecurityAssociations},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if auto detect VM Owner enabled
     ${SettingAutoDetectVMOwner},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if metadata collection is enabled for intellisnap jobs.
     # Only applicable for Indexing v1
     ${SettingCollectFileDetailsFromSnapshotCopy},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if metadata collection is enabled.
     # Only applicable for Indexing v1
     ${SettingCollectFileDetailsforGranularRecovery},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Custom snapshot resource group GUID for Azure
     ${SettingCustomSnapshotResourceGroup},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if Datastore Free space check is enabled
     ${SettingDatastoreFreespaceCheck},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # precentage of datastore free space check value
     ${SettingDatastoreFreespaceRequired},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Is the VM App Aware
     ${SettingIsApplicationAware},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Start Time for the VM Group Job
     ${SettingJobStartTime},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Number of readers for backup
     ${SettingNoOfReaders},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # transport mode based on environment.
     # Values are case sensitive
     ${SettingTransportMode},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if Changed Block Tracking is enabled
     ${SettingUseChangedBlockTrackingOnVM},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if use VM CheckPoint setting is enabled
     ${SettingUseVMCheckpointSetting},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SettingVMBackupType},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SnapEngineId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SnapEngineName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SnapMountProxyId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SnapMountProxyName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SnapshotManagementBackupCopyInterface},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if hardware snapshot is enabled
     ${SnapshotManagementEnableHardwareSnapshot},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if full copy of amazon snapshot to different amazon account is enabled
     ${SnapshotManagementIsCrossAccountCopyEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled
     ${SnapshotManagementIsCrossAccountEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if independent disk option is enabled
     ${SnapshotManagementIsIndependentDisksEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if raw device maps option is enabled
     ${SnapshotManagementIsRawDeviceMapsEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of ESX Host
     ${SnapshotManagementSnapMountEsxHost},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if separate proxy client is used for snap to tape
     ${SnapshotManagementUseSeparateProxyForSnapToTape},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Virtual machine application user name
     ${SnapshotManagementVMApplicationUserName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${StorageId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -49572,9 +51281,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-VMGroup_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-VMGroup_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-VMGroup_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-VMGroup_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
@@ -49667,13 +51374,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -49682,7 +51390,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -49865,21 +51573,8 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ISetGlobalExceptions
 .Outputs
 Commvault.Powershell.Models.IGenericResp
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ISetGlobalExceptions>: Used to set global exceptions
-  [UnixGlobalExceptionExceptions <String[]>]: Array of exceptions which will be operated upon based on the operation type
-  [UnixGlobalExceptionOperationType <String>]: The operations on global exceptions provided would be executed based on the operation type provided
-  [UseGlobalExceptionsOnAllSubclients <Boolean?>]: Boolean value which updates the property useGlobalExceptionsOnAllSubclients
-  [WindowGlobalExceptionExceptions <String[]>]: Array of exceptions which will be operated upon based on the operation type
-  [WindowGlobalExceptionOperationType <String>]: The operations on global exceptions provided would be executed based on the operation type provided
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/update-globalexception
 #>
@@ -49887,38 +51582,31 @@ function Update-GlobalException {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ISetGlobalExceptions]
-    # Used to set global exceptions
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Array of exceptions which will be operated upon based on the operation type
     ${UnixGlobalExceptionExceptions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The operations on global exceptions provided would be executed based on the operation type provided
     ${UnixGlobalExceptionOperationType},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Boolean value which updates the property useGlobalExceptionsOnAllSubclients
     ${UseGlobalExceptionsOnAllSubclients},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Array of exceptions which will be operated upon based on the operation type
     ${WindowGlobalExceptionExceptions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The operations on global exceptions provided would be executed based on the operation type provided
@@ -49978,7 +51666,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Update-GlobalException_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Update-GlobalException_UpdateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

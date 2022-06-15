@@ -27,8 +27,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IHyperScaleStorage
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -38,12 +36,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODY <IHyperScaleStorage>: HyperScaleStorage
-  Name <String>: Name of HyperScale Storage
-  Nodes <IIdName[]>: List of Nodes (MediaAgents) of the HyperScale Storage
-    [Id <Int32?>]: 
-    [Name <String>]: 
-
 NODES <IIdName[]>: List of Nodes (MediaAgents) of the HyperScale Storage
   [Id <Int32?>]: 
   [Name <String>]: 
@@ -52,22 +44,15 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-hyper
 #>
 function New-HyperScaleStorage {
 [OutputType([Commvault.Powershell.Models.IHyperScaleStorageResp], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IHyperScaleStorage]
-    # HyperScaleStorage
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of HyperScale Storage
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # List of Nodes (MediaAgents) of the HyperScale Storage
@@ -122,7 +107,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-HyperScaleStorage_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-HyperScaleStorage_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

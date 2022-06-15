@@ -3,13 +3,13 @@
   <metadata>
     <id>CommvaultPowerShell</id>
     <version>0.1.0</version>
-    <authors>COMMVAULT</authors>
-    <owners>COMMVAULT</owners>
+    <authors></authors>
+    <owners></owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>https://cloud.commvault.com</licenseUrl>
-    <projectUrl>https://cloud.commvault.com</projectUrl>
-    <description>COMMVAULT POWERSHELL</description>
-    <releaseNotes>COMMVAULT</releaseNotes>
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <description></description>
+    <releaseNotes></releaseNotes>
     <copyright></copyright>
     <tags></tags>
   </metadata>
@@ -19,10 +19,11 @@
     <file src="CommvaultPowerShell.psm1" />
     <!-- https://github.com/NuGet/Home/issues/3584 -->
     <file src="bin/CommvaultPowerShell.private.dll" target="bin" />
-    <file src="bin/CommvaultPowerShell.private.deps.json" target="bin" />
-    <file src="internal/**/*.*" exclude="internal/readme.md" />
-    <file src="custom/**/*.*" exclude="custom/readme.md;custom/**/*.cs" />
-    <file src="docs/**/*.md" exclude="docs/readme.md" />
-    <file src="exports/**/ProxyCmdletDefinitions.ps1" />
+    <file src="bin\CommvaultPowerShell.private.deps.json" target="bin" />
+    <file src="internal\**\*.*" exclude="internal\readme.md" target="internal" />
+    <file src="custom\**\*.*" exclude="custom\readme.md;custom\**\*.cs" target="custom" />
+    <file src="docs\**\*.md" exclude="docs\readme.md" target="docs" />
+    <file src="exports\**\ProxyCmdletDefinitions.ps1" target="exports" />
+    <file src="utils\**\*.*" target="utils" />
   </files>
 </package>

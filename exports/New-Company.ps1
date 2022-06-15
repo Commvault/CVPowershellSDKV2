@@ -27,27 +27,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateCompany
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateCompany>: Used to create a new company
-  Alias <String>: The company domain or NetBIOS name
-  Name <String>: name of the company to be created.
-  [ContactName <String>]: Name of the tenant administrator. If provided, email also needs to be provided.
-  [Email <String>]: Email address for the tenant administrator. If provided, contactName for the tenant administrator also needs to be provided
-  [EmailSuffix <String>]: Supported domains for the company
-  [Plans <IIdName[]>]: Select data protection plans to use for the company. The plans that are selected are the plans that the tenant administrator can choose from.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [PrimaryDomain <String>]: The primary domain name of the company being created. Can be added only if an external domain is already present.
-  [SendWelcomeEmail <Boolean?>]: send a welcome email on company creation to the tenant administrator.
-  [ServiceCommcells <IIdName[]>]: Used to add service commcells to the master commcell. Either id or name can be provided. If both are provided, id will be taken into consideration.
 
 PLANS <IIdName[]>: Select data protection plans to use for the company. The plans that are selected are the plans that the tenant administrator can choose from.
   [Id <Int32?>]: 
@@ -63,46 +48,39 @@ function New-Company {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateCompany]
-    # Used to create a new company
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The company domain or NetBIOS name
     ${Alias},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # name of the company to be created.
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the tenant administrator.
     # If provided, email also needs to be provided.
     ${ContactName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Email address for the tenant administrator.
     # If provided, contactName for the tenant administrator also needs to be provided
     ${Email},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Supported domains for the company
     ${EmailSuffix},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Select data protection plans to use for the company.
@@ -110,20 +88,20 @@ param(
     # To construct, see NOTES section for PLANS properties and create a hash table.
     ${Plans},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The primary domain name of the company being created.
     # Can be added only if an external domain is already present.
     ${PrimaryDomain},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # send a welcome email on company creation to the tenant administrator.
     ${SendWelcomeEmail},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Used to add service commcells to the master commcell.
@@ -186,7 +164,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-Company_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-Company_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

@@ -18,18 +18,6 @@ Set-CompanyTimezone -CompanyId <Int32> [-Clients <IIdName[]>] [-UpdateAll] [-Con
  [<CommonParameters>]
 ```
 
-### Update
-```
-Set-CompanyTimezone -CompanyId <Int32> -Body <IUpdateTimezoneForClientsReq> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Set-CompanyTimezone -InputObject <ICommvaultPowerShellIdentity> -Body <IUpdateTimezoneForClientsReq>
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### UpdateViaIdentityExpanded
 ```
 Set-CompanyTimezone -InputObject <ICommvaultPowerShellIdentity> [-Clients <IIdName[]>] [-UpdateAll] [-Confirm]
@@ -61,29 +49,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-Request body for updating timezone for clients
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.IUpdateTimezoneForClientsReq
-Parameter Sets: Update, UpdateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Clients
 .
 To construct, see NOTES section for CLIENTS properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -98,7 +70,7 @@ Id of the company whose timezone is used to update timezone of servers (with no 
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -114,7 +86,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -129,7 +101,7 @@ Boolean which determines if all servers(with no package) should be updated with 
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -177,8 +149,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 
-### Commvault.Powershell.Models.IUpdateTimezoneForClientsReq
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -191,12 +161,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <IUpdateTimezoneForClientsReq>: Request body for updating timezone for clients
-  - `[Clients <IIdName[]>]`: 
-    - `[Id <Int32?>]`: 
-    - `[Name <String>]`: 
-  - `[UpdateAll <Boolean?>]`: Boolean which determines if all servers(with no package) should be updated with the company timezone.
 
 CLIENTS <IIdName[]>: .
   - `[Id <Int32?>]`: 
@@ -214,13 +178,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[CredentialName <String>]`: 
   - `[DomainId <Int32?>]`: ID of the AD/LDAP domain
   - `[EntityId <Int32?>]`: Unique id for the entity
-  - `[EntityType <String>]`: Type of the entity
+  - `[EntityType <Int32?>]`: Type of the entity
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int32?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int32?>]`: Id of hyperscale storage
-  - `[HypervisorId <Int32?>]`: Id of the HYpervisor to get
+  - `[HypervisorId <Int32?>]`: Id of the Hypervisor to update
   - `[Id <Int32?>]`: 
   - `[InstanceId <Int32?>]`: Id of the instance to modify
+  - `[InventoryEntityName <String>]`: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   - `[KmsId <Int32?>]`: Id of Key Management Server
   - `[MediaAgentId <Int32?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int32?>]`: Id of metadata cache
@@ -229,7 +194,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[PairId <Int32?>]`: 
   - `[PlanId <Int32?>]`: Id of the plan to fetch details
   - `[RecoveryTargetId <Int32?>]`: id of recovery target
-  - `[RegionId <String>]`: 
+  - `[RegionId <Int32?>]`: 
   - `[RegionList <String>]`: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   - `[ReplicationGroupId <String>]`: 
   - `[RequestId <Int32?>]`: Unique identifier for the request

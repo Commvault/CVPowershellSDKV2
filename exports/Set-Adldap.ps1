@@ -29,8 +29,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IUpdateAdldap
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -45,29 +43,6 @@ ATTRIBUTEMAP <ILdapAttribute[]>: List of overridden attribute mappings for the L
   [IsOverridden <Boolean?>]: Denotes if the value of the attribute is overridden
   [Name <String>]: Name of the attribute
 
-BODY <IUpdateAdldap>: Update the properties of an AD/LDAP
-  DirectoryType <String>: Directory type of an AD/LDAP domain
-  Name <String>: The fully qualified domain name, for example, my.domain.example.com
-  [AccessViaClient <Boolean?>]: Denotes if the domain is to be accessed via a proxy
-  [AttributeMap <ILdapAttribute[]>]: List of overridden attribute mappings for the LDAP domain. Valid only if the directoryType is LDAP_SERVER.
-    Id <Int32>: ID of the attribute
-    Value <String>: Current value of the attribute
-    [DefaultValue <String>]: Default value of the attribute
-    [IsOverridden <Boolean?>]: Denotes if the value of the attribute is overridden
-    [Name <String>]: Name of the attribute
-  [BaseDnForCardUsers <String>]: Base DN for card users
-  [EnableSso <Boolean?>]: Denotes if SSO should be enabled for the domain. Valid only for ACTIVE_DIRECTORY.
-  [Host <String>]: The fully qualified domain name that you use to identify this network resource. Required only if directoryType is LDAP_SERVER
-  [LdapQueryParameters <ILdapAttribute[]>]: List of overridden query parameters for the LDAP domain. Valid only if the directory type is LDAP_SERVER
-  [NetbiosName <String>]: The fully qualified domain name that you use to identify this network resource. Required only if directoryType is ACTIVE_DIRECTORY, OPEN_LDAP or ORACLE_DIRECTORY 
-  [OsxServerName <String>]: The fully qualified domain name that you use to identify this network resource. Required only if directoryType is APPLE_DIRECTORY_SERVICE
-  [Password <String>]: Password for the domain user. Should be in Base64 encoded format.
-  [Proxies <IIdName[]>]: List of proxies used to connect to the domain. Available only if accessViaClient is true.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [UseSecureLdap <Boolean?>]: Boolean to indicate if the app use secure LDAP. Valid only for directory types - ACTIVE_DIRECTORY, ORACLE_DIRECTORY and LDAP_SERVER.
-  [Username <String>]: The username for a user who has at least read permission for the domain
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
   [AgentId <Int32?>]: Id of the agent to be modified
@@ -80,13 +55,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -95,7 +71,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -131,14 +107,12 @@ function Set-Adldap {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # ID of the AD/LDAP domain
     ${DomainId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -146,37 +120,25 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdateAdldap]
-    # Update the properties of an AD/LDAP
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Directory type of an AD/LDAP domain
     ${DirectoryType},
 
-    [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name, for example, my.domain.example.com
     ${Name},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Denotes if the domain is to be accessed via a proxy
     ${AccessViaClient},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ILdapAttribute[]]
     # List of overridden attribute mappings for the LDAP domain.
@@ -184,31 +146,27 @@ param(
     # To construct, see NOTES section for ATTRIBUTEMAP properties and create a hash table.
     ${AttributeMap},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Base DN for card users
     ${BaseDnForCardUsers},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Denotes if SSO should be enabled for the domain.
     # Valid only for ACTIVE_DIRECTORY.
     ${EnableSso},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name that you use to identify this network resource.
     # Required only if directoryType is LDAP_SERVER
     ${Host1},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ILdapAttribute[]]
     # List of overridden query parameters for the LDAP domain.
@@ -216,32 +174,28 @@ param(
     # To construct, see NOTES section for LDAPQUERYPARAMETERS properties and create a hash table.
     ${LdapQueryParameters},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name that you use to identify this network resource.
     # Required only if directoryType is ACTIVE_DIRECTORY, OPEN_LDAP or ORACLE_DIRECTORY
     ${NetbiosName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The fully qualified domain name that you use to identify this network resource.
     # Required only if directoryType is APPLE_DIRECTORY_SERVICE
     ${OsxServerName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Password for the domain user.
     # Should be in Base64 encoded format.
     ${Password},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # List of proxies used to connect to the domain.
@@ -249,16 +203,14 @@ param(
     # To construct, see NOTES section for PROXIES properties and create a hash table.
     ${Proxies},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Boolean to indicate if the app use secure LDAP.
     # Valid only for directory types - ACTIVE_DIRECTORY, ORACLE_DIRECTORY and LDAP_SERVER.
     ${UseSecureLdap},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The username for a user who has at least read permission for the domain
@@ -318,9 +270,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-Adldap_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-Adldap_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-Adldap_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Adldap_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

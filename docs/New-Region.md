@@ -12,12 +12,6 @@ Create a region
 
 ## SYNTAX
 
-### Create (Default)
-```
-New-Region -Body <ICreateRegion> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
 ```
 New-Region -Locations <ILocationDetails[]> -Name <String> [-Type <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
@@ -48,29 +42,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-Details of the new region
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateRegion
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Locations
 List of locations which are part of the region
 To construct, see NOTES section for LOCATIONS properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.ILocationDetails[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -85,7 +63,7 @@ Region name
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -115,7 +93,7 @@ Type of the region
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -161,8 +139,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreateRegion
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -177,16 +153,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreateRegion>: Details of the new region
-  - `Locations <ILocationDetails[]>`: List of locations which are part of the region
-    - `Country <String>`: Name of country
-    - `Latitude <Double>`: Latitude for the location
-    - `Longitude <Double>`: Longitude for the location
-    - `[City <String>]`: Name of city
-    - `[State <String>]`: Name of state
-  - `Name <String>`: Region name
-  - `[Type <String>]`: Type of the region
 
 LOCATIONS <ILocationDetails[]>: List of locations which are part of the region
   - `Country <String>`: Name of country

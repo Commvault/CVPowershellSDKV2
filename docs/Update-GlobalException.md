@@ -12,17 +12,11 @@ Add/Edit/Delete global execptions
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
 ```
 Update-GlobalException [-UnixGlobalExceptionExceptions <String[]>]
  [-UnixGlobalExceptionOperationType <String>] [-UseGlobalExceptionsOnAllSubclients]
  [-WindowGlobalExceptionExceptions <String[]>] [-WindowGlobalExceptionOperationType <String>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Update-GlobalException -Body <ISetGlobalExceptions> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,22 +44,6 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-Used to set global exceptions
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ISetGlobalExceptions
-Parameter Sets: Update
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -86,7 +64,7 @@ Array of exceptions which will be operated upon based on the operation type
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -101,7 +79,7 @@ The operations on global exceptions provided would be executed based on the oper
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -116,7 +94,7 @@ Boolean value which updates the property useGlobalExceptionsOnAllSubclients
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -131,7 +109,7 @@ Array of exceptions which will be operated upon based on the operation type
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -146,7 +124,7 @@ The operations on global exceptions provided would be executed based on the oper
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -192,8 +170,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ISetGlobalExceptions
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -201,18 +177,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-BODY <ISetGlobalExceptions>: Used to set global exceptions
-  - `[UnixGlobalExceptionExceptions <String[]>]`: Array of exceptions which will be operated upon based on the operation type
-  - `[UnixGlobalExceptionOperationType <String>]`: The operations on global exceptions provided would be executed based on the operation type provided
-  - `[UseGlobalExceptionsOnAllSubclients <Boolean?>]`: Boolean value which updates the property useGlobalExceptionsOnAllSubclients
-  - `[WindowGlobalExceptionExceptions <String[]>]`: Array of exceptions which will be operated upon based on the operation type
-  - `[WindowGlobalExceptionOperationType <String>]`: The operations on global exceptions provided would be executed based on the operation type provided
 
 ## RELATED LINKS
 

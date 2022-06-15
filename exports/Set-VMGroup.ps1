@@ -29,8 +29,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IUpdatevmGroupReq
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -76,123 +74,6 @@ APPLICATIONVALIDATION <IVMAppValidation>: vmAppValidation
   [WindowsUncCredentialsPassword <String>]: password to access the network path
   [WindowsUncSavedCredentialsId <Int32?>]: 
   [WindowsUncSavedCredentialsName <String>]: 
-
-BODY <IUpdatevmGroupReq>: UpdatevmGroupReq
-  [AccessNode <IIdName[]>]: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [ActivityControlEnableBackup <Boolean?>]: true if Backup is enabled
-  [ActivityControlEnableRestore <Boolean?>]: true if Restore is enabled
-  [ApplicationValidation <IVMAppValidation>]: vmAppValidation
-    [CopyId <Int32?>]: 
-    [CopyName <String>]: 
-    [CredentialsName <String>]: username to access the network path
-    [CredentialsPassword <String>]: password to access the network path
-    [KeepValidatedVMSRunning <Boolean?>]: If true then validated VMs will be available until expiration time set on the recovery target
-    [MaximumNoOfThreads <Int32?>]: Number of backup Validation Threads
-    [RecoveryTarget <String>]: Recovery Target for Application Validation
-    [SavedCredentialsId <Int32?>]: 
-    [SavedCredentialsName <String>]: 
-    [ScheduleDescription <String>]: Description for validation schedule
-    [ScheduleId <Int32?>]: 
-    [ScheduleIsScheduleEnabled <Boolean?>]: True if application validation schedule is enabled
-    [ScheduleTaskId <Int32?>]: Job Id for the application validation task. 0 if schedule is disabled
-    [UnixArguments <String>]: Arguments for the script
-    [UnixIsDisabled <Boolean?>]: Is the script disabled
-    [UnixIsUnc <Boolean?>]: True if the script is a UNC script, False if it is a local script
-    [UnixPath <String>]: Path for the validation script
-    [UnixUncCredentialsName <String>]: username to access the network path
-    [UnixUncCredentialsPassword <String>]: password to access the network path
-    [UnixUncSavedCredentialsId <Int32?>]: 
-    [UnixUncSavedCredentialsName <String>]: 
-    [UseSourceVMEsxToMount <Boolean?>]: Use Source VM ESX To Mount
-    [ValidateVMBackups <Boolean?>]: True if VM Backup validation is enabled
-    [WindowArguments <String>]: Arguments for the script
-    [WindowIsDisabled <Boolean?>]: Is the script disabled
-    [WindowIsUnc <Boolean?>]: True if the script is a UNC script, False if it is a local script
-    [WindowPath <String>]: Path for the validation script
-    [WindowsUncCredentialsName <String>]: username to access the network path
-    [WindowsUncCredentialsPassword <String>]: password to access the network path
-    [WindowsUncSavedCredentialsId <Int32?>]: 
-    [WindowsUncSavedCredentialsName <String>]: 
-  [ContentOverwrite <Boolean?>]: True if content in vmgroup has to be overwritten, by default it will append the content
-  [ContentRuleGroups <IRuleGroupContent[]>]: 
-    [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
-    [Rules <IRuleContent[]>]: 
-      [Condition <String>]: Operation type for VM rules/filters
-      [DisplayName <String>]: The display name of the entity to be added
-      [Guid <String>]: GUID of the entity to be added as content
-      [Name <String>]: name of the VM to be added as content
-      [Type <String>]: 
-      [Value <String>]: value for the few type of VM Content like powerstate
-  [ContentVirtualMachines <IVirtualMachinecontent[]>]: 
-    [Guid <String>]: GUID of the VM to be added as content
-    [Name <String>]: name of the VM to be added as content
-    [Type <String>]: 
-  [CredentialsName <String>]: username to access the network path
-  [CredentialsPassword <String>]: password to access the network path
-  [CrossAccountCopyDestinationClientId <Int32?>]: 
-  [CrossAccountCopyDestinationClientName <String>]: 
-  [DiskFilters <IVMDiskFilter[]>]: 
-    [Condition <String>]: Operation type for VM rules/filters
-    [FilterType <String>]: 
-    [Name <String>]: The string to be filtered
-    [VMGuid <String>]: VM Guid of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type from all Vms added in content will be filtered
-  [EnableFileIndexing <Boolean?>]: True if file indexing needs to be enabled
-  [FilterOverwrite <Boolean?>]: True if content in vmgroup has to be overwritten, by default it will append the content
-  [FilterRuleGroups <IRuleGroupContent[]>]: 
-  [FilterVirtualMachines <IVirtualMachinecontent[]>]: 
-  [NewName <String>]: subclient name 
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [SavedCredentialsId <Int32?>]: 
-  [SavedCredentialsName <String>]: 
-  [SecurityAssociations <ISecurityAssoc[]>]: 
-    [ExternalUserGroupId <Int32?>]: User Group Id
-    [ExternalUserGroupName <String>]: External Group Name
-    [ExternalUserGroupProviderId <Int32?>]: Provider id
-    [ExternalUserGroupProviderName <String>]: Provider Name
-    [IsCreatorAssociation <Boolean?>]: 
-    [PermissionList <IPermissionResp[]>]: 
-      [CategoryId <Int32?>]: 
-      [CategoryName <String>]: 
-      [PermissionId <Int32?>]: 
-      [PermissionName <String>]: 
-      [Type <String>]: Returns the type of association.
-    [RoleId <Int32?>]: 
-    [RoleName <String>]: 
-    [UserGroupId <Int32?>]: 
-    [UserGroupName <String>]: 
-    [UserId <Int32?>]: 
-    [UserName <String>]: 
-  [SettingAutoDetectVMOwner <Boolean?>]: True if auto detect VM Owner enabled
-  [SettingCollectFileDetailsFromSnapshotCopy <Boolean?>]: True if metadata collection is enabled for intellisnap jobs. Only applicable for Indexing v1
-  [SettingCollectFileDetailsforGranularRecovery <Boolean?>]: True if metadata collection is enabled. Only applicable for Indexing v1
-  [SettingCustomSnapshotResourceGroup <String>]: Custom snapshot resource group GUID for Azure
-  [SettingDatastoreFreespaceCheck <Boolean?>]: True if Datastore Free space check is enabled
-  [SettingDatastoreFreespaceRequired <Int32?>]: precentage of datastore free space check value
-  [SettingIsApplicationAware <Boolean?>]: Is the VM App Aware
-  [SettingJobStartTime <Int32?>]: Start Time for the VM Group Job
-  [SettingNoOfReaders <Int32?>]: Number of readers for backup
-  [SettingTransportMode <String>]: transport mode based on environment. Values are case sensitive
-  [SettingUseChangedBlockTrackingOnVM <Boolean?>]: True if Changed Block Tracking is enabled
-  [SettingUseVMCheckpointSetting <Boolean?>]: True if use VM CheckPoint setting is enabled
-  [SettingVMBackupType <String>]: 
-  [SnapEngineId <Int32?>]: 
-  [SnapEngineName <String>]: 
-  [SnapMountProxyId <Int32?>]: 
-  [SnapMountProxyName <String>]: 
-  [SnapshotManagementBackupCopyInterface <String>]: 
-  [SnapshotManagementEnableHardwareSnapshot <Boolean?>]: True if hardware snapshot is enabled
-  [SnapshotManagementIsCrossAccountCopyEnabled <Boolean?>]: True if full copy of amazon snapshot to different amazon account is enabled
-  [SnapshotManagementIsCrossAccountEnabled <Boolean?>]: True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled
-  [SnapshotManagementIsIndependentDisksEnabled <Boolean?>]: True if independent disk option is enabled
-  [SnapshotManagementIsRawDeviceMapsEnabled <Boolean?>]: True if raw device maps option is enabled
-  [SnapshotManagementSnapMountEsxHost <String>]: Name of ESX Host
-  [SnapshotManagementUseSeparateProxyForSnapToTape <Boolean?>]: True if separate proxy client is used for snap to tape
-  [SnapshotManagementVMApplicationUserName <String>]: Virtual machine application user name
-  [StorageId <Int32?>]: 
-  [StorageName <String>]: 
 
 CONTENTRULEGROUPS <IRuleGroupContent[]>: .
   [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
@@ -242,13 +123,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -257,7 +139,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -301,14 +183,12 @@ function Set-VMGroup {
 [OutputType([Commvault.Powershell.Models.IGetVMGroupResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the VMgroup to update
     ${VMGroupId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -316,370 +196,360 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdatevmGroupReq]
-    # UpdatevmGroupReq
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # .
     # To construct, see NOTES section for ACCESSNODE properties and create a hash table.
     ${AccessNode},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # true if Backup is enabled
     ${ActivityControlEnableBackup},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # true if Restore is enabled
     ${ActivityControlEnableRestore},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVMAppValidation]
     # vmAppValidation
     # To construct, see NOTES section for APPLICATIONVALIDATION properties and create a hash table.
     ${ApplicationValidation},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # Delayed by n Hrs
+    ${BackupActivityControlOptionDelayTime},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Management.Automation.SwitchParameter]
+    # True if the activity will be enabled after a delay time interval
+    ${BackupActivityControlOptionEnableAfterDelay},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Int32]
+    # .
+    ${BackupActivityControlOptionsTimeZoneId},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${BackupActivityControlOptionsTimeZoneName},
+
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if content in vmgroup has to be overwritten, by default it will append the content
     ${ContentOverwrite},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IRuleGroupContent[]]
     # .
     # To construct, see NOTES section for CONTENTRULEGROUPS properties and create a hash table.
     ${ContentRuleGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVirtualMachinecontent[]]
     # .
     # To construct, see NOTES section for CONTENTVIRTUALMACHINES properties and create a hash table.
     ${ContentVirtualMachines},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # username to access the network path
     ${CredentialsName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # password to access the network path
     ${CredentialsPassword},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${CrossAccountCopyDestinationClientId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${CrossAccountCopyDestinationClientName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVMDiskFilter[]]
     # .
     # To construct, see NOTES section for DISKFILTERS properties and create a hash table.
     ${DiskFilters},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if file indexing needs to be enabled
     ${EnableFileIndexing},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if content in vmgroup has to be overwritten, by default it will append the content
     ${FilterOverwrite},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IRuleGroupContent[]]
     # .
     # To construct, see NOTES section for FILTERRULEGROUPS properties and create a hash table.
     ${FilterRuleGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVirtualMachinecontent[]]
     # .
     # To construct, see NOTES section for FILTERVIRTUALMACHINES properties and create a hash table.
     ${FilterVirtualMachines},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # subclient name
     ${NewName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # Delayed by n Hrs
+    ${RestoreActivityControlOptionDelayTime},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Management.Automation.SwitchParameter]
+    # True if the activity will be enabled after a delay time interval
+    ${RestoreActivityControlOptionEnableAfterDelay},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.Int32]
+    # .
+    ${RestoreActivityControlOptionsTimeZoneId},
+
+    [Parameter()]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${RestoreActivityControlOptionsTimeZoneName},
+
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SavedCredentialsId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SavedCredentialsName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ISecurityAssoc[]]
     # .
     # To construct, see NOTES section for SECURITYASSOCIATIONS properties and create a hash table.
     ${SecurityAssociations},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if auto detect VM Owner enabled
     ${SettingAutoDetectVMOwner},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if metadata collection is enabled for intellisnap jobs.
     # Only applicable for Indexing v1
     ${SettingCollectFileDetailsFromSnapshotCopy},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if metadata collection is enabled.
     # Only applicable for Indexing v1
     ${SettingCollectFileDetailsforGranularRecovery},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Custom snapshot resource group GUID for Azure
     ${SettingCustomSnapshotResourceGroup},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if Datastore Free space check is enabled
     ${SettingDatastoreFreespaceCheck},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # precentage of datastore free space check value
     ${SettingDatastoreFreespaceRequired},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Is the VM App Aware
     ${SettingIsApplicationAware},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Start Time for the VM Group Job
     ${SettingJobStartTime},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Number of readers for backup
     ${SettingNoOfReaders},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # transport mode based on environment.
     # Values are case sensitive
     ${SettingTransportMode},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if Changed Block Tracking is enabled
     ${SettingUseChangedBlockTrackingOnVM},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if use VM CheckPoint setting is enabled
     ${SettingUseVMCheckpointSetting},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SettingVMBackupType},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SnapEngineId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SnapEngineName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${SnapMountProxyId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SnapMountProxyName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${SnapshotManagementBackupCopyInterface},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if hardware snapshot is enabled
     ${SnapshotManagementEnableHardwareSnapshot},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if full copy of amazon snapshot to different amazon account is enabled
     ${SnapshotManagementIsCrossAccountCopyEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled
     ${SnapshotManagementIsCrossAccountEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if independent disk option is enabled
     ${SnapshotManagementIsIndependentDisksEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if raw device maps option is enabled
     ${SnapshotManagementIsRawDeviceMapsEnabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of ESX Host
     ${SnapshotManagementSnapMountEsxHost},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if separate proxy client is used for snap to tape
     ${SnapshotManagementUseSeparateProxyForSnapToTape},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Virtual machine application user name
     ${SnapshotManagementVMApplicationUserName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${StorageId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -733,9 +603,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-VMGroup_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-VMGroup_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-VMGroup_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-VMGroup_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

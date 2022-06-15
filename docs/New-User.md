@@ -12,12 +12,6 @@ Create a User
 
 ## SYNTAX
 
-### Create (Default)
-```
-New-User -Body <ICreateUsers> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
 ```
 New-User -Users <ICreateUser[]> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -47,22 +41,6 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-Used to create single or multiple users.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateUsers
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -PassThru
 Returns true when the command succeeds
 
@@ -84,7 +62,7 @@ To construct, see NOTES section for USERS properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.ICreateUser[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -130,8 +108,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreateUsers
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IIdNameGuid
@@ -144,22 +120,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreateUsers>: Used to create single or multiple users.
-  - `Users <ICreateUser[]>`: 
-    - `Email <String>`: Used to provide an email-id to the new user. This email-id is used for logging in the user. Please note that email ids are compulsory for company and local users and optional for external users.
-    - `[CompanyId <Int32?>]`: 
-    - `[CompanyName <String>]`: 
-    - `[FullName <String>]`: Used to provide a name to the new user.
-    - `[InviteUser <Boolean?>]`: User will receive an email to install backup software package on their device if this is set to true.
-    - `[Name <String>]`: Used to provide the new user with a username. This username can be used for logging in the user instead of email-id when duplicate email-ids are present. For external user, it is necessary to provide the domain name along with the username (domainName\\username). To create a company user, the company id or name needs to be provided in the company entity.
-    - `[Password <String>]`: Used to provide a password to the user being created. This will be accepted when the useSystemGeneratePassword tag is false. The password has to be provided in Base64 format.
-    - `[PlanId <Int32?>]`: 
-    - `[PlanName <String>]`: 
-    - `[UseSystemGeneratePassword <Boolean?>]`: Choose to provide a system generated password to the user instead of providing your own password. An email will be sent to the user to reset the password. If it is set to true, password tag need not be provided. If it is set to false, password needs to be provided in the password tag in Base64 format.
-    - `[UserGroups <IIdName[]>]`: Provide a list of userGroups that the user should be a part of. Either id or name or both can be provided.
-      - `[Id <Int32?>]`: 
-      - `[Name <String>]`: 
 
 USERS <ICreateUser[]>: .
   - `Email <String>`: Used to provide an email-id to the new user. This email-id is used for logging in the user. Please note that email ids are compulsory for company and local users and optional for external users.

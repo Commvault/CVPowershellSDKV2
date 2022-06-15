@@ -29,31 +29,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IUpdatePlanEntityRule
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IUpdatePlanEntityRule>: Plan entity rule update object. Fields in this object need to be populated to suggest what need to be changed in the rule.         User can provide all rule options or can specify a specific rule group. Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [Rank <Int32?>]: [Optional] - This field will suggest rank/priority of rule.
-  [Regions <IIdName[]>]: This will include list of regions that should be evaluated against workload region for plan association.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [RuleId <Int32?>]: 
-  [RuleName <String>]: 
-  [ServerGroups <IIdName[]>]: This will include list of Server groups that should be evaluated against workload server group for plan association.
-  [Solutions <IIdName[]>]: This will include list of solutions that should be evaluated against workload for plan association.
-  [Tags <IPlanEntityRuleTag[]>]: This will include list of tags that should be evaluated against workload for plan association
-    [Id <Int32?>]: Id for the tag
-    [Name <String>]: Name for the plan rule tag which need to be matched against tag of the workload.
-    [Value <String>]: Possible value that need to matched against value of tag associated to workload.
-  [Workloads <IIdName[]>]: This will include list of apptypes that should be evaluated against workload apptype for plan association.
 
 REGIONS <IIdName[]>: This will include list of regions that should be evaluated against workload region for plan association.
   [Id <Int32?>]: 
@@ -82,75 +63,65 @@ function Set-PlanRule {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdatePlanEntityRule]
-    # Plan entity rule update object.
-    # Fields in this object need to be populated to suggest what need to be changed in the rule.
-    # User can provide all rule options or can specify a specific rule group.
-    # Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # [Optional] - This field will suggest rank/priority of rule.
     ${Rank},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of regions that should be evaluated against workload region for plan association.
     # To construct, see NOTES section for REGIONS properties and create a hash table.
     ${Regions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${RuleId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${RuleName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of Server groups that should be evaluated against workload server group for plan association.
     # To construct, see NOTES section for SERVERGROUPS properties and create a hash table.
     ${ServerGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of solutions that should be evaluated against workload for plan association.
     # To construct, see NOTES section for SOLUTIONS properties and create a hash table.
     ${Solutions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanEntityRuleTag[]]
     # This will include list of tags that should be evaluated against workload for plan association
     # To construct, see NOTES section for TAGS properties and create a hash table.
     ${Tags},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This will include list of apptypes that should be evaluated against workload apptype for plan association.
@@ -205,7 +176,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-PlanRule_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-PlanRule_UpdateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

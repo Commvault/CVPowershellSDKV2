@@ -176,6 +176,40 @@
       </TableControl>
     </View>
     <View>
+      <Name>Commvault.Powershell.Models.AccessNodeModel</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.AccessNodeModel</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Type</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Type</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>Commvault.Powershell.Models.AccessNodes</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.AccessNodes</TypeName>
@@ -2996,6 +3030,34 @@
       </TableControl>
     </View>
     <View>
+      <Name>Commvault.Powershell.Models.BackupActivityControlOptionsProp</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.BackupActivityControlOptionsProp</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>DelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>EnableAfterDelay</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>DelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EnableAfterDelay</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>Commvault.Powershell.Models.BackupFrequencyPattern</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.BackupFrequencyPattern</TypeName>
@@ -4678,6 +4740,46 @@
       </TableControl>
     </View>
     <View>
+      <Name>Commvault.Powershell.Models.CloudStorageResp</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.CloudStorageResp</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ErrorCode</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ErrorMessage</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>ErrorCode</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ErrorMessage</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>Commvault.Powershell.Models.ClusterListResp</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.ClusterListResp</TypeName>
@@ -4835,6 +4937,9 @@
             <Label>InstanceId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>InventoryEntityName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>KmsId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -4969,6 +5074,9 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>InstanceId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InventoryEntityName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>KmsId</PropertyName>
@@ -14010,6 +14118,64 @@
       </TableControl>
     </View>
     <View>
+      <Name>Commvault.Powershell.Models.MediaAgentForDdbSummary</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.MediaAgentForDdbSummary</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>DisplayName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>IsDdbSubclientConfigured</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>OSType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ReleaseId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SimosId</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>DisplayName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IsDdbSubclientConfigured</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>OSType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ReleaseId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SimosId</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>Commvault.Powershell.Models.MediaAgentLogsCache</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.MediaAgentLogsCache</TypeName>
@@ -14428,6 +14594,9 @@
             <Label>BackupJobId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>FailureReason</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>Failures</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -14457,6 +14626,9 @@
             <TableColumnItems>
               <TableColumnItem>
                 <PropertyName>BackupJobId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>FailureReason</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Failures</PropertyName>
@@ -16658,6 +16830,146 @@
       </TableControl>
     </View>
     <View>
+      <Name>Commvault.Powershell.Models.PathsSz5LoqV4StorageCloudCloudstorageidBucketPostResponses200ContentApplicationJsonSchema</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.PathsSz5LoqV4StorageCloudCloudstorageidBucketPostResponses200ContentApplicationJsonSchema</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ErrorCode</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ErrorMessage</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>ErrorCode</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ErrorMessage</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.PathsXt7ZxhV4StorageCloudCloudstorageidGetResponses200ContentApplicationJsonSchema</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.PathsXt7ZxhV4StorageCloudCloudstorageidGetResponses200ContentApplicationJsonSchema</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>CacheConfigurationEnable</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>EncryptionCipher</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>EncryptionEncrypt</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>EncryptionKeyLength</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralDeduplicationSavings</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralFreeSpace</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralSizeOnDisk</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralTotalCapacity</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralVendorType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>KeyProviderId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>KeyProviderName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>CacheConfigurationEnable</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EncryptionCipher</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EncryptionEncrypt</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EncryptionKeyLength</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralDeduplicationSavings</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralFreeSpace</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralSizeOnDisk</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralTotalCapacity</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralVendorType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>KeyProviderId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>KeyProviderName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>Commvault.Powershell.Models.PermissionResp</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.PermissionResp</TypeName>
@@ -16697,6 +17009,52 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Type</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.PlanAddons</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.PlanAddons</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Database</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>FileSystem</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>IndexCopy</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Snap</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SnapStatus</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>Database</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>FileSystem</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IndexCopy</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Snap</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SnapStatus</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
@@ -22247,6 +22605,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22254,6 +22624,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22284,6 +22666,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22291,6 +22685,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22329,6 +22735,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22336,6 +22754,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22375,6 +22805,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22382,6 +22824,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22429,6 +22883,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22436,6 +22902,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22472,6 +22950,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22479,6 +22969,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22523,6 +23025,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22530,6 +23044,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22560,6 +23086,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22567,6 +23105,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22605,6 +23155,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22612,6 +23174,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22639,6 +23213,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22646,6 +23232,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22681,6 +23279,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22688,6 +23298,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22718,6 +23340,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22725,6 +23359,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22763,6 +23409,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22770,6 +23428,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22803,6 +23473,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22810,6 +23492,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22851,6 +23545,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22858,6 +23564,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22897,6 +23615,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22904,6 +23634,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -22951,6 +23693,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -22958,6 +23712,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -22988,6 +23754,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -22995,6 +23773,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -23033,6 +23823,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -23040,6 +23842,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -23070,6 +23884,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -23077,6 +23903,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -23143,6 +23981,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -23150,6 +24000,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -23180,6 +24042,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -23187,6 +24061,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -23225,6 +24111,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -23232,6 +24130,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -23274,6 +24184,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -23281,6 +24203,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -23331,6 +24265,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -23338,6 +24284,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -23368,6 +24326,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -23375,6 +24345,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -23413,6 +24395,18 @@
             <Label>ActivityControlEnableRestore</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>BackupActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupActivityControlOptionsTimeZoneName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>FbrUnixMediaAgentId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -23420,6 +24414,18 @@
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>NewName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionDelayTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionEnableAfterDelay</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>RestoreActivityControlOptionsTimeZoneName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>SecurityClientOwners</Label>
@@ -23450,6 +24456,18 @@
                 <PropertyName>ActivityControlEnableRestore</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupActivityControlOptionsTimeZoneName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>FbrUnixMediaAgentId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
@@ -23457,6 +24475,18 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>NewName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionDelayTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionEnableAfterDelay</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>RestoreActivityControlOptionsTimeZoneName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>SecurityClientOwners</PropertyName>
@@ -24977,6 +26007,9 @@
             <Label>IsDeletedHypervisor</Label>
           </TableColumnHeader>
           <TableColumnHeader>
+            <Label>IsEtcdSubclient</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>IsHypervisorDeconfigured</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -24994,6 +26027,9 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>IsDeletedHypervisor</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IsEtcdSubclient</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>IsHypervisorDeconfigured</PropertyName>

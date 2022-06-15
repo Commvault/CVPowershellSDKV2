@@ -12,12 +12,6 @@ Create a new disk storage pool
 
 ## SYNTAX
 
-### Create (Default)
-```
-New-DiskStorage -Body <ICreateDiskStorage> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
 ```
 New-DiskStorage -EnableDeduplication -Name <String> -Storage <IPath[]>
  [-DeduplicationDbStorage <IDedupePath[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -48,22 +42,6 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateDiskStorage
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -DeduplicationDbStorage
 A list of dedupe locations can be provided for the storage pool being created.
 This provides an efficient way to save/store data by eliminating duplicate blocks of data during backups.
@@ -71,7 +49,7 @@ To construct, see NOTES section for DEDUPLICATIONDBSTORAGE properties and create
 
 ```yaml
 Type: Commvault.Powershell.Models.IDedupePath[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -86,7 +64,7 @@ enables or disables deduplication
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -101,7 +79,7 @@ Name of the Disk Storage to be created.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -132,7 +110,7 @@ To construct, see NOTES section for STORAGE properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IPath[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -178,8 +156,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreateDiskStorage
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IIdName
@@ -192,22 +168,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreateDiskStorage>: .
-  - `EnableDeduplication <Boolean>`: enables or disables deduplication
-  - `Name <String>`: Name of the Disk Storage to be created.
-  - `Storage <IPath[]>`: A list of backup locations can be provided for the storage pool being created.
-    - `[BackupLocation <String>]`: 
-    - `[CredentialsName <String>]`: username to access the network path
-    - `[CredentialsPassword <String>]`: password to access the network path
-    - `[MediaAgentId <Int32?>]`: 
-    - `[MediaAgentName <String>]`: 
-    - `[SavedCredentialsId <Int32?>]`: 
-    - `[SavedCredentialsName <String>]`: 
-  - `[DeduplicationDbStorage <IDedupePath[]>]`: A list of dedupe locations can be provided for the storage pool being created. This provides an efficient way to save/store data by eliminating duplicate blocks of data during backups.
-    - `[MediaAgentId <Int32?>]`: 
-    - `[MediaAgentName <String>]`: 
-    - `[Path <String>]`: 
 
 DEDUPLICATIONDBSTORAGE <IDedupePath[]>: A list of dedupe locations can be provided for the storage pool being created. This provides an efficient way to save/store data by eliminating duplicate blocks of data during backups.
   - `[MediaAgentId <Int32?>]`: 

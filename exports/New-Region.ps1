@@ -27,8 +27,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateRegion
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -37,16 +35,6 @@ Commvault.Powershell.Models.IIdName
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateRegion>: Details of the new region
-  Locations <ILocationDetails[]>: List of locations which are part of the region
-    Country <String>: Name of country
-    Latitude <Double>: Latitude for the location
-    Longitude <Double>: Longitude for the location
-    [City <String>]: Name of city
-    [State <String>]: Name of state
-  Name <String>: Region name
-  [Type <String>]: Type of the region
 
 LOCATIONS <ILocationDetails[]>: List of locations which are part of the region
   Country <String>: Name of country
@@ -59,29 +47,22 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-regio
 #>
 function New-Region {
 [OutputType([Commvault.Powershell.Models.IIdName], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateRegion]
-    # Details of the new region
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ILocationDetails[]]
     # List of locations which are part of the region
     # To construct, see NOTES section for LOCATIONS properties and create a hash table.
     ${Locations},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Region name
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Type of the region
@@ -141,7 +122,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-Region_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-Region_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

@@ -27,8 +27,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IArchivePlan
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Outputs
@@ -49,41 +47,6 @@ BACKUPDESTINATIONS <ICreateArchivePlanBackupDestination[]>: .
   [StoragePoolId <Int32?>]: 
   [StoragePoolName <String>]: 
 
-BODY <IArchivePlan>: .
-  PlanName <String>: 
-  [AllowPlanOverride <Boolean?>]: Flag to enable overriding of plan. Plan cannot be overriden by default.
-  [ArchiveFrequency <Int32?>]: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-  [ArchiveFrequencyDayOfMonth <Int32?>]: Day on which to run the schedule, applicable for monthly, yearly
-  [ArchiveFrequencyDayOfWeek <String>]: 
-  [ArchiveFrequencyMonthOfYear <String>]: 
-  [ArchiveFrequencyScheduleFrequencyType <String>]: schedule frequency type
-  [ArchiveFrequencyStartTime <Int32?>]: start time of schedule in seconds for daily, weekly, monthly, yearly frequency
-  [ArchiveFrequencyWeekOfMonth <String>]: Specific week of a month
-  [ArchiveFrequencyWeeklyDays <String[]>]: Days of the week for weekly frequency
-  [ArchivingRuleAfterArchiving <String>]: After an archive job, replace the file that meets the archiving rules with a stub or delete the file that meets the archiving rules
-  [ArchivingRuleFileSize <Int32?>]: To archive files based on the size of the file, specify the minimum file size in KB.
-  [ArchivingRuleFileTimestamp <Int32?>]: To archive files based on the last accessed or modified date of each file within the folder, specify the number of days. Should be supplied with fileTimestampMethod.
-  [ArchivingRuleFileTimestampMethod <String>]: 
-  [BackupDestinations <ICreateArchivePlanBackupDestination[]>]: 
-    BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-    [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-    [RegionId <Int32?>]: 
-    [RegionName <String>]: 
-    [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention.
-    [SourceCopyId <Int32?>]: 
-    [SourceCopyName <String>]: 
-    [StoragePoolId <Int32?>]: 
-    [StoragePoolName <String>]: 
-  [OverrideRestrictionArchivingRules <String>]: 
-  [OverrideRestrictionRpo <String>]: 
-  [OverrideRestrictionStoragePool <String>]: 
-  [ParentPlanId <Int32?>]: 
-  [ParentPlanName <String>]: 
-  [RpoArchiveWindow <IDayAndTime[]>]: Archive job will run only in the specified archive window
-    [DayOfWeek <String[]>]: 
-    [EndTime <Int64?>]: Time in seconds since the beginning of the day
-    [StartTime <Int64?>]: Time in seconds since the beginning of the day
-
 RPOARCHIVEWINDOW <IDayAndTime[]>: Archive job will run only in the specified archive window
   [DayOfWeek <String[]>]: 
   [EndTime <Int64?>]: Time in seconds since the beginning of the day
@@ -95,27 +58,20 @@ function New-ArchivePlan {
 [OutputType([Commvault.Powershell.Models.IPlanResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IArchivePlan]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Flag to enable overriding of plan.
     # Plan cannot be overriden by default.
     ${AllowPlanOverride},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Frequency of the schedule based on schedule frequency type eg.
@@ -123,111 +79,111 @@ param(
     # for Monthly 2 is it repeats every 2 months
     ${ArchiveFrequency},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # Day on which to run the schedule, applicable for monthly, yearly
     ${ArchiveFrequencyDayOfMonth},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ArchiveFrequencyDayOfWeek},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ArchiveFrequencyMonthOfYear},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # schedule frequency type
     ${ArchiveFrequencyScheduleFrequencyType},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # start time of schedule in seconds for daily, weekly, monthly, yearly frequency
     ${ArchiveFrequencyStartTime},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Specific week of a month
     ${ArchiveFrequencyWeekOfMonth},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Days of the week for weekly frequency
     ${ArchiveFrequencyWeeklyDays},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # After an archive job, replace the file that meets the archiving rules with a stub or delete the file that meets the archiving rules
     ${ArchivingRuleAfterArchiving},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # To archive files based on the size of the file, specify the minimum file size in KB.
     ${ArchivingRuleFileSize},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
     # Should be supplied with fileTimestampMethod.
     ${ArchivingRuleFileTimestamp},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ArchivingRuleFileTimestampMethod},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICreateArchivePlanBackupDestination[]]
     # .
     # To construct, see NOTES section for BACKUPDESTINATIONS properties and create a hash table.
     ${BackupDestinations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionArchivingRules},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionRpo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${OverrideRestrictionStoragePool},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${ParentPlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${ParentPlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IDayAndTime[]]
     # Archive job will run only in the specified archive window
@@ -282,7 +238,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ArchivePlan_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ArchivePlan_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

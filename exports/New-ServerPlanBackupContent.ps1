@@ -29,25 +29,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ICreateServerPlanBackupContent
 .Outputs
 Commvault.Powershell.Models.ICreateServerPlanBackupContentResponse
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateServerPlanBackupContent>: .
-  [BackupContentBackupSystemState <Boolean?>]: Do you want to back up the system state? Applicable only for Windows
-  [BackupContentBackupSystemStateOnlyWithFullBackup <Boolean?>]: Do you want to back up system state only with full backup? Applicable only if the value of backupSystemState is true
-  [BackupContentMacExcludedPaths <String[]>]: Paths to exclude for Mac
-  [BackupContentMacIncludedPaths <String[]>]: Paths to include for Mac
-  [BackupContentUnixExcludedPaths <String[]>]: Paths to exclude for UNIX
-  [BackupContentUnixIncludedPaths <String[]>]: Paths to include for UNIX
-  [BackupContentUseVssForSystemState <Boolean?>]: Do you want to back up system state with VSS? Applicable only if the value of backupSystemState is true
-  [BackupContentWindowsExcludedPaths <String[]>]: Paths to exclude for Windows
-  [BackupContentWindowsIncludedPaths <String[]>]: Paths to include for Windows
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -61,13 +48,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -76,7 +64,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -101,14 +89,12 @@ function New-ServerPlanBackupContent {
 [OutputType([Commvault.Powershell.Models.ICreateServerPlanBackupContentResponse])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of the Plan to modify
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -116,72 +102,55 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateServerPlanBackupContent]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up the system state Applicable only for Windows
     ${BackupContentBackupSystemState},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up system state only with full backup Applicable only if the value of backupSystemState is true
     ${BackupContentBackupSystemStateOnlyWithFullBackup},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Mac
     ${BackupContentMacExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Mac
     ${BackupContentMacIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for UNIX
     ${BackupContentUnixExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for UNIX
     ${BackupContentUnixIncludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Do you want to back up system state with VSS Applicable only if the value of backupSystemState is true
     ${BackupContentUseVssForSystemState},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to exclude for Windows
     ${BackupContentWindowsExcludedPaths},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Paths to include for Windows
@@ -241,9 +210,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-ServerPlanBackupContent_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
