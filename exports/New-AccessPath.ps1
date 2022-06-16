@@ -29,18 +29,12 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.IPaths4Yo4LoV4StorageCloudCloudstorageidBucketBucketidAccesspathPostRequestbodyContentApplicationJsonSchema
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IPaths4Yo4LoV4StorageCloudCloudstorageidBucketBucketidAccesspathPostRequestbodyContentApplicationJsonSchema>: Used to add a new access path to a bucket
-  [MediaAgentId <Int32?>]: 
-  [MediaAgentName <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -54,13 +48,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -69,7 +64,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -94,21 +89,18 @@ function New-AccessPath {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of Bucket
     ${BucketId},
 
-    [Parameter(ParameterSetName='Create', Mandatory)]
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.Int32]
     # Id of cloud Storage
     ${CloudStorageId},
 
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -116,23 +108,13 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='CreateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IPaths4Yo4LoV4StorageCloudCloudstorageidBucketBucketidAccesspathPostRequestbodyContentApplicationJsonSchema]
-    # Used to add a new access path to a bucket
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${MediaAgentId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -192,9 +174,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-AccessPath_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-AccessPath_CreateExpanded';
-            CreateViaIdentity = 'CommvaultPowerShell.private\New-AccessPath_CreateViaIdentity';
             CreateViaIdentityExpanded = 'CommvaultPowerShell.private\New-AccessPath_CreateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

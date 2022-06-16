@@ -19,34 +19,9 @@ Get details of a disk storage pool based on id
 .Description
 Get details of a disk storage pool based on id
 .Example
-PS C:\>  Get-DiskStorageDetail -StoragePoolId 22 | Format-List
+PS C:\> {{ Add code here }}
 
-AssociatedPlanList            : 
-BackupLocations               : {[jnan_test_bdc] E:\Libraryforipv6}
-EncryptionCipher              : NotEncrypted
-EncryptionEncrypt             : 
-EncryptionKeyLength           : 0
-ExternalUserGroupId           : 
-ExternalUserGroupName         : 
-ExternalUserGroupProviderId   : 
-ExternalUserGroupProviderName : 
-GeneralCapacity               : 102398
-GeneralDedupeSavingsPercent   : 
-GeneralFreeSpace              : 65042
-GeneralSizeOnDisk             : 501219328
-Id                            : 22
-KeyProviderId                 : 1
-KeyProviderName               : Built-in
-Name                          : jnanesh_bdc
-RoleId                        : 
-RoleName                      : 
-SecurityIsCreatorAssociation  : 
-SecurityPermissionList        : 
-UserGroupId                   : 
-UserGroupName                 : 
-UserId                        : 
-UserName                      : 
-
+{{ Add output here }}
 .Example
 PS C:\> {{ Add code here }}
 
@@ -73,13 +48,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -88,7 +64,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request

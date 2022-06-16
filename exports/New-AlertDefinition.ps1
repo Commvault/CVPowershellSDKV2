@@ -27,8 +27,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IAlertDefinitonsCreate
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
@@ -46,35 +44,6 @@ ASSOCIATIONS <IAlertAssociationIdNameType1[]>: AlertDefinitionsAssociations
   [Id <Int32?>]: id of the associated entity
   [Name <String>]: name of the associated entity
   [Type <String>]: 
-
-BODY <IAlertDefinitonsCreate>: AlertDefinitonsCreate
-  [AlertTargetSendAlertTo <String[]>]: 
-  [AlertTypeCategory <String>]: Defines the category of the alert
-  [AlertTypeCriteria <String>]: Defines the criteria of the alert
-  [AlertTypeParamsList <IAlertDefinitionsCriteriaParams[]>]: 
-    [ParamIndex <Int32?>]: Param order index
-    [Type <Int32?>]: Input value type (default 0 = no input required)
-    [Unit <Int32?>]: Unit of the criteria(For eg. :Hrs,min)
-    [Value <Int32?>]: Value of the criteria (deefault 0 : if no value required)
-  [Associations <IAlertAssociationIdNameType1[]>]: AlertDefinitionsAssociations
-    [Id <Int32?>]: id of the associated entity
-    [Name <String>]: name of the associated entity
-    [Type <String>]: 
-  [LocaleId <Int32?>]: 
-  [LocaleName <String>]: 
-  [Name <String>]: 
-  [RecipientBcc <IAlertTargetIdNameType1[]>]: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-    [Type <String>]: 
-  [RecipientCc <IAlertTargetIdNameType1[]>]: 
-  [RecipientTo <IAlertTargetIdNameType1[]>]: 
-  [RecipientWebHookId <Int32?>]: id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook
-  [SendIndividualNotifications <Boolean?>]: 
-  [TemplateConsoleMessage <String>]: the message template for the console notification
-  [TemplateEmailMessage <String>]: the message template for the email notification. Contains both email subject as well as body
-  [TemplateEventViewerMessage <String>]: the message template for the event viewer notification
-  [TemplateWebhookMessage <String>]: the message template for the webhook notification
 
 RECIPIENTBCC <IAlertTargetIdNameType1[]>: .
   [Id <Int32?>]: 
@@ -97,85 +66,78 @@ function New-AlertDefinition {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IAlertDefinitonsCreate]
-    # AlertDefinitonsCreate
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # .
     ${AlertTargetSendAlertTo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Defines the category of the alert
     ${AlertTypeCategory},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Defines the criteria of the alert
     ${AlertTypeCriteria},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[]]
     # .
     # To construct, see NOTES section for ALERTTYPEPARAMSLIST properties and create a hash table.
     ${AlertTypeParamsList},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertAssociationIdNameType1[]]
     # AlertDefinitionsAssociations
     # To construct, see NOTES section for ASSOCIATIONS properties and create a hash table.
     ${Associations},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${LocaleId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${LocaleName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertTargetIdNameType1[]]
     # .
     # To construct, see NOTES section for RECIPIENTBCC properties and create a hash table.
     ${RecipientBcc},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertTargetIdNameType1[]]
     # .
     # To construct, see NOTES section for RECIPIENTCC properties and create a hash table.
     ${RecipientCc},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IAlertTargetIdNameType1[]]
     # .
     # To construct, see NOTES section for RECIPIENTTO properties and create a hash table.
     ${RecipientTo},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # id of the webhook to be associated with the alert definition.
@@ -183,32 +145,32 @@ param(
     # To get a list of webhooks, use api GET Webhook
     ${RecipientWebHookId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # .
     ${SendIndividualNotifications},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the console notification
     ${TemplateConsoleMessage},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the email notification.
     # Contains both email subject as well as body
     ${TemplateEmailMessage},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the event viewer notification
     ${TemplateEventViewerMessage},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # the message template for the webhook notification
@@ -268,7 +230,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-AlertDefinition_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-AlertDefinition_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

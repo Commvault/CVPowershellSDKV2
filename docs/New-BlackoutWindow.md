@@ -12,16 +12,10 @@ Create a Blackout Window
 
 ## SYNTAX
 
-### CreateExpanded (Default)
 ```
 New-BlackoutWindow -Name <String> [-BackupOperations <String[]>] [-BetweenDateEnd <Int64>]
  [-BetweenDateStart <Int64>] [-CompanyId <Int32>] [-CompanyName <String>] [-Days <String[]>] [-DoNotSubmitJob]
  [-Time <IStartEnd[]>] [-Weeks <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-BlackoutWindow -Body <ICreateBlackoutWindow> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -54,7 +48,7 @@ Refers to backup types to include in the blackout window
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -69,7 +63,7 @@ the blackout window is no longer in effect from this point on.
 
 ```yaml
 Type: System.Int64
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -84,7 +78,7 @@ the blackout window comes into effect at this point.
 
 ```yaml
 Type: System.Int64
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -94,31 +88,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-betweenDates refers to the dates where the blackout window will be in effect.
-Dates have to be given in unix time format.
-time has to be provided in seconds.
-company refers to company to which the blackout window is associated.Id is given first preference if both are id and name are provided.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateBlackoutWindow
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -CompanyId
 .
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -133,7 +108,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -148,7 +123,7 @@ Days of the week when the blackout window will be in effect.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -164,7 +139,7 @@ If set to false, the job is submitted and resumed once the blackout window ends.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -179,7 +154,7 @@ Name of the blackout window to be created.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -211,7 +186,7 @@ To construct, see NOTES section for TIME properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IStartEnd[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -226,7 +201,7 @@ Refers to the weeks of the month that the blackout window will be in effect.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -272,8 +247,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreateBlackoutWindow
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IIdName
@@ -286,20 +259,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreateBlackoutWindow>: betweenDates refers to the dates where the blackout window will be in effect. Dates have to be given in unix time format. time has to be provided in seconds. company refers to company to which the blackout window is associated.Id is given first preference if both are id and name are provided.
-  - `Name <String>`: Name of the blackout window to be created.
-  - `[BackupOperations <String[]>]`: Refers to backup types to include in the blackout window
-  - `[BetweenDateEnd <Int64?>]`: the blackout window is no longer in effect from this point on.
-  - `[BetweenDateStart <Int64?>]`: the blackout window comes into effect at this point.
-  - `[CompanyId <Int32?>]`: 
-  - `[CompanyName <String>]`: 
-  - `[Days <String[]>]`: Days of the week when the blackout window will be in effect.
-  - `[DoNotSubmitJob <Boolean?>]`: Allows or Denies submitting a job when the blackout window is in effect. If set to false, the job is submitted and resumed once the blackout window ends.
-  - `[Time <IStartEnd[]>]`: Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
-    - `[End <Int64?>]`: the blackout window is no longer in effect from this point on.
-    - `[Start <Int64?>]`: the blackout window comes into effect at this point.
-  - `[Weeks <String[]>]`: Refers to the weeks of the month that the blackout window will be in effect.
 
 TIME <IStartEnd[]>: Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
   - `[End <Int64?>]`: the blackout window is no longer in effect from this point on.

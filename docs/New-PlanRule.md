@@ -13,16 +13,10 @@ Request body will suggest plan against which rule need to be created and type of
 
 ## SYNTAX
 
-### CreateExpanded (Default)
 ```
 New-PlanRule [-CompanyId <Int32>] [-CompanyName <String>] [-PlanId <Int32>] [-PlanName <String>]
  [-Rank <Int32>] [-Regions <IIdName[]>] [-ServerGroups <IIdName[]>] [-Solutions <IIdName[]>]
  [-Tags <IPlanEntityRuleTag[]>] [-Workloads <IIdName[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-PlanRule -Body <ICreatePlanEntityRule> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -51,30 +45,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-This object will send details to create new plan rule.
-User can provide all rule options or can specify a specific rule group.
-Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreatePlanEntityRule
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -CompanyId
 .
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -89,7 +65,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -104,7 +80,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -119,7 +95,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -135,7 +111,7 @@ If not present, we will process rule in the same order they are created.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -151,7 +127,7 @@ To construct, see NOTES section for REGIONS properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -167,7 +143,7 @@ To construct, see NOTES section for SERVERGROUPS properties and create a hash ta
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -183,7 +159,7 @@ To construct, see NOTES section for SOLUTIONS properties and create a hash table
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -199,7 +175,7 @@ To construct, see NOTES section for TAGS properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IPlanEntityRuleTag[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -215,7 +191,7 @@ To construct, see NOTES section for WORKLOADS properties and create a hash table
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -261,8 +237,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreatePlanEntityRule
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -277,23 +251,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreatePlanEntityRule>: This object will send details to create new plan rule. User can provide all rule options or can specify a specific rule group. Be default, for rule to be applicable for association to a workload, ALL specified rules in that Rule need to be matched.
-  - `[CompanyId <Int32?>]`: 
-  - `[CompanyName <String>]`: 
-  - `[PlanId <Int32?>]`: 
-  - `[PlanName <String>]`: 
-  - `[Rank <Int32?>]`: Optional field to suggest priority/rank of the rule. If not present, we will process rule in the same order they are created.
-  - `[Regions <IIdName[]>]`: This will include list of regions that should be evaluated against workload region for plan association.
-    - `[Id <Int32?>]`: 
-    - `[Name <String>]`: 
-  - `[ServerGroups <IIdName[]>]`: This will include list of Server groups that should be evaluated against workload server group for plan association.
-  - `[Solutions <IIdName[]>]`: This will include list of solutions that should be evaluated against workload for plan association
-  - `[Tags <IPlanEntityRuleTag[]>]`: This will include list of tags that should be evaluated against workload for plan association
-    - `[Id <Int32?>]`: Id for the tag
-    - `[Name <String>]`: Name for the plan rule tag which need to be matched against tag of the workload.
-    - `[Value <String>]`: Possible value that need to matched against value of tag associated to workload.
-  - `[Workloads <IIdName[]>]`: This will include list of apptypes that should be evaluated against workload apptype for plan association.
 
 REGIONS <IIdName[]>: This will include list of regions that should be evaluated against workload region for plan association.
   - `[Id <Int32?>]`: 

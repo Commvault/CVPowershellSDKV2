@@ -19,18 +19,6 @@ New-CloudStorageMetaDataCache -CloudStorageId <Int32> -Path <String> [-Credentia
  [-SavedCredentialsId <Int32>] [-SavedCredentialsName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
-```
-New-CloudStorageMetaDataCache -CloudStorageId <Int32> -Body <ICreateMetadataCacheConfigurations> [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-CloudStorageMetaDataCache -InputObject <ICommvaultPowerShellIdentity>
- -Body <ICreateMetadataCacheConfigurations> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### CreateViaIdentityExpanded
 ```
 New-CloudStorageMetaDataCache -InputObject <ICommvaultPowerShellIdentity> -Path <String>
@@ -64,29 +52,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-If adding a network access path, Please add credentials or saved credentials.
-If both are provided, credentials will be taken into consideration.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateMetadataCacheConfigurations
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -CloudStorageId
 Id of cloud Storage
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: True
@@ -101,7 +72,7 @@ username to access the network path
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -116,7 +87,7 @@ password to access the network path
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -132,7 +103,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -147,7 +118,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -162,7 +133,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -177,7 +148,7 @@ Metadata cache will be stored on this path
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -192,7 +163,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -207,7 +178,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -255,8 +226,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 
-### Commvault.Powershell.Models.ICreateMetadataCacheConfigurations
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -270,15 +239,6 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <ICreateMetadataCacheConfigurations>: If adding a network access path, Please add credentials or saved credentials. If both are provided, credentials will be taken into consideration.
-  - `Path <String>`: Metadata cache will be stored on this path
-  - `[CredentialsName <String>]`: username to access the network path
-  - `[CredentialsPassword <String>]`: password to access the network path
-  - `[MediaAgentId <Int32?>]`: 
-  - `[MediaAgentName <String>]`: 
-  - `[SavedCredentialsId <Int32?>]`: 
-  - `[SavedCredentialsName <String>]`: 
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[AccessPathId <Int32?>]`: Id of the mount path whose access path has to be deleted
   - `[AgentId <Int32?>]`: Id of the agent to be modified
@@ -291,13 +251,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[CredentialName <String>]`: 
   - `[DomainId <Int32?>]`: ID of the AD/LDAP domain
   - `[EntityId <Int32?>]`: Unique id for the entity
-  - `[EntityType <String>]`: Type of the entity
+  - `[EntityType <Int32?>]`: Type of the entity
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int32?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int32?>]`: Id of hyperscale storage
-  - `[HypervisorId <Int32?>]`: Id of the HYpervisor to get
+  - `[HypervisorId <Int32?>]`: Id of the Hypervisor to update
   - `[Id <Int32?>]`: 
   - `[InstanceId <Int32?>]`: Id of the instance to modify
+  - `[InventoryEntityName <String>]`: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   - `[KmsId <Int32?>]`: Id of Key Management Server
   - `[MediaAgentId <Int32?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int32?>]`: Id of metadata cache
@@ -306,7 +267,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[PairId <Int32?>]`: 
   - `[PlanId <Int32?>]`: Id of the plan to fetch details
   - `[RecoveryTargetId <Int32?>]`: id of recovery target
-  - `[RegionId <String>]`: 
+  - `[RegionId <Int32?>]`: 
   - `[RegionList <String>]`: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   - `[ReplicationGroupId <String>]`: 
   - `[RequestId <Int32?>]`: Unique identifier for the request

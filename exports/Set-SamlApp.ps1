@@ -29,8 +29,6 @@ PS C:\> {{ Add code here }}
 
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-.Inputs
-Commvault.Powershell.Models.ISamlUpdate
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -54,40 +52,6 @@ ATTRIBUTEMAPPINGS <ISamlAttributes[]>: attribute mapping details
   [CustomAttribute <String>]: SAML custom attribute types
   [SamlAttribute <String>]: SAML attribute
 
-BODY <ISamlUpdate>: Updates SAML details
-  [AssociationCompanies <IIdName[]>]: Companies associated with SAML
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [AssociationDomains <IIdName[]>]: Domains associated with SAML
-  [AssociationEmailSuffixes <String[]>]: Email suffixes associated with SAML
-  [AssociationUserGroups <IIdName[]>]: user groups associated with SAML
-  [AttributeMappings <ISamlAttributes[]>]: attribute mapping details
-    [CustomAttribute <String>]: SAML custom attribute types
-    [SamlAttribute <String>]: SAML attribute
-  [AutoCreateUser <Boolean?>]: This auto-creates non-existing user if the user detail match with the identity rule.
-  [Description <String>]: SAML description
-  [Enabled <Boolean?>]: Boolean to indicate whether SAML is enabled.
-  [IdentityProviderMetaDataCertificateData <String>]: IDP certificate public key
-  [IdentityProviderMetaDataEntityId <String>]: Identity provider entity
-  [IdentityProviderMetaDataLogoutUrl <String>]: Identity Provider log-out URL
-  [IdentityProviderMetaDataRedirectUrl <String>]: Identity provider redirect URL
-  [IdentityProviderMetaDataSamlProtocolVersion <String>]: SAML Protocol version 
-  [NameIdAttribute <String>]: nameID in SAML assertion subject is used to perform login.
-  [ServiceProviderMetaDataAliasName <String>]: certificate alias name
-  [ServiceProviderMetaDataAutoGenerateSpMetaData <Boolean?>]: 
-  [ServiceProviderMetaDataCertificateData <String>]: certificate alias name.
-  [ServiceProviderMetaDataJksFileContents <String[]>]: jks file contents as byte array
-  [ServiceProviderMetaDataJksPrivateKey <String>]: key store password.
-  [ServiceProviderMetaDataKeyStorePassword <String>]: jks contents key store password.
-  [ServiceProviderMetaDataPrivateKeyPassword <String>]: certificate private key password
-  [ServiceProviderMetaDataServiceProviderEndpoint <String>]: web console URL.
-  [ServiceProviderMetaDataSpAliases <String[]>]: web console URL list.
-  [UserGroups <ICompanyWithUserGroupAssocDetails[]>]: By default, auto-created users will be associated to the Tenant Users group of the company. Add mapping to override this behaviour for a company.
-    [CompanyInfoId <Int32?>]: 
-    [CompanyInfoName <String>]: 
-    [UserGroupInfoId <Int32?>]: 
-    [UserGroupInfoName <String>]: 
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
   [AgentId <Int32?>]: Id of the agent to be modified
@@ -100,13 +64,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -115,7 +80,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -146,14 +111,12 @@ function Set-SamlApp {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
     [System.String]
     # .
     ${Name},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -161,181 +124,149 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ISamlUpdate]
-    # Updates SAML details
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Companies associated with SAML
     # To construct, see NOTES section for ASSOCIATIONCOMPANIES properties and create a hash table.
     ${AssociationCompanies},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # Domains associated with SAML
     # To construct, see NOTES section for ASSOCIATIONDOMAINS properties and create a hash table.
     ${AssociationDomains},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Email suffixes associated with SAML
     ${AssociationEmailSuffixes},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # user groups associated with SAML
     # To construct, see NOTES section for ASSOCIATIONUSERGROUPS properties and create a hash table.
     ${AssociationUserGroups},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ISamlAttributes[]]
     # attribute mapping details
     # To construct, see NOTES section for ATTRIBUTEMAPPINGS properties and create a hash table.
     ${AttributeMappings},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # This auto-creates non-existing user if the user detail match with the identity rule.
     ${AutoCreateUser},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SAML description
     ${Description},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Boolean to indicate whether SAML is enabled.
     ${Enabled},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # IDP certificate public key
     ${IdentityProviderMetaDataCertificateData},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity provider entity
     ${IdentityProviderMetaDataEntityId},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity Provider log-out URL
     ${IdentityProviderMetaDataLogoutUrl},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Identity provider redirect URL
     ${IdentityProviderMetaDataRedirectUrl},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SAML Protocol version
     ${IdentityProviderMetaDataSamlProtocolVersion},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # nameID in SAML assertion subject is used to perform login.
     ${NameIdAttribute},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate alias name
     ${ServiceProviderMetaDataAliasName},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # .
     ${ServiceProviderMetaDataAutoGenerateSpMetaData},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate alias name.
     ${ServiceProviderMetaDataCertificateData},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # jks file contents as byte array
     ${ServiceProviderMetaDataJksFileContents},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # key store password.
     ${ServiceProviderMetaDataJksPrivateKey},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # jks contents key store password.
     ${ServiceProviderMetaDataKeyStorePassword},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # certificate private key password
     ${ServiceProviderMetaDataPrivateKeyPassword},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # web console URL.
     ${ServiceProviderMetaDataServiceProviderEndpoint},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # web console URL list.
     ${ServiceProviderMetaDataSpAliases},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.ICompanyWithUserGroupAssocDetails[]]
     # By default, auto-created users will be associated to the Tenant Users group of the company.
@@ -391,9 +322,7 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-SamlApp_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-SamlApp_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-SamlApp_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-SamlApp_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

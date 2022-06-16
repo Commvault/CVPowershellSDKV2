@@ -12,7 +12,6 @@ Create Archive Plan
 
 ## SYNTAX
 
-### CreateExpanded (Default)
 ```
 New-ArchivePlan -PlanName <String> [-AllowPlanOverride] [-ArchiveFrequency <Int32>]
  [-ArchiveFrequencyDayOfMonth <Int32>] [-ArchiveFrequencyDayOfWeek <String>]
@@ -24,11 +23,6 @@ New-ArchivePlan -PlanName <String> [-AllowPlanOverride] [-ArchiveFrequency <Int3
  [-OverrideRestrictionArchivingRules <String>] [-OverrideRestrictionRpo <String>]
  [-OverrideRestrictionStoragePool <String>] [-ParentPlanId <Int32>] [-ParentPlanName <String>]
  [-RpoArchiveWindow <IDayAndTime[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-ArchivePlan -Body <IArchivePlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -62,7 +56,7 @@ Plan cannot be overriden by default.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -79,7 +73,7 @@ for Monthly 2 is it repeats every 2 months
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -94,7 +88,7 @@ Day on which to run the schedule, applicable for monthly, yearly
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -109,7 +103,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -124,7 +118,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -139,7 +133,7 @@ schedule frequency type
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -154,7 +148,7 @@ start time of schedule in seconds for daily, weekly, monthly, yearly frequency
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -169,7 +163,7 @@ Days of the week for weekly frequency
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -184,7 +178,7 @@ Specific week of a month
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -199,7 +193,7 @@ After an archive job, replace the file that meets the archiving rules with a stu
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -214,7 +208,7 @@ To archive files based on the size of the file, specify the minimum file size in
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -230,7 +224,7 @@ Should be supplied with fileTimestampMethod.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -245,7 +239,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -261,7 +255,7 @@ To construct, see NOTES section for BACKUPDESTINATIONS properties and create a h
 
 ```yaml
 Type: Commvault.Powershell.Models.ICreateArchivePlanBackupDestination[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -271,28 +265,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.IArchivePlan
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -OverrideRestrictionArchivingRules
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -307,7 +285,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -322,7 +300,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -337,7 +315,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -352,7 +330,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -367,7 +345,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -383,7 +361,7 @@ To construct, see NOTES section for RPOARCHIVEWINDOW properties and create a has
 
 ```yaml
 Type: Commvault.Powershell.Models.IDayAndTime[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -429,8 +407,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.IArchivePlan
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -456,41 +432,6 @@ BACKUPDESTINATIONS <ICreateArchivePlanBackupDestination[]>: .
   - `[SourceCopyName <String>]`: 
   - `[StoragePoolId <Int32?>]`: 
   - `[StoragePoolName <String>]`: 
-
-BODY <IArchivePlan>: .
-  - `PlanName <String>`: 
-  - `[AllowPlanOverride <Boolean?>]`: Flag to enable overriding of plan. Plan cannot be overriden by default.
-  - `[ArchiveFrequency <Int32?>]`: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-  - `[ArchiveFrequencyDayOfMonth <Int32?>]`: Day on which to run the schedule, applicable for monthly, yearly
-  - `[ArchiveFrequencyDayOfWeek <String>]`: 
-  - `[ArchiveFrequencyMonthOfYear <String>]`: 
-  - `[ArchiveFrequencyScheduleFrequencyType <String>]`: schedule frequency type
-  - `[ArchiveFrequencyStartTime <Int32?>]`: start time of schedule in seconds for daily, weekly, monthly, yearly frequency
-  - `[ArchiveFrequencyWeekOfMonth <String>]`: Specific week of a month
-  - `[ArchiveFrequencyWeeklyDays <String[]>]`: Days of the week for weekly frequency
-  - `[ArchivingRuleAfterArchiving <String>]`: After an archive job, replace the file that meets the archiving rules with a stub or delete the file that meets the archiving rules
-  - `[ArchivingRuleFileSize <Int32?>]`: To archive files based on the size of the file, specify the minimum file size in KB.
-  - `[ArchivingRuleFileTimestamp <Int32?>]`: To archive files based on the last accessed or modified date of each file within the folder, specify the number of days. Should be supplied with fileTimestampMethod.
-  - `[ArchivingRuleFileTimestampMethod <String>]`: 
-  - `[BackupDestinations <ICreateArchivePlanBackupDestination[]>]`: 
-    - `BackupDestinationName <String>`: Backup destination details. Enter the name during creation.
-    - `[BackupStartTime <Int32?>]`: Backup start time in seconds. The time is provided in unix time format.
-    - `[RegionId <Int32?>]`: 
-    - `[RegionName <String>]`: 
-    - `[RetentionPeriodDays <Int32?>]`: Retention period in days. -1 can be specified for infinite retention.
-    - `[SourceCopyId <Int32?>]`: 
-    - `[SourceCopyName <String>]`: 
-    - `[StoragePoolId <Int32?>]`: 
-    - `[StoragePoolName <String>]`: 
-  - `[OverrideRestrictionArchivingRules <String>]`: 
-  - `[OverrideRestrictionRpo <String>]`: 
-  - `[OverrideRestrictionStoragePool <String>]`: 
-  - `[ParentPlanId <Int32?>]`: 
-  - `[ParentPlanName <String>]`: 
-  - `[RpoArchiveWindow <IDayAndTime[]>]`: Archive job will run only in the specified archive window
-    - `[DayOfWeek <String[]>]`: 
-    - `[EndTime <Int64?>]`: Time in seconds since the beginning of the day
-    - `[StartTime <Int64?>]`: Time in seconds since the beginning of the day
 
 RPOARCHIVEWINDOW <IDayAndTime[]>: Archive job will run only in the specified archive window
   - `[DayOfWeek <String[]>]`: 

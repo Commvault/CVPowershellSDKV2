@@ -19,13 +19,9 @@ Gets owner permissions and laptop ownership details
 .Description
 Gets owner permissions and laptop ownership details
 .Example
-PS C:\> Get-AccessControl | format-list
+PS C:\> {{ Add code here }}
 
-AutomaticLaptopOwnershipAssignmentAssignLaptopOwnerAutomatically : True
-AutomaticLaptopOwnershipAssignmentLaptopOwnerOption              : ALL_LOGGED_IN_AD_USERS
-AutomaticLaptopOwnershipAssignmentUserGroups                     : 
-OwnerPermissions                                                 : {}
-
+{{ Add output here }}
 .Example
 PS C:\> {{ Add code here }}
 

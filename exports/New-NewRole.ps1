@@ -27,24 +27,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateRole
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateRole>: Create a new role.
-  Name <String>: Name of the new role
-  PermissionList <IPermissions[]>: Used to provide the list of permissions associated with the role.
-    [CategoryId <Int32?>]: 
-    [CategoryName <String>]: 
-    [PermissionId <Int32?>]: 
-    [PermissionName <String>]: 
-  [Enabled <Boolean?>]: Used to determine if the role is enabled or disabled. If not provided, role will be enabled by default.
-  [VisibleToAll <Boolean?>]: Determines if the role is visible to everyone. if not provided, it will be set to false by default.
 
 PERMISSIONLIST <IPermissions[]>: Used to provide the list of permissions associated with the role.
   [CategoryId <Int32?>]: 
@@ -56,36 +44,29 @@ https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-newro
 #>
 function New-NewRole {
 [OutputType([Commvault.Powershell.Models.IIdName])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateRole]
-    # Create a new role.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Name of the new role
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPermissions[]]
     # Used to provide the list of permissions associated with the role.
     # To construct, see NOTES section for PERMISSIONLIST properties and create a hash table.
     ${PermissionList},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Used to determine if the role is enabled or disabled.
     # If not provided, role will be enabled by default.
     ${Enabled},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Determines if the role is visible to everyone.
@@ -146,7 +127,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-NewRole_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-NewRole_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

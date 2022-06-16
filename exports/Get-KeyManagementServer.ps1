@@ -19,12 +19,9 @@ Get key management servers
 .Description
 Get key management servers
 .Example
-PS C:\> Get-KeyManagementServer
+PS C:\> {{ Add code here }}
 
-Id   : 1
-Name : Built-in
-Type : COMMVAUL
-
+{{ Add output here }}
 .Example
 PS C:\> {{ Add code here }}
 

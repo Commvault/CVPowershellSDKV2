@@ -12,22 +12,10 @@ Create a Backup Destination for a Plan
 
 ## SYNTAX
 
-### Create (Default)
-```
-New-ArchiveBackupDestination -PlanId <Int32> -Body <ICreateArchivePlanBackupDestinations> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
+### CreateExpanded (Default)
 ```
 New-ArchiveBackupDestination -PlanId <Int32> -Destinations <ICreateArchivePlanBackupDestination[]>
  [-RegionId <Int32>] [-RegionName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-ArchiveBackupDestination -InputObject <ICommvaultPowerShellIdentity>
- -Body <ICreateArchivePlanBackupDestinations> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### CreateViaIdentityExpanded
@@ -62,29 +50,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateArchivePlanBackupDestinations
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Destinations
 List of backup destinations to create
 To construct, see NOTES section for DESTINATIONS properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.ICreateArchivePlanBackupDestination[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -100,7 +72,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -130,7 +102,7 @@ Id of the Plan to modify
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: True
@@ -145,7 +117,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -160,7 +132,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -208,8 +180,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 
-### Commvault.Powershell.Models.ICreateArchivePlanBackupDestinations
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IPlanBackupDestinationResp
@@ -222,20 +192,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreateArchivePlanBackupDestinations>: .
-  - `Destinations <ICreateArchivePlanBackupDestination[]>`: List of backup destinations to create
-    - `BackupDestinationName <String>`: Backup destination details. Enter the name during creation.
-    - `[BackupStartTime <Int32?>]`: Backup start time in seconds. The time is provided in unix time format.
-    - `[RegionId <Int32?>]`: 
-    - `[RegionName <String>]`: 
-    - `[RetentionPeriodDays <Int32?>]`: Retention period in days. -1 can be specified for infinite retention.
-    - `[SourceCopyId <Int32?>]`: 
-    - `[SourceCopyName <String>]`: 
-    - `[StoragePoolId <Int32?>]`: 
-    - `[StoragePoolName <String>]`: 
-  - `[RegionId <Int32?>]`: 
-  - `[RegionName <String>]`: 
 
 DESTINATIONS <ICreateArchivePlanBackupDestination[]>: List of backup destinations to create
   - `BackupDestinationName <String>`: Backup destination details. Enter the name during creation.
@@ -260,13 +216,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[CredentialName <String>]`: 
   - `[DomainId <Int32?>]`: ID of the AD/LDAP domain
   - `[EntityId <Int32?>]`: Unique id for the entity
-  - `[EntityType <String>]`: Type of the entity
+  - `[EntityType <Int32?>]`: Type of the entity
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int32?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int32?>]`: Id of hyperscale storage
-  - `[HypervisorId <Int32?>]`: Id of the HYpervisor to get
+  - `[HypervisorId <Int32?>]`: Id of the Hypervisor to update
   - `[Id <Int32?>]`: 
   - `[InstanceId <Int32?>]`: Id of the instance to modify
+  - `[InventoryEntityName <String>]`: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   - `[KmsId <Int32?>]`: Id of Key Management Server
   - `[MediaAgentId <Int32?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int32?>]`: Id of metadata cache
@@ -275,7 +232,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[PairId <Int32?>]`: 
   - `[PlanId <Int32?>]`: Id of the plan to fetch details
   - `[RecoveryTargetId <Int32?>]`: id of recovery target
-  - `[RegionId <String>]`: 
+  - `[RegionId <Int32?>]`: 
   - `[RegionList <String>]`: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   - `[ReplicationGroupId <String>]`: 
   - `[RequestId <Int32?>]`: Unique identifier for the request

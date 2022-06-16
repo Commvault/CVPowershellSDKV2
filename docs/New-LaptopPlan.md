@@ -12,7 +12,6 @@ Create Laptop Plan
 
 ## SYNTAX
 
-### CreateExpanded (Default)
 ```
 New-LaptopPlan -PlanName <String> [-Alerts <IIdName[]>] [-AllowedFeatures <ILaptopPlanAllowedFeatures>]
  [-AllowPlanOverride] [-BackupContentFileSystemQuota <Int32>] [-BackupContentMacExcludedPaths <String[]>]
@@ -27,11 +26,6 @@ New-LaptopPlan -PlanName <String> [-Alerts <IIdName[]>] [-AllowedFeatures <ILapt
  [-ParentPlanName <String>] [-PrimaryStorageId <Int32>] [-PrimaryStorageName <String>]
  [-RetentionDeletedItemRetention <Int32>] [-SecondaryStorageId <Int32>] [-SecondaryStorageName <String>]
  [-StorageAndScheduleBackupFrequency <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-LaptopPlan -Body <ILaptopPlan> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -65,7 +59,7 @@ To construct, see NOTES section for ALERTS properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -81,7 +75,7 @@ To construct, see NOTES section for ALLOWEDFEATURES properties and create a hash
 
 ```yaml
 Type: Commvault.Powershell.Models.ILaptopPlanAllowedFeatures
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -97,7 +91,7 @@ Plan cannot be overriden by default.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -113,7 +107,7 @@ Giving value as -1 means infinite file system quota.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -128,7 +122,7 @@ Paths to exclude for Mac
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -143,7 +137,7 @@ Paths to include for Mac
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -158,7 +152,7 @@ Paths to exclude for UNIX
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -173,7 +167,7 @@ Paths to include for UNIX
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -188,7 +182,7 @@ Paths to exclude for Windows
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -203,7 +197,7 @@ Paths to include for Windows
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -213,28 +207,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-Create a new Laptop Plan
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ILaptopPlan
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -FileVersionDailyVersions
 Custom version rule: Retain daily versions for this many day(s)
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -250,7 +228,7 @@ Year(s) or month(s) need to be converted to day(s)
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -265,7 +243,7 @@ Custom version rule: Retain monthly versions for this many month(s)
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -281,7 +259,7 @@ This is considered as default if no file retention rule is specified.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -296,7 +274,7 @@ Custom version rule: Retain weekly versions for this many week(s)
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -312,7 +290,7 @@ To construct, see NOTES section for INVITEUSERSORGROUPS properties and create a 
 
 ```yaml
 Type: Commvault.Powershell.Models.IPlanUserOrGroups[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -329,7 +307,7 @@ no limit
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -346,7 +324,7 @@ no limit
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -361,7 +339,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -376,7 +354,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -391,7 +369,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -406,7 +384,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -421,7 +399,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -436,7 +414,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -451,7 +429,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -466,7 +444,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -481,7 +459,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -497,7 +475,7 @@ Giving value as -1 means to retain files indefinitely.
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -512,7 +490,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -527,7 +505,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -546,7 +524,7 @@ Default is 480 minutes (8 hours).
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -592,8 +570,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ILaptopPlan
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -635,66 +611,6 @@ ALLOWEDFEATURES <ILaptopPlanAllowedFeatures>: Create/modify allowed features of 
   - `[EdgeDriveSettingNotificationsForShares <Boolean?>]`: Enables alert notification feature which allows the share user or share owner to subscribe for share notifications when any activities are performed on the Edge Drive or the Collaborative share. The user can receive the notifications on the Web Console or as an email notification.
   - `[IndexServerId <Int32?>]`: 
   - `[IndexServerName <String>]`: 
-
-BODY <ILaptopPlan>: Create a new Laptop Plan
-  - `PlanName <String>`: 
-  - `[Alerts <IIdName[]>]`: 
-    - `[Id <Int32?>]`: 
-    - `[Name <String>]`: 
-  - `[AllowPlanOverride <Boolean?>]`: Flag to enable overriding of plan. Plan cannot be overriden by default.
-  - `[AllowedFeatures <ILaptopPlanAllowedFeatures>]`: Create/modify allowed features of laptop plan
-    - `[Archiving <Boolean?>]`: Flag to enable archiving of laptop data
-    - `[ArchivingRuleAfterArchiving <String>]`: After an archive job, replace the file that meets the archiving rules with a stub or delete the file that meets the archiving rules
-    - `[ArchivingRuleArchiveReadOnlyFiles <Boolean?>]`: To archive files based on the Read-Only attribute, set to TRUE
-    - `[ArchivingRuleFileAccessTimeOlderThan <Int32?>]`: To archive files based on the last accessed date of each file within the folder, specify the number of days
-    - `[ArchivingRuleFileCreatedTimeOlderThan <Int32?>]`: To archive files based on the time the files were created within the folder, specify the number of days
-    - `[ArchivingRuleFileModifiedTimeOlderThan <Int32?>]`: To archive files based on the last modified date of each file within the folder, specify the number of days
-    - `[ArchivingRuleFileSizeGreaterThan <Int32?>]`: To archive files based on the size of the file, specify the minimum file size in KB. All files whose size ranges between the minimum and maximum values are archived.
-    - `[ArchivingRuleMaximumFileSize <Int32?>]`: To archive files based on the size of the file, specify the maximum file size in KB. All files whose size ranges between the minimum and maximum values are archived.
-    - `[ArchivingRuleStartCleaningIfLessThan <Int32?>]`: When free disk space falls below specified amount (in percentage), start cleaning up the disk
-    - `[ArchivingRuleStopCleaningIfupto <Int32?>]`: When free disk space more than specified amount (in percentage), stop cleaning up the disk
-    - `[ClientId <Int32?>]`: 
-    - `[ClientName <String>]`: 
-    - `[Dlp <Boolean?>]`: Flag to enable Data loss protection
-    - `[EdgeDrive <Boolean?>]`: Flag to enable Edge Drive
-    - `[EdgeDriveSettingAuditDriveOperations <Boolean?>]`: Enable auditing which logs the activities based on user interaction like creating, editing, moving, renaming, downloading or deleting files.
-    - `[EdgeDriveSettingCreateNewIndexServer <Boolean?>]`: If set to false, uses existing edge index server and requires IndexServer IdName to be passed. If set to true, requires client IdName and indexCachePath to create a new Index Server.
-    - `[EdgeDriveSettingEdgeDriveQuota <Int32?>]`: Maximum number of gigabytes that you can store in the Edge Drive. Giving value as -1 means no quota.
-    - `[EdgeDriveSettingIndexCachePath <String>]`: 
-    - `[EdgeDriveSettingNotificationsForShares <Boolean?>]`: Enables alert notification feature which allows the share user or share owner to subscribe for share notifications when any activities are performed on the Edge Drive or the Collaborative share. The user can receive the notifications on the Web Console or as an email notification.
-    - `[IndexServerId <Int32?>]`: 
-    - `[IndexServerName <String>]`: 
-  - `[BackupContentFileSystemQuota <Int32?>]`: Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.
-  - `[BackupContentMacExcludedPaths <String[]>]`: Paths to exclude for Mac
-  - `[BackupContentMacIncludedPaths <String[]>]`: Paths to include for Mac
-  - `[BackupContentUnixExcludedPaths <String[]>]`: Paths to exclude for UNIX
-  - `[BackupContentUnixIncludedPaths <String[]>]`: Paths to include for UNIX
-  - `[BackupContentWindowsExcludedPaths <String[]>]`: Paths to exclude for Windows
-  - `[BackupContentWindowsIncludedPaths <String[]>]`: Paths to include for Windows
-  - `[FileVersionDailyVersions <Int32?>]`: Custom version rule: Retain daily versions for this many day(s)
-  - `[FileVersionDays <Int32?>]`: Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
-  - `[FileVersionMonthlyVersions <Int32?>]`: Custom version rule: Retain monthly versions for this many month(s)
-  - `[FileVersionVersions <Int32?>]`: Retain this many file versions. This is considered as default if no file retention rule is specified.
-  - `[FileVersionWeeklyVersions <Int32?>]`: Custom version rule: Retain weekly versions for this many week(s)
-  - `[InviteUsersOrGroups <IPlanUserOrGroups[]>]`: The users and user groups who should install the end-user Endpoint package on their devices.
-    - `[Id <Int32?>]`: This gives Id of user or user group or external user group
-    - `[Name <String>]`: This gives name of user or user group or external user group
-    - `[SendInvite <Boolean?>]`: If set to true, will send an invite email to the user or group. Default is true.
-    - `[Type <String>]`: Tells what kind of user or user group it is
-  - `[NetworkResourceThrottleReceive <Int32?>]`: Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit
-  - `[NetworkResourceThrottleSend <Int32?>]`: Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit
-  - `[OverrideRestrictionBackupContent <String>]`: 
-  - `[OverrideRestrictionRetention <String>]`: 
-  - `[OverrideRestrictionRpo <String>]`: 
-  - `[OverrideRestrictionStoragePool <String>]`: 
-  - `[ParentPlanId <Int32?>]`: 
-  - `[ParentPlanName <String>]`: 
-  - `[PrimaryStorageId <Int32?>]`: 
-  - `[PrimaryStorageName <String>]`: 
-  - `[RetentionDeletedItemRetention <Int32?>]`: Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.
-  - `[SecondaryStorageId <Int32?>]`: 
-  - `[SecondaryStorageName <String>]`: 
-  - `[StorageAndScheduleBackupFrequency <Int32?>]`: Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO determines the frequency of your backup jobs. Your RPO is met through automatic options. The time specified in minutes here is your RPO if none of the automatic options are met. Default is 480 minutes (8 hours).
 
 INVITEUSERSORGROUPS <IPlanUserOrGroups[]>: The users and user groups who should install the end-user Endpoint package on their devices.
   - `[Id <Int32?>]`: This gives Id of user or user group or external user group

@@ -27,20 +27,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.IUpdatePlanEntityRuleRanks
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <IUpdatePlanEntityRuleRanks>: Plan entity rule update rank object. Fields in this object need to be populated to suggest what rank need to be set for the said rule.
-  [Rules <IPlanEntityRuleRank[]>]: Lits of plan entity rule object suggesting their ranks.
-    [Rank <Int32?>]: This will suggest rank/priority of the plan rule.
-    [RuleId <Int32?>]: 
-    [RuleName <String>]: 
 
 RULES <IPlanEntityRuleRank[]>: Lits of plan entity rule object suggesting their ranks.
   [Rank <Int32?>]: This will suggest rank/priority of the plan rule.
@@ -53,15 +45,7 @@ function Set-PlanRuleRank {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdatePlanEntityRuleRanks]
-    # Plan entity rule update rank object.
-    # Fields in this object need to be populated to suggest what rank need to be set for the said rule.
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IPlanEntityRuleRank[]]
     # Lits of plan entity rule object suggesting their ranks.
@@ -116,7 +100,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-PlanRuleRank_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-PlanRuleRank_UpdateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

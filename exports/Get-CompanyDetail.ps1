@@ -21,41 +21,9 @@ Get details of a company based on id
 .Example
 PS C:\> {{ Add code here }}
 
-cmdlet Get-CompanyDetail at command pipeline position 1
-Supply values for the following parameters:
-CompanyId: 87710
-
-Contacts                            : {PAPI_Comp_1646425949\PAPI_Comp_1646425949}
-CreationTime                        : 1646425949
-EmailSettingSenderEmail             : 
-EmailSettingSenderName              : 
-FileExceptionUnix                   : 
-FileExceptionUseCompanyGlobalFilter : True
-FileExceptionWindows                : 
-GeneralAssignLaptopOwners           : LOGGED_IN_ACTIVE_DIRECTORY_USERS
-GeneralAuthcodeForInstallation      : False
-GeneralAutoDiscoverApp              : False
-GeneralEmailSuffix                  : 1646425949.com
-GeneralEnableDataEncryption         : False
-GeneralInfrastructureType           : RENTED_STORAGE
-GeneralNewAlias                     : 
-GeneralResellerMode                 : False
-GeneralServiceCommcells             : 
-GeneralSupportedSolutions           : 
-GeneralUpnInsteadOfEmail            : False
-Id                                  : 87710
-OperatorsOperationType              : 
-Plans                               : {Server plan}
-Security                            : {Tenant Admin}
-SitePrimarySiteName                 : PAPI_Comp_1646425949
-SiteSecondarySiteNames              : {}
-TenantOperators                     : {}
-TwoFactorAuthAll                    : False
-TwoFactorAuthEnable                 : False
-TwoFactorAuthUserGroups             : 
-
+{{ Add output here }}
 .Example
-PS C:\> Get-CompanyDetail | Format-List
+PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
@@ -80,13 +48,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -95,7 +64,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request

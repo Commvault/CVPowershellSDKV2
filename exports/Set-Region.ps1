@@ -15,9 +15,9 @@
 
 <#
 .Synopsis
-Update details of the region
+Api to set region for an entity.
 .Description
-Update details of the region
+Api to set region for an entity.
 .Example
 PS C:\> {{ Add code here }}
 
@@ -30,7 +30,7 @@ PS C:\> {{ Add code here }}
 .Inputs
 Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 .Inputs
-Commvault.Powershell.Models.IUpdateRegion
+Commvault.Powershell.Models.IEntityRegionInfo
 .Outputs
 Commvault.Powershell.Models.IGenericResp
 .Notes
@@ -38,17 +38,10 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-BODY <IUpdateRegion>: For newly added location - country, latitude and longitude are mandatory fields. Any existing location added to locations array needs to have all the existing fields. 
-  [LocationCity <String>]: Name of city for the location
-  [LocationContinent <String>]: Name of continent for the location
-  [LocationCountry <String>]: Name of country for the location
-  [LocationLatitude <Double?>]: Latitude for the location
-  [LocationLongitude <Double?>]: Longitude for the location
-  [LocationState <String>]: Name of state for the location
-  [LocationsOperationType <String>]: Type of operation to be performed for locations
-  [NewName <String>]: New name for the region
-  [ZoneId <Int32?>]: 
-  [ZoneName <String>]: 
+BODY <IEntityRegionInfo>: .
+  [EntityRegionType <String>]: 
+  [RegionId <Int32?>]: 
+  [RegionName <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
@@ -62,13 +55,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [CredentialName <String>]: 
   [DomainId <Int32?>]: ID of the AD/LDAP domain
   [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <String>]: Type of the entity
+  [EntityType <Int32?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
   [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
   [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the HYpervisor to get
+  [HypervisorId <Int32?>]: Id of the Hypervisor to update
   [Id <Int32?>]: 
   [InstanceId <Int32?>]: Id of the instance to modify
+  [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   [KmsId <Int32?>]: Id of Key Management Server
   [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
   [MetadataCacheId <Int32?>]: Id of metadata cache
@@ -77,7 +71,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   [PairId <Int32?>]: 
   [PlanId <Int32?>]: Id of the plan to fetch details
   [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <String>]: 
+  [RegionId <Int32?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
   [RequestId <Int32?>]: Unique identifier for the request
@@ -102,14 +96,30 @@ function Set-Region {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory)]
+    [Parameter(ParameterSetName='Set', Mandatory)]
+    [Parameter(ParameterSetName='SetExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Unique id for the entity
+    ${EntityId},
+
+    [Parameter(ParameterSetName='Set', Mandatory)]
+    [Parameter(ParameterSetName='SetExpanded', Mandatory)]
+    [Commvault.Powershell.Category('Path')]
+    [System.Int32]
+    # Type of the entity
+    ${EntityType},
+
+    [Parameter(ParameterSetName='SetExpanded')]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded')]
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.String]
+    [System.Int32]
     # .
     ${RegionId},
 
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='SetViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Path')]
     [Commvault.Powershell.Models.ICommvaultPowerShellIdentity]
@@ -117,15 +127,27 @@ param(
     # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Parameter(ParameterSetName='UpdateViaIdentity', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='Set', Mandatory, ValueFromPipeline)]
+    [Parameter(ParameterSetName='SetViaIdentity', Mandatory, ValueFromPipeline)]
     [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.IUpdateRegion]
-    # For newly added location - country, latitude and longitude are mandatory fields.
-    # Any existing location added to locations array needs to have all the existing fields.
-    # 
+    [Commvault.Powershell.Models.IEntityRegionInfo]
+    # .
     # To construct, see NOTES section for BODY properties and create a hash table.
     ${Body},
+
+    [Parameter(ParameterSetName='SetExpanded')]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${EntityRegionType},
+
+    [Parameter(ParameterSetName='SetExpanded')]
+    [Parameter(ParameterSetName='SetViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Body')]
+    [System.String]
+    # .
+    ${RegionName},
 
     [Parameter(ParameterSetName='UpdateExpanded')]
     [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
@@ -217,12 +239,6 @@ param(
     # SendAsync Pipeline Steps to be prepended to the front of the pipeline
     ${HttpPipelinePrepend},
 
-    [Parameter()]
-    [Commvault.Powershell.Category('Runtime')]
-    [System.Management.Automation.SwitchParameter]
-    # Returns true when the command succeeds
-    ${PassThru},
-
     [Parameter(DontShow)]
     [Commvault.Powershell.Category('Runtime')]
     [System.Uri]
@@ -240,7 +256,14 @@ param(
     [Commvault.Powershell.Category('Runtime')]
     [System.Management.Automation.SwitchParameter]
     # Use the default credentials for the proxy
-    ${ProxyUseDefaultCredentials}
+    ${ProxyUseDefaultCredentials},
+
+    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Commvault.Powershell.Category('Runtime')]
+    [System.Management.Automation.SwitchParameter]
+    # Returns true when the command succeeds
+    ${PassThru}
 )
 
 begin {
@@ -251,9 +274,11 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Set-Region_Update';
+            Set = 'CommvaultPowerShell.private\Set-Region_Set';
+            SetExpanded = 'CommvaultPowerShell.private\Set-Region_SetExpanded';
+            SetViaIdentity = 'CommvaultPowerShell.private\Set-Region_SetViaIdentity';
+            SetViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Region_SetViaIdentityExpanded';
             UpdateExpanded = 'CommvaultPowerShell.private\Set-Region_UpdateExpanded';
-            UpdateViaIdentity = 'CommvaultPowerShell.private\Set-Region_UpdateViaIdentity';
             UpdateViaIdentityExpanded = 'CommvaultPowerShell.private\Set-Region_UpdateViaIdentityExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

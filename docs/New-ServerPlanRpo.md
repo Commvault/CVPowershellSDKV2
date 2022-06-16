@@ -20,18 +20,6 @@ New-ServerPlanRpo -PlanId <Int32> [-BackupFrequencySchedules <IPlanSchedule[]>]
  [-RpoFullBackupWindow <IDayAndTime[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Create
-```
-New-ServerPlanRpo -PlanId <Int32> -Body <ICreateServerPlanRpo> [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### CreateViaIdentity
-```
-New-ServerPlanRpo -InputObject <ICommvaultPowerShellIdentity> -Body <ICreateServerPlanRpo> [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
 ### CreateViaIdentityExpanded
 ```
 New-ServerPlanRpo -InputObject <ICommvaultPowerShellIdentity> [-BackupFrequencySchedules <IPlanSchedule[]>]
@@ -71,7 +59,7 @@ To construct, see NOTES section for BACKUPFREQUENCYSCHEDULES properties and crea
 
 ```yaml
 Type: Commvault.Powershell.Models.IPlanSchedule[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -81,28 +69,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateServerPlanRpo
-Parameter Sets: Create, CreateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -DatabaseOptionCommitFrequencyInHours
 Commit frequency in hours
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -117,7 +89,7 @@ Log backup RPO in minutes
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -132,7 +104,7 @@ Use disk cache for log backups
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -148,7 +120,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-Parameter Sets: CreateViaIdentity, CreateViaIdentityExpanded
+Parameter Sets: CreateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -178,7 +150,7 @@ Id of the Server Plan
 
 ```yaml
 Type: System.Int32
-Parameter Sets: Create, CreateExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: True
@@ -194,7 +166,7 @@ To construct, see NOTES section for RPOBACKUPWINDOW properties and create a hash
 
 ```yaml
 Type: Commvault.Powershell.Models.IDayAndTime[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -210,7 +182,7 @@ To construct, see NOTES section for RPOFULLBACKUPWINDOW properties and create a 
 
 ```yaml
 Type: Commvault.Powershell.Models.IDayAndTime[]
-Parameter Sets: CreateExpanded, CreateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -258,8 +230,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 
-### Commvault.Powershell.Models.ICreateServerPlanRpo
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.ICreateServerPlanRpoResponse
@@ -301,43 +271,6 @@ BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
   - `[TimezoneId <Int32?>]`: 
   - `[TimezoneName <String>]`: 
 
-BODY <ICreateServerPlanRpo>: .
-  - `[BackupFrequencySchedules <IPlanSchedule[]>]`: 
-    - `BackupType <String>`: Schedule Backup level
-    - `ForDatabasesOnly <Boolean>`: Boolean to indicate if schedule is for database agents
-    - `ScheduleOperation <String>`: Operation being performed on schedule
-    - `SchedulePatternScheduleFrequencyType <String>`: schedule frequency type
-    - `[PolicyId <Int32?>]`: Schedule policy Id to which the schedule belongs
-    - `[ScheduleId <Int32?>]`: Id of the schedule if available, required for modifying, deleting schedule
-    - `[ScheduleName <String>]`: Name of the schedule, for modify
-    - `[SchedulePatternDayOfMonth <Int32?>]`: Day on which to run the schedule, applicable for monthly, yearly
-    - `[SchedulePatternDayOfWeek <String>]`: 
-    - `[SchedulePatternDaysBetweenSyntheticFulls <Int32?>]`: No of days between two synthetic full jobs
-    - `[SchedulePatternEndDate <Int32?>]`: Schedule end date in epoch format
-    - `[SchedulePatternExceptions <IScheduleRunException[]>]`: Exceptions to when a schedule should not run, either in dates or week of month and days
-      - `[OnDates <Int32[]>]`: list of dates in a month. For ex: 1, 20
-      - `[OnDayOfTheWeek <String[]>]`: On which days, for ex: MONDAY, FRIDAY
-      - `[OnWeekOfTheMonth <String[]>]`: On which week of month, for ex: FIRST, LAST
-    - `[SchedulePatternFrequency <Int32?>]`: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
-    - `[SchedulePatternMonthOfYear <String>]`: 
-    - `[SchedulePatternNoOfTimes <Int32?>]`: The number of times you want the schedule to run.
-    - `[SchedulePatternRepeatIntervalInMinutes <Int32?>]`: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
-    - `[SchedulePatternRepeatUntilTime <Int32?>]`: Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
-    - `[SchedulePatternStartDate <Int32?>]`: start date of schedule in epoch format
-    - `[SchedulePatternStartTime <Int32?>]`: start time of schedule in seconds
-    - `[SchedulePatternWeekOfMonth <String>]`: Specific week of a month
-    - `[SchedulePatternWeeklyDays <String[]>]`: Days of the week for weekly frequency
-    - `[TimezoneId <Int32?>]`: 
-    - `[TimezoneName <String>]`: 
-  - `[DatabaseOptionCommitFrequencyInHours <Int32?>]`: Commit frequency in hours
-  - `[DatabaseOptionLogBackupRpoMins <Int32?>]`: Log backup RPO in minutes
-  - `[DatabaseOptionUseDiskCacheForLogBackups <Boolean?>]`: Use disk cache for log backups
-  - `[RpoBackupWindow <IDayAndTime[]>]`: Backup window for incremental backup
-    - `[DayOfWeek <String[]>]`: 
-    - `[EndTime <Int64?>]`: Time in seconds since the beginning of the day
-    - `[StartTime <Int64?>]`: Time in seconds since the beginning of the day
-  - `[RpoFullBackupWindow <IDayAndTime[]>]`: Backup window for full backup
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[AccessPathId <Int32?>]`: Id of the mount path whose access path has to be deleted
   - `[AgentId <Int32?>]`: Id of the agent to be modified
@@ -350,13 +283,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[CredentialName <String>]`: 
   - `[DomainId <Int32?>]`: ID of the AD/LDAP domain
   - `[EntityId <Int32?>]`: Unique id for the entity
-  - `[EntityType <String>]`: Type of the entity
+  - `[EntityType <Int32?>]`: Type of the entity
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int32?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int32?>]`: Id of hyperscale storage
-  - `[HypervisorId <Int32?>]`: Id of the HYpervisor to get
+  - `[HypervisorId <Int32?>]`: Id of the Hypervisor to update
   - `[Id <Int32?>]`: 
   - `[InstanceId <Int32?>]`: Id of the instance to modify
+  - `[InventoryEntityName <String>]`: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   - `[KmsId <Int32?>]`: Id of Key Management Server
   - `[MediaAgentId <Int32?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int32?>]`: Id of metadata cache
@@ -365,7 +299,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[PairId <Int32?>]`: 
   - `[PlanId <Int32?>]`: Id of the plan to fetch details
   - `[RecoveryTargetId <Int32?>]`: id of recovery target
-  - `[RegionId <String>]`: 
+  - `[RegionId <Int32?>]`: 
   - `[RegionList <String>]`: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   - `[ReplicationGroupId <String>]`: 
   - `[RequestId <Int32?>]`: Unique identifier for the request

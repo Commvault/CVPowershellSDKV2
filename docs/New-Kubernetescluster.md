@@ -12,12 +12,6 @@ Create Kubernetes cluster
 
 ## SYNTAX
 
-### Create (Default)
-```
-New-Kubernetescluster -Body <ICreateKubernetesCluster> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
 ```
 New-Kubernetescluster -AccessNodes <IIdName[]> -CredentialsName <String> -Endpointurl <String> -Name <String>
  [-CredentialsId <Int32>] [-Password <String>] [-SecretKey <String>] [-ServiceName <String>]
@@ -55,7 +49,7 @@ To construct, see NOTES section for ACCESSNODES properties and create a hash tab
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -65,28 +59,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateKubernetesCluster
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -CredentialsId
 .
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -101,7 +79,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -116,7 +94,7 @@ Endpoint url to connect
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -131,7 +109,7 @@ The name of the hypervisor group being created
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -146,7 +124,7 @@ Username to connect in case authentication mode is Username and password
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -161,7 +139,7 @@ SecretKey to connect in case authentication mode is service account
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -176,7 +154,7 @@ Service Name to connect in case authentication mode is service account
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -191,7 +169,7 @@ if credential validation has to be skipped.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -206,7 +184,7 @@ Username to connect in case authentication mode is Username and password
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -252,8 +230,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreateKubernetesCluster
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.ICreateClusterResp
@@ -272,20 +248,6 @@ To create the parameters described below, construct a hash table containing the 
 ACCESSNODES <IIdName[]>: .
   - `[Id <Int32?>]`: 
   - `[Name <String>]`: 
-
-BODY <ICreateKubernetesCluster>: .
-  - `AccessNodes <IIdName[]>`: 
-    - `[Id <Int32?>]`: 
-    - `[Name <String>]`: 
-  - `Name <String>`: The name of the hypervisor group being created
-  - `Endpointurl <String>`: Endpoint url to connect
-  - `[CredentialsId <Int32?>]`: 
-  - `[CredentialsName <String>]`: 
-  - `[SkipCredentialValidation <Boolean?>]`: if credential validation has to be skipped.
-  - `[Password <String>]`: Username to connect in case authentication mode is Username and password
-  - `[SecretKey <String>]`: SecretKey to connect in case authentication mode is service account
-  - `[ServiceName <String>]`: Service Name to connect in case authentication mode is service account
-  - `[UserName <String>]`: Username to connect in case authentication mode is Username and password
 
 ## RELATED LINKS
 
