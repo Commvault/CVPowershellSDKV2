@@ -15,4 +15,8 @@ Describe 'Invoke-ReConfigureHypervisor' {
     It 'Re' -skip {
         { throw [System.NotImplementedException] } | Should -Not -Throw
     }
+
+    It 'ReViaIdentity' -skip {
+        { throw [System.NotImplementedException] } | Should -Not -Throw
+    }
 }

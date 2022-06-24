@@ -8,27 +8,40 @@ schema: 2.0.0
 # Set-Region
 
 ## SYNOPSIS
-Update details of the region
+Api to set region for an entity.
 
 ## SYNTAX
 
 ### UpdateExpanded (Default)
 ```
-Set-Region -RegionId <String> [-LocationCity <String>] [-LocationContinent <String>]
+Set-Region -RegionId <Int32> [-LocationCity <String>] [-LocationContinent <String>]
  [-LocationCountry <String>] [-LocationLatitude <Double>] [-LocationLongitude <Double>]
  [-LocationsOperationType <String>] [-LocationState <String>] [-NewName <String>] [-ZoneId <Int32>]
  [-ZoneName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
+### Set
 ```
-Set-Region -RegionId <String> -Body <IUpdateRegion> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-Region -EntityId <Int32> -EntityType <Int32> -Body <IEntityRegionInfo> [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### UpdateViaIdentity
+### SetExpanded
 ```
-Set-Region -InputObject <ICommvaultPowerShellIdentity> -Body <IUpdateRegion> [-PassThru] [-Confirm] [-WhatIf]
+Set-Region -EntityId <Int32> -EntityType <Int32> [-RegionId <Int32>] [-EntityRegionType <String>]
+ [-RegionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### SetViaIdentity
+```
+Set-Region -InputObject <ICommvaultPowerShellIdentity> -Body <IEntityRegionInfo> [-Confirm] [-WhatIf]
  [<CommonParameters>]
+```
+
+### SetViaIdentityExpanded
+```
+Set-Region -InputObject <ICommvaultPowerShellIdentity> [-RegionId <Int32>] [-EntityRegionType <String>]
+ [-RegionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -40,7 +53,7 @@ Set-Region -InputObject <ICommvaultPowerShellIdentity> [-LocationCity <String>] 
 ```
 
 ## DESCRIPTION
-Update details of the region
+Api to set region for an entity.
 
 ## EXAMPLES
 
@@ -65,14 +78,12 @@ PS C:\> {{ Add code here }}
 ## PARAMETERS
 
 ### -Body
-For newly added location - country, latitude and longitude are mandatory fields.
-Any existing location added to locations array needs to have all the existing fields.
-
+.
 To construct, see NOTES section for BODY properties and create a hash table.
 
 ```yaml
-Type: Commvault.Powershell.Models.IUpdateRegion
-Parameter Sets: Update, UpdateViaIdentity
+Type: Commvault.Powershell.Models.IEntityRegionInfo
+Parameter Sets: Set, SetViaIdentity
 Aliases:
 
 Required: True
@@ -82,13 +93,58 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -EntityId
+Unique id for the entity
+
+```yaml
+Type: System.Int32
+Parameter Sets: Set, SetExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EntityRegionType
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EntityType
+Type of the entity
+
+```yaml
+Type: System.Int32
+Parameter Sets: Set, SetExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -InputObject
 Identity Parameter
 To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: SetViaIdentity, SetViaIdentityExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -223,7 +279,7 @@ Returns true when the command succeeds
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
 Required: False
@@ -237,11 +293,26 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Type: System.Int32
+Parameter Sets: SetExpanded, SetViaIdentityExpanded, UpdateExpanded
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RegionName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: SetExpanded, SetViaIdentityExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -316,7 +387,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 
-### Commvault.Powershell.Models.IUpdateRegion
+### Commvault.Powershell.Models.IEntityRegionInfo
 
 ## OUTPUTS
 
@@ -331,17 +402,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-BODY <IUpdateRegion>: For newly added location - country, latitude and longitude are mandatory fields. Any existing location added to locations array needs to have all the existing fields. 
-  - `[LocationCity <String>]`: Name of city for the location
-  - `[LocationContinent <String>]`: Name of continent for the location
-  - `[LocationCountry <String>]`: Name of country for the location
-  - `[LocationLatitude <Double?>]`: Latitude for the location
-  - `[LocationLongitude <Double?>]`: Longitude for the location
-  - `[LocationState <String>]`: Name of state for the location
-  - `[LocationsOperationType <String>]`: Type of operation to be performed for locations
-  - `[NewName <String>]`: New name for the region
-  - `[ZoneId <Int32?>]`: 
-  - `[ZoneName <String>]`: 
+BODY <IEntityRegionInfo>: .
+  - `[EntityRegionType <String>]`: 
+  - `[RegionId <Int32?>]`: 
+  - `[RegionName <String>]`: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[AccessPathId <Int32?>]`: Id of the mount path whose access path has to be deleted
@@ -355,13 +419,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[CredentialName <String>]`: 
   - `[DomainId <Int32?>]`: ID of the AD/LDAP domain
   - `[EntityId <Int32?>]`: Unique id for the entity
-  - `[EntityType <String>]`: Type of the entity
+  - `[EntityType <Int32?>]`: Type of the entity
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int32?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int32?>]`: Id of hyperscale storage
-  - `[HypervisorId <Int32?>]`: Id of the HYpervisor to get
+  - `[HypervisorId <Int32?>]`: Id of the Hypervisor to update
   - `[Id <Int32?>]`: 
   - `[InstanceId <Int32?>]`: Id of the instance to modify
+  - `[InventoryEntityName <String>]`: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   - `[KmsId <Int32?>]`: Id of Key Management Server
   - `[MediaAgentId <Int32?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int32?>]`: Id of metadata cache
@@ -370,7 +435,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[PairId <Int32?>]`: 
   - `[PlanId <Int32?>]`: Id of the plan to fetch details
   - `[RecoveryTargetId <Int32?>]`: id of recovery target
-  - `[RegionId <String>]`: 
+  - `[RegionId <Int32?>]`: 
   - `[RegionList <String>]`: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   - `[ReplicationGroupId <String>]`: 
   - `[RequestId <Int32?>]`: Unique identifier for the request

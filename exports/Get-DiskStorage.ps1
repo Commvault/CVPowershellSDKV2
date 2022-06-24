@@ -19,15 +19,9 @@ Get a list of disk storage pools
 .Description
 Get a list of disk storage pools
 .Example
-PS C:\>  Get-DiskStorage
+PS C:\> {{ Add code here }}
 
-Capacity FreeSpace Id Name            Status StoragePoolType
--------- --------- -- ----            ------ ---------------
-102398   100613    44 jnancs_sp19pool Online NON_DEDUPLICATION
-102398   65042     22 jnanesh_bdc     Online NON_DEDUPLICATION
-101832   39120     42 nk_lib_1        Online NON_DEDUPLICATION
-102269   35635     35 vsa_1           Online DEDUPLICATION
-
+{{ Add output here }}
 .Example
 PS C:\> {{ Add code here }}
 

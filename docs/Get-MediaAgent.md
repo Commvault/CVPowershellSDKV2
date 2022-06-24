@@ -12,6 +12,12 @@ Get All Media Agents
 
 ## SYNTAX
 
+### Get (Default)
+```
+Get-MediaAgent [-PassThru] [<CommonParameters>]
+```
+
+### Get1
 ```
 Get-MediaAgent [-PassThru] [<CommonParameters>]
 ```
@@ -62,6 +68,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ## OUTPUTS
+
+### Commvault.Powershell.Models.IMediaAgentForDdbSummary
 
 ### Commvault.Powershell.Models.IMediaAgentSummary
 

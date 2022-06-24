@@ -28,12 +28,14 @@ PS C:\> {{ Add code here }}
 {{ Add output here }}
 
 .Outputs
+Commvault.Powershell.Models.IMediaAgentForDdbSummary
+.Outputs
 Commvault.Powershell.Models.IMediaAgentSummary
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-mediaagent
 #>
 function Get-MediaAgent {
-[OutputType([Commvault.Powershell.Models.IMediaAgentSummary])]
+[OutputType([Commvault.Powershell.Models.IMediaAgentSummary], [Commvault.Powershell.Models.IMediaAgentForDdbSummary])]
 [CmdletBinding(DefaultParameterSetName='Get', PositionalBinding=$false)]
 param(
     [Parameter(DontShow)]
@@ -91,6 +93,7 @@ begin {
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
             Get = 'CommvaultPowerShell.private\Get-MediaAgent_Get';
+            Get1 = 'CommvaultPowerShell.private\Get-MediaAgent_Get1';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}

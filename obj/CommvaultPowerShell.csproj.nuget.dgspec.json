@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PSSDK1\\PowershellSDKtemp2\\CommvaultPowerShell.csproj": {}
+    "C:\\cvpowers\\SP28new\\CommvaultPowerShell.csproj": {}
   },
   "projects": {
-    "D:\\PSSDK1\\PowershellSDKtemp2\\CommvaultPowerShell.csproj": {
+    "C:\\cvpowers\\SP28new\\CommvaultPowerShell.csproj": {
       "version": "0.1.0",
       "restore": {
-        "projectUniqueName": "D:\\PSSDK1\\PowershellSDKtemp2\\CommvaultPowerShell.csproj",
+        "projectUniqueName": "C:\\cvpowers\\SP28new\\CommvaultPowerShell.csproj",
         "projectName": "CommvaultPowerShell.private",
-        "projectPath": "D:\\PSSDK1\\PowershellSDKtemp2\\CommvaultPowerShell.csproj",
+        "projectPath": "C:\\cvpowers\\SP28new\\CommvaultPowerShell.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\PSSDK1\\PowershellSDKtemp2\\obj\\",
+        "outputPath": "C:\\cvpowers\\SP28new\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -24,6 +24,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -33,6 +34,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "Microsoft.CSharp": {
               "target": "Package",
@@ -59,7 +61,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

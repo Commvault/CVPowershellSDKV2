@@ -12,17 +12,11 @@ Create a Kubernetes application group
 
 ## SYNTAX
 
-### CreateExpanded (Default)
 ```
 New-ApplicationGroup -Name <String> [-ContentOverwrite] [-ContentRuleGroups <IRuleGroupContent[]>]
  [-ContentVirtualMachines <IVirtualMachinecontent[]>] [-HypervisorId <Int32>] [-HypervisorName <String>]
  [-PlanId <Int32>] [-PlanName <String>] [-StorageId <Int32>] [-StorageName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
-```
-
-### Create
-```
-New-ApplicationGroup -Body <ICreatevmGroupReq> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -50,28 +44,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-CreatevmGroupReq
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreatevmGroupReq
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ContentOverwrite
 True if content in vmgroup has to be overwritten, by default it will append the content
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -87,7 +65,7 @@ To construct, see NOTES section for CONTENTRULEGROUPS properties and create a ha
 
 ```yaml
 Type: Commvault.Powershell.Models.IRuleGroupContent[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -103,7 +81,7 @@ To construct, see NOTES section for CONTENTVIRTUALMACHINES properties and create
 
 ```yaml
 Type: Commvault.Powershell.Models.IVirtualMachinecontent[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -118,7 +96,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -133,7 +111,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -148,7 +126,7 @@ subclient name
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -163,7 +141,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -178,7 +156,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -193,7 +171,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -208,7 +186,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -254,8 +232,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreatevmGroupReq
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IApplicationGroupResp
@@ -270,29 +246,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreatevmGroupReq>: CreatevmGroupReq
-  - `Name <String>`: subclient name 
-  - `[ContentOverwrite <Boolean?>]`: True if content in vmgroup has to be overwritten, by default it will append the content
-  - `[ContentRuleGroups <IRuleGroupContent[]>]`: 
-    - `[MatchRule <String>]`: Enum which specifies the whether to match all rules or any of the rules
-    - `[Rules <IRuleContent[]>]`: 
-      - `[Condition <String>]`: Operation type for VM rules/filters
-      - `[DisplayName <String>]`: The display name of the entity to be added
-      - `[Guid <String>]`: GUID of the entity to be added as content
-      - `[Name <String>]`: name of the VM to be added as content
-      - `[Type <String>]`: 
-      - `[Value <String>]`: value for the few type of VM Content like powerstate
-  - `[ContentVirtualMachines <IVirtualMachinecontent[]>]`: 
-    - `[Guid <String>]`: GUID of the VM to be added as content
-    - `[Name <String>]`: name of the VM to be added as content
-    - `[Type <String>]`: 
-  - `[HypervisorId <Int32?>]`: 
-  - `[HypervisorName <String>]`: 
-  - `[PlanId <Int32?>]`: 
-  - `[PlanName <String>]`: 
-  - `[StorageId <Int32?>]`: 
-  - `[StorageName <String>]`: 
 
 CONTENTRULEGROUPS <IRuleGroupContent[]>: .
   - `[MatchRule <String>]`: Enum which specifies the whether to match all rules or any of the rules

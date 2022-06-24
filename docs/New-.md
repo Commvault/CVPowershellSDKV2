@@ -12,12 +12,6 @@ Creating a request for request manager
 
 ## SYNTAX
 
-### Create (Default)
-```
-New- -Body <IRmCreateRequest> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### CreateExpanded
 ```
 New- -Entities <INameValues[]> -Name <String> -Requestor <String> -Type <String> [-DeleteFromBackup]
  [-EnableDocumentChaining] [-EnableRedaction] [-Confirm] [-WhatIf] [<CommonParameters>]
@@ -48,28 +42,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-RMCreateRequest
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.IRmCreateRequest
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -DeleteFromBackup
 .
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -84,7 +62,7 @@ If additional entities are found in a document, include documents that contain t
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -99,7 +77,7 @@ This option redacts sensitive information from the files in the request
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -115,7 +93,7 @@ To construct, see NOTES section for ENTITIES properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.INameValues[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -130,7 +108,7 @@ Name of the request
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -145,7 +123,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -160,7 +138,7 @@ RMRequestType
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -206,8 +184,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.IRmCreateRequest
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -222,18 +198,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <IRmCreateRequest>: RMCreateRequest
-  - `Entities <INameValues[]>`: List of personal entities with their values to form the criteria for the request
-    - `[Name <String>]`: 
-    - `[Value <String>]`: 
-    - `[Values <String[]>]`: 
-  - `Name <String>`: Name of the request
-  - `Requestor <String>`: 
-  - `Type <String>`: RMRequestType
-  - `[DeleteFromBackup <Boolean?>]`: 
-  - `[EnableDocumentChaining <Boolean?>]`: If additional entities are found in a document, include documents that contain those additional entities in search results
-  - `[EnableRedaction <Boolean?>]`: This option redacts sensitive information from the files in the request
 
 ENTITIES <INameValues[]>: List of personal entities with their values to form the criteria for the request
   - `[Name <String>]`: 

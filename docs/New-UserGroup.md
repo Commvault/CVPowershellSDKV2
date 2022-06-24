@@ -12,15 +12,9 @@ Create a new user-group
 
 ## SYNTAX
 
-### CreateExpanded (Default)
 ```
 New-UserGroup -Name <String> [-Description <String>] [-EnforceFsQuota] [-LocalUserGroups <IIdName[]>]
  [-QuotaLimitInGb <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-UserGroup -Body <ICreateUserGroup> [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -48,28 +42,12 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ICreateUserGroup
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Description
 .
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -84,7 +62,7 @@ Used to determine if a backup data limit will be set for the user group being cr
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -101,7 +79,7 @@ To construct, see NOTES section for LOCALUSERGROUPS properties and create a hash
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -116,7 +94,7 @@ To create an active directory usergroup, the domain name should be mentioned alo
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -146,7 +124,7 @@ if enforceFSQuota is set to true, the quota limit can be set in GBs
 
 ```yaml
 Type: System.Int32
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -192,8 +170,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ICreateUserGroup
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IIdName
@@ -206,15 +182,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <ICreateUserGroup>: .
-  - `Name <String>`: To create an active directory usergroup, the domain name should be mentioned along with the usergroup name (domainName\\usergroupName) and localUserGroup value must be given.
-  - `[Description <String>]`: 
-  - `[EnforceFsQuota <Boolean?>]`: Used to determine if a backup data limit will be set for the user group being created
-  - `[LocalUserGroups <IIdName[]>]`: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
-    - `[Id <Int32?>]`: 
-    - `[Name <String>]`: 
-  - `[QuotaLimitInGb <Int32?>]`: if enforceFSQuota is set to true, the quota limit can be set in GBs
 
 LOCALUSERGROUPS <IIdName[]>: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
   - `[Id <Int32?>]`: 

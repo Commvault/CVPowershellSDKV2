@@ -12,7 +12,6 @@ Creates SAML app
 
 ## SYNTAX
 
-### CreateExpanded (Default)
 ```
 New-SamlApp -Description <String> -IdentityProviderMetaDataCertificateData <String>
  -IdentityProviderMetaDataEntityId <String> -IdentityProviderMetaDataLogoutUrl <String>
@@ -25,11 +24,6 @@ New-SamlApp -Description <String> -IdentityProviderMetaDataCertificateData <Stri
  [-ServiceProviderMetaDataPrivateKeyPassword <String>]
  [-ServiceProviderMetaDataServiceProviderEndpoint <String>] [-ServiceProviderMetaDataSpAliases <String[]>]
  [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Create
-```
-New-SamlApp -Body <ISamlReq> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -63,7 +57,7 @@ To construct, see NOTES section for ASSOCIATIONCOMPANIES properties and create a
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -79,7 +73,7 @@ To construct, see NOTES section for ASSOCIATIONDOMAINS properties and create a h
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -94,7 +88,7 @@ Email suffixes associated with SAML
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -110,7 +104,7 @@ To construct, see NOTES section for ASSOCIATIONUSERGROUPS properties and create 
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -120,28 +114,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-Create SAML request
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ISamlReq
-Parameter Sets: Create
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Description
 SAML description
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -156,7 +134,7 @@ IDP certificate public key
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -171,7 +149,7 @@ Identity provider entity
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -186,7 +164,7 @@ Identity Provider log-out URL
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -201,7 +179,7 @@ Identity provider redirect URL
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -216,7 +194,7 @@ SAML Protocol version
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -231,7 +209,7 @@ SAML name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -246,7 +224,7 @@ certificate alias name
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -261,7 +239,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -276,7 +254,7 @@ certificate alias name.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -291,7 +269,7 @@ jks file contents as byte array
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -306,7 +284,7 @@ key store password.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -321,7 +299,7 @@ jks contents key store password.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -336,7 +314,7 @@ certificate private key password
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -351,7 +329,7 @@ web console URL.
 
 ```yaml
 Type: System.String
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -366,7 +344,7 @@ web console URL list.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: CreateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -412,8 +390,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.ISamlReq
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -438,30 +414,6 @@ ASSOCIATIONDOMAINS <IIdName[]>: Domains associated with SAML
 ASSOCIATIONUSERGROUPS <IIdName[]>: user groups associated with SAML
   - `[Id <Int32?>]`: 
   - `[Name <String>]`: 
-
-BODY <ISamlReq>: Create SAML request
-  - `Description <String>`: SAML description
-  - `IdentityProviderMetaDataCertificateData <String>`: IDP certificate public key
-  - `IdentityProviderMetaDataEntityId <String>`: Identity provider entity
-  - `IdentityProviderMetaDataLogoutUrl <String>`: Identity Provider log-out URL
-  - `IdentityProviderMetaDataRedirectUrl <String>`: Identity provider redirect URL
-  - `IdentityProviderMetaDataSamlProtocolVersion <String>`: SAML Protocol version 
-  - `Name <String>`: SAML name.
-  - `[AssociationCompanies <IIdName[]>]`: Companies associated with SAML
-    - `[Id <Int32?>]`: 
-    - `[Name <String>]`: 
-  - `[AssociationDomains <IIdName[]>]`: Domains associated with SAML
-  - `[AssociationEmailSuffixes <String[]>]`: Email suffixes associated with SAML
-  - `[AssociationUserGroups <IIdName[]>]`: user groups associated with SAML
-  - `[ServiceProviderMetaDataAliasName <String>]`: certificate alias name
-  - `[ServiceProviderMetaDataAutoGenerateSpMetaData <Boolean?>]`: 
-  - `[ServiceProviderMetaDataCertificateData <String>]`: certificate alias name.
-  - `[ServiceProviderMetaDataJksFileContents <String[]>]`: jks file contents as byte array
-  - `[ServiceProviderMetaDataJksPrivateKey <String>]`: key store password.
-  - `[ServiceProviderMetaDataKeyStorePassword <String>]`: jks contents key store password.
-  - `[ServiceProviderMetaDataPrivateKeyPassword <String>]`: certificate private key password
-  - `[ServiceProviderMetaDataServiceProviderEndpoint <String>]`: web console URL.
-  - `[ServiceProviderMetaDataSpAliases <String[]>]`: web console URL list.
 
 ## RELATED LINKS
 

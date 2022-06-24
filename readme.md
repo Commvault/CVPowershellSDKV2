@@ -7,7 +7,7 @@ CVPowershellSDKV2 uses the Commvault REST API to perform operations on a CommCel
 Requirements
 ------------
 - Windows PowerShell version 5.1 or above
-- Commvault Software v11 SP26 or later release with WebServer installed
+- Commvault Software v11 SP28 or later release with WebServer installed
 
 Installation
 ------------
@@ -25,4 +25,3 @@ To get all the command:
 
 - For information on any Commvault PowerShell command, run Get-Help [command] 
 - For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples
-

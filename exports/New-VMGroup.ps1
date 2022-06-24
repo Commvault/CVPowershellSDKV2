@@ -27,8 +27,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreatevmGroupReq
 .Outputs
 Commvault.Powershell.Models.ICreateVMGroupResp
 .Outputs
@@ -37,29 +35,6 @@ Commvault.Powershell.Models.IGenericResp
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreatevmGroupReq>: CreatevmGroupReq
-  Name <String>: subclient name 
-  [ContentOverwrite <Boolean?>]: True if content in vmgroup has to be overwritten, by default it will append the content
-  [ContentRuleGroups <IRuleGroupContent[]>]: 
-    [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
-    [Rules <IRuleContent[]>]: 
-      [Condition <String>]: Operation type for VM rules/filters
-      [DisplayName <String>]: The display name of the entity to be added
-      [Guid <String>]: GUID of the entity to be added as content
-      [Name <String>]: name of the VM to be added as content
-      [Type <String>]: 
-      [Value <String>]: value for the few type of VM Content like powerstate
-  [ContentVirtualMachines <IVirtualMachinecontent[]>]: 
-    [Guid <String>]: GUID of the VM to be added as content
-    [Name <String>]: name of the VM to be added as content
-    [Type <String>]: 
-  [HypervisorId <Int32?>]: 
-  [HypervisorName <String>]: 
-  [PlanId <Int32?>]: 
-  [PlanName <String>]: 
-  [StorageId <Int32?>]: 
-  [StorageName <String>]: 
 
 CONTENTRULEGROUPS <IRuleGroupContent[]>: .
   [MatchRule <String>]: Enum which specifies the whether to match all rules or any of the rules
@@ -82,70 +57,63 @@ function New-VMGroup {
 [OutputType([Commvault.Powershell.Models.ICreateVMGroupResp], [Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreatevmGroupReq]
-    # CreatevmGroupReq
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # subclient name
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # True if content in vmgroup has to be overwritten, by default it will append the content
     ${ContentOverwrite},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IRuleGroupContent[]]
     # .
     # To construct, see NOTES section for CONTENTRULEGROUPS properties and create a hash table.
     ${ContentRuleGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IVirtualMachinecontent[]]
     # .
     # To construct, see NOTES section for CONTENTVIRTUALMACHINES properties and create a hash table.
     ${ContentVirtualMachines},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${HypervisorId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${HypervisorName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${PlanId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${PlanName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${StorageId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
@@ -199,7 +167,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-VMGroup_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-VMGroup_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

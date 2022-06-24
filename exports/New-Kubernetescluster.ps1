@@ -27,8 +27,6 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateKubernetesCluster
 .Outputs
 Commvault.Powershell.Models.ICreateClusterResp
 .Outputs
@@ -41,90 +39,69 @@ To create the parameters described below, construct a hash table containing the 
 ACCESSNODES <IIdName[]>: .
   [Id <Int32?>]: 
   [Name <String>]: 
-
-BODY <ICreateKubernetesCluster>: .
-  AccessNodes <IIdName[]>: 
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  Name <String>: The name of the hypervisor group being created
-  Endpointurl <String>: Endpoint url to connect
-  [CredentialsId <Int32?>]: 
-  [CredentialsName <String>]: 
-  [SkipCredentialValidation <Boolean?>]: if credential validation has to be skipped.
-  [Password <String>]: Username to connect in case authentication mode is Username and password
-  [SecretKey <String>]: SecretKey to connect in case authentication mode is service account
-  [ServiceName <String>]: Service Name to connect in case authentication mode is service account
-  [UserName <String>]: Username to connect in case authentication mode is Username and password
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-kubernetescluster
 #>
 function New-Kubernetescluster {
 [OutputType([Commvault.Powershell.Models.ICreateClusterResp], [Commvault.Powershell.Models.IGenericResp])]
-[CmdletBinding(DefaultParameterSetName='Create', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
+[CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateKubernetesCluster]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # .
     # To construct, see NOTES section for ACCESSNODES properties and create a hash table.
     ${AccessNodes},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${CredentialsName},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Endpoint url to connect
     ${Endpointurl},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The name of the hypervisor group being created
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # .
     ${CredentialsId},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Username to connect in case authentication mode is Username and password
     ${Password},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # SecretKey to connect in case authentication mode is service account
     ${SecretKey},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Service Name to connect in case authentication mode is service account
     ${ServiceName},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # if credential validation has to be skipped.
     ${SkipCredentialValidation},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # Username to connect in case authentication mode is Username and password
@@ -178,7 +155,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-Kubernetescluster_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-Kubernetescluster_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

@@ -27,23 +27,12 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ICreateUserGroup
 .Outputs
 Commvault.Powershell.Models.IIdName
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ICreateUserGroup>: .
-  Name <String>: To create an active directory usergroup, the domain name should be mentioned along with the usergroup name (domainName\\usergroupName) and localUserGroup value must be given.
-  [Description <String>]: 
-  [EnforceFsQuota <Boolean?>]: Used to determine if a backup data limit will be set for the user group being created
-  [LocalUserGroups <IIdName[]>]: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
-    [Id <Int32?>]: 
-    [Name <String>]: 
-  [QuotaLimitInGb <Int32?>]: if enforceFSQuota is set to true, the quota limit can be set in GBs
 
 LOCALUSERGROUPS <IIdName[]>: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
   [Id <Int32?>]: 
@@ -55,32 +44,25 @@ function New-UserGroup {
 [OutputType([Commvault.Powershell.Models.IIdName])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Create', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ICreateUserGroup]
-    # .
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # To create an active directory usergroup, the domain name should be mentioned along with the usergroup name (domainName\\usergroupName) and localUserGroup value must be given.
     ${Name},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # .
     ${Description},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Used to determine if a backup data limit will be set for the user group being created
     ${EnforceFsQuota},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [Commvault.Powershell.Models.IIdName[]]
     # This option is for AD user groups being created.
@@ -88,7 +70,7 @@ param(
     # To construct, see NOTES section for LOCALUSERGROUPS properties and create a hash table.
     ${LocalUserGroups},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Int32]
     # if enforceFSQuota is set to true, the quota limit can be set in GBs
@@ -148,7 +130,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Create = 'CommvaultPowerShell.private\New-UserGroup_Create';
             CreateExpanded = 'CommvaultPowerShell.private\New-UserGroup_CreateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

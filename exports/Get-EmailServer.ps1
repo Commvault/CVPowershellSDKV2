@@ -19,12 +19,9 @@ Retrieves SMTP server details
 .Description
 Retrieves SMTP server details
 .Example
-PS C:\> Get-EmailServer
+PS C:\> {{ Add code here }}
 
-EncryptionAlgorithm SenderEmail                SenderName SmtpPort SmtpServerName     UseAuthentication Username
-------------------- -----------                ---------- -------- --------------     ----------------- --------
-NONE                Company@jnanesh_cs_1.com Automation 25       mail.company.com False
-
+{{ Add output here }}
 .Example
 PS C:\> {{ Add code here }}
 

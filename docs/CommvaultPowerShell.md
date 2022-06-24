@@ -1,6 +1,6 @@
 ---
 Module Name: CommvaultPowerShell
-Module Guid: 5e64e866-089c-498c-a213-4b3338482996
+Module Guid: 935a5f2e-1efc-4b49-9661-473db1b975a2
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell
 Help Version: 1.0.0.0
 Locale: en-US
@@ -13,9 +13,6 @@ Locale: en-US
 ## CommvaultPowerShell Cmdlets
 ### [Add-MediaAgent](Add-MediaAgent.md)
 Used to add a media agent to a disk access path
-
-### [Backup-VirtualMachine](Backup-VirtualMachine.md)
-To Backup the virtual machines in vmgroup
 
 ### [Disable-AlertDefinition](Disable-AlertDefinition.md)
 Disable Alert Definition
@@ -191,6 +188,9 @@ Get details of a blackout window based on id
 ### [Get-BucketDetail](Get-BucketDetail.md)
 Get details of a specific bucket of a cloud storage
 
+### [Get-CloudStorage](Get-CloudStorage.md)
+Get Cloud Storage Details
+
 ### [Get-CloudStorageList](Get-CloudStorageList.md)
 Get All Cloud Storage
 
@@ -202,6 +202,9 @@ Get All Companies
 
 ### [Get-CompanyDetail](Get-CompanyDetail.md)
 Get details of a company based on id
+
+### [Get-CredentailDetail](Get-CredentailDetail.md)
+Get details of the credential whose credential name is provided
 
 ### [Get-Credentials](Get-Credentials.md)
 List of Credentials
@@ -296,6 +299,9 @@ Get the details of all cluster
 ### [Get-LaptopBackupDestination](Get-LaptopBackupDestination.md)
 Get Backup Destinations for a Plan
 
+### [Get-LaptopList](Get-LaptopList.md)
+Get list of laptops
+
 ### [Get-LaptopOwnerMapping](Get-LaptopOwnerMapping.md)
 API to get the list of laptop owner mappings
 
@@ -361,6 +367,9 @@ Get details of the region
 
 ### [Get-ReplicationGroup](Get-ReplicationGroup.md)
 Get all replication groups
+
+### [Get-ReplicationGroupDetail](Get-ReplicationGroupDetail.md)
+Get details of a replication group based on replicationGroupId
 
 ### [Get-ReplicationMonitorPairId](Get-ReplicationMonitorPairId.md)
 Get Continuous Replication Pair Details
@@ -428,6 +437,9 @@ To Backup the virtual machines in vmgroup
 ### [Install-MediaAgent](Install-MediaAgent.md)
 To install MediaAgent package on a server
 
+### [Invoke-BrowseHypervisorInventory](Invoke-BrowseHypervisorInventory.md)
+Browse the Inventory of your hypervisor
+
 ### [Invoke-FirewallTopology](Invoke-FirewallTopology.md)
 This endpoint is used to create network topology.
 
@@ -436,6 +448,12 @@ Simplified API to create a laptop
 
 ### [Invoke-LaptopOwnerMapping](Invoke-LaptopOwnerMapping.md)
 API to create laptop owner mappings
+
+### [Invoke-Machine](Invoke-Machine.md)
+To Backup the virtual machines in vmgroup
+
+### [Invoke-ModifyAccessPath](Invoke-ModifyAccessPath.md)
+Modify access path details of specific bucket of a specific cloud storage
 
 ### [Invoke-ModifyArchiveBackupDestination](Invoke-ModifyArchiveBackupDestination.md)
 Modify Backup Destination for a Plan
@@ -454,6 +472,9 @@ Modify the properties of an existing Blackout Window
 
 ### [Invoke-ModifyBucket](Invoke-ModifyBucket.md)
 Modify configuration of a specific bucket of a specific cloud storage
+
+### [Invoke-ModifyCloudStorage](Invoke-ModifyCloudStorage.md)
+Modify details like name, encryption, security of a specific cloud storage
 
 ### [Invoke-ModifyCloudStorageMetaDataCache](Invoke-ModifyCloudStorageMetaDataCache.md)
 Modify details like credentials and path for metadata Cache of a cloud storage based on Id
@@ -551,8 +572,14 @@ Create a new backup location
 ### [New-BlackoutWindow](New-BlackoutWindow.md)
 Create a Blackout Window
 
+### [New-BucketforCloudStorage](New-BucketforCloudStorage.md)
+Create a new bucket for a specific cloud storage
+
 ### [New-CdmPlan](New-CdmPlan.md)
 Create a CDM Plan
+
+### [New-CloudStorage](New-CloudStorage.md)
+Create a Cloud Storage
 
 ### [New-CloudStorageMetaDataCache](New-CloudStorageMetaDataCache.md)
 Add metadata cache paths to storage
@@ -560,11 +587,17 @@ Add metadata cache paths to storage
 ### [New-Company](New-Company.md)
 Create a Company
 
+### [New-Credential](New-Credential.md)
+Create a new credential
+
 ### [New-DiskStorage](New-DiskStorage.md)
 Create a new disk storage pool
 
 ### [New-HyperScaleStorage](New-HyperScaleStorage.md)
 Create a HyperScale Storage
+
+### [New-Hypervisor](New-Hypervisor.md)
+Create Hypervisor for that particular type
 
 ### [New-Kubernetescluster](New-Kubernetescluster.md)
 Create Kubernetes cluster
@@ -574,6 +607,9 @@ Create a Backup Destination for a Plan
 
 ### [New-LaptopPlan](New-LaptopPlan.md)
 Create Laptop Plan
+
+### [New-Ldap](New-Ldap.md)
+Create LDAP/Active directory for user authentication
 
 ### [New-NewRole](New-NewRole.md)
 Create a new role
@@ -587,6 +623,9 @@ Request body will suggest plan against which rule need to be created and type of
 
 ### [New-Region](New-Region.md)
 Create a region
+
+### [New-ReplicationGroup](New-ReplicationGroup.md)
+Create a replication group
 
 ### [New-SamlApp](New-SamlApp.md)
 Creates SAML app
@@ -638,6 +677,9 @@ Delete the specified bucket of the cloud storage
 
 ### [Remove-BulkLaptopOwnerMappingActionDelete](Remove-BulkLaptopOwnerMappingActionDelete.md)
 API is used to delete multiple laptopowner mappings
+
+### [Remove-CloudStorage](Remove-CloudStorage.md)
+Delete existing cloud storage
 
 ### [Remove-CloudStorageMetadataCache](Remove-CloudStorageMetadataCache.md)
 Delete metadata cache of an existing cloud storage
@@ -750,8 +792,17 @@ Update an AD/LDAP domain
 ### [Set-CompanyTimezone](Set-CompanyTimezone.md)
 Assigns company's timezone as the timezone for servers with no packages installed
 
+### [Set-Credential](Set-Credential.md)
+Edit credential whose name has been provided by credential owner
+
+### [Set-EmailServer](Set-EmailServer.md)
+Configure SMTP server settings.
+
 ### [Set-FirewallTopology](Set-FirewallTopology.md)
 This endpoint is used to edit network topology.
+
+### [Set-Hypervisor](Set-Hypervisor.md)
+Updates the Hypervisors
 
 ### [Set-HypervisorAccessNode](Set-HypervisorAccessNode.md)
 Endpoint to Change the Access Node
@@ -788,7 +839,7 @@ API to update rank for multiple rules at a time.
 API to set plan rule execution settings
 
 ### [Set-Region](Set-Region.md)
-Update details of the region
+Api to set region for an entity.
 
 ### [Set-SamlApp](Set-SamlApp.md)
 Updates details of existing SAML app

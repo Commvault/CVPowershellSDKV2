@@ -27,21 +27,8 @@ PS C:\> {{ Add code here }}
 
 {{ Add output here }}
 
-.Inputs
-Commvault.Powershell.Models.ISetGlobalExceptions
 .Outputs
 Commvault.Powershell.Models.IGenericResp
-.Notes
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-BODY <ISetGlobalExceptions>: Used to set global exceptions
-  [UnixGlobalExceptionExceptions <String[]>]: Array of exceptions which will be operated upon based on the operation type
-  [UnixGlobalExceptionOperationType <String>]: The operations on global exceptions provided would be executed based on the operation type provided
-  [UseGlobalExceptionsOnAllSubclients <Boolean?>]: Boolean value which updates the property useGlobalExceptionsOnAllSubclients
-  [WindowGlobalExceptionExceptions <String[]>]: Array of exceptions which will be operated upon based on the operation type
-  [WindowGlobalExceptionOperationType <String>]: The operations on global exceptions provided would be executed based on the operation type provided
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/update-globalexception
 #>
@@ -49,38 +36,31 @@ function Update-GlobalException {
 [OutputType([Commvault.Powershell.Models.IGenericResp])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
-    [Parameter(ParameterSetName='Update', Mandatory, ValueFromPipeline)]
-    [Commvault.Powershell.Category('Body')]
-    [Commvault.Powershell.Models.ISetGlobalExceptions]
-    # Used to set global exceptions
-    # To construct, see NOTES section for BODY properties and create a hash table.
-    ${Body},
-
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Array of exceptions which will be operated upon based on the operation type
     ${UnixGlobalExceptionExceptions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The operations on global exceptions provided would be executed based on the operation type provided
     ${UnixGlobalExceptionOperationType},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.Management.Automation.SwitchParameter]
     # Boolean value which updates the property useGlobalExceptionsOnAllSubclients
     ${UseGlobalExceptionsOnAllSubclients},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String[]]
     # Array of exceptions which will be operated upon based on the operation type
     ${WindowGlobalExceptionExceptions},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
+    [Parameter()]
     [Commvault.Powershell.Category('Body')]
     [System.String]
     # The operations on global exceptions provided would be executed based on the operation type provided
@@ -140,7 +120,6 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Update = 'CommvaultPowerShell.private\Update-GlobalException_Update';
             UpdateExpanded = 'CommvaultPowerShell.private\Update-GlobalException_UpdateExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)

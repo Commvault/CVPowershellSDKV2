@@ -1,32 +1,41 @@
-CVPowershellSDK -V2
-===============
-CVPowershellSDK -V2 is a Windows PowerShell package for Commvault software.
+# Custom
+This directory contains custom implementation for non-generated cmdlets for the `CommvaultPowerShell` module. Both scripts (`.ps1`) and C# files (`.cs`) can be implemented here. They will be used during the build process in `build-module.ps1`, and create cmdlets into the `..\exports` folder. The only generated file into this folder is the `CommvaultPowerShell.custom.psm1`. This file should not be modified.
 
-CVPowershellSDK uses the Commvault REST API to perform operations on a CommCell via the WebConsole.
+## Info
+- Modifiable: yes
+- Generated: partial
+- Committed: yes
+- Packaged: yes
 
-Requirements
-------------
-- Windows PowerShell version 5.1 or above
-- Commvault Software v11 SP26 or later release with WebServer installed
+## Details
+For `CommvaultPowerShell` to use custom cmdlets, it does this two different ways. We **highly recommend** creating script cmdlets, as they are easier to write and allow access to the other exported cmdlets. C# cmdlets *cannot access exported cmdlets*.
 
-Installation
-------------
-After downloading and extracting the package, Go to Install folder and Run InstallCVModule-Auto as Administrator
-- PS C:\Users\UserName\Downloads\PSSDK\Install> .\InstallCVModule-Auto.ps1
+For C# cmdlets, they are compiled with the rest of the generated low-level cmdlets into the `./bin/CommvaultPowerShell.private.dll`. The names of the cmdlets (methods) and files must follow the `[cmdletName]_[variantName]` syntax used for generated cmdlets. The `variantName` is used as the `ParameterSetName`, so use something appropriate that doesn't clash with already created variant or parameter set names. You cannot use the `ParameterSetName` property in the `Parameter` attribute on C# cmdlets. Each cmdlet must be separated into variants using the same pattern as seen in the `generated/cmdlets` folder.
 
+For script cmdlets, these are loaded via the `CommvaultPowerShell.custom.psm1`. Then, during the build process, this module is loaded and processed in the same manner as the C# cmdlets. The fundemental difference is the script cmdlets use the `ParameterSetName` attribute and C# cmdlets do not. To create a script cmdlet variant of a generated cmdlet, simply decorate all parameters in the script with the new `ParameterSetName` in the `Parameter` attribute. This will appropriately treat each parameter set as a separate variant when processed to be exported during the build.
 
-Usage
------
-Login to Commcell:
-- PS > Invoke-SetupLogin -Username "#username" -Password "#Base64Encodedpassword" -WebServerURL "http://#csName/webconsole/api"
+## Purpose
+This allows the modules to have cmdlets that were not defined in the REST specification. It also allows combining logic using generated cmdlets. This is a level of customization beyond what can be done using the [readme configuration options](https://github.com/Azure/autorest/blob/master/docs/powershell/options.md) that are currently available. These custom cmdlets are then referenced by the cmdlets created at build-time in the `..\exports` folder.
 
-To get all the command:
--PS > Get-Command -Module CommvaultPowerShell
+## Usage
+The easiest way currently to start developing custom cmdlets is to copy an existing cmdlet. For C# cmdlets, copy one from the `generated/cmdlets` folder. For script cmdlets, build the project using `build-module.ps1` and copy one of the scripts from the `..\exports` folder. After that, if you want to add new parameter sets, follow the guidelines in the `Details` section above. For implementing a new cmdlets, at minimum, please keep these parameters:
+- Break
+- DefaultProfile
+- HttpPipelineAppend
+- HttpPipelinePrepend
+- Proxy
+- ProxyCredential
+- ProxyUseDefaultCredentials
 
-- For information on any Commvault PowerShell command, run Get-Help [command] 
-- For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples
+These provide functionality to our HTTP pipeline and other useful features. In script, you can forward these parameters using `$PSBoundParameters` to the other cmdlets you're calling within `CommvaultPowerShell`. For C#, follow the usage seen in the `ProcessRecordAsync` method.
 
-
-Contributions
-=============
-Contributions are welcome; please do a pull request against the 'dev' branch.
+### Attributes
+For processing the cmdlets, we've created some additional attributes:
+- `Commvault.Powershell.DescriptionAttribute`
+  - Used in C# cmdlets to provide a high-level description of the cmdlet. This is propegated to reference documentation via [help comments](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comment_based_help) in the exported scripts.
+- `Commvault.Powershell.DoNotExportAttribute`
+  - Used in C# and script cmdlets to suppress creating an exported cmdlet at build-time. These cmdlets will *not be exposed* by `CommvaultPowerShell`.
+- `Commvault.Powershell.InternalExportAttribute`
+  - Used in C# cmdlets to route exported cmdlets to the `..\internal`, which are *not exposed* by `CommvaultPowerShell`. For more information, see [readme.md](..\internal/readme.md) in the `..\internal` folder.
+- `Commvault.Powershell.ProfileAttribute`
+  - Used in C# and script cmdlets to define which Azure profiles the cmdlet supports. This is only supported for Azure (`--azure`) modules.

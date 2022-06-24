@@ -12,14 +12,8 @@ API to update rank for multiple rules at a time.
 
 ## SYNTAX
 
-### UpdateExpanded (Default)
 ```
 Set-PlanRuleRank [-Rules <IPlanEntityRuleRank[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Update
-```
-Set-PlanRuleRank -Body <IUpdatePlanEntityRuleRanks> [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -47,30 +41,13 @@ PS C:\> {{ Add code here }}
 
 ## PARAMETERS
 
-### -Body
-Plan entity rule update rank object.
-Fields in this object need to be populated to suggest what rank need to be set for the said rule.
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.IUpdatePlanEntityRuleRanks
-Parameter Sets: Update
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Rules
 Lits of plan entity rule object suggesting their ranks.
 To construct, see NOTES section for RULES properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IPlanEntityRuleRank[]
-Parameter Sets: UpdateExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -116,8 +93,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Commvault.Powershell.Models.IUpdatePlanEntityRuleRanks
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -130,12 +105,6 @@ COMPLEX PARAMETER PROPERTIES
 
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
-
-BODY <IUpdatePlanEntityRuleRanks>: Plan entity rule update rank object. Fields in this object need to be populated to suggest what rank need to be set for the said rule.
-  - `[Rules <IPlanEntityRuleRank[]>]`: Lits of plan entity rule object suggesting their ranks.
-    - `[Rank <Int32?>]`: This will suggest rank/priority of the plan rule.
-    - `[RuleId <Int32?>]`: 
-    - `[RuleName <String>]`: 
 
 RULES <IPlanEntityRuleRank[]>: Lits of plan entity rule object suggesting their ranks.
   - `[Rank <Int32?>]`: This will suggest rank/priority of the plan rule.

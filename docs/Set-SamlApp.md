@@ -28,17 +28,6 @@ Set-SamlApp -Name <String> [-AssociationCompanies <IIdName[]>] [-AssociationDoma
  [-UserGroups <ICompanyWithUserGroupAssocDetails[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Update
-```
-Set-SamlApp -Name <String> -Body <ISamlUpdate> [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### UpdateViaIdentity
-```
-Set-SamlApp -InputObject <ICommvaultPowerShellIdentity> -Body <ISamlUpdate> [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
 ### UpdateViaIdentityExpanded
 ```
 Set-SamlApp -InputObject <ICommvaultPowerShellIdentity> [-AssociationCompanies <IIdName[]>]
@@ -86,7 +75,7 @@ To construct, see NOTES section for ASSOCIATIONCOMPANIES properties and create a
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -102,7 +91,7 @@ To construct, see NOTES section for ASSOCIATIONDOMAINS properties and create a h
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -117,7 +106,7 @@ Email suffixes associated with SAML
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -133,7 +122,7 @@ To construct, see NOTES section for ASSOCIATIONUSERGROUPS properties and create 
 
 ```yaml
 Type: Commvault.Powershell.Models.IIdName[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -149,7 +138,7 @@ To construct, see NOTES section for ATTRIBUTEMAPPINGS properties and create a ha
 
 ```yaml
 Type: Commvault.Powershell.Models.ISamlAttributes[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -164,7 +153,7 @@ This auto-creates non-existing user if the user detail match with the identity r
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -174,28 +163,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Body
-Updates SAML details
-To construct, see NOTES section for BODY properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.ISamlUpdate
-Parameter Sets: Update, UpdateViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -Description
 SAML description
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -210,7 +183,7 @@ Boolean to indicate whether SAML is enabled.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -225,7 +198,7 @@ IDP certificate public key
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -240,7 +213,7 @@ Identity provider entity
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -255,7 +228,7 @@ Identity Provider log-out URL
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -270,7 +243,7 @@ Identity provider redirect URL
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -285,7 +258,7 @@ SAML Protocol version
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -301,7 +274,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Commvault.Powershell.Models.ICommvaultPowerShellIdentity
-Parameter Sets: UpdateViaIdentity, UpdateViaIdentityExpanded
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -316,7 +289,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: Update, UpdateExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -331,7 +304,7 @@ nameID in SAML assertion subject is used to perform login.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -346,7 +319,7 @@ certificate alias name
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -361,7 +334,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -376,7 +349,7 @@ certificate alias name.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -391,7 +364,7 @@ jks file contents as byte array
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -406,7 +379,7 @@ key store password.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -421,7 +394,7 @@ jks contents key store password.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -436,7 +409,7 @@ certificate private key password
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -451,7 +424,7 @@ web console URL.
 
 ```yaml
 Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -466,7 +439,7 @@ web console URL list.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -483,7 +456,7 @@ To construct, see NOTES section for USERGROUPS properties and create a hash tabl
 
 ```yaml
 Type: Commvault.Powershell.Models.ICompanyWithUserGroupAssocDetails[]
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -531,8 +504,6 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Commvault.Powershell.Models.ICommvaultPowerShellIdentity
 
-### Commvault.Powershell.Models.ISamlUpdate
-
 ## OUTPUTS
 
 ### Commvault.Powershell.Models.IGenericResp
@@ -562,40 +533,6 @@ ATTRIBUTEMAPPINGS <ISamlAttributes[]>: attribute mapping details
   - `[CustomAttribute <String>]`: SAML custom attribute types
   - `[SamlAttribute <String>]`: SAML attribute
 
-BODY <ISamlUpdate>: Updates SAML details
-  - `[AssociationCompanies <IIdName[]>]`: Companies associated with SAML
-    - `[Id <Int32?>]`: 
-    - `[Name <String>]`: 
-  - `[AssociationDomains <IIdName[]>]`: Domains associated with SAML
-  - `[AssociationEmailSuffixes <String[]>]`: Email suffixes associated with SAML
-  - `[AssociationUserGroups <IIdName[]>]`: user groups associated with SAML
-  - `[AttributeMappings <ISamlAttributes[]>]`: attribute mapping details
-    - `[CustomAttribute <String>]`: SAML custom attribute types
-    - `[SamlAttribute <String>]`: SAML attribute
-  - `[AutoCreateUser <Boolean?>]`: This auto-creates non-existing user if the user detail match with the identity rule.
-  - `[Description <String>]`: SAML description
-  - `[Enabled <Boolean?>]`: Boolean to indicate whether SAML is enabled.
-  - `[IdentityProviderMetaDataCertificateData <String>]`: IDP certificate public key
-  - `[IdentityProviderMetaDataEntityId <String>]`: Identity provider entity
-  - `[IdentityProviderMetaDataLogoutUrl <String>]`: Identity Provider log-out URL
-  - `[IdentityProviderMetaDataRedirectUrl <String>]`: Identity provider redirect URL
-  - `[IdentityProviderMetaDataSamlProtocolVersion <String>]`: SAML Protocol version 
-  - `[NameIdAttribute <String>]`: nameID in SAML assertion subject is used to perform login.
-  - `[ServiceProviderMetaDataAliasName <String>]`: certificate alias name
-  - `[ServiceProviderMetaDataAutoGenerateSpMetaData <Boolean?>]`: 
-  - `[ServiceProviderMetaDataCertificateData <String>]`: certificate alias name.
-  - `[ServiceProviderMetaDataJksFileContents <String[]>]`: jks file contents as byte array
-  - `[ServiceProviderMetaDataJksPrivateKey <String>]`: key store password.
-  - `[ServiceProviderMetaDataKeyStorePassword <String>]`: jks contents key store password.
-  - `[ServiceProviderMetaDataPrivateKeyPassword <String>]`: certificate private key password
-  - `[ServiceProviderMetaDataServiceProviderEndpoint <String>]`: web console URL.
-  - `[ServiceProviderMetaDataSpAliases <String[]>]`: web console URL list.
-  - `[UserGroups <ICompanyWithUserGroupAssocDetails[]>]`: By default, auto-created users will be associated to the Tenant Users group of the company. Add mapping to override this behaviour for a company.
-    - `[CompanyInfoId <Int32?>]`: 
-    - `[CompanyInfoName <String>]`: 
-    - `[UserGroupInfoId <Int32?>]`: 
-    - `[UserGroupInfoName <String>]`: 
-
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[AccessPathId <Int32?>]`: Id of the mount path whose access path has to be deleted
   - `[AgentId <Int32?>]`: Id of the agent to be modified
@@ -608,13 +545,14 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[CredentialName <String>]`: 
   - `[DomainId <Int32?>]`: ID of the AD/LDAP domain
   - `[EntityId <Int32?>]`: Unique id for the entity
-  - `[EntityType <String>]`: Type of the entity
+  - `[EntityType <Int32?>]`: Type of the entity
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int32?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int32?>]`: Id of hyperscale storage
-  - `[HypervisorId <Int32?>]`: Id of the HYpervisor to get
+  - `[HypervisorId <Int32?>]`: Id of the Hypervisor to update
   - `[Id <Int32?>]`: 
   - `[InstanceId <Int32?>]`: Id of the instance to modify
+  - `[InventoryEntityName <String>]`: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
   - `[KmsId <Int32?>]`: Id of Key Management Server
   - `[MediaAgentId <Int32?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int32?>]`: Id of metadata cache
@@ -623,7 +561,7 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[PairId <Int32?>]`: 
   - `[PlanId <Int32?>]`: Id of the plan to fetch details
   - `[RecoveryTargetId <Int32?>]`: id of recovery target
-  - `[RegionId <String>]`: 
+  - `[RegionId <Int32?>]`: 
   - `[RegionList <String>]`: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   - `[ReplicationGroupId <String>]`: 
   - `[RequestId <Int32?>]`: Unique identifier for the request
