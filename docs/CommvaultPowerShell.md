@@ -1,6 +1,6 @@
 ---
 Module Name: CommvaultPowerShell
-Module Guid: 935a5f2e-1efc-4b49-9661-473db1b975a2
+Module Guid: d95644ec-3465-449d-a982-b182fb93943d
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell
 Help Version: 1.0.0.0
 Locale: en-US

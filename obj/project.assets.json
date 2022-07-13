@@ -283,11 +283,11 @@
   "project": {
     "version": "0.1.0",
     "restore": {
-      "projectUniqueName": "C:\\cvpowers\\SP28new\\CommvaultPowerShell.csproj",
+      "projectUniqueName": "C:\\cvpowers\\28new\\CommvaultPowerShell.csproj",
       "projectName": "CommvaultPowerShell.private",
-      "projectPath": "C:\\cvpowers\\SP28new\\CommvaultPowerShell.csproj",
+      "projectPath": "C:\\cvpowers\\28new\\CommvaultPowerShell.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\cvpowers\\SP28new\\obj\\",
+      "outputPath": "C:\\cvpowers\\28new\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,5 +1,5 @@
 @{
-  GUID = '935a5f2e-1efc-4b49-9661-473db1b975a2'
+  GUID = 'd95644ec-3465-449d-a982-b182fb93943d'
   RootModule = './CommvaultPowerShell.psm1'
   ModuleVersion = '0.1.0'
   CompatiblePSEditions = 'Core', 'Desktop'

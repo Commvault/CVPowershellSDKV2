@@ -22,8 +22,8 @@ namespace Commvault.Powershell
         private static System.Uri TranslateIncomingRequestToCommvaultAPI(System.Net.Http.HttpRequestMessage request)
         {
             string removeString = "api";
-            int removePos = request.RequestUri.AbsolutePath.IndexOf(removeString) +removeString.Length;
-            string URL = System.Environment.GetEnvironmentVariable("WebServerURL") + request.RequestUri.AbsolutePath.Remove(0, removePos);
+            int removePos = request.RequestUri.AbsoluteUri.IndexOf(removeString) +removeString.Length;
+            string URL = System.Environment.GetEnvironmentVariable("WebServerURL") + request.RequestUri.AbsoluteUri.Remove(0, removePos);
 
             var _url = new global::System.Uri(global::System.Text.RegularExpressions.Regex.Replace(
                         URL, "\\?&*$|&*$|(\\?)&+|(&)&+", "$1$2"));
