@@ -31,11 +31,11 @@ namespace Commvault.Powershell.Models
         public string SenderName { get => this._senderName; set => this._senderName = value; }
 
         /// <summary>Backing field for <see cref="SmtpPort" /> property.</summary>
-        private int? _smtpPort;
+        private long? _smtpPort;
 
         /// <summary>The port number that connects to the mail server.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SmtpPort { get => this._smtpPort; set => this._smtpPort = value; }
+        public long? SmtpPort { get => this._smtpPort; set => this._smtpPort = value; }
 
         /// <summary>Backing field for <see cref="SmtpServerName" /> property.</summary>
         private string _smtpServerName;
@@ -100,8 +100,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The port number that connects to the mail server.",
         SerializedName = @"SMTPPort",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SmtpPort { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SmtpPort { get; set; }
         /// <summary>
         /// The name of the mail server that sends alerts, scheduled reports, log files, and additional information.
         /// </summary>
@@ -141,7 +141,7 @@ namespace Commvault.Powershell.Models
         /// <summary>The sender name used for emails sent from the software.</summary>
         string SenderName { get; set; }
         /// <summary>The port number that connects to the mail server.</summary>
-        int? SmtpPort { get; set; }
+        long? SmtpPort { get; set; }
         /// <summary>
         /// The name of the mail server that sends alerts, scheduled reports, log files, and additional information.
         /// </summary>

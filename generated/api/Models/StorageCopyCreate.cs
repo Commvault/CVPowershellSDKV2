@@ -31,7 +31,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName StoragePool { get => (this._storagePool = this._storagePool ?? new Commvault.Powershell.Models.IdName()); set => this._storagePool = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StoragePoolId { get => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id = value ?? default(int); }
+        public long? StoragePoolId { get => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StoragePoolName { get => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Name = value ?? null; }
@@ -61,8 +61,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StoragePoolId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StoragePoolId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName StoragePool { get; set; }
 
-        int? StoragePoolId { get; set; }
+        long? StoragePoolId { get; set; }
 
         string StoragePoolName { get; set; }
 

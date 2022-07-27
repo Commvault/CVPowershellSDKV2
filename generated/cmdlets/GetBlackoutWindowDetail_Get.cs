@@ -25,7 +25,7 @@ namespace Commvault.Powershell.Cmdlets
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
         /// <summary>Backing field for <see cref="BlackoutWindowId" /> property.</summary>
-        private int _blackoutWindowId;
+        private long _blackoutWindowId;
 
         /// <summary>Id of the Blackout Window whose details have to be fetched</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the Blackout Window whose details have to be fetched")]
@@ -34,9 +34,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the Blackout Window whose details have to be fetched",
         SerializedName = @"blackoutWindowId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int BlackoutWindowId { get => this._blackoutWindowId; set => this._blackoutWindowId = value; }
+        public long BlackoutWindowId { get => this._blackoutWindowId; set => this._blackoutWindowId = value; }
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]

@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ServerGroupCount" /> property.</summary>
-        private int? _serverGroupCount;
+        private long? _serverGroupCount;
 
         /// <summary>This returns the total number of server groups.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ServerGroupCount { get => this._serverGroupCount; set => this._serverGroupCount = value; }
+        public long? ServerGroupCount { get => this._serverGroupCount; set => this._serverGroupCount = value; }
 
         /// <summary>Backing field for <see cref="ServerGroups" /> property.</summary>
         private Commvault.Powershell.Models.IServerGroupList[] _serverGroups;
@@ -40,8 +40,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This returns the total number of server groups.",
         SerializedName = @"serverGroupCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ServerGroupCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ServerGroupCount { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -57,7 +57,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>This returns the total number of server groups.</summary>
-        int? ServerGroupCount { get; set; }
+        long? ServerGroupCount { get; set; }
 
         Commvault.Powershell.Models.IServerGroupList[] ServerGroups { get; set; }
 

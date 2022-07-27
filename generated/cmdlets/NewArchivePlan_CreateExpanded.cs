@@ -46,8 +46,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months",
         SerializedName = @"frequency",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ArchiveFrequency { get => Body.ArchiveFrequency ?? default(int); set => Body.ArchiveFrequency = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ArchiveFrequency { get => Body.ArchiveFrequency ?? default(long); set => Body.ArchiveFrequency = value; }
 
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Day on which to run the schedule, applicable for monthly, yearly")]
@@ -57,8 +57,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Day on which to run the schedule, applicable for monthly, yearly",
         SerializedName = @"dayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ArchiveFrequencyDayOfMonth { get => Body.ArchiveFrequencyDayOfMonth ?? default(int); set => Body.ArchiveFrequencyDayOfMonth = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ArchiveFrequencyDayOfMonth { get => Body.ArchiveFrequencyDayOfMonth ?? default(long); set => Body.ArchiveFrequencyDayOfMonth = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -101,8 +101,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"start time of schedule in seconds for daily, weekly, monthly, yearly frequency",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ArchiveFrequencyStartTime { get => Body.ArchiveFrequencyStartTime ?? default(int); set => Body.ArchiveFrequencyStartTime = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ArchiveFrequencyStartTime { get => Body.ArchiveFrequencyStartTime ?? default(long); set => Body.ArchiveFrequencyStartTime = value; }
 
         /// <summary>Specific week of a month</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Specific week of a month")]
@@ -151,8 +151,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"To archive files based on the size of the file, specify the minimum file size in KB.",
         SerializedName = @"fileSize",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ArchivingRuleFileSize { get => Body.ArchivingRuleFileSize ?? default(int); set => Body.ArchivingRuleFileSize = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ArchivingRuleFileSize { get => Body.ArchivingRuleFileSize ?? default(long); set => Body.ArchivingRuleFileSize = value; }
 
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
@@ -165,8 +165,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"To archive files based on the last accessed or modified date of each file within the folder, specify the number of days. Should be supplied with fileTimestampMethod.",
         SerializedName = @"fileTimestamp",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ArchivingRuleFileTimestamp { get => Body.ArchivingRuleFileTimestamp ?? default(int); set => Body.ArchivingRuleFileTimestamp = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ArchivingRuleFileTimestamp { get => Body.ArchivingRuleFileTimestamp ?? default(long); set => Body.ArchivingRuleFileTimestamp = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -268,8 +268,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ParentPlanId { get => Body.ParentPlanId ?? default(int); set => Body.ParentPlanId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ParentPlanId { get => Body.ParentPlanId ?? default(long); set => Body.ParentPlanId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]

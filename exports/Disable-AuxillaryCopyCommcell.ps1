@@ -38,7 +38,7 @@ function Disable-AuxillaryCopyCommcell {
 param(
     [Parameter()]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # Provide UTC time in unix format.
     ${EnableAfterADelay},
 

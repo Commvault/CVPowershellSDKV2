@@ -36,11 +36,11 @@ namespace Commvault.Powershell.Models
         public long? CreatedOn { get => this._createdOn; set => this._createdOn = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Request id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Owner { get => (this._owner = this._owner ?? new Commvault.Powershell.Models.IdName()); set => this._owner = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? OwnerId { get => ((Commvault.Powershell.Models.IIdNameInternal)Owner).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Owner).Id = value ?? default(int); }
+        public long? OwnerId { get => ((Commvault.Powershell.Models.IIdNameInternal)Owner).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Owner).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string OwnerName { get => ((Commvault.Powershell.Models.IIdNameInternal)Owner).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Owner).Name = value ?? null; }
@@ -129,8 +129,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Request id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Request name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -145,8 +145,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? OwnerId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? OwnerId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -200,13 +200,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Request creation time in unix epoch format</summary>
         long? CreatedOn { get; set; }
         /// <summary>Request id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Request name</summary>
         string Name { get; set; }
 
         Commvault.Powershell.Models.IIdName Owner { get; set; }
 
-        int? OwnerId { get; set; }
+        long? OwnerId { get; set; }
 
         string OwnerName { get; set; }
         /// <summary>Email of the requestor</summary>

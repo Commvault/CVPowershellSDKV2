@@ -93,11 +93,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).OS = (string) content.GetValueForProperty("OS",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).OS, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId = (int?) content.GetValueForProperty("CloudId",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId = (long?) content.GetValueForProperty("CloudId",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -115,11 +115,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).OS = (string) content.GetValueForProperty("OS",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).OS, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId = (int?) content.GetValueForProperty("CloudId",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId = (long?) content.GetValueForProperty("CloudId",((Commvault.Powershell.Models.IIndexServerSummaryInternal)this).CloudId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

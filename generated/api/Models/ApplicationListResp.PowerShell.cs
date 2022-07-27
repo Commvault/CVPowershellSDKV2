@@ -64,7 +64,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IApplicationListRespInternal)this).Applications = (Commvault.Powershell.Models.IApplicationSummary[]) content.GetValueForProperty("Applications",((Commvault.Powershell.Models.IApplicationListRespInternal)this).Applications, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IApplicationSummary>(__y, Commvault.Powershell.Models.ApplicationSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount = (int?) content.GetValueForProperty("ApplicationsCount",((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount = (long?) content.GetValueForProperty("ApplicationsCount",((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IApplicationListRespInternal)this).Applications = (Commvault.Powershell.Models.IApplicationSummary[]) content.GetValueForProperty("Applications",((Commvault.Powershell.Models.IApplicationListRespInternal)this).Applications, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IApplicationSummary>(__y, Commvault.Powershell.Models.ApplicationSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount = (int?) content.GetValueForProperty("ApplicationsCount",((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount = (long?) content.GetValueForProperty("ApplicationsCount",((Commvault.Powershell.Models.IApplicationListRespInternal)this).ApplicationsCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

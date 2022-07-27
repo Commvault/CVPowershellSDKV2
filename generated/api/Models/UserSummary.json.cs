@@ -81,13 +81,13 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._lockInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._lockInfo.ToJson(null,serializationMode) : null, "lockInfo" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != this._commcell ? (Commvault.Powershell.Runtime.Json.JsonNode) this._commcell.ToJson(null,serializationMode) : null, "commcell" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._guid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._guid.ToString()) : null, "GUID" ,container.Add );
             AddIf( null != (((object)this._email)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._email.ToString()) : null, "email" ,container.Add );
             AddIf( null != (((object)this._fullName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._fullName.ToString()) : null, "fullName" ,container.Add );
             AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
-            AddIf( null != this._numberOfLaptops ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._numberOfLaptops) : null, "numberOfLaptops" ,container.Add );
+            AddIf( null != this._numberOfLaptops ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._numberOfLaptops) : null, "numberOfLaptops" ,container.Add );
             AddIf( null != (((object)this._userPrincipalName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userPrincipalName.ToString()) : null, "userPrincipalName" ,container.Add );
             AfterToJson(ref container);
             return container;
@@ -109,13 +109,13 @@ namespace Commvault.Powershell.Models
             {_lockInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("lockInfo"), out var __jsonLockInfo) ? Commvault.Powershell.Models.LockProperties.FromJson(__jsonLockInfo) : LockInfo;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_commcell = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("commcell"), out var __jsonCommcell) ? Commvault.Powershell.Models.CommcellInfo.FromJson(__jsonCommcell) : Commcell;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_guid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("GUID"), out var __jsonGuid) ? (string)__jsonGuid : (string)Guid;}
             {_email = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("email"), out var __jsonEmail) ? (string)__jsonEmail : (string)Email;}
             {_fullName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("fullName"), out var __jsonFullName) ? (string)__jsonFullName : (string)FullName;}
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
-            {_numberOfLaptops = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfLaptops"), out var __jsonNumberOfLaptops) ? (int?)__jsonNumberOfLaptops : NumberOfLaptops;}
+            {_numberOfLaptops = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfLaptops"), out var __jsonNumberOfLaptops) ? (long?)__jsonNumberOfLaptops : NumberOfLaptops;}
             {_userPrincipalName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userPrincipalName"), out var __jsonUserPrincipalName) ? (string)__jsonUserPrincipalName : (string)UserPrincipalName;}
             AfterFromJson(json);
         }

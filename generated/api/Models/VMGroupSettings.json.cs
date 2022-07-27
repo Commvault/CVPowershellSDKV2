@@ -81,16 +81,16 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._useChangedBlockTrackingOnVM ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useChangedBlockTrackingOnVM) : null, "useChangedBlockTrackingOnVM" ,container.Add );
             AddIf( null != (((object)this._customSnapshotResourceGroup)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._customSnapshotResourceGroup.ToString()) : null, "customSnapshotResourceGroup" ,container.Add );
             AddIf( null != this._autoDetectVMOwner ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._autoDetectVMOwner) : null, "autoDetectVMOwner" ,container.Add );
-            AddIf( null != this._noOfReaders ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._noOfReaders) : null, "noOfReaders" ,container.Add );
+            AddIf( null != this._noOfReaders ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._noOfReaders) : null, "noOfReaders" ,container.Add );
             AddIf( null != this._isApplicationAware ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isApplicationAware) : null, "isApplicationAware" ,container.Add );
             AddIf( null != (((object)this._vMBackupType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMBackupType.ToString()) : null, "vmBackupType" ,container.Add );
             AddIf( null != this._useVMCheckpointSetting ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useVMCheckpointSetting) : null, "useVMCheckpointSetting" ,container.Add );
             AddIf( null != (((object)this._transportMode)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._transportMode.ToString()) : null, "transportMode" ,container.Add );
             AddIf( null != this._datastoreFreespaceCheck ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._datastoreFreespaceCheck) : null, "datastoreFreespaceCheck" ,container.Add );
-            AddIf( null != this._datastoreFreespaceRequired ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._datastoreFreespaceRequired) : null, "datastoreFreespaceRequired" ,container.Add );
+            AddIf( null != this._datastoreFreespaceRequired ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._datastoreFreespaceRequired) : null, "datastoreFreespaceRequired" ,container.Add );
             AddIf( null != this._collectFileDetailsforGranularRecovery ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._collectFileDetailsforGranularRecovery) : null, "collectFileDetailsforGranularRecovery" ,container.Add );
             AddIf( null != this._collectFileDetailsFromSnapshotCopy ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._collectFileDetailsFromSnapshotCopy) : null, "collectFileDetailsFromSnapshotCopy" ,container.Add );
-            AddIf( null != this._jobStartTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._jobStartTime) : null, "jobStartTime" ,container.Add );
+            AddIf( null != this._jobStartTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._jobStartTime) : null, "jobStartTime" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -111,16 +111,16 @@ namespace Commvault.Powershell.Models
             {_useChangedBlockTrackingOnVM = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useChangedBlockTrackingOnVM"), out var __jsonUseChangedBlockTrackingOnVM) ? (bool?)__jsonUseChangedBlockTrackingOnVM : UseChangedBlockTrackingOnVM;}
             {_customSnapshotResourceGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("customSnapshotResourceGroup"), out var __jsonCustomSnapshotResourceGroup) ? (string)__jsonCustomSnapshotResourceGroup : (string)CustomSnapshotResourceGroup;}
             {_autoDetectVMOwner = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("autoDetectVMOwner"), out var __jsonAutoDetectVMOwner) ? (bool?)__jsonAutoDetectVMOwner : AutoDetectVMOwner;}
-            {_noOfReaders = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("noOfReaders"), out var __jsonNoOfReaders) ? (int?)__jsonNoOfReaders : NoOfReaders;}
+            {_noOfReaders = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("noOfReaders"), out var __jsonNoOfReaders) ? (long?)__jsonNoOfReaders : NoOfReaders;}
             {_isApplicationAware = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isApplicationAware"), out var __jsonIsApplicationAware) ? (bool?)__jsonIsApplicationAware : IsApplicationAware;}
             {_vMBackupType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmBackupType"), out var __jsonVMBackupType) ? (string)__jsonVMBackupType : (string)VMBackupType;}
             {_useVMCheckpointSetting = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useVMCheckpointSetting"), out var __jsonUseVMCheckpointSetting) ? (bool?)__jsonUseVMCheckpointSetting : UseVMCheckpointSetting;}
             {_transportMode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("transportMode"), out var __jsonTransportMode) ? (string)__jsonTransportMode : (string)TransportMode;}
             {_datastoreFreespaceCheck = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("datastoreFreespaceCheck"), out var __jsonDatastoreFreespaceCheck) ? (bool?)__jsonDatastoreFreespaceCheck : DatastoreFreespaceCheck;}
-            {_datastoreFreespaceRequired = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("datastoreFreespaceRequired"), out var __jsonDatastoreFreespaceRequired) ? (int?)__jsonDatastoreFreespaceRequired : DatastoreFreespaceRequired;}
+            {_datastoreFreespaceRequired = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("datastoreFreespaceRequired"), out var __jsonDatastoreFreespaceRequired) ? (long?)__jsonDatastoreFreespaceRequired : DatastoreFreespaceRequired;}
             {_collectFileDetailsforGranularRecovery = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("collectFileDetailsforGranularRecovery"), out var __jsonCollectFileDetailsforGranularRecovery) ? (bool?)__jsonCollectFileDetailsforGranularRecovery : CollectFileDetailsforGranularRecovery;}
             {_collectFileDetailsFromSnapshotCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("collectFileDetailsFromSnapshotCopy"), out var __jsonCollectFileDetailsFromSnapshotCopy) ? (bool?)__jsonCollectFileDetailsFromSnapshotCopy : CollectFileDetailsFromSnapshotCopy;}
-            {_jobStartTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobStartTime"), out var __jsonJobStartTime) ? (int?)__jsonJobStartTime : JobStartTime;}
+            {_jobStartTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobStartTime"), out var __jsonJobStartTime) ? (long?)__jsonJobStartTime : JobStartTime;}
             AfterFromJson(json);
         }
     }

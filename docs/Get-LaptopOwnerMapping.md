@@ -13,7 +13,7 @@ API to get the list of laptop owner mappings
 ## SYNTAX
 
 ```
-Get-LaptopOwnerMapping [-CompanyId <Int32>] [<CommonParameters>]
+Get-LaptopOwnerMapping [-CompanyId <Int64>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ PS C:\> {{ Add code here }}
 Id of the company for which the laptop owner mapping needs to be returned
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

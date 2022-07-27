@@ -40,7 +40,7 @@ namespace Commvault.Powershell.Models
         public bool? BackupActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterDelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterDelay = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId = value ?? default(int); }
+        public long? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName = value ?? null; }
@@ -73,7 +73,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName FbrUnixMediaAgent { get => (this._fbrUnixMediaAgent = this._fbrUnixMediaAgent ?? new Commvault.Powershell.Models.IdName()); set => this._fbrUnixMediaAgent = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FbrUnixMediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Id = value ?? default(int); }
+        public long? FbrUnixMediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FbrUnixMediaAgentName { get => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Name = value ?? null; }
@@ -94,7 +94,7 @@ namespace Commvault.Powershell.Models
         public bool? RestoreActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterDelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterDelay = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId = value ?? default(int); }
+        public long? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RestoreActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName = value ?? null; }
@@ -174,8 +174,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupActivityControlOptionsTimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupActivityControlOptionsTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -190,8 +190,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FbrUnixMediaAgentId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FbrUnixMediaAgentId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -230,8 +230,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -288,13 +288,13 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName BackupActivityControlOptionTimeZone { get; set; }
 
-        int? BackupActivityControlOptionsTimeZoneId { get; set; }
+        long? BackupActivityControlOptionsTimeZoneId { get; set; }
 
         string BackupActivityControlOptionsTimeZoneName { get; set; }
 
         Commvault.Powershell.Models.IIdName FbrUnixMediaAgent { get; set; }
 
-        int? FbrUnixMediaAgentId { get; set; }
+        long? FbrUnixMediaAgentId { get; set; }
 
         string FbrUnixMediaAgentName { get; set; }
         /// <summary>The name of the hypervisor that has to be changed</summary>
@@ -306,7 +306,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName RestoreActivityControlOptionTimeZone { get; set; }
 
-        int? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
 
         string RestoreActivityControlOptionsTimeZoneName { get; set; }
 

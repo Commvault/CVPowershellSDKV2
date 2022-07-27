@@ -70,7 +70,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${CompanyId},
 

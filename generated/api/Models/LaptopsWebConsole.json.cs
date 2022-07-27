@@ -71,11 +71,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_lastBackupJobInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("lastBackupJobInfo"), out var __jsonLastBackupJobInfo) ? Commvault.Powershell.Models.LastBackupJobInfo.FromJson(__jsonLastBackupJobInfo) : LastBackupJobInfo;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_lastBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupTime"), out var __jsonLastBackupTime) ? (int?)__jsonLastBackupTime : LastBackupTime;}
-            {_totalBackupSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalBackupSize"), out var __jsonTotalBackupSize) ? (int?)__jsonTotalBackupSize : TotalBackupSize;}
-            {_nextBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("nextBackupTime"), out var __jsonNextBackupTime) ? (int?)__jsonNextBackupTime : NextBackupTime;}
+            {_lastBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupTime"), out var __jsonLastBackupTime) ? (long?)__jsonLastBackupTime : LastBackupTime;}
+            {_totalBackupSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalBackupSize"), out var __jsonTotalBackupSize) ? (long?)__jsonTotalBackupSize : TotalBackupSize;}
+            {_nextBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("nextBackupTime"), out var __jsonNextBackupTime) ? (long?)__jsonNextBackupTime : NextBackupTime;}
             {_slaStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("slaStatus"), out var __jsonSlaStatus) ? (string)__jsonSlaStatus : (string)SlaStatus;}
             {_slaReason = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("slaReason"), out var __jsonSlaReason) ? (string)__jsonSlaReason : (string)SlaReason;}
             AfterFromJson(json);
@@ -101,11 +101,11 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._lastBackupJobInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._lastBackupJobInfo.ToJson(null,serializationMode) : null, "lastBackupJobInfo" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
-            AddIf( null != this._lastBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._lastBackupTime) : null, "lastBackupTime" ,container.Add );
-            AddIf( null != this._totalBackupSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._totalBackupSize) : null, "totalBackupSize" ,container.Add );
-            AddIf( null != this._nextBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._nextBackupTime) : null, "nextBackupTime" ,container.Add );
+            AddIf( null != this._lastBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastBackupTime) : null, "lastBackupTime" ,container.Add );
+            AddIf( null != this._totalBackupSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._totalBackupSize) : null, "totalBackupSize" ,container.Add );
+            AddIf( null != this._nextBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._nextBackupTime) : null, "nextBackupTime" ,container.Add );
             AddIf( null != (((object)this._slaStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._slaStatus.ToString()) : null, "slaStatus" ,container.Add );
             AddIf( null != (((object)this._slaReason)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._slaReason.ToString()) : null, "slaReason" ,container.Add );
             AfterToJson(ref container);

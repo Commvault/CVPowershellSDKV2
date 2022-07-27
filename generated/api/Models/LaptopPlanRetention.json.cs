@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_fileVersions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("fileVersions"), out var __jsonFileVersions) ? Commvault.Powershell.Models.LaptopPlanRetentionFileVersions.FromJson(__jsonFileVersions) : FileVersions;}
-            {_deletedItemRetention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("deletedItemRetention"), out var __jsonDeletedItemRetention) ? (int?)__jsonDeletedItemRetention : DeletedItemRetention;}
+            {_deletedItemRetention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("deletedItemRetention"), out var __jsonDeletedItemRetention) ? (long?)__jsonDeletedItemRetention : DeletedItemRetention;}
             AfterFromJson(json);
         }
 
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._fileVersions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._fileVersions.ToJson(null,serializationMode) : null, "fileVersions" ,container.Add );
-            AddIf( null != this._deletedItemRetention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._deletedItemRetention) : null, "deletedItemRetention" ,container.Add );
+            AddIf( null != this._deletedItemRetention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._deletedItemRetention) : null, "deletedItemRetention" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

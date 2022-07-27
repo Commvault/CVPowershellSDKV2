@@ -89,11 +89,11 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._vendor)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vendor.ToString()) : null, "vendor" ,container.Add );
             AddIf( null != (((object)this._oS)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oS.ToString()) : null, "os" ,container.Add );
             AddIf( null != (((object)this._host)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._host.ToString()) : null, "host" ,container.Add );
-            AddIf( null != this._vMSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMSize) : null, "vmSize" ,container.Add );
+            AddIf( null != this._vMSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMSize) : null, "vmSize" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != (((object)this._uuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._uuid.ToString()) : null, "UUID" ,container.Add );
             AddIf( null != (((object)this._commcellName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._commcellName.ToString()) : null, "commcellName" ,container.Add );
-            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationSize) : null, "applicationSize" ,container.Add );
+            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationSize) : null, "applicationSize" ,container.Add );
             if (null != this._tags)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -130,11 +130,11 @@ namespace Commvault.Powershell.Models
             {_vendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vendor"), out var __jsonVendor) ? (string)__jsonVendor : (string)Vendor;}
             {_oS = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("os"), out var __jsonOS) ? (string)__jsonOS : (string)OS;}
             {_host = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("host"), out var __jsonHost) ? (string)__jsonHost : (string)Host;}
-            {_vMSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmSize"), out var __jsonVMSize) ? (int?)__jsonVMSize : VMSize;}
+            {_vMSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmSize"), out var __jsonVMSize) ? (long?)__jsonVMSize : VMSize;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_uuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("UUID"), out var __jsonUuid) ? (string)__jsonUuid : (string)Uuid;}
             {_commcellName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("commcellName"), out var __jsonCommcellName) ? (string)__jsonCommcellName : (string)CommcellName;}
-            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (int?)__jsonApplicationSize : ApplicationSize;}
+            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (long?)__jsonApplicationSize : ApplicationSize;}
             {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tags"), out var __jsonTags) ? If( __jsonTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdNameValue[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdNameValue) (Commvault.Powershell.Models.IdNameValue.FromJson(__u) )) ))() : null : Tags;}
             AfterFromJson(json);
         }

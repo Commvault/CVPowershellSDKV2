@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.ISyncStatus1Internal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ISyncStatus1Internal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISyncStatus1Internal)this).ErrorMessage = (Commvault.Powershell.Models.INameMessage[]) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ISyncStatus1Internal)this).ErrorMessage, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.INameMessage>(__y, Commvault.Powershell.Models.NameMessageTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp = (int?) content.GetValueForProperty("LastSyncedWithIdp",((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp = (long?) content.GetValueForProperty("LastSyncedWithIdp",((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.ISyncStatus1Internal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ISyncStatus1Internal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISyncStatus1Internal)this).ErrorMessage = (Commvault.Powershell.Models.INameMessage[]) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ISyncStatus1Internal)this).ErrorMessage, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.INameMessage>(__y, Commvault.Powershell.Models.NameMessageTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp = (int?) content.GetValueForProperty("LastSyncedWithIdp",((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp = (long?) content.GetValueForProperty("LastSyncedWithIdp",((Commvault.Powershell.Models.ISyncStatus1Internal)this).LastSyncedWithIdp, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

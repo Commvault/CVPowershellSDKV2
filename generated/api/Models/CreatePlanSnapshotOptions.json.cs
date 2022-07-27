@@ -61,10 +61,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_snapRecoveryPoints = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("snapRecoveryPoints"), out var __jsonSnapRecoveryPoints) ? (int?)__jsonSnapRecoveryPoints : SnapRecoveryPoints;}
-            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (int?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
+            {_snapRecoveryPoints = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("snapRecoveryPoints"), out var __jsonSnapRecoveryPoints) ? (long?)__jsonSnapRecoveryPoints : SnapRecoveryPoints;}
+            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
             {_enableBackupCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableBackupCopy"), out var __jsonEnableBackupCopy) ? (bool?)__jsonEnableBackupCopy : EnableBackupCopy;}
-            {_backupCopyRpoMins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupCopyRPOMins"), out var __jsonBackupCopyRpoMins) ? (int?)__jsonBackupCopyRpoMins : BackupCopyRpoMins;}
+            {_backupCopyRpoMins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupCopyRPOMins"), out var __jsonBackupCopyRpoMins) ? (long?)__jsonBackupCopyRpoMins : BackupCopyRpoMins;}
             AfterFromJson(json);
         }
 
@@ -97,10 +97,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._snapRecoveryPoints ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._snapRecoveryPoints) : null, "snapRecoveryPoints" ,container.Add );
-            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
+            AddIf( null != this._snapRecoveryPoints ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._snapRecoveryPoints) : null, "snapRecoveryPoints" ,container.Add );
+            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
             AddIf( null != this._enableBackupCopy ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableBackupCopy) : null, "enableBackupCopy" ,container.Add );
-            AddIf( null != this._backupCopyRpoMins ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._backupCopyRpoMins) : null, "backupCopyRPOMins" ,container.Add );
+            AddIf( null != this._backupCopyRpoMins ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupCopyRpoMins) : null, "backupCopyRPOMins" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

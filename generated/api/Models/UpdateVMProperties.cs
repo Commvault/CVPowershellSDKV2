@@ -27,7 +27,7 @@ namespace Commvault.Powershell.Models
         /// enter the passkey, again.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AuthKeyRestoreExpirationTime { get => ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)AuthKeyRestore).ExpirationTime; set => ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)AuthKeyRestore).ExpirationTime = value ?? default(int); }
+        public long? AuthKeyRestoreExpirationTime { get => ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)AuthKeyRestore).ExpirationTime; set => ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)AuthKeyRestore).ExpirationTime = value ?? default(long); }
 
         /// <summary>The existing passkey for restricting backup restores.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -52,7 +52,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -123,8 +123,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The duration(in unix time) for which a user can continue browsing and restoring backup data without being prompted to enter the passkey, again.",
         SerializedName = @"expirationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AuthKeyRestoreExpirationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AuthKeyRestoreExpirationTime { get; set; }
         /// <summary>The existing passkey for restricting backup restores.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -139,8 +139,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -219,13 +219,13 @@ namespace Commvault.Powershell.Models
         /// The duration(in unix time) for which a user can continue browsing and restoring backup data without being prompted to
         /// enter the passkey, again.
         /// </summary>
-        int? AuthKeyRestoreExpirationTime { get; set; }
+        long? AuthKeyRestoreExpirationTime { get; set; }
         /// <summary>The existing passkey for restricting backup restores.</summary>
         string AuthKeyRestorePassKey { get; set; }
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>Model to create, edit or disable passkey</summary>

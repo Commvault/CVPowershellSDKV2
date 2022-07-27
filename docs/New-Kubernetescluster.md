@@ -14,7 +14,7 @@ Create Kubernetes cluster
 
 ```
 New-Kubernetescluster -AccessNodes <IIdName[]> -CredentialsName <String> -Endpointurl <String> -Name <String>
- [-CredentialsId <Int32>] [-Password <String>] [-SecretKey <String>] [-ServiceName <String>]
+ [-CredentialsId <Int64>] [-Password <String>] [-SecretKey <String>] [-ServiceName <String>]
  [-SkipCredentialValidation] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -246,7 +246,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ACCESSNODES <IIdName[]>: .
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

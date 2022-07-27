@@ -35,7 +35,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 LOCALUSERGROUPS <IIdName[]>: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-usergroup
@@ -72,7 +72,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # if enforceFSQuota is set to true, the quota limit can be set in GBs
     ${QuotaLimitInGb},
 

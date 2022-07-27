@@ -11,16 +11,16 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Count" /> property.</summary>
-        private int? _count;
+        private long? _count;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Count { get => this._count; set => this._count = value; }
+        public long? Count { get => this._count; set => this._count = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -42,16 +42,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"count",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Count { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Count { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -65,9 +65,9 @@ namespace Commvault.Powershell.Models
     internal partial interface IIdNameCountInternal
 
     {
-        int? Count { get; set; }
+        long? Count { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         string Name { get; set; }
 

@@ -29,7 +29,7 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IMediaAgentLogsCache Commvault.Powershell.Models.IMediaAgentInternal.IndexCacheLogsCache { get => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogsCache; set => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogsCache = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyId; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyId = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyId; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyName; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyName = value ?? null; }
@@ -59,7 +59,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Specifies the number of parallel data operations that can take place.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ControlParallelDataTransferOperations { get => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations; set => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations = value ?? default(int); }
+        public long? ControlParallelDataTransferOperations { get => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations; set => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations = value ?? default(long); }
 
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
@@ -84,7 +84,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Id of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Id; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Id = value ?? default(int); }
+        public long? GeneralId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Id; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Id = value ?? default(long); }
 
         /// <summary>Name of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -123,7 +123,7 @@ namespace Commvault.Powershell.Models
         public string LogCachePath { get => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogCachePath; set => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogCachePath = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? OperatingSystemId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemId; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemId = value ?? default(int); }
+        public long? OperatingSystemId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemId; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string OperatingSystemName { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemName; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemName = value ?? null; }
@@ -148,8 +148,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -193,8 +193,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specifies the number of parallel data operations that can take place. ",
         SerializedName = @"parallelDataTransferOperations",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ControlParallelDataTransferOperations { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ControlParallelDataTransferOperations { get; set; }
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
         /// media agent is disabled.
@@ -228,8 +228,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of the media agent.",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralId { get; set; }
         /// <summary>Name of the media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -294,8 +294,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? OperatingSystemId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? OperatingSystemId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -317,7 +317,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IMediaAgentInternal
 
     {
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
 
@@ -334,7 +334,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         bool? ControlOptimizeForConcurrentLanBackups { get; set; }
         /// <summary>Specifies the number of parallel data operations that can take place.</summary>
-        int? ControlParallelDataTransferOperations { get; set; }
+        long? ControlParallelDataTransferOperations { get; set; }
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
         /// media agent is disabled.
@@ -349,7 +349,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Display name of the media agent.</summary>
         string GeneralDisplayName { get; set; }
         /// <summary>Id of the media agent.</summary>
-        int? GeneralId { get; set; }
+        long? GeneralId { get; set; }
         /// <summary>Name of the media agent.</summary>
         string GeneralName { get; set; }
         /// <summary>
@@ -373,7 +373,7 @@ namespace Commvault.Powershell.Models
         /// <summary>If the logs cache is enabled, this tag gives the path to store the logs cache.</summary>
         string LogCachePath { get; set; }
 
-        int? OperatingSystemId { get; set; }
+        long? OperatingSystemId { get; set; }
 
         string OperatingSystemName { get; set; }
 

@@ -1,6 +1,6 @@
 ---
 Module Name: CommvaultPowerShell
-Module Guid: d95644ec-3465-449d-a982-b182fb93943d
+Module Guid: 2ccdf246-027b-4942-a96e-fd3f8831492a
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell
 Help Version: 1.0.0.0
 Locale: en-US
@@ -11,8 +11,14 @@ Locale: en-US
 
 
 ## CommvaultPowerShell Cmdlets
+### [Add-Laptop](Add-Laptop.md)
+Simplified API to create a laptop
+
 ### [Add-MediaAgent](Add-MediaAgent.md)
 Used to add a media agent to a disk access path
+
+### [Backup-VMGroup](Backup-VMGroup.md)
+To Backup the virtual machines in vmgroup
 
 ### [Disable-AlertDefinition](Disable-AlertDefinition.md)
 Disable Alert Definition
@@ -166,9 +172,6 @@ This endpoint is used to return the list of Archive file servers.
 
 ### [Get-ArchivePlan](Get-ArchivePlan.md)
 Get Archive Plan details
-
-### [Get-Association](Get-Association.md)
-API to get list of association for a company
 
 ### [Get-BackupDestination](Get-BackupDestination.md)
 Get Backup Destinations for a Plan
@@ -347,7 +350,10 @@ API to get excluded workloads from plan rule evaluation framework
 ### [Get-PlanRuleSetting](Get-PlanRuleSetting.md)
 API to fetch plan rule execution settings
 
-### [Get-PlanSummary](Get-PlanSummary.md)
+### [Get-PlanSummaryDetail](Get-PlanSummaryDetail.md)
+Api to fetch summary of a plan.
+
+### [Get-PlanSummaryList](Get-PlanSummaryList.md)
 Get Plan Summary
 
 ### [Get-Project](Get-Project.md)
@@ -425,14 +431,11 @@ Get details of a user-group based on id
 ### [Get-VirtualMachine](Get-VirtualMachine.md)
 Get all virtual machines
 
-### [Get-VMDetail](Get-VMDetail.md)
+### [Get-VirtualMachineDetail](Get-VirtualMachineDetail.md)
 Get details for virtual machine
 
 ### [Get-VMGroup](Get-VMGroup.md)
 Get the details of all vmGroup
-
-### [Group-](Group-.md)
-To Backup the virtual machines in vmgroup
 
 ### [Install-MediaAgent](Install-MediaAgent.md)
 To install MediaAgent package on a server
@@ -440,11 +443,8 @@ To install MediaAgent package on a server
 ### [Invoke-BrowseHypervisorInventory](Invoke-BrowseHypervisorInventory.md)
 Browse the Inventory of your hypervisor
 
-### [Invoke-FirewallTopology](Invoke-FirewallTopology.md)
-This endpoint is used to create network topology.
-
-### [Invoke-Laptop](Invoke-Laptop.md)
-Simplified API to create a laptop
+### [Invoke-InvokeRefreshNode](Invoke-InvokeRefreshNode.md)
+Refresh a specific node of HyperScale
 
 ### [Invoke-LaptopOwnerMapping](Invoke-LaptopOwnerMapping.md)
 API to create laptop owner mappings
@@ -452,83 +452,11 @@ API to create laptop owner mappings
 ### [Invoke-Machine](Invoke-Machine.md)
 To Backup the virtual machines in vmgroup
 
-### [Invoke-ModifyAccessPath](Invoke-ModifyAccessPath.md)
-Modify access path details of specific bucket of a specific cloud storage
-
-### [Invoke-ModifyArchiveBackupDestination](Invoke-ModifyArchiveBackupDestination.md)
-Modify Backup Destination for a Plan
-
-### [Invoke-ModifyArchivePlan](Invoke-ModifyArchivePlan.md)
-Modify existing archive plan details
-
-### [Invoke-ModifyBackupDestination](Invoke-ModifyBackupDestination.md)
-Modify Backup Destination for a Plan
-
-### [Invoke-ModifyBackupLocation](Invoke-ModifyBackupLocation.md)
-Modify the properties of an existing mount path
-
-### [Invoke-ModifyBlackoutWindow](Invoke-ModifyBlackoutWindow.md)
-Modify the properties of an existing Blackout Window
-
-### [Invoke-ModifyBucket](Invoke-ModifyBucket.md)
-Modify configuration of a specific bucket of a specific cloud storage
-
-### [Invoke-ModifyCloudStorage](Invoke-ModifyCloudStorage.md)
-Modify details like name, encryption, security of a specific cloud storage
-
-### [Invoke-ModifyCloudStorageMetaDataCache](Invoke-ModifyCloudStorageMetaDataCache.md)
-Modify details like credentials and path for metadata Cache of a cloud storage based on Id
-
-### [Invoke-ModifyCompany](Invoke-ModifyCompany.md)
-Modify the properties of an existing company
-
-### [Invoke-ModifyDiskStorage](Invoke-ModifyDiskStorage.md)
-Modify the properties of an existing disk storage pool
-
-### [Invoke-ModifyEntitySetting](Invoke-ModifyEntitySetting.md)
-Modify entity settings used to change default behaviour for linked entity like servers or server groups
-
-### [Invoke-ModifyGlobalSetting](Invoke-ModifyGlobalSetting.md)
-Modify global settings used to override system default behaviour
-
-### [Invoke-ModifyHyperScaleStorage](Invoke-ModifyHyperScaleStorage.md)
-Modify details like name, encryption, security of a specific hyperscale storage
-
-### [Invoke-ModifyLaptopBackupDestination](Invoke-ModifyLaptopBackupDestination.md)
-Modify Backup Destination for a Plan
-
-### [Invoke-ModifyLaptopPlan](Invoke-ModifyLaptopPlan.md)
-Modify existing laptop plan details
-
-### [Invoke-ModifyMediaAgent](Invoke-ModifyMediaAgent.md)
-Modify the properties of an existing media agent
-
-### [Invoke-ModifyPlan](Invoke-ModifyPlan.md)
-Used to modify an exsiting server plan
-
-### [Invoke-ModifyReplicationGroup](Invoke-ModifyReplicationGroup.md)
-Modify the properties of an existing replication group
-
-### [Invoke-ModifyRole](Invoke-ModifyRole.md)
-Modify the properties of an existing role
-
-### [Invoke-ModifySchedulePattern](Invoke-ModifySchedulePattern.md)
-API to update pattern for schedule in schedule policy
-
-### [Invoke-ModifyTriggeredAlertNote](Invoke-ModifyTriggeredAlertNote.md)
-Add, Modify and Delete notes for triggered alerts
-
-### [Invoke-ModifyUser](Invoke-ModifyUser.md)
-Used to modify an existing user
-
-### [Invoke-ModifyUserGroup](Invoke-ModifyUserGroup.md)
-Modify the properties of an existing user-group
-
-### [Invoke-ModifyVirtualMachine](Invoke-ModifyVirtualMachine.md)
-Modify the properties of an existing virtual machine
-
 ### [Invoke-PinTriggeredAlert](Invoke-PinTriggeredAlert.md)
 Pin triggered alerts
+
+### [Invoke-PreviewVMGroup](Invoke-PreviewVMGroup.md)
+Preview of the vm to be protected in VMGroup
 
 ### [Invoke-ReConfigureHypervisor](Invoke-ReConfigureHypervisor.md)
 REconfigures and Renew License for  the hypervisor client
@@ -544,9 +472,6 @@ Get list of SNMP hosts for alert notification
 
 ### [Invoke-UnpinTriggeredAlert](Invoke-UnpinTriggeredAlert.md)
 Unpin triggered alerts
-
-### [New-](New-.md)
-Creating a request for request manager
 
 ### [New-AccessPath](New-AccessPath.md)
 Add a new Access path (mediaAgent) to a specific bucket of a specific cloud storage
@@ -593,6 +518,9 @@ Create a new credential
 ### [New-DiskStorage](New-DiskStorage.md)
 Create a new disk storage pool
 
+### [New-FirewallTopology](New-FirewallTopology.md)
+This endpoint is used to create network topology.
+
 ### [New-HyperScaleStorage](New-HyperScaleStorage.md)
 Create a HyperScale Storage
 
@@ -611,9 +539,6 @@ Create Laptop Plan
 ### [New-Ldap](New-Ldap.md)
 Create LDAP/Active directory for user authentication
 
-### [New-NewRole](New-NewRole.md)
-Create a new role
-
 ### [New-NodeforHyperScaleStorage](New-NodeforHyperScaleStorage.md)
 Add nodes for a specific hyperscale storage
 
@@ -626,6 +551,12 @@ Create a region
 
 ### [New-ReplicationGroup](New-ReplicationGroup.md)
 Create a replication group
+
+### [New-RequestResourceManager](New-RequestResourceManager.md)
+Creating a request for request manager
+
+### [New-Role](New-Role.md)
+Create a new role
 
 ### [New-SamlApp](New-SamlApp.md)
 Creates SAML app
@@ -780,26 +711,62 @@ Retrieves the list of Requests
 ### [Send-TestMailReq](Send-TestMailReq.md)
 To test Email settings
 
-### [Set-](Set-.md)
-Configure a created request
-
 ### [Set-AccessControl](Set-AccessControl.md)
 Updates owner permissions and/or automatic laptop ownership assignment
+
+### [Set-AccessPath](Set-AccessPath.md)
+Modify access path details of specific bucket of a specific cloud storage
 
 ### [Set-Adldap](Set-Adldap.md)
 Update an AD/LDAP domain
 
-### [Set-CompanyTimezone](Set-CompanyTimezone.md)
-Assigns company's timezone as the timezone for servers with no packages installed
+### [Set-ArchiveBackupDestination](Set-ArchiveBackupDestination.md)
+Modify Backup Destination for a Plan
+
+### [Set-ArchivePlan](Set-ArchivePlan.md)
+Modify existing archive plan details
+
+### [Set-BackupDestination](Set-BackupDestination.md)
+Modify Backup Destination for a Plan
+
+### [Set-BackupLocation](Set-BackupLocation.md)
+Modify the properties of an existing mount path
+
+### [Set-BlackoutWindow](Set-BlackoutWindow.md)
+Modify the properties of an existing Blackout Window
+
+### [Set-Bucket](Set-Bucket.md)
+Modify configuration of a specific bucket of a specific cloud storage
+
+### [Set-CloudStorage](Set-CloudStorage.md)
+Modify details like name, encryption, security of a specific cloud storage
+
+### [Set-CloudStorageMetaDataCache](Set-CloudStorageMetaDataCache.md)
+Modify details like credentials and path for metadata Cache of a cloud storage based on Id
+
+### [Set-Company](Set-Company.md)
+Modify the properties of an existing company
 
 ### [Set-Credential](Set-Credential.md)
 Edit credential whose name has been provided by credential owner
 
+### [Set-DiskStorage](Set-DiskStorage.md)
+Modify the properties of an existing disk storage pool
+
 ### [Set-EmailServer](Set-EmailServer.md)
 Configure SMTP server settings.
 
+### [Set-EntitySetting](Set-EntitySetting.md)
+Modify entity settings used to change default behaviour for linked entity like servers or server groups
+
 ### [Set-FirewallTopology](Set-FirewallTopology.md)
 This endpoint is used to edit network topology.
+
+### [Set-GlobalSetting](Set-GlobalSetting.md)
+Modify global settings used to override system default behaviour
+
+### [Set-HyperScaleStorage](Set-HyperScaleStorage.md)
+Modify details like name, encryption, security of a specific hyperscale storage
 
 ### [Set-Hypervisor](Set-Hypervisor.md)
 Updates the Hypervisors
@@ -810,11 +777,20 @@ Endpoint to Change the Access Node
 ### [Set-HypervisorFbr](Set-HypervisorFbr.md)
 Endpoint to set FBR
 
+### [Set-LaptopBackupDestination](Set-LaptopBackupDestination.md)
+Modify Backup Destination for a Plan
+
 ### [Set-LaptopOwnerMapping](Set-LaptopOwnerMapping.md)
 API to update existing laptop owner mapping
 
-### [Set-Node](Set-Node.md)
-Refresh a specific node of HyperScale
+### [Set-LaptopPlan](Set-LaptopPlan.md)
+Modify existing laptop plan details
+
+### [Set-MediaAgent](Set-MediaAgent.md)
+Modify the properties of an existing media agent
+
+### [Set-Plan](Set-Plan.md)
+Used to modify an exsiting server plan
 
 ### [Set-PlanRule](Set-PlanRule.md)
 Api to update existing plan rules.
@@ -841,14 +817,38 @@ API to set plan rule execution settings
 ### [Set-Region](Set-Region.md)
 Api to set region for an entity.
 
+### [Set-ReplicationGroup](Set-ReplicationGroup.md)
+Modify the properties of an existing replication group
+
+### [Set-RequestManagerConfigureRequest](Set-RequestManagerConfigureRequest.md)
+Configure a created request
+
+### [Set-Role](Set-Role.md)
+Modify the properties of an existing role
+
 ### [Set-SamlApp](Set-SamlApp.md)
 Updates details of existing SAML app
+
+### [Set-SchedulePattern](Set-SchedulePattern.md)
+API to update pattern for schedule in schedule policy
 
 ### [Set-ServerPlanRpo](Set-ServerPlanRpo.md)
 API to modify RPO schedules on server plan
 
 ### [Set-SyslogStatus](Set-SyslogStatus.md)
 This endpoint configures a syslog server.
+
+### [Set-TriggeredAlertNote](Set-TriggeredAlertNote.md)
+Add, Modify and Delete notes for triggered alerts
+
+### [Set-User](Set-User.md)
+Used to modify an existing user
+
+### [Set-UserGroup](Set-UserGroup.md)
+Modify the properties of an existing user-group
+
+### [Set-VirtualMachine](Set-VirtualMachine.md)
+Modify the properties of an existing virtual machine
 
 ### [Set-VMGroup](Set-VMGroup.md)
 Updates the VM Group

@@ -107,8 +107,8 @@ To create the parameters described below, construct a hash table containing the 
 
 
 RULES <IPlanEntityRuleRank[]>: Lits of plan entity rule object suggesting their ranks.
-  - `[Rank <Int32?>]`: This will suggest rank/priority of the plan rule.
-  - `[RuleId <Int32?>]`: 
+  - `[Rank <Int64?>]`: This will suggest rank/priority of the plan rule.
+  - `[RuleId <Int64?>]`: 
   - `[RuleName <String>]`: 
 
 ## RELATED LINKS

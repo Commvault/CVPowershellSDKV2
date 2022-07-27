@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ClusterCount" /> property.</summary>
-        private int? _clusterCount;
+        private long? _clusterCount;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ClusterCount { get => this._clusterCount; set => this._clusterCount = value; }
+        public long? ClusterCount { get => this._clusterCount; set => this._clusterCount = value; }
 
         /// <summary>Backing field for <see cref="Clusters" /> property.</summary>
         private Commvault.Powershell.Models.IClusterListResp[] _clusters;
@@ -38,8 +38,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"clusterCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClusterCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClusterCount { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IListClustersInternal
 
     {
-        int? ClusterCount { get; set; }
+        long? ClusterCount { get; set; }
 
         Commvault.Powershell.Models.IClusterListResp[] Clusters { get; set; }
 

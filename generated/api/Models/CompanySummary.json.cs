@@ -60,11 +60,11 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_primaryContacts = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("primaryContacts"), out var __jsonPrimaryContacts) ? If( __jsonPrimaryContacts as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : PrimaryContacts;}
             {_deactivated = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("deactivated"), out var __jsonDeactivated) ? (bool?)__jsonDeactivated : Deactivated;}
-            {_associatedEntitiesCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedEntitiesCount"), out var __jsonAssociatedEntitiesCount) ? (int?)__jsonAssociatedEntitiesCount : AssociatedEntitiesCount;}
+            {_associatedEntitiesCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedEntitiesCount"), out var __jsonAssociatedEntitiesCount) ? (long?)__jsonAssociatedEntitiesCount : AssociatedEntitiesCount;}
             AfterFromJson(json);
         }
 
@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             if (null != this._primaryContacts)
             {
@@ -109,7 +109,7 @@ namespace Commvault.Powershell.Models
                 container.Add("primaryContacts",__w);
             }
             AddIf( null != this._deactivated ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._deactivated) : null, "deactivated" ,container.Add );
-            AddIf( null != this._associatedEntitiesCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._associatedEntitiesCount) : null, "associatedEntitiesCount" ,container.Add );
+            AddIf( null != this._associatedEntitiesCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._associatedEntitiesCount) : null, "associatedEntitiesCount" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

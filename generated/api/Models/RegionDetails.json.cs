@@ -73,7 +73,7 @@ namespace Commvault.Powershell.Models
             }
             {_associatedServers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("associatedServers"), out var __jsonAssociatedServers) ? Commvault.Powershell.Models.RegionAssociatedServers.FromJson(__jsonAssociatedServers) : AssociatedServers;}
             {_associatedRegionBasedPlans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("associatedRegionBasedPlans"), out var __jsonAssociatedRegionBasedPlans) ? Commvault.Powershell.Models.AssociatedRegionBasedPlans.FromJson(__jsonAssociatedRegionBasedPlans) : AssociatedRegionBasedPlans;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
             {_regionType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("regionType"), out var __jsonRegionType) ? (string)__jsonRegionType : (string)RegionType;}
@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._associatedServers ? (Commvault.Powershell.Runtime.Json.JsonNode) this._associatedServers.ToJson(null,serializationMode) : null, "associatedServers" ,container.Add );
             AddIf( null != this._associatedRegionBasedPlans ? (Commvault.Powershell.Runtime.Json.JsonNode) this._associatedRegionBasedPlans.ToJson(null,serializationMode) : null, "associatedRegionBasedPlans" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._displayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayName.ToString()) : null, "displayName" ,container.Add );
             AddIf( null != (((object)this._regionType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._regionType.ToString()) : null, "regionType" ,container.Add );

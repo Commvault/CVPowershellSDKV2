@@ -14,10 +14,10 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IIdNameProviderInternal.Provider { get => (this._provider = this._provider ?? new Commvault.Powershell.Models.IdName()); set { {_provider = value;} } }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -32,7 +32,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Provider { get => (this._provider = this._provider ?? new Commvault.Powershell.Models.IdName()); set => this._provider = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ProviderId { get => ((Commvault.Powershell.Models.IIdNameInternal)Provider).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Provider).Id = value ?? default(int); }
+        public long? ProviderId { get => ((Commvault.Powershell.Models.IIdNameInternal)Provider).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Provider).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ProviderName { get => ((Commvault.Powershell.Models.IIdNameInternal)Provider).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Provider).Name = value ?? null; }
@@ -51,8 +51,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -67,8 +67,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -82,13 +82,13 @@ namespace Commvault.Powershell.Models
     internal partial interface IIdNameProviderInternal
 
     {
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         string Name { get; set; }
 
         Commvault.Powershell.Models.IIdName Provider { get; set; }
 
-        int? ProviderId { get; set; }
+        long? ProviderId { get; set; }
 
         string ProviderName { get; set; }
 

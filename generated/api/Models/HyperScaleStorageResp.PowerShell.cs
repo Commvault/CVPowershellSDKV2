@@ -97,11 +97,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId = (int?) content.GetValueForProperty("CopyId",((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IIdNameInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId = (long?) content.GetValueForProperty("CopyId",((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IIdNameInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -119,11 +119,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId = (int?) content.GetValueForProperty("CopyId",((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IIdNameInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId = (long?) content.GetValueForProperty("CopyId",((Commvault.Powershell.Models.IHyperScaleStorageRespInternal)this).CopyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IIdNameInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGenericRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

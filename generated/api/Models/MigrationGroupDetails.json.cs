@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
             {_migrationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("migrationSize"), out var __jsonMigrationSize) ? (long?)__jsonMigrationSize : MigrationSize;}
             {_numOfFiles = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numOfFiles"), out var __jsonNumOfFiles) ? (long?)__jsonNumOfFiles : NumOfFiles;}
             {_failures = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("failures"), out var __jsonFailures) ? (string)__jsonFailures : (string)Failures;}
-            {_backupJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupJobId"), out var __jsonBackupJobId) ? (int?)__jsonBackupJobId : BackupJobId;}
-            {_restoreJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("restoreJobId"), out var __jsonRestoreJobId) ? (int?)__jsonRestoreJobId : RestoreJobId;}
+            {_backupJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupJobId"), out var __jsonBackupJobId) ? (long?)__jsonBackupJobId : BackupJobId;}
+            {_restoreJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("restoreJobId"), out var __jsonRestoreJobId) ? (long?)__jsonRestoreJobId : RestoreJobId;}
             {_migrationStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("migrationStatus"), out var __jsonMigrationStatus) ? (string)__jsonMigrationStatus : (string)MigrationStatus;}
             {_lastSyncTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastSyncTime"), out var __jsonLastSyncTime) ? (long?)__jsonLastSyncTime : LastSyncTime;}
             {_failureReason = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("failureReason"), out var __jsonFailureReason) ? (string)__jsonFailureReason : (string)FailureReason;}
@@ -168,8 +168,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._migrationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._migrationSize) : null, "migrationSize" ,container.Add );
             AddIf( null != this._numOfFiles ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._numOfFiles) : null, "numOfFiles" ,container.Add );
             AddIf( null != (((object)this._failures)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._failures.ToString()) : null, "failures" ,container.Add );
-            AddIf( null != this._backupJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._backupJobId) : null, "backupJobId" ,container.Add );
-            AddIf( null != this._restoreJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._restoreJobId) : null, "restoreJobId" ,container.Add );
+            AddIf( null != this._backupJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupJobId) : null, "backupJobId" ,container.Add );
+            AddIf( null != this._restoreJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._restoreJobId) : null, "restoreJobId" ,container.Add );
             AddIf( null != (((object)this._migrationStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._migrationStatus.ToString()) : null, "migrationStatus" ,container.Add );
             AddIf( null != this._lastSyncTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastSyncTime) : null, "lastSyncTime" ,container.Add );
             AddIf( null != (((object)this._failureReason)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._failureReason.ToString()) : null, "failureReason" ,container.Add );

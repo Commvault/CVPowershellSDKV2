@@ -18,11 +18,11 @@ namespace Commvault.Powershell.Models
         public string Component { get => this._component; set => this._component = value; }
 
         /// <summary>Backing field for <see cref="ErrorCode" /> property.</summary>
-        private int? _errorCode;
+        private long? _errorCode;
 
         /// <summary>Error Code for plan</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ErrorCode { get => this._errorCode; set => this._errorCode = value; }
+        public long? ErrorCode { get => this._errorCode; set => this._errorCode = value; }
 
         /// <summary>Backing field for <see cref="ErrorMessage" /> property.</summary>
         private string _errorMessage;
@@ -54,8 +54,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Error Code for plan",
         SerializedName = @"errorCode",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ErrorCode { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ErrorCode { get; set; }
         /// <summary>Error message for plan</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Plan Entity for which error occured</summary>
         string Component { get; set; }
         /// <summary>Error Code for plan</summary>
-        int? ErrorCode { get; set; }
+        long? ErrorCode { get; set; }
         /// <summary>Error message for plan</summary>
         string ErrorMessage { get; set; }
 

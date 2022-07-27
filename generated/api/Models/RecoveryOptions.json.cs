@@ -73,10 +73,10 @@ namespace Commvault.Powershell.Models
             }
             {_recoveryType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("recoveryType"), out var __jsonRecoveryType) ? (string)__jsonRecoveryType : (string)RecoveryType;}
             {_recoveryPointStore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("recoveryPointStore"), out var __jsonRecoveryPointStore) ? (string)__jsonRecoveryPointStore : (string)RecoveryPointStore;}
-            {_crashConsistentRpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("crashConsistentRpInterval"), out var __jsonCrashConsistentRpInterval) ? (int?)__jsonCrashConsistentRpInterval : CrashConsistentRpInterval;}
-            {_mergeRecoveryPointsOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("mergeRecoveryPointsOlderThan"), out var __jsonMergeRecoveryPointsOlderThan) ? (int?)__jsonMergeRecoveryPointsOlderThan : MergeRecoveryPointsOlderThan;}
-            {_retainRecoveryPointsFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retainRecoveryPointsFor"), out var __jsonRetainRecoveryPointsFor) ? (int?)__jsonRetainRecoveryPointsFor : RetainRecoveryPointsFor;}
-            {_recoveryPointInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("recoveryPointInterval"), out var __jsonRecoveryPointInterval) ? (int?)__jsonRecoveryPointInterval : RecoveryPointInterval;}
+            {_crashConsistentRpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("crashConsistentRpInterval"), out var __jsonCrashConsistentRpInterval) ? (long?)__jsonCrashConsistentRpInterval : CrashConsistentRpInterval;}
+            {_mergeRecoveryPointsOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("mergeRecoveryPointsOlderThan"), out var __jsonMergeRecoveryPointsOlderThan) ? (long?)__jsonMergeRecoveryPointsOlderThan : MergeRecoveryPointsOlderThan;}
+            {_retainRecoveryPointsFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retainRecoveryPointsFor"), out var __jsonRetainRecoveryPointsFor) ? (long?)__jsonRetainRecoveryPointsFor : RetainRecoveryPointsFor;}
+            {_recoveryPointInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("recoveryPointInterval"), out var __jsonRecoveryPointInterval) ? (long?)__jsonRecoveryPointInterval : RecoveryPointInterval;}
             {_pruneAndMergeRecoveryPoints = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("pruneAndMergeRecoveryPoints"), out var __jsonPruneAndMergeRecoveryPoints) ? (bool?)__jsonPruneAndMergeRecoveryPoints : PruneAndMergeRecoveryPoints;}
             AfterFromJson(json);
         }
@@ -102,10 +102,10 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != (((object)this._recoveryType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._recoveryType.ToString()) : null, "recoveryType" ,container.Add );
             AddIf( null != (((object)this._recoveryPointStore)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._recoveryPointStore.ToString()) : null, "recoveryPointStore" ,container.Add );
-            AddIf( null != this._crashConsistentRpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._crashConsistentRpInterval) : null, "crashConsistentRpInterval" ,container.Add );
-            AddIf( null != this._mergeRecoveryPointsOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._mergeRecoveryPointsOlderThan) : null, "mergeRecoveryPointsOlderThan" ,container.Add );
-            AddIf( null != this._retainRecoveryPointsFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retainRecoveryPointsFor) : null, "retainRecoveryPointsFor" ,container.Add );
-            AddIf( null != this._recoveryPointInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._recoveryPointInterval) : null, "recoveryPointInterval" ,container.Add );
+            AddIf( null != this._crashConsistentRpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._crashConsistentRpInterval) : null, "crashConsistentRpInterval" ,container.Add );
+            AddIf( null != this._mergeRecoveryPointsOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._mergeRecoveryPointsOlderThan) : null, "mergeRecoveryPointsOlderThan" ,container.Add );
+            AddIf( null != this._retainRecoveryPointsFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retainRecoveryPointsFor) : null, "retainRecoveryPointsFor" ,container.Add );
+            AddIf( null != this._recoveryPointInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._recoveryPointInterval) : null, "recoveryPointInterval" ,container.Add );
             AddIf( null != this._pruneAndMergeRecoveryPoints ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._pruneAndMergeRecoveryPoints) : null, "pruneAndMergeRecoveryPoints" ,container.Add );
             AfterToJson(ref container);
             return container;

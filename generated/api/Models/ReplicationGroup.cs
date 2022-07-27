@@ -23,11 +23,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IReplicationGroupSummary Commvault.Powershell.Models.IReplicationGroupInternal.Summary { get => (this._summary = this._summary ?? new Commvault.Powershell.Models.ReplicationGroupSummary()); set { {_summary = value;} } }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Replication group id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -47,7 +47,7 @@ namespace Commvault.Powershell.Models
         /// Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RpoReplicationFrequency { get => ((Commvault.Powershell.Models.IRpoInternal)Rpo).ReplicationFrequency; set => ((Commvault.Powershell.Models.IRpoInternal)Rpo).ReplicationFrequency = value ?? default(int); }
+        public long? RpoReplicationFrequency { get => ((Commvault.Powershell.Models.IRpoInternal)Rpo).ReplicationFrequency; set => ((Commvault.Powershell.Models.IRpoInternal)Rpo).ReplicationFrequency = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="Storage" /> property.</summary>
         private Commvault.Powershell.Models.IReplicationGroupStorageList _storage;
@@ -107,8 +107,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Replication group id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Replication group name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -125,8 +125,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes",
         SerializedName = @"replicationFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RpoReplicationFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RpoReplicationFrequency { get; set; }
         /// <summary>List of all storages which are configured for that replication group</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -190,7 +190,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Replication group id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Replication group name</summary>
         string Name { get; set; }
         /// <summary>Frequency of replication</summary>
@@ -198,7 +198,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes
         /// </summary>
-        int? RpoReplicationFrequency { get; set; }
+        long? RpoReplicationFrequency { get; set; }
         /// <summary>List of storage configured for a replication group</summary>
         Commvault.Powershell.Models.IReplicationGroupStorageList Storage { get; set; }
         /// <summary>List of all storages which are configured for that replication group</summary>

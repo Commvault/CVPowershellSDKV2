@@ -85,7 +85,7 @@ namespace Commvault.Powershell.Cmdlets
         private Commvault.Powershell.Runtime.HttpPipeline Pipeline { get; set; }
 
         /// <summary>Backing field for <see cref="PlanId" /> property.</summary>
-        private int _planId;
+        private long _planId;
 
         /// <summary>Id of the Plan to modify</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the Plan to modify")]
@@ -94,9 +94,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the Plan to modify",
         SerializedName = @"planId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int PlanId { get => this._planId; set => this._planId = value; }
+        public long PlanId { get => this._planId; set => this._planId = value; }
 
         /// <summary>The URI for the proxy server to use</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "The URI for the proxy server to use")]
@@ -122,8 +122,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RegionId { get => Body.RegionId ?? default(int); set => Body.RegionId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RegionId { get => Body.RegionId ?? default(long); set => Body.RegionId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -144,8 +144,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Backup copy RPO in minutes",
         SerializedName = @"backupCopyRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionBackupCopyRpoMins { get => Body.SnapshotOptionBackupCopyRpoMins ?? default(int); set => Body.SnapshotOptionBackupCopyRpoMins = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionBackupCopyRpoMins { get => Body.SnapshotOptionBackupCopyRpoMins ?? default(long); set => Body.SnapshotOptionBackupCopyRpoMins = value; }
 
         /// <summary>Flag to enable backup copy</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Flag to enable backup copy")]
@@ -169,8 +169,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionRetentionPeriodDays { get => Body.SnapshotOptionRetentionPeriodDays ?? default(int); set => Body.SnapshotOptionRetentionPeriodDays = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionRetentionPeriodDays { get => Body.SnapshotOptionRetentionPeriodDays ?? default(long); set => Body.SnapshotOptionRetentionPeriodDays = value; }
 
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
@@ -183,8 +183,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.",
         SerializedName = @"snapRecoveryPoints",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionSnapRecoveryPoints { get => Body.SnapshotOptionSnapRecoveryPoints ?? default(int); set => Body.SnapshotOptionSnapRecoveryPoints = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionSnapRecoveryPoints { get => Body.SnapshotOptionSnapRecoveryPoints ?? default(long); set => Body.SnapshotOptionSnapRecoveryPoints = value; }
 
         /// <summary>
         /// <c>overrideOnNotFound</c> will be called before the regular onNotFound has been processed, allowing customization of what

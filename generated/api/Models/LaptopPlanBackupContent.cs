@@ -11,13 +11,13 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="FileSystemQuota" /> property.</summary>
-        private int? _fileSystemQuota;
+        private long? _fileSystemQuota;
 
         /// <summary>
         /// Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FileSystemQuota { get => this._fileSystemQuota; set => this._fileSystemQuota = value; }
+        public long? FileSystemQuota { get => this._fileSystemQuota; set => this._fileSystemQuota = value; }
 
         /// <summary>Backing field for <see cref="MacExcludedPaths" /> property.</summary>
         private string[] _macExcludedPaths;
@@ -78,8 +78,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.",
         SerializedName = @"fileSystemQuota",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileSystemQuota { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileSystemQuota { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -136,7 +136,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.
         /// </summary>
-        int? FileSystemQuota { get; set; }
+        long? FileSystemQuota { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         string[] MacExcludedPaths { get; set; }
         /// <summary>Paths to include for Mac</summary>

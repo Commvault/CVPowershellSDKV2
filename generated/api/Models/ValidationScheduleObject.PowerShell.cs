@@ -102,8 +102,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId = (int?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId = (long?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Description, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).IsScheduleEnabled = (bool?) content.GetValueForProperty("IsScheduleEnabled",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).IsScheduleEnabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
@@ -123,8 +123,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId = (int?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId = (long?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).TaskId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).Description, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).IsScheduleEnabled = (bool?) content.GetValueForProperty("IsScheduleEnabled",((Commvault.Powershell.Models.IValidationScheduleObjectInternal)this).IsScheduleEnabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);

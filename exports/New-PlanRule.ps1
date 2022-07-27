@@ -39,24 +39,24 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 REGIONS <IIdName[]>: This will include list of regions that should be evaluated against workload region for plan association.
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 
 SERVERGROUPS <IIdName[]>: This will include list of Server groups that should be evaluated against workload server group for plan association.
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 
 SOLUTIONS <IIdName[]>: This will include list of solutions that should be evaluated against workload for plan association
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 
 TAGS <IPlanEntityRuleTag[]>: This will include list of tags that should be evaluated against workload for plan association
-  [Id <Int32?>]: Id for the tag
+  [Id <Int64?>]: Id for the tag
   [Name <String>]: Name for the plan rule tag which need to be matched against tag of the workload.
   [Value <String>]: Possible value that need to matched against value of tag associated to workload.
 
 WORKLOADS <IIdName[]>: This will include list of apptypes that should be evaluated against workload apptype for plan association.
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-planrule
@@ -67,7 +67,7 @@ function New-PlanRule {
 param(
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${CompanyId},
 
@@ -79,7 +79,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${PlanId},
 
@@ -91,7 +91,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # Optional field to suggest priority/rank of the rule.
     # If not present, we will process rule in the same order they are created.
     ${Rank},

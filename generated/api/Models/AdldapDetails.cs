@@ -44,7 +44,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -78,10 +78,10 @@ namespace Commvault.Powershell.Models
         public bool? EnableSso { get => this._enableSso; set => this._enableSso = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="LdapQueryParameters" /> property.</summary>
         private Commvault.Powershell.Models.ILdapAttribute[] _ldapQueryParameters;
@@ -115,18 +115,18 @@ namespace Commvault.Powershell.Models
         public bool? UseSecureLdap { get => this._useSecureLdap; set => this._useSecureLdap = value; }
 
         /// <summary>Backing field for <see cref="UserGroups" /> property.</summary>
-        private int? _userGroups;
+        private long? _userGroups;
 
         /// <summary>Number of user groups in the domain</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? UserGroups { get => this._userGroups; set => this._userGroups = value; }
+        public long? UserGroups { get => this._userGroups; set => this._userGroups = value; }
 
         /// <summary>Backing field for <see cref="Users" /> property.</summary>
-        private int? _users;
+        private long? _users;
 
         /// <summary>Number of users in the domain</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Users { get => this._users; set => this._users = value; }
+        public long? Users { get => this._users; set => this._users = value; }
 
         /// <summary>Creates an new <see cref="AdldapDetails" /> instance.</summary>
         public AdldapDetails()
@@ -170,8 +170,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -218,8 +218,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>
         /// List of query parameters for the LDAP domain. Available only if the directory type is LDAP_SERVER
         /// </summary>
@@ -262,16 +262,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of user groups in the domain",
         SerializedName = @"userGroups",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserGroups { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserGroups { get; set; }
         /// <summary>Number of users in the domain</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Number of users in the domain",
         SerializedName = @"users",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Users { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Users { get; set; }
 
     }
     /// Details of an AD/LDAP domain
@@ -289,7 +289,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>Username of the domain user used to connect to the domain</summary>
@@ -301,7 +301,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Denotes if SSO is enabled</summary>
         bool? EnableSso { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>
         /// List of query parameters for the LDAP domain. Available only if the directory type is LDAP_SERVER
         /// </summary>
@@ -315,9 +315,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Boolean to indicate if the identity server uses secure LDAP</summary>
         bool? UseSecureLdap { get; set; }
         /// <summary>Number of user groups in the domain</summary>
-        int? UserGroups { get; set; }
+        long? UserGroups { get; set; }
         /// <summary>Number of users in the domain</summary>
-        int? Users { get; set; }
+        long? Users { get; set; }
 
     }
 }

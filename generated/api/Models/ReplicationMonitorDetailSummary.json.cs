@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
             {_destination = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("destination"), out var __jsonDestination) ? Commvault.Powershell.Models.IdName.FromJson(__jsonDestination) : Destination;}
             {_recoveryType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("recoveryType"), out var __jsonRecoveryType) ? (string)__jsonRecoveryType : (string)RecoveryType;}
             {_synchronizationStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("synchronizationStatus"), out var __jsonSynchronizationStatus) ? (string)__jsonSynchronizationStatus : (string)SynchronizationStatus;}
-            {_replicationLag = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("replicationLag"), out var __jsonReplicationLag) ? (int?)__jsonReplicationLag : ReplicationLag;}
+            {_replicationLag = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("replicationLag"), out var __jsonReplicationLag) ? (long?)__jsonReplicationLag : ReplicationLag;}
             AfterFromJson(json);
         }
 
@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._destination ? (Commvault.Powershell.Runtime.Json.JsonNode) this._destination.ToJson(null,serializationMode) : null, "destination" ,container.Add );
             AddIf( null != (((object)this._recoveryType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._recoveryType.ToString()) : null, "recoveryType" ,container.Add );
             AddIf( null != (((object)this._synchronizationStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._synchronizationStatus.ToString()) : null, "synchronizationStatus" ,container.Add );
-            AddIf( null != this._replicationLag ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._replicationLag) : null, "replicationLag" ,container.Add );
+            AddIf( null != this._replicationLag ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._replicationLag) : null, "replicationLag" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_smtpServerName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("SMTPServerName"), out var __jsonSmtpServerName) ? (string)__jsonSmtpServerName : (string)SmtpServerName;}
-            {_smtpPort = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SMTPPort"), out var __jsonSmtpPort) ? (int?)__jsonSmtpPort : SmtpPort;}
+            {_smtpPort = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SMTPPort"), out var __jsonSmtpPort) ? (long?)__jsonSmtpPort : SmtpPort;}
             {_senderEmail = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("senderEmail"), out var __jsonSenderEmail) ? (string)__jsonSenderEmail : (string)SenderEmail;}
             {_senderName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("senderName"), out var __jsonSenderName) ? (string)__jsonSenderName : (string)SenderName;}
             {_encryptionAlgorithm = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("encryptionAlgorithm"), out var __jsonEncryptionAlgorithm) ? (string)__jsonEncryptionAlgorithm : (string)EncryptionAlgorithm;}
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._smtpServerName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._smtpServerName.ToString()) : null, "SMTPServerName" ,container.Add );
-            AddIf( null != this._smtpPort ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._smtpPort) : null, "SMTPPort" ,container.Add );
+            AddIf( null != this._smtpPort ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._smtpPort) : null, "SMTPPort" ,container.Add );
             AddIf( null != (((object)this._senderEmail)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._senderEmail.ToString()) : null, "senderEmail" ,container.Add );
             AddIf( null != (((object)this._senderName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._senderName.ToString()) : null, "senderName" ,container.Add );
             AddIf( null != (((object)this._encryptionAlgorithm)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._encryptionAlgorithm.ToString()) : null, "encryptionAlgorithm" ,container.Add );

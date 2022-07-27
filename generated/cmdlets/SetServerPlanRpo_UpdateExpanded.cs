@@ -106,7 +106,7 @@ namespace Commvault.Powershell.Cmdlets
         private Commvault.Powershell.Runtime.HttpPipeline Pipeline { get; set; }
 
         /// <summary>Backing field for <see cref="PlanId" /> property.</summary>
-        private int _planId;
+        private long _planId;
 
         /// <summary>Id of the Server Plan</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the Server Plan")]
@@ -115,9 +115,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the Server Plan",
         SerializedName = @"planId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int PlanId { get => this._planId; set => this._planId = value; }
+        public long PlanId { get => this._planId; set => this._planId = value; }
 
         /// <summary>The URI for the proxy server to use</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "The URI for the proxy server to use")]
@@ -143,8 +143,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SlaEnableAfterDelay { get => Body.SlaEnableAfterDelay ?? default(int); set => Body.SlaEnableAfterDelay = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SlaEnableAfterDelay { get => Body.SlaEnableAfterDelay ?? default(long); set => Body.SlaEnableAfterDelay = value; }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Flag to set to exclude plan from SLA")]
@@ -176,8 +176,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SlaPeriod { get => Body.SlaPeriod ?? default(int); set => Body.SlaPeriod = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SlaPeriod { get => Body.SlaPeriod ?? default(long); set => Body.SlaPeriod = value; }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Flag to set to use System Default Service Level Agreement")]

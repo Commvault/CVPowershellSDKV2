@@ -18,10 +18,10 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IRegionAssociatedServersList[] Servers { get => this._servers; set => this._servers = value; }
 
         /// <summary>Backing field for <see cref="ServersCount" /> property.</summary>
-        private int? _serversCount;
+        private long? _serversCount;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ServersCount { get => this._serversCount; set => this._serversCount = value; }
+        public long? ServersCount { get => this._serversCount; set => this._serversCount = value; }
 
         /// <summary>Creates an new <see cref="RegionAssociatedServers" /> instance.</summary>
         public RegionAssociatedServers()
@@ -46,8 +46,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"serversCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ServersCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ServersCount { get; set; }
 
     }
     /// Details of servers associated to a region
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IRegionAssociatedServersList[] Servers { get; set; }
 
-        int? ServersCount { get; set; }
+        long? ServersCount { get; set; }
 
     }
 }

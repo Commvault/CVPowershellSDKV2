@@ -12,18 +12,18 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Id of company</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="MultiCommcellId" /> property.</summary>
-        private int? _multiCommcellId;
+        private long? _multiCommcellId;
 
         /// <summary>Multi Commcell Id of company</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MultiCommcellId { get => this._multiCommcellId; set => this._multiCommcellId = value; }
+        public long? MultiCommcellId { get => this._multiCommcellId; set => this._multiCommcellId = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -48,16 +48,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of company",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Multi Commcell Id of company</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Multi Commcell Id of company",
         SerializedName = @"multiCommcellId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MultiCommcellId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MultiCommcellId { get; set; }
         /// <summary>Name of company</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -73,9 +73,9 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Id of company</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Multi Commcell Id of company</summary>
-        int? MultiCommcellId { get; set; }
+        long? MultiCommcellId { get; set; }
         /// <summary>Name of company</summary>
         string Name { get; set; }
 

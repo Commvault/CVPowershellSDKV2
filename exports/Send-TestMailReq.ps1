@@ -39,7 +39,7 @@ To create the parameters described below, construct a hash table containing the 
 BODY <ISendTestMailReq>: .
   SenderEmail <String>: The sender email address used for emails sent from the software.
   SenderName <String>: The sender name used for emails sent from the software.
-  SmtpPort <Int32>: The port number that connects to the mail server.
+  SmtpPort <Int64>: The port number that connects to the mail server.
   SmtpServerName <String>: The name of the mail server that sends alerts, scheduled reports, log files, and additional information.
   [EncryptionAlgorithm <String>]: 
   [Password <String>]: If password is specified, username must also be specified. password should be a base 64 encoded string. To use previoulsy saved username and password, leave out username and password in payload.
@@ -73,7 +73,7 @@ param(
 
     [Parameter(ParameterSetName='SendExpanded', Mandatory)]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # The port number that connects to the mail server.
     ${SmtpPort},
 

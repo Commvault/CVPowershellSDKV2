@@ -30,7 +30,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdNameType Entity { get => (this._entity = this._entity ?? new Commvault.Powershell.Models.IdNameType()); set => this._entity = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? EntityId { get => ((Commvault.Powershell.Models.IIdNameTypeInternal)Entity).Id; set => ((Commvault.Powershell.Models.IIdNameTypeInternal)Entity).Id = value ?? default(int); }
+        public long? EntityId { get => ((Commvault.Powershell.Models.IIdNameTypeInternal)Entity).Id; set => ((Commvault.Powershell.Models.IIdNameTypeInternal)Entity).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string EntityName { get => ((Commvault.Powershell.Models.IIdNameTypeInternal)Entity).Name; set => ((Commvault.Powershell.Models.IIdNameTypeInternal)Entity).Name = value ?? null; }
@@ -71,8 +71,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EntityId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EntityId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdNameType Entity { get; set; }
 
-        int? EntityId { get; set; }
+        long? EntityId { get; set; }
 
         string EntityName { get; set; }
 

@@ -19,18 +19,18 @@ namespace Commvault.Powershell.Models
         public string FailureReason { get => this._failureReason; set => this._failureReason = value; }
 
         /// <summary>Backing field for <see cref="JobId" /> property.</summary>
-        private int? _jobId;
+        private long? _jobId;
 
         /// <summary>Job id of the last backup job</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? JobId { get => this._jobId; set => this._jobId = value; }
+        public long? JobId { get => this._jobId; set => this._jobId = value; }
 
         /// <summary>Backing field for <see cref="LastSuccessfulBackupTime" /> property.</summary>
-        private int? _lastSuccessfulBackupTime;
+        private long? _lastSuccessfulBackupTime;
 
         /// <summary>UNIX time for the last successful backup job run</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LastSuccessfulBackupTime { get => this._lastSuccessfulBackupTime; set => this._lastSuccessfulBackupTime = value; }
+        public long? LastSuccessfulBackupTime { get => this._lastSuccessfulBackupTime; set => this._lastSuccessfulBackupTime = value; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -40,11 +40,11 @@ namespace Commvault.Powershell.Models
         public string Status { get => this._status; set => this._status = value; }
 
         /// <summary>Backing field for <see cref="Time" /> property.</summary>
-        private int? _time;
+        private long? _time;
 
         /// <summary>UNIX time for the last backup job run</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Time { get => this._time; set => this._time = value; }
+        public long? Time { get => this._time; set => this._time = value; }
 
         /// <summary>Creates an new <see cref="LastBackup" /> instance.</summary>
         public LastBackup()
@@ -70,16 +70,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Job id of the last backup job",
         SerializedName = @"jobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? JobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? JobId { get; set; }
         /// <summary>UNIX time for the last successful backup job run</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"UNIX time for the last successful backup job run",
         SerializedName = @"lastSuccessfulBackupTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastSuccessfulBackupTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastSuccessfulBackupTime { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"UNIX time for the last backup job run",
         SerializedName = @"time",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Time { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Time { get; set; }
 
     }
     /// last backup job details for the client
@@ -105,13 +105,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Failure reason for the last backup job</summary>
         string FailureReason { get; set; }
         /// <summary>Job id of the last backup job</summary>
-        int? JobId { get; set; }
+        long? JobId { get; set; }
         /// <summary>UNIX time for the last successful backup job run</summary>
-        int? LastSuccessfulBackupTime { get; set; }
+        long? LastSuccessfulBackupTime { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         string Status { get; set; }
         /// <summary>UNIX time for the last backup job run</summary>
-        int? Time { get; set; }
+        long? Time { get; set; }
 
     }
 }

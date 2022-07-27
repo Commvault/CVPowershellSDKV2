@@ -62,8 +62,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Accepts list of laptop owner mapping ids to be deleted",
         SerializedName = @"laptopOwnerMapping",
-        PossibleTypes = new [] { typeof(int) })]
-        public int[] LaptopOwnerMapping { get => Body.LaptopOwnerMapping ?? null /* arrayOf */; set => Body.LaptopOwnerMapping = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long[] LaptopOwnerMapping { get => Body.LaptopOwnerMapping ?? null /* arrayOf */; set => Body.LaptopOwnerMapping = value; }
 
         /// <summary>
         /// <see cref="IEventListener" /> cancellation delegate. Stops the cmdlet when called.

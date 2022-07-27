@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="BackupJobId" /> property.</summary>
-        private int? _backupJobId;
+        private long? _backupJobId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupJobId { get => this._backupJobId; set => this._backupJobId = value; }
+        public long? BackupJobId { get => this._backupJobId; set => this._backupJobId = value; }
 
         /// <summary>Backing field for <see cref="BackupSchedule" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _backupSchedule;
@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName BackupSchedule { get => (this._backupSchedule = this._backupSchedule ?? new Commvault.Powershell.Models.IdName()); set => this._backupSchedule = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupScheduleId { get => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedule).Id = value ?? default(int); }
+        public long? BackupScheduleId { get => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedule).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupScheduleName { get => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedule).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedule).Name = value ?? null; }
@@ -36,7 +36,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName BackupSchedulePolicy { get => (this._backupSchedulePolicy = this._backupSchedulePolicy ?? new Commvault.Powershell.Models.IdName()); set => this._backupSchedulePolicy = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupSchedulePolicyId { get => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedulePolicy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedulePolicy).Id = value ?? default(int); }
+        public long? BackupSchedulePolicyId { get => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedulePolicy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedulePolicy).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupSchedulePolicyName { get => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedulePolicy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)BackupSchedulePolicy).Name = value ?? null; }
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationApplication { get => (this._destinationApplication = this._destinationApplication ?? new Commvault.Powershell.Models.IdName()); set => this._destinationApplication = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationApplicationId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationApplication).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationApplication).Id = value ?? default(int); }
+        public long? DestinationApplicationId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationApplication).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationApplication).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationApplicationName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationApplication).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationApplication).Name = value ?? null; }
@@ -124,7 +124,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationBackupset { get => (this._destinationBackupset = this._destinationBackupset ?? new Commvault.Powershell.Models.IdName()); set => this._destinationBackupset = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationBackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationBackupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationBackupset).Id = value ?? default(int); }
+        public long? DestinationBackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationBackupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationBackupset).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationBackupsetName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationBackupset).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationBackupset).Name = value ?? null; }
@@ -136,13 +136,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationClient { get => (this._destinationClient = this._destinationClient ?? new Commvault.Powershell.Models.IdName()); set => this._destinationClient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationClient).Id = value ?? default(int); }
+        public long? DestinationClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationClient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationClient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationClient).Name = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationCredentialsId { get => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).DestinationCredentialsId; set => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).DestinationCredentialsId = value ?? default(int); }
+        public long? DestinationCredentialsId { get => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).DestinationCredentialsId; set => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).DestinationCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationCredentialsName { get => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).DestinationCredentialsName; set => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).DestinationCredentialsName = value ?? null; }
@@ -154,7 +154,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationInstance { get => (this._destinationInstance = this._destinationInstance ?? new Commvault.Powershell.Models.IdName()); set => this._destinationInstance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationInstance).Id = value ?? default(int); }
+        public long? DestinationInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationInstance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationInstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationInstance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationInstance).Name = value ?? null; }
@@ -166,7 +166,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationSubclient { get => (this._destinationSubclient = this._destinationSubclient ?? new Commvault.Powershell.Models.IdName()); set => this._destinationSubclient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationSubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationSubclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationSubclient).Id = value ?? default(int); }
+        public long? DestinationSubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationSubclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationSubclient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationSubclientName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationSubclient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationSubclient).Name = value ?? null; }
@@ -233,16 +233,16 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdName()); set => this._region = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id = value ?? default(int); }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RegionName { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="RestoreJobId" /> property.</summary>
-        private int? _restoreJobId;
+        private long? _restoreJobId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RestoreJobId { get => this._restoreJobId; set => this._restoreJobId = value; }
+        public long? RestoreJobId { get => this._restoreJobId; set => this._restoreJobId = value; }
 
         /// <summary>Backing field for <see cref="SourceAccessNode" /> property.</summary>
         private Commvault.Powershell.Models.IAccessNodes[] _sourceAccessNode;
@@ -257,7 +257,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceApplication { get => (this._sourceApplication = this._sourceApplication ?? new Commvault.Powershell.Models.IdName()); set => this._sourceApplication = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceApplicationId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceApplication).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceApplication).Id = value ?? default(int); }
+        public long? SourceApplicationId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceApplication).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceApplication).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceApplicationName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceApplication).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceApplication).Name = value ?? null; }
@@ -269,7 +269,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceBackupset { get => (this._sourceBackupset = this._sourceBackupset ?? new Commvault.Powershell.Models.IdName()); set => this._sourceBackupset = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceBackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceBackupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceBackupset).Id = value ?? default(int); }
+        public long? SourceBackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceBackupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceBackupset).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceBackupsetName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceBackupset).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceBackupset).Name = value ?? null; }
@@ -281,13 +281,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceClient { get => (this._sourceClient = this._sourceClient ?? new Commvault.Powershell.Models.IdName()); set => this._sourceClient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id = value ?? default(int); }
+        public long? SourceClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Name = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceCredentialsId { get => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).SourceCredentialsId; set => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).SourceCredentialsId = value ?? default(int); }
+        public long? SourceCredentialsId { get => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).SourceCredentialsId; set => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).SourceCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceCredentialsName { get => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).SourceCredentialsName; set => ((Commvault.Powershell.Models.ICredentialsInternal)Credentials).SourceCredentialsName = value ?? null; }
@@ -299,7 +299,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceInstance { get => (this._sourceInstance = this._sourceInstance ?? new Commvault.Powershell.Models.IdName()); set => this._sourceInstance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id = value ?? default(int); }
+        public long? SourceInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceInstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Name = value ?? null; }
@@ -311,7 +311,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceSubclient { get => (this._sourceSubclient = this._sourceSubclient ?? new Commvault.Powershell.Models.IdName()); set => this._sourceSubclient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceSubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceSubclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceSubclient).Id = value ?? default(int); }
+        public long? SourceSubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceSubclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceSubclient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceSubclientName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceSubclient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceSubclient).Name = value ?? null; }
@@ -327,25 +327,25 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Frequency in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyDailyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).DailyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).DailyFrequency = value ?? default(int); }
+        public long? UpdateFrequencyDailyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).DailyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).DailyFrequency = value ?? default(long); }
 
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyHourlyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).HourlyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).HourlyFrequency = value ?? default(int); }
+        public long? UpdateFrequencyHourlyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).HourlyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).HourlyFrequency = value ?? default(long); }
 
         /// <summary>Frequency in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyMinuteFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MinuteFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MinuteFrequency = value ?? default(int); }
+        public long? UpdateFrequencyMinuteFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MinuteFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MinuteFrequency = value ?? default(long); }
 
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyMonthlyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequency = value ?? default(int); }
+        public long? UpdateFrequencyMonthlyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequency = value ?? default(long); }
 
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyMonthlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequencyDayOfMonth = value ?? default(int); }
+        public long? UpdateFrequencyMonthlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequencyDayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UpdateFrequencyMonthlyFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequencyDayOfWeek; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).MonthlyFrequencyDayOfWeek = value ?? null; }
@@ -359,11 +359,11 @@ namespace Commvault.Powershell.Models
         /// yearly frequencies
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyStartTime { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).StartTime; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).StartTime = value ?? default(int); }
+        public long? UpdateFrequencyStartTime { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).StartTime; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).StartTime = value ?? default(long); }
 
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyWeeklyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).WeeklyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).WeeklyFrequency = value ?? default(int); }
+        public long? UpdateFrequencyWeeklyFrequency { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).WeeklyFrequency; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).WeeklyFrequency = value ?? default(long); }
 
         /// <summary>Days of the week for weekly frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -371,7 +371,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UpdateFrequencyYearlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).YearlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).YearlyFrequencyDayOfMonth = value ?? default(int); }
+        public long? UpdateFrequencyYearlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).YearlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).YearlyFrequencyDayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UpdateFrequencyYearlyFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).YearlyFrequencyDayOfWeek; set => ((Commvault.Powershell.Models.IPlanPatternInternal)UpdateFrequency).YearlyFrequencyDayOfWeek = value ?? null; }
@@ -398,16 +398,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"backupJobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupJobId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupScheduleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupScheduleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -422,8 +422,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupSchedulePolicyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupSchedulePolicyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -446,8 +446,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationApplicationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationApplicationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -462,8 +462,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationBackupsetId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationBackupsetId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -478,8 +478,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationClientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationClientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -494,8 +494,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -510,8 +510,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationInstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationInstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -526,8 +526,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationSubclientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationSubclientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -614,8 +614,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -630,8 +630,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"restoreJobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RestoreJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RestoreJobId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -646,8 +646,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceApplicationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceApplicationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -662,8 +662,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceBackupsetId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceBackupsetId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -678,8 +678,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceClientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceClientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -694,8 +694,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -710,8 +710,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceInstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceInstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -726,8 +726,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceSubclientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceSubclientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -742,8 +742,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency in days",
         SerializedName = @"dailyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyDailyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyDailyFrequency { get; set; }
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
@@ -752,32 +752,32 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.",
         SerializedName = @"hourlyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyHourlyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyHourlyFrequency { get; set; }
         /// <summary>Frequency in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in minutes",
         SerializedName = @"minuteFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyMinuteFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyMinuteFrequency { get; set; }
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in months. Only for incremental backup frequency.",
         SerializedName = @"monthlyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyMonthlyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyMonthlyFrequency { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Only available for incremental backup frequency",
         SerializedName = @"monthlyFrequencyDayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyMonthlyFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyMonthlyFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -803,16 +803,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time in seconds from the beginning of the day when the backup starts. This is a mandatory field for daily, weekly, monthly, yearly frequencies",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyStartTime { get; set; }
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in weeks. Only for incremental backup frequency.",
         SerializedName = @"weeklyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyWeeklyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyWeeklyFrequency { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -827,8 +827,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Only available for incremental backup frequency",
         SerializedName = @"yearlyFrequencyDayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UpdateFrequencyYearlyFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UpdateFrequencyYearlyFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -859,17 +859,17 @@ namespace Commvault.Powershell.Models
     internal partial interface IMigrationGroupDetailsInternal
 
     {
-        int? BackupJobId { get; set; }
+        long? BackupJobId { get; set; }
 
         Commvault.Powershell.Models.IIdName BackupSchedule { get; set; }
 
-        int? BackupScheduleId { get; set; }
+        long? BackupScheduleId { get; set; }
 
         string BackupScheduleName { get; set; }
 
         Commvault.Powershell.Models.IIdName BackupSchedulePolicy { get; set; }
 
-        int? BackupSchedulePolicyId { get; set; }
+        long? BackupSchedulePolicyId { get; set; }
 
         string BackupSchedulePolicyName { get; set; }
         /// <summary>Credentials for source client and destination client</summary>
@@ -883,35 +883,35 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName DestinationApplication { get; set; }
 
-        int? DestinationApplicationId { get; set; }
+        long? DestinationApplicationId { get; set; }
 
         string DestinationApplicationName { get; set; }
 
         Commvault.Powershell.Models.IIdName DestinationBackupset { get; set; }
 
-        int? DestinationBackupsetId { get; set; }
+        long? DestinationBackupsetId { get; set; }
 
         string DestinationBackupsetName { get; set; }
 
         Commvault.Powershell.Models.IIdName DestinationClient { get; set; }
 
-        int? DestinationClientId { get; set; }
+        long? DestinationClientId { get; set; }
 
         string DestinationClientName { get; set; }
 
-        int? DestinationCredentialsId { get; set; }
+        long? DestinationCredentialsId { get; set; }
 
         string DestinationCredentialsName { get; set; }
 
         Commvault.Powershell.Models.IIdName DestinationInstance { get; set; }
 
-        int? DestinationInstanceId { get; set; }
+        long? DestinationInstanceId { get; set; }
 
         string DestinationInstanceName { get; set; }
 
         Commvault.Powershell.Models.IIdName DestinationSubclient { get; set; }
 
-        int? DestinationSubclientId { get; set; }
+        long? DestinationSubclientId { get; set; }
 
         string DestinationSubclientName { get; set; }
 
@@ -935,45 +935,45 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Region { get; set; }
 
-        int? RegionId { get; set; }
+        long? RegionId { get; set; }
 
         string RegionName { get; set; }
 
-        int? RestoreJobId { get; set; }
+        long? RestoreJobId { get; set; }
 
         Commvault.Powershell.Models.IAccessNodes[] SourceAccessNode { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceApplication { get; set; }
 
-        int? SourceApplicationId { get; set; }
+        long? SourceApplicationId { get; set; }
 
         string SourceApplicationName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceBackupset { get; set; }
 
-        int? SourceBackupsetId { get; set; }
+        long? SourceBackupsetId { get; set; }
 
         string SourceBackupsetName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceClient { get; set; }
 
-        int? SourceClientId { get; set; }
+        long? SourceClientId { get; set; }
 
         string SourceClientName { get; set; }
 
-        int? SourceCredentialsId { get; set; }
+        long? SourceCredentialsId { get; set; }
 
         string SourceCredentialsName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceInstance { get; set; }
 
-        int? SourceInstanceId { get; set; }
+        long? SourceInstanceId { get; set; }
 
         string SourceInstanceName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceSubclient { get; set; }
 
-        int? SourceSubclientId { get; set; }
+        long? SourceSubclientId { get; set; }
 
         string SourceSubclientName { get; set; }
         /// <summary>
@@ -981,17 +981,17 @@ namespace Commvault.Powershell.Models
         /// </summary>
         Commvault.Powershell.Models.IPlanPattern UpdateFrequency { get; set; }
         /// <summary>Frequency in days</summary>
-        int? UpdateFrequencyDailyFrequency { get; set; }
+        long? UpdateFrequencyDailyFrequency { get; set; }
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
-        int? UpdateFrequencyHourlyFrequency { get; set; }
+        long? UpdateFrequencyHourlyFrequency { get; set; }
         /// <summary>Frequency in minutes</summary>
-        int? UpdateFrequencyMinuteFrequency { get; set; }
+        long? UpdateFrequencyMinuteFrequency { get; set; }
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
-        int? UpdateFrequencyMonthlyFrequency { get; set; }
+        long? UpdateFrequencyMonthlyFrequency { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
-        int? UpdateFrequencyMonthlyFrequencyDayOfMonth { get; set; }
+        long? UpdateFrequencyMonthlyFrequencyDayOfMonth { get; set; }
 
         string UpdateFrequencyMonthlyFrequencyDayOfWeek { get; set; }
         /// <summary>Specific week of a month</summary>
@@ -1000,13 +1000,13 @@ namespace Commvault.Powershell.Models
         /// Time in seconds from the beginning of the day when the backup starts. This is a mandatory field for daily, weekly, monthly,
         /// yearly frequencies
         /// </summary>
-        int? UpdateFrequencyStartTime { get; set; }
+        long? UpdateFrequencyStartTime { get; set; }
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
-        int? UpdateFrequencyWeeklyFrequency { get; set; }
+        long? UpdateFrequencyWeeklyFrequency { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
         string[] UpdateFrequencyWeeklyFrequencyDays { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
-        int? UpdateFrequencyYearlyFrequencyDayOfMonth { get; set; }
+        long? UpdateFrequencyYearlyFrequencyDayOfMonth { get; set; }
 
         string UpdateFrequencyYearlyFrequencyDayOfWeek { get; set; }
 

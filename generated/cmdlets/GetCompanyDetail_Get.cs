@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="CompanyId" /> property.</summary>
-        private int _companyId;
+        private long _companyId;
 
         /// <summary>Id of the Company whose details have to be fetched</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the Company whose details have to be fetched")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the Company whose details have to be fetched",
         SerializedName = @"companyId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int CompanyId { get => this._companyId; set => this._companyId = value; }
+        public long CompanyId { get => this._companyId; set => this._companyId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]

@@ -65,7 +65,7 @@ namespace Commvault.Powershell.Models
             }
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_betweenDates = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("betweenDates"), out var __jsonBetweenDates) ? Commvault.Powershell.Models.StartEnd.FromJson(__jsonBetweenDates) : BetweenDates;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_backupOperations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("backupOperations"), out var __jsonBackupOperations) ? If( __jsonBackupOperations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : BackupOperations;}
             {_days = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("days"), out var __jsonDays) ? If( __jsonDays as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(string) (__p is Commvault.Powershell.Runtime.Json.JsonString __o ? (string)(__o.ToString()) : null)) ))() : null : Days;}
@@ -106,7 +106,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != this._betweenDates ? (Commvault.Powershell.Runtime.Json.JsonNode) this._betweenDates.ToJson(null,serializationMode) : null, "betweenDates" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             if (null != this._backupOperations)
             {

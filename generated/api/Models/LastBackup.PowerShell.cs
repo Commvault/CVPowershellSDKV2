@@ -93,10 +93,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILastBackupInternal)this).Time = (int?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.ILastBackupInternal)this).Time, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILastBackupInternal)this).JobId = (int?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupInternal)this).JobId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILastBackupInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.ILastBackupInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILastBackupInternal)this).JobId = (long?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupInternal)this).JobId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ILastBackupInternal)this).Status, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime = (int?) content.GetValueForProperty("LastSuccessfulBackupTime",((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime = (long?) content.GetValueForProperty("LastSuccessfulBackupTime",((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupInternal)this).FailureReason = (string) content.GetValueForProperty("FailureReason",((Commvault.Powershell.Models.ILastBackupInternal)this).FailureReason, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -115,10 +115,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILastBackupInternal)this).Time = (int?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.ILastBackupInternal)this).Time, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILastBackupInternal)this).JobId = (int?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupInternal)this).JobId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILastBackupInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.ILastBackupInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILastBackupInternal)this).JobId = (long?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupInternal)this).JobId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ILastBackupInternal)this).Status, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime = (int?) content.GetValueForProperty("LastSuccessfulBackupTime",((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime = (long?) content.GetValueForProperty("LastSuccessfulBackupTime",((Commvault.Powershell.Models.ILastBackupInternal)this).LastSuccessfulBackupTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupInternal)this).FailureReason = (string) content.GetValueForProperty("FailureReason",((Commvault.Powershell.Models.ILastBackupInternal)this).FailureReason, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

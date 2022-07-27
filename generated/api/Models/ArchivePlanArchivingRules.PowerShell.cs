@@ -65,8 +65,8 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestampMethod = (string) content.GetValueForProperty("FileTimestampMethod",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestampMethod, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp = (int?) content.GetValueForProperty("FileTimestamp",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize = (int?) content.GetValueForProperty("FileSize",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp = (long?) content.GetValueForProperty("FileTimestamp",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize = (long?) content.GetValueForProperty("FileSize",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).AfterArchiving = (string) content.GetValueForProperty("AfterArchiving",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).AfterArchiving, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -86,8 +86,8 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestampMethod = (string) content.GetValueForProperty("FileTimestampMethod",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestampMethod, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp = (int?) content.GetValueForProperty("FileTimestamp",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize = (int?) content.GetValueForProperty("FileSize",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp = (long?) content.GetValueForProperty("FileTimestamp",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileTimestamp, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize = (long?) content.GetValueForProperty("FileSize",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).FileSize, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).AfterArchiving = (string) content.GetValueForProperty("AfterArchiving",((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)this).AfterArchiving, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

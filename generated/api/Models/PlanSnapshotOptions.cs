@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="BackupCopyRpoMins" /> property.</summary>
-        private int? _backupCopyRpoMins;
+        private long? _backupCopyRpoMins;
 
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupCopyRpoMins { get => this._backupCopyRpoMins; set => this._backupCopyRpoMins = value; }
+        public long? BackupCopyRpoMins { get => this._backupCopyRpoMins; set => this._backupCopyRpoMins = value; }
 
         /// <summary>Backing field for <see cref="EnableBackupCopy" /> property.</summary>
         private bool? _enableBackupCopy;
@@ -41,8 +41,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Backup copy RPO in minutes",
         SerializedName = @"backupCopyRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupCopyRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -58,7 +58,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Backup copy RPO in minutes</summary>
-        int? BackupCopyRpoMins { get; set; }
+        long? BackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         bool? EnableBackupCopy { get; set; }
 

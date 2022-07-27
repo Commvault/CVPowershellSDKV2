@@ -25,7 +25,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IBackupActivityControlOptionsProp BackupActivityControlOptions { get => (this._backupActivityControlOptions = this._backupActivityControlOptions ?? new Commvault.Powershell.Models.BackupActivityControlOptionsProp()); set => this._backupActivityControlOptions = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId = value ?? default(int); }
+        public long? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneName; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneName = value ?? null; }
@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IBackupActivityControlOptionsProp RestoreActivityControlOptions { get => (this._restoreActivityControlOptions = this._restoreActivityControlOptions ?? new Commvault.Powershell.Models.BackupActivityControlOptionsProp()); set => this._restoreActivityControlOptions = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId = value ?? default(int); }
+        public long? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RestoreActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneName; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneName = value ?? null; }
@@ -107,8 +107,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupActivityControlOptionsTimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupActivityControlOptionsTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -155,8 +155,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -179,7 +179,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IBackupActivityControlOptionsProp BackupActivityControlOptions { get; set; }
 
-        int? BackupActivityControlOptionsTimeZoneId { get; set; }
+        long? BackupActivityControlOptionsTimeZoneId { get; set; }
 
         string BackupActivityControlOptionsTimeZoneName { get; set; }
         /// <summary>true if Backup is enabled</summary>
@@ -195,7 +195,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IBackupActivityControlOptionsProp RestoreActivityControlOptions { get; set; }
 
-        int? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
 
         string RestoreActivityControlOptionsTimeZoneName { get; set; }
 

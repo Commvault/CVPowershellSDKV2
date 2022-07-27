@@ -18,7 +18,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Commcell { get => (this._commcell = this._commcell ?? new Commvault.Powershell.Models.IdName()); set => this._commcell = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CommcellId { get => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id = value ?? default(int); }
+        public long? CommcellId { get => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CommcellName { get => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Name = value ?? null; }
@@ -36,17 +36,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Returns tape id.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Manufacturer" /> property.</summary>
         private string _manufacturer;
@@ -98,8 +98,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CommcellId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CommcellId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -114,8 +114,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -130,8 +130,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Returns tape id.",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Returns the manufacturer of the tape.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -180,17 +180,17 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Commcell { get; set; }
 
-        int? CommcellId { get; set; }
+        long? CommcellId { get; set; }
 
         string CommcellName { get; set; }
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>Returns tape id.</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Returns the manufacturer of the tape.</summary>
         string Manufacturer { get; set; }
         /// <summary>Returns the tape model.</summary>

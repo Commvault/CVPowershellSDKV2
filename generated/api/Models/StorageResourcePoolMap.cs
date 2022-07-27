@@ -27,7 +27,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Storage { get => (this._storage = this._storage ?? new Commvault.Powershell.Models.IdName()); set => this._storage = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(int); }
+        public long? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name = value ?? null; }
@@ -55,8 +55,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StorageId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StorageId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Storage { get; set; }
 
-        int? StorageId { get; set; }
+        long? StorageId { get; set; }
 
         string StorageName { get; set; }
 

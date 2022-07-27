@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_timeZone = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("timeZone"), out var __jsonTimeZone) ? Commvault.Powershell.Models.IdName.FromJson(__jsonTimeZone) : TimeZone;}
-            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("time"), out var __jsonTime) ? (int?)__jsonTime : Time;}
+            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("time"), out var __jsonTime) ? (long?)__jsonTime : Time;}
             {_value = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("value"), out var __jsonValue) ? (string)__jsonValue : (string)Value;}
             AfterFromJson(json);
         }
@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._timeZone ? (Commvault.Powershell.Runtime.Json.JsonNode) this._timeZone.ToJson(null,serializationMode) : null, "timeZone" ,container.Add );
-            AddIf( null != this._time ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._time) : null, "time" ,container.Add );
+            AddIf( null != this._time ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._time) : null, "time" ,container.Add );
             AddIf( null != (((object)this._value)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._value.ToString()) : null, "value" ,container.Add );
             AfterToJson(ref container);
             return container;

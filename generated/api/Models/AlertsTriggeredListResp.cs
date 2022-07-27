@@ -18,18 +18,18 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IAlertTriggeredSummary[] AlertsTriggered { get => this._alertsTriggered; set => this._alertsTriggered = value; }
 
         /// <summary>Backing field for <see cref="TotalCount" /> property.</summary>
-        private int? _totalCount;
+        private long? _totalCount;
 
         /// <summary>Total count of the Alerts Triggered</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TotalCount { get => this._totalCount; set => this._totalCount = value; }
+        public long? TotalCount { get => this._totalCount; set => this._totalCount = value; }
 
         /// <summary>Backing field for <see cref="UnreadCount" /> property.</summary>
-        private int? _unreadCount;
+        private long? _unreadCount;
 
         /// <summary>Total unread Alerts Triggered</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? UnreadCount { get => this._unreadCount; set => this._unreadCount = value; }
+        public long? UnreadCount { get => this._unreadCount; set => this._unreadCount = value; }
 
         /// <summary>Creates an new <see cref="AlertsTriggeredListResp" /> instance.</summary>
         public AlertsTriggeredListResp()
@@ -54,16 +54,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Total count of the Alerts Triggered",
         SerializedName = @"totalCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TotalCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TotalCount { get; set; }
         /// <summary>Total unread Alerts Triggered</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Total unread Alerts Triggered",
         SerializedName = @"unreadCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UnreadCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UnreadCount { get; set; }
 
     }
     /// Used to return a list of alerts triggered
@@ -72,9 +72,9 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IAlertTriggeredSummary[] AlertsTriggered { get; set; }
         /// <summary>Total count of the Alerts Triggered</summary>
-        int? TotalCount { get; set; }
+        long? TotalCount { get; set; }
         /// <summary>Total unread Alerts Triggered</summary>
-        int? UnreadCount { get; set; }
+        long? UnreadCount { get; set; }
 
     }
 }

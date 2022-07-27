@@ -65,9 +65,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Plan = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Plan",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Plan, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers = (int?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers = (long?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Type, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId = (int?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId = (long?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanName = (string) content.GetValueForProperty("PlanName",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -87,9 +87,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Plan = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Plan",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Plan, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers = (int?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers = (long?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).AssociatedServers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).Type, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId = (int?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId = (long?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanName = (string) content.GetValueForProperty("PlanName",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansListInternal)this).PlanName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

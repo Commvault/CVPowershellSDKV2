@@ -32,10 +32,10 @@ namespace Commvault.Powershell.Models
         public string HostName { get => this._hostName; set => this._hostName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -82,8 +82,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -104,7 +104,7 @@ namespace Commvault.Powershell.Models
         /// <summary>client Host Name of the Access Node</summary>
         string HostName { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         string Name { get; set; }
 

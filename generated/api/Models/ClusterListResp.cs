@@ -48,7 +48,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>delay time in unix timestamp</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).DelayTimeTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).DelayTimeTime = value ?? default(int); }
+        public long? DelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).DelayTimeTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).DelayTimeTime = value ?? default(long); }
 
         /// <summary>actual delay time value in string format according to the timezone</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -69,11 +69,11 @@ namespace Commvault.Powershell.Models
         public string HostName { get => this._hostName; set => this._hostName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>This gives the id of the cluster.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Instance" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _instance;
@@ -82,7 +82,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set => this._instance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(int); }
+        public long? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
         public string Status { get => this._status; set => this._status = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneId = value ?? default(int); }
+        public long? TimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneName = value ?? null; }
@@ -154,8 +154,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"delay time in unix timestamp",
         SerializedName = @"time",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DelayTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DelayTime { get; set; }
         /// <summary>actual delay time value in string format according to the timezone</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -186,16 +186,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This gives the id of the cluster.",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? InstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? InstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -226,8 +226,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -253,7 +253,7 @@ namespace Commvault.Powershell.Models
 
         string ClusterType { get; set; }
         /// <summary>delay time in unix timestamp</summary>
-        int? DelayTime { get; set; }
+        long? DelayTime { get; set; }
         /// <summary>actual delay time value in string format according to the timezone</summary>
         string DelayTimeValue { get; set; }
 
@@ -263,11 +263,11 @@ namespace Commvault.Powershell.Models
         /// <summary>This give the host name of the cluster.</summary>
         string HostName { get; set; }
         /// <summary>This gives the id of the cluster.</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         Commvault.Powershell.Models.IIdName Instance { get; set; }
 
-        int? InstanceId { get; set; }
+        long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
         /// <summary>This give the name of the cluster.</summary>
@@ -275,7 +275,7 @@ namespace Commvault.Powershell.Models
         /// <summary>status of the cluster</summary>
         string Status { get; set; }
 
-        int? TimeZoneId { get; set; }
+        long? TimeZoneId { get; set; }
 
         string TimeZoneName { get; set; }
 

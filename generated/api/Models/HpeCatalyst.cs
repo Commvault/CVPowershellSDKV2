@@ -29,7 +29,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdName MediaAgent { get => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgent; set => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgent = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? MediaAgentId { get => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgentId; set => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgentId = value; }
+        public long? MediaAgentId { get => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgentId; set => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgentId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string MediaAgentName { get => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgentName; set => ((Commvault.Powershell.Models.ICloudStorageInternal)__cloudStorage).MediaAgentName = value; }

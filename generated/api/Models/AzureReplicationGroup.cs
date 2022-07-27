@@ -41,7 +41,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Replication group id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Id { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id = value; }
+        public long? Id { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id = value; }
 
         /// <summary>Replication group name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -61,7 +61,7 @@ namespace Commvault.Powershell.Models
         /// Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? RpoReplicationFrequency { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency = value; }
+        public long? RpoReplicationFrequency { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency = value; }
 
         /// <summary>List of storage configured for a replication group</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]

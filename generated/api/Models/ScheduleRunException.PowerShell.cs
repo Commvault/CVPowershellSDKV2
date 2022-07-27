@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates = (int[]) content.GetValueForProperty("OnDates",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates, __y => TypeConverterExtensions.SelectToArray<int>(__y, (__w)=> (int) global::System.Convert.ChangeType(__w, typeof(int))));
+            ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates = (long[]) content.GetValueForProperty("OnDates",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates, __y => TypeConverterExtensions.SelectToArray<long>(__y, (__w)=> (long) global::System.Convert.ChangeType(__w, typeof(long))));
             ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnWeekOfTheMonth = (string[]) content.GetValueForProperty("OnWeekOfTheMonth",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnWeekOfTheMonth, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDayOfTheWeek = (string[]) content.GetValueForProperty("OnDayOfTheWeek",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDayOfTheWeek, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             AfterDeserializeDictionary(content);
@@ -119,7 +119,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates = (int[]) content.GetValueForProperty("OnDates",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates, __y => TypeConverterExtensions.SelectToArray<int>(__y, (__w)=> (int) global::System.Convert.ChangeType(__w, typeof(int))));
+            ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates = (long[]) content.GetValueForProperty("OnDates",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDates, __y => TypeConverterExtensions.SelectToArray<long>(__y, (__w)=> (long) global::System.Convert.ChangeType(__w, typeof(long))));
             ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnWeekOfTheMonth = (string[]) content.GetValueForProperty("OnWeekOfTheMonth",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnWeekOfTheMonth, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDayOfTheWeek = (string[]) content.GetValueForProperty("OnDayOfTheWeek",((Commvault.Powershell.Models.IScheduleRunExceptionInternal)this).OnDayOfTheWeek, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             AfterDeserializePSObject(content);

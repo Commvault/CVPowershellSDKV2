@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="SubclientId" /> property.</summary>
-        private int _subclientId;
+        private long _subclientId;
 
         /// <summary>Id of the subclient to modify</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the subclient to modify")]
@@ -86,9 +86,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the subclient to modify",
         SerializedName = @"subclientId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int SubclientId { get => this._subclientId; set => this._subclientId = value; }
+        public long SubclientId { get => this._subclientId; set => this._subclientId = value; }
 
         /// <summary>
         /// <c>overrideOnOk</c> will be called before the regular onOk has been processed, allowing customization of what happens

@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Capacity" /> property.</summary>
-        private int? _capacity;
+        private long? _capacity;
 
         /// <summary>The total capacity of the mount path</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Capacity { get => this._capacity; set => this._capacity = value; }
+        public long? Capacity { get => this._capacity; set => this._capacity = value; }
 
         /// <summary>Backing field for <see cref="DiskStatus" /> property.</summary>
         private string _diskStatus;
@@ -26,11 +26,11 @@ namespace Commvault.Powershell.Models
         public string DiskStatus { get => this._diskStatus; set => this._diskStatus = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Id of disk</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Mountpath" /> property.</summary>
         private string _mountpath;
@@ -62,8 +62,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total capacity of the mount path",
         SerializedName = @"capacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Capacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Capacity { get; set; }
         /// <summary>The status of the mount path</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -78,8 +78,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of disk",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>The physical path of the mount path in the file system</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -103,11 +103,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>The total capacity of the mount path</summary>
-        int? Capacity { get; set; }
+        long? Capacity { get; set; }
         /// <summary>The status of the mount path</summary>
         string DiskStatus { get; set; }
         /// <summary>Id of disk</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>The physical path of the mount path in the file system</summary>
         string Mountpath { get; set; }
         /// <summary>The serial number associated with the mount path</summary>

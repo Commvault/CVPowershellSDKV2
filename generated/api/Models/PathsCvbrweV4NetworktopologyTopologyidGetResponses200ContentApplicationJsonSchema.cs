@@ -39,7 +39,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The number of tunnel connections per route</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TopologyDetailTunnelsPerRoute { get => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TunnelsPerRoute; set => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TunnelsPerRoute = value ?? default(int); }
+        public long? TopologyDetailTunnelsPerRoute { get => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TunnelsPerRoute; set => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TunnelsPerRoute = value ?? default(long); }
 
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines
@@ -55,7 +55,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IFirewallTopologyDetails TopologyDetails { get => (this._topologyDetails = this._topologyDetails ?? new Commvault.Powershell.Models.FirewallTopologyDetails()); set => this._topologyDetails = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TopologyId { get => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TopologyId; set => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TopologyId = value ?? default(int); }
+        public long? TopologyId { get => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TopologyId; set => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TopologyId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TopologyName { get => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TopologyName; set => ((Commvault.Powershell.Models.IFirewallTopologyDetailsInternal)TopologyDetails).TopologyName = value ?? null; }
@@ -119,8 +119,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The number of tunnel connections per route",
         SerializedName = @"tunnelsPerRoute",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TopologyDetailTunnelsPerRoute { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TopologyDetailTunnelsPerRoute { get; set; }
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines
         /// </summary>
@@ -137,8 +137,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TopologyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TopologyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -167,7 +167,7 @@ namespace Commvault.Powershell.Models
         /// <summary>The protocol for outgoing communication</summary>
         string TopologyDetailTunnelProtocol { get; set; }
         /// <summary>The number of tunnel connections per route</summary>
-        int? TopologyDetailTunnelsPerRoute { get; set; }
+        long? TopologyDetailTunnelsPerRoute { get; set; }
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines
         /// </summary>
@@ -175,7 +175,7 @@ namespace Commvault.Powershell.Models
         /// <summary>FirewallTopologyDetails</summary>
         Commvault.Powershell.Models.IFirewallTopologyDetails TopologyDetails { get; set; }
 
-        int? TopologyId { get; set; }
+        long? TopologyId { get; set; }
 
         string TopologyName { get; set; }
 

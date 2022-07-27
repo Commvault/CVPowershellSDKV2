@@ -87,7 +87,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).Region = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Region",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).Region, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).EntityRegionType = (string) content.GetValueForProperty("EntityRegionType",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).EntityRegionType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId = (int?) content.GetValueForProperty("RegionId",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId = (long?) content.GetValueForProperty("RegionId",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionName = (string) content.GetValueForProperty("RegionName",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -108,7 +108,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).Region = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Region",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).Region, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).EntityRegionType = (string) content.GetValueForProperty("EntityRegionType",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).EntityRegionType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId = (int?) content.GetValueForProperty("RegionId",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId = (long?) content.GetValueForProperty("RegionId",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionName = (string) content.GetValueForProperty("RegionName",((Commvault.Powershell.Models.IEntityRegionInfoInternal)this).RegionName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

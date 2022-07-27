@@ -45,7 +45,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="HyperScaleStorageId" /> property.</summary>
-        private int _hyperScaleStorageId;
+        private long _hyperScaleStorageId;
 
         /// <summary>Id of hyperscale storage</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of hyperscale storage")]
@@ -54,9 +54,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of hyperscale storage",
         SerializedName = @"hyperScaleStorageId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int HyperScaleStorageId { get => this._hyperScaleStorageId; set => this._hyperScaleStorageId = value; }
+        public long HyperScaleStorageId { get => this._hyperScaleStorageId; set => this._hyperScaleStorageId = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }
@@ -70,7 +70,7 @@ namespace Commvault.Powershell.Cmdlets
         global::System.Threading.CancellationToken Commvault.Powershell.Runtime.IEventListener.Token => _cancellationTokenSource.Token;
 
         /// <summary>Backing field for <see cref="NodeId" /> property.</summary>
-        private int _nodeId;
+        private long _nodeId;
 
         /// <summary>Id of node</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of node")]
@@ -79,9 +79,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of node",
         SerializedName = @"nodeId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int NodeId { get => this._nodeId; set => this._nodeId = value; }
+        public long NodeId { get => this._nodeId; set => this._nodeId = value; }
 
         /// <summary>
         /// The instance of the <see cref="Commvault.Powershell.Runtime.HttpPipeline" /> that the remote call will use.

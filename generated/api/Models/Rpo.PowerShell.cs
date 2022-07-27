@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency = (int?) content.GetValueForProperty("ReplicationFrequency",((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency = (long?) content.GetValueForProperty("ReplicationFrequency",((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -111,7 +111,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency = (int?) content.GetValueForProperty("ReplicationFrequency",((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency = (long?) content.GetValueForProperty("ReplicationFrequency",((Commvault.Powershell.Models.IRpoInternal)this).ReplicationFrequency, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

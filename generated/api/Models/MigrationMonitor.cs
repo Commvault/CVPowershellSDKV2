@@ -36,10 +36,10 @@ namespace Commvault.Powershell.Models
         public long? NumOfFiles { get => this._numOfFiles; set => this._numOfFiles = value; }
 
         /// <summary>Backing field for <see cref="ReplicationId" /> property.</summary>
-        private int? _replicationId;
+        private long? _replicationId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ReplicationId { get => this._replicationId; set => this._replicationId = value; }
+        public long? ReplicationId { get => this._replicationId; set => this._replicationId = value; }
 
         /// <summary>Backing field for <see cref="SourcePath" /> property.</summary>
         private string _sourcePath;
@@ -107,8 +107,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"replicationId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ReplicationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ReplicationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -147,7 +147,7 @@ namespace Commvault.Powershell.Models
 
         long? NumOfFiles { get; set; }
 
-        int? ReplicationId { get; set; }
+        long? ReplicationId { get; set; }
 
         string SourcePath { get; set; }
         /// <summary>ReplicationStatus</summary>

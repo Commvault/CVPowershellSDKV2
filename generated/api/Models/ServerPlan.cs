@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequencySchedules; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequencySchedules = value ?? null /* arrayOf */; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BasePlanId { get => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BasePlanId; set => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BasePlanId = value ?? default(int); }
+        public long? BasePlanId { get => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BasePlanId; set => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BasePlanId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BasePlanName { get => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BasePlanName; set => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BasePlanName = value ?? null; }
@@ -171,15 +171,15 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Commit frequency in hours</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DatabaseOptionCommitFrequencyInHours { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).CommitFrequencyInHours; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).CommitFrequencyInHours = value ?? default(int); }
+        public long? DatabaseOptionCommitFrequencyInHours { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).CommitFrequencyInHours; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).CommitFrequencyInHours = value ?? default(long); }
 
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DatabaseOptionLogBackupRpoMins { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).LogBackupRpoMins; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).LogBackupRpoMins = value ?? default(int); }
+        public long? DatabaseOptionLogBackupRpoMins { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).LogBackupRpoMins; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).LogBackupRpoMins = value ?? default(long); }
 
         /// <summary>Full backup frequency in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DatabaseOptionRunFullBackupEvery { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).RunFullBackupEvery; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).RunFullBackupEvery = value ?? default(int); }
+        public long? DatabaseOptionRunFullBackupEvery { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).RunFullBackupEvery; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfoInternal)DatabaseOptions).RunFullBackupEvery = value ?? default(long); }
 
         /// <summary>Use disk cache for log backups</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -241,7 +241,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -286,7 +286,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaEnableAfterDelay; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaEnableAfterDelay = value ?? default(int); }
+        public long? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaEnableAfterDelay; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaEnableAfterDelay = value ?? default(long); }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -302,11 +302,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Inherited SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedSlaPeriod; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedSlaPeriod = value ?? default(int); }
+        public long? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedSlaPeriod; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedSlaPeriod = value ?? default(long); }
 
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaPeriod { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaPeriod = value ?? default(int); }
+        public long? SlaPeriod { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaPeriod = value ?? default(long); }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -314,7 +314,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapshotOptionBackupCopyRpoMins { get => ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins; set => ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins = value ?? default(int); }
+        public long? SnapshotOptionBackupCopyRpoMins { get => ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins; set => ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins = value ?? default(long); }
 
         /// <summary>Flag to enable backup copy</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -513,8 +513,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BasePlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BasePlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -529,24 +529,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Commit frequency in hours",
         SerializedName = @"commitFrequencyInHours",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseOptionCommitFrequencyInHours { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseOptionCommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Log backup RPO in minutes",
         SerializedName = @"logBackupRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseOptionLogBackupRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseOptionLogBackupRpoMins { get; set; }
         /// <summary>Full backup frequency in days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Full backup frequency in days",
         SerializedName = @"runFullBackupEvery",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseOptionRunFullBackupEvery { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseOptionRunFullBackupEvery { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -619,8 +619,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -675,8 +675,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaEnableAfterDelay { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -707,16 +707,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Inherited SLA Period in Days",
         SerializedName = @"inheritedSLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaInheritedSlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaInheritedSlaPeriod { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -731,8 +731,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Backup copy RPO in minutes",
         SerializedName = @"backupCopyRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapshotOptionBackupCopyRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapshotOptionBackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -812,15 +812,15 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
 
-        int? BasePlanId { get; set; }
+        long? BasePlanId { get; set; }
 
         string BasePlanName { get; set; }
         /// <summary>Commit frequency in hours</summary>
-        int? DatabaseOptionCommitFrequencyInHours { get; set; }
+        long? DatabaseOptionCommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
-        int? DatabaseOptionLogBackupRpoMins { get; set; }
+        long? DatabaseOptionLogBackupRpoMins { get; set; }
         /// <summary>Full backup frequency in days</summary>
-        int? DatabaseOptionRunFullBackupEvery { get; set; }
+        long? DatabaseOptionRunFullBackupEvery { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         bool? DatabaseOptionUseDiskCacheForLogBackups { get; set; }
         /// <summary>This feature applies only to database agents</summary>
@@ -856,7 +856,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>Specifies if the destinations are associated to regions</summary>
@@ -889,7 +889,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IServerPlanSettings Settings { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        int? SlaEnableAfterDelay { get; set; }
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         bool? SlaExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
@@ -897,13 +897,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Tells us from where SLA Period was inherited</summary>
         string SlaInheritedFrom { get; set; }
         /// <summary>Inherited SLA Period in Days</summary>
-        int? SlaInheritedSlaPeriod { get; set; }
+        long? SlaInheritedSlaPeriod { get; set; }
         /// <summary>SLA Period in Days</summary>
-        int? SlaPeriod { get; set; }
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? SlaUseSystemDefaultSla { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>
-        int? SnapshotOptionBackupCopyRpoMins { get; set; }
+        long? SnapshotOptionBackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         bool? SnapshotOptionEnableBackupCopy { get; set; }
         /// <summary>This feature applies only to File System Agents</summary>

@@ -25,7 +25,7 @@ namespace Commvault.Powershell.Cmdlets
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
         /// <summary>Backing field for <see cref="BackupLocationId" /> property.</summary>
-        private int _backupLocationId;
+        private long _backupLocationId;
 
         /// <summary>Id of the backup location whose details have to be fetched</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the backup location whose details have to be fetched")]
@@ -34,9 +34,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the backup location whose details have to be fetched",
         SerializedName = @"backupLocationId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int BackupLocationId { get => this._backupLocationId; set => this._backupLocationId = value; }
+        public long BackupLocationId { get => this._backupLocationId; set => this._backupLocationId = value; }
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="StoragePoolId" /> property.</summary>
-        private int _storagePoolId;
+        private long _storagePoolId;
 
         /// <summary>Id of the disk storage pool whose details have to be fetched</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the disk storage pool whose details have to be fetched")]
@@ -107,9 +107,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the disk storage pool whose details have to be fetched",
         SerializedName = @"storagePoolId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
+        public long StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
 
         /// <summary>
         /// <c>overrideOnNotFound</c> will be called before the regular onNotFound has been processed, allowing customization of what

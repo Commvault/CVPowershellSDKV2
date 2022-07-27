@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_syncStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("syncStatus"), out var __jsonSyncStatus) ? Commvault.Powershell.Models.SyncStatus1.FromJson(__jsonSyncStatus) : SyncStatus;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_hostname = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hostname"), out var __jsonHostname) ? (string)__jsonHostname : (string)Hostname;}
             {_role = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("role"), out var __jsonRole) ? (string)__jsonRole : (string)Role;}
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._syncStatus ? (Commvault.Powershell.Runtime.Json.JsonNode) this._syncStatus.ToJson(null,serializationMode) : null, "syncStatus" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._hostname)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hostname.ToString()) : null, "hostname" ,container.Add );
             AddIf( null != (((object)this._role)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._role.ToString()) : null, "role" ,container.Add );

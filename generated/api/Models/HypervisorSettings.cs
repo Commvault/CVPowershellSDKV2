@@ -22,7 +22,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Metrics Moitoring PolicyId</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MetricMonitoringPolicyId { get => ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)MetricsMonitoringPolicy).Id; set => ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)MetricsMonitoringPolicy).Id = value ?? default(int); }
+        public long? MetricMonitoringPolicyId { get => ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)MetricsMonitoringPolicy).Id; set => ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)MetricsMonitoringPolicy).Id = value ?? default(long); }
 
         /// <summary>True if Metrics Monioring policy is enabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -51,7 +51,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Region Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionInfoId { get => ((Commvault.Powershell.Models.IRegionInfoInternal)RegionInfo).Id; set => ((Commvault.Powershell.Models.IRegionInfoInternal)RegionInfo).Id = value ?? default(int); }
+        public long? RegionInfoId { get => ((Commvault.Powershell.Models.IRegionInfoInternal)RegionInfo).Id; set => ((Commvault.Powershell.Models.IRegionInfoInternal)RegionInfo).Id = value ?? default(long); }
 
         /// <summary>Geolocation Latitude</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName TimeZone { get => (this._timeZone = this._timeZone ?? new Commvault.Powershell.Models.IdName()); set => this._timeZone = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TimeZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id = value ?? default(int); }
+        public long? TimeZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimeZoneName { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Name = value ?? null; }
@@ -93,8 +93,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Metrics Moitoring PolicyId",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MetricMonitoringPolicyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MetricMonitoringPolicyId { get; set; }
         /// <summary>True if Metrics Monioring policy is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -125,8 +125,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Region Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionInfoId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionInfoId { get; set; }
         /// <summary>Geolocation Latitude</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -157,8 +157,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -174,7 +174,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Metrics Moitoring PolicyId</summary>
-        int? MetricMonitoringPolicyId { get; set; }
+        long? MetricMonitoringPolicyId { get; set; }
         /// <summary>True if Metrics Monioring policy is enabled</summary>
         bool? MetricMonitoringPolicyIsEnabled { get; set; }
         /// <summary>Metrics Moitoring Policy Name</summary>
@@ -186,7 +186,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Display Name of Region</summary>
         string RegionInfoDisplayName { get; set; }
         /// <summary>Region Id</summary>
-        int? RegionInfoId { get; set; }
+        long? RegionInfoId { get; set; }
         /// <summary>Geolocation Latitude</summary>
         string RegionInfoLatitude { get; set; }
         /// <summary>Geolocation Longitude</summary>
@@ -196,7 +196,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName TimeZone { get; set; }
 
-        int? TimeZoneId { get; set; }
+        long? TimeZoneId { get; set; }
 
         string TimeZoneName { get; set; }
 

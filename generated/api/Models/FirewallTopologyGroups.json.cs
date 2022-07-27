@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
             }
             {_advancedOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("advancedOptions"), out var __jsonAdvancedOptions) ? Commvault.Powershell.Models.FirewallGroupAdvancedOptions.FromJson(__jsonAdvancedOptions) : AdvancedOptions;}
             {_groupType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("groupType"), out var __jsonGroupType) ? (string)__jsonGroupType : (string)GroupType;}
-            {_clientGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clientGroupId"), out var __jsonClientGroupId) ? (int?)__jsonClientGroupId : ClientGroupId;}
+            {_clientGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clientGroupId"), out var __jsonClientGroupId) ? (long?)__jsonClientGroupId : ClientGroupId;}
             {_mnemonic = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("mnemonic"), out var __jsonMnemonic) ? (string)__jsonMnemonic : (string)Mnemonic;}
             AfterFromJson(json);
         }
@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._advancedOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._advancedOptions.ToJson(null,serializationMode) : null, "advancedOptions" ,container.Add );
             AddIf( null != (((object)this._groupType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._groupType.ToString()) : null, "groupType" ,container.Add );
-            AddIf( null != this._clientGroupId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._clientGroupId) : null, "clientGroupId" ,container.Add );
+            AddIf( null != this._clientGroupId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._clientGroupId) : null, "clientGroupId" ,container.Add );
             AddIf( null != (((object)this._mnemonic)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._mnemonic.ToString()) : null, "mnemonic" ,container.Add );
             AfterToJson(ref container);
             return container;

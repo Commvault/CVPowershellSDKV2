@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
             {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? (string)__jsonPassword : (string)Password;}
             {_createOrgAccount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("createOrgAccount"), out var __jsonCreateOrgAccount) ? (bool?)__jsonCreateOrgAccount : CreateOrgAccount;}
             {_autoCompany = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("autoCompany"), out var __jsonAutoCompany) ? (string)__jsonAutoCompany : (string)AutoCompany;}
-            {_companyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("companyId"), out var __jsonCompanyId) ? (int?)__jsonCompanyId : CompanyId;}
+            {_companyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("companyId"), out var __jsonCompanyId) ? (long?)__jsonCompanyId : CompanyId;}
             {_companyName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("companyName"), out var __jsonCompanyName) ? (string)__jsonCompanyName : (string)CompanyName;}
             AfterFromJson(json);
         }
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._password.ToString()) : null, "password" ,container.Add );
             AddIf( null != this._createOrgAccount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._createOrgAccount) : null, "createOrgAccount" ,container.Add );
             AddIf( null != (((object)this._autoCompany)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._autoCompany.ToString()) : null, "autoCompany" ,container.Add );
-            AddIf( null != this._companyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._companyId) : null, "companyId" ,container.Add );
+            AddIf( null != this._companyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._companyId) : null, "companyId" ,container.Add );
             AddIf( null != (((object)this._companyName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._companyName.ToString()) : null, "companyName" ,container.Add );
             AfterToJson(ref container);
             return container;

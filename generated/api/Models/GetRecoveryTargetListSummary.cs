@@ -28,17 +28,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationHypervisor { get => (this._destinationHypervisor = this._destinationHypervisor ?? new Commvault.Powershell.Models.IdName()); set => this._destinationHypervisor = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationHypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id = value ?? default(int); }
+        public long? DestinationHypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationHypervisorName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Recovery Target Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -78,8 +78,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationHypervisorId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationHypervisorId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Recovery Target Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Recovery Target name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -123,11 +123,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName DestinationHypervisor { get; set; }
 
-        int? DestinationHypervisorId { get; set; }
+        long? DestinationHypervisorId { get; set; }
 
         string DestinationHypervisorName { get; set; }
         /// <summary>Recovery Target Id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Recovery Target name</summary>
         string Name { get; set; }
         /// <summary>Recovery target vendor name</summary>

@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Node { get => (this._node = this._node ?? new Commvault.Powershell.Models.IdName()); set => this._node = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? NodeId { get => ((Commvault.Powershell.Models.IIdNameInternal)Node).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Node).Id = value ?? default(int); }
+        public long? NodeId { get => ((Commvault.Powershell.Models.IIdNameInternal)Node).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Node).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string NodeName { get => ((Commvault.Powershell.Models.IIdNameInternal)Node).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Node).Name = value ?? null; }
@@ -152,8 +152,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NodeId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NodeId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -239,7 +239,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Node { get; set; }
 
-        int? NodeId { get; set; }
+        long? NodeId { get; set; }
 
         string NodeName { get; set; }
         /// <summary>HyperScaleServerInfo</summary>

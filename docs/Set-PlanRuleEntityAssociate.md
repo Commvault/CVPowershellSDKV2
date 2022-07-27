@@ -149,19 +149,19 @@ To create the parameters described below, construct a hash table containing the 
 
 BODY <IAssociatePlanRuleEntityList>: List of entities that are will be associated to provided plan and said rule
   - `[Entities <IAssociatePlanRuleEntity[]>]`: Details of entity that will be associated to plan and rule.
-    - `[PlanId <Int32?>]`: 
+    - `[PlanId <Int64?>]`: 
     - `[PlanName <String>]`: 
-    - `[RuleId <Int32?>]`: 
+    - `[RuleId <Int64?>]`: 
     - `[RuleName <String>]`: 
-    - `[SubclientId <Int32?>]`: 
+    - `[SubclientId <Int64?>]`: 
     - `[SubclientName <String>]`: 
 
 ENTITIES <IAssociatePlanRuleEntity[]>: Details of entity that will be associated to plan and rule.
-  - `[PlanId <Int32?>]`: 
+  - `[PlanId <Int64?>]`: 
   - `[PlanName <String>]`: 
-  - `[RuleId <Int32?>]`: 
+  - `[RuleId <Int64?>]`: 
   - `[RuleName <String>]`: 
-  - `[SubclientId <Int32?>]`: 
+  - `[SubclientId <Int64?>]`: 
   - `[SubclientName <String>]`: 
 
 ## RELATED LINKS

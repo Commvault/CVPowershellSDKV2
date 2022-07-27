@@ -87,10 +87,10 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._host)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._host.ToString()) : null, "host" ,container.Add );
             AddIf( null != (((object)this._oS)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oS.ToString()) : null, "os" ,container.Add );
             AddIf( null != (((object)this._vendor)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vendor.ToString()) : null, "vendor" ,container.Add );
-            AddIf( null != this._vMSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMSize) : null, "vmSize" ,container.Add );
-            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationSize) : null, "applicationSize" ,container.Add );
-            AddIf( null != this._latestRecoveryPoint ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._latestRecoveryPoint) : null, "latestRecoveryPoint" ,container.Add );
-            AddIf( null != this._oldestRecoveryPoint ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._oldestRecoveryPoint) : null, "oldestRecoveryPoint" ,container.Add );
+            AddIf( null != this._vMSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMSize) : null, "vmSize" ,container.Add );
+            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationSize) : null, "applicationSize" ,container.Add );
+            AddIf( null != this._latestRecoveryPoint ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._latestRecoveryPoint) : null, "latestRecoveryPoint" ,container.Add );
+            AddIf( null != this._oldestRecoveryPoint ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._oldestRecoveryPoint) : null, "oldestRecoveryPoint" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AfterToJson(ref container);
             return container;
@@ -115,10 +115,10 @@ namespace Commvault.Powershell.Models
             {_host = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("host"), out var __jsonHost) ? (string)__jsonHost : (string)Host;}
             {_oS = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("os"), out var __jsonOS) ? (string)__jsonOS : (string)OS;}
             {_vendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vendor"), out var __jsonVendor) ? (string)__jsonVendor : (string)Vendor;}
-            {_vMSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmSize"), out var __jsonVMSize) ? (int?)__jsonVMSize : VMSize;}
-            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (int?)__jsonApplicationSize : ApplicationSize;}
-            {_latestRecoveryPoint = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("latestRecoveryPoint"), out var __jsonLatestRecoveryPoint) ? (int?)__jsonLatestRecoveryPoint : LatestRecoveryPoint;}
-            {_oldestRecoveryPoint = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("oldestRecoveryPoint"), out var __jsonOldestRecoveryPoint) ? (int?)__jsonOldestRecoveryPoint : OldestRecoveryPoint;}
+            {_vMSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmSize"), out var __jsonVMSize) ? (long?)__jsonVMSize : VMSize;}
+            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (long?)__jsonApplicationSize : ApplicationSize;}
+            {_latestRecoveryPoint = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("latestRecoveryPoint"), out var __jsonLatestRecoveryPoint) ? (long?)__jsonLatestRecoveryPoint : LatestRecoveryPoint;}
+            {_oldestRecoveryPoint = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("oldestRecoveryPoint"), out var __jsonOldestRecoveryPoint) ? (long?)__jsonOldestRecoveryPoint : OldestRecoveryPoint;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             AfterFromJson(json);
         }

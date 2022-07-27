@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName AccessNode { get => (this._accessNode = this._accessNode ?? new Commvault.Powershell.Models.IdName()); set => this._accessNode = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AccessNodeId { get => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id = value ?? default(int); }
+        public long? AccessNodeId { get => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string AccessNodeName { get => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Name = value ?? null; }
@@ -42,8 +42,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AccessNodeId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AccessNodeId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -59,7 +59,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName AccessNode { get; set; }
 
-        int? AccessNodeId { get; set; }
+        long? AccessNodeId { get; set; }
 
         string AccessNodeName { get; set; }
 

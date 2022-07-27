@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Id for the tag</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -52,8 +52,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id for the tag",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>
         /// Name for the plan rule tag which need to be matched against tag of the workload.
         /// </summary>
@@ -81,7 +81,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Id for the tag</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>
         /// Name for the plan rule tag which need to be matched against tag of the workload.
         /// </summary>

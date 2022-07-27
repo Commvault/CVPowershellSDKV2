@@ -45,11 +45,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="QuotaLimitInGb" /> property.</summary>
-        private int? _quotaLimitInGb;
+        private long? _quotaLimitInGb;
 
         /// <summary>if enforceFSQuota is set to true, the quota limit can be set in GBs</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? QuotaLimitInGb { get => this._quotaLimitInGb; set => this._quotaLimitInGb = value; }
+        public long? QuotaLimitInGb { get => this._quotaLimitInGb; set => this._quotaLimitInGb = value; }
 
         /// <summary>Creates an new <see cref="CreateUserGroup" /> instance.</summary>
         public CreateUserGroup()
@@ -104,8 +104,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"if enforceFSQuota is set to true, the quota limit can be set in GBs",
         SerializedName = @"quotaLimitInGB",
-        PossibleTypes = new [] { typeof(int) })]
-        int? QuotaLimitInGb { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? QuotaLimitInGb { get; set; }
 
     }
     internal partial interface ICreateUserGroupInternal
@@ -126,7 +126,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string Name { get; set; }
         /// <summary>if enforceFSQuota is set to true, the quota limit can be set in GBs</summary>
-        int? QuotaLimitInGb { get; set; }
+        long? QuotaLimitInGb { get; set; }
 
     }
 }

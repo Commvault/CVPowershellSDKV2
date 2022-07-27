@@ -32,7 +32,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>delay time in unix timestamp</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DelayTimeTime { get => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).Time; set => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).Time = value ?? default(int); }
+        public long? DelayTimeTime { get => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).Time; set => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).Time = value ?? default(long); }
 
         /// <summary>actual delay time value in string format according to the timezone</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -53,7 +53,7 @@ namespace Commvault.Powershell.Models
         public bool? EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).TimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).TimeZoneId = value ?? default(int); }
+        public long? TimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).TimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).TimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).TimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)DelayTime).TimeZoneName = value ?? null; }
@@ -81,8 +81,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"delay time in unix timestamp",
         SerializedName = @"time",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DelayTimeTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DelayTimeTime { get; set; }
         /// <summary>actual delay time value in string format according to the timezone</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -113,8 +113,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -133,7 +133,7 @@ namespace Commvault.Powershell.Models
         /// <summary>ActivityControlTileDelayTime</summary>
         Commvault.Powershell.Models.IActivityControlTileDelayTime DelayTime { get; set; }
         /// <summary>delay time in unix timestamp</summary>
-        int? DelayTimeTime { get; set; }
+        long? DelayTimeTime { get; set; }
         /// <summary>actual delay time value in string format according to the timezone</summary>
         string DelayTimeValue { get; set; }
 
@@ -143,7 +143,7 @@ namespace Commvault.Powershell.Models
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         bool? EnableAfterADelay { get; set; }
 
-        int? TimeZoneId { get; set; }
+        long? TimeZoneId { get; set; }
 
         string TimeZoneName { get; set; }
 

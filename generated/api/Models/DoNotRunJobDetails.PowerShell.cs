@@ -87,8 +87,8 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OnDays = (string[]) content.GetValueForProperty("OnDays",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OnDays, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OfWeeks = (string[]) content.GetValueForProperty("OfWeeks",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OfWeeks, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart = (int?) content.GetValueForProperty("DayTimeStart",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd = (int?) content.GetValueForProperty("DayTimeEnd",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart = (long?) content.GetValueForProperty("DayTimeStart",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd = (long?) content.GetValueForProperty("DayTimeEnd",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -108,8 +108,8 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OnDays = (string[]) content.GetValueForProperty("OnDays",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OnDays, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OfWeeks = (string[]) content.GetValueForProperty("OfWeeks",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).OfWeeks, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart = (int?) content.GetValueForProperty("DayTimeStart",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd = (int?) content.GetValueForProperty("DayTimeEnd",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart = (long?) content.GetValueForProperty("DayTimeStart",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeStart, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd = (long?) content.GetValueForProperty("DayTimeEnd",((Commvault.Powershell.Models.IDoNotRunJobDetailsInternal)this).DayTimeEnd, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

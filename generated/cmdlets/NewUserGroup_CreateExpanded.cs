@@ -148,8 +148,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"if enforceFSQuota is set to true, the quota limit can be set in GBs",
         SerializedName = @"quotaLimitInGB",
-        PossibleTypes = new [] { typeof(int) })]
-        public int QuotaLimitInGb { get => Body.QuotaLimitInGb ?? default(int); set => Body.QuotaLimitInGb = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long QuotaLimitInGb { get => Body.QuotaLimitInGb ?? default(long); set => Body.QuotaLimitInGb = value; }
 
         /// <summary>
         /// <c>overrideOnBadRequest</c> will be called before the regular onBadRequest has been processed, allowing customization

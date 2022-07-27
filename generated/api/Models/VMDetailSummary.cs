@@ -14,11 +14,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ApplicationSize" /> property.</summary>
-        private int? _applicationSize;
+        private long? _applicationSize;
 
         /// <summary>The amount of data being protected for the VM client(in bytes)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationSize { get => this._applicationSize; set => this._applicationSize = value; }
+        public long? ApplicationSize { get => this._applicationSize; set => this._applicationSize = value; }
 
         /// <summary>Internal Acessors for Company</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMDetailSummaryInternal.Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set { {_company = value;} } }
@@ -39,7 +39,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -60,17 +60,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Hypervisor { get => (this._hypervisor = this._hypervisor ?? new Commvault.Powershell.Models.IdName()); set => this._hypervisor = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? HypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id = value ?? default(int); }
+        public long? HypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string HypervisorName { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="LatestRecoveryPoint" /> property.</summary>
-        private int? _latestRecoveryPoint;
+        private long? _latestRecoveryPoint;
 
         /// <summary>The latest recovery time for the vm(in unix)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LatestRecoveryPoint { get => this._latestRecoveryPoint; set => this._latestRecoveryPoint = value; }
+        public long? LatestRecoveryPoint { get => this._latestRecoveryPoint; set => this._latestRecoveryPoint = value; }
 
         /// <summary>Backing field for <see cref="OS" /> property.</summary>
         private string _oS;
@@ -80,11 +80,11 @@ namespace Commvault.Powershell.Models
         public string OS { get => this._oS; set => this._oS = value; }
 
         /// <summary>Backing field for <see cref="OldestRecoveryPoint" /> property.</summary>
-        private int? _oldestRecoveryPoint;
+        private long? _oldestRecoveryPoint;
 
         /// <summary>The oldest recovery time for the vm(in unix)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? OldestRecoveryPoint { get => this._oldestRecoveryPoint; set => this._oldestRecoveryPoint = value; }
+        public long? OldestRecoveryPoint { get => this._oldestRecoveryPoint; set => this._oldestRecoveryPoint = value; }
 
         /// <summary>Backing field for <see cref="Plan" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _plan;
@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -112,17 +112,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName VMGroup { get => (this._vMGroup = this._vMGroup ?? new Commvault.Powershell.Models.IdName()); set => this._vMGroup = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? VMGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id = value ?? default(int); }
+        public long? VMGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string VMGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="VMSize" /> property.</summary>
-        private int? _vMSize;
+        private long? _vMSize;
 
         /// <summary>The total space allocated(in bytes) for the virtual machine.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VMSize { get => this._vMSize; set => this._vMSize = value; }
+        public long? VMSize { get => this._vMSize; set => this._vMSize = value; }
 
         /// <summary>Backing field for <see cref="Vendor" /> property.</summary>
         private string _vendor;
@@ -146,16 +146,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The amount of data being protected for the VM client(in bytes)",
         SerializedName = @"applicationSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationSize { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -180,8 +180,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? HypervisorId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? HypervisorId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -196,8 +196,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The latest recovery time for the vm(in unix)",
         SerializedName = @"latestRecoveryPoint",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LatestRecoveryPoint { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LatestRecoveryPoint { get; set; }
         /// <summary>The operating system version for the VM or instance.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -212,16 +212,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The oldest recovery time for the vm(in unix)",
         SerializedName = @"oldestRecoveryPoint",
-        PossibleTypes = new [] { typeof(int) })]
-        int? OldestRecoveryPoint { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? OldestRecoveryPoint { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -244,8 +244,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -260,8 +260,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total space allocated(in bytes) for the virtual machine.",
         SerializedName = @"vmSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMSize { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -277,11 +277,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>The amount of data being protected for the VM client(in bytes)</summary>
-        int? ApplicationSize { get; set; }
+        long? ApplicationSize { get; set; }
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>
@@ -291,19 +291,19 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Hypervisor { get; set; }
 
-        int? HypervisorId { get; set; }
+        long? HypervisorId { get; set; }
 
         string HypervisorName { get; set; }
         /// <summary>The latest recovery time for the vm(in unix)</summary>
-        int? LatestRecoveryPoint { get; set; }
+        long? LatestRecoveryPoint { get; set; }
         /// <summary>The operating system version for the VM or instance.</summary>
         string OS { get; set; }
         /// <summary>The oldest recovery time for the vm(in unix)</summary>
-        int? OldestRecoveryPoint { get; set; }
+        long? OldestRecoveryPoint { get; set; }
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>The status of the backup for the VM, instance, or container.</summary>
@@ -311,11 +311,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName VMGroup { get; set; }
 
-        int? VMGroupId { get; set; }
+        long? VMGroupId { get; set; }
 
         string VMGroupName { get; set; }
         /// <summary>The total space allocated(in bytes) for the virtual machine.</summary>
-        int? VMSize { get; set; }
+        long? VMSize { get; set; }
 
         string Vendor { get; set; }
 

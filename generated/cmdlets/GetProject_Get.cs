@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="RequestId" /> property.</summary>
-        private int _requestId;
+        private long _requestId;
 
         /// <summary>Unique request id</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Unique request id")]
@@ -86,9 +86,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Unique request id",
         SerializedName = @"requestId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int RequestId { get => this._requestId; set => this._requestId = value; }
+        public long RequestId { get => this._requestId; set => this._requestId = value; }
 
         /// <summary>
         /// <c>overrideOnBadRequest</c> will be called before the regular onBadRequest has been processed, allowing customization

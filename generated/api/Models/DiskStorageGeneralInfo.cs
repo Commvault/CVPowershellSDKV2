@@ -11,36 +11,36 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Capacity" /> property.</summary>
-        private int? _capacity;
+        private long? _capacity;
 
         /// <summary>specifies the capacity of the storage pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Capacity { get => this._capacity; set => this._capacity = value; }
+        public long? Capacity { get => this._capacity; set => this._capacity = value; }
 
         /// <summary>Backing field for <see cref="DedupeSavingsPercent" /> property.</summary>
-        private int? _dedupeSavingsPercent;
+        private long? _dedupeSavingsPercent;
 
         /// <summary>
         /// specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DedupeSavingsPercent { get => this._dedupeSavingsPercent; set => this._dedupeSavingsPercent = value; }
+        public long? DedupeSavingsPercent { get => this._dedupeSavingsPercent; set => this._dedupeSavingsPercent = value; }
 
         /// <summary>Backing field for <see cref="FreeSpace" /> property.</summary>
-        private int? _freeSpace;
+        private long? _freeSpace;
 
         /// <summary>specifies the available space on the storage pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
+        public long? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
 
         /// <summary>Backing field for <see cref="SizeOnDisk" /> property.</summary>
-        private int? _sizeOnDisk;
+        private long? _sizeOnDisk;
 
         /// <summary>
         /// Size on disk refers to the actual amount of space being taken by the storage pool on the disk.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SizeOnDisk { get => this._sizeOnDisk; set => this._sizeOnDisk = value; }
+        public long? SizeOnDisk { get => this._sizeOnDisk; set => this._sizeOnDisk = value; }
 
         /// <summary>Creates an new <see cref="DiskStorageGeneralInfo" /> instance.</summary>
         public DiskStorageGeneralInfo()
@@ -57,8 +57,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"specifies the capacity of the storage pool",
         SerializedName = @"capacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Capacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Capacity { get; set; }
         /// <summary>
         /// specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.
         /// </summary>
@@ -67,16 +67,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.",
         SerializedName = @"dedupeSavingsPercent",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DedupeSavingsPercent { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DedupeSavingsPercent { get; set; }
         /// <summary>specifies the available space on the storage pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"specifies the available space on the storage pool",
         SerializedName = @"freeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FreeSpace { get; set; }
         /// <summary>
         /// Size on disk refers to the actual amount of space being taken by the storage pool on the disk.
         /// </summary>
@@ -85,25 +85,25 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Size on disk refers to the actual amount of space being taken by the storage pool on the disk.",
         SerializedName = @"sizeOnDisk",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SizeOnDisk { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SizeOnDisk { get; set; }
 
     }
     internal partial interface IDiskStorageGeneralInfoInternal
 
     {
         /// <summary>specifies the capacity of the storage pool</summary>
-        int? Capacity { get; set; }
+        long? Capacity { get; set; }
         /// <summary>
         /// specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.
         /// </summary>
-        int? DedupeSavingsPercent { get; set; }
+        long? DedupeSavingsPercent { get; set; }
         /// <summary>specifies the available space on the storage pool</summary>
-        int? FreeSpace { get; set; }
+        long? FreeSpace { get; set; }
         /// <summary>
         /// Size on disk refers to the actual amount of space being taken by the storage pool on the disk.
         /// </summary>
-        int? SizeOnDisk { get; set; }
+        long? SizeOnDisk { get; set; }
 
     }
 }

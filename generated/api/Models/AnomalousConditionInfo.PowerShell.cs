@@ -67,7 +67,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Description, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).AnomalyType = (string) content.GetValueForProperty("AnomalyType",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).AnomalyType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId = (int?) content.GetValueForProperty("ClientInfoId",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId = (long?) content.GetValueForProperty("ClientInfoId",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoName = (string) content.GetValueForProperty("ClientInfoName",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -90,7 +90,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).Description, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).AnomalyType = (string) content.GetValueForProperty("AnomalyType",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).AnomalyType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId = (int?) content.GetValueForProperty("ClientInfoId",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId = (long?) content.GetValueForProperty("ClientInfoId",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoName = (string) content.GetValueForProperty("ClientInfoName",((Commvault.Powershell.Models.IAnomalousConditionInfoInternal)this).ClientInfoName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

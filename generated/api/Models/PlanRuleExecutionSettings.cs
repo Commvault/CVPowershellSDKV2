@@ -12,13 +12,13 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ExecutionInterval" /> property.</summary>
-        private int? _executionInterval;
+        private long? _executionInterval;
 
         /// <summary>
         /// Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ExecutionInterval { get => this._executionInterval; set => this._executionInterval = value; }
+        public long? ExecutionInterval { get => this._executionInterval; set => this._executionInterval = value; }
 
         /// <summary>Backing field for <see cref="ExecutionMode" /> property.</summary>
         private string _executionMode;
@@ -45,8 +45,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Setting to suggest evaluation frequency in case of evaluation mode being Automatic.",
         SerializedName = @"executionInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExecutionInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExecutionInterval { get; set; }
         /// <summary>Plan rule execution mode</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -64,7 +64,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
         /// </summary>
-        int? ExecutionInterval { get; set; }
+        long? ExecutionInterval { get; set; }
         /// <summary>Plan rule execution mode</summary>
         string ExecutionMode { get; set; }
 

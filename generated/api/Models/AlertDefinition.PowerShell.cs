@@ -65,11 +65,11 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Company = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Company",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Company, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId = (int?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId = (long?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyName = (string) content.GetValueForProperty("CompanyName",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -89,11 +89,11 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Company = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Company",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Company, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId = (int?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId = (long?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyName = (string) content.GetValueForProperty("CompanyName",((Commvault.Powershell.Models.IAlertDefinitionInternal)this).CompanyName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

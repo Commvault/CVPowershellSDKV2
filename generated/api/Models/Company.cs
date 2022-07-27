@@ -33,11 +33,11 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IContactResp[] Contacts { get => this._contacts; set => this._contacts = value; }
 
         /// <summary>Backing field for <see cref="CreationTime" /> property.</summary>
-        private int? _creationTime;
+        private long? _creationTime;
 
         /// <summary>The date and time of the creation of the company.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CreationTime { get => this._creationTime; set => this._creationTime = value; }
+        public long? CreationTime { get => this._creationTime; set => this._creationTime = value; }
 
         /// <summary>Email id of the sender</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -140,16 +140,16 @@ namespace Commvault.Powershell.Models
         public bool? GeneralUpnInsteadOfEmail { get => ((Commvault.Powershell.Models.IGeneralInternal)General).UpnInsteadOfEmail; set => ((Commvault.Powershell.Models.IGeneralInternal)General).UpnInsteadOfEmail = value ?? default(bool); }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="OperatorsOperationType" /> property.</summary>
-        private int? _operatorsOperationType;
+        private long? _operatorsOperationType;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? OperatorsOperationType { get => this._operatorsOperationType; set => this._operatorsOperationType = value; }
+        public long? OperatorsOperationType { get => this._operatorsOperationType; set => this._operatorsOperationType = value; }
 
         /// <summary>Backing field for <see cref="Plans" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _plans;
@@ -222,8 +222,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The date and time of the creation of the company.",
         SerializedName = @"creationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CreationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CreationTime { get; set; }
         /// <summary>Email id of the sender</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -377,16 +377,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"operatorsOperationType",
-        PossibleTypes = new [] { typeof(int) })]
-        int? OperatorsOperationType { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? OperatorsOperationType { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -464,7 +464,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IContactResp[] Contacts { get; set; }
         /// <summary>The date and time of the creation of the company.</summary>
-        int? CreationTime { get; set; }
+        long? CreationTime { get; set; }
         /// <summary>Email id of the sender</summary>
         string EmailSettingSenderEmail { get; set; }
         /// <summary>Name of the sender sending the email</summary>
@@ -525,9 +525,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Enable or disable the use of User Pricipal Name in place of an email address.</summary>
         bool? GeneralUpnInsteadOfEmail { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
 
-        int? OperatorsOperationType { get; set; }
+        long? OperatorsOperationType { get; set; }
 
         Commvault.Powershell.Models.IIdName[] Plans { get; set; }
 

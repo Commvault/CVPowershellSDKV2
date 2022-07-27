@@ -30,11 +30,11 @@ namespace Commvault.Powershell.Models
         string Commvault.Powershell.Models.ICreateHypervisorGroupVCloudInternal.HypervisorType { get => this._hypervisorType; set { {_hypervisorType = value;} } }
 
         /// <summary>Backing field for <see cref="CompanyId" /> property.</summary>
-        private int? _companyId;
+        private long? _companyId;
 
         /// <summary>company id is required if use existing mode is selected for org client</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CompanyId { get => this._companyId; set => this._companyId = value; }
+        public long? CompanyId { get => this._companyId; set => this._companyId = value; }
 
         /// <summary>Backing field for <see cref="CompanyName" /> property.</summary>
         private string _companyName;
@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdName Credentials { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).Credentials; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).Credentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? CredentialsId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId = value; }
+        public long? CredentialsId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string CredentialsName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName = value; }
@@ -152,8 +152,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"company id is required if use existing mode is selected for org client",
         SerializedName = @"companyId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
         /// <summary>company name is required for org client</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -235,7 +235,7 @@ namespace Commvault.Powershell.Models
         /// <summary>indicates the mode for company association</summary>
         string AutoCompany { get; set; }
         /// <summary>company id is required if use existing mode is selected for org client</summary>
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
         /// <summary>company name is required for org client</summary>
         string CompanyName { get; set; }
         /// <summary>True if organization account to be used</summary>

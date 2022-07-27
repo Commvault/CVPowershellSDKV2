@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="EndTime" /> property.</summary>
-        private int? _endTime;
+        private long? _endTime;
 
         /// <summary>If the user is locked, it returns user lock end time in unix time format.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? EndTime { get => this._endTime; set => this._endTime = value; }
+        public long? EndTime { get => this._endTime; set => this._endTime = value; }
 
         /// <summary>Backing field for <see cref="IsLocked" /> property.</summary>
         private bool? _isLocked;
@@ -25,11 +25,11 @@ namespace Commvault.Powershell.Models
         public bool? IsLocked { get => this._isLocked; set => this._isLocked = value; }
 
         /// <summary>Backing field for <see cref="StartTime" /> property.</summary>
-        private int? _startTime;
+        private long? _startTime;
 
         /// <summary>If the user is locked, it returns user lock start time in unix time format.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? StartTime { get => this._startTime; set => this._startTime = value; }
+        public long? StartTime { get => this._startTime; set => this._startTime = value; }
 
         /// <summary>Creates an new <see cref="LockProperties" /> instance.</summary>
         public LockProperties()
@@ -46,8 +46,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"If the user is locked, it returns user lock end time in unix time format.",
         SerializedName = @"endTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EndTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EndTime { get; set; }
         /// <summary>Returns if the user is locked or unlocked.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -62,19 +62,19 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"If the user is locked, it returns user lock start time in unix time format.",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StartTime { get; set; }
 
     }
     internal partial interface ILockPropertiesInternal
 
     {
         /// <summary>If the user is locked, it returns user lock end time in unix time format.</summary>
-        int? EndTime { get; set; }
+        long? EndTime { get; set; }
         /// <summary>Returns if the user is locked or unlocked.</summary>
         bool? IsLocked { get; set; }
         /// <summary>If the user is locked, it returns user lock start time in unix time format.</summary>
-        int? StartTime { get; set; }
+        long? StartTime { get; set; }
 
     }
 }

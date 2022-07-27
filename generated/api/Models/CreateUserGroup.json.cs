@@ -63,7 +63,7 @@ namespace Commvault.Powershell.Models
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             {_enforceFsQuota = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enforceFSQuota"), out var __jsonEnforceFsQuota) ? (bool?)__jsonEnforceFsQuota : EnforceFsQuota;}
-            {_quotaLimitInGb = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("quotaLimitInGB"), out var __jsonQuotaLimitInGb) ? (int?)__jsonQuotaLimitInGb : QuotaLimitInGb;}
+            {_quotaLimitInGb = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("quotaLimitInGB"), out var __jsonQuotaLimitInGb) ? (long?)__jsonQuotaLimitInGb : QuotaLimitInGb;}
             {_localUserGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("localUserGroups"), out var __jsonLocalUserGroups) ? If( __jsonLocalUserGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : LocalUserGroups;}
             AfterFromJson(json);
         }
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AddIf( null != this._enforceFsQuota ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enforceFsQuota) : null, "enforceFSQuota" ,container.Add );
-            AddIf( null != this._quotaLimitInGb ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._quotaLimitInGb) : null, "quotaLimitInGB" ,container.Add );
+            AddIf( null != this._quotaLimitInGb ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._quotaLimitInGb) : null, "quotaLimitInGB" ,container.Add );
             if (null != this._localUserGroups)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

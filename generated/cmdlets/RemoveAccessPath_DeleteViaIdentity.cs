@@ -263,7 +263,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.AccessPathId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.DeleteAccessPathForBucketOfCloudStorage(InputObject.CloudStorageId ?? default(int), InputObject.BucketId ?? default(int), InputObject.AccessPathId ?? default(int), onOk, onNotFound, onInternalServerError, this, Pipeline);
+                    await this.Client.DeleteAccessPathForBucketOfCloudStorage(InputObject.CloudStorageId ?? default(long), InputObject.BucketId ?? default(long), InputObject.AccessPathId ?? default(long), onOk, onNotFound, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

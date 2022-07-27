@@ -13,7 +13,7 @@ Get database list for GCP
 ## SYNTAX
 
 ```
-Get-GcpSpannerDatabase -CloudAccountId <Int32> -InstanceName <String> -ProjectName <String>
+Get-GcpSpannerDatabase -CloudAccountId <Int64> -InstanceName <String> -ProjectName <String>
  [<CommonParameters>]
 ```
 
@@ -46,7 +46,7 @@ PS C:\> {{ Add code here }}
 the id of the node where the browse request is sent
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

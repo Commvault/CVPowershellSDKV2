@@ -71,9 +71,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_userId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("userId"), out var __jsonUserId) ? (int?)__jsonUserId : UserId;}
+            {_userId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("userId"), out var __jsonUserId) ? (long?)__jsonUserId : UserId;}
             {_userName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userName"), out var __jsonUserName) ? (string)__jsonUserName : (string)UserName;}
-            {_userGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("userGroupId"), out var __jsonUserGroupId) ? (int?)__jsonUserGroupId : UserGroupId;}
+            {_userGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("userGroupId"), out var __jsonUserGroupId) ? (long?)__jsonUserGroupId : UserGroupId;}
             {_userGroupName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userGroupName"), out var __jsonUserGroupName) ? (string)__jsonUserGroupName : (string)UserGroupName;}
             AfterFromJson(json);
         }
@@ -97,9 +97,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._userId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._userId) : null, "userId" ,container.Add );
+            AddIf( null != this._userId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._userId) : null, "userId" ,container.Add );
             AddIf( null != (((object)this._userName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userName.ToString()) : null, "userName" ,container.Add );
-            AddIf( null != this._userGroupId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._userGroupId) : null, "userGroupId" ,container.Add );
+            AddIf( null != this._userGroupId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._userGroupId) : null, "userGroupId" ,container.Add );
             AddIf( null != (((object)this._userGroupName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userGroupName.ToString()) : null, "userGroupName" ,container.Add );
             AfterToJson(ref container);
             return container;

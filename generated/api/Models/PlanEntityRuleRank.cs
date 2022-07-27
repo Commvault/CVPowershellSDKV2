@@ -15,11 +15,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanEntityRuleRankInternal.Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdName()); set { {_rule = value;} } }
 
         /// <summary>Backing field for <see cref="Rank" /> property.</summary>
-        private int? _rank;
+        private long? _rank;
 
         /// <summary>This will suggest rank/priority of the plan rule.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Rank { get => this._rank; set => this._rank = value; }
+        public long? Rank { get => this._rank; set => this._rank = value; }
 
         /// <summary>Backing field for <see cref="Rule" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _rule;
@@ -28,7 +28,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdName()); set => this._rule = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RuleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id = value ?? default(int); }
+        public long? RuleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RuleName { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name = value ?? null; }
@@ -49,16 +49,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This will suggest rank/priority of the plan rule.",
         SerializedName = @"rank",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Rank { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Rank { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RuleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RuleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -74,11 +74,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>This will suggest rank/priority of the plan rule.</summary>
-        int? Rank { get; set; }
+        long? Rank { get; set; }
 
         Commvault.Powershell.Models.IIdName Rule { get; set; }
 
-        int? RuleId { get; set; }
+        long? RuleId { get; set; }
 
         string RuleName { get; set; }
 

@@ -27,16 +27,16 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName FileServer { get => (this._fileServer = this._fileServer ?? new Commvault.Powershell.Models.IdName()); set => this._fileServer = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)FileServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)FileServer).Id = value ?? default(int); }
+        public long? FileServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)FileServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)FileServer).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FileServerName { get => ((Commvault.Powershell.Models.IIdNameInternal)FileServer).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)FileServer).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="IndexServer" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _indexServer;
@@ -45,7 +45,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName IndexServer { get => (this._indexServer = this._indexServer ?? new Commvault.Powershell.Models.IdName()); set => this._indexServer = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? IndexServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id = value ?? default(int); }
+        public long? IndexServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string IndexServerName { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Name = value ?? null; }
@@ -63,7 +63,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -97,8 +97,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileServerId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileServerId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -113,16 +113,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? IndexServerId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? IndexServerId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -145,8 +145,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -179,15 +179,15 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName FileServer { get; set; }
 
-        int? FileServerId { get; set; }
+        long? FileServerId { get; set; }
 
         string FileServerName { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         Commvault.Powershell.Models.IIdName IndexServer { get; set; }
 
-        int? IndexServerId { get; set; }
+        long? IndexServerId { get; set; }
 
         string IndexServerName { get; set; }
 
@@ -195,7 +195,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>Status of the hybrid file store</summary>

@@ -15,7 +15,7 @@ Configure SMTP server settings.
 ### UpdateExpanded (Default)
 ```
 Set-EmailServer [-EncryptionAlgorithm <String>] [-Password <String>] [-SenderEmail <String>]
- [-SenderName <String>] [-SmtpPort <Int32>] [-SmtpServerName <String>] [-UseAuthentication]
+ [-SenderName <String>] [-SmtpPort <Int64>] [-SmtpServerName <String>] [-UseAuthentication]
  [-Username <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -26,7 +26,7 @@ Set-EmailServer -Body <IConfigureSmtpServerReq> [-PassThru] [-Confirm] [-WhatIf]
 
 ### ConfigureExpanded
 ```
-Set-EmailServer -SenderEmail <String> -SenderName <String> -SmtpPort <Int32> -SmtpServerName <String>
+Set-EmailServer -SenderEmail <String> -SenderName <String> -SmtpPort <Int64> -SmtpServerName <String>
  [-EncryptionAlgorithm <String>] [-Password <String>] [-Username <String>] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -152,7 +152,7 @@ Accept wildcard characters: False
 The port number that connects to the mail server.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: ConfigureExpanded, UpdateExpanded
 Aliases:
 
@@ -263,7 +263,7 @@ To create the parameters described below, construct a hash table containing the 
 BODY <IConfigureSmtpServerReq>: ConfigureSMTPServerReq
   - `SenderEmail <String>`: The sender email address used for emails sent from the software.
   - `SenderName <String>`: The sender name used for emails sent from the software.
-  - `SmtpPort <Int32>`: The port number that connects to the mail server.
+  - `SmtpPort <Int64>`: The port number that connects to the mail server.
   - `SmtpServerName <String>`: The name of the mail server that sends alerts, scheduled reports, log files, and additional information.
   - `[EncryptionAlgorithm <String>]`: 
   - `[Password <String>]`: Password must be in base64 encoded format. Similar to username, if authentication on the mail server is required, this option is required.

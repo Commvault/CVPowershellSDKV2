@@ -92,7 +92,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId = (int?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId = (long?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).FailureReason = (string) content.GetValueForProperty("FailureReason",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).FailureReason, global::System.Convert.ToString);
@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId = (int?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId = (long?) content.GetValueForProperty("JobId",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).JobId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).FailureReason = (string) content.GetValueForProperty("FailureReason",((Commvault.Powershell.Models.ILastBackupJobInfoInternal)this).FailureReason, global::System.Convert.ToString);

@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_value = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("value"), out var __jsonValue) ? (string)__jsonValue : (string)Value;}
             {_defaultValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("defaultValue"), out var __jsonDefaultValue) ? (string)__jsonDefaultValue : (string)DefaultValue;}

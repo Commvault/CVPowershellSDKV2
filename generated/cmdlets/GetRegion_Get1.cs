@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="EntityId" /> property.</summary>
-        private int _entityId;
+        private long _entityId;
 
         /// <summary>Unique id for the entity</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Unique id for the entity")]
@@ -42,12 +42,12 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Unique id for the entity",
         SerializedName = @"entityId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int EntityId { get => this._entityId; set => this._entityId = value; }
+        public long EntityId { get => this._entityId; set => this._entityId = value; }
 
         /// <summary>Backing field for <see cref="EntityType" /> property.</summary>
-        private int _entityType;
+        private long _entityType;
 
         /// <summary>Type of the entity</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Type of the entity")]
@@ -56,9 +56,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Type of the entity",
         SerializedName = @"entityType",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int EntityType { get => this._entityType; set => this._entityType = value; }
+        public long EntityType { get => this._entityType; set => this._entityType = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]

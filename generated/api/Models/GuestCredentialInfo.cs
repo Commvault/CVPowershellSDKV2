@@ -38,7 +38,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SavedCredentials { get => (this._savedCredentials = this._savedCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._savedCredentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SavedCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Id = value ?? default(int); }
+        public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SavedCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Name = value ?? null; }
@@ -75,8 +75,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SavedCredentials { get; set; }
 
-        int? SavedCredentialsId { get; set; }
+        long? SavedCredentialsId { get; set; }
 
         string SavedCredentialsName { get; set; }
 

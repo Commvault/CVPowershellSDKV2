@@ -255,7 +255,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.PlanId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.DeletePlan(InputObject.PlanId ?? default(int), onOk, onNotFound, onInternalServerError, this, Pipeline);
+                    await this.Client.DeletePlan(InputObject.PlanId ?? default(long), onOk, onNotFound, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

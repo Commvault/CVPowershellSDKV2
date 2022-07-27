@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="RuleId" /> property.</summary>
-        private int _ruleId;
+        private long _ruleId;
 
         /// <summary>Id of the rule to update in Plan</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the rule to update in Plan")]
@@ -86,9 +86,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the rule to update in Plan",
         SerializedName = @"ruleId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int RuleId { get => this._ruleId; set => this._ruleId = value; }
+        public long RuleId { get => this._ruleId; set => this._ruleId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing

@@ -64,7 +64,7 @@ namespace Commvault.Powershell.Models
             {_to = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("to"), out var __jsonTo) ? If( __jsonTo as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAlertTargetIdNameType1[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAlertTargetIdNameType1) (Commvault.Powershell.Models.AlertTargetIdNameType1.FromJson(__u) )) ))() : null : To;}
             {_cc = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("cc"), out var __jsonCc) ? If( __jsonCc as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IAlertTargetIdNameType1[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IAlertTargetIdNameType1) (Commvault.Powershell.Models.AlertTargetIdNameType1.FromJson(__p) )) ))() : null : Cc;}
             {_bcc = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("bcc"), out var __jsonBcc) ? If( __jsonBcc as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IAlertTargetIdNameType1[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IAlertTargetIdNameType1) (Commvault.Powershell.Models.AlertTargetIdNameType1.FromJson(__k) )) ))() : null : Bcc;}
-            {_webHookId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("webHookId"), out var __jsonWebHookId) ? (int?)__jsonWebHookId : WebHookId;}
+            {_webHookId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("webHookId"), out var __jsonWebHookId) ? (long?)__jsonWebHookId : WebHookId;}
             AfterFromJson(json);
         }
 
@@ -124,7 +124,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("bcc",__m);
             }
-            AddIf( null != this._webHookId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._webHookId) : null, "webHookId" ,container.Add );
+            AddIf( null != this._webHookId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._webHookId) : null, "webHookId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

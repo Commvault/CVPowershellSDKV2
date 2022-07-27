@@ -58,7 +58,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int _id;
+        private long _id;
 
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = ".")]
         [Commvault.Powershell.Runtime.Info(
@@ -66,9 +66,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int Id { get => this._id; set => this._id = value; }
+        public long Id { get => this._id; set => this._id = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }

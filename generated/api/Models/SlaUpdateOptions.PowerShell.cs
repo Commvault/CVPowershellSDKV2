@@ -97,9 +97,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).UseSystemDefaultSla = (bool?) content.GetValueForProperty("UseSystemDefaultSla",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).UseSystemDefaultSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod = (int?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod = (long?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExcludeFromSla = (bool?) content.GetValueForProperty("ExcludeFromSla",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay = (int?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay = (long?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExclusionReason = (string) content.GetValueForProperty("ExclusionReason",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExclusionReason, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -119,9 +119,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).UseSystemDefaultSla = (bool?) content.GetValueForProperty("UseSystemDefaultSla",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).UseSystemDefaultSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod = (int?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod = (long?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).SlaPeriod, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExcludeFromSla = (bool?) content.GetValueForProperty("ExcludeFromSla",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay = (int?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay = (long?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).EnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExclusionReason = (string) content.GetValueForProperty("ExclusionReason",((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)this).ExclusionReason, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

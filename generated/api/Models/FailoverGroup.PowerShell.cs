@@ -86,10 +86,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Source = (string) content.GetValueForProperty("Source",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Source, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines = (int?) content.GetValueForProperty("NumberOfVirtualMachines",((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines = (long?) content.GetValueForProperty("NumberOfVirtualMachines",((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -107,10 +107,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IFailoverGroupInternal)this).Source = (string) content.GetValueForProperty("Source",((Commvault.Powershell.Models.IFailoverGroupInternal)this).Source, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines = (int?) content.GetValueForProperty("NumberOfVirtualMachines",((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines = (long?) content.GetValueForProperty("NumberOfVirtualMachines",((Commvault.Powershell.Models.IFailoverGroupInternal)this).NumberOfVirtualMachines, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

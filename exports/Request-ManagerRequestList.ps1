@@ -46,7 +46,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # Entity id of the source from which data is gathered for the request
     ${SourceEntityId},
 

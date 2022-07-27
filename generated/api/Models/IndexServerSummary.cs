@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="CloudId" /> property.</summary>
-        private int? _cloudId;
+        private long? _cloudId;
 
         /// <summary>Id of the index server cloud</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CloudId { get => this._cloudId; set => this._cloudId = value; }
+        public long? CloudId { get => this._cloudId; set => this._cloudId = value; }
 
         /// <summary>Backing field for <see cref="DisplayName" /> property.</summary>
         private string _displayName;
@@ -26,10 +26,10 @@ namespace Commvault.Powershell.Models
         public string DisplayName { get => this._displayName; set => this._displayName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -60,8 +60,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of the index server cloud",
         SerializedName = @"cloudId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CloudId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CloudId { get; set; }
         /// <summary>Display name for the index server</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -76,8 +76,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -101,11 +101,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Id of the index server cloud</summary>
-        int? CloudId { get; set; }
+        long? CloudId { get; set; }
         /// <summary>Display name for the index server</summary>
         string DisplayName { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         string Name { get; set; }
         /// <summary>Operating system of the index server</summary>

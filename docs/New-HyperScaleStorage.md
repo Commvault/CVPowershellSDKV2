@@ -124,7 +124,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 NODES <IIdName[]>: List of Nodes (MediaAgents) of the HyperScale Storage
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

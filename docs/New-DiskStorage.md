@@ -170,7 +170,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 DEDUPLICATIONDBSTORAGE <IDedupePath[]>: A list of dedupe locations can be provided for the storage pool being created. This provides an efficient way to save/store data by eliminating duplicate blocks of data during backups.
-  - `[MediaAgentId <Int32?>]`: 
+  - `[MediaAgentId <Int64?>]`: 
   - `[MediaAgentName <String>]`: 
   - `[Path <String>]`: 
 
@@ -178,9 +178,9 @@ STORAGE <IPath[]>: A list of backup locations can be provided for the storage po
   - `[BackupLocation <String>]`: 
   - `[CredentialsName <String>]`: username to access the network path
   - `[CredentialsPassword <String>]`: password to access the network path
-  - `[MediaAgentId <Int32?>]`: 
+  - `[MediaAgentId <Int64?>]`: 
   - `[MediaAgentName <String>]`: 
-  - `[SavedCredentialsId <Int32?>]`: 
+  - `[SavedCredentialsId <Int64?>]`: 
   - `[SavedCredentialsName <String>]`: 
 
 ## RELATED LINKS

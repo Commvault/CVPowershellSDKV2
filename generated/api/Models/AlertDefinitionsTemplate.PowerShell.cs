@@ -69,7 +69,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).ConsoleMessage = (string) content.GetValueForProperty("ConsoleMessage",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).ConsoleMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).EventViewerMessage = (string) content.GetValueForProperty("EventViewerMessage",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).EventViewerMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).WebhookMessage = (string) content.GetValueForProperty("WebhookMessage",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).WebhookMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId = (int?) content.GetValueForProperty("LocaleId",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId = (long?) content.GetValueForProperty("LocaleId",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleName = (string) content.GetValueForProperty("LocaleName",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).ConsoleMessage = (string) content.GetValueForProperty("ConsoleMessage",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).ConsoleMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).EventViewerMessage = (string) content.GetValueForProperty("EventViewerMessage",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).EventViewerMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).WebhookMessage = (string) content.GetValueForProperty("WebhookMessage",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).WebhookMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId = (int?) content.GetValueForProperty("LocaleId",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId = (long?) content.GetValueForProperty("LocaleId",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleName = (string) content.GetValueForProperty("LocaleName",((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)this).LocaleName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -53,7 +53,7 @@ namespace Commvault.Powershell.Models
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(int); }
+        public long? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="General" /> property.</summary>
         private Commvault.Powershell.Models.IHyperScaleStorageGeneralInfo _general;
@@ -80,7 +80,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The total amount of data stored on the disk after deduplication and compression</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralSizeOndisk { get => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).SizeOndisk; set => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).SizeOndisk = value ?? default(int); }
+        public long? GeneralSizeOndisk { get => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).SizeOndisk; set => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).SizeOndisk = value ?? default(long); }
 
         /// <summary>
         /// The status of the hyperscale storage pool - whether the storage pool is online or offline
@@ -90,17 +90,17 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The total storage capacity of the selected HyperScale Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralTotalCapacity { get => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalCapacity; set => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalCapacity = value ?? default(int); }
+        public long? GeneralTotalCapacity { get => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalCapacity; set => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalCapacity = value ?? default(long); }
 
         /// <summary>The total free space available in the HyperScale storage pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralTotalFreeSpace { get => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalFreeSpace; set => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalFreeSpace = value ?? default(int); }
+        public long? GeneralTotalFreeSpace { get => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalFreeSpace; set => ((Commvault.Powershell.Models.IHyperScaleStorageGeneralInfoInternal)General).TotalFreeSpace = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id = value; }
+        public long? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(int); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string KeyProviderName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName = value ?? null; }
@@ -183,8 +183,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128 and 256. DES3 accepts only 192. GOST accepts only 256. ",
         SerializedName = @"keyLength",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EncryptionKeyLength { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EncryptionKeyLength { get; set; }
         /// <summary>Specifies the savings in percentage that occurred due to deduplication.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -223,8 +223,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total amount of data stored on the disk after deduplication and compression",
         SerializedName = @"sizeOndisk",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralSizeOndisk { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralSizeOndisk { get; set; }
         /// <summary>
         /// The status of the hyperscale storage pool - whether the storage pool is online or offline
         /// </summary>
@@ -241,24 +241,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total storage capacity of the selected HyperScale Storage Pool",
         SerializedName = @"totalCapacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralTotalCapacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralTotalCapacity { get; set; }
         /// <summary>The total free space available in the HyperScale storage pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"The total free space available in the HyperScale storage pool",
         SerializedName = @"totalFreeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralTotalFreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralTotalFreeSpace { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? KeyProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -306,7 +306,7 @@ namespace Commvault.Powershell.Models
         /// Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
-        int? EncryptionKeyLength { get; set; }
+        long? EncryptionKeyLength { get; set; }
 
         Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get; set; }
         /// <summary>HyperScaleStorageGeneralInfo</summary>
@@ -320,17 +320,17 @@ namespace Commvault.Powershell.Models
         /// <summary>Resiliency or redundancy of this HyperScale storage</summary>
         string GeneralResiliency { get; set; }
         /// <summary>The total amount of data stored on the disk after deduplication and compression</summary>
-        int? GeneralSizeOndisk { get; set; }
+        long? GeneralSizeOndisk { get; set; }
         /// <summary>
         /// The status of the hyperscale storage pool - whether the storage pool is online or offline
         /// </summary>
         string GeneralStatus { get; set; }
         /// <summary>The total storage capacity of the selected HyperScale Storage Pool</summary>
-        int? GeneralTotalCapacity { get; set; }
+        long? GeneralTotalCapacity { get; set; }
         /// <summary>The total free space available in the HyperScale storage pool</summary>
-        int? GeneralTotalFreeSpace { get; set; }
+        long? GeneralTotalFreeSpace { get; set; }
 
-        int? KeyProviderId { get; set; }
+        long? KeyProviderId { get; set; }
 
         string KeyProviderName { get; set; }
         /// <summary>List of disks with the Linux MediaAgent</summary>

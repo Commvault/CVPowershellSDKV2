@@ -37,7 +37,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 NODES <IIdName[]>: List of Nodes (MediaAgents) of the HyperScale Storage
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-hyperscalestorage

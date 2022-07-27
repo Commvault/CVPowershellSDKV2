@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
-            {_associatedServers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedServers"), out var __jsonAssociatedServers) ? (int?)__jsonAssociatedServers : AssociatedServers;}
+            {_associatedServers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedServers"), out var __jsonAssociatedServers) ? (long?)__jsonAssociatedServers : AssociatedServers;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             AfterFromJson(json);
         }
@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
-            AddIf( null != this._associatedServers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._associatedServers) : null, "associatedServers" ,container.Add );
+            AddIf( null != this._associatedServers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._associatedServers) : null, "associatedServers" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AfterToJson(ref container);
             return container;

@@ -39,30 +39,30 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 ACCESSNODE <IIdName[]>: .
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 
 APPLICATIONVALIDATION <IVMAppValidation>: vmAppValidation
-  [CopyId <Int32?>]: 
+  [CopyId <Int64?>]: 
   [CopyName <String>]: 
   [CredentialsName <String>]: username to access the network path
   [CredentialsPassword <String>]: password to access the network path
   [KeepValidatedVMSRunning <Boolean?>]: If true then validated VMs will be available until expiration time set on the recovery target
-  [MaximumNoOfThreads <Int32?>]: Number of backup Validation Threads
+  [MaximumNoOfThreads <Int64?>]: Number of backup Validation Threads
   [RecoveryTarget <String>]: Recovery Target for Application Validation
-  [SavedCredentialsId <Int32?>]: 
+  [SavedCredentialsId <Int64?>]: 
   [SavedCredentialsName <String>]: 
   [ScheduleDescription <String>]: Description for validation schedule
-  [ScheduleId <Int32?>]: 
+  [ScheduleId <Int64?>]: 
   [ScheduleIsScheduleEnabled <Boolean?>]: True if application validation schedule is enabled
-  [ScheduleTaskId <Int32?>]: Job Id for the application validation task. 0 if schedule is disabled
+  [ScheduleTaskId <Int64?>]: Job Id for the application validation task. 0 if schedule is disabled
   [UnixArguments <String>]: Arguments for the script
   [UnixIsDisabled <Boolean?>]: Is the script disabled
   [UnixIsUnc <Boolean?>]: True if the script is a UNC script, False if it is a local script
   [UnixPath <String>]: Path for the validation script
   [UnixUncCredentialsName <String>]: username to access the network path
   [UnixUncCredentialsPassword <String>]: password to access the network path
-  [UnixUncSavedCredentialsId <Int32?>]: 
+  [UnixUncSavedCredentialsId <Int64?>]: 
   [UnixUncSavedCredentialsName <String>]: 
   [UseSourceVMEsxToMount <Boolean?>]: Use Source VM ESX To Mount
   [ValidateVMBackups <Boolean?>]: True if VM Backup validation is enabled
@@ -72,7 +72,7 @@ APPLICATIONVALIDATION <IVMAppValidation>: vmAppValidation
   [WindowPath <String>]: Path for the validation script
   [WindowsUncCredentialsName <String>]: username to access the network path
   [WindowsUncCredentialsPassword <String>]: password to access the network path
-  [WindowsUncSavedCredentialsId <Int32?>]: 
+  [WindowsUncSavedCredentialsId <Int64?>]: 
   [WindowsUncSavedCredentialsName <String>]: 
 
 CONTENTRULEGROUPS <IRuleGroupContent[]>: .
@@ -112,69 +112,69 @@ FILTERVIRTUALMACHINES <IVirtualMachinecontent[]>: .
   [Type <String>]: 
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
-  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
-  [AgentId <Int32?>]: Id of the agent to be modified
-  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
-  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
-  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
-  [BucketId <Int32?>]: Id of Bucket
-  [CloudStorageId <Int32?>]: Id of cloud Storage
-  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [AccessPathId <Int64?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int64?>]: Id of the agent to be modified
+  [BackupDestinationId <Int64?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int64?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int64?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int64?>]: Id of Bucket
+  [CloudStorageId <Int64?>]: Id of cloud Storage
+  [CompanyId <Int64?>]: Id of the Company whose details have to be fetched
   [CredentialName <String>]: 
-  [DomainId <Int32?>]: ID of the AD/LDAP domain
-  [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <Int32?>]: Type of the entity
+  [DomainId <Int64?>]: ID of the AD/LDAP domain
+  [EntityId <Int64?>]: Unique id for the entity
+  [EntityType <Int64?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
-  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
-  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the Hypervisor to update
-  [Id <Int32?>]: 
-  [InstanceId <Int32?>]: Id of the instance to modify
+  [HfsShareId <Int64?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int64?>]: Id of hyperscale storage
+  [HypervisorId <Int64?>]: Id of the Hypervisor to update
+  [Id <Int64?>]: 
+  [InstanceId <Int64?>]: Id of the instance to modify
   [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
-  [KmsId <Int32?>]: Id of Key Management Server
-  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
-  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [KmsId <Int64?>]: Id of Key Management Server
+  [MediaAgentId <Int64?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int64?>]: Id of metadata cache
   [Name <String>]: 
-  [NodeId <Int32?>]: Id of node
-  [PairId <Int32?>]: 
-  [PlanId <Int32?>]: Id of the plan to fetch details
-  [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <Int32?>]: 
+  [NodeId <Int64?>]: Id of node
+  [PairId <Int64?>]: 
+  [PlanId <Int64?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int64?>]: id of recovery target
+  [RegionId <Int64?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
-  [RequestId <Int32?>]: Unique identifier for the request
-  [RoleId <Int32?>]: Role Id
+  [RequestId <Int64?>]: Unique identifier for the request
+  [RoleId <Int64?>]: Role Id
   [RpsId <String>]: 
-  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [RuleId <Int64?>]: Id of the rule to update in Plan
   [ScheduleId <String>]: 
   [SchedulePolicyId <String>]: 
-  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
-  [ServerId <Int32?>]: Id of the server to modify
-  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
-  [SubclientId <Int32?>]: Id of the subclient to modify
+  [ServerGroupId <Int64?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int64?>]: Id of the server to modify
+  [StoragePoolId <Int64?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int64?>]: Id of the subclient to modify
   [TopologyId <String>]: 
-  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
-  [UserId <Int32?>]: Id of the User whose details have to be fetched
-  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [UserGroupId <Int64?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int64?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int64?>]: Id of the VMgroup to update
   [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
 
 SECURITYASSOCIATIONS <ISecurityAssoc[]>: .
-  [ExternalUserGroupId <Int32?>]: User Group Id
+  [ExternalUserGroupId <Int64?>]: User Group Id
   [ExternalUserGroupName <String>]: External Group Name
-  [ExternalUserGroupProviderId <Int32?>]: Provider id
+  [ExternalUserGroupProviderId <Int64?>]: Provider id
   [ExternalUserGroupProviderName <String>]: Provider Name
   [IsCreatorAssociation <Boolean?>]: 
   [PermissionList <IPermissionResp[]>]: 
-    [CategoryId <Int32?>]: 
+    [CategoryId <Int64?>]: 
     [CategoryName <String>]: 
-    [PermissionId <Int32?>]: 
+    [PermissionId <Int64?>]: 
     [PermissionName <String>]: 
     [Type <String>]: Returns the type of association.
-  [RoleId <Int32?>]: 
+  [RoleId <Int64?>]: 
   [RoleName <String>]: 
-  [UserGroupId <Int32?>]: 
+  [UserGroupId <Int64?>]: 
   [UserGroupName <String>]: 
-  [UserId <Int32?>]: 
+  [UserId <Int64?>]: 
   [UserName <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-vmgroup
@@ -185,7 +185,7 @@ function Set-VMGroup {
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.Int32]
+    [System.Int64]
     # Id of the VMgroup to update
     ${VMGroupId},
 
@@ -236,7 +236,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${BackupActivityControlOptionsTimeZoneId},
 
@@ -280,7 +280,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${CrossAccountCopyDestinationClientId},
 
@@ -331,7 +331,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${PlanId},
 
@@ -355,7 +355,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${RestoreActivityControlOptionsTimeZoneId},
 
@@ -367,7 +367,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${SavedCredentialsId},
 
@@ -418,7 +418,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # precentage of datastore free space check value
     ${SettingDatastoreFreespaceRequired},
 
@@ -430,13 +430,13 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # Start Time for the VM Group Job
     ${SettingJobStartTime},
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # Number of readers for backup
     ${SettingNoOfReaders},
 
@@ -467,7 +467,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${SnapEngineId},
 
@@ -479,7 +479,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${SnapMountProxyId},
 
@@ -545,7 +545,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${StorageId},
 

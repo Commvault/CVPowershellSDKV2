@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="DomainId" /> property.</summary>
-        private int _domainId;
+        private long _domainId;
 
         /// <summary>ID of the AD/LDAP domain</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "ID of the AD/LDAP domain")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"ID of the AD/LDAP domain",
         SerializedName = @"domainId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int DomainId { get => this._domainId; set => this._domainId = value; }
+        public long DomainId { get => this._domainId; set => this._domainId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]

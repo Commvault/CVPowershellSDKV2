@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long)__jsonId : Id;}
             {_serialNumber = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serialNumber"), out var __jsonSerialNumber) ? (string)__jsonSerialNumber : (string)SerialNumber;}
             {_laptopName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("laptopName"), out var __jsonLaptopName) ? (string)__jsonLaptopName : (string)LaptopName;}
             {_host = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("host"), out var __jsonHost) ? (string)__jsonHost : (string)Host;}

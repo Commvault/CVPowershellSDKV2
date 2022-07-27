@@ -79,7 +79,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._authType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._authType.ToString()) : null, "authType" ,container.Add );
-            AddIf( null != this._expirationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._expirationTime) : null, "expirationTime" ,container.Add );
+            AddIf( null != this._expirationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._expirationTime) : null, "expirationTime" ,container.Add );
             AddIf( null != this._passKeyRequiredForRestore ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._passKeyRequiredForRestore) : null, "passKeyRequiredForRestore" ,container.Add );
             AddIf( null != this._enableAuthorizeForRestore ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableAuthorizeForRestore) : null, "enableAuthorizeForRestore" ,container.Add );
             AfterToJson(ref container);
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_authType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("authType"), out var __jsonAuthType) ? (string)__jsonAuthType : (string)AuthType;}
-            {_expirationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationTime"), out var __jsonExpirationTime) ? (int?)__jsonExpirationTime : ExpirationTime;}
+            {_expirationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationTime"), out var __jsonExpirationTime) ? (long?)__jsonExpirationTime : ExpirationTime;}
             {_passKeyRequiredForRestore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("passKeyRequiredForRestore"), out var __jsonPassKeyRequiredForRestore) ? (bool?)__jsonPassKeyRequiredForRestore : PassKeyRequiredForRestore;}
             {_enableAuthorizeForRestore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableAuthorizeForRestore"), out var __jsonEnableAuthorizeForRestore) ? (bool?)__jsonEnableAuthorizeForRestore : EnableAuthorizeForRestore;}
             AfterFromJson(json);

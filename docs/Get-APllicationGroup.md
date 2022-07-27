@@ -13,7 +13,7 @@ Get the details of all applicationGroups
 ## SYNTAX
 
 ```
-Get-APllicationGroup [-ClusterId <Int32>] [<CommonParameters>]
+Get-APllicationGroup [-ClusterId <Int64>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ PS C:\> {{ Add code here }}
 Id of the hypervisor to list application groups
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

@@ -65,12 +65,12 @@ namespace Commvault.Powershell.Models
             {_emailSettings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("emailSettings"), out var __jsonEmailSettings) ? Commvault.Powershell.Models.EmailSettings.FromJson(__jsonEmailSettings) : EmailSettings;}
             {_sites = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("sites"), out var __jsonSites) ? Commvault.Powershell.Models.Sites.FromJson(__jsonSites) : Sites;}
             {_fileExceptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("fileExceptions"), out var __jsonFileExceptions) ? Commvault.Powershell.Models.FileExceptions.FromJson(__jsonFileExceptions) : FileExceptions;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
-            {_creationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("creationTime"), out var __jsonCreationTime) ? (int?)__jsonCreationTime : CreationTime;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
+            {_creationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("creationTime"), out var __jsonCreationTime) ? (long?)__jsonCreationTime : CreationTime;}
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("security"), out var __jsonSecurity) ? If( __jsonSecurity as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ISecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ISecurityAssoc) (Commvault.Powershell.Models.SecurityAssoc.FromJson(__u) )) ))() : null : Security;}
             {_contacts = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("contacts"), out var __jsonContacts) ? If( __jsonContacts as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IContactResp[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IContactResp) (Commvault.Powershell.Models.ContactResp.FromJson(__p) )) ))() : null : Contacts;}
             {_plans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("plans"), out var __jsonPlans) ? If( __jsonPlans as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : Plans;}
-            {_operatorsOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("operatorsOperationType"), out var __jsonOperatorsOperationType) ? (int?)__jsonOperatorsOperationType : OperatorsOperationType;}
+            {_operatorsOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("operatorsOperationType"), out var __jsonOperatorsOperationType) ? (long?)__jsonOperatorsOperationType : OperatorsOperationType;}
             {_tenantOperators = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tenantOperators"), out var __jsonTenantOperators) ? If( __jsonTenantOperators as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<Commvault.Powershell.Models.ITenantOperator[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(Commvault.Powershell.Models.ITenantOperator) (Commvault.Powershell.Models.TenantOperator.FromJson(__f) )) ))() : null : TenantOperators;}
             AfterFromJson(json);
         }
@@ -108,8 +108,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._emailSettings ? (Commvault.Powershell.Runtime.Json.JsonNode) this._emailSettings.ToJson(null,serializationMode) : null, "emailSettings" ,container.Add );
             AddIf( null != this._sites ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sites.ToJson(null,serializationMode) : null, "sites" ,container.Add );
             AddIf( null != this._fileExceptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._fileExceptions.ToJson(null,serializationMode) : null, "fileExceptions" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
-            AddIf( null != this._creationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._creationTime) : null, "creationTime" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._creationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._creationTime) : null, "creationTime" ,container.Add );
             if (null != this._security)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -137,7 +137,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("plans",__m);
             }
-            AddIf( null != this._operatorsOperationType ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._operatorsOperationType) : null, "operatorsOperationType" ,container.Add );
+            AddIf( null != this._operatorsOperationType ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._operatorsOperationType) : null, "operatorsOperationType" ,container.Add );
             if (null != this._tenantOperators)
             {
                 var __h = new Commvault.Powershell.Runtime.Json.XNodeArray();

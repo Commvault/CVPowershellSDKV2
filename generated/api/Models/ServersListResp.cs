@@ -18,10 +18,10 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IServerSummary[] Servers { get => this._servers; set => this._servers = value; }
 
         /// <summary>Backing field for <see cref="TotalServers" /> property.</summary>
-        private int? _totalServers;
+        private long? _totalServers;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TotalServers { get => this._totalServers; set => this._totalServers = value; }
+        public long? TotalServers { get => this._totalServers; set => this._totalServers = value; }
 
         /// <summary>Creates an new <see cref="ServersListResp" /> instance.</summary>
         public ServersListResp()
@@ -46,8 +46,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"totalServers",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TotalServers { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TotalServers { get; set; }
 
     }
     /// Response for servers listing API
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IServerSummary[] Servers { get; set; }
 
-        int? TotalServers { get; set; }
+        long? TotalServers { get; set; }
 
     }
 }

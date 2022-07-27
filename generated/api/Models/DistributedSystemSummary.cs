@@ -19,11 +19,11 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IDistributedSystemComponent[] Components { get => this._components; set => this._components = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>This gives the id of the distributed system.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -56,8 +56,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This gives the id of the distributed system.",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>This give the name of the distributed system.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Provides a list of components of a distributed system.</summary>
         Commvault.Powershell.Models.IDistributedSystemComponent[] Components { get; set; }
         /// <summary>This gives the id of the distributed system.</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>This give the name of the distributed system.</summary>
         string Name { get; set; }
 

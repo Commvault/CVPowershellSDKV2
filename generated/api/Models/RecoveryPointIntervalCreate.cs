@@ -15,23 +15,23 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ApplicationConsistentRpInterval" /> property.</summary>
-        private int? _applicationConsistentRpInterval;
+        private long? _applicationConsistentRpInterval;
 
         /// <summary>
         /// Time(in seconds) after which the source VMs are quiesced to create application-consistent recovery points for destination
         /// VMs. Applicable only for Point in time recovery.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationConsistentRpInterval { get => this._applicationConsistentRpInterval; set => this._applicationConsistentRpInterval = value; }
+        public long? ApplicationConsistentRpInterval { get => this._applicationConsistentRpInterval; set => this._applicationConsistentRpInterval = value; }
 
         /// <summary>Backing field for <see cref="CrashConsistentRpInterval" /> property.</summary>
-        private int? _crashConsistentRpInterval;
+        private long? _crashConsistentRpInterval;
 
         /// <summary>
         /// Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CrashConsistentRpInterval { get => this._crashConsistentRpInterval; set => this._crashConsistentRpInterval = value; }
+        public long? CrashConsistentRpInterval { get => this._crashConsistentRpInterval; set => this._crashConsistentRpInterval = value; }
 
         /// <summary>Creates an new <see cref="RecoveryPointIntervalCreate" /> instance.</summary>
         public RecoveryPointIntervalCreate()
@@ -53,8 +53,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time(in seconds) after which the source VMs are quiesced to create application-consistent recovery points for destination VMs. Applicable only for Point in time recovery.",
         SerializedName = @"applicationConsistentRpInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationConsistentRpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationConsistentRpInterval { get; set; }
         /// <summary>
         /// Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.
         /// </summary>
@@ -63,8 +63,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.",
         SerializedName = @"crashConsistentRpInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CrashConsistentRpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CrashConsistentRpInterval { get; set; }
 
     }
     /// Recovery point interval inputs for continuous replication group. Provide atleast one of crash consistent and application
@@ -76,11 +76,11 @@ namespace Commvault.Powershell.Models
         /// Time(in seconds) after which the source VMs are quiesced to create application-consistent recovery points for destination
         /// VMs. Applicable only for Point in time recovery.
         /// </summary>
-        int? ApplicationConsistentRpInterval { get; set; }
+        long? ApplicationConsistentRpInterval { get; set; }
         /// <summary>
         /// Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.
         /// </summary>
-        int? CrashConsistentRpInterval { get; set; }
+        long? CrashConsistentRpInterval { get; set; }
 
     }
 }

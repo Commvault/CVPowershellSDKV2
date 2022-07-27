@@ -70,9 +70,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_count = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("count"), out var __jsonCount) ? (int?)__jsonCount : Count;}
+            {_count = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("count"), out var __jsonCount) ? (long?)__jsonCount : Count;}
             AfterFromJson(json);
         }
 
@@ -95,9 +95,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
-            AddIf( null != this._count ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._count) : null, "count" ,container.Add );
+            AddIf( null != this._count ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._count) : null, "count" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

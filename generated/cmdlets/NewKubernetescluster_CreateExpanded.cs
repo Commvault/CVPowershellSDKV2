@@ -57,8 +57,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int CredentialsId { get => Body.CredentialsId ?? default(int); set => Body.CredentialsId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long CredentialsId { get => Body.CredentialsId ?? default(long); set => Body.CredentialsId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = ".")]

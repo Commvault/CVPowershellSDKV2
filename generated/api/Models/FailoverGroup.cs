@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -25,11 +25,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="NumberOfVirtualMachines" /> property.</summary>
-        private int? _numberOfVirtualMachines;
+        private long? _numberOfVirtualMachines;
 
         /// <summary>number of virtual machines</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? NumberOfVirtualMachines { get => this._numberOfVirtualMachines; set => this._numberOfVirtualMachines = value; }
+        public long? NumberOfVirtualMachines { get => this._numberOfVirtualMachines; set => this._numberOfVirtualMachines = value; }
 
         /// <summary>Backing field for <see cref="Source" /> property.</summary>
         private string _source;
@@ -53,8 +53,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Failover group name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -69,8 +69,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"number of virtual machines",
         SerializedName = @"numberOfVirtualMachines",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NumberOfVirtualMachines { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NumberOfVirtualMachines { get; set; }
         /// <summary>Failover group source name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -85,11 +85,11 @@ namespace Commvault.Powershell.Models
     internal partial interface IFailoverGroupInternal
 
     {
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Failover group name</summary>
         string Name { get; set; }
         /// <summary>number of virtual machines</summary>
-        int? NumberOfVirtualMachines { get; set; }
+        long? NumberOfVirtualMachines { get; set; }
         /// <summary>Failover group source name</summary>
         string Source { get; set; }
 

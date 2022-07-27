@@ -63,15 +63,15 @@ namespace Commvault.Powershell.Models
             }
             {_client = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("client"), out var __jsonClient) ? Commvault.Powershell.Models.IdName.FromJson(__jsonClient) : Client;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_severity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("severity"), out var __jsonSeverity) ? (string)__jsonSeverity : (string)Severity;}
             {_detectedCriterion = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("detectedCriterion"), out var __jsonDetectedCriterion) ? (string)__jsonDetectedCriterion : (string)DetectedCriterion;}
             {_info = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("info"), out var __jsonInfo) ? (string)__jsonInfo : (string)Info;}
             {_notes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("notes"), out var __jsonNotes) ? (string)__jsonNotes : (string)Notes;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
-            {_detectedTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("detectedTime"), out var __jsonDetectedTime) ? (int?)__jsonDetectedTime : DetectedTime;}
+            {_detectedTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("detectedTime"), out var __jsonDetectedTime) ? (long?)__jsonDetectedTime : DetectedTime;}
             {_readStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("readStatus"), out var __jsonReadStatus) ? (bool?)__jsonReadStatus : ReadStatus;}
-            {_jobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobId"), out var __jsonJobId) ? (int?)__jsonJobId : JobId;}
+            {_jobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobId"), out var __jsonJobId) ? (long?)__jsonJobId : JobId;}
             AfterFromJson(json);
         }
 
@@ -106,15 +106,15 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._client ? (Commvault.Powershell.Runtime.Json.JsonNode) this._client.ToJson(null,serializationMode) : null, "client" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._severity)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._severity.ToString()) : null, "severity" ,container.Add );
             AddIf( null != (((object)this._detectedCriterion)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._detectedCriterion.ToString()) : null, "detectedCriterion" ,container.Add );
             AddIf( null != (((object)this._info)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._info.ToString()) : null, "info" ,container.Add );
             AddIf( null != (((object)this._notes)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._notes.ToString()) : null, "notes" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
-            AddIf( null != this._detectedTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._detectedTime) : null, "detectedTime" ,container.Add );
+            AddIf( null != this._detectedTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._detectedTime) : null, "detectedTime" ,container.Add );
             AddIf( null != this._readStatus ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._readStatus) : null, "readStatus" ,container.Add );
-            AddIf( null != this._jobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._jobId) : null, "jobId" ,container.Add );
+            AddIf( null != this._jobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._jobId) : null, "jobId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

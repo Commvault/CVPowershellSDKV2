@@ -17,13 +17,13 @@ namespace Commvault.Powershell.Models
         public bool? IsInfiniteRetention { get => this._isInfiniteRetention; set => this._isInfiniteRetention = value; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
-        private int? _retentionPeriodDays;
+        private long? _retentionPeriodDays;
 
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
+        public long? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
 
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
@@ -55,8 +55,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -74,7 +74,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
-        int? RetentionPeriodDays { get; set; }
+        long? RetentionPeriodDays { get; set; }
 
         string Type { get; set; }
 

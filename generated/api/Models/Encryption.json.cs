@@ -63,7 +63,7 @@ namespace Commvault.Powershell.Models
             }
             {_keyProvider = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("keyProvider"), out var __jsonKeyProvider) ? Commvault.Powershell.Models.IdName.FromJson(__jsonKeyProvider) : KeyProvider;}
             {_encrypt = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("encrypt"), out var __jsonEncrypt) ? (bool?)__jsonEncrypt : Encrypt;}
-            {_keyLength = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("keyLength"), out var __jsonKeyLength) ? (int?)__jsonKeyLength : KeyLength;}
+            {_keyLength = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("keyLength"), out var __jsonKeyLength) ? (long?)__jsonKeyLength : KeyLength;}
             {_cipher = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("cipher"), out var __jsonCipher) ? (string)__jsonCipher : (string)Cipher;}
             AfterFromJson(json);
         }
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._keyProvider ? (Commvault.Powershell.Runtime.Json.JsonNode) this._keyProvider.ToJson(null,serializationMode) : null, "keyProvider" ,container.Add );
             AddIf( null != this._encrypt ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._encrypt) : null, "encrypt" ,container.Add );
-            AddIf( null != this._keyLength ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._keyLength) : null, "keyLength" ,container.Add );
+            AddIf( null != this._keyLength ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._keyLength) : null, "keyLength" ,container.Add );
             AddIf( null != (((object)this._cipher)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._cipher.ToString()) : null, "cipher" ,container.Add );
             AfterToJson(ref container);
             return container;

@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="UserGroupId" /> property.</summary>
-        private int? _userGroupId;
+        private long? _userGroupId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? UserGroupId { get => this._userGroupId; set => this._userGroupId = value; }
+        public long? UserGroupId { get => this._userGroupId; set => this._userGroupId = value; }
 
         /// <summary>Backing field for <see cref="UserGroupName" /> property.</summary>
         private string _userGroupName;
@@ -24,10 +24,10 @@ namespace Commvault.Powershell.Models
         public string UserGroupName { get => this._userGroupName; set => this._userGroupName = value; }
 
         /// <summary>Backing field for <see cref="UserId" /> property.</summary>
-        private int? _userId;
+        private long? _userId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? UserId { get => this._userId; set => this._userId = value; }
+        public long? UserId { get => this._userId; set => this._userId = value; }
 
         /// <summary>Backing field for <see cref="UserName" /> property.</summary>
         private string _userName;
@@ -50,8 +50,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"userGroupId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -66,8 +66,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"userId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -82,11 +82,11 @@ namespace Commvault.Powershell.Models
     internal partial interface ISecurityOwnersAssocInternal
 
     {
-        int? UserGroupId { get; set; }
+        long? UserGroupId { get; set; }
 
         string UserGroupName { get; set; }
 
-        int? UserId { get; set; }
+        long? UserId { get; set; }
 
         string UserName { get; set; }
 

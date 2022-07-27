@@ -19,11 +19,11 @@ namespace Commvault.Powershell.Models
         public string DisplayName { get => this._displayName; set => this._displayName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Region Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Latitude" /> property.</summary>
         private string _latitude;
@@ -70,8 +70,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Region Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Geolocation Latitude</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Display Name of Region</summary>
         string DisplayName { get; set; }
         /// <summary>Region Id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Geolocation Latitude</summary>
         string Latitude { get; set; }
         /// <summary>Geolocation Longitude</summary>

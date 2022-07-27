@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount = (int?) content.GetValueForProperty("ServersCount",((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount = (long?) content.GetValueForProperty("ServersCount",((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).Servers = (Commvault.Powershell.Models.IRegionAssociatedServersList[]) content.GetValueForProperty("Servers",((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).Servers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IRegionAssociatedServersList>(__y, Commvault.Powershell.Models.RegionAssociatedServersListTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount = (int?) content.GetValueForProperty("ServersCount",((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount = (long?) content.GetValueForProperty("ServersCount",((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).ServersCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).Servers = (Commvault.Powershell.Models.IRegionAssociatedServersList[]) content.GetValueForProperty("Servers",((Commvault.Powershell.Models.IRegionAssociatedServersInternal)this).Servers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IRegionAssociatedServersList>(__y, Commvault.Powershell.Models.RegionAssociatedServersListTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

@@ -90,7 +90,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).ClusterUrl = (string) content.GetValueForProperty("ClusterUrl",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).ClusterUrl, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Username = (string) content.GetValueForProperty("Username",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Username, global::System.Convert.ToString);
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).ClusterUrl = (string) content.GetValueForProperty("ClusterUrl",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).ClusterUrl, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Username = (string) content.GetValueForProperty("Username",((Commvault.Powershell.Models.IDistributedStorageSummaryInternal)this).Username, global::System.Convert.ToString);

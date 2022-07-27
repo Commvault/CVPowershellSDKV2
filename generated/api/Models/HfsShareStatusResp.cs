@@ -14,10 +14,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="StatusCode" /> property.</summary>
-        private int? _statusCode;
+        private long? _statusCode;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? StatusCode { get => this._statusCode; set => this._statusCode = value; }
+        public long? StatusCode { get => this._statusCode; set => this._statusCode = value; }
 
         /// <summary>Backing field for <see cref="StatusMessage" /> property.</summary>
         private string _statusMessage;
@@ -41,8 +41,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"statusCode",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StatusCode { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StatusCode { get; set; }
         /// <summary>Status message telling information about HFS status</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -57,7 +57,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IHfsShareStatusRespInternal
 
     {
-        int? StatusCode { get; set; }
+        long? StatusCode { get; set; }
         /// <summary>Status message telling information about HFS status</summary>
         string StatusMessage { get; set; }
 

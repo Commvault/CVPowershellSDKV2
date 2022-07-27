@@ -63,9 +63,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId = (int?) content.GetValueForProperty("HypervisorId",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode = (int?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId = (long?) content.GetValueForProperty("HypervisorId",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode = (long?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningMessage, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
@@ -85,9 +85,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId = (int?) content.GetValueForProperty("HypervisorId",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode = (int?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId = (long?) content.GetValueForProperty("HypervisorId",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).HypervisorId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode = (long?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateHypervisorRespInternal)this).WarningMessage, global::System.Convert.ToString);
             AfterDeserializePSObject(content);

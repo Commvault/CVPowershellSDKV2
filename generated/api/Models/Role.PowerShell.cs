@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRoleInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRoleInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRoleInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRoleInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRoleInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRoleInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRoleInternal)this).Permissions = (Commvault.Powershell.Models.IPermissions[]) content.GetValueForProperty("Permissions",((Commvault.Powershell.Models.IRoleInternal)this).Permissions, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPermissions>(__y, Commvault.Powershell.Models.PermissionsTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IRoleInternal)this).VisibleToAll = (bool?) content.GetValueForProperty("VisibleToAll",((Commvault.Powershell.Models.IRoleInternal)this).VisibleToAll, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRoleInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRoleInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRoleInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRoleInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRoleInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRoleInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRoleInternal)this).Permissions = (Commvault.Powershell.Models.IPermissions[]) content.GetValueForProperty("Permissions",((Commvault.Powershell.Models.IRoleInternal)this).Permissions, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPermissions>(__y, Commvault.Powershell.Models.PermissionsTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IRoleInternal)this).VisibleToAll = (bool?) content.GetValueForProperty("VisibleToAll",((Commvault.Powershell.Models.IRoleInternal)this).VisibleToAll, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));

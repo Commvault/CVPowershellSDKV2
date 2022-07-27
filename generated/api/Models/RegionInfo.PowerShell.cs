@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRegionInfoInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionInfoInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionInfoInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRegionInfoInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRegionInfoInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionInfoInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IRegionInfoInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionInfoInternal)this).Latitude = (string) content.GetValueForProperty("Latitude",((Commvault.Powershell.Models.IRegionInfoInternal)this).Latitude, global::System.Convert.ToString);
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRegionInfoInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionInfoInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionInfoInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRegionInfoInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRegionInfoInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionInfoInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IRegionInfoInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionInfoInternal)this).Latitude = (string) content.GetValueForProperty("Latitude",((Commvault.Powershell.Models.IRegionInfoInternal)this).Latitude, global::System.Convert.ToString);

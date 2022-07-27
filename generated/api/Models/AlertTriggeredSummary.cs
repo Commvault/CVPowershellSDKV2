@@ -18,7 +18,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Client { get => (this._client = this._client ?? new Commvault.Powershell.Models.IdName()); set => this._client = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id = value ?? default(int); }
+        public long? ClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Name = value ?? null; }
@@ -37,7 +37,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -50,18 +50,18 @@ namespace Commvault.Powershell.Models
         public string DetectedCriterion { get => this._detectedCriterion; set => this._detectedCriterion = value; }
 
         /// <summary>Backing field for <see cref="DetectedTime" /> property.</summary>
-        private int? _detectedTime;
+        private long? _detectedTime;
 
         /// <summary>Unix Epoch Time</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DetectedTime { get => this._detectedTime; set => this._detectedTime = value; }
+        public long? DetectedTime { get => this._detectedTime; set => this._detectedTime = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Triggered Alert Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Info" /> property.</summary>
         private string _info;
@@ -71,11 +71,11 @@ namespace Commvault.Powershell.Models
         public string Info { get => this._info; set => this._info = value; }
 
         /// <summary>Backing field for <see cref="JobId" /> property.</summary>
-        private int? _jobId;
+        private long? _jobId;
 
         /// <summary>Job Id by which this Alert was Triggered</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? JobId { get => this._jobId; set => this._jobId = value; }
+        public long? JobId { get => this._jobId; set => this._jobId = value; }
 
         /// <summary>Backing field for <see cref="Notes" /> property.</summary>
         private string _notes;
@@ -120,8 +120,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -136,8 +136,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -160,16 +160,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Unix Epoch Time",
         SerializedName = @"detectedTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DetectedTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DetectedTime { get; set; }
         /// <summary>Triggered Alert Id</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Triggered Alert Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Name of the Alert Triggered</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -184,8 +184,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Job Id by which this Alert was Triggered",
         SerializedName = @"jobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? JobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? JobId { get; set; }
         /// <summary>contains any descriptive note written for the alert</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -226,25 +226,25 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Client { get; set; }
 
-        int? ClientId { get; set; }
+        long? ClientId { get; set; }
 
         string ClientName { get; set; }
         /// <summary>Organization corresponding to alert</summary>
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>detection criteria for the triggered alert to be generated</summary>
         string DetectedCriterion { get; set; }
         /// <summary>Unix Epoch Time</summary>
-        int? DetectedTime { get; set; }
+        long? DetectedTime { get; set; }
         /// <summary>Triggered Alert Id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Name of the Alert Triggered</summary>
         string Info { get; set; }
         /// <summary>Job Id by which this Alert was Triggered</summary>
-        int? JobId { get; set; }
+        long? JobId { get; set; }
         /// <summary>contains any descriptive note written for the alert</summary>
         string Notes { get; set; }
         /// <summary>Gives the Alert Read Status. True if Read and False if Unread</summary>

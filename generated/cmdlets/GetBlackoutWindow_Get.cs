@@ -47,7 +47,7 @@ namespace Commvault.Powershell.Cmdlets
         public string CommcellId { get => this._commcellId; set => this._commcellId = value; }
 
         /// <summary>Backing field for <see cref="CompanyId" /> property.</summary>
-        private int _companyId;
+        private long _companyId;
 
         /// <summary>Shows blackout windows associated with the company whose id has been provided.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Shows blackout windows associated with the company whose id has been provided.")]
@@ -56,9 +56,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Shows blackout windows associated with the company whose id has been provided.",
         SerializedName = @"companyId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int CompanyId { get => this._companyId; set => this._companyId = value; }
+        public long CompanyId { get => this._companyId; set => this._companyId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -301,12 +301,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetBlackoutWindows(this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyCommcellLevel") ? ShowOnlyCommcellLevel : default(global::System.Management.Automation.SwitchParameter?), this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(int?), this.InvocationInformation.BoundParameters.ContainsKey("ServerGroupId") ? ServerGroupId : null, this.InvocationInformation.BoundParameters.ContainsKey("CommcellId") ? CommcellId : null, onOk, onNotFound, this, Pipeline);
+                    await this.Client.GetBlackoutWindows(this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyCommcellLevel") ? ShowOnlyCommcellLevel : default(global::System.Management.Automation.SwitchParameter?), this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(long?), this.InvocationInformation.BoundParameters.ContainsKey("ServerGroupId") ? ServerGroupId : null, this.InvocationInformation.BoundParameters.ContainsKey("CommcellId") ? CommcellId : null, onOk, onNotFound, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ShowOnlyCommcellLevel=this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyCommcellLevel") ? ShowOnlyCommcellLevel : default(global::System.Management.Automation.SwitchParameter?),CompanyId=this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(int?),ServerGroupId=this.InvocationInformation.BoundParameters.ContainsKey("ServerGroupId") ? ServerGroupId : null,CommcellId=this.InvocationInformation.BoundParameters.ContainsKey("CommcellId") ? CommcellId : null})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ShowOnlyCommcellLevel=this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyCommcellLevel") ? ShowOnlyCommcellLevel : default(global::System.Management.Automation.SwitchParameter?),CompanyId=this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(long?),ServerGroupId=this.InvocationInformation.BoundParameters.ContainsKey("ServerGroupId") ? ServerGroupId : null,CommcellId=this.InvocationInformation.BoundParameters.ContainsKey("CommcellId") ? CommcellId : null})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

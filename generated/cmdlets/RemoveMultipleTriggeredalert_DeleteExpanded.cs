@@ -33,8 +33,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"alertId",
-        PossibleTypes = new [] { typeof(int) })]
-        public int[] AlertId { get => Body.AlertId ?? null /* arrayOf */; set => Body.AlertId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long[] AlertId { get => Body.AlertId ?? null /* arrayOf */; set => Body.AlertId = value; }
 
         /// <summary>Backing field for <see cref="Body" /> property.</summary>
         private Commvault.Powershell.Models.IAlertIds _body= new Commvault.Powershell.Models.AlertIds();

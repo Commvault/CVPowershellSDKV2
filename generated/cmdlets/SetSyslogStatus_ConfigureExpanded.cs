@@ -149,8 +149,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"The port on which the syslog server accepts the logs.",
         SerializedName = @"port",
-        PossibleTypes = new [] { typeof(int) })]
-        public int Port { get => Body.Port ?? default(int); set => Body.Port = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long Port { get => Body.Port ?? default(long); set => Body.Port = value; }
 
         /// <summary>The URI for the proxy server to use</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "The URI for the proxy server to use")]

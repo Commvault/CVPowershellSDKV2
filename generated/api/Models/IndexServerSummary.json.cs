@@ -71,11 +71,11 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
             {_oS = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("OS"), out var __jsonOS) ? (string)__jsonOS : (string)OS;}
-            {_cloudId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("cloudId"), out var __jsonCloudId) ? (int?)__jsonCloudId : CloudId;}
+            {_cloudId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("cloudId"), out var __jsonCloudId) ? (long?)__jsonCloudId : CloudId;}
             AfterFromJson(json);
         }
 
@@ -98,11 +98,11 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._displayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayName.ToString()) : null, "displayName" ,container.Add );
             AddIf( null != (((object)this._oS)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oS.ToString()) : null, "OS" ,container.Add );
-            AddIf( null != this._cloudId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._cloudId) : null, "cloudId" ,container.Add );
+            AddIf( null != this._cloudId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._cloudId) : null, "cloudId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

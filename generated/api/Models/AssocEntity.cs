@@ -18,10 +18,10 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IAssocEntityInternal.Role { get => (this._role = this._role ?? new Commvault.Powershell.Models.IdName()); set { {_role = value;} } }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -41,13 +41,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IPermissionResp PermissionList { get => (this._permissionList = this._permissionList ?? new Commvault.Powershell.Models.PermissionResp()); set => this._permissionList = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PermissionListCategoryId { get => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).CategoryId; set => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).CategoryId = value ?? default(int); }
+        public long? PermissionListCategoryId { get => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).CategoryId; set => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).CategoryId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PermissionListCategoryName { get => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).CategoryName; set => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).CategoryName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PermissionListPermissionId { get => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).PermissionId; set => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).PermissionId = value ?? default(int); }
+        public long? PermissionListPermissionId { get => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).PermissionId; set => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).PermissionId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PermissionListPermissionName { get => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).PermissionName; set => ((Commvault.Powershell.Models.IPermissionRespInternal)PermissionList).PermissionName = value ?? null; }
@@ -63,7 +63,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Role { get => (this._role = this._role ?? new Commvault.Powershell.Models.IdName()); set => this._role = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RoleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Role).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Role).Id = value ?? default(int); }
+        public long? RoleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Role).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Role).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RoleName { get => ((Commvault.Powershell.Models.IIdNameInternal)Role).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Role).Name = value ?? null; }
@@ -90,8 +90,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -106,8 +106,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"categoryId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PermissionListCategoryId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PermissionListCategoryId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -122,8 +122,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"permissionId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PermissionListPermissionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PermissionListPermissionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -146,8 +146,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RoleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RoleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -170,7 +170,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IAssocEntityInternal
 
     {
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         string Name { get; set; }
         /// <summary>
@@ -180,11 +180,11 @@ namespace Commvault.Powershell.Models
         /// </summary>
         Commvault.Powershell.Models.IPermissionResp PermissionList { get; set; }
 
-        int? PermissionListCategoryId { get; set; }
+        long? PermissionListCategoryId { get; set; }
 
         string PermissionListCategoryName { get; set; }
 
-        int? PermissionListPermissionId { get; set; }
+        long? PermissionListPermissionId { get; set; }
 
         string PermissionListPermissionName { get; set; }
         /// <summary>Returns the type of association.</summary>
@@ -192,7 +192,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Role { get; set; }
 
-        int? RoleId { get; set; }
+        long? RoleId { get; set; }
 
         string RoleName { get; set; }
         /// <summary>type of entities associated.</summary>

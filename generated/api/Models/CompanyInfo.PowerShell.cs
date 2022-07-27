@@ -64,9 +64,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanyInfoInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICompanyInfoInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId = (int?) content.GetValueForProperty("MultiCommcellId",((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId = (long?) content.GetValueForProperty("MultiCommcellId",((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -84,9 +84,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanyInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanyInfoInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICompanyInfoInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId = (int?) content.GetValueForProperty("MultiCommcellId",((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId = (long?) content.GetValueForProperty("MultiCommcellId",((Commvault.Powershell.Models.ICompanyInfoInternal)this).MultiCommcellId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

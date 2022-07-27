@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Cmdlets
         global::System.Threading.CancellationToken Commvault.Powershell.Runtime.IEventListener.Token => _cancellationTokenSource.Token;
 
         /// <summary>Backing field for <see cref="PairId" /> property.</summary>
-        private int _pairId;
+        private long _pairId;
 
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = ".")]
         [Commvault.Powershell.Runtime.Info(
@@ -64,9 +64,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"",
         SerializedName = @"pairId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int PairId { get => this._pairId; set => this._pairId = value; }
+        public long PairId { get => this._pairId; set => this._pairId = value; }
 
         /// <summary>
         /// The instance of the <see cref="Commvault.Powershell.Runtime.HttpPipeline" /> that the remote call will use.

@@ -80,7 +80,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._vMGroup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._vMGroup.ToJson(null,serializationMode) : null, "vmGroup" ,container.Add );
             AddIf( null != this._vMList ? (Commvault.Powershell.Runtime.Json.JsonNode) this._vMList.ToJson(null,serializationMode) : null, "vmList" ,container.Add );
-            AddIf( null != this._protectedVMCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._protectedVMCount) : null, "ProtectedVMCount" ,container.Add );
+            AddIf( null != this._protectedVMCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._protectedVMCount) : null, "ProtectedVMCount" ,container.Add );
             AddIf( null != (((object)this._managementVersion)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._managementVersion.ToString()) : null, "managementVersion" ,container.Add );
             AfterToJson(ref container);
             return container;
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
             }
             {_vMGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("vmGroup"), out var __jsonVMGroup) ? Commvault.Powershell.Models.IdName.FromJson(__jsonVMGroup) : VMGroup;}
             {_vMList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("vmList"), out var __jsonVMList) ? Commvault.Powershell.Models.VMPreviewInfo.FromJson(__jsonVMList) : VMList;}
-            {_protectedVMCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("ProtectedVMCount"), out var __jsonProtectedVMCount) ? (int?)__jsonProtectedVMCount : ProtectedVMCount;}
+            {_protectedVMCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("ProtectedVMCount"), out var __jsonProtectedVMCount) ? (long?)__jsonProtectedVMCount : ProtectedVMCount;}
             {_managementVersion = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("managementVersion"), out var __jsonManagementVersion) ? (string)__jsonManagementVersion : (string)ManagementVersion;}
             AfterFromJson(json);
         }

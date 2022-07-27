@@ -38,7 +38,7 @@ function Get-GcpSpannerInstanceList {
 param(
     [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # the google cloud hypervisor account id
     ${CloudAccountId},
 

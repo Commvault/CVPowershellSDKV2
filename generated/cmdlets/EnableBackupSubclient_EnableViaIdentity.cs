@@ -241,7 +241,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.SubclientId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.EnableBackupSubclient(InputObject.SubclientId ?? default(int), onOk, this, Pipeline);
+                    await this.Client.EnableBackupSubclient(InputObject.SubclientId ?? default(long), onOk, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

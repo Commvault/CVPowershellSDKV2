@@ -32,7 +32,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdName Credentials { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).Credentials; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).Credentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? CredentialsId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId = value; }
+        public long? CredentialsId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string CredentialsName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName = value; }
@@ -49,7 +49,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Gluster Host authtype</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GlusterHostCredentialsAuthType { get => ((Commvault.Powershell.Models.IRedHatOpenShiftGlusterInternal)GlusterHostCredentials).AuthType; set => ((Commvault.Powershell.Models.IRedHatOpenShiftGlusterInternal)GlusterHostCredentials).AuthType = value ?? default(int); }
+        public long? GlusterHostCredentialsAuthType { get => ((Commvault.Powershell.Models.IRedHatOpenShiftGlusterInternal)GlusterHostCredentials).AuthType; set => ((Commvault.Powershell.Models.IRedHatOpenShiftGlusterInternal)GlusterHostCredentials).AuthType = value ?? default(long); }
 
         /// <summary>username to access the network path</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -131,8 +131,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gluster Host authtype ",
         SerializedName = @"authType",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GlusterHostCredentialsAuthType { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GlusterHostCredentialsAuthType { get; set; }
         /// <summary>username to access the network path</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -192,7 +192,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IRedHatOpenShiftGluster GlusterHostCredentials { get; set; }
         /// <summary>Gluster Host authtype</summary>
-        int? GlusterHostCredentialsAuthType { get; set; }
+        long? GlusterHostCredentialsAuthType { get; set; }
 
         Commvault.Powershell.Models.IUserNamePassword GlusterHostCredentialsCredentials { get; set; }
         /// <summary>username to access the network path</summary>

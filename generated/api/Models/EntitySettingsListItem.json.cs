@@ -69,8 +69,8 @@ namespace Commvault.Powershell.Models
             {_isModified = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isModified"), out var __jsonIsModified) ? (bool?)__jsonIsModified : IsModified;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             {_isRestartRequired = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isRestartRequired"), out var __jsonIsRestartRequired) ? (bool?)__jsonIsRestartRequired : IsRestartRequired;}
-            {_minValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("minValue"), out var __jsonMinValue) ? (int?)__jsonMinValue : MinValue;}
-            {_maxValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maxValue"), out var __jsonMaxValue) ? (int?)__jsonMaxValue : MaxValue;}
+            {_minValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("minValue"), out var __jsonMinValue) ? (long?)__jsonMinValue : MinValue;}
+            {_maxValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maxValue"), out var __jsonMaxValue) ? (long?)__jsonMaxValue : MaxValue;}
             {_category = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("category"), out var __jsonCategory) ? (string)__jsonCategory : (string)Category;}
             AfterFromJson(json);
         }
@@ -128,8 +128,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._isModified ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isModified) : null, "isModified" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AddIf( null != this._isRestartRequired ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isRestartRequired) : null, "isRestartRequired" ,container.Add );
-            AddIf( null != this._minValue ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._minValue) : null, "minValue" ,container.Add );
-            AddIf( null != this._maxValue ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._maxValue) : null, "maxValue" ,container.Add );
+            AddIf( null != this._minValue ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._minValue) : null, "minValue" ,container.Add );
+            AddIf( null != this._maxValue ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._maxValue) : null, "maxValue" ,container.Add );
             AddIf( null != (((object)this._category)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._category.ToString()) : null, "category" ,container.Add );
             AfterToJson(ref container);
             return container;

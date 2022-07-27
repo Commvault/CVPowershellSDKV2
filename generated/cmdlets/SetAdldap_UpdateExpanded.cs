@@ -86,7 +86,7 @@ namespace Commvault.Powershell.Cmdlets
         public string DirectoryType { get => Body.DirectoryType ?? null; set => Body.DirectoryType = value; }
 
         /// <summary>Backing field for <see cref="DomainId" /> property.</summary>
-        private int _domainId;
+        private long _domainId;
 
         /// <summary>ID of the AD/LDAP domain</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "ID of the AD/LDAP domain")]
@@ -95,9 +95,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"ID of the AD/LDAP domain",
         SerializedName = @"domainId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int DomainId { get => this._domainId; set => this._domainId = value; }
+        public long DomainId { get => this._domainId; set => this._domainId = value; }
 
         /// <summary>
         /// Denotes if SSO should be enabled for the domain. Valid only for ACTIVE_DIRECTORY.

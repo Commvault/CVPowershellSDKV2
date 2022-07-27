@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="ShowOnlyInfrastructureMachines" /> property.</summary>
-        private int _showOnlyInfrastructureMachines;
+        private long _showOnlyInfrastructureMachines;
 
         /// <summary>
         /// Returns only infrastructure machines if value is 1 if 0, it returns all servers, default value is 1
@@ -88,9 +88,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Returns only infrastructure machines if value is 1 if 0, it returns all servers, default value is 1",
         SerializedName = @"showOnlyInfrastructureMachines",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int ShowOnlyInfrastructureMachines { get => this._showOnlyInfrastructureMachines; set => this._showOnlyInfrastructureMachines = value; }
+        public long ShowOnlyInfrastructureMachines { get => this._showOnlyInfrastructureMachines; set => this._showOnlyInfrastructureMachines = value; }
 
         /// <summary>
         /// <c>overrideOnOk</c> will be called before the regular onOk has been processed, allowing customization of what happens
@@ -240,12 +240,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetServers(this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyInfrastructureMachines") ? ShowOnlyInfrastructureMachines : default(int?), onOk, this, Pipeline);
+                    await this.Client.GetServers(this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyInfrastructureMachines") ? ShowOnlyInfrastructureMachines : default(long?), onOk, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ShowOnlyInfrastructureMachines=this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyInfrastructureMachines") ? ShowOnlyInfrastructureMachines : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ShowOnlyInfrastructureMachines=this.InvocationInformation.BoundParameters.ContainsKey("ShowOnlyInfrastructureMachines") ? ShowOnlyInfrastructureMachines : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

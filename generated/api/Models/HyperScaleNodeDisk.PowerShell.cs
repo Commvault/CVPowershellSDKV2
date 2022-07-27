@@ -93,10 +93,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Mountpath = (string) content.GetValueForProperty("Mountpath",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Mountpath, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).SerialNumber = (string) content.GetValueForProperty("SerialNumber",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).SerialNumber, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity = (int?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity = (long?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).DiskStatus = (string) content.GetValueForProperty("DiskStatus",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).DiskStatus, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -115,10 +115,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Mountpath = (string) content.GetValueForProperty("Mountpath",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Mountpath, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).SerialNumber = (string) content.GetValueForProperty("SerialNumber",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).SerialNumber, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity = (int?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity = (long?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).Capacity, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).DiskStatus = (string) content.GetValueForProperty("DiskStatus",((Commvault.Powershell.Models.IHyperScaleNodeDiskInternal)this).DiskStatus, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

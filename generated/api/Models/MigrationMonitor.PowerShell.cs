@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).NumOfFiles = (long?) content.GetValueForProperty("NumOfFiles",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).NumOfFiles, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SourcePath = (string) content.GetValueForProperty("SourcePath",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SourcePath, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SyncStatus = (string) content.GetValueForProperty("SyncStatus",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SyncStatus, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId = (int?) content.GetValueForProperty("ReplicationId",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId = (long?) content.GetValueForProperty("ReplicationId",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -125,7 +125,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).NumOfFiles = (long?) content.GetValueForProperty("NumOfFiles",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).NumOfFiles, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SourcePath = (string) content.GetValueForProperty("SourcePath",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SourcePath, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SyncStatus = (string) content.GetValueForProperty("SyncStatus",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).SyncStatus, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId = (int?) content.GetValueForProperty("ReplicationId",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId = (long?) content.GetValueForProperty("ReplicationId",((Commvault.Powershell.Models.IMigrationMonitorInternal)this).ReplicationId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

@@ -38,21 +38,21 @@ To create the parameters described below, construct a hash table containing the 
 
 BODY <IDeleteMultipleUserGroups>: .
   [UserGroups <IDeleteUserGroups[]>]: List of userGroups that have to be deleted. Either name or id can be provided. If name and id are both provided, id will be taken into consideration.
-    [NewUserGroupId <Int32?>]: 
+    [NewUserGroupId <Int64?>]: 
     [NewUserGroupName <String>]: 
-    [NewUserId <Int32?>]: 
+    [NewUserId <Int64?>]: 
     [NewUserName <String>]: 
     [SkipOwnerTransfer <Boolean?>]: 
-    [UserGroupId <Int32?>]: 
+    [UserGroupId <Int64?>]: 
     [UserGroupName <String>]: 
 
 USERGROUPS <IDeleteUserGroups[]>: List of userGroups that have to be deleted. Either name or id can be provided. If name and id are both provided, id will be taken into consideration.
-  [NewUserGroupId <Int32?>]: 
+  [NewUserGroupId <Int64?>]: 
   [NewUserGroupName <String>]: 
-  [NewUserId <Int32?>]: 
+  [NewUserId <Int64?>]: 
   [NewUserName <String>]: 
   [SkipOwnerTransfer <Boolean?>]: 
-  [UserGroupId <Int32?>]: 
+  [UserGroupId <Int64?>]: 
   [UserGroupName <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/remove-multipleusergroup

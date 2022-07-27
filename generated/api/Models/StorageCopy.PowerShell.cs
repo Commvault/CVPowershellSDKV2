@@ -95,8 +95,8 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePool = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("StoragePool",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePool, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IStorageCopyInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IStorageCopyInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention = (int?) content.GetValueForProperty("Retention",((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId = (int?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention = (long?) content.GetValueForProperty("Retention",((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId = (long?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolName = (string) content.GetValueForProperty("StoragePoolName",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -117,8 +117,8 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePool = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("StoragePool",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePool, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IStorageCopyInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IStorageCopyInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention = (int?) content.GetValueForProperty("Retention",((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId = (int?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention = (long?) content.GetValueForProperty("Retention",((Commvault.Powershell.Models.IStorageCopyInternal)this).Retention, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId = (long?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolName = (string) content.GetValueForProperty("StoragePoolName",((Commvault.Powershell.Models.IStorageCopyInternal)this).StoragePoolName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

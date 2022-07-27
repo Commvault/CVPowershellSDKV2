@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).UserName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).AuthenticationAlgorithm = (string) content.GetValueForProperty("AuthenticationAlgorithm",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).AuthenticationAlgorithm, global::System.Convert.ToString);
@@ -119,7 +119,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).UserName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).AuthenticationAlgorithm = (string) content.GetValueForProperty("AuthenticationAlgorithm",((Commvault.Powershell.Models.ISnmpConfigurationSummaryInternal)this).AuthenticationAlgorithm, global::System.Convert.ToString);

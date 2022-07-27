@@ -85,7 +85,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${HypervisorId},
 
@@ -97,7 +97,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${PlanId},
 
@@ -109,7 +109,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${StorageId},
 

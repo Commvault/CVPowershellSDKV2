@@ -71,8 +71,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int MediaAgentId { get => Body.MediaAgentId ?? default(int); set => Body.MediaAgentId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long MediaAgentId { get => Body.MediaAgentId ?? default(long); set => Body.MediaAgentId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -313,7 +313,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.BucketId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.CreateAccessPathForBucketOfCloudStorage(InputObject.CloudStorageId ?? default(int), InputObject.BucketId ?? default(int), Body, onOk, onBadRequest, onNotFound, onInternalServerError, this, Pipeline);
+                    await this.Client.CreateAccessPathForBucketOfCloudStorage(InputObject.CloudStorageId ?? default(long), InputObject.BucketId ?? default(long), Body, onOk, onBadRequest, onNotFound, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

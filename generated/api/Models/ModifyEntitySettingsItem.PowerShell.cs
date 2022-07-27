@@ -107,7 +107,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).NewValue = (string) content.GetValueForProperty("NewValue",((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).NewValue, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Comment = (string) content.GetValueForProperty("Comment",((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Comment, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Reset = (bool?) content.GetValueForProperty("Reset",((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Reset, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId = (int?) content.GetValueForProperty("EntityId",((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId = (long?) content.GetValueForProperty("EntityId",((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityType = (string) content.GetValueForProperty("EntityType",((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityType, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -133,7 +133,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).NewValue = (string) content.GetValueForProperty("NewValue",((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).NewValue, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Comment = (string) content.GetValueForProperty("Comment",((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Comment, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Reset = (bool?) content.GetValueForProperty("Reset",((Commvault.Powershell.Models.IModifyAdditionalSettingInternal)this).Reset, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId = (int?) content.GetValueForProperty("EntityId",((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId = (long?) content.GetValueForProperty("EntityId",((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityType = (string) content.GetValueForProperty("EntityType",((Commvault.Powershell.Models.IModifyEntitySettingsItemInternal)this).EntityType, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

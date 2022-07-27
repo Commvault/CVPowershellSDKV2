@@ -16,11 +16,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="CloneJobId" /> property.</summary>
-        private int? _cloneJobId;
+        private long? _cloneJobId;
 
         /// <summary>Job id for clone operation</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CloneJobId { get => this._cloneJobId; set => this._cloneJobId = value; }
+        public long? CloneJobId { get => this._cloneJobId; set => this._cloneJobId = value; }
 
         /// <summary>Backing field for <see cref="Commcell" /> property.</summary>
         private Commvault.Powershell.Models.ICommcellInfo _commcell;
@@ -49,32 +49,32 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IInstantClonesSummaryInternal.TargetInstance { get => (this._targetInstance = this._targetInstance ?? new Commvault.Powershell.Models.IdName()); set { {_targetInstance = value;} } }
 
         /// <summary>Backing field for <see cref="CreationTime" /> property.</summary>
-        private int? _creationTime;
+        private long? _creationTime;
 
         /// <summary>
         /// The time when the database clone was created. The time is provided in unix time format.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CreationTime { get => this._creationTime; set => this._creationTime = value; }
+        public long? CreationTime { get => this._creationTime; set => this._creationTime = value; }
 
         /// <summary>Backing field for <see cref="DatabaseAsOfTime" /> property.</summary>
-        private int? _databaseAsOfTime;
+        private long? _databaseAsOfTime;
 
         /// <summary>
         /// The Point in time up to which the database has been recovered using the backups. The time is provided in unix time format.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DatabaseAsOfTime { get => this._databaseAsOfTime; set => this._databaseAsOfTime = value; }
+        public long? DatabaseAsOfTime { get => this._databaseAsOfTime; set => this._databaseAsOfTime = value; }
 
         /// <summary>Backing field for <see cref="ExpirationDate" /> property.</summary>
-        private int? _expirationDate;
+        private long? _expirationDate;
 
         /// <summary>
         /// The time till which the clone is kept active and will get cleaned up automatically after that. The time is provided in
         /// unix time format.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ExpirationDate { get => this._expirationDate; set => this._expirationDate = value; }
+        public long? ExpirationDate { get => this._expirationDate; set => this._expirationDate = value; }
 
         /// <summary>Backing field for <see cref="MountedHost" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _mountedHost;
@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName MountedHost { get => (this._mountedHost = this._mountedHost ?? new Commvault.Powershell.Models.IdName()); set => this._mountedHost = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MountedHostId { get => ((Commvault.Powershell.Models.IIdNameInternal)MountedHost).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MountedHost).Id = value ?? default(int); }
+        public long? MountedHostId { get => ((Commvault.Powershell.Models.IIdNameInternal)MountedHost).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MountedHost).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string MountedHostName { get => ((Commvault.Powershell.Models.IIdNameInternal)MountedHost).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)MountedHost).Name = value ?? null; }
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceClient { get => (this._sourceClient = this._sourceClient ?? new Commvault.Powershell.Models.IdName()); set => this._sourceClient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id = value ?? default(int); }
+        public long? SourceClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceClient).Name = value ?? null; }
@@ -107,17 +107,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceInstance { get => (this._sourceInstance = this._sourceInstance ?? new Commvault.Powershell.Models.IdName()); set => this._sourceInstance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id = value ?? default(int); }
+        public long? SourceInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceInstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceInstance).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="SqlRecoveryId" /> property.</summary>
-        private int? _sqlRecoveryId;
+        private long? _sqlRecoveryId;
 
         /// <summary>Id of sql recovery point for SQL Agent</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SqlRecoveryId { get => this._sqlRecoveryId; set => this._sqlRecoveryId = value; }
+        public long? SqlRecoveryId { get => this._sqlRecoveryId; set => this._sqlRecoveryId = value; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -133,7 +133,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName TargetInstance { get => (this._targetInstance = this._targetInstance ?? new Commvault.Powershell.Models.IdName()); set => this._targetInstance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TargetInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)TargetInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TargetInstance).Id = value ?? default(int); }
+        public long? TargetInstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)TargetInstance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TargetInstance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TargetInstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)TargetInstance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)TargetInstance).Name = value ?? null; }
@@ -156,8 +156,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Job id for clone operation",
         SerializedName = @"cloneJobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CloneJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CloneJobId { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -174,8 +174,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The time when the database clone was created. The time is provided in unix time format.",
         SerializedName = @"creationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CreationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CreationTime { get; set; }
         /// <summary>
         /// The Point in time up to which the database has been recovered using the backups. The time is provided in unix time format.
         /// </summary>
@@ -184,8 +184,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The Point in time up to which the database has been recovered using the backups. The time is provided in unix time format.",
         SerializedName = @"databaseAsOfTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseAsOfTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseAsOfTime { get; set; }
         /// <summary>
         /// The time till which the clone is kept active and will get cleaned up automatically after that. The time is provided in
         /// unix time format.
@@ -195,16 +195,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The time till which the clone is kept active and will get cleaned up automatically after that. The time is provided in unix time format.",
         SerializedName = @"expirationDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExpirationDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExpirationDate { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MountedHostId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MountedHostId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -219,8 +219,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceClientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceClientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -235,8 +235,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceInstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceInstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -251,8 +251,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of sql recovery point for SQL Agent",
         SerializedName = @"sqlRecoveryId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SqlRecoveryId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SqlRecoveryId { get; set; }
         /// <summary>Status of instant clone</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -267,8 +267,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TargetInstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TargetInstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -286,7 +286,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Job id for clone operation</summary>
-        int? CloneJobId { get; set; }
+        long? CloneJobId { get; set; }
         /// <summary>CommcellInfo</summary>
         Commvault.Powershell.Models.ICommcellInfo Commcell { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
@@ -294,42 +294,42 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// The time when the database clone was created. The time is provided in unix time format.
         /// </summary>
-        int? CreationTime { get; set; }
+        long? CreationTime { get; set; }
         /// <summary>
         /// The Point in time up to which the database has been recovered using the backups. The time is provided in unix time format.
         /// </summary>
-        int? DatabaseAsOfTime { get; set; }
+        long? DatabaseAsOfTime { get; set; }
         /// <summary>
         /// The time till which the clone is kept active and will get cleaned up automatically after that. The time is provided in
         /// unix time format.
         /// </summary>
-        int? ExpirationDate { get; set; }
+        long? ExpirationDate { get; set; }
 
         Commvault.Powershell.Models.IIdName MountedHost { get; set; }
 
-        int? MountedHostId { get; set; }
+        long? MountedHostId { get; set; }
 
         string MountedHostName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceClient { get; set; }
 
-        int? SourceClientId { get; set; }
+        long? SourceClientId { get; set; }
 
         string SourceClientName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceInstance { get; set; }
 
-        int? SourceInstanceId { get; set; }
+        long? SourceInstanceId { get; set; }
 
         string SourceInstanceName { get; set; }
         /// <summary>Id of sql recovery point for SQL Agent</summary>
-        int? SqlRecoveryId { get; set; }
+        long? SqlRecoveryId { get; set; }
         /// <summary>Status of instant clone</summary>
         string Status { get; set; }
 
         Commvault.Powershell.Models.IIdName TargetInstance { get; set; }
 
-        int? TargetInstanceId { get; set; }
+        long? TargetInstanceId { get; set; }
 
         string TargetInstanceName { get; set; }
 

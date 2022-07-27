@@ -77,12 +77,12 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._vMPendingCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMPendingCount) : null, "vmPendingCount" ,container.Add );
-            AddIf( null != this._vMProtectedCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMProtectedCount) : null, "vmProtectedCount" ,container.Add );
-            AddIf( null != this._vMNotProtectedCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMNotProtectedCount) : null, "vmNotProtectedCount" ,container.Add );
-            AddIf( null != this._vMNeverBackedUpCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMNeverBackedUpCount) : null, "vmNeverBackedUpCount" ,container.Add );
-            AddIf( null != this._vMBackedUpWithErrorCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMBackedUpWithErrorCount) : null, "vmBackedUpWithErrorCount" ,container.Add );
-            AddIf( null != this._vMTotalCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._vMTotalCount) : null, "vmTotalCount" ,container.Add );
+            AddIf( null != this._vMPendingCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMPendingCount) : null, "vmPendingCount" ,container.Add );
+            AddIf( null != this._vMProtectedCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMProtectedCount) : null, "vmProtectedCount" ,container.Add );
+            AddIf( null != this._vMNotProtectedCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMNotProtectedCount) : null, "vmNotProtectedCount" ,container.Add );
+            AddIf( null != this._vMNeverBackedUpCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMNeverBackedUpCount) : null, "vmNeverBackedUpCount" ,container.Add );
+            AddIf( null != this._vMBackedUpWithErrorCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMBackedUpWithErrorCount) : null, "vmBackedUpWithErrorCount" ,container.Add );
+            AddIf( null != this._vMTotalCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMTotalCount) : null, "vmTotalCount" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -99,12 +99,12 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_vMPendingCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmPendingCount"), out var __jsonVMPendingCount) ? (int?)__jsonVMPendingCount : VMPendingCount;}
-            {_vMProtectedCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmProtectedCount"), out var __jsonVMProtectedCount) ? (int?)__jsonVMProtectedCount : VMProtectedCount;}
-            {_vMNotProtectedCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmNotProtectedCount"), out var __jsonVMNotProtectedCount) ? (int?)__jsonVMNotProtectedCount : VMNotProtectedCount;}
-            {_vMNeverBackedUpCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmNeverBackedUpCount"), out var __jsonVMNeverBackedUpCount) ? (int?)__jsonVMNeverBackedUpCount : VMNeverBackedUpCount;}
-            {_vMBackedUpWithErrorCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmBackedUpWithErrorCount"), out var __jsonVMBackedUpWithErrorCount) ? (int?)__jsonVMBackedUpWithErrorCount : VMBackedUpWithErrorCount;}
-            {_vMTotalCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmTotalCount"), out var __jsonVMTotalCount) ? (int?)__jsonVMTotalCount : VMTotalCount;}
+            {_vMPendingCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmPendingCount"), out var __jsonVMPendingCount) ? (long?)__jsonVMPendingCount : VMPendingCount;}
+            {_vMProtectedCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmProtectedCount"), out var __jsonVMProtectedCount) ? (long?)__jsonVMProtectedCount : VMProtectedCount;}
+            {_vMNotProtectedCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmNotProtectedCount"), out var __jsonVMNotProtectedCount) ? (long?)__jsonVMNotProtectedCount : VMNotProtectedCount;}
+            {_vMNeverBackedUpCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmNeverBackedUpCount"), out var __jsonVMNeverBackedUpCount) ? (long?)__jsonVMNeverBackedUpCount : VMNeverBackedUpCount;}
+            {_vMBackedUpWithErrorCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmBackedUpWithErrorCount"), out var __jsonVMBackedUpWithErrorCount) ? (long?)__jsonVMBackedUpWithErrorCount : VMBackedUpWithErrorCount;}
+            {_vMTotalCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vmTotalCount"), out var __jsonVMTotalCount) ? (long?)__jsonVMTotalCount : VMTotalCount;}
             AfterFromJson(json);
         }
     }

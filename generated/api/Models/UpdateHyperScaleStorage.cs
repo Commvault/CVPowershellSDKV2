@@ -38,10 +38,10 @@ namespace Commvault.Powershell.Models
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(int); }
+        public long? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(int); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string KeyProviderName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName = value ?? null; }
@@ -96,16 +96,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128 and 256. DES3 accepts only 192. GOST accepts only 256. ",
         SerializedName = @"keyLength",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EncryptionKeyLength { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EncryptionKeyLength { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? KeyProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -148,11 +148,11 @@ namespace Commvault.Powershell.Models
         /// Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
-        int? EncryptionKeyLength { get; set; }
+        long? EncryptionKeyLength { get; set; }
 
         Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get; set; }
 
-        int? KeyProviderId { get; set; }
+        long? KeyProviderId { get; set; }
 
         string KeyProviderName { get; set; }
         /// <summary>change the name of the HyperScale storage</summary>

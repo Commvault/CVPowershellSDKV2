@@ -11,46 +11,46 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="VMBackedUpWithErrorCount" /> property.</summary>
-        private int? _vMBackedUpWithErrorCount;
+        private long? _vMBackedUpWithErrorCount;
 
         /// <summary>VM Backed up with error count</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VMBackedUpWithErrorCount { get => this._vMBackedUpWithErrorCount; set => this._vMBackedUpWithErrorCount = value; }
+        public long? VMBackedUpWithErrorCount { get => this._vMBackedUpWithErrorCount; set => this._vMBackedUpWithErrorCount = value; }
 
         /// <summary>Backing field for <see cref="VMNeverBackedUpCount" /> property.</summary>
-        private int? _vMNeverBackedUpCount;
+        private long? _vMNeverBackedUpCount;
 
         /// <summary>vm never Backed up count</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VMNeverBackedUpCount { get => this._vMNeverBackedUpCount; set => this._vMNeverBackedUpCount = value; }
+        public long? VMNeverBackedUpCount { get => this._vMNeverBackedUpCount; set => this._vMNeverBackedUpCount = value; }
 
         /// <summary>Backing field for <see cref="VMNotProtectedCount" /> property.</summary>
-        private int? _vMNotProtectedCount;
+        private long? _vMNotProtectedCount;
 
         /// <summary>VM Missed to protect count</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VMNotProtectedCount { get => this._vMNotProtectedCount; set => this._vMNotProtectedCount = value; }
+        public long? VMNotProtectedCount { get => this._vMNotProtectedCount; set => this._vMNotProtectedCount = value; }
 
         /// <summary>Backing field for <see cref="VMPendingCount" /> property.</summary>
-        private int? _vMPendingCount;
+        private long? _vMPendingCount;
 
         /// <summary>VMs pending for Backup</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VMPendingCount { get => this._vMPendingCount; set => this._vMPendingCount = value; }
+        public long? VMPendingCount { get => this._vMPendingCount; set => this._vMPendingCount = value; }
 
         /// <summary>Backing field for <see cref="VMProtectedCount" /> property.</summary>
-        private int? _vMProtectedCount;
+        private long? _vMProtectedCount;
 
         /// <summary>Protected vm Count</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VMProtectedCount { get => this._vMProtectedCount; set => this._vMProtectedCount = value; }
+        public long? VMProtectedCount { get => this._vMProtectedCount; set => this._vMProtectedCount = value; }
 
         /// <summary>Backing field for <see cref="VMTotalCount" /> property.</summary>
-        private int? _vMTotalCount;
+        private long? _vMTotalCount;
 
         /// <summary>Total vm Count</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VMTotalCount { get => this._vMTotalCount; set => this._vMTotalCount = value; }
+        public long? VMTotalCount { get => this._vMTotalCount; set => this._vMTotalCount = value; }
 
         /// <summary>Creates an new <see cref="VMBackupInfo" /> instance.</summary>
         public VMBackupInfo()
@@ -67,65 +67,65 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"VM Backed up with error count",
         SerializedName = @"vmBackedUpWithErrorCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMBackedUpWithErrorCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMBackedUpWithErrorCount { get; set; }
         /// <summary>vm never Backed up count</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"vm never Backed up count",
         SerializedName = @"vmNeverBackedUpCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMNeverBackedUpCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMNeverBackedUpCount { get; set; }
         /// <summary>VM Missed to protect count</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"VM Missed to protect count",
         SerializedName = @"vmNotProtectedCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMNotProtectedCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMNotProtectedCount { get; set; }
         /// <summary>VMs pending for Backup</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"VMs pending for Backup",
         SerializedName = @"vmPendingCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMPendingCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMPendingCount { get; set; }
         /// <summary>Protected vm Count</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Protected vm Count",
         SerializedName = @"vmProtectedCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMProtectedCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMProtectedCount { get; set; }
         /// <summary>Total vm Count</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @" Total vm Count",
         SerializedName = @"vmTotalCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMTotalCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMTotalCount { get; set; }
 
     }
     internal partial interface IVMBackupInfoInternal
 
     {
         /// <summary>VM Backed up with error count</summary>
-        int? VMBackedUpWithErrorCount { get; set; }
+        long? VMBackedUpWithErrorCount { get; set; }
         /// <summary>vm never Backed up count</summary>
-        int? VMNeverBackedUpCount { get; set; }
+        long? VMNeverBackedUpCount { get; set; }
         /// <summary>VM Missed to protect count</summary>
-        int? VMNotProtectedCount { get; set; }
+        long? VMNotProtectedCount { get; set; }
         /// <summary>VMs pending for Backup</summary>
-        int? VMPendingCount { get; set; }
+        long? VMPendingCount { get; set; }
         /// <summary>Protected vm Count</summary>
-        int? VMProtectedCount { get; set; }
+        long? VMProtectedCount { get; set; }
         /// <summary>Total vm Count</summary>
-        int? VMTotalCount { get; set; }
+        long? VMTotalCount { get; set; }
 
     }
 }

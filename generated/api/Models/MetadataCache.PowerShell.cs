@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgent = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("MediaAgent",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgent, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IMetadataCacheInternal)this).Path = (string) content.GetValueForProperty("Path",((Commvault.Powershell.Models.IMetadataCacheInternal)this).Path, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId = (int?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId = (long?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentName = (string) content.GetValueForProperty("MediaAgentName",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgent = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("MediaAgent",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgent, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IMetadataCacheInternal)this).Path = (string) content.GetValueForProperty("Path",((Commvault.Powershell.Models.IMetadataCacheInternal)this).Path, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId = (int?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId = (long?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentName = (string) content.GetValueForProperty("MediaAgentName",((Commvault.Powershell.Models.IMetadataCacheInternal)this).MediaAgentName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

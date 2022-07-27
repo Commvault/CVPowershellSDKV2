@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusMessage = (string) content.GetValueForProperty("StatusMessage",((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode = (int?) content.GetValueForProperty("StatusCode",((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode = (long?) content.GetValueForProperty("StatusCode",((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusMessage = (string) content.GetValueForProperty("StatusMessage",((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode = (int?) content.GetValueForProperty("StatusCode",((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode = (long?) content.GetValueForProperty("StatusCode",((Commvault.Powershell.Models.IHfsShareStatusRespInternal)this).StatusCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

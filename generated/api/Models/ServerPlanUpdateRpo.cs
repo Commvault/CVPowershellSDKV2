@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay = value ?? default(int); }
+        public long? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay = value ?? default(long); }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -68,7 +68,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod = value ?? default(int); }
+        public long? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod = value ?? default(long); }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -114,8 +114,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaEnableAfterDelay { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -138,8 +138,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -169,13 +169,13 @@ namespace Commvault.Powershell.Models
         /// </summary>
         Commvault.Powershell.Models.ISlaUpdateOptions Sla { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        int? SlaEnableAfterDelay { get; set; }
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         bool? SlaExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
         string SlaExclusionReason { get; set; }
         /// <summary>SLA Period in Days</summary>
-        int? SlaPeriod { get; set; }
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? SlaUseSystemDefaultSla { get; set; }
 

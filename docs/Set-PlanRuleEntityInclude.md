@@ -133,11 +133,11 @@ To create the parameters described below, construct a hash table containing the 
 
 BODY <IIncludeEntitiesForPlanRuleEvaluation>: Entities that need to be included for plan rule evaluation
   - `[Subclients <IIdName[]>]`: 
-    - `[Id <Int32?>]`: 
+    - `[Id <Int64?>]`: 
     - `[Name <String>]`: 
 
 SUBCLIENTS <IIdName[]>: .
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

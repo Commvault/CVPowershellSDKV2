@@ -41,7 +41,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Topology { get => (this._topology = this._topology ?? new Commvault.Powershell.Models.IdName()); set => this._topology = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TopologyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id = value ?? default(int); }
+        public long? TopologyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TopologyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Name = value ?? null; }
@@ -63,11 +63,11 @@ namespace Commvault.Powershell.Models
         public string TunnelProtocol { get => this._tunnelProtocol; set => this._tunnelProtocol = value; }
 
         /// <summary>Backing field for <see cref="TunnelsPerRoute" /> property.</summary>
-        private int? _tunnelsPerRoute;
+        private long? _tunnelsPerRoute;
 
         /// <summary>The number of tunnel connections per route</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TunnelsPerRoute { get => this._tunnelsPerRoute; set => this._tunnelsPerRoute = value; }
+        public long? TunnelsPerRoute { get => this._tunnelsPerRoute; set => this._tunnelsPerRoute = value; }
 
         /// <summary>Backing field for <see cref="UseWildCardProxy" /> property.</summary>
         private bool? _useWildCardProxy;
@@ -118,8 +118,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TopologyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TopologyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -152,8 +152,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The number of tunnel connections per route",
         SerializedName = @"tunnelsPerRoute",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TunnelsPerRoute { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TunnelsPerRoute { get; set; }
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines
         /// </summary>
@@ -179,7 +179,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Topology { get; set; }
 
-        int? TopologyId { get; set; }
+        long? TopologyId { get; set; }
 
         string TopologyName { get; set; }
         /// <summary>
@@ -189,7 +189,7 @@ namespace Commvault.Powershell.Models
         /// <summary>The protocol for outgoing communication</summary>
         string TunnelProtocol { get; set; }
         /// <summary>The number of tunnel connections per route</summary>
-        int? TunnelsPerRoute { get; set; }
+        long? TunnelsPerRoute { get; set; }
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines
         /// </summary>

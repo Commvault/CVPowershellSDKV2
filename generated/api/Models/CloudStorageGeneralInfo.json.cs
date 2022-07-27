@@ -63,9 +63,9 @@ namespace Commvault.Powershell.Models
             }
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             {_vendorType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vendorType"), out var __jsonVendorType) ? (string)__jsonVendorType : (string)VendorType;}
-            {_totalCapacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCapacity"), out var __jsonTotalCapacity) ? (int?)__jsonTotalCapacity : TotalCapacity;}
-            {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("freeSpace"), out var __jsonFreeSpace) ? (int?)__jsonFreeSpace : FreeSpace;}
-            {_sizeOnDisk = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeOnDisk"), out var __jsonSizeOnDisk) ? (int?)__jsonSizeOnDisk : SizeOnDisk;}
+            {_totalCapacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCapacity"), out var __jsonTotalCapacity) ? (long?)__jsonTotalCapacity : TotalCapacity;}
+            {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("freeSpace"), out var __jsonFreeSpace) ? (long?)__jsonFreeSpace : FreeSpace;}
+            {_sizeOnDisk = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeOnDisk"), out var __jsonSizeOnDisk) ? (long?)__jsonSizeOnDisk : SizeOnDisk;}
             {_deduplicationSavings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("deduplicationSavings"), out var __jsonDeduplicationSavings) ? (string)__jsonDeduplicationSavings : (string)DeduplicationSavings;}
             AfterFromJson(json);
         }
@@ -101,9 +101,9 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AddIf( null != (((object)this._vendorType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vendorType.ToString()) : null, "vendorType" ,container.Add );
-            AddIf( null != this._totalCapacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._totalCapacity) : null, "totalCapacity" ,container.Add );
-            AddIf( null != this._freeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._freeSpace) : null, "freeSpace" ,container.Add );
-            AddIf( null != this._sizeOnDisk ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._sizeOnDisk) : null, "sizeOnDisk" ,container.Add );
+            AddIf( null != this._totalCapacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._totalCapacity) : null, "totalCapacity" ,container.Add );
+            AddIf( null != this._freeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._freeSpace) : null, "freeSpace" ,container.Add );
+            AddIf( null != this._sizeOnDisk ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._sizeOnDisk) : null, "sizeOnDisk" ,container.Add );
             AddIf( null != (((object)this._deduplicationSavings)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._deduplicationSavings.ToString()) : null, "deduplicationSavings" ,container.Add );
             AfterToJson(ref container);
             return container;

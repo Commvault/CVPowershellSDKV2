@@ -60,9 +60,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_clusterId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clusterId"), out var __jsonClusterId) ? (int?)__jsonClusterId : ClusterId;}
-            {_warningCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("warningCode"), out var __jsonWarningCode) ? (int?)__jsonWarningCode : WarningCode;}
-            {_errorCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("errorCode"), out var __jsonErrorCode) ? (int?)__jsonErrorCode : ErrorCode;}
+            {_clusterId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clusterId"), out var __jsonClusterId) ? (long?)__jsonClusterId : ClusterId;}
+            {_warningCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("warningCode"), out var __jsonWarningCode) ? (long?)__jsonWarningCode : WarningCode;}
+            {_errorCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("errorCode"), out var __jsonErrorCode) ? (long?)__jsonErrorCode : ErrorCode;}
             {_clusterName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("clusterName"), out var __jsonClusterName) ? (string)__jsonClusterName : (string)ClusterName;}
             {_errorMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("errorMessage"), out var __jsonErrorMessage) ? (string)__jsonErrorMessage : (string)ErrorMessage;}
             {_warningMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("warningMessage"), out var __jsonWarningMessage) ? (string)__jsonWarningMessage : (string)WarningMessage;}
@@ -98,9 +98,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._clusterId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._clusterId) : null, "clusterId" ,container.Add );
-            AddIf( null != this._warningCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._warningCode) : null, "warningCode" ,container.Add );
-            AddIf( null != this._errorCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._errorCode) : null, "errorCode" ,container.Add );
+            AddIf( null != this._clusterId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._clusterId) : null, "clusterId" ,container.Add );
+            AddIf( null != this._warningCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._warningCode) : null, "warningCode" ,container.Add );
+            AddIf( null != this._errorCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._errorCode) : null, "errorCode" ,container.Add );
             AddIf( null != (((object)this._clusterName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._clusterName.ToString()) : null, "clusterName" ,container.Add );
             AddIf( null != (((object)this._errorMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._errorMessage.ToString()) : null, "errorMessage" ,container.Add );
             AddIf( null != (((object)this._warningMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._warningMessage.ToString()) : null, "warningMessage" ,container.Add );

@@ -20,7 +20,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Fbrma { get => (this._fbrma = this._fbrma ?? new Commvault.Powershell.Models.IdName()); set => this._fbrma = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FbrmaId { get => ((Commvault.Powershell.Models.IIdNameInternal)Fbrma).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Fbrma).Id = value ?? default(int); }
+        public long? FbrmaId { get => ((Commvault.Powershell.Models.IIdNameInternal)Fbrma).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Fbrma).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FbrmaName { get => ((Commvault.Powershell.Models.IIdNameInternal)Fbrma).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Fbrma).Name = value ?? null; }
@@ -41,8 +41,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FbrmaId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FbrmaId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -58,7 +58,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Fbrma { get; set; }
 
-        int? FbrmaId { get; set; }
+        long? FbrmaId { get; set; }
 
         string FbrmaName { get; set; }
 

@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).IsInfiniteRetention = (bool?) content.GetValueForProperty("IsInfiniteRetention",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).IsInfiniteRetention, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays = (int?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays = (long?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).Type, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).IsInfiniteRetention = (bool?) content.GetValueForProperty("IsInfiniteRetention",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).IsInfiniteRetention, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays = (int?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays = (long?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).RetentionPeriodDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPlanRetentionRuleInternal)this).Type, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

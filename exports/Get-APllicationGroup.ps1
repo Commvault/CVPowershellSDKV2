@@ -40,7 +40,7 @@ function Get-APllicationGroup {
 param(
     [Parameter()]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # Id of the hypervisor to list application groups
     ${ClusterId},
 

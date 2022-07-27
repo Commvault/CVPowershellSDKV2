@@ -76,7 +76,7 @@ namespace Commvault.Powershell.Models
             {_summary = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("summary"), out var __jsonSummary) ? Commvault.Powershell.Models.ReplicationGroupSummary.FromJson(__jsonSummary) : Summary;}
             {_rpo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("rpo"), out var __jsonRpo) ? Commvault.Powershell.Models.Rpo.FromJson(__jsonRpo) : Rpo;}
             {_storage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("storage"), out var __jsonStorage) ? Commvault.Powershell.Models.ReplicationGroupStorageList.FromJson(__jsonStorage) : Storage;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             AfterFromJson(json);
         }
@@ -103,7 +103,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._summary ? (Commvault.Powershell.Runtime.Json.JsonNode) this._summary.ToJson(null,serializationMode) : null, "summary" ,container.Add );
             AddIf( null != this._rpo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._rpo.ToJson(null,serializationMode) : null, "rpo" ,container.Add );
             AddIf( null != this._storage ? (Commvault.Powershell.Runtime.Json.JsonNode) this._storage.ToJson(null,serializationMode) : null, "storage" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AfterToJson(ref container);
             return container;

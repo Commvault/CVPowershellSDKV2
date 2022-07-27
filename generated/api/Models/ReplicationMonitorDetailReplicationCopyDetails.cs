@@ -12,18 +12,18 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="CreationTime" /> property.</summary>
-        private int? _creationTime;
+        private long? _creationTime;
 
         /// <summary>Creation time (Unix Time)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CreationTime { get => this._creationTime; set => this._creationTime = value; }
+        public long? CreationTime { get => this._creationTime; set => this._creationTime = value; }
 
         /// <summary>Backing field for <see cref="ExpirationTime" /> property.</summary>
-        private int? _expirationTime;
+        private long? _expirationTime;
 
         /// <summary>Expiration time</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ExpirationTime { get => this._expirationTime; set => this._expirationTime = value; }
+        public long? ExpirationTime { get => this._expirationTime; set => this._expirationTime = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -78,16 +78,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Creation time (Unix Time)",
         SerializedName = @"creationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CreationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CreationTime { get; set; }
         /// <summary>Expiration time</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Expiration time",
         SerializedName = @"expirationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExpirationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExpirationTime { get; set; }
         /// <summary>Name of replication copy</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -135,9 +135,9 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Creation time (Unix Time)</summary>
-        int? CreationTime { get; set; }
+        long? CreationTime { get; set; }
         /// <summary>Expiration time</summary>
-        int? ExpirationTime { get; set; }
+        long? ExpirationTime { get; set; }
         /// <summary>Name of replication copy</summary>
         string Name { get; set; }
         /// <summary>Status of replication copy</summary>

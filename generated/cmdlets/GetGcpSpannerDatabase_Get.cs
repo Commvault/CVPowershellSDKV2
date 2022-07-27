@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="CloudAccountId" /> property.</summary>
-        private int _cloudAccountId;
+        private long _cloudAccountId;
 
         /// <summary>the id of the node where the browse request is sent</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "the id of the node where the browse request is sent")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"the id of the node where the browse request is sent",
         SerializedName = @"cloudAccountId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int CloudAccountId { get => this._cloudAccountId; set => this._cloudAccountId = value; }
+        public long CloudAccountId { get => this._cloudAccountId; set => this._cloudAccountId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]

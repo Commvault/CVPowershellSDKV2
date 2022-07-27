@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_proxyAddress = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("proxyAddress"), out var __jsonProxyAddress) ? (string)__jsonProxyAddress : (string)ProxyAddress;}
-            {_port = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("port"), out var __jsonPort) ? (int?)__jsonPort : Port;}
+            {_port = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("port"), out var __jsonPort) ? (long?)__jsonPort : Port;}
             {_username = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("username"), out var __jsonUsername) ? (string)__jsonUsername : (string)Username;}
             {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? new System.Net.NetworkCredential("",(string)__jsonPassword).SecurePassword : Password;}
             AfterFromJson(json);
@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._proxyAddress)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._proxyAddress.ToString()) : null, "proxyAddress" ,container.Add );
-            AddIf( null != this._port ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._port) : null, "port" ,container.Add );
+            AddIf( null != this._port ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._port) : null, "port" ,container.Add );
             AddIf( null != (((object)this._username)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._username.ToString()) : null, "username" ,container.Add );
             AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(System.Runtime.InteropServices.Marshal.PtrToStringBSTR(System.Runtime.InteropServices.Marshal.SecureStringToBSTR(this._password))) : null, "password" ,container.Add );
             AfterToJson(ref container);

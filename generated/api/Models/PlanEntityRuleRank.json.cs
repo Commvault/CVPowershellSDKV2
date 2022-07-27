@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_rule = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("rule"), out var __jsonRule) ? Commvault.Powershell.Models.IdName.FromJson(__jsonRule) : Rule;}
-            {_rank = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("rank"), out var __jsonRank) ? (int?)__jsonRank : Rank;}
+            {_rank = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("rank"), out var __jsonRank) ? (long?)__jsonRank : Rank;}
             AfterFromJson(json);
         }
 
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._rule ? (Commvault.Powershell.Runtime.Json.JsonNode) this._rule.ToJson(null,serializationMode) : null, "rule" ,container.Add );
-            AddIf( null != this._rank ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._rank) : null, "rank" ,container.Add );
+            AddIf( null != this._rank ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._rank) : null, "rank" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

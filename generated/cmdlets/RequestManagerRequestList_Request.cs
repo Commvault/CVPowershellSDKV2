@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="SourceEntityId" /> property.</summary>
-        private int _sourceEntityId;
+        private long _sourceEntityId;
 
         /// <summary>Entity id of the source from which data is gathered for the request</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Entity id of the source from which data is gathered for the request")]
@@ -100,9 +100,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Entity id of the source from which data is gathered for the request",
         SerializedName = @"sourceEntityId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int SourceEntityId { get => this._sourceEntityId; set => this._sourceEntityId = value; }
+        public long SourceEntityId { get => this._sourceEntityId; set => this._sourceEntityId = value; }
 
         /// <summary>Backing field for <see cref="SourceEntityType" /> property.</summary>
         private string _sourceEntityType;
@@ -271,12 +271,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.RequestManagerRequestList(this.InvocationInformation.BoundParameters.ContainsKey("CreatedFrom") ? CreatedFrom : null, this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityType") ? SourceEntityType : null, this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityId") ? SourceEntityId : default(int?), onOk, onInternalServerError, this, Pipeline);
+                    await this.Client.RequestManagerRequestList(this.InvocationInformation.BoundParameters.ContainsKey("CreatedFrom") ? CreatedFrom : null, this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityType") ? SourceEntityType : null, this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityId") ? SourceEntityId : default(long?), onOk, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  CreatedFrom=this.InvocationInformation.BoundParameters.ContainsKey("CreatedFrom") ? CreatedFrom : null,SourceEntityType=this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityType") ? SourceEntityType : null,SourceEntityId=this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityId") ? SourceEntityId : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  CreatedFrom=this.InvocationInformation.BoundParameters.ContainsKey("CreatedFrom") ? CreatedFrom : null,SourceEntityType=this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityType") ? SourceEntityType : null,SourceEntityId=this.InvocationInformation.BoundParameters.ContainsKey("SourceEntityId") ? SourceEntityId : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

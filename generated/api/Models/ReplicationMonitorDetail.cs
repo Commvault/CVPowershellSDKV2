@@ -27,7 +27,7 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IReplicationMonitorDetailInternal.SummarySource { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).Source; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).Source = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationId { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).DestinationId; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).DestinationId = value ?? default(int); }
+        public long? DestinationId { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).DestinationId; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).DestinationId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationName { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).DestinationName; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).DestinationName = value ?? null; }
@@ -36,15 +36,15 @@ namespace Commvault.Powershell.Models
         /// Gives information about application consistent recovery point interval in seconds
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionAcrpInterval { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).AcrpInterval; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).AcrpInterval = value ?? default(int); }
+        public long? RecoveryOptionAcrpInterval { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).AcrpInterval; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).AcrpInterval = value ?? default(long); }
 
         /// <summary>Time interval between crash consistent recovery points in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionCcrpInterval { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).CcrpInterval; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).CcrpInterval = value ?? default(int); }
+        public long? RecoveryOptionCcrpInterval { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).CcrpInterval; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).CcrpInterval = value ?? default(long); }
 
         /// <summary>Time which should be satisfied to merge recovery points in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionMergeRecoveryPointsOlderThan { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan = value ?? default(int); }
+        public long? RecoveryOptionMergeRecoveryPointsOlderThan { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan = value ?? default(long); }
 
         /// <summary>
         /// Boolean which determines Prune and Merge Recovery Points during off peak time only.
@@ -54,17 +54,17 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Recovery points retention time in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionRetainRecoveryPointsFor { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor = value ?? default(int); }
+        public long? RecoveryOptionRetainRecoveryPointsFor { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor = value ?? default(long); }
 
         /// <summary>Recovery point interval at the end of retention time in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionRpIntervalAfterRetention { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RpIntervalAfterRetention; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RpIntervalAfterRetention = value ?? default(int); }
+        public long? RecoveryOptionRpIntervalAfterRetention { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RpIntervalAfterRetention; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RpIntervalAfterRetention = value ?? default(long); }
 
         /// <summary>
         /// Gives information about switching to latest recovery point store to latest if it is offline for time in seconds
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionSwitchToLatestIfStoreOfflineFor { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).SwitchToLatestIfStoreOfflineFor; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).SwitchToLatestIfStoreOfflineFor = value ?? default(int); }
+        public long? RecoveryOptionSwitchToLatestIfStoreOfflineFor { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).SwitchToLatestIfStoreOfflineFor; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).SwitchToLatestIfStoreOfflineFor = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="RecoveryOptions" /> property.</summary>
         private Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptions _recoveryOptions;
@@ -74,7 +74,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptions RecoveryOptions { get => (this._recoveryOptions = this._recoveryOptions ?? new Commvault.Powershell.Models.ReplicationMonitorDetailRecoveryOptions()); set => this._recoveryOptions = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoverypointStoreId { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RecoverypointStoreId; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RecoverypointStoreId = value ?? default(int); }
+        public long? RecoverypointStoreId { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RecoverypointStoreId; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RecoverypointStoreId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RecoverypointStoreName { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RecoverypointStoreName; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal)RecoveryOptions).RecoverypointStoreName = value ?? null; }
@@ -87,7 +87,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IReplicationMonitorDetailReplicationCopyDetails[] ReplicationCopyDetails { get => this._replicationCopyDetails; set => this._replicationCopyDetails = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceId { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).SourceId; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).SourceId = value ?? default(int); }
+        public long? SourceId { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).SourceId; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).SourceId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceName { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).SourceName; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).SourceName = value ?? null; }
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Lag time in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SummaryReplicationLag { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).ReplicationLag; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).ReplicationLag = value ?? default(int); }
+        public long? SummaryReplicationLag { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).ReplicationLag; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).ReplicationLag = value ?? default(long); }
 
         /// <summary>Gives information about the synchronization status</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -133,8 +133,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -151,24 +151,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gives information about application consistent recovery point interval in seconds",
         SerializedName = @"ACRPInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionAcrpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionAcrpInterval { get; set; }
         /// <summary>Time interval between crash consistent recovery points in seconds</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Time interval between crash consistent recovery points in seconds",
         SerializedName = @"CCRPInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionCcrpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionCcrpInterval { get; set; }
         /// <summary>Time which should be satisfied to merge recovery points in seconds</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Time which should be satisfied to merge recovery points in seconds",
         SerializedName = @"mergeRecoveryPointsOlderThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Boolean which determines Prune and Merge Recovery Points during off peak time only.
         /// </summary>
@@ -185,16 +185,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Recovery points retention time in seconds",
         SerializedName = @"retainRecoveryPointsFor",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionRetainRecoveryPointsFor { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionRetainRecoveryPointsFor { get; set; }
         /// <summary>Recovery point interval at the end of retention time in seconds</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Recovery point interval at the end of retention time in seconds",
         SerializedName = @"RPIntervalAfterRetention",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionRpIntervalAfterRetention { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionRpIntervalAfterRetention { get; set; }
         /// <summary>
         /// Gives information about switching to latest recovery point store to latest if it is offline for time in seconds
         /// </summary>
@@ -203,16 +203,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gives information about switching to  latest recovery point store to latest if it is offline for time  in seconds",
         SerializedName = @"switchToLatestIfStoreOfflineFor",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionSwitchToLatestIfStoreOfflineFor { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionSwitchToLatestIfStoreOfflineFor { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoverypointStoreId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoverypointStoreId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -235,8 +235,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -267,8 +267,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Lag time in seconds",
         SerializedName = @"replicationLag",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SummaryReplicationLag { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SummaryReplicationLag { get; set; }
         /// <summary>Gives information about the synchronization status</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -283,17 +283,17 @@ namespace Commvault.Powershell.Models
     internal partial interface IReplicationMonitorDetailInternal
 
     {
-        int? DestinationId { get; set; }
+        long? DestinationId { get; set; }
 
         string DestinationName { get; set; }
         /// <summary>
         /// Gives information about application consistent recovery point interval in seconds
         /// </summary>
-        int? RecoveryOptionAcrpInterval { get; set; }
+        long? RecoveryOptionAcrpInterval { get; set; }
         /// <summary>Time interval between crash consistent recovery points in seconds</summary>
-        int? RecoveryOptionCcrpInterval { get; set; }
+        long? RecoveryOptionCcrpInterval { get; set; }
         /// <summary>Time which should be satisfied to merge recovery points in seconds</summary>
-        int? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
+        long? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Boolean which determines Prune and Merge Recovery Points during off peak time only.
         /// </summary>
@@ -301,23 +301,23 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName RecoveryOptionRecoverypointStore { get; set; }
         /// <summary>Recovery points retention time in seconds</summary>
-        int? RecoveryOptionRetainRecoveryPointsFor { get; set; }
+        long? RecoveryOptionRetainRecoveryPointsFor { get; set; }
         /// <summary>Recovery point interval at the end of retention time in seconds</summary>
-        int? RecoveryOptionRpIntervalAfterRetention { get; set; }
+        long? RecoveryOptionRpIntervalAfterRetention { get; set; }
         /// <summary>
         /// Gives information about switching to latest recovery point store to latest if it is offline for time in seconds
         /// </summary>
-        int? RecoveryOptionSwitchToLatestIfStoreOfflineFor { get; set; }
+        long? RecoveryOptionSwitchToLatestIfStoreOfflineFor { get; set; }
         /// <summary>Gives information about the recovery options for replication group</summary>
         Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptions RecoveryOptions { get; set; }
 
-        int? RecoverypointStoreId { get; set; }
+        long? RecoverypointStoreId { get; set; }
 
         string RecoverypointStoreName { get; set; }
         /// <summary>Gives copy details information for replication group</summary>
         Commvault.Powershell.Models.IReplicationMonitorDetailReplicationCopyDetails[] ReplicationCopyDetails { get; set; }
 
-        int? SourceId { get; set; }
+        long? SourceId { get; set; }
 
         string SourceName { get; set; }
         /// <summary>Gives statistics information for Replication performance and Journal retention</summary>
@@ -329,7 +329,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Gives information about the recovery type of replication group</summary>
         string SummaryRecoveryType { get; set; }
         /// <summary>Lag time in seconds</summary>
-        int? SummaryReplicationLag { get; set; }
+        long? SummaryReplicationLag { get; set; }
 
         Commvault.Powershell.Models.IIdName SummarySource { get; set; }
         /// <summary>Gives information about the synchronization status</summary>

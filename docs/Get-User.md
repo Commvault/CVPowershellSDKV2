@@ -13,7 +13,7 @@ Get All Users
 ## SYNTAX
 
 ```
-Get-User [-LaptopUsers] [-UserGroupId <Int32>] [-PassThru] [<CommonParameters>]
+Get-User [-LaptopUsers] [-UserGroupId <Int64>] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 Returns the list of users associated to the userGroupId provided.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

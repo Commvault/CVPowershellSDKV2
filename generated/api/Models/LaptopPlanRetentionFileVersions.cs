@@ -15,43 +15,43 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="DailyVersions" /> property.</summary>
-        private int? _dailyVersions;
+        private long? _dailyVersions;
 
         /// <summary>Custom version rule: Retain daily versions for this many day(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DailyVersions { get => this._dailyVersions; set => this._dailyVersions = value; }
+        public long? DailyVersions { get => this._dailyVersions; set => this._dailyVersions = value; }
 
         /// <summary>Backing field for <see cref="Days" /> property.</summary>
-        private int? _days;
+        private long? _days;
 
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Days { get => this._days; set => this._days = value; }
+        public long? Days { get => this._days; set => this._days = value; }
 
         /// <summary>Backing field for <see cref="MonthlyVersions" /> property.</summary>
-        private int? _monthlyVersions;
+        private long? _monthlyVersions;
 
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MonthlyVersions { get => this._monthlyVersions; set => this._monthlyVersions = value; }
+        public long? MonthlyVersions { get => this._monthlyVersions; set => this._monthlyVersions = value; }
 
         /// <summary>Backing field for <see cref="Versions" /> property.</summary>
-        private int? _versions;
+        private long? _versions;
 
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Versions { get => this._versions; set => this._versions = value; }
+        public long? Versions { get => this._versions; set => this._versions = value; }
 
         /// <summary>Backing field for <see cref="WeeklyVersions" /> property.</summary>
-        private int? _weeklyVersions;
+        private long? _weeklyVersions;
 
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? WeeklyVersions { get => this._weeklyVersions; set => this._weeklyVersions = value; }
+        public long? WeeklyVersions { get => this._weeklyVersions; set => this._weeklyVersions = value; }
 
         /// <summary>Creates an new <see cref="LaptopPlanRetentionFileVersions" /> instance.</summary>
         public LaptopPlanRetentionFileVersions()
@@ -70,8 +70,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Custom version rule: Retain daily versions for this many day(s)",
         SerializedName = @"dailyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DailyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DailyVersions { get; set; }
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
@@ -80,16 +80,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retain files for this many days. Year(s) or month(s) need to be converted to day(s)",
         SerializedName = @"days",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Days { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Days { get; set; }
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Custom version rule: Retain monthly versions for this many month(s)",
         SerializedName = @"monthlyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MonthlyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MonthlyVersions { get; set; }
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
@@ -98,16 +98,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retain this many file versions. This is considered as default if no file retention rule is specified.",
         SerializedName = @"versions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Versions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Versions { get; set; }
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Custom version rule: Retain weekly versions for this many week(s)",
         SerializedName = @"weeklyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? WeeklyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? WeeklyVersions { get; set; }
 
     }
     /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
@@ -116,19 +116,19 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Custom version rule: Retain daily versions for this many day(s)</summary>
-        int? DailyVersions { get; set; }
+        long? DailyVersions { get; set; }
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
-        int? Days { get; set; }
+        long? Days { get; set; }
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
-        int? MonthlyVersions { get; set; }
+        long? MonthlyVersions { get; set; }
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
-        int? Versions { get; set; }
+        long? Versions { get; set; }
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
-        int? WeeklyVersions { get; set; }
+        long? WeeklyVersions { get; set; }
 
     }
 }

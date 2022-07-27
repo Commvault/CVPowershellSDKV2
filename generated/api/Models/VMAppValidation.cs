@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Copy { get => (this._copy = this._copy ?? new Commvault.Powershell.Models.IdName()); set => this._copy = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Id = value ?? default(int); }
+        public long? CopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CopyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Name = value ?? null; }
@@ -91,11 +91,11 @@ namespace Commvault.Powershell.Models
         public bool? KeepValidatedVMSRunning { get => this._keepValidatedVMSRunning; set => this._keepValidatedVMSRunning = value; }
 
         /// <summary>Backing field for <see cref="MaximumNoOfThreads" /> property.</summary>
-        private int? _maximumNoOfThreads;
+        private long? _maximumNoOfThreads;
 
         /// <summary>Number of backup Validation Threads</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MaximumNoOfThreads { get => this._maximumNoOfThreads; set => this._maximumNoOfThreads = value; }
+        public long? MaximumNoOfThreads { get => this._maximumNoOfThreads; set => this._maximumNoOfThreads = value; }
 
         /// <summary>Backing field for <see cref="RecoveryTarget" /> property.</summary>
         private string _recoveryTarget;
@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
         public string RecoveryTarget { get => this._recoveryTarget; set => this._recoveryTarget = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SavedCredentialsId { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId = value ?? default(int); }
+        public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SavedCredentialsName { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsName; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsName = value ?? null; }
@@ -122,7 +122,7 @@ namespace Commvault.Powershell.Models
         public string ScheduleDescription { get => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).Description; set => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).Description = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ScheduleId { get => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).Id; set => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).Id = value ?? default(int); }
+        public long? ScheduleId { get => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).Id; set => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).Id = value ?? default(long); }
 
         /// <summary>True if application validation schedule is enabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -130,7 +130,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Job Id for the application validation task. 0 if schedule is disabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ScheduleTaskId { get => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).TaskId; set => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).TaskId = value ?? default(int); }
+        public long? ScheduleTaskId { get => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).TaskId; set => ((Commvault.Powershell.Models.IValidationScheduleObjectInternal)Schedule).TaskId = value ?? default(long); }
 
         /// <summary>Arguments for the script</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -157,7 +157,7 @@ namespace Commvault.Powershell.Models
         public string UnixUncCredentialsPassword { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCCredentialsPassword; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCCredentialsPassword = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UnixUncSavedCredentialsId { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCSavedCredentialsId; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCSavedCredentialsId = value ?? default(int); }
+        public long? UnixUncSavedCredentialsId { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCSavedCredentialsId; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCSavedCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UnixUncSavedCredentialsName { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCSavedCredentialsName; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixUNCSavedCredentialsName = value ?? null; }
@@ -201,7 +201,7 @@ namespace Commvault.Powershell.Models
         public string WindowsUncCredentialsPassword { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCCredentialsPassword; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCCredentialsPassword = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? WindowsUncSavedCredentialsId { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCSavedCredentialsId; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCSavedCredentialsId = value ?? default(int); }
+        public long? WindowsUncSavedCredentialsId { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCSavedCredentialsId; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCSavedCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string WindowsUncSavedCredentialsName { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCSavedCredentialsName; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowsUNCSavedCredentialsName = value ?? null; }
@@ -221,8 +221,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CopyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CopyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -263,8 +263,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of backup Validation Threads",
         SerializedName = @"maximumNoOfThreads",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MaximumNoOfThreads { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MaximumNoOfThreads { get; set; }
         /// <summary>Recovery Target for Application Validation</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -279,8 +279,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -303,8 +303,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ScheduleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleId { get; set; }
         /// <summary>True if application validation schedule is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -319,8 +319,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Job Id for the application validation task. 0 if schedule is disabled",
         SerializedName = @"taskId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ScheduleTaskId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleTaskId { get; set; }
         /// <summary>Arguments for the script</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -375,8 +375,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UnixUncSavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UnixUncSavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -455,8 +455,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? WindowsUncSavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? WindowsUncSavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -473,7 +473,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Copy { get; set; }
 
-        int? CopyId { get; set; }
+        long? CopyId { get; set; }
 
         string CopyName { get; set; }
         /// <summary>username to access the network path</summary>
@@ -497,11 +497,11 @@ namespace Commvault.Powershell.Models
         /// </summary>
         bool? KeepValidatedVMSRunning { get; set; }
         /// <summary>Number of backup Validation Threads</summary>
-        int? MaximumNoOfThreads { get; set; }
+        long? MaximumNoOfThreads { get; set; }
         /// <summary>Recovery Target for Application Validation</summary>
         string RecoveryTarget { get; set; }
 
-        int? SavedCredentialsId { get; set; }
+        long? SavedCredentialsId { get; set; }
 
         string SavedCredentialsName { get; set; }
         /// <summary>Schedule for application validation for VM Group</summary>
@@ -509,11 +509,11 @@ namespace Commvault.Powershell.Models
         /// <summary>Description for validation schedule</summary>
         string ScheduleDescription { get; set; }
 
-        int? ScheduleId { get; set; }
+        long? ScheduleId { get; set; }
         /// <summary>True if application validation schedule is enabled</summary>
         bool? ScheduleIsScheduleEnabled { get; set; }
         /// <summary>Job Id for the application validation task. 0 if schedule is disabled</summary>
-        int? ScheduleTaskId { get; set; }
+        long? ScheduleTaskId { get; set; }
         /// <summary>Arguments for the script</summary>
         string UnixArguments { get; set; }
         /// <summary>Is the script disabled</summary>
@@ -531,7 +531,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName UnixUncSavedCredentials { get; set; }
 
-        int? UnixUncSavedCredentialsId { get; set; }
+        long? UnixUncSavedCredentialsId { get; set; }
 
         string UnixUncSavedCredentialsName { get; set; }
         /// <summary>Use Source VM ESX To Mount</summary>
@@ -555,7 +555,7 @@ namespace Commvault.Powershell.Models
         /// <summary>password to access the network path</summary>
         string WindowsUncCredentialsPassword { get; set; }
 
-        int? WindowsUncSavedCredentialsId { get; set; }
+        long? WindowsUncSavedCredentialsId { get; set; }
 
         string WindowsUncSavedCredentialsName { get; set; }
 

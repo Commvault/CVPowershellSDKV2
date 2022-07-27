@@ -15,11 +15,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISchedulePatternInternal.Timezone { get => (this._timezone = this._timezone ?? new Commvault.Powershell.Models.IdName()); set { {_timezone = value;} } }
 
         /// <summary>Backing field for <see cref="DayOfMonth" /> property.</summary>
-        private int? _dayOfMonth;
+        private long? _dayOfMonth;
 
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DayOfMonth { get => this._dayOfMonth; set => this._dayOfMonth = value; }
+        public long? DayOfMonth { get => this._dayOfMonth; set => this._dayOfMonth = value; }
 
         /// <summary>Backing field for <see cref="DayOfWeek" /> property.</summary>
         private string _dayOfWeek;
@@ -28,18 +28,18 @@ namespace Commvault.Powershell.Models
         public string DayOfWeek { get => this._dayOfWeek; set => this._dayOfWeek = value; }
 
         /// <summary>Backing field for <see cref="DaysBetweenSyntheticFulls" /> property.</summary>
-        private int? _daysBetweenSyntheticFulls;
+        private long? _daysBetweenSyntheticFulls;
 
         /// <summary>No of days between two synthetic full jobs</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DaysBetweenSyntheticFulls { get => this._daysBetweenSyntheticFulls; set => this._daysBetweenSyntheticFulls = value; }
+        public long? DaysBetweenSyntheticFulls { get => this._daysBetweenSyntheticFulls; set => this._daysBetweenSyntheticFulls = value; }
 
         /// <summary>Backing field for <see cref="EndDate" /> property.</summary>
-        private int? _endDate;
+        private long? _endDate;
 
         /// <summary>Schedule end date in epoch format</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? EndDate { get => this._endDate; set => this._endDate = value; }
+        public long? EndDate { get => this._endDate; set => this._endDate = value; }
 
         /// <summary>Backing field for <see cref="Exceptions" /> property.</summary>
         private Commvault.Powershell.Models.IScheduleRunException[] _exceptions;
@@ -51,14 +51,14 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IScheduleRunException[] Exceptions { get => this._exceptions; set => this._exceptions = value; }
 
         /// <summary>Backing field for <see cref="Frequency" /> property.</summary>
-        private int? _frequency;
+        private long? _frequency;
 
         /// <summary>
         /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Frequency { get => this._frequency; set => this._frequency = value; }
+        public long? Frequency { get => this._frequency; set => this._frequency = value; }
 
         /// <summary>Backing field for <see cref="MonthOfYear" /> property.</summary>
         private string _monthOfYear;
@@ -67,29 +67,29 @@ namespace Commvault.Powershell.Models
         public string MonthOfYear { get => this._monthOfYear; set => this._monthOfYear = value; }
 
         /// <summary>Backing field for <see cref="NoOfTimes" /> property.</summary>
-        private int? _noOfTimes;
+        private long? _noOfTimes;
 
         /// <summary>The number of times you want the schedule to run.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? NoOfTimes { get => this._noOfTimes; set => this._noOfTimes = value; }
+        public long? NoOfTimes { get => this._noOfTimes; set => this._noOfTimes = value; }
 
         /// <summary>Backing field for <see cref="RepeatIntervalInMinutes" /> property.</summary>
-        private int? _repeatIntervalInMinutes;
+        private long? _repeatIntervalInMinutes;
 
         /// <summary>
         /// How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RepeatIntervalInMinutes { get => this._repeatIntervalInMinutes; set => this._repeatIntervalInMinutes = value; }
+        public long? RepeatIntervalInMinutes { get => this._repeatIntervalInMinutes; set => this._repeatIntervalInMinutes = value; }
 
         /// <summary>Backing field for <see cref="RepeatUntilTime" /> property.</summary>
-        private int? _repeatUntilTime;
+        private long? _repeatUntilTime;
 
         /// <summary>
         /// Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RepeatUntilTime { get => this._repeatUntilTime; set => this._repeatUntilTime = value; }
+        public long? RepeatUntilTime { get => this._repeatUntilTime; set => this._repeatUntilTime = value; }
 
         /// <summary>Backing field for <see cref="ScheduleFrequencyType" /> property.</summary>
         private string _scheduleFrequencyType;
@@ -99,18 +99,18 @@ namespace Commvault.Powershell.Models
         public string ScheduleFrequencyType { get => this._scheduleFrequencyType; set => this._scheduleFrequencyType = value; }
 
         /// <summary>Backing field for <see cref="StartDate" /> property.</summary>
-        private int? _startDate;
+        private long? _startDate;
 
         /// <summary>start date of schedule in epoch format</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? StartDate { get => this._startDate; set => this._startDate = value; }
+        public long? StartDate { get => this._startDate; set => this._startDate = value; }
 
         /// <summary>Backing field for <see cref="StartTime" /> property.</summary>
-        private int? _startTime;
+        private long? _startTime;
 
         /// <summary>start time of schedule in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? StartTime { get => this._startTime; set => this._startTime = value; }
+        public long? StartTime { get => this._startTime; set => this._startTime = value; }
 
         /// <summary>Backing field for <see cref="Timezone" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _timezone;
@@ -119,7 +119,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Timezone { get => (this._timezone = this._timezone ?? new Commvault.Powershell.Models.IdName()); set => this._timezone = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TimezoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)Timezone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Timezone).Id = value ?? default(int); }
+        public long? TimezoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)Timezone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Timezone).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimezoneName { get => ((Commvault.Powershell.Models.IIdNameInternal)Timezone).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Timezone).Name = value ?? null; }
@@ -154,8 +154,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Day on which to run the schedule, applicable for monthly, yearly",
         SerializedName = @"dayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -170,16 +170,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"No of days between two synthetic full jobs",
         SerializedName = @"daysBetweenSyntheticFulls",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DaysBetweenSyntheticFulls { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DaysBetweenSyntheticFulls { get; set; }
         /// <summary>Schedule end date in epoch format</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Schedule end date in epoch format",
         SerializedName = @"endDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EndDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EndDate { get; set; }
         /// <summary>
         /// Exceptions to when a schedule should not run, either in dates or week of month and days
         /// </summary>
@@ -199,8 +199,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months",
         SerializedName = @"frequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Frequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Frequency { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -215,8 +215,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The number of times you want the schedule to run.",
         SerializedName = @"noOfTimes",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NoOfTimes { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NoOfTimes { get; set; }
         /// <summary>
         /// How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
         /// </summary>
@@ -225,8 +225,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.",
         SerializedName = @"repeatIntervalInMinutes",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RepeatIntervalInMinutes { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RepeatIntervalInMinutes { get; set; }
         /// <summary>
         /// Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
         /// </summary>
@@ -235,8 +235,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes",
         SerializedName = @"repeatUntilTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RepeatUntilTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RepeatUntilTime { get; set; }
         /// <summary>schedule frequency type</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -251,24 +251,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"start date of schedule in epoch format",
         SerializedName = @"startDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StartDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StartDate { get; set; }
         /// <summary>start time of schedule in seconds</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"start time of schedule in seconds",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StartTime { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TimezoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimezoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -300,13 +300,13 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
-        int? DayOfMonth { get; set; }
+        long? DayOfMonth { get; set; }
 
         string DayOfWeek { get; set; }
         /// <summary>No of days between two synthetic full jobs</summary>
-        int? DaysBetweenSyntheticFulls { get; set; }
+        long? DaysBetweenSyntheticFulls { get; set; }
         /// <summary>Schedule end date in epoch format</summary>
-        int? EndDate { get; set; }
+        long? EndDate { get; set; }
         /// <summary>
         /// Exceptions to when a schedule should not run, either in dates or week of month and days
         /// </summary>
@@ -315,29 +315,29 @@ namespace Commvault.Powershell.Models
         /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
-        int? Frequency { get; set; }
+        long? Frequency { get; set; }
 
         string MonthOfYear { get; set; }
         /// <summary>The number of times you want the schedule to run.</summary>
-        int? NoOfTimes { get; set; }
+        long? NoOfTimes { get; set; }
         /// <summary>
         /// How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
         /// </summary>
-        int? RepeatIntervalInMinutes { get; set; }
+        long? RepeatIntervalInMinutes { get; set; }
         /// <summary>
         /// Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
         /// </summary>
-        int? RepeatUntilTime { get; set; }
+        long? RepeatUntilTime { get; set; }
         /// <summary>schedule frequency type</summary>
         string ScheduleFrequencyType { get; set; }
         /// <summary>start date of schedule in epoch format</summary>
-        int? StartDate { get; set; }
+        long? StartDate { get; set; }
         /// <summary>start time of schedule in seconds</summary>
-        int? StartTime { get; set; }
+        long? StartTime { get; set; }
 
         Commvault.Powershell.Models.IIdName Timezone { get; set; }
 
-        int? TimezoneId { get; set; }
+        long? TimezoneId { get; set; }
 
         string TimezoneName { get; set; }
         /// <summary>Specific week of a month</summary>

@@ -48,8 +48,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Setting to suggest evaluation frequency in case of evaluation mode being Automatic.",
         SerializedName = @"executionInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ExecutionInterval { get => Body.ExecutionInterval ?? default(int); set => Body.ExecutionInterval = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ExecutionInterval { get => Body.ExecutionInterval ?? default(long); set => Body.ExecutionInterval = value; }
 
         /// <summary>Plan rule execution mode</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Plan rule execution mode")]

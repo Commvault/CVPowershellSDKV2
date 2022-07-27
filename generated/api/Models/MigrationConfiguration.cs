@@ -52,7 +52,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IAccessNodes[] DestinationAccessNode { get => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).AccessNode; set => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).AccessNode = value ?? null /* arrayOf */; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationCredentialsId { get => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).DestinationCredentialsId; set => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).DestinationCredentialsId = value ?? default(int); }
+        public long? DestinationCredentialsId { get => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).DestinationCredentialsId; set => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).DestinationCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationCredentialsName { get => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).DestinationCredentialsName; set => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).DestinationCredentialsName = value ?? null; }
@@ -70,25 +70,25 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Frequency in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyDailyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyDailyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyDailyFrequency = value ?? default(int); }
+        public long? MigrationFrequencyDailyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyDailyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyDailyFrequency = value ?? default(long); }
 
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyHourlyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyHourlyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyHourlyFrequency = value ?? default(int); }
+        public long? MigrationFrequencyHourlyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyHourlyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyHourlyFrequency = value ?? default(long); }
 
         /// <summary>Frequency in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyMinuteFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMinuteFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMinuteFrequency = value ?? default(int); }
+        public long? MigrationFrequencyMinuteFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMinuteFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMinuteFrequency = value ?? default(long); }
 
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyMonthlyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequency = value ?? default(int); }
+        public long? MigrationFrequencyMonthlyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequency = value ?? default(long); }
 
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyMonthlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequencyDayOfMonth = value ?? default(int); }
+        public long? MigrationFrequencyMonthlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequencyDayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string MigrationFrequencyMonthlyFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequencyDayOfWeek; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyMonthlyFrequencyDayOfWeek = value ?? null; }
@@ -102,11 +102,11 @@ namespace Commvault.Powershell.Models
         /// yearly frequencies
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyStartTime { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyStartTime; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyStartTime = value ?? default(int); }
+        public long? MigrationFrequencyStartTime { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyStartTime; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyStartTime = value ?? default(long); }
 
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyWeeklyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyWeeklyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyWeeklyFrequency = value ?? default(int); }
+        public long? MigrationFrequencyWeeklyFrequency { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyWeeklyFrequency; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyWeeklyFrequency = value ?? default(long); }
 
         /// <summary>Days of the week for weekly frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -114,7 +114,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MigrationFrequencyYearlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyYearlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyYearlyFrequencyDayOfMonth = value ?? default(int); }
+        public long? MigrationFrequencyYearlyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyYearlyFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyYearlyFrequencyDayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string MigrationFrequencyYearlyFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyYearlyFrequencyDayOfWeek; set => ((Commvault.Powershell.Models.IMigrationSettingsInternal)MigrationSettings).MigrationFrequencyYearlyFrequencyDayOfWeek = value ?? null; }
@@ -156,13 +156,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionId { get => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).RegionId; set => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).RegionId = value ?? default(int); }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).RegionId; set => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).RegionId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RegionName { get => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).RegionName; set => ((Commvault.Powershell.Models.IMigrationDestinationInternal)Destination).RegionName = value ?? null; }
@@ -179,7 +179,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IAccessNodes[] SourceAccessNode { get => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).AccessNode; set => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).AccessNode = value ?? null /* arrayOf */; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceCredentialsId { get => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).SourceCredentialsId; set => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).SourceCredentialsId = value ?? default(int); }
+        public long? SourceCredentialsId { get => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).SourceCredentialsId; set => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).SourceCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceCredentialsName { get => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).SourceCredentialsName; set => ((Commvault.Powershell.Models.IMigrationSourceInternal)Source).SourceCredentialsName = value ?? null; }
@@ -222,8 +222,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -254,8 +254,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency in days",
         SerializedName = @"dailyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyDailyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyDailyFrequency { get; set; }
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
@@ -264,32 +264,32 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.",
         SerializedName = @"hourlyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyHourlyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyHourlyFrequency { get; set; }
         /// <summary>Frequency in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in minutes",
         SerializedName = @"minuteFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyMinuteFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyMinuteFrequency { get; set; }
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in months. Only for incremental backup frequency.",
         SerializedName = @"monthlyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyMonthlyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyMonthlyFrequency { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Only available for incremental backup frequency",
         SerializedName = @"monthlyFrequencyDayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyMonthlyFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyMonthlyFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -315,16 +315,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time in seconds from the beginning of the day when the backup starts. This is a mandatory field for daily, weekly, monthly, yearly frequencies",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyStartTime { get; set; }
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in weeks. Only for incremental backup frequency.",
         SerializedName = @"weeklyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyWeeklyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyWeeklyFrequency { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -339,8 +339,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Only available for incremental backup frequency",
         SerializedName = @"yearlyFrequencyDayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MigrationFrequencyYearlyFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MigrationFrequencyYearlyFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -395,8 +395,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -411,8 +411,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -435,8 +435,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -484,7 +484,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName DestinationCredentials { get; set; }
 
-        int? DestinationCredentialsId { get; set; }
+        long? DestinationCredentialsId { get; set; }
 
         string DestinationCredentialsName { get; set; }
         /// <summary>Azure storage account</summary>
@@ -494,17 +494,17 @@ namespace Commvault.Powershell.Models
         /// <summary>Kick off migration immediately?</summary>
         bool? KickOffMigrationImmediately { get; set; }
         /// <summary>Frequency in days</summary>
-        int? MigrationFrequencyDailyFrequency { get; set; }
+        long? MigrationFrequencyDailyFrequency { get; set; }
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
-        int? MigrationFrequencyHourlyFrequency { get; set; }
+        long? MigrationFrequencyHourlyFrequency { get; set; }
         /// <summary>Frequency in minutes</summary>
-        int? MigrationFrequencyMinuteFrequency { get; set; }
+        long? MigrationFrequencyMinuteFrequency { get; set; }
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
-        int? MigrationFrequencyMonthlyFrequency { get; set; }
+        long? MigrationFrequencyMonthlyFrequency { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
-        int? MigrationFrequencyMonthlyFrequencyDayOfMonth { get; set; }
+        long? MigrationFrequencyMonthlyFrequencyDayOfMonth { get; set; }
 
         string MigrationFrequencyMonthlyFrequencyDayOfWeek { get; set; }
         /// <summary>Specific week of a month</summary>
@@ -513,13 +513,13 @@ namespace Commvault.Powershell.Models
         /// Time in seconds from the beginning of the day when the backup starts. This is a mandatory field for daily, weekly, monthly,
         /// yearly frequencies
         /// </summary>
-        int? MigrationFrequencyStartTime { get; set; }
+        long? MigrationFrequencyStartTime { get; set; }
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
-        int? MigrationFrequencyWeeklyFrequency { get; set; }
+        long? MigrationFrequencyWeeklyFrequency { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
         string[] MigrationFrequencyWeeklyFrequencyDays { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
-        int? MigrationFrequencyYearlyFrequencyDayOfMonth { get; set; }
+        long? MigrationFrequencyYearlyFrequencyDayOfMonth { get; set; }
 
         string MigrationFrequencyYearlyFrequencyDayOfWeek { get; set; }
 
@@ -543,11 +543,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
 
-        int? RegionId { get; set; }
+        long? RegionId { get; set; }
 
         string RegionName { get; set; }
         /// <summary>Source of the migration NAS data</summary>
@@ -557,7 +557,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SourceCredentials { get; set; }
 
-        int? SourceCredentialsId { get; set; }
+        long? SourceCredentialsId { get; set; }
 
         string SourceCredentialsName { get; set; }
         /// <summary>NAS filer name</summary>

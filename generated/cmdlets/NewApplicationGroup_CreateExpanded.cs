@@ -95,8 +95,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int HypervisorId { get => Body.HypervisorId ?? default(int); set => Body.HypervisorId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long HypervisorId { get => Body.HypervisorId ?? default(long); set => Body.HypervisorId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -144,8 +144,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int PlanId { get => Body.PlanId ?? default(int); set => Body.PlanId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long PlanId { get => Body.PlanId ?? default(long); set => Body.PlanId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -182,8 +182,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int StorageId { get => Body.StorageId ?? default(int); set => Body.StorageId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long StorageId { get => Body.StorageId ?? default(long); set => Body.StorageId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]

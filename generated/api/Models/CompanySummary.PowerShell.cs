@@ -63,11 +63,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).PrimaryContacts = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("PrimaryContacts",((Commvault.Powershell.Models.ICompanySummaryInternal)this).PrimaryContacts, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Deactivated = (bool?) content.GetValueForProperty("Deactivated",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Deactivated, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount = (int?) content.GetValueForProperty("AssociatedEntitiesCount",((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount = (long?) content.GetValueForProperty("AssociatedEntitiesCount",((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -85,11 +85,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).PrimaryContacts = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("PrimaryContacts",((Commvault.Powershell.Models.ICompanySummaryInternal)this).PrimaryContacts, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Deactivated = (bool?) content.GetValueForProperty("Deactivated",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Deactivated, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount = (int?) content.GetValueForProperty("AssociatedEntitiesCount",((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount = (long?) content.GetValueForProperty("AssociatedEntitiesCount",((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="FileServerCount" /> property.</summary>
-        private int? _fileServerCount;
+        private long? _fileServerCount;
 
         /// <summary>This returns the total number of file servers.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FileServerCount { get => this._fileServerCount; set => this._fileServerCount = value; }
+        public long? FileServerCount { get => this._fileServerCount; set => this._fileServerCount = value; }
 
         /// <summary>Backing field for <see cref="FileServers" /> property.</summary>
         private Commvault.Powershell.Models.IFileServerSummary[] _fileServers;
@@ -41,8 +41,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This returns the total number of file servers.",
         SerializedName = @"fileServerCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileServerCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileServerCount { get; set; }
         /// <summary>This returns the file server list.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -58,7 +58,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>This returns the total number of file servers.</summary>
-        int? FileServerCount { get; set; }
+        long? FileServerCount { get; set; }
         /// <summary>This returns the file server list.</summary>
         Commvault.Powershell.Models.IFileServerSummary[] FileServers { get; set; }
 

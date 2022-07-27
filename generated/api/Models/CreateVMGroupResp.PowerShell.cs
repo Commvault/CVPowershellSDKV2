@@ -63,9 +63,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId = (int?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode = (int?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId = (long?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode = (long?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningMessage, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
@@ -85,9 +85,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId = (int?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode = (int?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId = (long?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).SubclientId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode = (long?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateVMGroupRespInternal)this).WarningMessage, global::System.Convert.ToString);
             AfterDeserializePSObject(content);

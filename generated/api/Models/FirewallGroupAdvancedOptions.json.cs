@@ -60,8 +60,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_tunnelPort = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("tunnelPort"), out var __jsonTunnelPort) ? (int?)__jsonTunnelPort : TunnelPort;}
-            {_keepAliveInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("keepAliveInterval"), out var __jsonKeepAliveInterval) ? (int?)__jsonKeepAliveInterval : KeepAliveInterval;}
+            {_tunnelPort = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("tunnelPort"), out var __jsonTunnelPort) ? (long?)__jsonTunnelPort : TunnelPort;}
+            {_keepAliveInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("keepAliveInterval"), out var __jsonKeepAliveInterval) ? (long?)__jsonKeepAliveInterval : KeepAliveInterval;}
             AfterFromJson(json);
         }
 
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._tunnelPort ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._tunnelPort) : null, "tunnelPort" ,container.Add );
-            AddIf( null != this._keepAliveInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._keepAliveInterval) : null, "keepAliveInterval" ,container.Add );
+            AddIf( null != this._tunnelPort ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._tunnelPort) : null, "tunnelPort" ,container.Add );
+            AddIf( null != this._keepAliveInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._keepAliveInterval) : null, "keepAliveInterval" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

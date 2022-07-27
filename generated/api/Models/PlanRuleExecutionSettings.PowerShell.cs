@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode = (string) content.GetValueForProperty("ExecutionMode",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval = (int?) content.GetValueForProperty("ExecutionInterval",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval = (long?) content.GetValueForProperty("ExecutionInterval",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -117,7 +117,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode = (string) content.GetValueForProperty("ExecutionMode",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval = (int?) content.GetValueForProperty("ExecutionInterval",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval = (long?) content.GetValueForProperty("ExecutionInterval",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

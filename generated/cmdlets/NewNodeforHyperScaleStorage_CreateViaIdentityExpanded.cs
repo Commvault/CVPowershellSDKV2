@@ -296,7 +296,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.HyperScaleStorageId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.CreateNodeforHyperScaleStorage(InputObject.HyperScaleStorageId ?? default(int), Body, onOk, onBadRequest, onNotFound, onInternalServerError, this, Pipeline);
+                    await this.Client.CreateNodeforHyperScaleStorage(InputObject.HyperScaleStorageId ?? default(long), Body, onOk, onBadRequest, onNotFound, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

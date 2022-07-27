@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int _id;
+        private long _id;
 
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = ".")]
         [Commvault.Powershell.Runtime.Info(
@@ -83,9 +83,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int Id { get => this._id; set => this._id = value; }
+        public long Id { get => this._id; set => this._id = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }
@@ -98,8 +98,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int LocaleId { get => Body.LocaleId ?? default(int); set => Body.LocaleId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long LocaleId { get => Body.LocaleId ?? default(long); set => Body.LocaleId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -206,8 +206,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook",
         SerializedName = @"webHookId",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RecipientWebHookId { get => Body.RecipientWebHookId ?? default(int); set => Body.RecipientWebHookId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RecipientWebHookId { get => Body.RecipientWebHookId ?? default(long); set => Body.RecipientWebHookId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]

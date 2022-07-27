@@ -18,7 +18,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName AccessNode { get => (this._accessNode = this._accessNode ?? new Commvault.Powershell.Models.IdName()); set => this._accessNode = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AccessNodeId { get => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id = value ?? default(int); }
+        public long? AccessNodeId { get => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string AccessNodeName { get => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)AccessNode).Name = value ?? null; }
@@ -76,7 +76,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationHypervisor { get => (this._destinationHypervisor = this._destinationHypervisor ?? new Commvault.Powershell.Models.IdName()); set => this._destinationHypervisor = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationHypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id = value ?? default(int); }
+        public long? DestinationHypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationHypervisorName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationHypervisor).Name = value ?? null; }
@@ -96,20 +96,20 @@ namespace Commvault.Powershell.Models
         public string EncryptionKey { get => this._encryptionKey; set => this._encryptionKey = value; }
 
         /// <summary>Backing field for <see cref="ExpirationTime" /> property.</summary>
-        private int? _expirationTime;
+        private long? _expirationTime;
 
         /// <summary>
         /// Specifies the amount of time(hours) that a live mounted VMs can run before they expire.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ExpirationTime { get => this._expirationTime; set => this._expirationTime = value; }
+        public long? ExpirationTime { get => this._expirationTime; set => this._expirationTime = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Unique ID of recovery target</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="IsoPath" /> property.</summary>
         private string[] _isoPath;
@@ -119,11 +119,11 @@ namespace Commvault.Powershell.Models
         public string[] IsoPath { get => this._isoPath; set => this._isoPath = value; }
 
         /// <summary>Backing field for <see cref="MaximumCpuCores" /> property.</summary>
-        private int? _maximumCpuCores;
+        private long? _maximumCpuCores;
 
         /// <summary>Maximum cores</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MaximumCpuCores { get => this._maximumCpuCores; set => this._maximumCpuCores = value; }
+        public long? MaximumCpuCores { get => this._maximumCpuCores; set => this._maximumCpuCores = value; }
 
         /// <summary>Backing field for <see cref="MaximumMemory" /> property.</summary>
         private string _maximumMemory;
@@ -147,11 +147,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="NumberOfVMS" /> property.</summary>
-        private int? _numberOfVMS;
+        private long? _numberOfVMS;
 
         /// <summary>Number of concurrent VMs that each user can run on the recovery target</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? NumberOfVMS { get => this._numberOfVMS; set => this._numberOfVMS = value; }
+        public long? NumberOfVMS { get => this._numberOfVMS; set => this._numberOfVMS = value; }
 
         /// <summary>Backing field for <see cref="PublicIP" /> property.</summary>
         private bool? _publicIP;
@@ -235,8 +235,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AccessNodeId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AccessNodeId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -293,8 +293,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationHypervisorId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationHypervisorId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -327,16 +327,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specifies the amount of time(hours) that a live mounted VMs can run before they expire.",
         SerializedName = @"expirationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExpirationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExpirationTime { get; set; }
         /// <summary>Unique ID of recovery target</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Unique ID of recovery target",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Path for the Windows/Unix ISO files</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -351,8 +351,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum cores",
         SerializedName = @"maximumCPUCores",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MaximumCpuCores { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MaximumCpuCores { get; set; }
         /// <summary>Maximum memory of the vm in bytes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -383,8 +383,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of concurrent VMs that each user can run on the recovery target",
         SerializedName = @"numberOfVMs",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NumberOfVMS { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NumberOfVMS { get; set; }
         /// <summary>If true, public IP address are configured for destination VMs</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -469,7 +469,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName AccessNode { get; set; }
 
-        int? AccessNodeId { get; set; }
+        long? AccessNodeId { get; set; }
 
         string AccessNodeName { get; set; }
         /// <summary>Recovery target application type</summary>
@@ -487,7 +487,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName DestinationHypervisor { get; set; }
 
-        int? DestinationHypervisorId { get; set; }
+        long? DestinationHypervisorId { get; set; }
 
         string DestinationHypervisorName { get; set; }
         /// <summary>A network interface for the destination instances.</summary>
@@ -497,13 +497,13 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Specifies the amount of time(hours) that a live mounted VMs can run before they expire.
         /// </summary>
-        int? ExpirationTime { get; set; }
+        long? ExpirationTime { get; set; }
         /// <summary>Unique ID of recovery target</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Path for the Windows/Unix ISO files</summary>
         string[] IsoPath { get; set; }
         /// <summary>Maximum cores</summary>
-        int? MaximumCpuCores { get; set; }
+        long? MaximumCpuCores { get; set; }
         /// <summary>Maximum memory of the vm in bytes</summary>
         string MaximumMemory { get; set; }
         /// <summary>True when live mount is enabled</summary>
@@ -511,7 +511,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Name of the recovery target</summary>
         string Name { get; set; }
         /// <summary>Number of concurrent VMs that each user can run on the recovery target</summary>
-        int? NumberOfVMS { get; set; }
+        long? NumberOfVMS { get; set; }
         /// <summary>If true, public IP address are configured for destination VMs</summary>
         bool? PublicIP { get; set; }
 

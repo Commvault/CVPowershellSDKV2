@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rule = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Rule",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rule, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank = (int?) content.GetValueForProperty("Rank",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId = (int?) content.GetValueForProperty("RuleId",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank = (long?) content.GetValueForProperty("Rank",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId = (long?) content.GetValueForProperty("RuleId",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleName = (string) content.GetValueForProperty("RuleName",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -115,8 +115,8 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rule = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Rule",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rule, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank = (int?) content.GetValueForProperty("Rank",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId = (int?) content.GetValueForProperty("RuleId",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank = (long?) content.GetValueForProperty("Rank",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).Rank, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId = (long?) content.GetValueForProperty("RuleId",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleName = (string) content.GetValueForProperty("RuleName",((Commvault.Powershell.Models.IPlanEntityRuleRankInternal)this).RuleName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

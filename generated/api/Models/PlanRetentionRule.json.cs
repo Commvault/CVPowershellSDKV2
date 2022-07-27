@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_isInfiniteRetention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isInfiniteRetention"), out var __jsonIsInfiniteRetention) ? (bool?)__jsonIsInfiniteRetention : IsInfiniteRetention;}
-            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (int?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
+            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             AfterFromJson(json);
         }
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._isInfiniteRetention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isInfiniteRetention) : null, "isInfiniteRetention" ,container.Add );
-            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
+            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AfterToJson(ref container);
             return container;

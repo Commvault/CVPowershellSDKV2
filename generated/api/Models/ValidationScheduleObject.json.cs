@@ -78,8 +78,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
-            AddIf( null != this._taskId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._taskId) : null, "taskId" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._taskId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._taskId) : null, "taskId" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AddIf( null != this._isScheduleEnabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isScheduleEnabled) : null, "isScheduleEnabled" ,container.Add );
             AfterToJson(ref container);
@@ -98,8 +98,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
-            {_taskId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("taskId"), out var __jsonTaskId) ? (int?)__jsonTaskId : TaskId;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
+            {_taskId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("taskId"), out var __jsonTaskId) ? (long?)__jsonTaskId : TaskId;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             {_isScheduleEnabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isScheduleEnabled"), out var __jsonIsScheduleEnabled) ? (bool?)__jsonIsScheduleEnabled : IsScheduleEnabled;}
             AfterFromJson(json);

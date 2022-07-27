@@ -65,9 +65,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZone = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("TimeZone",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZone, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time = (int?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Value = (string) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Value, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId = (int?) content.GetValueForProperty("TimeZoneId",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId = (long?) content.GetValueForProperty("TimeZoneId",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneName = (string) content.GetValueForProperty("TimeZoneName",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -87,9 +87,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZone = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("TimeZone",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZone, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time = (int?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Value = (string) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).Value, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId = (int?) content.GetValueForProperty("TimeZoneId",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId = (long?) content.GetValueForProperty("TimeZoneId",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneName = (string) content.GetValueForProperty("TimeZoneName",((Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal)this).TimeZoneName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

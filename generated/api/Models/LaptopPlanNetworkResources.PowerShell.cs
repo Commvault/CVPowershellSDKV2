@@ -96,8 +96,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend = (int?) content.GetValueForProperty("ThrottleSend",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive = (int?) content.GetValueForProperty("ThrottleReceive",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend = (long?) content.GetValueForProperty("ThrottleSend",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive = (long?) content.GetValueForProperty("ThrottleReceive",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -115,8 +115,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend = (int?) content.GetValueForProperty("ThrottleSend",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive = (int?) content.GetValueForProperty("ThrottleReceive",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend = (long?) content.GetValueForProperty("ThrottleSend",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleSend, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive = (long?) content.GetValueForProperty("ThrottleReceive",((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)this).ThrottleReceive, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

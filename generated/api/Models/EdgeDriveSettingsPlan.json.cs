@@ -66,7 +66,7 @@ namespace Commvault.Powershell.Models
             {_indexCachePath = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("indexCachePath"), out var __jsonIndexCachePath) ? (string)__jsonIndexCachePath : (string)IndexCachePath;}
             {_auditDriveOperations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("auditDriveOperations"), out var __jsonAuditDriveOperations) ? (bool?)__jsonAuditDriveOperations : AuditDriveOperations;}
             {_notificationsForShares = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("notificationsForShares"), out var __jsonNotificationsForShares) ? (bool?)__jsonNotificationsForShares : NotificationsForShares;}
-            {_edgeDriveQuota = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("edgeDriveQuota"), out var __jsonEdgeDriveQuota) ? (int?)__jsonEdgeDriveQuota : EdgeDriveQuota;}
+            {_edgeDriveQuota = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("edgeDriveQuota"), out var __jsonEdgeDriveQuota) ? (long?)__jsonEdgeDriveQuota : EdgeDriveQuota;}
             AfterFromJson(json);
         }
 
@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._indexCachePath)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._indexCachePath.ToString()) : null, "indexCachePath" ,container.Add );
             AddIf( null != this._auditDriveOperations ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._auditDriveOperations) : null, "auditDriveOperations" ,container.Add );
             AddIf( null != this._notificationsForShares ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._notificationsForShares) : null, "notificationsForShares" ,container.Add );
-            AddIf( null != this._edgeDriveQuota ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._edgeDriveQuota) : null, "edgeDriveQuota" ,container.Add );
+            AddIf( null != this._edgeDriveQuota ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._edgeDriveQuota) : null, "edgeDriveQuota" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

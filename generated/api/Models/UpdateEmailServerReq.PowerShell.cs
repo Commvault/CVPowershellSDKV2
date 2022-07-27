@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpServerName = (string) content.GetValueForProperty("SmtpServerName",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpServerName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort = (int?) content.GetValueForProperty("SmtpPort",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort = (long?) content.GetValueForProperty("SmtpPort",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderEmail = (string) content.GetValueForProperty("SenderEmail",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderEmail, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderName = (string) content.GetValueForProperty("SenderName",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).EncryptionAlgorithm = (string) content.GetValueForProperty("EncryptionAlgorithm",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).EncryptionAlgorithm, global::System.Convert.ToString);
@@ -130,7 +130,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpServerName = (string) content.GetValueForProperty("SmtpServerName",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpServerName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort = (int?) content.GetValueForProperty("SmtpPort",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort = (long?) content.GetValueForProperty("SmtpPort",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SmtpPort, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderEmail = (string) content.GetValueForProperty("SenderEmail",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderEmail, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderName = (string) content.GetValueForProperty("SenderName",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).SenderName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).EncryptionAlgorithm = (string) content.GetValueForProperty("EncryptionAlgorithm",((Commvault.Powershell.Models.IUpdateEmailServerReqInternal)this).EncryptionAlgorithm, global::System.Convert.ToString);

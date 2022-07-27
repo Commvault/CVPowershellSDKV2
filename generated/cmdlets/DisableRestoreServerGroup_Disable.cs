@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="EnableAfterADelay" /> property.</summary>
-        private int _enableAfterADelay;
+        private long _enableAfterADelay;
 
         /// <summary>Provide UTC time in unix format.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Provide UTC time in unix format.")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Provide UTC time in unix format.",
         SerializedName = @"enableAfterADelay",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
+        public long EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="ServerGroupId" /> property.</summary>
-        private int _serverGroupId;
+        private long _serverGroupId;
 
         /// <summary>Id of the serverGroup to modify</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the serverGroup to modify")]
@@ -100,9 +100,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the serverGroup to modify",
         SerializedName = @"serverGroupId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int ServerGroupId { get => this._serverGroupId; set => this._serverGroupId = value; }
+        public long ServerGroupId { get => this._serverGroupId; set => this._serverGroupId = value; }
 
         /// <summary>
         /// <c>overrideOnOk</c> will be called before the regular onOk has been processed, allowing customization of what happens
@@ -256,12 +256,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.DisableRestoreServerGroup(ServerGroupId, this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?), onOk, this, Pipeline);
+                    await this.Client.DisableRestoreServerGroup(ServerGroupId, this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?), onOk, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ServerGroupId=ServerGroupId,EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ServerGroupId=ServerGroupId,EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

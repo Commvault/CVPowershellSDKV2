@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers = (int?) content.GetValueForProperty("TotalServers",((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers = (long?) content.GetValueForProperty("TotalServers",((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServersListRespInternal)this).Servers = (Commvault.Powershell.Models.IServerSummary[]) content.GetValueForProperty("Servers",((Commvault.Powershell.Models.IServersListRespInternal)this).Servers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IServerSummary>(__y, Commvault.Powershell.Models.ServerSummaryTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers = (int?) content.GetValueForProperty("TotalServers",((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers = (long?) content.GetValueForProperty("TotalServers",((Commvault.Powershell.Models.IServersListRespInternal)this).TotalServers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServersListRespInternal)this).Servers = (Commvault.Powershell.Models.IServerSummary[]) content.GetValueForProperty("Servers",((Commvault.Powershell.Models.IServersListRespInternal)this).Servers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IServerSummary>(__y, Commvault.Powershell.Models.ServerSummaryTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

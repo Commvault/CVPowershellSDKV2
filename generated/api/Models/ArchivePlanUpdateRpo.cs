@@ -23,7 +23,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).DayOfMonth; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).DayOfMonth = value ?? default(int); }
+        public long? BackupFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).DayOfMonth; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).DayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).DayOfWeek; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).DayOfWeek = value ?? null; }
@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Models
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupFrequencyFrequency { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).Frequency; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).Frequency = value ?? default(int); }
+        public long? BackupFrequencyFrequency { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).Frequency; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).Frequency = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupFrequencyMonthOfYear { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).MonthOfYear; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).MonthOfYear = value ?? null; }
@@ -44,7 +44,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupFrequencyStartTime { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).StartTime; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).StartTime = value ?? default(int); }
+        public long? BackupFrequencyStartTime { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).StartTime; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupFrequency).StartTime = value ?? default(long); }
 
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -79,7 +79,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay = value ?? default(int); }
+        public long? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay = value ?? default(long); }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod = value ?? default(int); }
+        public long? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod = value ?? default(long); }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -114,8 +114,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Day on which to run the schedule, applicable for monthly, yearly",
         SerializedName = @"dayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -133,8 +133,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months",
         SerializedName = @"frequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequencyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequencyFrequency { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -157,8 +157,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"start time of schedule in seconds for daily, weekly, monthly, yearly frequency",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequencyStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -189,8 +189,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaEnableAfterDelay { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -213,8 +213,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -233,20 +233,20 @@ namespace Commvault.Powershell.Models
         /// <summary>Used to describe the frequency of backup</summary>
         Commvault.Powershell.Models.IBackupFrequencyPattern BackupFrequency { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
-        int? BackupFrequencyDayOfMonth { get; set; }
+        long? BackupFrequencyDayOfMonth { get; set; }
 
         string BackupFrequencyDayOfWeek { get; set; }
         /// <summary>
         /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
-        int? BackupFrequencyFrequency { get; set; }
+        long? BackupFrequencyFrequency { get; set; }
 
         string BackupFrequencyMonthOfYear { get; set; }
         /// <summary>schedule frequency type</summary>
         string BackupFrequencyScheduleFrequencyType { get; set; }
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
-        int? BackupFrequencyStartTime { get; set; }
+        long? BackupFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         string BackupFrequencyWeekOfMonth { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
@@ -259,13 +259,13 @@ namespace Commvault.Powershell.Models
         /// </summary>
         Commvault.Powershell.Models.ISlaUpdateOptions Sla { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        int? SlaEnableAfterDelay { get; set; }
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         bool? SlaExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
         string SlaExclusionReason { get; set; }
         /// <summary>SLA Period in Days</summary>
-        int? SlaPeriod { get; set; }
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? SlaUseSystemDefaultSla { get; set; }
 

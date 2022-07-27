@@ -84,7 +84,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._lastBackup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._lastBackup.ToJson(null,serializationMode) : null, "lastBackup" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != this._replicationGroup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._replicationGroup.ToJson(null,serializationMode) : null, "replicationGroup" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != (((object)this._hypervisorType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hypervisorType.ToString()) : null, "HypervisorType" ,container.Add );
@@ -124,7 +124,7 @@ namespace Commvault.Powershell.Models
             {_lastBackup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("lastBackup"), out var __jsonLastBackup) ? Commvault.Powershell.Models.LastBackupJobInfo.FromJson(__jsonLastBackup) : LastBackup;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.CompanyInfo.FromJson(__jsonCompany) : Company;}
             {_replicationGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("replicationGroup"), out var __jsonReplicationGroup) ? Commvault.Powershell.Models.IdName.FromJson(__jsonReplicationGroup) : ReplicationGroup;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_hypervisorType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("HypervisorType"), out var __jsonHypervisorType) ? (string)__jsonHypervisorType : (string)HypervisorType;}

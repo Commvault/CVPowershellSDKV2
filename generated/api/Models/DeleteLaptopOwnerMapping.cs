@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="LaptopOwnerMapping" /> property.</summary>
-        private int[] _laptopOwnerMapping;
+        private long[] _laptopOwnerMapping;
 
         /// <summary>Accepts list of laptop owner mapping ids to be deleted</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int[] LaptopOwnerMapping { get => this._laptopOwnerMapping; set => this._laptopOwnerMapping = value; }
+        public long[] LaptopOwnerMapping { get => this._laptopOwnerMapping; set => this._laptopOwnerMapping = value; }
 
         /// <summary>Creates an new <see cref="DeleteLaptopOwnerMapping" /> instance.</summary>
         public DeleteLaptopOwnerMapping()
@@ -34,8 +34,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Accepts list of laptop owner mapping ids to be deleted",
         SerializedName = @"laptopOwnerMapping",
-        PossibleTypes = new [] { typeof(int) })]
-        int[] LaptopOwnerMapping { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long[] LaptopOwnerMapping { get; set; }
 
     }
     /// This model accepts the list of laptop owner mapping to be deleted
@@ -43,7 +43,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Accepts list of laptop owner mapping ids to be deleted</summary>
-        int[] LaptopOwnerMapping { get; set; }
+        long[] LaptopOwnerMapping { get; set; }
 
     }
 }

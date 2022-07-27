@@ -32,7 +32,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName CrossAccountCopyDestinationClient { get => (this._crossAccountCopyDestinationClient = this._crossAccountCopyDestinationClient ?? new Commvault.Powershell.Models.IdName()); set => this._crossAccountCopyDestinationClient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CrossAccountCopyDestinationClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Id = value ?? default(int); }
+        public long? CrossAccountCopyDestinationClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CrossAccountCopyDestinationClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Name = value ?? null; }
@@ -82,7 +82,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SnapEngine { get => (this._snapEngine = this._snapEngine ?? new Commvault.Powershell.Models.IdName()); set => this._snapEngine = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapEngineId { get => ((Commvault.Powershell.Models.IIdNameInternal)SnapEngine).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SnapEngine).Id = value ?? default(int); }
+        public long? SnapEngineId { get => ((Commvault.Powershell.Models.IIdNameInternal)SnapEngine).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SnapEngine).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SnapEngineName { get => ((Commvault.Powershell.Models.IIdNameInternal)SnapEngine).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SnapEngine).Name = value ?? null; }
@@ -101,7 +101,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SnapMountProxy { get => (this._snapMountProxy = this._snapMountProxy ?? new Commvault.Powershell.Models.IdName()); set => this._snapMountProxy = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapMountProxyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SnapMountProxy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SnapMountProxy).Id = value ?? default(int); }
+        public long? SnapMountProxyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SnapMountProxy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SnapMountProxy).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SnapMountProxyName { get => ((Commvault.Powershell.Models.IIdNameInternal)SnapMountProxy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SnapMountProxy).Name = value ?? null; }
@@ -142,8 +142,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CrossAccountCopyDestinationClientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CrossAccountCopyDestinationClientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -201,8 +201,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapEngineId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapEngineId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -225,8 +225,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapMountProxyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapMountProxyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -260,7 +260,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName CrossAccountCopyDestinationClient { get; set; }
 
-        int? CrossAccountCopyDestinationClientId { get; set; }
+        long? CrossAccountCopyDestinationClientId { get; set; }
 
         string CrossAccountCopyDestinationClientName { get; set; }
         /// <summary>True if hardware snapshot is enabled</summary>
@@ -279,7 +279,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SnapEngine { get; set; }
 
-        int? SnapEngineId { get; set; }
+        long? SnapEngineId { get; set; }
 
         string SnapEngineName { get; set; }
         /// <summary>Name of ESX Host</summary>
@@ -287,7 +287,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SnapMountProxy { get; set; }
 
-        int? SnapMountProxyId { get; set; }
+        long? SnapMountProxyId { get; set; }
 
         string SnapMountProxyName { get; set; }
         /// <summary>True if separate proxy client is used for snap to tape</summary>

@@ -15,9 +15,9 @@ Create Alert Definitions
 ```
 New-AlertDefinition [-AlertTargetSendAlertTo <String[]>] [-AlertTypeCategory <String>]
  [-AlertTypeCriteria <String>] [-AlertTypeParamsList <IAlertDefinitionsCriteriaParams[]>]
- [-Associations <IAlertAssociationIdNameType1[]>] [-LocaleId <Int32>] [-LocaleName <String>] [-Name <String>]
+ [-Associations <IAlertAssociationIdNameType1[]>] [-LocaleId <Int64>] [-LocaleName <String>] [-Name <String>]
  [-RecipientBcc <IAlertTargetIdNameType1[]>] [-RecipientCc <IAlertTargetIdNameType1[]>]
- [-RecipientTo <IAlertTargetIdNameType1[]>] [-RecipientWebHookId <Int32>] [-SendIndividualNotifications]
+ [-RecipientTo <IAlertTargetIdNameType1[]>] [-RecipientWebHookId <Int64>] [-SendIndividualNotifications]
  [-TemplateConsoleMessage <String>] [-TemplateEmailMessage <String>] [-TemplateEventViewerMessage <String>]
  [-TemplateWebhookMessage <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -238,7 +238,7 @@ Only needed incase of webhook notif selected.
 To get a list of webhooks, use api GET Webhook
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -375,28 +375,28 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ALERTTYPEPARAMSLIST <IAlertDefinitionsCriteriaParams[]>: .
-  - `[ParamIndex <Int32?>]`: Param order index
-  - `[Type <Int32?>]`: Input value type (default 0 = no input required)
-  - `[Unit <Int32?>]`: Unit of the criteria(For eg. :Hrs,min)
-  - `[Value <Int32?>]`: Value of the criteria (deefault 0 : if no value required)
+  - `[ParamIndex <Int64?>]`: Param order index
+  - `[Type <Int64?>]`: Input value type (default 0 = no input required)
+  - `[Unit <Int64?>]`: Unit of the criteria(For eg. :Hrs,min)
+  - `[Value <Int64?>]`: Value of the criteria (deefault 0 : if no value required)
 
 ASSOCIATIONS <IAlertAssociationIdNameType1[]>: AlertDefinitionsAssociations
-  - `[Id <Int32?>]`: id of the associated entity
+  - `[Id <Int64?>]`: id of the associated entity
   - `[Name <String>]`: name of the associated entity
   - `[Type <String>]`: 
 
 RECIPIENTBCC <IAlertTargetIdNameType1[]>: .
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
   - `[Type <String>]`: 
 
 RECIPIENTCC <IAlertTargetIdNameType1[]>: .
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
   - `[Type <String>]`: 
 
 RECIPIENTTO <IAlertTargetIdNameType1[]>: .
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
   - `[Type <String>]`: 
 

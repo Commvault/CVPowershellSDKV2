@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).Fbrma = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Fbrma",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).Fbrma, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId = (int?) content.GetValueForProperty("FbrmaId",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId = (long?) content.GetValueForProperty("FbrmaId",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaName = (string) content.GetValueForProperty("FbrmaName",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -120,7 +120,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).Fbrma = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Fbrma",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).Fbrma, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId = (int?) content.GetValueForProperty("FbrmaId",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId = (long?) content.GetValueForProperty("FbrmaId",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaName = (string) content.GetValueForProperty("FbrmaName",((Commvault.Powershell.Models.IPaths1OwzkoeV4HypervisorHypervisoridFbrPutRequestbodyContentApplicationJsonSchemaInternal)this).FbrmaName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

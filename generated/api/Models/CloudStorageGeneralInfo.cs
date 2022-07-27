@@ -21,25 +21,25 @@ namespace Commvault.Powershell.Models
         public string DeduplicationSavings { get => this._deduplicationSavings; set => this._deduplicationSavings = value; }
 
         /// <summary>Backing field for <see cref="FreeSpace" /> property.</summary>
-        private int? _freeSpace;
+        private long? _freeSpace;
 
         /// <summary>Free space available on this cloud storage</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
+        public long? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
 
         /// <summary>Backing field for <see cref="SizeOnDisk" /> property.</summary>
-        private int? _sizeOnDisk;
+        private long? _sizeOnDisk;
 
         /// <summary>Amount of space consumed</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SizeOnDisk { get => this._sizeOnDisk; set => this._sizeOnDisk = value; }
+        public long? SizeOnDisk { get => this._sizeOnDisk; set => this._sizeOnDisk = value; }
 
         /// <summary>Backing field for <see cref="TotalCapacity" /> property.</summary>
-        private int? _totalCapacity;
+        private long? _totalCapacity;
 
         /// <summary>Total capacity of this cloud storage</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TotalCapacity { get => this._totalCapacity; set => this._totalCapacity = value; }
+        public long? TotalCapacity { get => this._totalCapacity; set => this._totalCapacity = value; }
 
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
@@ -81,24 +81,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Free space available on this cloud storage",
         SerializedName = @"freeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FreeSpace { get; set; }
         /// <summary>Amount of space consumed</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Amount of space consumed",
         SerializedName = @"sizeOnDisk",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SizeOnDisk { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SizeOnDisk { get; set; }
         /// <summary>Total capacity of this cloud storage</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Total capacity of this cloud storage",
         SerializedName = @"totalCapacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TotalCapacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TotalCapacity { get; set; }
         /// <summary>Type of the cloud storage server</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -126,11 +126,11 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string DeduplicationSavings { get; set; }
         /// <summary>Free space available on this cloud storage</summary>
-        int? FreeSpace { get; set; }
+        long? FreeSpace { get; set; }
         /// <summary>Amount of space consumed</summary>
-        int? SizeOnDisk { get; set; }
+        long? SizeOnDisk { get; set; }
         /// <summary>Total capacity of this cloud storage</summary>
-        int? TotalCapacity { get; set; }
+        long? TotalCapacity { get; set; }
         /// <summary>Type of the cloud storage server</summary>
         string Type { get; set; }
         /// <summary>Cloud server type</summary>

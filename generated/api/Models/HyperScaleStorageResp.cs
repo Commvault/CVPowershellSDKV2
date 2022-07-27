@@ -22,20 +22,20 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.IIdName __idName = new Commvault.Powershell.Models.IdName();
 
         /// <summary>Backing field for <see cref="CopyId" /> property.</summary>
-        private int? _copyId;
+        private long? _copyId;
 
         /// <summary>Id of Storage Policy Copy</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CopyId { get => this._copyId; set => this._copyId = value; }
+        public long? CopyId { get => this._copyId; set => this._copyId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? ErrorCode { get => ((Commvault.Powershell.Models.IGenericRespInternal)__genericResp).ErrorCode; set => ((Commvault.Powershell.Models.IGenericRespInternal)__genericResp).ErrorCode = value; }
+        public long? ErrorCode { get => ((Commvault.Powershell.Models.IGenericRespInternal)__genericResp).ErrorCode; set => ((Commvault.Powershell.Models.IGenericRespInternal)__genericResp).ErrorCode = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string ErrorMessage { get => ((Commvault.Powershell.Models.IGenericRespInternal)__genericResp).ErrorMessage; set => ((Commvault.Powershell.Models.IGenericRespInternal)__genericResp).ErrorMessage = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id = value; }
+        public long? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string Name { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Name = value; }
@@ -72,8 +72,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of Storage Policy Copy",
         SerializedName = @"copyId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CopyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CopyId { get; set; }
 
     }
     /// HyperScaleStorageResp
@@ -82,7 +82,7 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IGenericRespInternal
     {
         /// <summary>Id of Storage Policy Copy</summary>
-        int? CopyId { get; set; }
+        long? CopyId { get; set; }
 
     }
 }

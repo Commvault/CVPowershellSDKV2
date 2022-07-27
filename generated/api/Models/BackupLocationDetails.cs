@@ -18,18 +18,18 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IAccessPathDetails[] DiskAccessPaths { get => this._diskAccessPaths; set => this._diskAccessPaths = value; }
 
         /// <summary>Backing field for <see cref="FreeSpace" /> property.</summary>
-        private int? _freeSpace;
+        private long? _freeSpace;
 
         /// <summary>total free space on the backup location</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
+        public long? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
 
         /// <summary>Backing field for <see cref="TotalCapacity" /> property.</summary>
-        private int? _totalCapacity;
+        private long? _totalCapacity;
 
         /// <summary>total capacity of the backup location</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TotalCapacity { get => this._totalCapacity; set => this._totalCapacity = value; }
+        public long? TotalCapacity { get => this._totalCapacity; set => this._totalCapacity = value; }
 
         /// <summary>Creates an new <see cref="BackupLocationDetails" /> instance.</summary>
         public BackupLocationDetails()
@@ -54,16 +54,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"total free space on the backup location",
         SerializedName = @"freeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FreeSpace { get; set; }
         /// <summary>total capacity of the backup location</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"total capacity of the backup location",
         SerializedName = @"totalCapacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TotalCapacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TotalCapacity { get; set; }
 
     }
     internal partial interface IBackupLocationDetailsInternal
@@ -72,9 +72,9 @@ namespace Commvault.Powershell.Models
         /// <summary>access paths available on the backup location</summary>
         Commvault.Powershell.Models.IAccessPathDetails[] DiskAccessPaths { get; set; }
         /// <summary>total free space on the backup location</summary>
-        int? FreeSpace { get; set; }
+        long? FreeSpace { get; set; }
         /// <summary>total capacity of the backup location</summary>
-        int? TotalCapacity { get; set; }
+        long? TotalCapacity { get; set; }
 
     }
 }

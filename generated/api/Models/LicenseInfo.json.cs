@@ -71,14 +71,14 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_commCellId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("commCellId"), out var __jsonCommCellId) ? (int?)__jsonCommCellId : CommCellId;}
+            {_commCellId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("commCellId"), out var __jsonCommCellId) ? (long?)__jsonCommCellId : CommCellId;}
             {_commServeIPAddress = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("commServeIPAddress"), out var __jsonCommServeIPAddress) ? (string)__jsonCommServeIPAddress : (string)CommServeIPAddress;}
             {_licenseIPAddress = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("licenseIPAddress"), out var __jsonLicenseIPAddress) ? (string)__jsonLicenseIPAddress : (string)LicenseIPAddress;}
             {_edition = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("edition"), out var __jsonEdition) ? (string)__jsonEdition : (string)Edition;}
             {_licenseMode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("licenseMode"), out var __jsonLicenseMode) ? (string)__jsonLicenseMode : (string)LicenseMode;}
             {_serialNumber = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serialNumber"), out var __jsonSerialNumber) ? (string)__jsonSerialNumber : (string)SerialNumber;}
             {_registrationCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("registrationCode"), out var __jsonRegistrationCode) ? (string)__jsonRegistrationCode : (string)RegistrationCode;}
-            {_expiryDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expiryDate"), out var __jsonExpiryDate) ? (int?)__jsonExpiryDate : ExpiryDate;}
+            {_expiryDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expiryDate"), out var __jsonExpiryDate) ? (long?)__jsonExpiryDate : ExpiryDate;}
             AfterFromJson(json);
         }
 
@@ -101,14 +101,14 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._commCellId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._commCellId) : null, "commCellId" ,container.Add );
+            AddIf( null != this._commCellId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._commCellId) : null, "commCellId" ,container.Add );
             AddIf( null != (((object)this._commServeIPAddress)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._commServeIPAddress.ToString()) : null, "commServeIPAddress" ,container.Add );
             AddIf( null != (((object)this._licenseIPAddress)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._licenseIPAddress.ToString()) : null, "licenseIPAddress" ,container.Add );
             AddIf( null != (((object)this._edition)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._edition.ToString()) : null, "edition" ,container.Add );
             AddIf( null != (((object)this._licenseMode)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._licenseMode.ToString()) : null, "licenseMode" ,container.Add );
             AddIf( null != (((object)this._serialNumber)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._serialNumber.ToString()) : null, "serialNumber" ,container.Add );
             AddIf( null != (((object)this._registrationCode)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._registrationCode.ToString()) : null, "registrationCode" ,container.Add );
-            AddIf( null != this._expiryDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._expiryDate) : null, "expiryDate" ,container.Add );
+            AddIf( null != this._expiryDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._expiryDate) : null, "expiryDate" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

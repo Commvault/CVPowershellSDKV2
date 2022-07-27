@@ -99,8 +99,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int BackupActivityControlOptionsTimeZoneId { get => Body.BackupActivityControlOptionsTimeZoneId ?? default(int); set => Body.BackupActivityControlOptionsTimeZoneId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long BackupActivityControlOptionsTimeZoneId { get => Body.BackupActivityControlOptionsTimeZoneId ?? default(long); set => Body.BackupActivityControlOptionsTimeZoneId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -194,8 +194,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int CrossAccountCopyDestinationClientId { get => Body.CrossAccountCopyDestinationClientId ?? default(int); set => Body.CrossAccountCopyDestinationClientId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long CrossAccountCopyDestinationClientId { get => Body.CrossAccountCopyDestinationClientId ?? default(long); set => Body.CrossAccountCopyDestinationClientId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -315,8 +315,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int PlanId { get => Body.PlanId ?? default(int); set => Body.PlanId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long PlanId { get => Body.PlanId ?? default(long); set => Body.PlanId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -375,8 +375,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RestoreActivityControlOptionsTimeZoneId { get => Body.RestoreActivityControlOptionsTimeZoneId ?? default(int); set => Body.RestoreActivityControlOptionsTimeZoneId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RestoreActivityControlOptionsTimeZoneId { get => Body.RestoreActivityControlOptionsTimeZoneId ?? default(long); set => Body.RestoreActivityControlOptionsTimeZoneId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -397,8 +397,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SavedCredentialsId { get => Body.SavedCredentialsId ?? default(int); set => Body.SavedCredentialsId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SavedCredentialsId { get => Body.SavedCredentialsId ?? default(long); set => Body.SavedCredentialsId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -488,8 +488,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"precentage of datastore free space check value",
         SerializedName = @"datastoreFreespaceRequired",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SettingDatastoreFreespaceRequired { get => Body.SettingDatastoreFreespaceRequired ?? default(int); set => Body.SettingDatastoreFreespaceRequired = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SettingDatastoreFreespaceRequired { get => Body.SettingDatastoreFreespaceRequired ?? default(long); set => Body.SettingDatastoreFreespaceRequired = value; }
 
         /// <summary>Is the VM App Aware</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Is the VM App Aware")]
@@ -510,8 +510,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Start Time for the VM Group Job",
         SerializedName = @"jobStartTime",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SettingJobStartTime { get => Body.SettingJobStartTime ?? default(int); set => Body.SettingJobStartTime = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SettingJobStartTime { get => Body.SettingJobStartTime ?? default(long); set => Body.SettingJobStartTime = value; }
 
         /// <summary>Number of readers for backup</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Number of readers for backup")]
@@ -521,8 +521,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Number of readers for backup",
         SerializedName = @"noOfReaders",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SettingNoOfReaders { get => Body.SettingNoOfReaders ?? default(int); set => Body.SettingNoOfReaders = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SettingNoOfReaders { get => Body.SettingNoOfReaders ?? default(long); set => Body.SettingNoOfReaders = value; }
 
         /// <summary>transport mode based on environment. Values are case sensitive</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "transport mode based on environment. Values are case sensitive")]
@@ -576,8 +576,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapEngineId { get => Body.SnapEngineId ?? default(int); set => Body.SnapEngineId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapEngineId { get => Body.SnapEngineId ?? default(long); set => Body.SnapEngineId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -598,8 +598,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapMountProxyId { get => Body.SnapMountProxyId ?? default(int); set => Body.SnapMountProxyId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapMountProxyId { get => Body.SnapMountProxyId ?? default(long); set => Body.SnapMountProxyId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -722,8 +722,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int StorageId { get => Body.StorageId ?? default(int); set => Body.StorageId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long StorageId { get => Body.StorageId ?? default(long); set => Body.StorageId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -737,7 +737,7 @@ namespace Commvault.Powershell.Cmdlets
         public string StorageName { get => Body.StorageName ?? null; set => Body.StorageName = value; }
 
         /// <summary>Backing field for <see cref="VMGroupId" /> property.</summary>
-        private int _vMGroupId;
+        private long _vMGroupId;
 
         /// <summary>Id of the VMgroup to update</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the VMgroup to update")]
@@ -746,9 +746,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the VMgroup to update",
         SerializedName = @"VmGroupId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int VMGroupId { get => this._vMGroupId; set => this._vMGroupId = value; }
+        public long VMGroupId { get => this._vMGroupId; set => this._vMGroupId = value; }
 
         /// <summary>
         /// <c>overrideOnBadRequest</c> will be called before the regular onBadRequest has been processed, allowing customization

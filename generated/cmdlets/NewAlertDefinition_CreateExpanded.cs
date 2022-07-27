@@ -119,8 +119,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int LocaleId { get => Body.LocaleId ?? default(int); set => Body.LocaleId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long LocaleId { get => Body.LocaleId ?? default(long); set => Body.LocaleId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -227,8 +227,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook",
         SerializedName = @"webHookId",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RecipientWebHookId { get => Body.RecipientWebHookId ?? default(int); set => Body.RecipientWebHookId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RecipientWebHookId { get => Body.RecipientWebHookId ?? default(long); set => Body.RecipientWebHookId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]

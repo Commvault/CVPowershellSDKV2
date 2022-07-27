@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="BigDataAppCount" /> property.</summary>
-        private int? _bigDataAppCount;
+        private long? _bigDataAppCount;
 
         /// <summary>This returns the total number of big data apps.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BigDataAppCount { get => this._bigDataAppCount; set => this._bigDataAppCount = value; }
+        public long? BigDataAppCount { get => this._bigDataAppCount; set => this._bigDataAppCount = value; }
 
         /// <summary>Backing field for <see cref="BigDataApps" /> property.</summary>
         private Commvault.Powershell.Models.IBigDataAppSummary[] _bigDataApps;
@@ -41,8 +41,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This returns the total number of big data apps.",
         SerializedName = @"bigDataAppCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BigDataAppCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BigDataAppCount { get; set; }
         /// <summary>This returns the big data app list.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -58,7 +58,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>This returns the total number of big data apps.</summary>
-        int? BigDataAppCount { get; set; }
+        long? BigDataAppCount { get; set; }
         /// <summary>This returns the big data app list.</summary>
         Commvault.Powershell.Models.IBigDataAppSummary[] BigDataApps { get; set; }
 

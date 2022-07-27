@@ -73,9 +73,9 @@ namespace Commvault.Powershell.Models
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_planType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("planType"), out var __jsonPlanType) ? (string)__jsonPlanType : (string)PlanType;}
-            {_associatedEntities = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedEntities"), out var __jsonAssociatedEntities) ? (int?)__jsonAssociatedEntities : AssociatedEntities;}
-            {_rpo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("RPO"), out var __jsonRpo) ? (int?)__jsonRpo : Rpo;}
-            {_numberOfCopies = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfCopies"), out var __jsonNumberOfCopies) ? (int?)__jsonNumberOfCopies : NumberOfCopies;}
+            {_associatedEntities = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedEntities"), out var __jsonAssociatedEntities) ? (long?)__jsonAssociatedEntities : AssociatedEntities;}
+            {_rpo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("RPO"), out var __jsonRpo) ? (long?)__jsonRpo : Rpo;}
+            {_numberOfCopies = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfCopies"), out var __jsonNumberOfCopies) ? (long?)__jsonNumberOfCopies : NumberOfCopies;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_missingEntities = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("missingEntities"), out var __jsonMissingEntities) ? If( __jsonMissingEntities as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : MissingEntities;}
             AfterFromJson(json);
@@ -103,9 +103,9 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != (((object)this._planType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._planType.ToString()) : null, "planType" ,container.Add );
-            AddIf( null != this._associatedEntities ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._associatedEntities) : null, "associatedEntities" ,container.Add );
-            AddIf( null != this._rpo ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._rpo) : null, "RPO" ,container.Add );
-            AddIf( null != this._numberOfCopies ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._numberOfCopies) : null, "numberOfCopies" ,container.Add );
+            AddIf( null != this._associatedEntities ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._associatedEntities) : null, "associatedEntities" ,container.Add );
+            AddIf( null != this._rpo ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._rpo) : null, "RPO" ,container.Add );
+            AddIf( null != this._numberOfCopies ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._numberOfCopies) : null, "numberOfCopies" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             if (null != this._missingEntities)
             {

@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_hypervisorCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("HypervisorCount"), out var __jsonHypervisorCount) ? (int?)__jsonHypervisorCount : HypervisorCount;}
+            {_hypervisorCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("HypervisorCount"), out var __jsonHypervisorCount) ? (long?)__jsonHypervisorCount : HypervisorCount;}
             {_hypervisors = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("Hypervisors"), out var __jsonHypervisors) ? If( __jsonHypervisors as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IHypervisorListResp[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IHypervisorListResp) (Commvault.Powershell.Models.HypervisorListResp.FromJson(__u) )) ))() : null : Hypervisors;}
             AfterFromJson(json);
         }
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._hypervisorCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._hypervisorCount) : null, "HypervisorCount" ,container.Add );
+            AddIf( null != this._hypervisorCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._hypervisorCount) : null, "HypervisorCount" ,container.Add );
             if (null != this._hypervisors)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

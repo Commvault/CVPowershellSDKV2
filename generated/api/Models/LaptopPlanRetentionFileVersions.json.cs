@@ -74,11 +74,11 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_days = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("days"), out var __jsonDays) ? (int?)__jsonDays : Days;}
-            {_versions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("versions"), out var __jsonVersions) ? (int?)__jsonVersions : Versions;}
-            {_dailyVersions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dailyVersions"), out var __jsonDailyVersions) ? (int?)__jsonDailyVersions : DailyVersions;}
-            {_weeklyVersions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("weeklyVersions"), out var __jsonWeeklyVersions) ? (int?)__jsonWeeklyVersions : WeeklyVersions;}
-            {_monthlyVersions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("monthlyVersions"), out var __jsonMonthlyVersions) ? (int?)__jsonMonthlyVersions : MonthlyVersions;}
+            {_days = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("days"), out var __jsonDays) ? (long?)__jsonDays : Days;}
+            {_versions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("versions"), out var __jsonVersions) ? (long?)__jsonVersions : Versions;}
+            {_dailyVersions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dailyVersions"), out var __jsonDailyVersions) ? (long?)__jsonDailyVersions : DailyVersions;}
+            {_weeklyVersions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("weeklyVersions"), out var __jsonWeeklyVersions) ? (long?)__jsonWeeklyVersions : WeeklyVersions;}
+            {_monthlyVersions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("monthlyVersions"), out var __jsonMonthlyVersions) ? (long?)__jsonMonthlyVersions : MonthlyVersions;}
             AfterFromJson(json);
         }
 
@@ -101,11 +101,11 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._days ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._days) : null, "days" ,container.Add );
-            AddIf( null != this._versions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._versions) : null, "versions" ,container.Add );
-            AddIf( null != this._dailyVersions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._dailyVersions) : null, "dailyVersions" ,container.Add );
-            AddIf( null != this._weeklyVersions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._weeklyVersions) : null, "weeklyVersions" ,container.Add );
-            AddIf( null != this._monthlyVersions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._monthlyVersions) : null, "monthlyVersions" ,container.Add );
+            AddIf( null != this._days ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._days) : null, "days" ,container.Add );
+            AddIf( null != this._versions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._versions) : null, "versions" ,container.Add );
+            AddIf( null != this._dailyVersions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._dailyVersions) : null, "dailyVersions" ,container.Add );
+            AddIf( null != this._weeklyVersions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._weeklyVersions) : null, "weeklyVersions" ,container.Add );
+            AddIf( null != this._monthlyVersions ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._monthlyVersions) : null, "monthlyVersions" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

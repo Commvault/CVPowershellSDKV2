@@ -11,10 +11,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ApplicationGroupCount" /> property.</summary>
-        private int? _applicationGroupCount;
+        private long? _applicationGroupCount;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationGroupCount { get => this._applicationGroupCount; set => this._applicationGroupCount = value; }
+        public long? ApplicationGroupCount { get => this._applicationGroupCount; set => this._applicationGroupCount = value; }
 
         /// <summary>Backing field for <see cref="ApplicationGroups" /> property.</summary>
         private Commvault.Powershell.Models.IApplicationGroupSummary[] _applicationGroups;
@@ -36,8 +36,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"applicationGroupCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationGroupCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationGroupCount { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -51,7 +51,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IApplicationGroupListRespInternal
 
     {
-        int? ApplicationGroupCount { get; set; }
+        long? ApplicationGroupCount { get; set; }
 
         Commvault.Powershell.Models.IApplicationGroupSummary[] ApplicationGroups { get; set; }
 

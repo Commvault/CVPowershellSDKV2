@@ -73,7 +73,7 @@ namespace Commvault.Powershell.Models
             }
             __idName = new Commvault.Powershell.Models.IdName(json);
             __genericResp = new Commvault.Powershell.Models.GenericResp(json);
-            {_copyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("copyId"), out var __jsonCopyId) ? (int?)__jsonCopyId : CopyId;}
+            {_copyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("copyId"), out var __jsonCopyId) ? (long?)__jsonCopyId : CopyId;}
             AfterFromJson(json);
         }
 
@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
             }
             __idName?.ToJson(container, serializationMode);
             __genericResp?.ToJson(container, serializationMode);
-            AddIf( null != this._copyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._copyId) : null, "copyId" ,container.Add );
+            AddIf( null != this._copyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._copyId) : null, "copyId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

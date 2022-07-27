@@ -38,7 +38,7 @@ function Get-AccessNode {
 param(
     [Parameter()]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # user id to be filtered
     ${UserId},
 

@@ -94,12 +94,12 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Company = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Company",((Commvault.Powershell.Models.IIdentityServerInternal)this).Company, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IIdentityServerInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdentityServerInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdentityServerInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdentityServerInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdentityServerInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IIdentityServerInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).SamlType = (string) content.GetValueForProperty("SamlType",((Commvault.Powershell.Models.IIdentityServerInternal)this).SamlType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Configured = (bool?) content.GetValueForProperty("Configured",((Commvault.Powershell.Models.IIdentityServerInternal)this).Configured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId = (int?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId = (long?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyName = (string) content.GetValueForProperty("CompanyName",((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -119,12 +119,12 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Company = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Company",((Commvault.Powershell.Models.IIdentityServerInternal)this).Company, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IIdentityServerInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdentityServerInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdentityServerInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdentityServerInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdentityServerInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IIdentityServerInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).SamlType = (string) content.GetValueForProperty("SamlType",((Commvault.Powershell.Models.IIdentityServerInternal)this).SamlType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).Configured = (bool?) content.GetValueForProperty("Configured",((Commvault.Powershell.Models.IIdentityServerInternal)this).Configured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId = (int?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId = (long?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyName = (string) content.GetValueForProperty("CompanyName",((Commvault.Powershell.Models.IIdentityServerInternal)this).CompanyName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

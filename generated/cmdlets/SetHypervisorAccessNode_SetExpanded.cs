@@ -32,8 +32,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int AccessNodeId { get => Body.AccessNodeId ?? default(int); set => Body.AccessNodeId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long AccessNodeId { get => Body.AccessNodeId ?? default(long); set => Body.AccessNodeId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="HypervisorId" /> property.</summary>
-        private int _hypervisorId;
+        private long _hypervisorId;
 
         /// <summary>Hypervisor ID to update the Access Node</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Hypervisor ID to update the Access Node")]
@@ -81,9 +81,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Hypervisor ID to update the Access Node",
         SerializedName = @"hypervisorId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
+        public long HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }

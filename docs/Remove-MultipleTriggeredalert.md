@@ -14,7 +14,7 @@ Delete multiple triggered alerts
 
 ### DeleteExpanded (Default)
 ```
-Remove-MultipleTriggeredalert [-AlertId <Int32[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-MultipleTriggeredalert [-AlertId <Int64[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Delete
@@ -51,7 +51,7 @@ PS C:\> {{ Add code here }}
 .
 
 ```yaml
-Type: System.Int32[]
+Type: System.Int64[]
 Parameter Sets: DeleteExpanded
 Aliases:
 
@@ -145,7 +145,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODY <IAlertIds>: Array of ids of an entity
-  - `[AlertId <Int32[]>]`: 
+  - `[AlertId <Int64[]>]`: 
 
 ## RELATED LINKS
 

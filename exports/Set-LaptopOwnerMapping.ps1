@@ -38,8 +38,8 @@ To create the parameters described below, construct a hash table containing the 
 
 BODY <ILaptopOwnerMapping>: List of laptop owner info
   [LaptopOwnerMapping1 <ILaptopOwnerInfo[]>]: 
-    Id <Int32>: Unique Id
-    [CompanyId <Int32?>]: 
+    Id <Int64>: Unique Id
+    [CompanyId <Int64?>]: 
     [CompanyName <String>]: 
     [Host <String>]: host name of the laptop
     [LaptopName <String>]: name of the laptop
@@ -49,8 +49,8 @@ BODY <ILaptopOwnerMapping>: List of laptop owner info
     [SerialNumber <String>]: This is the serial number
 
 LAPTOPOWNERMAPPING <ILaptopOwnerInfo[]>: .
-  Id <Int32>: Unique Id
-  [CompanyId <Int32?>]: 
+  Id <Int64>: Unique Id
+  [CompanyId <Int64?>]: 
   [CompanyName <String>]: 
   [Host <String>]: host name of the laptop
   [LaptopName <String>]: name of the laptop

@@ -28,7 +28,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -40,19 +40,19 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Rank" /> property.</summary>
-        private int? _rank;
+        private long? _rank;
 
         /// <summary>
         /// Optional field to suggest priority/rank of the rule. If not present, we will process rule in the same order they are created.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Rank { get => this._rank; set => this._rank = value; }
+        public long? Rank { get => this._rank; set => this._rank = value; }
 
         /// <summary>Backing field for <see cref="Regions" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _regions;
@@ -116,8 +116,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -132,8 +132,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -150,8 +150,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Optional field to suggest priority/rank of the rule. If not present, we will process rule in the same order they are created.",
         SerializedName = @"rank",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Rank { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Rank { get; set; }
         /// <summary>
         /// This will include list of regions that should be evaluated against workload region for plan association.
         /// </summary>
@@ -212,19 +212,19 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>
         /// Optional field to suggest priority/rank of the rule. If not present, we will process rule in the same order they are created.
         /// </summary>
-        int? Rank { get; set; }
+        long? Rank { get; set; }
         /// <summary>
         /// This will include list of regions that should be evaluated against workload region for plan association.
         /// </summary>

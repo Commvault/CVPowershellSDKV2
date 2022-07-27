@@ -22,11 +22,11 @@ namespace Commvault.Powershell.Models
         public string Hostname { get => this._hostname; set => this._hostname = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Id of the commcell</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -55,7 +55,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>returns the last synced time with IDP(unix time format)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SyncStatusLastSyncedWithIdp { get => ((Commvault.Powershell.Models.ISyncStatus1Internal)SyncStatus).LastSyncedWithIdp; set => ((Commvault.Powershell.Models.ISyncStatus1Internal)SyncStatus).LastSyncedWithIdp = value ?? default(int); }
+        public long? SyncStatusLastSyncedWithIdp { get => ((Commvault.Powershell.Models.ISyncStatus1Internal)SyncStatus).LastSyncedWithIdp; set => ((Commvault.Powershell.Models.ISyncStatus1Internal)SyncStatus).LastSyncedWithIdp = value ?? default(long); }
 
         /// <summary>status of the commcell</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -92,8 +92,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of the commcell",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Name of the commcell entity</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -124,8 +124,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"returns the last synced time with IDP(unix time format)",
         SerializedName = @"lastSyncedWithIDP",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SyncStatusLastSyncedWithIdp { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SyncStatusLastSyncedWithIdp { get; set; }
         /// <summary>status of the commcell</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -151,7 +151,7 @@ namespace Commvault.Powershell.Models
         /// <summary>hostname of the Commcell</summary>
         string Hostname { get; set; }
         /// <summary>Id of the commcell</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Name of the commcell entity</summary>
         string Name { get; set; }
         /// <summary>Role of the commcell</summary>
@@ -161,7 +161,7 @@ namespace Commvault.Powershell.Models
         /// <summary>errorMessage if the commcell failed to sync</summary>
         Commvault.Powershell.Models.INameMessage[] SyncStatusErrorMessage { get; set; }
         /// <summary>returns the last synced time with IDP(unix time format)</summary>
-        int? SyncStatusLastSyncedWithIdp { get; set; }
+        long? SyncStatusLastSyncedWithIdp { get; set; }
         /// <summary>status of the commcell</summary>
         string SyncStatusStatus { get; set; }
         /// <summary>if enabled the Command Center of the commcell belong to the primary CommCell</summary>

@@ -71,8 +71,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_isLocked = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isLocked"), out var __jsonIsLocked) ? (bool?)__jsonIsLocked : IsLocked;}
-            {_startTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startTime"), out var __jsonStartTime) ? (int?)__jsonStartTime : StartTime;}
-            {_endTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("endTime"), out var __jsonEndTime) ? (int?)__jsonEndTime : EndTime;}
+            {_startTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startTime"), out var __jsonStartTime) ? (long?)__jsonStartTime : StartTime;}
+            {_endTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("endTime"), out var __jsonEndTime) ? (long?)__jsonEndTime : EndTime;}
             AfterFromJson(json);
         }
 
@@ -96,8 +96,8 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._isLocked ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isLocked) : null, "isLocked" ,container.Add );
-            AddIf( null != this._startTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._startTime) : null, "startTime" ,container.Add );
-            AddIf( null != this._endTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._endTime) : null, "endTime" ,container.Add );
+            AddIf( null != this._startTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._startTime) : null, "startTime" ,container.Add );
+            AddIf( null != this._endTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._endTime) : null, "endTime" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

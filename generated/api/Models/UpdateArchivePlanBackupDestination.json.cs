@@ -80,7 +80,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._sourceCopy ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sourceCopy.ToJson(null,serializationMode) : null, "sourceCopy" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
-            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
+            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
             }
             {_sourceCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("sourceCopy"), out var __jsonSourceCopy) ? Commvault.Powershell.Models.IdName.FromJson(__jsonSourceCopy) : SourceCopy;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
-            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (int?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
+            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
             AfterFromJson(json);
         }
     }

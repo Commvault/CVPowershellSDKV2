@@ -94,7 +94,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IReasonDetailsInternal)this).Subclient = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Subclient",((Commvault.Powershell.Models.IReasonDetailsInternal)this).Subclient, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IReasonDetailsInternal)this).MightMissReason = (string) content.GetValueForProperty("MightMissReason",((Commvault.Powershell.Models.IReasonDetailsInternal)this).MightMissReason, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId = (int?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId = (long?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientName = (string) content.GetValueForProperty("SubclientName",((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IReasonDetailsInternal)this).Subclient = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Subclient",((Commvault.Powershell.Models.IReasonDetailsInternal)this).Subclient, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IReasonDetailsInternal)this).MightMissReason = (string) content.GetValueForProperty("MightMissReason",((Commvault.Powershell.Models.IReasonDetailsInternal)this).MightMissReason, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId = (int?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId = (long?) content.GetValueForProperty("SubclientId",((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientName = (string) content.GetValueForProperty("SubclientName",((Commvault.Powershell.Models.IReasonDetailsInternal)this).SubclientName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationCredentials { get => (this._destinationCredentials = this._destinationCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._destinationCredentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id = value ?? default(int); }
+        public long? DestinationCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Name = value ?? null; }
@@ -36,7 +36,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceCredentials { get => (this._sourceCredentials = this._sourceCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._sourceCredentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCredentials).Id = value ?? default(int); }
+        public long? SourceCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCredentials).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCredentials).Name = value ?? null; }
@@ -56,8 +56,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -72,8 +72,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -90,13 +90,13 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName DestinationCredentials { get; set; }
 
-        int? DestinationCredentialsId { get; set; }
+        long? DestinationCredentialsId { get; set; }
 
         string DestinationCredentialsName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceCredentials { get; set; }
 
-        int? SourceCredentialsId { get; set; }
+        long? SourceCredentialsId { get; set; }
 
         string SourceCredentialsName { get; set; }
 

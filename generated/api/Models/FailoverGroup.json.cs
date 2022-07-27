@@ -61,10 +61,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_source = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("source"), out var __jsonSource) ? (string)__jsonSource : (string)Source;}
-            {_numberOfVirtualMachines = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfVirtualMachines"), out var __jsonNumberOfVirtualMachines) ? (int?)__jsonNumberOfVirtualMachines : NumberOfVirtualMachines;}
+            {_numberOfVirtualMachines = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfVirtualMachines"), out var __jsonNumberOfVirtualMachines) ? (long?)__jsonNumberOfVirtualMachines : NumberOfVirtualMachines;}
             AfterFromJson(json);
         }
 
@@ -97,10 +97,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._source)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._source.ToString()) : null, "source" ,container.Add );
-            AddIf( null != this._numberOfVirtualMachines ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._numberOfVirtualMachines) : null, "numberOfVirtualMachines" ,container.Add );
+            AddIf( null != this._numberOfVirtualMachines ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._numberOfVirtualMachines) : null, "numberOfVirtualMachines" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -37,7 +37,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 BODY <IAlertIds>: Array of ids of an entity
-  [AlertId <Int32[]>]: 
+  [AlertId <Int64[]>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/remove-multipletriggeredalert
 #>
@@ -54,7 +54,7 @@ param(
 
     [Parameter(ParameterSetName='DeleteExpanded')]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32[]]
+    [System.Int64[]]
     # .
     ${AlertId},
 

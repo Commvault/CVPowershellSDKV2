@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Specifies the number of parallel data operations that can take place.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ControlParallelDataTransferOperations { get => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations; set => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations = value ?? default(int); }
+        public long? ControlParallelDataTransferOperations { get => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations; set => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).ParallelDataTransferOperations = value ?? default(long); }
 
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Models
         public string LogCachePath { get => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogCachePath; set => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogCachePath = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RoleId { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).RoleId; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).RoleId = value ?? default(int); }
+        public long? RoleId { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).RoleId; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).RoleId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RoleName { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).RoleName; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).RoleName = value ?? null; }
@@ -108,13 +108,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IUpdateSecurityAssoc Security { get => (this._security = this._security ?? new Commvault.Powershell.Models.UpdateSecurityAssoc()); set => this._security = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserGroupId { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserGroupId; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserGroupId = value ?? default(int); }
+        public long? UserGroupId { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserGroupId; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserGroupId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserGroupName { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserGroupName; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserGroupName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserId { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserId; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserId = value ?? default(int); }
+        public long? UserId { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserId; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserName { get => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserName; set => ((Commvault.Powershell.Models.IUpdateSecurityAssocInternal)Security).UserName = value ?? null; }
@@ -163,8 +163,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specifies the number of parallel data operations that can take place. ",
         SerializedName = @"parallelDataTransferOperations",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ControlParallelDataTransferOperations { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ControlParallelDataTransferOperations { get; set; }
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
         /// media agent is disabled.
@@ -214,8 +214,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RoleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RoleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -230,8 +230,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -246,8 +246,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -274,7 +274,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         bool? ControlOptimizeForConcurrentLanBackups { get; set; }
         /// <summary>Specifies the number of parallel data operations that can take place.</summary>
-        int? ControlParallelDataTransferOperations { get; set; }
+        long? ControlParallelDataTransferOperations { get; set; }
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
         /// media agent is disabled.
@@ -293,7 +293,7 @@ namespace Commvault.Powershell.Models
         /// <summary>If the logs cache is enabled, this tag gives the path to store the logs cache.</summary>
         string LogCachePath { get; set; }
 
-        int? RoleId { get; set; }
+        long? RoleId { get; set; }
 
         string RoleName { get; set; }
         /// <summary>
@@ -309,11 +309,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SecurityUserGroup { get; set; }
 
-        int? UserGroupId { get; set; }
+        long? UserGroupId { get; set; }
 
         string UserGroupName { get; set; }
 
-        int? UserId { get; set; }
+        long? UserId { get; set; }
 
         string UserName { get; set; }
 

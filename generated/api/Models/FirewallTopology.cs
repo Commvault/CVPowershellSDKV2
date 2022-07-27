@@ -27,7 +27,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Topology { get => (this._topology = this._topology ?? new Commvault.Powershell.Models.IdName()); set => this._topology = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TopologyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id = value ?? default(int); }
+        public long? TopologyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TopologyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Topology).Name = value ?? null; }
@@ -64,8 +64,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TopologyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TopologyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -94,7 +94,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Topology { get; set; }
 
-        int? TopologyId { get; set; }
+        long? TopologyId { get; set; }
 
         string TopologyName { get; set; }
         /// <summary>

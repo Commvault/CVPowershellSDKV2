@@ -22,11 +22,11 @@ namespace Commvault.Powershell.Models
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchiveFrequency { get => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyFrequency; set => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyFrequency = value ?? default(int); }
+        public long? ArchiveFrequency { get => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyFrequency; set => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyFrequency = value ?? default(long); }
 
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchiveFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyDayOfMonth = value ?? default(int); }
+        public long? ArchiveFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyDayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ArchiveFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyDayOfWeek; set => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyDayOfWeek = value ?? null; }
@@ -40,7 +40,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchiveFrequencyStartTime { get => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyStartTime; set => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyStartTime = value ?? default(int); }
+        public long? ArchiveFrequencyStartTime { get => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyStartTime; set => ((Commvault.Powershell.Models.IArchivePlanRpoInternal)Rpo).ArchiveFrequencyStartTime = value ?? default(long); }
 
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -61,14 +61,14 @@ namespace Commvault.Powershell.Models
         /// To archive files based on the size of the file, specify the minimum file size in KB.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileSize { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize = value ?? default(int); }
+        public long? ArchivingRuleFileSize { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize = value ?? default(long); }
 
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileTimestamp { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp = value ?? default(int); }
+        public long? ArchivingRuleFileTimestamp { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ArchivingRuleFileTimestampMethod { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestampMethod; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestampMethod = value ?? null; }
@@ -127,7 +127,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName ParentPlan { get => (this._parentPlan = this._parentPlan ?? new Commvault.Powershell.Models.IdName()); set => this._parentPlan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ParentPlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Id = value ?? default(int); }
+        public long? ParentPlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ParentPlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Name = value ?? null; }
@@ -178,16 +178,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months",
         SerializedName = @"frequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchiveFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchiveFrequency { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Day on which to run the schedule, applicable for monthly, yearly",
         SerializedName = @"dayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchiveFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchiveFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -218,8 +218,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"start time of schedule in seconds for daily, weekly, monthly, yearly frequency",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchiveFrequencyStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchiveFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -255,8 +255,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the size of the file, specify the minimum file size in KB.",
         SerializedName = @"fileSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileSize { get; set; }
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
@@ -266,8 +266,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the last accessed or modified date of each file within the folder, specify the number of days. Should be supplied with fileTimestampMethod.",
         SerializedName = @"fileTimestamp",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileTimestamp { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileTimestamp { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -314,8 +314,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ParentPlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParentPlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -351,9 +351,9 @@ namespace Commvault.Powershell.Models
         /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
-        int? ArchiveFrequency { get; set; }
+        long? ArchiveFrequency { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
-        int? ArchiveFrequencyDayOfMonth { get; set; }
+        long? ArchiveFrequencyDayOfMonth { get; set; }
 
         string ArchiveFrequencyDayOfWeek { get; set; }
 
@@ -361,7 +361,7 @@ namespace Commvault.Powershell.Models
         /// <summary>schedule frequency type</summary>
         string ArchiveFrequencyScheduleFrequencyType { get; set; }
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
-        int? ArchiveFrequencyStartTime { get; set; }
+        long? ArchiveFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         string ArchiveFrequencyWeekOfMonth { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
@@ -374,12 +374,12 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// To archive files based on the size of the file, specify the minimum file size in KB.
         /// </summary>
-        int? ArchivingRuleFileSize { get; set; }
+        long? ArchivingRuleFileSize { get; set; }
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
         /// </summary>
-        int? ArchivingRuleFileTimestamp { get; set; }
+        long? ArchivingRuleFileTimestamp { get; set; }
 
         string ArchivingRuleFileTimestampMethod { get; set; }
         /// <summary>Files which meet both time stamp and file size rules will be archived</summary>
@@ -400,7 +400,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName ParentPlan { get; set; }
 
-        int? ParentPlanId { get; set; }
+        long? ParentPlanId { get; set; }
 
         string ParentPlanName { get; set; }
 

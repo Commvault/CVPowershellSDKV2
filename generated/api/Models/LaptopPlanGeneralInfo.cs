@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Laptops" /> property.</summary>
-        private int? _laptops;
+        private long? _laptops;
 
         /// <summary>Number of laptops associated with this plan</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Laptops { get => this._laptops; set => this._laptops = value; }
+        public long? Laptops { get => this._laptops; set => this._laptops = value; }
 
         /// <summary>Backing field for <see cref="OptimizedForCloudBackups" /> property.</summary>
         private bool? _optimizedForCloudBackups;
@@ -37,11 +37,11 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IStorageResourcePoolMap[] StorageResourcePoolMap { get => this._storageResourcePoolMap; set => this._storageResourcePoolMap = value; }
 
         /// <summary>Backing field for <see cref="Users" /> property.</summary>
-        private int? _users;
+        private long? _users;
 
         /// <summary>Number of users associated with this plan</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Users { get => this._users; set => this._users = value; }
+        public long? Users { get => this._users; set => this._users = value; }
 
         /// <summary>Creates an new <see cref="LaptopPlanGeneralInfo" /> instance.</summary>
         public LaptopPlanGeneralInfo()
@@ -58,8 +58,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of laptops associated with this plan",
         SerializedName = @"laptops",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Laptops { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Laptops { get; set; }
         /// <summary>
         /// This feature allows laptops to write backup directly to the cloud storage. It helps to optimize scale by reducing server
         /// dependency and extra data hops. Once the feature is enabled, the existing and the newly-added laptops use optimized backups.
@@ -87,15 +87,15 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of users associated with this plan",
         SerializedName = @"users",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Users { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Users { get; set; }
 
     }
     internal partial interface ILaptopPlanGeneralInfoInternal
 
     {
         /// <summary>Number of laptops associated with this plan</summary>
-        int? Laptops { get; set; }
+        long? Laptops { get; set; }
         /// <summary>
         /// This feature allows laptops to write backup directly to the cloud storage. It helps to optimize scale by reducing server
         /// dependency and extra data hops. Once the feature is enabled, the existing and the newly-added laptops use optimized backups.
@@ -106,7 +106,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         Commvault.Powershell.Models.IStorageResourcePoolMap[] StorageResourcePoolMap { get; set; }
         /// <summary>Number of users associated with this plan</summary>
-        int? Users { get; set; }
+        long? Users { get; set; }
 
     }
 }

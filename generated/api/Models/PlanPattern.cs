@@ -14,41 +14,41 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="DailyFrequency" /> property.</summary>
-        private int? _dailyFrequency;
+        private long? _dailyFrequency;
 
         /// <summary>Frequency in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DailyFrequency { get => this._dailyFrequency; set => this._dailyFrequency = value; }
+        public long? DailyFrequency { get => this._dailyFrequency; set => this._dailyFrequency = value; }
 
         /// <summary>Backing field for <see cref="HourlyFrequency" /> property.</summary>
-        private int? _hourlyFrequency;
+        private long? _hourlyFrequency;
 
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? HourlyFrequency { get => this._hourlyFrequency; set => this._hourlyFrequency = value; }
+        public long? HourlyFrequency { get => this._hourlyFrequency; set => this._hourlyFrequency = value; }
 
         /// <summary>Backing field for <see cref="MinuteFrequency" /> property.</summary>
-        private int? _minuteFrequency;
+        private long? _minuteFrequency;
 
         /// <summary>Frequency in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MinuteFrequency { get => this._minuteFrequency; set => this._minuteFrequency = value; }
+        public long? MinuteFrequency { get => this._minuteFrequency; set => this._minuteFrequency = value; }
 
         /// <summary>Backing field for <see cref="MonthlyFrequency" /> property.</summary>
-        private int? _monthlyFrequency;
+        private long? _monthlyFrequency;
 
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MonthlyFrequency { get => this._monthlyFrequency; set => this._monthlyFrequency = value; }
+        public long? MonthlyFrequency { get => this._monthlyFrequency; set => this._monthlyFrequency = value; }
 
         /// <summary>Backing field for <see cref="MonthlyFrequencyDayOfMonth" /> property.</summary>
-        private int? _monthlyFrequencyDayOfMonth;
+        private long? _monthlyFrequencyDayOfMonth;
 
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MonthlyFrequencyDayOfMonth { get => this._monthlyFrequencyDayOfMonth; set => this._monthlyFrequencyDayOfMonth = value; }
+        public long? MonthlyFrequencyDayOfMonth { get => this._monthlyFrequencyDayOfMonth; set => this._monthlyFrequencyDayOfMonth = value; }
 
         /// <summary>Backing field for <see cref="MonthlyFrequencyDayOfWeek" /> property.</summary>
         private string _monthlyFrequencyDayOfWeek;
@@ -64,21 +64,21 @@ namespace Commvault.Powershell.Models
         public string MonthlyFrequencyWeekOfMonth { get => this._monthlyFrequencyWeekOfMonth; set => this._monthlyFrequencyWeekOfMonth = value; }
 
         /// <summary>Backing field for <see cref="StartTime" /> property.</summary>
-        private int? _startTime;
+        private long? _startTime;
 
         /// <summary>
         /// Time in seconds from the beginning of the day when the backup starts. This is a mandatory field for daily, weekly, monthly,
         /// yearly frequencies
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? StartTime { get => this._startTime; set => this._startTime = value; }
+        public long? StartTime { get => this._startTime; set => this._startTime = value; }
 
         /// <summary>Backing field for <see cref="WeeklyFrequency" /> property.</summary>
-        private int? _weeklyFrequency;
+        private long? _weeklyFrequency;
 
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? WeeklyFrequency { get => this._weeklyFrequency; set => this._weeklyFrequency = value; }
+        public long? WeeklyFrequency { get => this._weeklyFrequency; set => this._weeklyFrequency = value; }
 
         /// <summary>Backing field for <see cref="WeeklyFrequencyDays" /> property.</summary>
         private string[] _weeklyFrequencyDays;
@@ -88,11 +88,11 @@ namespace Commvault.Powershell.Models
         public string[] WeeklyFrequencyDays { get => this._weeklyFrequencyDays; set => this._weeklyFrequencyDays = value; }
 
         /// <summary>Backing field for <see cref="YearlyFrequencyDayOfMonth" /> property.</summary>
-        private int? _yearlyFrequencyDayOfMonth;
+        private long? _yearlyFrequencyDayOfMonth;
 
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? YearlyFrequencyDayOfMonth { get => this._yearlyFrequencyDayOfMonth; set => this._yearlyFrequencyDayOfMonth = value; }
+        public long? YearlyFrequencyDayOfMonth { get => this._yearlyFrequencyDayOfMonth; set => this._yearlyFrequencyDayOfMonth = value; }
 
         /// <summary>Backing field for <see cref="YearlyFrequencyDayOfWeek" /> property.</summary>
         private string _yearlyFrequencyDayOfWeek;
@@ -129,8 +129,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency in days",
         SerializedName = @"dailyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DailyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DailyFrequency { get; set; }
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
@@ -139,32 +139,32 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.",
         SerializedName = @"hourlyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? HourlyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? HourlyFrequency { get; set; }
         /// <summary>Frequency in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in minutes",
         SerializedName = @"minuteFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MinuteFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MinuteFrequency { get; set; }
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in months. Only for incremental backup frequency.",
         SerializedName = @"monthlyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MonthlyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MonthlyFrequency { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Only available for incremental backup frequency",
         SerializedName = @"monthlyFrequencyDayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MonthlyFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MonthlyFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -190,16 +190,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time in seconds from the beginning of the day when the backup starts. This is a mandatory field for daily, weekly, monthly, yearly frequencies",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StartTime { get; set; }
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Frequency in weeks. Only for incremental backup frequency.",
         SerializedName = @"weeklyFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? WeeklyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? WeeklyFrequency { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -214,8 +214,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Only available for incremental backup frequency",
         SerializedName = @"yearlyFrequencyDayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? YearlyFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? YearlyFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -247,17 +247,17 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Frequency in days</summary>
-        int? DailyFrequency { get; set; }
+        long? DailyFrequency { get; set; }
         /// <summary>
         /// Frequency in hours per day. Precedence is hourly, daily, weekly and monthly, in that order.
         /// </summary>
-        int? HourlyFrequency { get; set; }
+        long? HourlyFrequency { get; set; }
         /// <summary>Frequency in minutes</summary>
-        int? MinuteFrequency { get; set; }
+        long? MinuteFrequency { get; set; }
         /// <summary>Frequency in months. Only for incremental backup frequency.</summary>
-        int? MonthlyFrequency { get; set; }
+        long? MonthlyFrequency { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
-        int? MonthlyFrequencyDayOfMonth { get; set; }
+        long? MonthlyFrequencyDayOfMonth { get; set; }
 
         string MonthlyFrequencyDayOfWeek { get; set; }
         /// <summary>Specific week of a month</summary>
@@ -266,13 +266,13 @@ namespace Commvault.Powershell.Models
         /// Time in seconds from the beginning of the day when the backup starts. This is a mandatory field for daily, weekly, monthly,
         /// yearly frequencies
         /// </summary>
-        int? StartTime { get; set; }
+        long? StartTime { get; set; }
         /// <summary>Frequency in weeks. Only for incremental backup frequency.</summary>
-        int? WeeklyFrequency { get; set; }
+        long? WeeklyFrequency { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
         string[] WeeklyFrequencyDays { get; set; }
         /// <summary>Only available for incremental backup frequency</summary>
-        int? YearlyFrequencyDayOfMonth { get; set; }
+        long? YearlyFrequencyDayOfMonth { get; set; }
 
         string YearlyFrequencyDayOfWeek { get; set; }
 

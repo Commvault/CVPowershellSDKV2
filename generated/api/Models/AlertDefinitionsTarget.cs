@@ -28,7 +28,7 @@ namespace Commvault.Powershell.Models
         /// of webhooks, use api GET Webhook
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecipientWebHookId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetRecipientsInternal)Recipients).WebHookId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetRecipientsInternal)Recipients).WebHookId = value ?? default(int); }
+        public long? RecipientWebHookId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetRecipientsInternal)Recipients).WebHookId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetRecipientsInternal)Recipients).WebHookId = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="Recipients" /> property.</summary>
         private Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients _recipients;
@@ -85,8 +85,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook",
         SerializedName = @"webHookId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecipientWebHookId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecipientWebHookId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Models
         /// id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list
         /// of webhooks, use api GET Webhook
         /// </summary>
-        int? RecipientWebHookId { get; set; }
+        long? RecipientWebHookId { get; set; }
         /// <summary>AlertDefinitionsTargetRecipients</summary>
         Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients Recipients { get; set; }
 

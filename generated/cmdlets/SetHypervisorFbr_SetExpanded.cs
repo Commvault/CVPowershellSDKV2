@@ -45,8 +45,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int FbrmaId { get => Body.FbrmaId ?? default(int); set => Body.FbrmaId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long FbrmaId { get => Body.FbrmaId ?? default(long); set => Body.FbrmaId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="HypervisorId" /> property.</summary>
-        private int _hypervisorId;
+        private long _hypervisorId;
 
         /// <summary>Linux Media Agent to set as FBR for linux File based restores</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Linux Media Agent to set as FBR for linux File based restores")]
@@ -81,9 +81,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Linux Media Agent to set as FBR for linux File based restores",
         SerializedName = @"hypervisorId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
+        public long HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }

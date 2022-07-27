@@ -44,7 +44,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Locale { get => (this._locale = this._locale ?? new Commvault.Powershell.Models.IdName()); set => this._locale = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LocaleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Id = value ?? default(int); }
+        public long? LocaleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string LocaleName { get => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Name = value ?? null; }
@@ -98,8 +98,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LocaleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LocaleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -133,7 +133,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Locale { get; set; }
 
-        int? LocaleId { get; set; }
+        long? LocaleId { get; set; }
 
         string LocaleName { get; set; }
         /// <summary>the message template for the webhook notification</summary>

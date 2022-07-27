@@ -24,13 +24,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IEdgeDriveSettingsInternal.IndexServer { get => (this._indexServer = this._indexServer ?? new Commvault.Powershell.Models.IdName()); set { {_indexServer = value;} } }
 
         /// <summary>Backing field for <see cref="EdgeDriveQuota" /> property.</summary>
-        private int? _edgeDriveQuota;
+        private long? _edgeDriveQuota;
 
         /// <summary>
         /// Maximum number of gigabytes that you can store in the Edge Drive. Value as -1 means no quota is set.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? EdgeDriveQuota { get => this._edgeDriveQuota; set => this._edgeDriveQuota = value; }
+        public long? EdgeDriveQuota { get => this._edgeDriveQuota; set => this._edgeDriveQuota = value; }
 
         /// <summary>Backing field for <see cref="IndexServer" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _indexServer;
@@ -39,7 +39,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName IndexServer { get => (this._indexServer = this._indexServer ?? new Commvault.Powershell.Models.IdName()); set => this._indexServer = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? IndexServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id = value ?? default(int); }
+        public long? IndexServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string IndexServerName { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Name = value ?? null; }
@@ -83,16 +83,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum number of gigabytes that you can store in the Edge Drive. Value as -1 means no quota is set.",
         SerializedName = @"edgeDriveQuota",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EdgeDriveQuota { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EdgeDriveQuota { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? IndexServerId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? IndexServerId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -126,11 +126,11 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Maximum number of gigabytes that you can store in the Edge Drive. Value as -1 means no quota is set.
         /// </summary>
-        int? EdgeDriveQuota { get; set; }
+        long? EdgeDriveQuota { get; set; }
 
         Commvault.Powershell.Models.IIdName IndexServer { get; set; }
 
-        int? IndexServerId { get; set; }
+        long? IndexServerId { get; set; }
 
         string IndexServerName { get; set; }
         /// <summary>

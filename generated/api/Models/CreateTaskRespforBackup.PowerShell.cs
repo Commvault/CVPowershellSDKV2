@@ -64,7 +64,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId = (int?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId = (long?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).JobIds = (Commvault.Powershell.Models.IAny[]) content.GetValueForProperty("JobIds",((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).JobIds, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAny>(__y, Commvault.Powershell.Models.AnyTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId = (int?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId = (long?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).TaskId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).JobIds = (Commvault.Powershell.Models.IAny[]) content.GetValueForProperty("JobIds",((Commvault.Powershell.Models.ICreateTaskRespforBackupInternal)this).JobIds, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAny>(__y, Commvault.Powershell.Models.AnyTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

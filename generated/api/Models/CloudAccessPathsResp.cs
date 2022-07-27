@@ -19,11 +19,11 @@ namespace Commvault.Powershell.Models
         public string Access { get => this._access; set => this._access = value; }
 
         /// <summary>Backing field for <see cref="AccessPathId" /> property.</summary>
-        private int? _accessPathId;
+        private long? _accessPathId;
 
         /// <summary>Id of cloud access path</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? AccessPathId { get => this._accessPathId; set => this._accessPathId = value; }
+        public long? AccessPathId { get => this._accessPathId; set => this._accessPathId = value; }
 
         /// <summary>Backing field for <see cref="Accessible" /> property.</summary>
         private string _accessible;
@@ -52,7 +52,7 @@ namespace Commvault.Powershell.Models
         public string MediaAgentDisplayName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).DisplayName; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).DisplayName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).Id = value ?? default(int); }
+        public long? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string MediaAgentName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)MediaAgent).Name = value ?? null; }
@@ -88,8 +88,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of cloud access path",
         SerializedName = @"accessPathId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AccessPathId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AccessPathId { get; set; }
         /// <summary>Accessibility status of cloud storage</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -120,8 +120,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MediaAgentId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MediaAgentId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -147,7 +147,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Type of access provided to the cloud storage are Read and Read/Write</summary>
         string Access { get; set; }
         /// <summary>Id of cloud access path</summary>
-        int? AccessPathId { get; set; }
+        long? AccessPathId { get; set; }
         /// <summary>Accessibility status of cloud storage</summary>
         string Accessible { get; set; }
         /// <summary>Name of the bucket</summary>
@@ -157,7 +157,7 @@ namespace Commvault.Powershell.Models
 
         string MediaAgentDisplayName { get; set; }
 
-        int? MediaAgentId { get; set; }
+        long? MediaAgentId { get; set; }
 
         string MediaAgentName { get; set; }
         /// <summary>Username used to connect to cloud Storage</summary>

@@ -28,17 +28,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Rank" /> property.</summary>
-        private int? _rank;
+        private long? _rank;
 
         /// <summary>[Optional] - This field will suggest rank/priority of rule.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Rank { get => this._rank; set => this._rank = value; }
+        public long? Rank { get => this._rank; set => this._rank = value; }
 
         /// <summary>Backing field for <see cref="Regions" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _regions;
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdName()); set => this._rule = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RuleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id = value ?? default(int); }
+        public long? RuleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RuleName { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name = value ?? null; }
@@ -114,8 +114,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -130,8 +130,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"[Optional] - This field will suggest rank/priority of rule.",
         SerializedName = @"rank",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Rank { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Rank { get; set; }
         /// <summary>
         /// This will include list of regions that should be evaluated against workload region for plan association.
         /// </summary>
@@ -148,8 +148,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RuleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RuleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -208,11 +208,11 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>[Optional] - This field will suggest rank/priority of rule.</summary>
-        int? Rank { get; set; }
+        long? Rank { get; set; }
         /// <summary>
         /// This will include list of regions that should be evaluated against workload region for plan association.
         /// </summary>
@@ -220,7 +220,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Rule { get; set; }
 
-        int? RuleId { get; set; }
+        long? RuleId { get; set; }
 
         string RuleName { get; set; }
         /// <summary>

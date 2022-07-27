@@ -75,9 +75,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_useSystemDefaultSla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useSystemDefaultSLA"), out var __jsonUseSystemDefaultSla) ? (bool?)__jsonUseSystemDefaultSla : UseSystemDefaultSla;}
-            {_slaPeriod = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SLAPeriod"), out var __jsonSlaPeriod) ? (int?)__jsonSlaPeriod : SlaPeriod;}
+            {_slaPeriod = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SLAPeriod"), out var __jsonSlaPeriod) ? (long?)__jsonSlaPeriod : SlaPeriod;}
             {_excludeFromSla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("excludeFromSLA"), out var __jsonExcludeFromSla) ? (bool?)__jsonExcludeFromSla : ExcludeFromSla;}
-            {_enableAfterDelay = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("enableAfterDelay"), out var __jsonEnableAfterDelay) ? (int?)__jsonEnableAfterDelay : EnableAfterDelay;}
+            {_enableAfterDelay = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("enableAfterDelay"), out var __jsonEnableAfterDelay) ? (long?)__jsonEnableAfterDelay : EnableAfterDelay;}
             {_exclusionReason = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("exclusionReason"), out var __jsonExclusionReason) ? (string)__jsonExclusionReason : (string)ExclusionReason;}
             AfterFromJson(json);
         }
@@ -102,9 +102,9 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._useSystemDefaultSla ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useSystemDefaultSla) : null, "useSystemDefaultSLA" ,container.Add );
-            AddIf( null != this._slaPeriod ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._slaPeriod) : null, "SLAPeriod" ,container.Add );
+            AddIf( null != this._slaPeriod ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._slaPeriod) : null, "SLAPeriod" ,container.Add );
             AddIf( null != this._excludeFromSla ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._excludeFromSla) : null, "excludeFromSLA" ,container.Add );
-            AddIf( null != this._enableAfterDelay ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._enableAfterDelay) : null, "enableAfterDelay" ,container.Add );
+            AddIf( null != this._enableAfterDelay ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._enableAfterDelay) : null, "enableAfterDelay" ,container.Add );
             AddIf( null != (((object)this._exclusionReason)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._exclusionReason.ToString()) : null, "exclusionReason" ,container.Add );
             AfterToJson(ref container);
             return container;

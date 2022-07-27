@@ -64,10 +64,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints = (int?) content.GetValueForProperty("SnapRecoveryPoints",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays = (int?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints = (long?) content.GetValueForProperty("SnapRecoveryPoints",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays = (long?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).EnableBackupCopy = (bool?) content.GetValueForProperty("EnableBackupCopy",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).EnableBackupCopy, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (int?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (long?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -85,10 +85,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints = (int?) content.GetValueForProperty("SnapRecoveryPoints",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays = (int?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints = (long?) content.GetValueForProperty("SnapRecoveryPoints",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).SnapRecoveryPoints, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays = (long?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).RetentionPeriodDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).EnableBackupCopy = (bool?) content.GetValueForProperty("EnableBackupCopy",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).EnableBackupCopy, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (int?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (long?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

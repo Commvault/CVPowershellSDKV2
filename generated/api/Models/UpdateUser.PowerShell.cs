@@ -108,7 +108,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).ValidationPassword = (string) content.GetValueForProperty("ValidationPassword",((Commvault.Powershell.Models.IUpdateUserInternal)this).ValidationPassword, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IUpdateUserInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).UserPrincipalName = (string) content.GetValueForProperty("UserPrincipalName",((Commvault.Powershell.Models.IUpdateUserInternal)this).UserPrincipalName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId = (int?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId = (long?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanName = (string) content.GetValueForProperty("PlanName",((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -137,7 +137,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).ValidationPassword = (string) content.GetValueForProperty("ValidationPassword",((Commvault.Powershell.Models.IUpdateUserInternal)this).ValidationPassword, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IUpdateUserInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).UserPrincipalName = (string) content.GetValueForProperty("UserPrincipalName",((Commvault.Powershell.Models.IUpdateUserInternal)this).UserPrincipalName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId = (int?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId = (long?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanName = (string) content.GetValueForProperty("PlanName",((Commvault.Powershell.Models.IUpdateUserInternal)this).PlanName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

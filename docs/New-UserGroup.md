@@ -14,7 +14,7 @@ Create a new user-group
 
 ```
 New-UserGroup -Name <String> [-Description <String>] [-EnforceFsQuota] [-LocalUserGroups <IIdName[]>]
- [-QuotaLimitInGb <Int32>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-QuotaLimitInGb <Int64>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -123,7 +123,7 @@ Accept wildcard characters: False
 if enforceFSQuota is set to true, the quota limit can be set in GBs
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -184,7 +184,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 LOCALUSERGROUPS <IIdName[]>: This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

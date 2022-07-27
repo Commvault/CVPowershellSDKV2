@@ -23,7 +23,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName ClientInfo { get => (this._clientInfo = this._clientInfo ?? new Commvault.Powershell.Models.IdName()); set => this._clientInfo = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ClientInfoId { get => ((Commvault.Powershell.Models.IIdNameInternal)ClientInfo).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ClientInfo).Id = value ?? default(int); }
+        public long? ClientInfoId { get => ((Commvault.Powershell.Models.IIdNameInternal)ClientInfo).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ClientInfo).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ClientInfoName { get => ((Commvault.Powershell.Models.IIdNameInternal)ClientInfo).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ClientInfo).Name = value ?? null; }
@@ -66,8 +66,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClientInfoId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClientInfoId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -101,7 +101,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName ClientInfo { get; set; }
 
-        int? ClientInfoId { get; set; }
+        long? ClientInfoId { get; set; }
 
         string ClientInfoName { get; set; }
 

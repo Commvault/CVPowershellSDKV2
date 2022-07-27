@@ -45,7 +45,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="EnableAfterADelay" /> property.</summary>
-        private int _enableAfterADelay;
+        private long _enableAfterADelay;
 
         /// <summary>Provide UTC time in unix format.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Provide UTC time in unix format.")]
@@ -54,9 +54,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Provide UTC time in unix format.",
         SerializedName = @"enableAfterADelay",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
+        public long EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -288,12 +288,12 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.AgentId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.DisableBackupAgent(InputObject.ServerId ?? default(int), InputObject.AgentId ?? default(int), this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?), onOk, onInternalServerError, this, Pipeline);
+                    await this.Client.DisableBackupAgent(InputObject.ServerId ?? default(long), InputObject.AgentId ?? default(long), this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?), onOk, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

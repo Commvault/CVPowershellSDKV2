@@ -64,10 +64,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit = (int?) content.GetValueForProperty("Unit",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type = (int?) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value = (int?) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex = (int?) content.GetValueForProperty("ParamIndex",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit = (long?) content.GetValueForProperty("Unit",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type = (long?) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value = (long?) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex = (long?) content.GetValueForProperty("ParamIndex",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -85,10 +85,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit = (int?) content.GetValueForProperty("Unit",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type = (int?) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value = (int?) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex = (int?) content.GetValueForProperty("ParamIndex",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit = (long?) content.GetValueForProperty("Unit",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Unit, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type = (long?) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Type, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value = (long?) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).Value, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex = (long?) content.GetValueForProperty("ParamIndex",((Commvault.Powershell.Models.IAlertDefinitionsCriteriaParamsInternal)this).ParamIndex, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

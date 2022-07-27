@@ -19,13 +19,13 @@ namespace Commvault.Powershell.Models
         public string DiskProvisioning { get => this._diskProvisioning; set => this._diskProvisioning = value; }
 
         /// <summary>Backing field for <see cref="SnapshotsToRetain" /> property.</summary>
-        private int? _snapshotsToRetain;
+        private long? _snapshotsToRetain;
 
         /// <summary>
         /// Number of snapshots to retain on destination VM. This is only applicable if snap engine is provided
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SnapshotsToRetain { get => this._snapshotsToRetain; set => this._snapshotsToRetain = value; }
+        public long? SnapshotsToRetain { get => this._snapshotsToRetain; set => this._snapshotsToRetain = value; }
 
         /// <summary>Backing field for <see cref="TransportMode" /> property.</summary>
         private string _transportMode;
@@ -78,8 +78,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of snapshots to retain on destination VM. This is only applicable if snap engine is provided",
         SerializedName = @"SnapshotsToRetain",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapshotsToRetain { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapshotsToRetain { get; set; }
         /// <summary>The transport mode based on environment.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -119,7 +119,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Number of snapshots to retain on destination VM. This is only applicable if snap engine is provided
         /// </summary>
-        int? SnapshotsToRetain { get; set; }
+        long? SnapshotsToRetain { get; set; }
         /// <summary>The transport mode based on environment.</summary>
         string TransportMode { get; set; }
         /// <summary>

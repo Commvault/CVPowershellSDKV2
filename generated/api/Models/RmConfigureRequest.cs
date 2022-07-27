@@ -19,11 +19,11 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdNameDisplayName[] Approvers { get => this._approvers; set => this._approvers = value; }
 
         /// <summary>Backing field for <see cref="ProjectIds" /> property.</summary>
-        private int[] _projectIds;
+        private long[] _projectIds;
 
         /// <summary>List of project ids</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int[] ProjectIds { get => this._projectIds; set => this._projectIds = value; }
+        public long[] ProjectIds { get => this._projectIds; set => this._projectIds = value; }
 
         /// <summary>Backing field for <see cref="Reviewers" /> property.</summary>
         private Commvault.Powershell.Models.IIdNameDisplayName[] _reviewers;
@@ -56,8 +56,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"List of project ids",
         SerializedName = @"projectIds",
-        PossibleTypes = new [] { typeof(int) })]
-        int[] ProjectIds { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long[] ProjectIds { get; set; }
         /// <summary>List of reviewers for the request</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
         /// <summary>List of approvers for the request</summary>
         Commvault.Powershell.Models.IIdNameDisplayName[] Approvers { get; set; }
         /// <summary>List of project ids</summary>
-        int[] ProjectIds { get; set; }
+        long[] ProjectIds { get; set; }
         /// <summary>List of reviewers for the request</summary>
         Commvault.Powershell.Models.IIdNameDisplayName[] Reviewers { get; set; }
 

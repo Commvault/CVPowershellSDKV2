@@ -60,8 +60,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_totalCapacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCapacity"), out var __jsonTotalCapacity) ? (int?)__jsonTotalCapacity : TotalCapacity;}
-            {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("freeSpace"), out var __jsonFreeSpace) ? (int?)__jsonFreeSpace : FreeSpace;}
+            {_totalCapacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCapacity"), out var __jsonTotalCapacity) ? (long?)__jsonTotalCapacity : TotalCapacity;}
+            {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("freeSpace"), out var __jsonFreeSpace) ? (long?)__jsonFreeSpace : FreeSpace;}
             {_diskAccessPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("diskAccessPaths"), out var __jsonDiskAccessPaths) ? If( __jsonDiskAccessPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAccessPathDetails[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAccessPathDetails) (Commvault.Powershell.Models.AccessPathDetails.FromJson(__u) )) ))() : null : DiskAccessPaths;}
             AfterFromJson(json);
         }
@@ -95,8 +95,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._totalCapacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._totalCapacity) : null, "totalCapacity" ,container.Add );
-            AddIf( null != this._freeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._freeSpace) : null, "freeSpace" ,container.Add );
+            AddIf( null != this._totalCapacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._totalCapacity) : null, "totalCapacity" ,container.Add );
+            AddIf( null != this._freeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._freeSpace) : null, "freeSpace" ,container.Add );
             if (null != this._diskAccessPaths)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

@@ -22,11 +22,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>timestamp(in unix) for the last backup job completed</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ApplicationValidationResultBackupCompletionDate { get => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupCompletionDate; set => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupCompletionDate = value ?? default(int); }
+        public long? ApplicationValidationResultBackupCompletionDate { get => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupCompletionDate; set => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupCompletionDate = value ?? default(long); }
 
         /// <summary>job id of the last backup job that was validated</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ApplicationValidationResultBackupValidated { get => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupValidated; set => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupValidated = value ?? default(int); }
+        public long? ApplicationValidationResultBackupValidated { get => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupValidated; set => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).BackupValidated = value ?? default(long); }
 
         /// <summary>true if backup validation is set</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -34,7 +34,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>job id of the last backup validation job</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ApplicationValidationResultLastValidationJobId { get => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).LastValidationJobId; set => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).LastValidationJobId = value ?? default(int); }
+        public long? ApplicationValidationResultLastValidationJobId { get => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).LastValidationJobId; set => ((Commvault.Powershell.Models.IVMApplicationValidationResultsInternal)ApplicationValidationResults).LastValidationJobId = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="ApplicationValidationResults" /> property.</summary>
         private Commvault.Powershell.Models.IVMApplicationValidationResults _applicationValidationResults;
@@ -68,7 +68,7 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVirtualMachineDetailsInternal.SummaryVMGroup { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroup; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroup = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).CompanyId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).CompanyId = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).CompanyId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).CompanyId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).CompanyName; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).CompanyName = value ?? null; }
@@ -81,7 +81,7 @@ namespace Commvault.Powershell.Models
         public string DisplayName { get => this._displayName; set => this._displayName = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? HypervisorId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).HypervisorId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).HypervisorId = value ?? default(int); }
+        public long? HypervisorId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).HypervisorId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).HypervisorId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string HypervisorName { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).HypervisorName; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).HypervisorName = value ?? null; }
@@ -106,14 +106,14 @@ namespace Commvault.Powershell.Models
         /// enter the passkey, again.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PasskeyExpirationTime { get => ((Commvault.Powershell.Models.IVMPasskeyInternal)Passkey).ExpirationTime; set => ((Commvault.Powershell.Models.IVMPasskeyInternal)Passkey).ExpirationTime = value ?? default(int); }
+        public long? PasskeyExpirationTime { get => ((Commvault.Powershell.Models.IVMPasskeyInternal)Passkey).ExpirationTime; set => ((Commvault.Powershell.Models.IVMPasskeyInternal)Passkey).ExpirationTime = value ?? default(long); }
 
         /// <summary>To tell if passkey is required for browse and restore</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? PasskeyPassKeyRequiredForRestore { get => ((Commvault.Powershell.Models.IVMPasskeyInternal)Passkey).PassKeyRequiredForRestore; set => ((Commvault.Powershell.Models.IVMPasskeyInternal)Passkey).PassKeyRequiredForRestore = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).PlanId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).PlanId = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).PlanId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).PlanId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).PlanName; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).PlanName = value ?? null; }
@@ -145,7 +145,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The amount of data being protected for the VM client(in bytes)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SummaryApplicationSize { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).ApplicationSize; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).ApplicationSize = value ?? default(int); }
+        public long? SummaryApplicationSize { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).ApplicationSize; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).ApplicationSize = value ?? default(long); }
 
         /// <summary>
         /// The host name for the computer where the source virtual machine or instance resides.
@@ -155,7 +155,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The latest recovery time for the vm(in unix)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SummaryLatestRecoveryPoint { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).LatestRecoveryPoint; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).LatestRecoveryPoint = value ?? default(int); }
+        public long? SummaryLatestRecoveryPoint { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).LatestRecoveryPoint; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).LatestRecoveryPoint = value ?? default(long); }
 
         /// <summary>The operating system version for the VM or instance.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -163,7 +163,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The oldest recovery time for the vm(in unix)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SummaryOldestRecoveryPoint { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).OldestRecoveryPoint; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).OldestRecoveryPoint = value ?? default(int); }
+        public long? SummaryOldestRecoveryPoint { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).OldestRecoveryPoint; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).OldestRecoveryPoint = value ?? default(long); }
 
         /// <summary>The status of the backup for the VM, instance, or container.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -171,7 +171,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The total space allocated(in bytes) for the virtual machine.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SummaryVMSize { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMSize; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMSize = value ?? default(int); }
+        public long? SummaryVMSize { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMSize; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMSize = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SummaryVendor { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).Vendor; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).Vendor = value ?? null; }
@@ -183,7 +183,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdNameValue[] Tags { get => this._tags; set => this._tags = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? VMGroupId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroupId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroupId = value ?? default(int); }
+        public long? VMGroupId { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroupId; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroupId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string VMGroupName { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroupName; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroupName = value ?? null; }
@@ -219,16 +219,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"timestamp(in unix) for the last backup job completed",
         SerializedName = @"backupCompletionDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationValidationResultBackupCompletionDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationValidationResultBackupCompletionDate { get; set; }
         /// <summary>job id of the last backup job that was validated</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"job id of the last backup job that was validated",
         SerializedName = @"backupValidated",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationValidationResultBackupValidated { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationValidationResultBackupValidated { get; set; }
         /// <summary>true if backup validation is set</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -243,16 +243,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"job id of the last backup validation job",
         SerializedName = @"lastValidationJobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationValidationResultLastValidationJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationValidationResultLastValidationJobId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -275,8 +275,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? HypervisorId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? HypervisorId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -310,8 +310,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The duration(in unix time) for which a user can continue browsing and restoring backup data without being prompted to enter the passkey, again.",
         SerializedName = @"expirationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PasskeyExpirationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PasskeyExpirationTime { get; set; }
         /// <summary>To tell if passkey is required for browse and restore</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -326,8 +326,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -366,8 +366,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The amount of data being protected for the VM client(in bytes)",
         SerializedName = @"applicationSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SummaryApplicationSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SummaryApplicationSize { get; set; }
         /// <summary>
         /// The host name for the computer where the source virtual machine or instance resides.
         /// </summary>
@@ -384,8 +384,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The latest recovery time for the vm(in unix)",
         SerializedName = @"latestRecoveryPoint",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SummaryLatestRecoveryPoint { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SummaryLatestRecoveryPoint { get; set; }
         /// <summary>The operating system version for the VM or instance.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -400,8 +400,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The oldest recovery time for the vm(in unix)",
         SerializedName = @"oldestRecoveryPoint",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SummaryOldestRecoveryPoint { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SummaryOldestRecoveryPoint { get; set; }
         /// <summary>The status of the backup for the VM, instance, or container.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -416,8 +416,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total space allocated(in bytes) for the virtual machine.",
         SerializedName = @"vmSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SummaryVMSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SummaryVMSize { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -440,8 +440,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -460,23 +460,23 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IVMAppsDiscovered[] ApplicationValidationResultAppsDiscovered { get; set; }
         /// <summary>timestamp(in unix) for the last backup job completed</summary>
-        int? ApplicationValidationResultBackupCompletionDate { get; set; }
+        long? ApplicationValidationResultBackupCompletionDate { get; set; }
         /// <summary>job id of the last backup job that was validated</summary>
-        int? ApplicationValidationResultBackupValidated { get; set; }
+        long? ApplicationValidationResultBackupValidated { get; set; }
         /// <summary>true if backup validation is set</summary>
         bool? ApplicationValidationResultBootStatus { get; set; }
         /// <summary>job id of the last backup validation job</summary>
-        int? ApplicationValidationResultLastValidationJobId { get; set; }
+        long? ApplicationValidationResultLastValidationJobId { get; set; }
         /// <summary>VMApplicationValidationResults</summary>
         Commvault.Powershell.Models.IVMApplicationValidationResults ApplicationValidationResults { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>The display name of the virtual machine</summary>
         string DisplayName { get; set; }
 
-        int? HypervisorId { get; set; }
+        long? HypervisorId { get; set; }
 
         string HypervisorName { get; set; }
         /// <summary>VMPasskey</summary>
@@ -489,11 +489,11 @@ namespace Commvault.Powershell.Models
         /// The duration(in unix time) for which a user can continue browsing and restoring backup data without being prompted to
         /// enter the passkey, again.
         /// </summary>
-        int? PasskeyExpirationTime { get; set; }
+        long? PasskeyExpirationTime { get; set; }
         /// <summary>To tell if passkey is required for browse and restore</summary>
         bool? PasskeyPassKeyRequiredForRestore { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>VMSecurity</summary>
@@ -509,7 +509,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         Commvault.Powershell.Models.IVMDetailSummary Summary { get; set; }
         /// <summary>The amount of data being protected for the VM client(in bytes)</summary>
-        int? SummaryApplicationSize { get; set; }
+        long? SummaryApplicationSize { get; set; }
 
         Commvault.Powershell.Models.IIdName SummaryCompany { get; set; }
         /// <summary>
@@ -519,11 +519,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SummaryHypervisor { get; set; }
         /// <summary>The latest recovery time for the vm(in unix)</summary>
-        int? SummaryLatestRecoveryPoint { get; set; }
+        long? SummaryLatestRecoveryPoint { get; set; }
         /// <summary>The operating system version for the VM or instance.</summary>
         string SummaryOS { get; set; }
         /// <summary>The oldest recovery time for the vm(in unix)</summary>
-        int? SummaryOldestRecoveryPoint { get; set; }
+        long? SummaryOldestRecoveryPoint { get; set; }
 
         Commvault.Powershell.Models.IIdName SummaryPlan { get; set; }
         /// <summary>The status of the backup for the VM, instance, or container.</summary>
@@ -531,13 +531,13 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SummaryVMGroup { get; set; }
         /// <summary>The total space allocated(in bytes) for the virtual machine.</summary>
-        int? SummaryVMSize { get; set; }
+        long? SummaryVMSize { get; set; }
 
         string SummaryVendor { get; set; }
 
         Commvault.Powershell.Models.IIdNameValue[] Tags { get; set; }
 
-        int? VMGroupId { get; set; }
+        long? VMGroupId { get; set; }
 
         string VMGroupName { get; set; }
 

@@ -97,8 +97,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int MediaAgentId { get => Body.MediaAgentId ?? default(int); set => Body.MediaAgentId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long MediaAgentId { get => Body.MediaAgentId ?? default(long); set => Body.MediaAgentId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -155,8 +155,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SavedCredentialsId { get => Body.SavedCredentialsId ?? default(int); set => Body.SavedCredentialsId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SavedCredentialsId { get => Body.SavedCredentialsId ?? default(long); set => Body.SavedCredentialsId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -170,7 +170,7 @@ namespace Commvault.Powershell.Cmdlets
         public string SavedCredentialsName { get => Body.SavedCredentialsName ?? null; set => Body.SavedCredentialsName = value; }
 
         /// <summary>Backing field for <see cref="StoragePoolId" /> property.</summary>
-        private int _storagePoolId;
+        private long _storagePoolId;
 
         /// <summary>Id of the disk storage to update</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the disk storage to update")]
@@ -179,9 +179,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the disk storage to update",
         SerializedName = @"storagePoolId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
+        public long StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
 
         /// <summary>
         /// <c>overrideOnBadRequest</c> will be called before the regular onBadRequest has been processed, allowing customization

@@ -77,14 +77,14 @@ namespace Commvault.Powershell.Models
             {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.SlaDetails.FromJson(__jsonSla) : Sla;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_commcell = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("commcell"), out var __jsonCommcell) ? Commvault.Powershell.Models.CommcellInfo.FromJson(__jsonCommcell) : Commcell;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_server = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("server"), out var __jsonServer) ? (string)__jsonServer : (string)Server;}
             {_vendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vendor"), out var __jsonVendor) ? (string)__jsonVendor : (string)Vendor;}
             {_databaseEngine = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("databaseEngine"), out var __jsonDatabaseEngine) ? (string)__jsonDatabaseEngine : (string)DatabaseEngine;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_notReadyReason = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("notReadyReason"), out var __jsonNotReadyReason) ? (string)__jsonNotReadyReason : (string)NotReadyReason;}
-            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (int?)__jsonApplicationSize : ApplicationSize;}
+            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (long?)__jsonApplicationSize : ApplicationSize;}
             AfterFromJson(json);
         }
 
@@ -113,14 +113,14 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._sla ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sla.ToJson(null,serializationMode) : null, "SLA" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != this._commcell ? (Commvault.Powershell.Runtime.Json.JsonNode) this._commcell.ToJson(null,serializationMode) : null, "commcell" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._server)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._server.ToString()) : null, "server" ,container.Add );
             AddIf( null != (((object)this._vendor)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vendor.ToString()) : null, "vendor" ,container.Add );
             AddIf( null != (((object)this._databaseEngine)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._databaseEngine.ToString()) : null, "databaseEngine" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != (((object)this._notReadyReason)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._notReadyReason.ToString()) : null, "notReadyReason" ,container.Add );
-            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationSize) : null, "applicationSize" ,container.Add );
+            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationSize) : null, "applicationSize" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -80,7 +80,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != (((object)this._passKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._passKey.ToString()) : null, "passKey" ,container.Add );
             AddIf( null != this._authOpType ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._authOpType) : null, "authOpType" ,container.Add );
-            AddIf( null != this._expirationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._expirationTime) : null, "expirationTime" ,container.Add );
+            AddIf( null != this._expirationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._expirationTime) : null, "expirationTime" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
             }
             {_passKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("passKey"), out var __jsonPassKey) ? (string)__jsonPassKey : (string)PassKey;}
             {_authOpType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("authOpType"), out var __jsonAuthOpType) ? (bool?)__jsonAuthOpType : AuthOpType;}
-            {_expirationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationTime"), out var __jsonExpirationTime) ? (int?)__jsonExpirationTime : ExpirationTime;}
+            {_expirationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationTime"), out var __jsonExpirationTime) ? (long?)__jsonExpirationTime : ExpirationTime;}
             AfterFromJson(json);
         }
     }

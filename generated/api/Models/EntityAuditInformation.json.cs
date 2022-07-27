@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_severity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("severity"), out var __jsonSeverity) ? (string)__jsonSeverity : (string)Severity;}
-            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("time"), out var __jsonTime) ? (int?)__jsonTime : Time;}
+            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("time"), out var __jsonTime) ? (long?)__jsonTime : Time;}
             {_user = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("user"), out var __jsonUser) ? (string)__jsonUser : (string)User;}
             {_operation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("operation"), out var __jsonOperation) ? (string)__jsonOperation : (string)Operation;}
             {_messages = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("messages"), out var __jsonMessages) ? If( __jsonMessages as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : Messages;}
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._severity)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._severity.ToString()) : null, "severity" ,container.Add );
-            AddIf( null != this._time ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._time) : null, "time" ,container.Add );
+            AddIf( null != this._time ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._time) : null, "time" ,container.Add );
             AddIf( null != (((object)this._user)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._user.ToString()) : null, "user" ,container.Add );
             AddIf( null != (((object)this._operation)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._operation.ToString()) : null, "operation" ,container.Add );
             if (null != this._messages)

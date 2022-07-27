@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Metrics Moitoring PolicyId</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="IsEnabled" /> property.</summary>
         private bool? _isEnabled;
@@ -46,8 +46,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Metrics Moitoring PolicyId",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>True if Metrics Monioring policy is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -70,7 +70,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Metrics Moitoring PolicyId</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>True if Metrics Monioring policy is enabled</summary>
         bool? IsEnabled { get; set; }
         /// <summary>Metrics Moitoring Policy Name</summary>

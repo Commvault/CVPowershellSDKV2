@@ -61,7 +61,7 @@ namespace Commvault.Powershell.Models
         public string UnixUNCCredentialsPassword { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncCredentialsPassword; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncCredentialsPassword = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UnixUNCSavedCredentialsId { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncSavedCredentialsId; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncSavedCredentialsId = value ?? default(int); }
+        public long? UnixUNCSavedCredentialsId { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncSavedCredentialsId; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncSavedCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UnixUNCSavedCredentialsName { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncSavedCredentialsName; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).UncSavedCredentialsName = value ?? null; }
@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
         public string WindowsUNCCredentialsPassword { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncCredentialsPassword; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncCredentialsPassword = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? WindowsUNCSavedCredentialsId { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncSavedCredentialsId; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncSavedCredentialsId = value ?? default(int); }
+        public long? WindowsUNCSavedCredentialsId { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncSavedCredentialsId; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncSavedCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string WindowsUNCSavedCredentialsName { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncSavedCredentialsName; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).UncSavedCredentialsName = value ?? null; }
@@ -167,8 +167,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UnixUNCSavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UnixUNCSavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -231,8 +231,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? WindowsUNCSavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? WindowsUNCSavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -262,7 +262,7 @@ namespace Commvault.Powershell.Models
         /// <summary>password to access the network path</summary>
         string UnixUNCCredentialsPassword { get; set; }
 
-        int? UnixUNCSavedCredentialsId { get; set; }
+        long? UnixUNCSavedCredentialsId { get; set; }
 
         string UnixUNCSavedCredentialsName { get; set; }
 
@@ -288,7 +288,7 @@ namespace Commvault.Powershell.Models
         /// <summary>password to access the network path</summary>
         string WindowsUNCCredentialsPassword { get; set; }
 
-        int? WindowsUNCSavedCredentialsId { get; set; }
+        long? WindowsUNCSavedCredentialsId { get; set; }
 
         string WindowsUNCSavedCredentialsName { get; set; }
 

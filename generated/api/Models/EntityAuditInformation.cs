@@ -33,11 +33,11 @@ namespace Commvault.Powershell.Models
         public string Severity { get => this._severity; set => this._severity = value; }
 
         /// <summary>Backing field for <see cref="Time" /> property.</summary>
-        private int? _time;
+        private long? _time;
 
         /// <summary>Unix epoch time representation of audit entry</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Time { get => this._time; set => this._time = value; }
+        public long? Time { get => this._time; set => this._time = value; }
 
         /// <summary>Backing field for <see cref="User" /> property.</summary>
         private string _user;
@@ -86,8 +86,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Unix epoch time representation of audit entry",
         SerializedName = @"time",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Time { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Time { get; set; }
         /// <summary>Name of the user</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -109,7 +109,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Defines the serverity of the audit entry</summary>
         string Severity { get; set; }
         /// <summary>Unix epoch time representation of audit entry</summary>
-        int? Time { get; set; }
+        long? Time { get; set; }
         /// <summary>Name of the user</summary>
         string User { get; set; }
 

@@ -71,10 +71,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("time"), out var __jsonTime) ? (int?)__jsonTime : Time;}
-            {_jobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobId"), out var __jsonJobId) ? (int?)__jsonJobId : JobId;}
+            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("time"), out var __jsonTime) ? (long?)__jsonTime : Time;}
+            {_jobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobId"), out var __jsonJobId) ? (long?)__jsonJobId : JobId;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
-            {_lastSuccessfulBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastSuccessfulBackupTime"), out var __jsonLastSuccessfulBackupTime) ? (int?)__jsonLastSuccessfulBackupTime : LastSuccessfulBackupTime;}
+            {_lastSuccessfulBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastSuccessfulBackupTime"), out var __jsonLastSuccessfulBackupTime) ? (long?)__jsonLastSuccessfulBackupTime : LastSuccessfulBackupTime;}
             {_failureReason = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("failureReason"), out var __jsonFailureReason) ? (string)__jsonFailureReason : (string)FailureReason;}
             AfterFromJson(json);
         }
@@ -98,10 +98,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._time ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._time) : null, "time" ,container.Add );
-            AddIf( null != this._jobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._jobId) : null, "jobId" ,container.Add );
+            AddIf( null != this._time ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._time) : null, "time" ,container.Add );
+            AddIf( null != this._jobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._jobId) : null, "jobId" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
-            AddIf( null != this._lastSuccessfulBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._lastSuccessfulBackupTime) : null, "lastSuccessfulBackupTime" ,container.Add );
+            AddIf( null != this._lastSuccessfulBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastSuccessfulBackupTime) : null, "lastSuccessfulBackupTime" ,container.Add );
             AddIf( null != (((object)this._failureReason)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._failureReason.ToString()) : null, "failureReason" ,container.Add );
             AfterToJson(ref container);
             return container;

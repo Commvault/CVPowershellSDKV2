@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_replicationFrequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("replicationFrequency"), out var __jsonReplicationFrequency) ? (int?)__jsonReplicationFrequency : ReplicationFrequency;}
+            {_replicationFrequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("replicationFrequency"), out var __jsonReplicationFrequency) ? (long?)__jsonReplicationFrequency : ReplicationFrequency;}
             AfterFromJson(json);
         }
 
@@ -94,7 +94,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._replicationFrequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._replicationFrequency) : null, "replicationFrequency" ,container.Add );
+            AddIf( null != this._replicationFrequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._replicationFrequency) : null, "replicationFrequency" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

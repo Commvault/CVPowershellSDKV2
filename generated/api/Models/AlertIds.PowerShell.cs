@@ -64,7 +64,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId = (int[]) content.GetValueForProperty("AlertId",((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId, __y => TypeConverterExtensions.SelectToArray<int>(__y, (__w)=> (int) global::System.Convert.ChangeType(__w, typeof(int))));
+            ((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId = (long[]) content.GetValueForProperty("AlertId",((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId, __y => TypeConverterExtensions.SelectToArray<long>(__y, (__w)=> (long) global::System.Convert.ChangeType(__w, typeof(long))));
             AfterDeserializeDictionary(content);
         }
 
@@ -82,7 +82,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId = (int[]) content.GetValueForProperty("AlertId",((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId, __y => TypeConverterExtensions.SelectToArray<int>(__y, (__w)=> (int) global::System.Convert.ChangeType(__w, typeof(int))));
+            ((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId = (long[]) content.GetValueForProperty("AlertId",((Commvault.Powershell.Models.IAlertIdsInternal)this).AlertId, __y => TypeConverterExtensions.SelectToArray<long>(__y, (__w)=> (long) global::System.Convert.ChangeType(__w, typeof(long))));
             AfterDeserializePSObject(content);
         }
 

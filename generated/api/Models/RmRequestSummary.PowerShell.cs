@@ -94,7 +94,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Owner = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Owner",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Owner, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Status, global::System.Convert.ToString);
@@ -103,7 +103,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).CreatedOn = (long?) content.GetValueForProperty("CreatedOn",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).CreatedOn, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Reviewers = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("Reviewers",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Reviewers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Approvers = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("Approvers",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Approvers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId = (int?) content.GetValueForProperty("OwnerId",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId = (long?) content.GetValueForProperty("OwnerId",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerName = (string) content.GetValueForProperty("OwnerName",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -123,7 +123,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Owner = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Owner",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Owner, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Status, global::System.Convert.ToString);
@@ -132,7 +132,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).CreatedOn = (long?) content.GetValueForProperty("CreatedOn",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).CreatedOn, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Reviewers = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("Reviewers",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Reviewers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Approvers = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("Approvers",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).Approvers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId = (int?) content.GetValueForProperty("OwnerId",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId = (long?) content.GetValueForProperty("OwnerId",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerName = (string) content.GetValueForProperty("OwnerName",((Commvault.Powershell.Models.IRmRequestSummaryInternal)this).OwnerName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

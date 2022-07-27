@@ -42,7 +42,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="CloudStorageId" /> property.</summary>
-        private int _cloudStorageId;
+        private long _cloudStorageId;
 
         /// <summary>Id of cloud Storage</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of cloud Storage")]
@@ -51,9 +51,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of cloud Storage",
         SerializedName = @"cloudStorageId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int CloudStorageId { get => this._cloudStorageId; set => this._cloudStorageId = value; }
+        public long CloudStorageId { get => this._cloudStorageId; set => this._cloudStorageId = value; }
 
         /// <summary>username to access the network path</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "username to access the network path")]
@@ -100,8 +100,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int MediaAgentId { get => Body.MediaAgentId ?? default(int); set => Body.MediaAgentId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long MediaAgentId { get => Body.MediaAgentId ?? default(long); set => Body.MediaAgentId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -162,8 +162,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SavedCredentialsId { get => Body.SavedCredentialsId ?? default(int); set => Body.SavedCredentialsId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SavedCredentialsId { get => Body.SavedCredentialsId ?? default(long); set => Body.SavedCredentialsId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]

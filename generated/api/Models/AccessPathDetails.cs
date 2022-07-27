@@ -31,11 +31,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IAccessPathDetailsInternal.MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set { {_mediaAgent = value;} } }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Gives the disk access path id.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="MediaAgent" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _mediaAgent;
@@ -44,7 +44,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set => this._mediaAgent = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id = value ?? default(int); }
+        public long? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string MediaAgentName { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name = value ?? null; }
@@ -96,16 +96,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gives the disk access path id.",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MediaAgentId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MediaAgentId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -143,11 +143,11 @@ namespace Commvault.Powershell.Models
         /// <summary>states if the access path is accessible</summary>
         bool? Accessible { get; set; }
         /// <summary>Gives the disk access path id.</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         Commvault.Powershell.Models.IIdName MediaAgent { get; set; }
 
-        int? MediaAgentId { get; set; }
+        long? MediaAgentId { get; set; }
 
         string MediaAgentName { get; set; }
         /// <summary>Gives the disk access path.</summary>

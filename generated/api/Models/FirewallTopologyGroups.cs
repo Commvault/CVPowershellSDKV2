@@ -14,11 +14,11 @@ namespace Commvault.Powershell.Models
         /// The interval in seconds for sending keep-alive packets, to maintain the session if backup traffic has an extended pause.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AdvancedOptionKeepAliveInterval { get => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).KeepAliveInterval; set => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).KeepAliveInterval = value ?? default(int); }
+        public long? AdvancedOptionKeepAliveInterval { get => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).KeepAliveInterval; set => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).KeepAliveInterval = value ?? default(long); }
 
         /// <summary>The port defined for communications</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AdvancedOptionTunnelPort { get => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).TunnelPort; set => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).TunnelPort = value ?? default(int); }
+        public long? AdvancedOptionTunnelPort { get => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).TunnelPort; set => ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)AdvancedOptions).TunnelPort = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="AdvancedOptions" /> property.</summary>
         private Commvault.Powershell.Models.IFirewallGroupAdvancedOptions _advancedOptions;
@@ -27,11 +27,11 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IFirewallGroupAdvancedOptions AdvancedOptions { get => (this._advancedOptions = this._advancedOptions ?? new Commvault.Powershell.Models.FirewallGroupAdvancedOptions()); set => this._advancedOptions = value; }
 
         /// <summary>Backing field for <see cref="ClientGroupId" /> property.</summary>
-        private int? _clientGroupId;
+        private long? _clientGroupId;
 
         /// <summary>The id of the client group</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ClientGroupId { get => this._clientGroupId; set => this._clientGroupId = value; }
+        public long? ClientGroupId { get => this._clientGroupId; set => this._clientGroupId = value; }
 
         /// <summary>Internal Acessors for AdvancedOptions</summary>
         Commvault.Powershell.Models.IFirewallGroupAdvancedOptions Commvault.Powershell.Models.IFirewallTopologyGroupsInternal.AdvancedOptions { get => (this._advancedOptions = this._advancedOptions ?? new Commvault.Powershell.Models.FirewallGroupAdvancedOptions()); set { {_advancedOptions = value;} } }
@@ -67,24 +67,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The interval in seconds for sending keep-alive packets, to maintain the session if backup traffic has an extended pause.",
         SerializedName = @"keepAliveInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AdvancedOptionKeepAliveInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AdvancedOptionKeepAliveInterval { get; set; }
         /// <summary>The port defined for communications</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"The port defined for communications",
         SerializedName = @"tunnelPort",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AdvancedOptionTunnelPort { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AdvancedOptionTunnelPort { get; set; }
         /// <summary>The id of the client group</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"The id of the client group",
         SerializedName = @"clientGroupId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClientGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClientGroupId { get; set; }
         /// <summary>FirewallFwGroupType</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -109,13 +109,13 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// The interval in seconds for sending keep-alive packets, to maintain the session if backup traffic has an extended pause.
         /// </summary>
-        int? AdvancedOptionKeepAliveInterval { get; set; }
+        long? AdvancedOptionKeepAliveInterval { get; set; }
         /// <summary>The port defined for communications</summary>
-        int? AdvancedOptionTunnelPort { get; set; }
+        long? AdvancedOptionTunnelPort { get; set; }
 
         Commvault.Powershell.Models.IFirewallGroupAdvancedOptions AdvancedOptions { get; set; }
         /// <summary>The id of the client group</summary>
-        int? ClientGroupId { get; set; }
+        long? ClientGroupId { get; set; }
         /// <summary>FirewallFwGroupType</summary>
         string GroupType { get; set; }
         /// <summary>Custom names(mnemonics) given to pre-defined smart client groups</summary>

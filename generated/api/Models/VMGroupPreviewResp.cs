@@ -25,10 +25,10 @@ namespace Commvault.Powershell.Models
         public string ManagementVersion { get => this._managementVersion; set => this._managementVersion = value; }
 
         /// <summary>Backing field for <see cref="ProtectedVMCount" /> property.</summary>
-        private int? _protectedVMCount;
+        private long? _protectedVMCount;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ProtectedVMCount { get => this._protectedVMCount; set => this._protectedVMCount = value; }
+        public long? ProtectedVMCount { get => this._protectedVMCount; set => this._protectedVMCount = value; }
 
         /// <summary>Backing field for <see cref="VMGroup" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _vMGroup;
@@ -37,7 +37,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName VMGroup { get => (this._vMGroup = this._vMGroup ?? new Commvault.Powershell.Models.IdName()); set => this._vMGroup = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? VMGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id = value ?? default(int); }
+        public long? VMGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string VMGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Name = value ?? null; }
@@ -99,16 +99,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"ProtectedVMCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ProtectedVMCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ProtectedVMCount { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VMGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VMGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -172,11 +172,11 @@ namespace Commvault.Powershell.Models
         /// <summary>management Version of the Hypervisor like vcenter version , Hyperv version</summary>
         string ManagementVersion { get; set; }
 
-        int? ProtectedVMCount { get; set; }
+        long? ProtectedVMCount { get; set; }
 
         Commvault.Powershell.Models.IIdName VMGroup { get; set; }
 
-        int? VMGroupId { get; set; }
+        long? VMGroupId { get; set; }
 
         string VMGroupName { get; set; }
         /// <summary>vmPreviewInfo</summary>

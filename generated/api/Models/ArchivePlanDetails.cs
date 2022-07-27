@@ -28,14 +28,14 @@ namespace Commvault.Powershell.Models
         /// To archive files based on the size of the file, specify the minimum file size in KB.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileSize { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize = value ?? default(int); }
+        public long? ArchivingRuleFileSize { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileSize = value ?? default(long); }
 
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileTimestamp { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp = value ?? default(int); }
+        public long? ArchivingRuleFileTimestamp { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestamp = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ArchivingRuleFileTimestampMethod { get => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestampMethod; set => ((Commvault.Powershell.Models.IArchivePlanArchivingRulesInternal)ArchivingRules).FileTimestampMethod = value ?? null; }
@@ -71,11 +71,11 @@ namespace Commvault.Powershell.Models
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupFrequency { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyFrequency; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyFrequency = value ?? default(int); }
+        public long? BackupFrequency { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyFrequency; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyFrequency = value ?? default(long); }
 
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyDayOfMonth = value ?? default(int); }
+        public long? BackupFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyDayOfMonth; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyDayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyDayOfWeek; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyDayOfWeek = value ?? null; }
@@ -89,7 +89,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupFrequencyStartTime { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyStartTime; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyStartTime = value ?? default(int); }
+        public long? BackupFrequencyStartTime { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyStartTime; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyStartTime = value ?? default(long); }
 
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
         public string[] BackupFrequencyWeeklyDays { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyWeeklyDays; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).BackupFrequencyWeeklyDays = value ?? null /* arrayOf */; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BasePlanId { get => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).BasePlanId; set => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).BasePlanId = value ?? default(int); }
+        public long? BasePlanId { get => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).BasePlanId; set => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).BasePlanId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BasePlanName { get => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).BasePlanName; set => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).BasePlanName = value ?? null; }
@@ -177,7 +177,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -212,7 +212,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaEnableAfterDelay; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaEnableAfterDelay = value ?? default(int); }
+        public long? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaEnableAfterDelay; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaEnableAfterDelay = value ?? default(long); }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -228,11 +228,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Inherited SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaInheritedSlaPeriod; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaInheritedSlaPeriod = value ?? default(int); }
+        public long? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaInheritedSlaPeriod; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaInheritedSlaPeriod = value ?? default(long); }
 
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaPeriod { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaPeriod = value ?? default(int); }
+        public long? SlaPeriod { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaPeriod = value ?? default(long); }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -281,8 +281,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the size of the file, specify the minimum file size in KB.",
         SerializedName = @"fileSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileSize { get; set; }
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
@@ -292,8 +292,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the last accessed or modified date of each file within the folder, specify the number of days. Should be supplied with fileTimestampMethod.",
         SerializedName = @"fileTimestamp",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileTimestamp { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileTimestamp { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -343,16 +343,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months",
         SerializedName = @"frequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequency { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Day on which to run the schedule, applicable for monthly, yearly",
         SerializedName = @"dayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -383,8 +383,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"start time of schedule in seconds for daily, weekly, monthly, yearly frequency",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequencyStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -407,8 +407,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BasePlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BasePlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -455,8 +455,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -503,8 +503,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaEnableAfterDelay { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -535,16 +535,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Inherited SLA Period in Days",
         SerializedName = @"inheritedSLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaInheritedSlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaInheritedSlaPeriod { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -584,12 +584,12 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// To archive files based on the size of the file, specify the minimum file size in KB.
         /// </summary>
-        int? ArchivingRuleFileSize { get; set; }
+        long? ArchivingRuleFileSize { get; set; }
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
         /// </summary>
-        int? ArchivingRuleFileTimestamp { get; set; }
+        long? ArchivingRuleFileTimestamp { get; set; }
 
         string ArchivingRuleFileTimestampMethod { get; set; }
         /// <summary>Flag telling if this setting is currently being overriden</summary>
@@ -606,9 +606,9 @@ namespace Commvault.Powershell.Models
         /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
-        int? BackupFrequency { get; set; }
+        long? BackupFrequency { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
-        int? BackupFrequencyDayOfMonth { get; set; }
+        long? BackupFrequencyDayOfMonth { get; set; }
 
         string BackupFrequencyDayOfWeek { get; set; }
 
@@ -616,13 +616,13 @@ namespace Commvault.Powershell.Models
         /// <summary>schedule frequency type</summary>
         string BackupFrequencyScheduleFrequencyType { get; set; }
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
-        int? BackupFrequencyStartTime { get; set; }
+        long? BackupFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         string BackupFrequencyWeekOfMonth { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>
         string[] BackupFrequencyWeeklyDays { get; set; }
 
-        int? BasePlanId { get; set; }
+        long? BasePlanId { get; set; }
 
         string BasePlanName { get; set; }
         /// <summary>PlanOverridenOptions</summary>
@@ -651,7 +651,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>Specifies if the destinations are associated to regions</summary>
@@ -675,7 +675,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         Commvault.Powershell.Models.ISlaOptions RpoSla { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        int? SlaEnableAfterDelay { get; set; }
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         bool? SlaExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
@@ -683,9 +683,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Tells us from where SLA Period was inherited</summary>
         string SlaInheritedFrom { get; set; }
         /// <summary>Inherited SLA Period in Days</summary>
-        int? SlaInheritedSlaPeriod { get; set; }
+        long? SlaInheritedSlaPeriod { get; set; }
         /// <summary>SLA Period in Days</summary>
-        int? SlaPeriod { get; set; }
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? SlaUseSystemDefaultSla { get; set; }
         /// <summary>Flag telling if this setting is currently being overriden</summary>

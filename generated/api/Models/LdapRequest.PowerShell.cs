@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILdapRequestInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ILdapRequestInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILdapRequestInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ILdapRequestInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILdapRequestInternal)this).Username = (string) content.GetValueForProperty("Username",((Commvault.Powershell.Models.ILdapRequestInternal)this).Username, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILdapRequestInternal)this).Password = (string) content.GetValueForProperty("Password",((Commvault.Powershell.Models.ILdapRequestInternal)this).Password, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILdapRequestInternal)this).AccessViaClient = (bool?) content.GetValueForProperty("AccessViaClient",((Commvault.Powershell.Models.ILdapRequestInternal)this).AccessViaClient, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILdapRequestInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ILdapRequestInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILdapRequestInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ILdapRequestInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILdapRequestInternal)this).Username = (string) content.GetValueForProperty("Username",((Commvault.Powershell.Models.ILdapRequestInternal)this).Username, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILdapRequestInternal)this).Password = (string) content.GetValueForProperty("Password",((Commvault.Powershell.Models.ILdapRequestInternal)this).Password, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILdapRequestInternal)this).AccessViaClient = (bool?) content.GetValueForProperty("AccessViaClient",((Commvault.Powershell.Models.ILdapRequestInternal)this).AccessViaClient, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));

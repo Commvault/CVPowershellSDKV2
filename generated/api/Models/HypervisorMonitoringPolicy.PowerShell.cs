@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).IsEnabled = (bool?) content.GetValueForProperty("IsEnabled",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).IsEnabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).IsEnabled = (bool?) content.GetValueForProperty("IsEnabled",((Commvault.Powershell.Models.IHypervisorMonitoringPolicyInternal)this).IsEnabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);

@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Models
             {_diskProvisioning = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("diskProvisioning"), out var __jsonDiskProvisioning) ? (string)__jsonDiskProvisioning : (string)DiskProvisioning;}
             {_transportMode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("transportMode"), out var __jsonTransportMode) ? (string)__jsonTransportMode : (string)TransportMode;}
             {_unconditionalOverwrite = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("unconditionalOverwrite"), out var __jsonUnconditionalOverwrite) ? (bool?)__jsonUnconditionalOverwrite : UnconditionalOverwrite;}
-            {_snapshotsToRetain = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SnapshotsToRetain"), out var __jsonSnapshotsToRetain) ? (int?)__jsonSnapshotsToRetain : SnapshotsToRetain;}
+            {_snapshotsToRetain = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SnapshotsToRetain"), out var __jsonSnapshotsToRetain) ? (long?)__jsonSnapshotsToRetain : SnapshotsToRetain;}
             AfterFromJson(json);
         }
 
@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._diskProvisioning)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._diskProvisioning.ToString()) : null, "diskProvisioning" ,container.Add );
             AddIf( null != (((object)this._transportMode)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._transportMode.ToString()) : null, "transportMode" ,container.Add );
             AddIf( null != this._unconditionalOverwrite ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._unconditionalOverwrite) : null, "unconditionalOverwrite" ,container.Add );
-            AddIf( null != this._snapshotsToRetain ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._snapshotsToRetain) : null, "SnapshotsToRetain" ,container.Add );
+            AddIf( null != this._snapshotsToRetain ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._snapshotsToRetain) : null, "SnapshotsToRetain" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

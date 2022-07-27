@@ -71,9 +71,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_logBackupRpoMins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("logBackupRPOMins"), out var __jsonLogBackupRpoMins) ? (int?)__jsonLogBackupRpoMins : LogBackupRpoMins;}
+            {_logBackupRpoMins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("logBackupRPOMins"), out var __jsonLogBackupRpoMins) ? (long?)__jsonLogBackupRpoMins : LogBackupRpoMins;}
             {_useDiskCacheForLogBackups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useDiskCacheForLogBackups"), out var __jsonUseDiskCacheForLogBackups) ? (bool?)__jsonUseDiskCacheForLogBackups : UseDiskCacheForLogBackups;}
-            {_commitFrequencyInHours = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("commitFrequencyInHours"), out var __jsonCommitFrequencyInHours) ? (int?)__jsonCommitFrequencyInHours : CommitFrequencyInHours;}
+            {_commitFrequencyInHours = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("commitFrequencyInHours"), out var __jsonCommitFrequencyInHours) ? (long?)__jsonCommitFrequencyInHours : CommitFrequencyInHours;}
             AfterFromJson(json);
         }
 
@@ -96,9 +96,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._logBackupRpoMins ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._logBackupRpoMins) : null, "logBackupRPOMins" ,container.Add );
+            AddIf( null != this._logBackupRpoMins ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._logBackupRpoMins) : null, "logBackupRPOMins" ,container.Add );
             AddIf( null != this._useDiskCacheForLogBackups ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useDiskCacheForLogBackups) : null, "useDiskCacheForLogBackups" ,container.Add );
-            AddIf( null != this._commitFrequencyInHours ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._commitFrequencyInHours) : null, "commitFrequencyInHours" ,container.Add );
+            AddIf( null != this._commitFrequencyInHours ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._commitFrequencyInHours) : null, "commitFrequencyInHours" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

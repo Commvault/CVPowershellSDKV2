@@ -269,7 +269,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.Id"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.GetAlertDefinitionsDetails(InputObject.Id ?? default(int), this.InvocationInformation.BoundParameters.ContainsKey("AdditionalProperties") ? AdditionalProperties : default(global::System.Management.Automation.SwitchParameter?), onOk, onInternalServerError, this, Pipeline);
+                    await this.Client.GetAlertDefinitionsDetails(InputObject.Id ?? default(long), this.InvocationInformation.BoundParameters.ContainsKey("AdditionalProperties") ? AdditionalProperties : default(global::System.Management.Automation.SwitchParameter?), onOk, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

@@ -74,13 +74,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_recoverypointStore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("recoverypointStore"), out var __jsonRecoverypointStore) ? Commvault.Powershell.Models.IdName.FromJson(__jsonRecoverypointStore) : RecoverypointStore;}
-            {_ccrpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("CCRPInterval"), out var __jsonCcrpInterval) ? (int?)__jsonCcrpInterval : CcrpInterval;}
-            {_mergeRecoveryPointsOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("mergeRecoveryPointsOlderThan"), out var __jsonMergeRecoveryPointsOlderThan) ? (int?)__jsonMergeRecoveryPointsOlderThan : MergeRecoveryPointsOlderThan;}
-            {_retainRecoveryPointsFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retainRecoveryPointsFor"), out var __jsonRetainRecoveryPointsFor) ? (int?)__jsonRetainRecoveryPointsFor : RetainRecoveryPointsFor;}
-            {_rpIntervalAfterRetention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("RPIntervalAfterRetention"), out var __jsonRpIntervalAfterRetention) ? (int?)__jsonRpIntervalAfterRetention : RpIntervalAfterRetention;}
+            {_ccrpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("CCRPInterval"), out var __jsonCcrpInterval) ? (long?)__jsonCcrpInterval : CcrpInterval;}
+            {_mergeRecoveryPointsOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("mergeRecoveryPointsOlderThan"), out var __jsonMergeRecoveryPointsOlderThan) ? (long?)__jsonMergeRecoveryPointsOlderThan : MergeRecoveryPointsOlderThan;}
+            {_retainRecoveryPointsFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retainRecoveryPointsFor"), out var __jsonRetainRecoveryPointsFor) ? (long?)__jsonRetainRecoveryPointsFor : RetainRecoveryPointsFor;}
+            {_rpIntervalAfterRetention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("RPIntervalAfterRetention"), out var __jsonRpIntervalAfterRetention) ? (long?)__jsonRpIntervalAfterRetention : RpIntervalAfterRetention;}
             {_pruneAndMergeOffPeakOnly = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("pruneAndMergeOffPeakOnly"), out var __jsonPruneAndMergeOffPeakOnly) ? (bool?)__jsonPruneAndMergeOffPeakOnly : PruneAndMergeOffPeakOnly;}
-            {_acrpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("ACRPInterval"), out var __jsonAcrpInterval) ? (int?)__jsonAcrpInterval : AcrpInterval;}
-            {_switchToLatestIfStoreOfflineFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("switchToLatestIfStoreOfflineFor"), out var __jsonSwitchToLatestIfStoreOfflineFor) ? (int?)__jsonSwitchToLatestIfStoreOfflineFor : SwitchToLatestIfStoreOfflineFor;}
+            {_acrpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("ACRPInterval"), out var __jsonAcrpInterval) ? (long?)__jsonAcrpInterval : AcrpInterval;}
+            {_switchToLatestIfStoreOfflineFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("switchToLatestIfStoreOfflineFor"), out var __jsonSwitchToLatestIfStoreOfflineFor) ? (long?)__jsonSwitchToLatestIfStoreOfflineFor : SwitchToLatestIfStoreOfflineFor;}
             AfterFromJson(json);
         }
 
@@ -106,13 +106,13 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._recoverypointStore ? (Commvault.Powershell.Runtime.Json.JsonNode) this._recoverypointStore.ToJson(null,serializationMode) : null, "recoverypointStore" ,container.Add );
-            AddIf( null != this._ccrpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._ccrpInterval) : null, "CCRPInterval" ,container.Add );
-            AddIf( null != this._mergeRecoveryPointsOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._mergeRecoveryPointsOlderThan) : null, "mergeRecoveryPointsOlderThan" ,container.Add );
-            AddIf( null != this._retainRecoveryPointsFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retainRecoveryPointsFor) : null, "retainRecoveryPointsFor" ,container.Add );
-            AddIf( null != this._rpIntervalAfterRetention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._rpIntervalAfterRetention) : null, "RPIntervalAfterRetention" ,container.Add );
+            AddIf( null != this._ccrpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._ccrpInterval) : null, "CCRPInterval" ,container.Add );
+            AddIf( null != this._mergeRecoveryPointsOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._mergeRecoveryPointsOlderThan) : null, "mergeRecoveryPointsOlderThan" ,container.Add );
+            AddIf( null != this._retainRecoveryPointsFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retainRecoveryPointsFor) : null, "retainRecoveryPointsFor" ,container.Add );
+            AddIf( null != this._rpIntervalAfterRetention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._rpIntervalAfterRetention) : null, "RPIntervalAfterRetention" ,container.Add );
             AddIf( null != this._pruneAndMergeOffPeakOnly ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._pruneAndMergeOffPeakOnly) : null, "pruneAndMergeOffPeakOnly" ,container.Add );
-            AddIf( null != this._acrpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._acrpInterval) : null, "ACRPInterval" ,container.Add );
-            AddIf( null != this._switchToLatestIfStoreOfflineFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._switchToLatestIfStoreOfflineFor) : null, "switchToLatestIfStoreOfflineFor" ,container.Add );
+            AddIf( null != this._acrpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._acrpInterval) : null, "ACRPInterval" ,container.Add );
+            AddIf( null != this._switchToLatestIfStoreOfflineFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._switchToLatestIfStoreOfflineFor) : null, "switchToLatestIfStoreOfflineFor" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

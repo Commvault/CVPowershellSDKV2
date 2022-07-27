@@ -66,9 +66,9 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).User = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("User",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).User, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroup = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("UserGroup",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroup, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId = (int?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId = (long?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId = (int?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId = (long?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupName = (string) content.GetValueForProperty("UserGroupName",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -89,9 +89,9 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).User = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("User",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).User, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroup = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("UserGroup",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroup, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId = (int?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId = (long?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId = (int?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId = (long?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupName = (string) content.GetValueForProperty("UserGroupName",((Commvault.Powershell.Models.ICredentialOwnerInternal)this).UserGroupName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

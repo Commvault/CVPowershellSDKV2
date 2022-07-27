@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_serversCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("serversCount"), out var __jsonServersCount) ? (int?)__jsonServersCount : ServersCount;}
+            {_serversCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("serversCount"), out var __jsonServersCount) ? (long?)__jsonServersCount : ServersCount;}
             {_servers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("servers"), out var __jsonServers) ? If( __jsonServers as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IRegionAssociatedServersList[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IRegionAssociatedServersList) (Commvault.Powershell.Models.RegionAssociatedServersList.FromJson(__u) )) ))() : null : Servers;}
             AfterFromJson(json);
         }
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._serversCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._serversCount) : null, "serversCount" ,container.Add );
+            AddIf( null != this._serversCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._serversCount) : null, "serversCount" ,container.Add );
             if (null != this._servers)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

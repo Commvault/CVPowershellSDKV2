@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(int); }
+        public long? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="General" /> property.</summary>
         private Commvault.Powershell.Models.ICloudStorageGeneralInfo _general;
@@ -92,15 +92,15 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Free space available on this cloud storage</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralFreeSpace { get => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).FreeSpace; set => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).FreeSpace = value ?? default(int); }
+        public long? GeneralFreeSpace { get => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).FreeSpace; set => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).FreeSpace = value ?? default(long); }
 
         /// <summary>Amount of space consumed</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralSizeOnDisk { get => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).SizeOnDisk; set => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).SizeOnDisk = value ?? default(int); }
+        public long? GeneralSizeOnDisk { get => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).SizeOnDisk; set => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).SizeOnDisk = value ?? default(long); }
 
         /// <summary>Total capacity of this cloud storage</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralTotalCapacity { get => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).TotalCapacity; set => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).TotalCapacity = value ?? default(int); }
+        public long? GeneralTotalCapacity { get => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).TotalCapacity; set => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).TotalCapacity = value ?? default(long); }
 
         /// <summary>Type of the cloud storage server</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -111,10 +111,10 @@ namespace Commvault.Powershell.Models
         public string GeneralVendorType { get => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).VendorType; set => ((Commvault.Powershell.Models.ICloudStorageGeneralInfoInternal)General).VendorType = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id = value; }
+        public long? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(int); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string KeyProviderName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName = value ?? null; }
@@ -209,8 +209,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128 and 256. DES3 accepts only 192. GOST accepts only 256. ",
         SerializedName = @"keyLength",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EncryptionKeyLength { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EncryptionKeyLength { get; set; }
         /// <summary>
         /// Specifies the savings in percentage that occurred due to deduplication. Only available for dedupe cloud storage pools
         /// </summary>
@@ -227,24 +227,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Free space available on this cloud storage",
         SerializedName = @"freeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralFreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralFreeSpace { get; set; }
         /// <summary>Amount of space consumed</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Amount of space consumed",
         SerializedName = @"sizeOnDisk",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralSizeOnDisk { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralSizeOnDisk { get; set; }
         /// <summary>Total capacity of this cloud storage</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Total capacity of this cloud storage",
         SerializedName = @"totalCapacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralTotalCapacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralTotalCapacity { get; set; }
         /// <summary>Type of the cloud storage server</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -267,8 +267,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? KeyProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -312,7 +312,7 @@ namespace Commvault.Powershell.Models
         /// Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
-        int? EncryptionKeyLength { get; set; }
+        long? EncryptionKeyLength { get; set; }
 
         Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get; set; }
         /// <summary>CloudStorageGeneralInfo</summary>
@@ -322,17 +322,17 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string GeneralDeduplicationSavings { get; set; }
         /// <summary>Free space available on this cloud storage</summary>
-        int? GeneralFreeSpace { get; set; }
+        long? GeneralFreeSpace { get; set; }
         /// <summary>Amount of space consumed</summary>
-        int? GeneralSizeOnDisk { get; set; }
+        long? GeneralSizeOnDisk { get; set; }
         /// <summary>Total capacity of this cloud storage</summary>
-        int? GeneralTotalCapacity { get; set; }
+        long? GeneralTotalCapacity { get; set; }
         /// <summary>Type of the cloud storage server</summary>
         string GeneralType { get; set; }
         /// <summary>Cloud server type</summary>
         string GeneralVendorType { get; set; }
 
-        int? KeyProviderId { get; set; }
+        long? KeyProviderId { get; set; }
 
         string KeyProviderName { get; set; }
 

@@ -76,7 +76,7 @@ namespace Commvault.Powershell.Models
             {_macExcludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("macExcludedPaths"), out var __jsonMacExcludedPaths) ? If( __jsonMacExcludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(string) (__f is Commvault.Powershell.Runtime.Json.JsonString __e ? (string)(__e.ToString()) : null)) ))() : null : MacExcludedPaths;}
             {_unixIncludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("unixIncludedPaths"), out var __jsonUnixIncludedPaths) ? If( __jsonUnixIncludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __b) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__b, (__a)=>(string) (__a is Commvault.Powershell.Runtime.Json.JsonString ___z ? (string)(___z.ToString()) : null)) ))() : null : UnixIncludedPaths;}
             {_unixExcludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("unixExcludedPaths"), out var __jsonUnixExcludedPaths) ? If( __jsonUnixExcludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var ___w) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___w, (___v)=>(string) (___v is Commvault.Powershell.Runtime.Json.JsonString ___u ? (string)(___u.ToString()) : null)) ))() : null : UnixExcludedPaths;}
-            {_fileSystemQuota = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileSystemQuota"), out var __jsonFileSystemQuota) ? (int?)__jsonFileSystemQuota : FileSystemQuota;}
+            {_fileSystemQuota = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileSystemQuota"), out var __jsonFileSystemQuota) ? (long?)__jsonFileSystemQuota : FileSystemQuota;}
             AfterFromJson(json);
         }
 
@@ -153,7 +153,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("unixExcludedPaths",___x);
             }
-            AddIf( null != this._fileSystemQuota ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._fileSystemQuota) : null, "fileSystemQuota" ,container.Add );
+            AddIf( null != this._fileSystemQuota ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._fileSystemQuota) : null, "fileSystemQuota" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

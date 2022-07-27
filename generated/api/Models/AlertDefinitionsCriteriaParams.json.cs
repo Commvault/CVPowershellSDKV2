@@ -61,10 +61,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_unit = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("unit"), out var __jsonUnit) ? (int?)__jsonUnit : Unit;}
-            {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("type"), out var __jsonType) ? (int?)__jsonType : Type;}
-            {_value = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("value"), out var __jsonValue) ? (int?)__jsonValue : Value;}
-            {_paramIndex = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("paramIndex"), out var __jsonParamIndex) ? (int?)__jsonParamIndex : ParamIndex;}
+            {_unit = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("unit"), out var __jsonUnit) ? (long?)__jsonUnit : Unit;}
+            {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("type"), out var __jsonType) ? (long?)__jsonType : Type;}
+            {_value = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("value"), out var __jsonValue) ? (long?)__jsonValue : Value;}
+            {_paramIndex = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("paramIndex"), out var __jsonParamIndex) ? (long?)__jsonParamIndex : ParamIndex;}
             AfterFromJson(json);
         }
 
@@ -97,10 +97,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._unit ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._unit) : null, "unit" ,container.Add );
-            AddIf( null != this._type ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._type) : null, "type" ,container.Add );
-            AddIf( null != this._value ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._value) : null, "value" ,container.Add );
-            AddIf( null != this._paramIndex ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._paramIndex) : null, "paramIndex" ,container.Add );
+            AddIf( null != this._unit ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._unit) : null, "unit" ,container.Add );
+            AddIf( null != this._type ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._type) : null, "type" ,container.Add );
+            AddIf( null != this._value ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._value) : null, "value" ,container.Add );
+            AddIf( null != this._paramIndex ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._paramIndex) : null, "paramIndex" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

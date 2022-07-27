@@ -97,9 +97,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId = (int?) content.GetValueForProperty("PermissionId",((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId = (long?) content.GetValueForProperty("PermissionId",((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionName = (string) content.GetValueForProperty("PermissionName",((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId = (int?) content.GetValueForProperty("CategoryId",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId = (long?) content.GetValueForProperty("CategoryId",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName = (string) content.GetValueForProperty("CategoryName",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPermissionRespInternal)this).Type, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
@@ -119,9 +119,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId = (int?) content.GetValueForProperty("PermissionId",((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId = (long?) content.GetValueForProperty("PermissionId",((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionName = (string) content.GetValueForProperty("PermissionName",((Commvault.Powershell.Models.IPermissionRespInternal)this).PermissionName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId = (int?) content.GetValueForProperty("CategoryId",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId = (long?) content.GetValueForProperty("CategoryId",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName = (string) content.GetValueForProperty("CategoryName",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPermissionRespInternal)this).Type, global::System.Convert.ToString);
             AfterDeserializePSObject(content);

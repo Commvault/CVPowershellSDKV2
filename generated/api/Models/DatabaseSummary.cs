@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ApplicationId" /> property.</summary>
-        private int? _applicationId;
+        private long? _applicationId;
 
         /// <summary>Application Id of database</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationId { get => this._applicationId; set => this._applicationId = value; }
+        public long? ApplicationId { get => this._applicationId; set => this._applicationId = value; }
 
         /// <summary>Backing field for <see cref="Commcell" /> property.</summary>
         private Commvault.Powershell.Models.ICommcellInfo _commcell;
@@ -51,7 +51,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -73,24 +73,24 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set => this._instance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(int); }
+        public long? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="LastBackupSize" /> property.</summary>
-        private int? _lastBackupSize;
+        private long? _lastBackupSize;
 
         /// <summary>Size of last backup of database in bytes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LastBackupSize { get => this._lastBackupSize; set => this._lastBackupSize = value; }
+        public long? LastBackupSize { get => this._lastBackupSize; set => this._lastBackupSize = value; }
 
         /// <summary>Backing field for <see cref="LastBackupTime" /> property.</summary>
-        private int? _lastBackupTime;
+        private long? _lastBackupTime;
 
         /// <summary>Time of last backup of database. It is given in UNIX time.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LastBackupTime { get => this._lastBackupTime; set => this._lastBackupTime = value; }
+        public long? LastBackupTime { get => this._lastBackupTime; set => this._lastBackupTime = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -106,7 +106,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -128,7 +128,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Server { get => (this._server = this._server ?? new Commvault.Powershell.Models.IdName()); set => this._server = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)Server).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Server).Id = value ?? default(int); }
+        public long? ServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)Server).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Server).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ServerName { get => ((Commvault.Powershell.Models.IIdNameInternal)Server).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Server).Name = value ?? null; }
@@ -163,8 +163,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Application Id of database",
         SerializedName = @"applicationId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationId { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -179,8 +179,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -206,8 +206,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? InstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? InstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -222,16 +222,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Size of last backup of database in bytes",
         SerializedName = @"lastBackupSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupSize { get; set; }
         /// <summary>Time of last backup of database. It is given in UNIX time.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Time of last backup of database. It is given in UNIX time.",
         SerializedName = @"lastBackupTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupTime { get; set; }
         /// <summary>This gives the name of the database.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -246,8 +246,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -273,8 +273,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ServerId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ServerId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -306,7 +306,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Application Id of database</summary>
-        int? ApplicationId { get; set; }
+        long? ApplicationId { get; set; }
         /// <summary>CommcellInfo</summary>
         Commvault.Powershell.Models.ICommcellInfo Commcell { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
@@ -314,7 +314,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>
@@ -325,19 +325,19 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Instance { get; set; }
 
-        int? InstanceId { get; set; }
+        long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
         /// <summary>Size of last backup of database in bytes</summary>
-        int? LastBackupSize { get; set; }
+        long? LastBackupSize { get; set; }
         /// <summary>Time of last backup of database. It is given in UNIX time.</summary>
-        int? LastBackupTime { get; set; }
+        long? LastBackupTime { get; set; }
         /// <summary>This gives the name of the database.</summary>
         string Name { get; set; }
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>
@@ -348,7 +348,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Server { get; set; }
 
-        int? ServerId { get; set; }
+        long? ServerId { get; set; }
 
         string ServerName { get; set; }
         /// <summary>SLA status for last backup of database</summary>

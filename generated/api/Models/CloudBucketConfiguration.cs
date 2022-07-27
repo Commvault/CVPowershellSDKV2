@@ -47,7 +47,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName StorageAcceleratorCredentials { get => (this._storageAcceleratorCredentials = this._storageAcceleratorCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._storageAcceleratorCredentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StorageAcceleratorCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)StorageAcceleratorCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)StorageAcceleratorCredentials).Id = value ?? default(int); }
+        public long? StorageAcceleratorCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)StorageAcceleratorCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)StorageAcceleratorCredentials).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageAcceleratorCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)StorageAcceleratorCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)StorageAcceleratorCredentials).Name = value ?? null; }
@@ -97,8 +97,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StorageAcceleratorCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StorageAcceleratorCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -127,7 +127,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName StorageAcceleratorCredentials { get; set; }
 
-        int? StorageAcceleratorCredentialsId { get; set; }
+        long? StorageAcceleratorCredentialsId { get; set; }
 
         string StorageAcceleratorCredentialsName { get; set; }
 

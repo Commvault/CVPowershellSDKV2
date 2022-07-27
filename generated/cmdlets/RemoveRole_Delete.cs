@@ -84,7 +84,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="RoleId" /> property.</summary>
-        private int _roleId;
+        private long _roleId;
 
         /// <summary>Role Id</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Role Id")]
@@ -93,9 +93,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Role Id",
         SerializedName = @"roleId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int RoleId { get => this._roleId; set => this._roleId = value; }
+        public long RoleId { get => this._roleId; set => this._roleId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing

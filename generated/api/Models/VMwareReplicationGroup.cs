@@ -31,7 +31,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Number of snapshots to retain on destination VM</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AdvancedOptionSnapshotsToRetain { get => ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareInternal)AdvancedOption).SnapshotsToRetain; set => ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareInternal)AdvancedOption).SnapshotsToRetain = value ?? default(int); }
+        public long? AdvancedOptionSnapshotsToRetain { get => ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareInternal)AdvancedOption).SnapshotsToRetain; set => ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareInternal)AdvancedOption).SnapshotsToRetain = value ?? default(long); }
 
         /// <summary>Choose transport mode based on environment. Values are case sensitive</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -55,7 +55,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Replication group id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Id { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id = value; }
+        public long? Id { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).Id = value; }
 
         /// <summary>Replication group name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -76,7 +76,7 @@ namespace Commvault.Powershell.Models
         /// Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? RpoReplicationFrequency { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency = value; }
+        public long? RpoReplicationFrequency { get => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency; set => ((Commvault.Powershell.Models.IReplicationGroupInternal)__replicationGroup).RpoReplicationFrequency = value; }
 
         /// <summary>List of storage configured for a replication group</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -160,8 +160,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of snapshots to retain on destination VM",
         SerializedName = @"SnapshotsToRetain",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AdvancedOptionSnapshotsToRetain { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AdvancedOptionSnapshotsToRetain { get; set; }
         /// <summary>Choose transport mode based on environment. Values are case sensitive</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -217,7 +217,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string AdvancedOptionDiskProvisioning { get; set; }
         /// <summary>Number of snapshots to retain on destination VM</summary>
-        int? AdvancedOptionSnapshotsToRetain { get; set; }
+        long? AdvancedOptionSnapshotsToRetain { get; set; }
         /// <summary>Choose transport mode based on environment. Values are case sensitive</summary>
         string AdvancedOptionTransportMode { get; set; }
         /// <summary>Replace an existing virtual machine with the same name in the target location</summary>

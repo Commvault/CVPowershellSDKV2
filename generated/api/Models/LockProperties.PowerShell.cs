@@ -93,8 +93,8 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ILockPropertiesInternal)this).IsLocked = (bool?) content.GetValueForProperty("IsLocked",((Commvault.Powershell.Models.ILockPropertiesInternal)this).IsLocked, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime = (int?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime = (int?) content.GetValueForProperty("EndTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime = (long?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime = (long?) content.GetValueForProperty("EndTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -113,8 +113,8 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ILockPropertiesInternal)this).IsLocked = (bool?) content.GetValueForProperty("IsLocked",((Commvault.Powershell.Models.ILockPropertiesInternal)this).IsLocked, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime = (int?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime = (int?) content.GetValueForProperty("EndTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime = (long?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).StartTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime = (long?) content.GetValueForProperty("EndTime",((Commvault.Powershell.Models.ILockPropertiesInternal)this).EndTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

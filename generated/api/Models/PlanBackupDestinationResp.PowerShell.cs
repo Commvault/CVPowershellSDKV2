@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).PlanBackupDestination = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("PlanBackupDestination",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).PlanBackupDestination, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).FailedDestinations = (string[]) content.GetValueForProperty("FailedDestinations",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).FailedDestinations, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -122,7 +122,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).PlanBackupDestination = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("PlanBackupDestination",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).PlanBackupDestination, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).FailedDestinations = (string[]) content.GetValueForProperty("FailedDestinations",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).FailedDestinations, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanBackupDestinationRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

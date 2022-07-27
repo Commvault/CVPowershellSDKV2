@@ -19,10 +19,10 @@ namespace Commvault.Powershell.Models
         public string Description { get => this._description; set => this._description = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="IsScheduleEnabled" /> property.</summary>
         private bool? _isScheduleEnabled;
@@ -32,11 +32,11 @@ namespace Commvault.Powershell.Models
         public bool? IsScheduleEnabled { get => this._isScheduleEnabled; set => this._isScheduleEnabled = value; }
 
         /// <summary>Backing field for <see cref="TaskId" /> property.</summary>
-        private int? _taskId;
+        private long? _taskId;
 
         /// <summary>Job Id for the application validation task. 0 if schedule is disabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TaskId { get => this._taskId; set => this._taskId = value; }
+        public long? TaskId { get => this._taskId; set => this._taskId = value; }
 
         /// <summary>Creates an new <see cref="ValidationScheduleObject" /> instance.</summary>
         public ValidationScheduleObject()
@@ -62,8 +62,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>True if application validation schedule is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -78,8 +78,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Job Id for the application validation task. 0 if schedule is disabled",
         SerializedName = @"taskId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TaskId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TaskId { get; set; }
 
     }
     /// Schedule for application validation for VM Group
@@ -89,11 +89,11 @@ namespace Commvault.Powershell.Models
         /// <summary>Description for validation schedule</summary>
         string Description { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>True if application validation schedule is enabled</summary>
         bool? IsScheduleEnabled { get; set; }
         /// <summary>Job Id for the application validation task. 0 if schedule is disabled</summary>
-        int? TaskId { get; set; }
+        long? TaskId { get; set; }
 
     }
 }

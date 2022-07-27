@@ -84,7 +84,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="RegionId" /> property.</summary>
-        private int _regionId;
+        private long _regionId;
 
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = ".")]
         [Commvault.Powershell.Runtime.Info(
@@ -92,9 +92,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"",
         SerializedName = @"regionId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int RegionId { get => this._regionId; set => this._regionId = value; }
+        public long RegionId { get => this._regionId; set => this._regionId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing

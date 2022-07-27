@@ -38,7 +38,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BODY <ICreateLaptopOwnerMapping>: POST request for adding new laptop owner mapping, The mandotary fields are combination of multiple properties SerialNumber AND (host OR laptopName) AND (ownerEmail OR ownerUPN)
   [LaptopOwnerMapping <ICreateLaptopOwnerInfo[]>]: 
-    [CompanyId <Int32?>]: 
+    [CompanyId <Int64?>]: 
     [CompanyName <String>]: 
     [Host <String>]: Host name of the laptop
     [LaptopName <String>]: Display name of the laptop
@@ -48,7 +48,7 @@ BODY <ICreateLaptopOwnerMapping>: POST request for adding new laptop owner mappi
     [SerialNumber <String>]: Serial number of the laptop
 
 LAPTOPOWNERMAPPING <ICreateLaptopOwnerInfo[]>: .
-  [CompanyId <Int32?>]: 
+  [CompanyId <Int64?>]: 
   [CompanyName <String>]: 
   [Host <String>]: Host name of the laptop
   [LaptopName <String>]: Display name of the laptop

@@ -41,11 +41,11 @@ BODY <IAccessControl>: Owner permissions and laptop ownership details
   [AutomaticLaptopOwnershipAssignmentLaptopOwnerOption <String>]: Options to automatically assign laptop owners
   [AutomaticLaptopOwnershipAssignmentUserGroups <String>]: Comma seperated usergroups to add users from, when the laptopOwnerOption is 'ALL_USERS_OF_USERGROUPS'
   [OwnerPermissions <IIdName[]>]: List of owner permissions
-    [Id <Int32?>]: 
+    [Id <Int64?>]: 
     [Name <String>]: 
 
 OWNERPERMISSIONS <IIdName[]>: List of owner permissions
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-accesscontrol

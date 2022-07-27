@@ -89,7 +89,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId = (int?) content.GetValueForProperty("ApplicationId",((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId = (long?) content.GetValueForProperty("ApplicationId",((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -107,7 +107,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId = (int?) content.GetValueForProperty("ApplicationId",((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId = (long?) content.GetValueForProperty("ApplicationId",((Commvault.Powershell.Models.IDistributedSystemComponentInternal)this).ApplicationId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

@@ -27,7 +27,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Subclient { get => (this._subclient = this._subclient ?? new Commvault.Powershell.Models.IdName()); set => this._subclient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id = value ?? default(int); }
+        public long? SubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SubclientName { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Name = value ?? null; }
@@ -55,8 +55,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SubclientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SubclientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Subclient { get; set; }
 
-        int? SubclientId { get; set; }
+        long? SubclientId { get; set; }
 
         string SubclientName { get; set; }
 

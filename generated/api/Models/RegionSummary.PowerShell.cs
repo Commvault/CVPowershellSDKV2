@@ -93,13 +93,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IRegionSummaryInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).RegionType = (string) content.GetValueForProperty("RegionType",((Commvault.Powershell.Models.IRegionSummaryInternal)this).RegionType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Locations = (Commvault.Powershell.Models.ILocationSummary[]) content.GetValueForProperty("Locations",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Locations, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILocationSummary>(__y, Commvault.Powershell.Models.LocationSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers = (int?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans = (int?) content.GetValueForProperty("AssociatedRegionBasedPlans",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers = (long?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans = (long?) content.GetValueForProperty("AssociatedRegionBasedPlans",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -117,13 +117,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IRegionSummaryInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).RegionType = (string) content.GetValueForProperty("RegionType",((Commvault.Powershell.Models.IRegionSummaryInternal)this).RegionType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IRegionSummaryInternal)this).Locations = (Commvault.Powershell.Models.ILocationSummary[]) content.GetValueForProperty("Locations",((Commvault.Powershell.Models.IRegionSummaryInternal)this).Locations, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILocationSummary>(__y, Commvault.Powershell.Models.LocationSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers = (int?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans = (int?) content.GetValueForProperty("AssociatedRegionBasedPlans",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers = (long?) content.GetValueForProperty("AssociatedServers",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedServers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans = (long?) content.GetValueForProperty("AssociatedRegionBasedPlans",((Commvault.Powershell.Models.IRegionSummaryInternal)this).AssociatedRegionBasedPlans, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

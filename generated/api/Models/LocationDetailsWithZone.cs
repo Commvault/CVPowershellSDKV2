@@ -63,7 +63,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Zone { get => (this._zone = this._zone ?? new Commvault.Powershell.Models.IdName()); set => this._zone = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)Zone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Zone).Id = value ?? default(int); }
+        public long? ZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)Zone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Zone).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ZoneName { get => ((Commvault.Powershell.Models.IIdNameInternal)Zone).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Zone).Name = value ?? null; }
@@ -132,8 +132,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -163,7 +163,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Zone { get; set; }
 
-        int? ZoneId { get; set; }
+        long? ZoneId { get; set; }
 
         string ZoneName { get; set; }
 

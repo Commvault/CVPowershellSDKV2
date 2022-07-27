@@ -39,26 +39,26 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 ASSOCIATIONS <IAlertAssociationIdNameType1[]>: AlertDefinitionsAssociations
-  [Id <Int32?>]: id of the associated entity
+  [Id <Int64?>]: id of the associated entity
   [Name <String>]: name of the associated entity
   [Type <String>]: 
 
 BODY <IAlertDefinitionsEdit>: AlertDefinitionsEdit
   [AlertTargetSendAlertTo <String[]>]: 
   [Associations <IAlertAssociationIdNameType1[]>]: AlertDefinitionsAssociations
-    [Id <Int32?>]: id of the associated entity
+    [Id <Int64?>]: id of the associated entity
     [Name <String>]: name of the associated entity
     [Type <String>]: 
-  [LocaleId <Int32?>]: 
+  [LocaleId <Int64?>]: 
   [LocaleName <String>]: 
   [NewName <String>]: The new name of the alert definition
   [RecipientBcc <IAlertTargetIdNameType1[]>]: 
-    [Id <Int32?>]: 
+    [Id <Int64?>]: 
     [Name <String>]: 
     [Type <String>]: 
   [RecipientCc <IAlertTargetIdNameType1[]>]: 
   [RecipientTo <IAlertTargetIdNameType1[]>]: 
-  [RecipientWebHookId <Int32?>]: id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook
+  [RecipientWebHookId <Int64?>]: id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook
   [SendIndividualNotifications <Boolean?>]: 
   [TemplateConsoleMessage <String>]: the message template for the console notification
   [TemplateEmailMessage <String>]: the message template for the email notification. Contains both email subject as well as body
@@ -66,64 +66,64 @@ BODY <IAlertDefinitionsEdit>: AlertDefinitionsEdit
   [TemplateWebhookMessage <String>]: the message template for the webhook notification
 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
-  [AccessPathId <Int32?>]: Id of the mount path whose access path has to be deleted
-  [AgentId <Int32?>]: Id of the agent to be modified
-  [BackupDestinationId <Int32?>]: Id of the backupDestination to be modified
-  [BackupLocationId <Int32?>]: Id of the backup location whose details have to be fetched
-  [BlackoutWindowId <Int32?>]: Id of the Blackout Window whose details have to be fetched
-  [BucketId <Int32?>]: Id of Bucket
-  [CloudStorageId <Int32?>]: Id of cloud Storage
-  [CompanyId <Int32?>]: Id of the Company whose details have to be fetched
+  [AccessPathId <Int64?>]: Id of the mount path whose access path has to be deleted
+  [AgentId <Int64?>]: Id of the agent to be modified
+  [BackupDestinationId <Int64?>]: Id of the backupDestination to be modified
+  [BackupLocationId <Int64?>]: Id of the backup location whose details have to be fetched
+  [BlackoutWindowId <Int64?>]: Id of the Blackout Window whose details have to be fetched
+  [BucketId <Int64?>]: Id of Bucket
+  [CloudStorageId <Int64?>]: Id of cloud Storage
+  [CompanyId <Int64?>]: Id of the Company whose details have to be fetched
   [CredentialName <String>]: 
-  [DomainId <Int32?>]: ID of the AD/LDAP domain
-  [EntityId <Int32?>]: Unique id for the entity
-  [EntityType <Int32?>]: Type of the entity
+  [DomainId <Int64?>]: ID of the AD/LDAP domain
+  [EntityId <Int64?>]: Unique id for the entity
+  [EntityType <Int64?>]: Type of the entity
   [GlobalSearchEntity <String>]: name of global search entity
-  [HfsShareId <Int32?>]: Id of the HFS Share to fetch its status
-  [HyperScaleStorageId <Int32?>]: Id of hyperscale storage
-  [HypervisorId <Int32?>]: Id of the Hypervisor to update
-  [Id <Int32?>]: 
-  [InstanceId <Int32?>]: Id of the instance to modify
+  [HfsShareId <Int64?>]: Id of the HFS Share to fetch its status
+  [HyperScaleStorageId <Int64?>]: Id of hyperscale storage
+  [HypervisorId <Int64?>]: Id of the Hypervisor to update
+  [Id <Int64?>]: 
+  [InstanceId <Int64?>]: Id of the instance to modify
   [InventoryEntityName <String>]: Name of the inventory entity that needs to be browsed like ESX Host name in VCenter
-  [KmsId <Int32?>]: Id of Key Management Server
-  [MediaAgentId <Int32?>]: Id of the Media Agent whose details have to be fetched
-  [MetadataCacheId <Int32?>]: Id of metadata cache
+  [KmsId <Int64?>]: Id of Key Management Server
+  [MediaAgentId <Int64?>]: Id of the Media Agent whose details have to be fetched
+  [MetadataCacheId <Int64?>]: Id of metadata cache
   [Name <String>]: 
-  [NodeId <Int32?>]: Id of node
-  [PairId <Int32?>]: 
-  [PlanId <Int32?>]: Id of the plan to fetch details
-  [RecoveryTargetId <Int32?>]: id of recovery target
-  [RegionId <Int32?>]: 
+  [NodeId <Int64?>]: Id of node
+  [PairId <Int64?>]: 
+  [PlanId <Int64?>]: Id of the plan to fetch details
+  [RecoveryTargetId <Int64?>]: id of recovery target
+  [RegionId <Int64?>]: 
   [RegionList <String>]: List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
   [ReplicationGroupId <String>]: 
-  [RequestId <Int32?>]: Unique identifier for the request
-  [RoleId <Int32?>]: Role Id
+  [RequestId <Int64?>]: Unique identifier for the request
+  [RoleId <Int64?>]: Role Id
   [RpsId <String>]: 
-  [RuleId <Int32?>]: Id of the rule to update in Plan
+  [RuleId <Int64?>]: Id of the rule to update in Plan
   [ScheduleId <String>]: 
   [SchedulePolicyId <String>]: 
-  [ServerGroupId <Int32?>]: Id of the serverGroupId whose details have to be fetched
-  [ServerId <Int32?>]: Id of the server to modify
-  [StoragePoolId <Int32?>]: Id of the disk storage pool whose details have to be fetched
-  [SubclientId <Int32?>]: Id of the subclient to modify
+  [ServerGroupId <Int64?>]: Id of the serverGroupId whose details have to be fetched
+  [ServerId <Int64?>]: Id of the server to modify
+  [StoragePoolId <Int64?>]: Id of the disk storage pool whose details have to be fetched
+  [SubclientId <Int64?>]: Id of the subclient to modify
   [TopologyId <String>]: 
-  [UserGroupId <Int32?>]: Id of the user-group whose details have to be fetched
-  [UserId <Int32?>]: Id of the User whose details have to be fetched
-  [VMGroupId <Int32?>]: Id of the VMgroup to update
+  [UserGroupId <Int64?>]: Id of the user-group whose details have to be fetched
+  [UserId <Int64?>]: Id of the User whose details have to be fetched
+  [VMGroupId <Int64?>]: Id of the VMgroup to update
   [VMUuid <String>]: The vmUUID can be obtained from GET /virtualMachines UUID property
 
 RECIPIENTBCC <IAlertTargetIdNameType1[]>: .
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
   [Type <String>]: 
 
 RECIPIENTCC <IAlertTargetIdNameType1[]>: .
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
   [Type <String>]: 
 
 RECIPIENTTO <IAlertTargetIdNameType1[]>: .
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
   [Type <String>]: 
 .Link
@@ -136,7 +136,7 @@ param(
     [Parameter(ParameterSetName='Edit', Mandatory)]
     [Parameter(ParameterSetName='EditExpanded', Mandatory)]
     [Commvault.Powershell.Category('Path')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${Id},
 
@@ -174,7 +174,7 @@ param(
     [Parameter(ParameterSetName='EditExpanded')]
     [Parameter(ParameterSetName='EditViaIdentityExpanded')]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${LocaleId},
 
@@ -219,7 +219,7 @@ param(
     [Parameter(ParameterSetName='EditExpanded')]
     [Parameter(ParameterSetName='EditViaIdentityExpanded')]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # id of the webhook to be associated with the alert definition.
     # Only needed incase of webhook notif selected.
     # To get a list of webhooks, use api GET Webhook

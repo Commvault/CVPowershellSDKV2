@@ -34,18 +34,18 @@ namespace Commvault.Powershell.Models
         public long? LastBackupSize { get => this._lastBackupSize; set => this._lastBackupSize = value; }
 
         /// <summary>Backing field for <see cref="LastBackupTime" /> property.</summary>
-        private int? _lastBackupTime;
+        private long? _lastBackupTime;
 
         /// <summary>Last Backup time of the VMGroup</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LastBackupTime { get => this._lastBackupTime; set => this._lastBackupTime = value; }
+        public long? LastBackupTime { get => this._lastBackupTime; set => this._lastBackupTime = value; }
 
         /// <summary>Backing field for <see cref="NextBackupTime" /> property.</summary>
-        private int? _nextBackupTime;
+        private long? _nextBackupTime;
 
         /// <summary>Next Backup Job start time</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? NextBackupTime { get => this._nextBackupTime; set => this._nextBackupTime = value; }
+        public long? NextBackupTime { get => this._nextBackupTime; set => this._nextBackupTime = value; }
 
         /// <summary>Backing field for <see cref="Plan" /> property.</summary>
         private Commvault.Powershell.Models.IPlanIdNameType _plan;
@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IPlanIdNameType Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.PlanIdNameType()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IPlanIdNameTypeInternal)Plan).Id; set => ((Commvault.Powershell.Models.IPlanIdNameTypeInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IPlanIdNameTypeInternal)Plan).Id; set => ((Commvault.Powershell.Models.IPlanIdNameTypeInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IPlanIdNameTypeInternal)Plan).Name; set => ((Commvault.Powershell.Models.IPlanIdNameTypeInternal)Plan).Name = value ?? null; }
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Region Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionId { get => ((Commvault.Powershell.Models.IRegionInfoInternal)Region).Id; set => ((Commvault.Powershell.Models.IRegionInfoInternal)Region).Id = value ?? default(int); }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IRegionInfoInternal)Region).Id; set => ((Commvault.Powershell.Models.IRegionInfoInternal)Region).Id = value ?? default(long); }
 
         /// <summary>Geolocation Latitude</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName TimeZone { get => (this._timeZone = this._timeZone ?? new Commvault.Powershell.Models.IdName()); set => this._timeZone = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TimeZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id = value ?? default(int); }
+        public long? TimeZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimeZoneName { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Name = value ?? null; }
@@ -132,24 +132,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Last Backup time of the VMGroup",
         SerializedName = @"lastBackupTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupTime { get; set; }
         /// <summary>Next Backup Job start time</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Next Backup Job start time",
         SerializedName = @"nextBackupTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NextBackupTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NextBackupTime { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -180,8 +180,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Region Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionId { get; set; }
         /// <summary>Geolocation Latitude</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -212,8 +212,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -232,13 +232,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Last Backup Job Size</summary>
         long? LastBackupSize { get; set; }
         /// <summary>Last Backup time of the VMGroup</summary>
-        int? LastBackupTime { get; set; }
+        long? LastBackupTime { get; set; }
         /// <summary>Next Backup Job start time</summary>
-        int? NextBackupTime { get; set; }
+        long? NextBackupTime { get; set; }
 
         Commvault.Powershell.Models.IPlanIdNameType Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
 
@@ -248,7 +248,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Display Name of Region</summary>
         string RegionDisplayName { get; set; }
         /// <summary>Region Id</summary>
-        int? RegionId { get; set; }
+        long? RegionId { get; set; }
         /// <summary>Geolocation Latitude</summary>
         string RegionLatitude { get; set; }
         /// <summary>Geolocation Longitude</summary>
@@ -258,7 +258,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName TimeZone { get; set; }
 
-        int? TimeZoneId { get; set; }
+        long? TimeZoneId { get; set; }
 
         string TimeZoneName { get; set; }
 

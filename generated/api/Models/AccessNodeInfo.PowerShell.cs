@@ -64,7 +64,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).HostName = (string) content.GetValueForProperty("HostName",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).HostName, global::System.Convert.ToString);
@@ -86,7 +86,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).HostName = (string) content.GetValueForProperty("HostName",((Commvault.Powershell.Models.IAccessNodeInfoInternal)this).HostName, global::System.Convert.ToString);

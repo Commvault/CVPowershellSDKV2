@@ -82,9 +82,9 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._region ? (Commvault.Powershell.Runtime.Json.JsonNode) this._region.ToJson(null,serializationMode) : null, "region" ,container.Add );
             AddIf( null != this._timeZone ? (Commvault.Powershell.Runtime.Json.JsonNode) this._timeZone.ToJson(null,serializationMode) : null, "timeZone" ,container.Add );
             AddIf( null != (((object)this._hypervisorName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hypervisorName.ToString()) : null, "hypervisorName" ,container.Add );
-            AddIf( null != this._lastBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._lastBackupTime) : null, "lastBackupTime" ,container.Add );
+            AddIf( null != this._lastBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastBackupTime) : null, "lastBackupTime" ,container.Add );
             AddIf( null != this._lastBackupSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastBackupSize) : null, "lastBackupSize" ,container.Add );
-            AddIf( null != this._nextBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._nextBackupTime) : null, "nextBackupTime" ,container.Add );
+            AddIf( null != this._nextBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._nextBackupTime) : null, "nextBackupTime" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -105,9 +105,9 @@ namespace Commvault.Powershell.Models
             {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.RegionInfo.FromJson(__jsonRegion) : Region;}
             {_timeZone = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("timeZone"), out var __jsonTimeZone) ? Commvault.Powershell.Models.IdName.FromJson(__jsonTimeZone) : TimeZone;}
             {_hypervisorName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hypervisorName"), out var __jsonHypervisorName) ? (string)__jsonHypervisorName : (string)HypervisorName;}
-            {_lastBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupTime"), out var __jsonLastBackupTime) ? (int?)__jsonLastBackupTime : LastBackupTime;}
+            {_lastBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupTime"), out var __jsonLastBackupTime) ? (long?)__jsonLastBackupTime : LastBackupTime;}
             {_lastBackupSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupSize"), out var __jsonLastBackupSize) ? (long?)__jsonLastBackupSize : LastBackupSize;}
-            {_nextBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("nextBackupTime"), out var __jsonNextBackupTime) ? (int?)__jsonNextBackupTime : NextBackupTime;}
+            {_nextBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("nextBackupTime"), out var __jsonNextBackupTime) ? (long?)__jsonNextBackupTime : NextBackupTime;}
             AfterFromJson(json);
         }
     }

@@ -62,13 +62,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_scheduleFrequencyType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("scheduleFrequencyType"), out var __jsonScheduleFrequencyType) ? (string)__jsonScheduleFrequencyType : (string)ScheduleFrequencyType;}
-            {_frequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("frequency"), out var __jsonFrequency) ? (int?)__jsonFrequency : Frequency;}
+            {_frequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("frequency"), out var __jsonFrequency) ? (long?)__jsonFrequency : Frequency;}
             {_weeklyDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("weeklyDays"), out var __jsonWeeklyDays) ? If( __jsonWeeklyDays as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : WeeklyDays;}
-            {_dayOfMonth = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dayOfMonth"), out var __jsonDayOfMonth) ? (int?)__jsonDayOfMonth : DayOfMonth;}
+            {_dayOfMonth = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dayOfMonth"), out var __jsonDayOfMonth) ? (long?)__jsonDayOfMonth : DayOfMonth;}
             {_weekOfMonth = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("weekOfMonth"), out var __jsonWeekOfMonth) ? (string)__jsonWeekOfMonth : (string)WeekOfMonth;}
             {_dayOfWeek = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("dayOfWeek"), out var __jsonDayOfWeek) ? (string)__jsonDayOfWeek : (string)DayOfWeek;}
             {_monthOfYear = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("monthOfYear"), out var __jsonMonthOfYear) ? (string)__jsonMonthOfYear : (string)MonthOfYear;}
-            {_startTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startTime"), out var __jsonStartTime) ? (int?)__jsonStartTime : StartTime;}
+            {_startTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startTime"), out var __jsonStartTime) ? (long?)__jsonStartTime : StartTime;}
             AfterFromJson(json);
         }
 
@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._scheduleFrequencyType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._scheduleFrequencyType.ToString()) : null, "scheduleFrequencyType" ,container.Add );
-            AddIf( null != this._frequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._frequency) : null, "frequency" ,container.Add );
+            AddIf( null != this._frequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._frequency) : null, "frequency" ,container.Add );
             if (null != this._weeklyDays)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -112,11 +112,11 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("weeklyDays",__w);
             }
-            AddIf( null != this._dayOfMonth ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._dayOfMonth) : null, "dayOfMonth" ,container.Add );
+            AddIf( null != this._dayOfMonth ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._dayOfMonth) : null, "dayOfMonth" ,container.Add );
             AddIf( null != (((object)this._weekOfMonth)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._weekOfMonth.ToString()) : null, "weekOfMonth" ,container.Add );
             AddIf( null != (((object)this._dayOfWeek)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._dayOfWeek.ToString()) : null, "dayOfWeek" ,container.Add );
             AddIf( null != (((object)this._monthOfYear)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._monthOfYear.ToString()) : null, "monthOfYear" ,container.Add );
-            AddIf( null != this._startTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._startTime) : null, "startTime" ,container.Add );
+            AddIf( null != this._startTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._startTime) : null, "startTime" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

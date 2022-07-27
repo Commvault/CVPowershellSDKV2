@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="HypervisorCount" /> property.</summary>
-        private int? _hypervisorCount;
+        private long? _hypervisorCount;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? HypervisorCount { get => this._hypervisorCount; set => this._hypervisorCount = value; }
+        public long? HypervisorCount { get => this._hypervisorCount; set => this._hypervisorCount = value; }
 
         /// <summary>Backing field for <see cref="Hypervisors" /> property.</summary>
         private Commvault.Powershell.Models.IHypervisorListResp[] _hypervisors;
@@ -38,8 +38,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"HypervisorCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? HypervisorCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? HypervisorCount { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IListHypervisorsInternal
 
     {
-        int? HypervisorCount { get; set; }
+        long? HypervisorCount { get; set; }
 
         Commvault.Powershell.Models.IHypervisorListResp[] Hypervisors { get; set; }
 

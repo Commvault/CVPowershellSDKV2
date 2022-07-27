@@ -68,7 +68,7 @@ namespace Commvault.Powershell.Models
             {_copyType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("copyType"), out var __jsonCopyType) ? (string)__jsonCopyType : (string)CopyType;}
             {_copyTypeName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("copyTypeName"), out var __jsonCopyTypeName) ? (string)__jsonCopyTypeName : (string)CopyTypeName;}
             {_storageType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("storageType"), out var __jsonStorageType) ? (string)__jsonStorageType : (string)StorageType;}
-            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (int?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
+            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
             AfterFromJson(json);
         }
 
@@ -109,7 +109,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._copyType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._copyType.ToString()) : null, "copyType" ,container.Add );
             AddIf( null != (((object)this._copyTypeName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._copyTypeName.ToString()) : null, "copyTypeName" ,container.Add );
             AddIf( null != (((object)this._storageType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._storageType.ToString()) : null, "storageType" ,container.Add );
-            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
+            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

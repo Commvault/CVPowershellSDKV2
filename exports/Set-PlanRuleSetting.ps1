@@ -37,7 +37,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 BODY <IPlanRuleExecutionSettings>: Message object to hold settings for plan rule execution.
-  [ExecutionInterval <Int32?>]: Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
+  [ExecutionInterval <Int64?>]: Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
   [ExecutionMode <String>]: Plan rule execution mode
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-planrulesetting
@@ -55,7 +55,7 @@ param(
 
     [Parameter(ParameterSetName='PutExpanded')]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
     ${ExecutionInterval},
 

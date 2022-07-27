@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachines = (Commvault.Powershell.Models.IVirtualMachineSummary[]) content.GetValueForProperty("VirtualMachines",((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachines, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IVirtualMachineSummary>(__y, Commvault.Powershell.Models.VirtualMachineSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount = (int?) content.GetValueForProperty("VirtualMachinesCount",((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount = (long?) content.GetValueForProperty("VirtualMachinesCount",((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -121,7 +121,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachines = (Commvault.Powershell.Models.IVirtualMachineSummary[]) content.GetValueForProperty("VirtualMachines",((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachines, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IVirtualMachineSummary>(__y, Commvault.Powershell.Models.VirtualMachineSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount = (int?) content.GetValueForProperty("VirtualMachinesCount",((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount = (long?) content.GetValueForProperty("VirtualMachinesCount",((Commvault.Powershell.Models.IVirtualMachineListRespInternal)this).VirtualMachinesCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
     }

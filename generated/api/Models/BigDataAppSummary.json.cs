@@ -66,14 +66,14 @@ namespace Commvault.Powershell.Models
             {_instance = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("instance"), out var __jsonInstance) ? Commvault.Powershell.Models.IdName.FromJson(__jsonInstance) : Instance;}
             {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.SlaDetails.FromJson(__jsonSla) : Sla;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
             {_guid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("GUID"), out var __jsonGuid) ? (string)__jsonGuid : (string)Guid;}
             {_configured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("configured"), out var __jsonConfigured) ? (bool?)__jsonConfigured : Configured;}
-            {_applicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationId"), out var __jsonApplicationId) ? (int?)__jsonApplicationId : ApplicationId;}
+            {_applicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationId"), out var __jsonApplicationId) ? (long?)__jsonApplicationId : ApplicationId;}
             {_clusterType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("clusterType"), out var __jsonClusterType) ? (string)__jsonClusterType : (string)ClusterType;}
-            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (int?)__jsonApplicationSize : ApplicationSize;}
+            {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (long?)__jsonApplicationSize : ApplicationSize;}
             AfterFromJson(json);
         }
 
@@ -111,14 +111,14 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._instance ? (Commvault.Powershell.Runtime.Json.JsonNode) this._instance.ToJson(null,serializationMode) : null, "instance" ,container.Add );
             AddIf( null != this._sla ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sla.ToJson(null,serializationMode) : null, "SLA" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._displayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayName.ToString()) : null, "displayName" ,container.Add );
             AddIf( null != (((object)this._guid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._guid.ToString()) : null, "GUID" ,container.Add );
             AddIf( null != this._configured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._configured) : null, "configured" ,container.Add );
-            AddIf( null != this._applicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationId) : null, "applicationId" ,container.Add );
+            AddIf( null != this._applicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationId) : null, "applicationId" ,container.Add );
             AddIf( null != (((object)this._clusterType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._clusterType.ToString()) : null, "clusterType" ,container.Add );
-            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationSize) : null, "applicationSize" ,container.Add );
+            AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationSize) : null, "applicationSize" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

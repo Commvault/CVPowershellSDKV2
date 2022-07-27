@@ -72,9 +72,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_schedulePattern = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("schedulePattern"), out var __jsonSchedulePattern) ? Commvault.Powershell.Models.SchedulePattern.FromJson(__jsonSchedulePattern) : SchedulePattern;}
-            {_scheduleId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("scheduleId"), out var __jsonScheduleId) ? (int?)__jsonScheduleId : ScheduleId;}
+            {_scheduleId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("scheduleId"), out var __jsonScheduleId) ? (long?)__jsonScheduleId : ScheduleId;}
             {_scheduleName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("scheduleName"), out var __jsonScheduleName) ? (string)__jsonScheduleName : (string)ScheduleName;}
-            {_policyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("policyId"), out var __jsonPolicyId) ? (int?)__jsonPolicyId : PolicyId;}
+            {_policyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("policyId"), out var __jsonPolicyId) ? (long?)__jsonPolicyId : PolicyId;}
             {_scheduleOperation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("scheduleOperation"), out var __jsonScheduleOperation) ? (string)__jsonScheduleOperation : (string)ScheduleOperation;}
             {_backupType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("backupType"), out var __jsonBackupType) ? (string)__jsonBackupType : (string)BackupType;}
             {_forDatabasesOnly = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("forDatabasesOnly"), out var __jsonForDatabasesOnly) ? (bool)__jsonForDatabasesOnly : ForDatabasesOnly;}
@@ -101,9 +101,9 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._schedulePattern ? (Commvault.Powershell.Runtime.Json.JsonNode) this._schedulePattern.ToJson(null,serializationMode) : null, "schedulePattern" ,container.Add );
-            AddIf( null != this._scheduleId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._scheduleId) : null, "scheduleId" ,container.Add );
+            AddIf( null != this._scheduleId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._scheduleId) : null, "scheduleId" ,container.Add );
             AddIf( null != (((object)this._scheduleName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._scheduleName.ToString()) : null, "scheduleName" ,container.Add );
-            AddIf( null != this._policyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._policyId) : null, "policyId" ,container.Add );
+            AddIf( null != this._policyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._policyId) : null, "policyId" ,container.Add );
             AddIf( null != (((object)this._scheduleOperation)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._scheduleOperation.ToString()) : null, "scheduleOperation" ,container.Add );
             AddIf( null != (((object)this._backupType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._backupType.ToString()) : null, "backupType" ,container.Add );
             AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean(this._forDatabasesOnly), "forDatabasesOnly" ,container.Add );

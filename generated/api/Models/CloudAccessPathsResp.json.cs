@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_mediaAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mediaAgent"), out var __jsonMediaAgent) ? Commvault.Powershell.Models.IdNameDisplayName.FromJson(__jsonMediaAgent) : MediaAgent;}
-            {_accessPathId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("accessPathId"), out var __jsonAccessPathId) ? (int?)__jsonAccessPathId : AccessPathId;}
+            {_accessPathId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("accessPathId"), out var __jsonAccessPathId) ? (long?)__jsonAccessPathId : AccessPathId;}
             {_bucket = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("bucket"), out var __jsonBucket) ? (string)__jsonBucket : (string)Bucket;}
             {_username = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("username"), out var __jsonUsername) ? (string)__jsonUsername : (string)Username;}
             {_access = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("access"), out var __jsonAccess) ? (string)__jsonAccess : (string)Access;}
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._mediaAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mediaAgent.ToJson(null,serializationMode) : null, "mediaAgent" ,container.Add );
-            AddIf( null != this._accessPathId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._accessPathId) : null, "accessPathId" ,container.Add );
+            AddIf( null != this._accessPathId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._accessPathId) : null, "accessPathId" ,container.Add );
             AddIf( null != (((object)this._bucket)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._bucket.ToString()) : null, "bucket" ,container.Add );
             AddIf( null != (((object)this._username)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._username.ToString()) : null, "username" ,container.Add );
             AddIf( null != (((object)this._access)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._access.ToString()) : null, "access" ,container.Add );

@@ -73,9 +73,9 @@ namespace Commvault.Powershell.Models
             }
             {_libraryName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("libraryName"), out var __jsonLibraryName) ? (string)__jsonLibraryName : (string)LibraryName;}
             {_devicePath = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("devicePath"), out var __jsonDevicePath) ? (string)__jsonDevicePath : (string)DevicePath;}
-            {_totalCapacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCapacity"), out var __jsonTotalCapacity) ? (int?)__jsonTotalCapacity : TotalCapacity;}
-            {_totalFreeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalFreeSpace"), out var __jsonTotalFreeSpace) ? (int?)__jsonTotalFreeSpace : TotalFreeSpace;}
-            {_sizeOndisk = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeOndisk"), out var __jsonSizeOndisk) ? (int?)__jsonSizeOndisk : SizeOndisk;}
+            {_totalCapacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCapacity"), out var __jsonTotalCapacity) ? (long?)__jsonTotalCapacity : TotalCapacity;}
+            {_totalFreeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalFreeSpace"), out var __jsonTotalFreeSpace) ? (long?)__jsonTotalFreeSpace : TotalFreeSpace;}
+            {_sizeOndisk = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeOndisk"), out var __jsonSizeOndisk) ? (long?)__jsonSizeOndisk : SizeOndisk;}
             {_resiliency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("resiliency"), out var __jsonResiliency) ? (string)__jsonResiliency : (string)Resiliency;}
             {_deduplicationSavings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("deduplicationSavings"), out var __jsonDeduplicationSavings) ? (string)__jsonDeduplicationSavings : (string)DeduplicationSavings;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
@@ -103,9 +103,9 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != (((object)this._libraryName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._libraryName.ToString()) : null, "libraryName" ,container.Add );
             AddIf( null != (((object)this._devicePath)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._devicePath.ToString()) : null, "devicePath" ,container.Add );
-            AddIf( null != this._totalCapacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._totalCapacity) : null, "totalCapacity" ,container.Add );
-            AddIf( null != this._totalFreeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._totalFreeSpace) : null, "totalFreeSpace" ,container.Add );
-            AddIf( null != this._sizeOndisk ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._sizeOndisk) : null, "sizeOndisk" ,container.Add );
+            AddIf( null != this._totalCapacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._totalCapacity) : null, "totalCapacity" ,container.Add );
+            AddIf( null != this._totalFreeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._totalFreeSpace) : null, "totalFreeSpace" ,container.Add );
+            AddIf( null != this._sizeOndisk ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._sizeOndisk) : null, "sizeOndisk" ,container.Add );
             AddIf( null != (((object)this._resiliency)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._resiliency.ToString()) : null, "resiliency" ,container.Add );
             AddIf( null != (((object)this._deduplicationSavings)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._deduplicationSavings.ToString()) : null, "deduplicationSavings" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );

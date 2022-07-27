@@ -71,13 +71,13 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
             {_regionType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("regionType"), out var __jsonRegionType) ? (string)__jsonRegionType : (string)RegionType;}
             {_locations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("locations"), out var __jsonLocations) ? If( __jsonLocations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ILocationSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ILocationSummary) (Commvault.Powershell.Models.LocationSummary.FromJson(__u) )) ))() : null : Locations;}
-            {_associatedServers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedServers"), out var __jsonAssociatedServers) ? (int?)__jsonAssociatedServers : AssociatedServers;}
-            {_associatedRegionBasedPlans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedRegionBasedPlans"), out var __jsonAssociatedRegionBasedPlans) ? (int?)__jsonAssociatedRegionBasedPlans : AssociatedRegionBasedPlans;}
+            {_associatedServers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedServers"), out var __jsonAssociatedServers) ? (long?)__jsonAssociatedServers : AssociatedServers;}
+            {_associatedRegionBasedPlans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedRegionBasedPlans"), out var __jsonAssociatedRegionBasedPlans) ? (long?)__jsonAssociatedRegionBasedPlans : AssociatedRegionBasedPlans;}
             AfterFromJson(json);
         }
 
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._displayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayName.ToString()) : null, "displayName" ,container.Add );
             AddIf( null != (((object)this._regionType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._regionType.ToString()) : null, "regionType" ,container.Add );
@@ -113,8 +113,8 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("locations",__w);
             }
-            AddIf( null != this._associatedServers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._associatedServers) : null, "associatedServers" ,container.Add );
-            AddIf( null != this._associatedRegionBasedPlans ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._associatedRegionBasedPlans) : null, "associatedRegionBasedPlans" ,container.Add );
+            AddIf( null != this._associatedServers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._associatedServers) : null, "associatedServers" ,container.Add );
+            AddIf( null != this._associatedRegionBasedPlans ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._associatedRegionBasedPlans) : null, "associatedRegionBasedPlans" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

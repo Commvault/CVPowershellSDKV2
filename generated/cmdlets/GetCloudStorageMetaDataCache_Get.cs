@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="CloudStorageId" /> property.</summary>
-        private int _cloudStorageId;
+        private long _cloudStorageId;
 
         /// <summary>Id of cloud Storage</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of cloud Storage")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of cloud Storage",
         SerializedName = @"cloudStorageId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int CloudStorageId { get => this._cloudStorageId; set => this._cloudStorageId = value; }
+        public long CloudStorageId { get => this._cloudStorageId; set => this._cloudStorageId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }
 
         /// <summary>Backing field for <see cref="MetadataCacheId" /> property.</summary>
-        private int _metadataCacheId;
+        private long _metadataCacheId;
 
         /// <summary>Id of metadata cache</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of metadata cache")]
@@ -71,9 +71,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of metadata cache",
         SerializedName = @"metadataCacheId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int MetadataCacheId { get => this._metadataCacheId; set => this._metadataCacheId = value; }
+        public long MetadataCacheId { get => this._metadataCacheId; set => this._metadataCacheId = value; }
 
         /// <summary>
         /// <see cref="IEventListener" /> cancellation delegate. Stops the cmdlet when called.

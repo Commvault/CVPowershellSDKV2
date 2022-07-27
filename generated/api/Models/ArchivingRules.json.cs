@@ -61,13 +61,13 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_startCleaningIfLessThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startCleaningIfLessThan"), out var __jsonStartCleaningIfLessThan) ? (int?)__jsonStartCleaningIfLessThan : StartCleaningIfLessThan;}
-            {_stopCleaningIfupto = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("stopCleaningIfupto"), out var __jsonStopCleaningIfupto) ? (int?)__jsonStopCleaningIfupto : StopCleaningIfupto;}
-            {_fileAccessTimeOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileAccessTimeOlderThan"), out var __jsonFileAccessTimeOlderThan) ? (int?)__jsonFileAccessTimeOlderThan : FileAccessTimeOlderThan;}
-            {_fileModifiedTimeOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileModifiedTimeOlderThan"), out var __jsonFileModifiedTimeOlderThan) ? (int?)__jsonFileModifiedTimeOlderThan : FileModifiedTimeOlderThan;}
-            {_fileCreatedTimeOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileCreatedTimeOlderThan"), out var __jsonFileCreatedTimeOlderThan) ? (int?)__jsonFileCreatedTimeOlderThan : FileCreatedTimeOlderThan;}
-            {_fileSizeGreaterThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileSizeGreaterThan"), out var __jsonFileSizeGreaterThan) ? (int?)__jsonFileSizeGreaterThan : FileSizeGreaterThan;}
-            {_maximumFileSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maximumFileSize"), out var __jsonMaximumFileSize) ? (int?)__jsonMaximumFileSize : MaximumFileSize;}
+            {_startCleaningIfLessThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startCleaningIfLessThan"), out var __jsonStartCleaningIfLessThan) ? (long?)__jsonStartCleaningIfLessThan : StartCleaningIfLessThan;}
+            {_stopCleaningIfupto = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("stopCleaningIfupto"), out var __jsonStopCleaningIfupto) ? (long?)__jsonStopCleaningIfupto : StopCleaningIfupto;}
+            {_fileAccessTimeOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileAccessTimeOlderThan"), out var __jsonFileAccessTimeOlderThan) ? (long?)__jsonFileAccessTimeOlderThan : FileAccessTimeOlderThan;}
+            {_fileModifiedTimeOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileModifiedTimeOlderThan"), out var __jsonFileModifiedTimeOlderThan) ? (long?)__jsonFileModifiedTimeOlderThan : FileModifiedTimeOlderThan;}
+            {_fileCreatedTimeOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileCreatedTimeOlderThan"), out var __jsonFileCreatedTimeOlderThan) ? (long?)__jsonFileCreatedTimeOlderThan : FileCreatedTimeOlderThan;}
+            {_fileSizeGreaterThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileSizeGreaterThan"), out var __jsonFileSizeGreaterThan) ? (long?)__jsonFileSizeGreaterThan : FileSizeGreaterThan;}
+            {_maximumFileSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maximumFileSize"), out var __jsonMaximumFileSize) ? (long?)__jsonMaximumFileSize : MaximumFileSize;}
             {_archiveReadOnlyFiles = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("archiveReadOnlyFiles"), out var __jsonArchiveReadOnlyFiles) ? (bool?)__jsonArchiveReadOnlyFiles : ArchiveReadOnlyFiles;}
             {_afterArchiving = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("afterArchiving"), out var __jsonAfterArchiving) ? (string)__jsonAfterArchiving : (string)AfterArchiving;}
             AfterFromJson(json);
@@ -102,13 +102,13 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._startCleaningIfLessThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._startCleaningIfLessThan) : null, "startCleaningIfLessThan" ,container.Add );
-            AddIf( null != this._stopCleaningIfupto ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._stopCleaningIfupto) : null, "stopCleaningIfupto" ,container.Add );
-            AddIf( null != this._fileAccessTimeOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._fileAccessTimeOlderThan) : null, "fileAccessTimeOlderThan" ,container.Add );
-            AddIf( null != this._fileModifiedTimeOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._fileModifiedTimeOlderThan) : null, "fileModifiedTimeOlderThan" ,container.Add );
-            AddIf( null != this._fileCreatedTimeOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._fileCreatedTimeOlderThan) : null, "fileCreatedTimeOlderThan" ,container.Add );
-            AddIf( null != this._fileSizeGreaterThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._fileSizeGreaterThan) : null, "fileSizeGreaterThan" ,container.Add );
-            AddIf( null != this._maximumFileSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._maximumFileSize) : null, "maximumFileSize" ,container.Add );
+            AddIf( null != this._startCleaningIfLessThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._startCleaningIfLessThan) : null, "startCleaningIfLessThan" ,container.Add );
+            AddIf( null != this._stopCleaningIfupto ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._stopCleaningIfupto) : null, "stopCleaningIfupto" ,container.Add );
+            AddIf( null != this._fileAccessTimeOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._fileAccessTimeOlderThan) : null, "fileAccessTimeOlderThan" ,container.Add );
+            AddIf( null != this._fileModifiedTimeOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._fileModifiedTimeOlderThan) : null, "fileModifiedTimeOlderThan" ,container.Add );
+            AddIf( null != this._fileCreatedTimeOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._fileCreatedTimeOlderThan) : null, "fileCreatedTimeOlderThan" ,container.Add );
+            AddIf( null != this._fileSizeGreaterThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._fileSizeGreaterThan) : null, "fileSizeGreaterThan" ,container.Add );
+            AddIf( null != this._maximumFileSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._maximumFileSize) : null, "maximumFileSize" ,container.Add );
             AddIf( null != this._archiveReadOnlyFiles ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._archiveReadOnlyFiles) : null, "archiveReadOnlyFiles" ,container.Add );
             AddIf( null != (((object)this._afterArchiving)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._afterArchiving.ToString()) : null, "afterArchiving" ,container.Add );
             AfterToJson(ref container);

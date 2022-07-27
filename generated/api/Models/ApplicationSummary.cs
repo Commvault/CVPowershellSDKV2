@@ -18,17 +18,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName ApplicationGroup { get => (this._applicationGroup = this._applicationGroup ?? new Commvault.Powershell.Models.IdName()); set => this._applicationGroup = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ApplicationGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id = value ?? default(int); }
+        public long? ApplicationGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ApplicationGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="ApplicationSize" /> property.</summary>
-        private int? _applicationSize;
+        private long? _applicationSize;
 
         /// <summary>The total space allocated(in bytes) for the virtual machine.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationSize { get => this._applicationSize; set => this._applicationSize = value; }
+        public long? ApplicationSize { get => this._applicationSize; set => this._applicationSize = value; }
 
         /// <summary>Backing field for <see cref="Cluster" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _cluster;
@@ -37,7 +37,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Cluster { get => (this._cluster = this._cluster ?? new Commvault.Powershell.Models.IdName()); set => this._cluster = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ClusterId { get => ((Commvault.Powershell.Models.IIdNameInternal)Cluster).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Cluster).Id = value ?? default(int); }
+        public long? ClusterId { get => ((Commvault.Powershell.Models.IIdNameInternal)Cluster).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Cluster).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ClusterName { get => ((Commvault.Powershell.Models.IIdNameInternal)Cluster).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Cluster).Name = value ?? null; }
@@ -74,7 +74,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -89,11 +89,11 @@ namespace Commvault.Powershell.Models
         public string Host { get => this._host; set => this._host = value; }
 
         /// <summary>Backing field for <see cref="K8ApplicationSize" /> property.</summary>
-        private int? _k8ApplicationSize;
+        private long? _k8ApplicationSize;
 
         /// <summary>The amount of data being protected for the VM client(in bytes)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? K8ApplicationSize { get => this._k8ApplicationSize; set => this._k8ApplicationSize = value; }
+        public long? K8ApplicationSize { get => this._k8ApplicationSize; set => this._k8ApplicationSize = value; }
 
         /// <summary>Backing field for <see cref="LastBackup" /> property.</summary>
         private Commvault.Powershell.Models.ILastBackup _lastBackup;
@@ -108,11 +108,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Job id of the last backup job</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).JobId = value ?? default(int); }
+        public long? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).JobId = value ?? default(long); }
 
         /// <summary>UNIX time for the last successful backup job run</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LastBackupLastSuccessfulBackupTime { get => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).LastSuccessfulBackupTime; set => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).LastSuccessfulBackupTime = value ?? default(int); }
+        public long? LastBackupLastSuccessfulBackupTime { get => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).LastSuccessfulBackupTime; set => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).LastSuccessfulBackupTime = value ?? default(long); }
 
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -120,7 +120,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>UNIX time for the last backup job run</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LastBackupTime { get => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).Time; set => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).Time = value ?? default(int); }
+        public long? LastBackupTime { get => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).Time; set => ((Commvault.Powershell.Models.ILastBackupInternal)LastBackup).Time = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -143,7 +143,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -199,8 +199,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -215,16 +215,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total space allocated(in bytes) for the virtual machine.",
         SerializedName = @"applicationSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationSize { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClusterId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClusterId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -247,8 +247,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -273,8 +273,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The amount of data being protected for the VM client(in bytes)",
         SerializedName = @"K8applicationSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? K8ApplicationSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? K8ApplicationSize { get; set; }
         /// <summary>Failure reason for the last backup job</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -289,16 +289,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Job id of the last backup job",
         SerializedName = @"jobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupJobId { get; set; }
         /// <summary>UNIX time for the last successful backup job run</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"UNIX time for the last successful backup job run",
         SerializedName = @"lastSuccessfulBackupTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupLastSuccessfulBackupTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupLastSuccessfulBackupTime { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -313,8 +313,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"UNIX time for the last backup job run",
         SerializedName = @"time",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupTime { get; set; }
         /// <summary>The display name of the VM.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -337,8 +337,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -395,15 +395,15 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName ApplicationGroup { get; set; }
 
-        int? ApplicationGroupId { get; set; }
+        long? ApplicationGroupId { get; set; }
 
         string ApplicationGroupName { get; set; }
         /// <summary>The total space allocated(in bytes) for the virtual machine.</summary>
-        int? ApplicationSize { get; set; }
+        long? ApplicationSize { get; set; }
 
         Commvault.Powershell.Models.IIdName Cluster { get; set; }
 
-        int? ClusterId { get; set; }
+        long? ClusterId { get; set; }
 
         string ClusterName { get; set; }
         /// <summary>Name of the commcell the VM belongs</summary>
@@ -411,7 +411,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>
@@ -419,19 +419,19 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string Host { get; set; }
         /// <summary>The amount of data being protected for the VM client(in bytes)</summary>
-        int? K8ApplicationSize { get; set; }
+        long? K8ApplicationSize { get; set; }
         /// <summary>last backup job details for the client</summary>
         Commvault.Powershell.Models.ILastBackup LastBackup { get; set; }
         /// <summary>Failure reason for the last backup job</summary>
         string LastBackupFailureReason { get; set; }
         /// <summary>Job id of the last backup job</summary>
-        int? LastBackupJobId { get; set; }
+        long? LastBackupJobId { get; set; }
         /// <summary>UNIX time for the last successful backup job run</summary>
-        int? LastBackupLastSuccessfulBackupTime { get; set; }
+        long? LastBackupLastSuccessfulBackupTime { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         string LastBackupStatus { get; set; }
         /// <summary>UNIX time for the last backup job run</summary>
-        int? LastBackupTime { get; set; }
+        long? LastBackupTime { get; set; }
         /// <summary>The display name of the VM.</summary>
         string Name { get; set; }
         /// <summary>The operating system version for the VM or instance.</summary>
@@ -439,7 +439,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>VMSLA</summary>

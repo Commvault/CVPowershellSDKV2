@@ -90,7 +90,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Components = (Commvault.Powershell.Models.IDistributedSystemComponent[]) content.GetValueForProperty("Components",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Components, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IDistributedSystemComponent>(__y, Commvault.Powershell.Models.DistributedSystemComponentTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Components = (Commvault.Powershell.Models.IDistributedSystemComponent[]) content.GetValueForProperty("Components",((Commvault.Powershell.Models.IDistributedSystemSummaryInternal)this).Components, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IDistributedSystemComponent>(__y, Commvault.Powershell.Models.DistributedSystemComponentTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);

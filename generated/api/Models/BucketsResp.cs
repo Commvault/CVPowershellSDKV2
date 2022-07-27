@@ -18,7 +18,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Bucket { get => (this._bucket = this._bucket ?? new Commvault.Powershell.Models.IdName()); set => this._bucket = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BucketId { get => ((Commvault.Powershell.Models.IIdNameInternal)Bucket).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Bucket).Id = value ?? default(int); }
+        public long? BucketId { get => ((Commvault.Powershell.Models.IIdNameInternal)Bucket).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Bucket).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BucketName { get => ((Commvault.Powershell.Models.IIdNameInternal)Bucket).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Bucket).Name = value ?? null; }
@@ -70,7 +70,7 @@ namespace Commvault.Powershell.Models
         public bool? ConfigurationPreventNewDataWritesToBackupLocation { get => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).PreventNewDataWritesToBackupLocation; set => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).PreventNewDataWritesToBackupLocation = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StorageAcceleratorCredentialsId { get => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).StorageAcceleratorCredentialsId; set => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).StorageAcceleratorCredentialsId = value ?? default(int); }
+        public long? StorageAcceleratorCredentialsId { get => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).StorageAcceleratorCredentialsId; set => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).StorageAcceleratorCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageAcceleratorCredentialsName { get => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).StorageAcceleratorCredentialsName; set => ((Commvault.Powershell.Models.ICloudBucketConfigurationInternal)Configuration).StorageAcceleratorCredentialsName = value ?? null; }
@@ -90,8 +90,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BucketId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BucketId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -151,8 +151,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StorageAcceleratorCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StorageAcceleratorCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -169,7 +169,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Bucket { get; set; }
 
-        int? BucketId { get; set; }
+        long? BucketId { get; set; }
 
         string BucketName { get; set; }
 
@@ -192,7 +192,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName ConfigurationStorageAcceleratorCredentials { get; set; }
 
-        int? StorageAcceleratorCredentialsId { get; set; }
+        long? StorageAcceleratorCredentialsId { get; set; }
 
         string StorageAcceleratorCredentialsName { get; set; }
 

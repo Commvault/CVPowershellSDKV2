@@ -100,11 +100,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days = (int?) content.GetValueForProperty("Days",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions = (int?) content.GetValueForProperty("Versions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions = (int?) content.GetValueForProperty("DailyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions = (int?) content.GetValueForProperty("WeeklyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions = (int?) content.GetValueForProperty("MonthlyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days = (long?) content.GetValueForProperty("Days",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions = (long?) content.GetValueForProperty("Versions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions = (long?) content.GetValueForProperty("DailyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions = (long?) content.GetValueForProperty("WeeklyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions = (long?) content.GetValueForProperty("MonthlyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -122,11 +122,11 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days = (int?) content.GetValueForProperty("Days",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions = (int?) content.GetValueForProperty("Versions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions = (int?) content.GetValueForProperty("DailyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions = (int?) content.GetValueForProperty("WeeklyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions = (int?) content.GetValueForProperty("MonthlyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days = (long?) content.GetValueForProperty("Days",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Days, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions = (long?) content.GetValueForProperty("Versions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).Versions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions = (long?) content.GetValueForProperty("DailyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).DailyVersions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions = (long?) content.GetValueForProperty("WeeklyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).WeeklyVersions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions = (long?) content.GetValueForProperty("MonthlyVersions",((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)this).MonthlyVersions, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

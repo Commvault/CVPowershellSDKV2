@@ -49,7 +49,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Hypervisor { get => (this._hypervisor = this._hypervisor ?? new Commvault.Powershell.Models.IdName()); set => this._hypervisor = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? HypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id = value ?? default(int); }
+        public long? HypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string HypervisorName { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name = value ?? null; }
@@ -68,7 +68,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -80,7 +80,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Storage { get => (this._storage = this._storage ?? new Commvault.Powershell.Models.IdName()); set => this._storage = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(int); }
+        public long? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name = value ?? null; }
@@ -127,8 +127,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? HypervisorId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? HypervisorId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -151,8 +151,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -167,8 +167,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StorageId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StorageId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -196,7 +196,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Hypervisor { get; set; }
 
-        int? HypervisorId { get; set; }
+        long? HypervisorId { get; set; }
 
         string HypervisorName { get; set; }
         /// <summary>subclient name</summary>
@@ -204,13 +204,13 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
 
         Commvault.Powershell.Models.IIdName Storage { get; set; }
 
-        int? StorageId { get; set; }
+        long? StorageId { get; set; }
 
         string StorageName { get; set; }
 

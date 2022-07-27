@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds = (int[]) content.GetValueForProperty("ProjectIds",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds, __y => TypeConverterExtensions.SelectToArray<int>(__y, (__w)=> (int) global::System.Convert.ChangeType(__w, typeof(int))));
+            ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds = (long[]) content.GetValueForProperty("ProjectIds",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds, __y => TypeConverterExtensions.SelectToArray<long>(__y, (__w)=> (long) global::System.Convert.ChangeType(__w, typeof(long))));
             ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Reviewers = (Commvault.Powershell.Models.IIdNameDisplayName[]) content.GetValueForProperty("Reviewers",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Reviewers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdNameDisplayName>(__y, Commvault.Powershell.Models.IdNameDisplayNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Approvers = (Commvault.Powershell.Models.IIdNameDisplayName[]) content.GetValueForProperty("Approvers",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Approvers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdNameDisplayName>(__y, Commvault.Powershell.Models.IdNameDisplayNameTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds = (int[]) content.GetValueForProperty("ProjectIds",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds, __y => TypeConverterExtensions.SelectToArray<int>(__y, (__w)=> (int) global::System.Convert.ChangeType(__w, typeof(int))));
+            ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds = (long[]) content.GetValueForProperty("ProjectIds",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).ProjectIds, __y => TypeConverterExtensions.SelectToArray<long>(__y, (__w)=> (long) global::System.Convert.ChangeType(__w, typeof(long))));
             ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Reviewers = (Commvault.Powershell.Models.IIdNameDisplayName[]) content.GetValueForProperty("Reviewers",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Reviewers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdNameDisplayName>(__y, Commvault.Powershell.Models.IdNameDisplayNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Approvers = (Commvault.Powershell.Models.IIdNameDisplayName[]) content.GetValueForProperty("Approvers",((Commvault.Powershell.Models.IRmConfigureRequestInternal)this).Approvers, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdNameDisplayName>(__y, Commvault.Powershell.Models.IdNameDisplayNameTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);

@@ -59,24 +59,24 @@ namespace Commvault.Powershell.Models
         public bool? IsRestartRequired { get => this._isRestartRequired; set => this._isRestartRequired = value; }
 
         /// <summary>Backing field for <see cref="MaxValue" /> property.</summary>
-        private int? _maxValue;
+        private long? _maxValue;
 
         /// <summary>
         /// Specifies maximum value that can be set to modify specified global setting. It is only returned if the setting type is
         /// Integer
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MaxValue { get => this._maxValue; set => this._maxValue = value; }
+        public long? MaxValue { get => this._maxValue; set => this._maxValue = value; }
 
         /// <summary>Backing field for <see cref="MinValue" /> property.</summary>
-        private int? _minValue;
+        private long? _minValue;
 
         /// <summary>
         /// Specifies minimum value that can be set to modify specified global setting. It is only returned if the setting type is
         /// Integer
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MinValue { get => this._minValue; set => this._minValue = value; }
+        public long? MinValue { get => this._minValue; set => this._minValue = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -171,8 +171,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specifies maximum value that can be set to modify specified global setting. It is only returned if the setting type is Integer",
         SerializedName = @"maxValue",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MaxValue { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MaxValue { get; set; }
         /// <summary>
         /// Specifies minimum value that can be set to modify specified global setting. It is only returned if the setting type is
         /// Integer
@@ -182,8 +182,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specifies minimum value that can be set to modify specified global setting. It is only returned if the setting type is Integer",
         SerializedName = @"minValue",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MinValue { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MinValue { get; set; }
         /// <summary>Name of the setting</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -235,12 +235,12 @@ namespace Commvault.Powershell.Models
         /// Specifies maximum value that can be set to modify specified global setting. It is only returned if the setting type is
         /// Integer
         /// </summary>
-        int? MaxValue { get; set; }
+        long? MaxValue { get; set; }
         /// <summary>
         /// Specifies minimum value that can be set to modify specified global setting. It is only returned if the setting type is
         /// Integer
         /// </summary>
-        int? MinValue { get; set; }
+        long? MinValue { get; set; }
         /// <summary>Name of the setting</summary>
         string Name { get; set; }
         /// <summary>Type of the setting</summary>

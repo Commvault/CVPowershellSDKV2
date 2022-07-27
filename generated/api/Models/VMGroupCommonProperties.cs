@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Backupset { get => (this._backupset = this._backupset ?? new Commvault.Powershell.Models.IdName()); set => this._backupset = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id = value ?? default(int); }
+        public long? BackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupsetName { get => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Name = value ?? null; }
@@ -44,7 +44,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DataBackupStoragePolicy { get => (this._dataBackupStoragePolicy = this._dataBackupStoragePolicy ?? new Commvault.Powershell.Models.IdName()); set => this._dataBackupStoragePolicy = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DataBackupStoragePolicyId { get => ((Commvault.Powershell.Models.IIdNameInternal)DataBackupStoragePolicy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DataBackupStoragePolicy).Id = value ?? default(int); }
+        public long? DataBackupStoragePolicyId { get => ((Commvault.Powershell.Models.IIdNameInternal)DataBackupStoragePolicy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DataBackupStoragePolicy).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DataBackupStoragePolicyName { get => ((Commvault.Powershell.Models.IIdNameInternal)DataBackupStoragePolicy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DataBackupStoragePolicy).Name = value ?? null; }
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Hypervisor { get => (this._hypervisor = this._hypervisor ?? new Commvault.Powershell.Models.IdName()); set => this._hypervisor = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? HypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id = value ?? default(int); }
+        public long? HypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string HypervisorName { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name = value ?? null; }
@@ -89,7 +89,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set => this._instance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(int); }
+        public long? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
@@ -143,8 +143,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupsetId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupsetId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -159,8 +159,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DataBackupStoragePolicyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DataBackupStoragePolicyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -175,8 +175,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? HypervisorId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? HypervisorId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -215,8 +215,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? InstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? InstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -272,19 +272,19 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Backupset { get; set; }
 
-        int? BackupsetId { get; set; }
+        long? BackupsetId { get; set; }
 
         string BackupsetName { get; set; }
 
         Commvault.Powershell.Models.IIdName DataBackupStoragePolicy { get; set; }
 
-        int? DataBackupStoragePolicyId { get; set; }
+        long? DataBackupStoragePolicyId { get; set; }
 
         string DataBackupStoragePolicyName { get; set; }
 
         Commvault.Powershell.Models.IIdName Hypervisor { get; set; }
 
-        int? HypervisorId { get; set; }
+        long? HypervisorId { get; set; }
 
         string HypervisorName { get; set; }
 
@@ -298,7 +298,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Instance { get; set; }
 
-        int? InstanceId { get; set; }
+        long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
         /// <summary>True if the hypervisor is deleted</summary>

@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).Component = (string) content.GetValueForProperty("Component",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).Component, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorMessage, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).Component = (string) content.GetValueForProperty("Component",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).Component, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IPlanComponentErrorInternal)this).ErrorMessage, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

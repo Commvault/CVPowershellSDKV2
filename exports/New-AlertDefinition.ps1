@@ -35,28 +35,28 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 ALERTTYPEPARAMSLIST <IAlertDefinitionsCriteriaParams[]>: .
-  [ParamIndex <Int32?>]: Param order index
-  [Type <Int32?>]: Input value type (default 0 = no input required)
-  [Unit <Int32?>]: Unit of the criteria(For eg. :Hrs,min)
-  [Value <Int32?>]: Value of the criteria (deefault 0 : if no value required)
+  [ParamIndex <Int64?>]: Param order index
+  [Type <Int64?>]: Input value type (default 0 = no input required)
+  [Unit <Int64?>]: Unit of the criteria(For eg. :Hrs,min)
+  [Value <Int64?>]: Value of the criteria (deefault 0 : if no value required)
 
 ASSOCIATIONS <IAlertAssociationIdNameType1[]>: AlertDefinitionsAssociations
-  [Id <Int32?>]: id of the associated entity
+  [Id <Int64?>]: id of the associated entity
   [Name <String>]: name of the associated entity
   [Type <String>]: 
 
 RECIPIENTBCC <IAlertTargetIdNameType1[]>: .
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
   [Type <String>]: 
 
 RECIPIENTCC <IAlertTargetIdNameType1[]>: .
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
   [Type <String>]: 
 
 RECIPIENTTO <IAlertTargetIdNameType1[]>: .
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
   [Type <String>]: 
 .Link
@@ -100,7 +100,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${LocaleId},
 
@@ -139,7 +139,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # id of the webhook to be associated with the alert definition.
     # Only needed incase of webhook notif selected.
     # To get a list of webhooks, use api GET Webhook

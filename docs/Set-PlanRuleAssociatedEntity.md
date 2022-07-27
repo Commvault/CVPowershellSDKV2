@@ -212,12 +212,12 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BACKUPSETS <IIdName[]>: List of backupsets against which plan rules need to be executed and evaluated.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 BODY <IExecutePlanRules>: Message object to hold information of entities against which plan rule need to be analyzed
   - `[Backupsets <IIdName[]>]`: List of backupsets against which plan rules need to be  executed and evaluated.
-    - `[Id <Int32?>]`: 
+    - `[Id <Int64?>]`: 
     - `[Name <String>]`: 
   - `[Clients <IIdName[]>]`: List of clients against which plan rules need to be  executed and evaluated.
   - `[IgnorePreviousPlanAssociation <Boolean?>]`: Boolean to indicate if we want to evaluate rule for entities associated to plan. Default is false. Only entities with no plan associated will be evaluated.
@@ -226,15 +226,15 @@ BODY <IExecutePlanRules>: Message object to hold information of entities against
   - `[Subclients <IIdName[]>]`: List of subclients against which plan rules need to be  executed and evaluated.
 
 CLIENTS <IIdName[]>: List of clients against which plan rules need to be executed and evaluated.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 INSTANCES <IIdName[]>: List of instances against which plan rules need to be executed and evaluated.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 SUBCLIENTS <IIdName[]>: List of subclients against which plan rules need to be executed and evaluated.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

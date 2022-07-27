@@ -45,7 +45,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # Returns the list of users associated to the userGroupId provided.
     ${UserGroupId},
 

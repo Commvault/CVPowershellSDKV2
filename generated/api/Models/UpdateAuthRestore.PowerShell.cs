@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).PassKey = (string) content.GetValueForProperty("PassKey",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).PassKey, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).AuthOpType = (bool?) content.GetValueForProperty("AuthOpType",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).AuthOpType, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime = (int?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime = (long?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -120,7 +120,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).PassKey = (string) content.GetValueForProperty("PassKey",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).PassKey, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).AuthOpType = (bool?) content.GetValueForProperty("AuthOpType",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).AuthOpType, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime = (int?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime = (long?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IUpdateAuthRestoreInternal)this).ExpirationTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
     }

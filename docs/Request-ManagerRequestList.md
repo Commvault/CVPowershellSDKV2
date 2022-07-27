@@ -13,7 +13,7 @@ Retrieves the list of Requests
 ## SYNTAX
 
 ```
-Request-ManagerRequestList [-CreatedFrom <String>] [-SourceEntityId <Int32>] [-SourceEntityType <String>]
+Request-ManagerRequestList [-CreatedFrom <String>] [-SourceEntityId <Int64>] [-SourceEntityType <String>]
  [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 Entity id of the source from which data is gathered for the request
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

@@ -71,10 +71,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_mountpath = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("mountpath"), out var __jsonMountpath) ? (string)__jsonMountpath : (string)Mountpath;}
             {_serialNumber = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serialNumber"), out var __jsonSerialNumber) ? (string)__jsonSerialNumber : (string)SerialNumber;}
-            {_capacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("capacity"), out var __jsonCapacity) ? (int?)__jsonCapacity : Capacity;}
+            {_capacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("capacity"), out var __jsonCapacity) ? (long?)__jsonCapacity : Capacity;}
             {_diskStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("diskStatus"), out var __jsonDiskStatus) ? (string)__jsonDiskStatus : (string)DiskStatus;}
             AfterFromJson(json);
         }
@@ -98,10 +98,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._mountpath)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._mountpath.ToString()) : null, "mountpath" ,container.Add );
             AddIf( null != (((object)this._serialNumber)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._serialNumber.ToString()) : null, "serialNumber" ,container.Add );
-            AddIf( null != this._capacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._capacity) : null, "capacity" ,container.Add );
+            AddIf( null != this._capacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._capacity) : null, "capacity" ,container.Add );
             AddIf( null != (((object)this._diskStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._diskStatus.ToString()) : null, "diskStatus" ,container.Add );
             AfterToJson(ref container);
             return container;

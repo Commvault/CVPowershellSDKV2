@@ -57,7 +57,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set => this._mediaAgent = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id = value ?? default(int); }
+        public long? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string MediaAgentName { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name = value ?? null; }
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Port for proxy configuration</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Port { get => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port; set => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port = value; }
+        public long? Port { get => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port; set => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port = value; }
 
         /// <summary>Backing field for <see cref="PrivateKeyPassword" /> property.</summary>
         private string _privateKeyPassword;
@@ -179,8 +179,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MediaAgentId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MediaAgentId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -248,7 +248,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName MediaAgent { get; set; }
 
-        int? MediaAgentId { get; set; }
+        long? MediaAgentId { get; set; }
 
         string MediaAgentName { get; set; }
         /// <summary>PEM filename containing the private-key</summary>

@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="NumberOfUsers" /> property.</summary>
-        private int? _numberOfUsers;
+        private long? _numberOfUsers;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? NumberOfUsers { get => this._numberOfUsers; set => this._numberOfUsers = value; }
+        public long? NumberOfUsers { get => this._numberOfUsers; set => this._numberOfUsers = value; }
 
         /// <summary>Backing field for <see cref="Users" /> property.</summary>
         private Commvault.Powershell.Models.IUserSummary[] _users;
@@ -38,8 +38,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"numberOfUsers",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NumberOfUsers { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NumberOfUsers { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IUserListRespInternal
 
     {
-        int? NumberOfUsers { get; set; }
+        long? NumberOfUsers { get; set; }
 
         Commvault.Powershell.Models.IUserSummary[] Users { get; set; }
 

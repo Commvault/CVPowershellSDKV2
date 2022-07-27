@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Severity = (string) content.GetValueForProperty("Severity",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Severity, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time = (int?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).User = (string) content.GetValueForProperty("User",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).User, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Operation = (string) content.GetValueForProperty("Operation",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Operation, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Messages = (string[]) content.GetValueForProperty("Messages",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Messages, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Severity = (string) content.GetValueForProperty("Severity",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Severity, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time = (int?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time = (long?) content.GetValueForProperty("Time",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Time, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).User = (string) content.GetValueForProperty("User",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).User, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Operation = (string) content.GetValueForProperty("Operation",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Operation, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Messages = (string[]) content.GetValueForProperty("Messages",((Commvault.Powershell.Models.IEntityAuditInformationInternal)this).Messages, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));

@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).SendInvite = (bool?) content.GetValueForProperty("SendInvite",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).SendInvite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
@@ -114,7 +114,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).SendInvite = (bool?) content.GetValueForProperty("SendInvite",((Commvault.Powershell.Models.IPlanUserOrGroupsInternal)this).SendInvite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));

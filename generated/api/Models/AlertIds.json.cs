@@ -61,7 +61,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_alertId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("alertId"), out var __jsonAlertId) ? If( __jsonAlertId as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<int[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(int) (__u is Commvault.Powershell.Runtime.Json.JsonNumber __t ? (int)__t : default(int))) ))() : null : AlertId;}
+            {_alertId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("alertId"), out var __jsonAlertId) ? If( __jsonAlertId as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<long[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(long) (__u is Commvault.Powershell.Runtime.Json.JsonNumber __t ? (long)__t : default(long))) ))() : null : AlertId;}
             AfterFromJson(json);
         }
 

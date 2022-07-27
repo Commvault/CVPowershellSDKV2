@@ -13,7 +13,7 @@ To get the list of instances for GCP
 ## SYNTAX
 
 ```
-Get-GcpSpannerInstanceList -CloudAccountId <Int32> [<CommonParameters>]
+Get-GcpSpannerInstanceList -CloudAccountId <Int64> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ PS C:\> {{ Add code here }}
 the google cloud hypervisor account id
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

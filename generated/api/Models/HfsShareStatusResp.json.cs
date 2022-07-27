@@ -74,7 +74,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_statusMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("statusMessage"), out var __jsonStatusMessage) ? (string)__jsonStatusMessage : (string)StatusMessage;}
-            {_statusCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("statusCode"), out var __jsonStatusCode) ? (int?)__jsonStatusCode : StatusCode;}
+            {_statusCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("statusCode"), out var __jsonStatusCode) ? (long?)__jsonStatusCode : StatusCode;}
             AfterFromJson(json);
         }
 
@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._statusMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._statusMessage.ToString()) : null, "statusMessage" ,container.Add );
-            AddIf( null != this._statusCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._statusCode) : null, "statusCode" ,container.Add );
+            AddIf( null != this._statusCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._statusCode) : null, "statusCode" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

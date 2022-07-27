@@ -18,10 +18,10 @@ namespace Commvault.Powershell.Models
         public string CommandCenterState { get => this._commandCenterState; set => this._commandCenterState = value; }
 
         /// <summary>Backing field for <see cref="CommandCenterStateValue" /> property.</summary>
-        private int? _commandCenterStateValue;
+        private long? _commandCenterStateValue;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CommandCenterStateValue { get => this._commandCenterStateValue; set => this._commandCenterStateValue = value; }
+        public long? CommandCenterStateValue { get => this._commandCenterStateValue; set => this._commandCenterStateValue = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
@@ -58,8 +58,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"commandCenterStateValue",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CommandCenterStateValue { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CommandCenterStateValue { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -84,7 +84,7 @@ namespace Commvault.Powershell.Models
     {
         string CommandCenterState { get; set; }
 
-        int? CommandCenterStateValue { get; set; }
+        long? CommandCenterStateValue { get; set; }
 
         long? Id { get; set; }
 

@@ -22,11 +22,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="Retention" /> property.</summary>
-        private int? _retention;
+        private long? _retention;
 
         /// <summary>How long the data is retained. Mentioned in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Retention { get => this._retention; set => this._retention = value; }
+        public long? Retention { get => this._retention; set => this._retention = value; }
 
         /// <summary>Backing field for <see cref="StoragePool" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _storagePool;
@@ -35,7 +35,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName StoragePool { get => (this._storagePool = this._storagePool ?? new Commvault.Powershell.Models.IdName()); set => this._storagePool = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StoragePoolId { get => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id = value ?? default(int); }
+        public long? StoragePoolId { get => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StoragePoolName { get => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Name = value ?? null; }
@@ -64,16 +64,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"How long the data is retained. Mentioned in days",
         SerializedName = @"retention",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Retention { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Retention { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StoragePoolId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StoragePoolId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -91,11 +91,11 @@ namespace Commvault.Powershell.Models
         /// <summary>Storage name. Primary, secondary</summary>
         string Name { get; set; }
         /// <summary>How long the data is retained. Mentioned in days</summary>
-        int? Retention { get; set; }
+        long? Retention { get; set; }
 
         Commvault.Powershell.Models.IIdName StoragePool { get; set; }
 
-        int? StoragePoolId { get; set; }
+        long? StoragePoolId { get; set; }
 
         string StoragePoolName { get; set; }
 

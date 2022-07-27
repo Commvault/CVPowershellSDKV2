@@ -274,7 +274,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.AgentId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.EnableRestoreAgent(InputObject.ServerId ?? default(int), InputObject.AgentId ?? default(int), onOk, onInternalServerError, this, Pipeline);
+                    await this.Client.EnableRestoreAgent(InputObject.ServerId ?? default(long), InputObject.AgentId ?? default(long), onOk, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

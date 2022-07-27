@@ -79,8 +79,8 @@ namespace Commvault.Powershell.Models
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_statusDescription = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("statusDescription"), out var __jsonStatusDescription) ? (string)__jsonStatusDescription : (string)StatusDescription;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
-            {_creationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("creationTime"), out var __jsonCreationTime) ? (int?)__jsonCreationTime : CreationTime;}
-            {_expirationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationTime"), out var __jsonExpirationTime) ? (int?)__jsonExpirationTime : ExpirationTime;}
+            {_creationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("creationTime"), out var __jsonCreationTime) ? (long?)__jsonCreationTime : CreationTime;}
+            {_expirationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationTime"), out var __jsonExpirationTime) ? (long?)__jsonExpirationTime : ExpirationTime;}
             AfterFromJson(json);
         }
 
@@ -110,8 +110,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != (((object)this._statusDescription)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._statusDescription.ToString()) : null, "statusDescription" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
-            AddIf( null != this._creationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._creationTime) : null, "creationTime" ,container.Add );
-            AddIf( null != this._expirationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._expirationTime) : null, "expirationTime" ,container.Add );
+            AddIf( null != this._creationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._creationTime) : null, "creationTime" ,container.Add );
+            AddIf( null != this._expirationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._expirationTime) : null, "expirationTime" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

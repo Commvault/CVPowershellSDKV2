@@ -15,7 +15,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[] AssociatedRegionBasedPlanPlans { get => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).Plans; set => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).Plans = value ?? null /* arrayOf */; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AssociatedRegionBasedPlanPlansCount { get => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).PlansCount; set => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).PlansCount = value ?? default(int); }
+        public long? AssociatedRegionBasedPlanPlansCount { get => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).PlansCount; set => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).PlansCount = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="AssociatedRegionBasedPlans" /> property.</summary>
         private Commvault.Powershell.Models.IAssociatedRegionBasedPlans _associatedRegionBasedPlans;
@@ -28,7 +28,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IRegionAssociatedServersList[] AssociatedServerServers { get => ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)AssociatedServers).Servers; set => ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)AssociatedServers).Servers = value ?? null /* arrayOf */; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? AssociatedServerServersCount { get => ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)AssociatedServers).ServersCount; set => ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)AssociatedServers).ServersCount = value ?? default(int); }
+        public long? AssociatedServerServersCount { get => ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)AssociatedServers).ServersCount; set => ((Commvault.Powershell.Models.IRegionAssociatedServersInternal)AssociatedServers).ServersCount = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="AssociatedServers" /> property.</summary>
         private Commvault.Powershell.Models.IRegionAssociatedServers _associatedServers;
@@ -51,11 +51,11 @@ namespace Commvault.Powershell.Models
         public string DisplayName { get => this._displayName; set => this._displayName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Region ID</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Locations" /> property.</summary>
         private Commvault.Powershell.Models.ILocationDetailsWithZone[] _locations;
@@ -101,8 +101,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"plansCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AssociatedRegionBasedPlanPlansCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AssociatedRegionBasedPlanPlansCount { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -117,8 +117,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"serversCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AssociatedServerServersCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AssociatedServerServersCount { get; set; }
         /// <summary>Display name for the region</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -133,8 +133,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Region ID",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>List of locations in the region</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -167,19 +167,19 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[] AssociatedRegionBasedPlanPlans { get; set; }
 
-        int? AssociatedRegionBasedPlanPlansCount { get; set; }
+        long? AssociatedRegionBasedPlanPlansCount { get; set; }
         /// <summary>Details of plans associated to the region</summary>
         Commvault.Powershell.Models.IAssociatedRegionBasedPlans AssociatedRegionBasedPlans { get; set; }
 
         Commvault.Powershell.Models.IRegionAssociatedServersList[] AssociatedServerServers { get; set; }
 
-        int? AssociatedServerServersCount { get; set; }
+        long? AssociatedServerServersCount { get; set; }
         /// <summary>Details of servers associated to a region</summary>
         Commvault.Powershell.Models.IRegionAssociatedServers AssociatedServers { get; set; }
         /// <summary>Display name for the region</summary>
         string DisplayName { get; set; }
         /// <summary>Region ID</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>List of locations in the region</summary>
         Commvault.Powershell.Models.ILocationDetailsWithZone[] Locations { get; set; }
         /// <summary>Region name</summary>

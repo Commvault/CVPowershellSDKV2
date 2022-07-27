@@ -57,8 +57,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Commit frequency in hours",
         SerializedName = @"commitFrequencyInHours",
-        PossibleTypes = new [] { typeof(int) })]
-        public int DatabaseOptionCommitFrequencyInHours { get => Body.DatabaseOptionCommitFrequencyInHours ?? default(int); set => Body.DatabaseOptionCommitFrequencyInHours = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long DatabaseOptionCommitFrequencyInHours { get => Body.DatabaseOptionCommitFrequencyInHours ?? default(long); set => Body.DatabaseOptionCommitFrequencyInHours = value; }
 
         /// <summary>Log backup RPO in minutes</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Log backup RPO in minutes")]
@@ -68,8 +68,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Log backup RPO in minutes",
         SerializedName = @"logBackupRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        public int DatabaseOptionLogBackupRpoMins { get => Body.DatabaseOptionLogBackupRpoMins ?? default(int); set => Body.DatabaseOptionLogBackupRpoMins = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long DatabaseOptionLogBackupRpoMins { get => Body.DatabaseOptionLogBackupRpoMins ?? default(long); set => Body.DatabaseOptionLogBackupRpoMins = value; }
 
         /// <summary>Use disk cache for log backups</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Use disk cache for log backups")]
@@ -118,7 +118,7 @@ namespace Commvault.Powershell.Cmdlets
         private Commvault.Powershell.Runtime.HttpPipeline Pipeline { get; set; }
 
         /// <summary>Backing field for <see cref="PlanId" /> property.</summary>
-        private int _planId;
+        private long _planId;
 
         /// <summary>Id of the Server Plan</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the Server Plan")]
@@ -127,9 +127,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the Server Plan",
         SerializedName = @"planId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int PlanId { get => this._planId; set => this._planId = value; }
+        public long PlanId { get => this._planId; set => this._planId = value; }
 
         /// <summary>The URI for the proxy server to use</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "The URI for the proxy server to use")]

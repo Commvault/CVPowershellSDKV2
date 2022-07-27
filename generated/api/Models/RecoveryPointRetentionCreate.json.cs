@@ -71,11 +71,11 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_retainRecoveryPointsFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retainRecoveryPointsFor"), out var __jsonRetainRecoveryPointsFor) ? (int)__jsonRetainRecoveryPointsFor : RetainRecoveryPointsFor;}
+            {_retainRecoveryPointsFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retainRecoveryPointsFor"), out var __jsonRetainRecoveryPointsFor) ? (long)__jsonRetainRecoveryPointsFor : RetainRecoveryPointsFor;}
             {_mergeRecoveryPoints = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("mergeRecoveryPoints"), out var __jsonMergeRecoveryPoints) ? (bool?)__jsonMergeRecoveryPoints : MergeRecoveryPoints;}
-            {_mergeRecoveryPointsOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("mergeRecoveryPointsOlderThan"), out var __jsonMergeRecoveryPointsOlderThan) ? (int?)__jsonMergeRecoveryPointsOlderThan : MergeRecoveryPointsOlderThan;}
-            {_recoveryPointIntervalAtEndofRetention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("recoveryPointIntervalAtEndofRetention"), out var __jsonRecoveryPointIntervalAtEndofRetention) ? (int?)__jsonRecoveryPointIntervalAtEndofRetention : RecoveryPointIntervalAtEndofRetention;}
-            {_rpStoreOfflineFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("rpStoreOfflineFor"), out var __jsonRpStoreOfflineFor) ? (int?)__jsonRpStoreOfflineFor : RpStoreOfflineFor;}
+            {_mergeRecoveryPointsOlderThan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("mergeRecoveryPointsOlderThan"), out var __jsonMergeRecoveryPointsOlderThan) ? (long?)__jsonMergeRecoveryPointsOlderThan : MergeRecoveryPointsOlderThan;}
+            {_recoveryPointIntervalAtEndofRetention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("recoveryPointIntervalAtEndofRetention"), out var __jsonRecoveryPointIntervalAtEndofRetention) ? (long?)__jsonRecoveryPointIntervalAtEndofRetention : RecoveryPointIntervalAtEndofRetention;}
+            {_rpStoreOfflineFor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("rpStoreOfflineFor"), out var __jsonRpStoreOfflineFor) ? (long?)__jsonRpStoreOfflineFor : RpStoreOfflineFor;}
             {_pruneAndMergeDuringOffPeak = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("pruneAndMergeDuringOffPeak"), out var __jsonPruneAndMergeDuringOffPeak) ? (bool?)__jsonPruneAndMergeDuringOffPeak : PruneAndMergeDuringOffPeak;}
             AfterFromJson(json);
         }
@@ -101,9 +101,9 @@ namespace Commvault.Powershell.Models
             }
             AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber(this._retainRecoveryPointsFor), "retainRecoveryPointsFor" ,container.Add );
             AddIf( null != this._mergeRecoveryPoints ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._mergeRecoveryPoints) : null, "mergeRecoveryPoints" ,container.Add );
-            AddIf( null != this._mergeRecoveryPointsOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._mergeRecoveryPointsOlderThan) : null, "mergeRecoveryPointsOlderThan" ,container.Add );
-            AddIf( null != this._recoveryPointIntervalAtEndofRetention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._recoveryPointIntervalAtEndofRetention) : null, "recoveryPointIntervalAtEndofRetention" ,container.Add );
-            AddIf( null != this._rpStoreOfflineFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._rpStoreOfflineFor) : null, "rpStoreOfflineFor" ,container.Add );
+            AddIf( null != this._mergeRecoveryPointsOlderThan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._mergeRecoveryPointsOlderThan) : null, "mergeRecoveryPointsOlderThan" ,container.Add );
+            AddIf( null != this._recoveryPointIntervalAtEndofRetention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._recoveryPointIntervalAtEndofRetention) : null, "recoveryPointIntervalAtEndofRetention" ,container.Add );
+            AddIf( null != this._rpStoreOfflineFor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._rpStoreOfflineFor) : null, "rpStoreOfflineFor" ,container.Add );
             AddIf( null != this._pruneAndMergeDuringOffPeak ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._pruneAndMergeDuringOffPeak) : null, "pruneAndMergeDuringOffPeak" ,container.Add );
             AfterToJson(ref container);
             return container;

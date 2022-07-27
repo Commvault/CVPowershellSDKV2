@@ -18,18 +18,18 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IVMAppsDiscovered[] AppsDiscovered { get => this._appsDiscovered; set => this._appsDiscovered = value; }
 
         /// <summary>Backing field for <see cref="BackupCompletionDate" /> property.</summary>
-        private int? _backupCompletionDate;
+        private long? _backupCompletionDate;
 
         /// <summary>timestamp(in unix) for the last backup job completed</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupCompletionDate { get => this._backupCompletionDate; set => this._backupCompletionDate = value; }
+        public long? BackupCompletionDate { get => this._backupCompletionDate; set => this._backupCompletionDate = value; }
 
         /// <summary>Backing field for <see cref="BackupValidated" /> property.</summary>
-        private int? _backupValidated;
+        private long? _backupValidated;
 
         /// <summary>job id of the last backup job that was validated</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupValidated { get => this._backupValidated; set => this._backupValidated = value; }
+        public long? BackupValidated { get => this._backupValidated; set => this._backupValidated = value; }
 
         /// <summary>Backing field for <see cref="BootStatus" /> property.</summary>
         private bool? _bootStatus;
@@ -39,11 +39,11 @@ namespace Commvault.Powershell.Models
         public bool? BootStatus { get => this._bootStatus; set => this._bootStatus = value; }
 
         /// <summary>Backing field for <see cref="LastValidationJobId" /> property.</summary>
-        private int? _lastValidationJobId;
+        private long? _lastValidationJobId;
 
         /// <summary>job id of the last backup validation job</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LastValidationJobId { get => this._lastValidationJobId; set => this._lastValidationJobId = value; }
+        public long? LastValidationJobId { get => this._lastValidationJobId; set => this._lastValidationJobId = value; }
 
         /// <summary>Creates an new <see cref="VMApplicationValidationResults" /> instance.</summary>
         public VMApplicationValidationResults()
@@ -68,16 +68,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"timestamp(in unix) for the last backup job completed",
         SerializedName = @"backupCompletionDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupCompletionDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupCompletionDate { get; set; }
         /// <summary>job id of the last backup job that was validated</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"job id of the last backup job that was validated",
         SerializedName = @"backupValidated",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupValidated { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupValidated { get; set; }
         /// <summary>true if backup validation is set</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -92,8 +92,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"job id of the last backup validation job",
         SerializedName = @"lastValidationJobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastValidationJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastValidationJobId { get; set; }
 
     }
     /// VMApplicationValidationResults
@@ -102,13 +102,13 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IVMAppsDiscovered[] AppsDiscovered { get; set; }
         /// <summary>timestamp(in unix) for the last backup job completed</summary>
-        int? BackupCompletionDate { get; set; }
+        long? BackupCompletionDate { get; set; }
         /// <summary>job id of the last backup job that was validated</summary>
-        int? BackupValidated { get; set; }
+        long? BackupValidated { get; set; }
         /// <summary>true if backup validation is set</summary>
         bool? BootStatus { get; set; }
         /// <summary>job id of the last backup validation job</summary>
-        int? LastValidationJobId { get; set; }
+        long? LastValidationJobId { get; set; }
 
     }
 }

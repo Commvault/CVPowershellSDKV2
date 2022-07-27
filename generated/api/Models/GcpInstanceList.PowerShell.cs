@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Error = (Commvault.Powershell.Models.IGenericResp) content.GetValueForProperty("Error",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Error, Commvault.Powershell.Models.GenericRespTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Instances = (Commvault.Powershell.Models.IGcpInstances[]) content.GetValueForProperty("Instances",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Instances, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IGcpInstances>(__y, Commvault.Powershell.Models.GcpInstancesTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -117,7 +117,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Error = (Commvault.Powershell.Models.IGenericResp) content.GetValueForProperty("Error",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Error, Commvault.Powershell.Models.GenericRespTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Instances = (Commvault.Powershell.Models.IGcpInstances[]) content.GetValueForProperty("Instances",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).Instances, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IGcpInstances>(__y, Commvault.Powershell.Models.GcpInstancesTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorMessage, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IGcpInstanceListInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

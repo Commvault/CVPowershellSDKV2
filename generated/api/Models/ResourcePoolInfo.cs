@@ -26,7 +26,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName ResourcePool { get => (this._resourcePool = this._resourcePool ?? new Commvault.Powershell.Models.IdName()); set => this._resourcePool = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ResourcePoolId { get => ((Commvault.Powershell.Models.IIdNameInternal)ResourcePool).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ResourcePool).Id = value ?? default(int); }
+        public long? ResourcePoolId { get => ((Commvault.Powershell.Models.IIdNameInternal)ResourcePool).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ResourcePool).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ResourcePoolName { get => ((Commvault.Powershell.Models.IIdNameInternal)ResourcePool).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ResourcePool).Name = value ?? null; }
@@ -53,8 +53,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ResourcePoolId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ResourcePoolId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName ResourcePool { get; set; }
 
-        int? ResourcePoolId { get; set; }
+        long? ResourcePoolId { get; set; }
 
         string ResourcePoolName { get; set; }
 

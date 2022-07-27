@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers = (int?) content.GetValueForProperty("NumberOfUsers",((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers = (long?) content.GetValueForProperty("NumberOfUsers",((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUserListRespInternal)this).Users = (Commvault.Powershell.Models.IUserSummary[]) content.GetValueForProperty("Users",((Commvault.Powershell.Models.IUserListRespInternal)this).Users, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IUserSummary>(__y, Commvault.Powershell.Models.UserSummaryTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -117,7 +117,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers = (int?) content.GetValueForProperty("NumberOfUsers",((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers = (long?) content.GetValueForProperty("NumberOfUsers",((Commvault.Powershell.Models.IUserListRespInternal)this).NumberOfUsers, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUserListRespInternal)this).Users = (Commvault.Powershell.Models.IUserSummary[]) content.GetValueForProperty("Users",((Commvault.Powershell.Models.IUserListRespInternal)this).Users, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IUserSummary>(__y, Commvault.Powershell.Models.UserSummaryTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

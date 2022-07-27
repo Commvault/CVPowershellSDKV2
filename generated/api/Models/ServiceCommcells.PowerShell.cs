@@ -94,14 +94,14 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatus = (Commvault.Powershell.Models.ISyncStatus1) content.GetValueForProperty("SyncStatus",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatus, Commvault.Powershell.Models.SyncStatus1TypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Hostname = (string) content.GetValueForProperty("Hostname",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Hostname, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Role = (string) content.GetValueForProperty("Role",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Role, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).UseUniversalCommandCenter = (bool?) content.GetValueForProperty("UseUniversalCommandCenter",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).UseUniversalCommandCenter, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusErrorMessage = (Commvault.Powershell.Models.INameMessage[]) content.GetValueForProperty("SyncStatusErrorMessage",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusErrorMessage, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.INameMessage>(__y, Commvault.Powershell.Models.NameMessageTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusStatus = (string) content.GetValueForProperty("SyncStatusStatus",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusStatus, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp = (int?) content.GetValueForProperty("SyncStatusLastSyncedWithIdp",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp = (long?) content.GetValueForProperty("SyncStatusLastSyncedWithIdp",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -120,14 +120,14 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatus = (Commvault.Powershell.Models.ISyncStatus1) content.GetValueForProperty("SyncStatus",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatus, Commvault.Powershell.Models.SyncStatus1TypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Hostname = (string) content.GetValueForProperty("Hostname",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Hostname, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Role = (string) content.GetValueForProperty("Role",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).Role, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).UseUniversalCommandCenter = (bool?) content.GetValueForProperty("UseUniversalCommandCenter",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).UseUniversalCommandCenter, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusErrorMessage = (Commvault.Powershell.Models.INameMessage[]) content.GetValueForProperty("SyncStatusErrorMessage",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusErrorMessage, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.INameMessage>(__y, Commvault.Powershell.Models.NameMessageTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusStatus = (string) content.GetValueForProperty("SyncStatusStatus",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusStatus, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp = (int?) content.GetValueForProperty("SyncStatusLastSyncedWithIdp",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp = (long?) content.GetValueForProperty("SyncStatusLastSyncedWithIdp",((Commvault.Powershell.Models.IServiceCommcellsInternal)this).SyncStatusLastSyncedWithIdp, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

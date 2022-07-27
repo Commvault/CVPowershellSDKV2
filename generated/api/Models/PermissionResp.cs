@@ -16,10 +16,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="CategoryId" /> property.</summary>
-        private int? _categoryId;
+        private long? _categoryId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CategoryId { get => this._categoryId; set => this._categoryId = value; }
+        public long? CategoryId { get => this._categoryId; set => this._categoryId = value; }
 
         /// <summary>Backing field for <see cref="CategoryName" /> property.</summary>
         private string _categoryName;
@@ -28,10 +28,10 @@ namespace Commvault.Powershell.Models
         public string CategoryName { get => this._categoryName; set => this._categoryName = value; }
 
         /// <summary>Backing field for <see cref="PermissionId" /> property.</summary>
-        private int? _permissionId;
+        private long? _permissionId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? PermissionId { get => this._permissionId; set => this._permissionId = value; }
+        public long? PermissionId { get => this._permissionId; set => this._permissionId = value; }
 
         /// <summary>Backing field for <see cref="PermissionName" /> property.</summary>
         private string _permissionName;
@@ -63,8 +63,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"categoryId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CategoryId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CategoryId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -79,8 +79,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"permissionId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PermissionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PermissionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -105,11 +105,11 @@ namespace Commvault.Powershell.Models
     internal partial interface IPermissionRespInternal
 
     {
-        int? CategoryId { get; set; }
+        long? CategoryId { get; set; }
 
         string CategoryName { get; set; }
 
-        int? PermissionId { get; set; }
+        long? PermissionId { get; set; }
 
         string PermissionName { get; set; }
         /// <summary>Returns the type of association.</summary>

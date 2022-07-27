@@ -19,7 +19,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>id of the category of the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CategoryId { get => ((Commvault.Powershell.Models.IAlertCategoryIdName1Internal)Category).Id; set => ((Commvault.Powershell.Models.IAlertCategoryIdName1Internal)Category).Id = value ?? default(int); }
+        public long? CategoryId { get => ((Commvault.Powershell.Models.IAlertCategoryIdName1Internal)Category).Id; set => ((Commvault.Powershell.Models.IAlertCategoryIdName1Internal)Category).Id = value ?? default(long); }
 
         /// <summary>category of the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -42,7 +42,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>id of the criteria of detection for the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CriterionId { get => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).Id; set => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).Id = value ?? default(int); }
+        public long? CriterionId { get => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).Id; set => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).Id = value ?? default(long); }
 
         /// <summary>criteria of detection for the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>id of the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TypeId { get => ((Commvault.Powershell.Models.IAlertTypeIdName1Internal)Type).Id; set => ((Commvault.Powershell.Models.IAlertTypeIdName1Internal)Type).Id = value ?? default(int); }
+        public long? TypeId { get => ((Commvault.Powershell.Models.IAlertTypeIdName1Internal)Type).Id; set => ((Commvault.Powershell.Models.IAlertTypeIdName1Internal)Type).Id = value ?? default(long); }
 
         /// <summary>type of the alert definitions</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -78,8 +78,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the category of the alert definition",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CategoryId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CategoryId { get; set; }
         /// <summary>category of the alert definition</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the criteria of detection for the alert definition",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CriterionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CriterionId { get; set; }
         /// <summary>criteria of detection for the alert definition</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -110,8 +110,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the alert definition",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TypeId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TypeId { get; set; }
         /// <summary>type of the alert definitions</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -128,19 +128,19 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IAlertCategoryIdName1 Category { get; set; }
         /// <summary>id of the category of the alert definition</summary>
-        int? CategoryId { get; set; }
+        long? CategoryId { get; set; }
         /// <summary>category of the alert definition</summary>
         string CategoryName { get; set; }
 
         Commvault.Powershell.Models.IAlertCriteriaIdName1 Criteria { get; set; }
         /// <summary>id of the criteria of detection for the alert definition</summary>
-        int? CriterionId { get; set; }
+        long? CriterionId { get; set; }
         /// <summary>criteria of detection for the alert definition</summary>
         string CriterionName { get; set; }
 
         Commvault.Powershell.Models.IAlertTypeIdName1 Type { get; set; }
         /// <summary>id of the alert definition</summary>
-        int? TypeId { get; set; }
+        long? TypeId { get; set; }
         /// <summary>type of the alert definitions</summary>
         string TypeName { get; set; }
 

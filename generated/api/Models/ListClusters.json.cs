@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_clusterCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clusterCount"), out var __jsonClusterCount) ? (int?)__jsonClusterCount : ClusterCount;}
+            {_clusterCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clusterCount"), out var __jsonClusterCount) ? (long?)__jsonClusterCount : ClusterCount;}
             {_clusters = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("clusters"), out var __jsonClusters) ? If( __jsonClusters as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IClusterListResp[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IClusterListResp) (Commvault.Powershell.Models.ClusterListResp.FromJson(__u) )) ))() : null : Clusters;}
             AfterFromJson(json);
         }
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._clusterCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._clusterCount) : null, "clusterCount" ,container.Add );
+            AddIf( null != this._clusterCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._clusterCount) : null, "clusterCount" ,container.Add );
             if (null != this._clusters)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

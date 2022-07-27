@@ -94,7 +94,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).EnableBackupCopy = (bool?) content.GetValueForProperty("EnableBackupCopy",((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).EnableBackupCopy, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (int?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (long?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).EnableBackupCopy = (bool?) content.GetValueForProperty("EnableBackupCopy",((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).EnableBackupCopy, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (int?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins = (long?) content.GetValueForProperty("BackupCopyRpoMins",((Commvault.Powershell.Models.IPlanSnapshotOptionsInternal)this).BackupCopyRpoMins, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

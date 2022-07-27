@@ -37,7 +37,7 @@ namespace Commvault.Powershell.Cmdlets
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
         /// <summary>Backing field for <see cref="AgentId" /> property.</summary>
-        private int _agentId;
+        private long _agentId;
 
         /// <summary>Id of the agent to be modified</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the agent to be modified")]
@@ -46,9 +46,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the agent to be modified",
         SerializedName = @"agentId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int AgentId { get => this._agentId; set => this._agentId = value; }
+        public long AgentId { get => this._agentId; set => this._agentId = value; }
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="ServerId" /> property.</summary>
-        private int _serverId;
+        private long _serverId;
 
         /// <summary>Id of the server to modify</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the server to modify")]
@@ -119,9 +119,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the server to modify",
         SerializedName = @"serverId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int ServerId { get => this._serverId; set => this._serverId = value; }
+        public long ServerId { get => this._serverId; set => this._serverId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing

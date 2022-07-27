@@ -7,7 +7,7 @@ namespace Commvault.Powershell.Cmdlets
 
     /// <summary>Get the details of all vmGroup</summary>
     /// <remarks>
-    /// [OpenAPI] GetAllVMGroups=>GET:"/V4/VMGroup"
+    /// [OpenAPI] GetAllVMGroups=>GET:"/V4/VMGroups"
     /// </remarks>
     [global::System.Management.Automation.Cmdlet(global::System.Management.Automation.VerbsCommon.Get, @"VMGroup_Get")]
     [global::System.Management.Automation.OutputType(typeof(Commvault.Powershell.Models.IVMGroupSummary), typeof(Commvault.Powershell.Models.IGenericResp))]
@@ -45,7 +45,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="HypervisorId" /> property.</summary>
-        private int _hypervisorId;
+        private long _hypervisorId;
 
         /// <summary>Id of the hypervisor to list vm groups</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Id of the hypervisor to list vm groups")]
@@ -54,9 +54,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the hypervisor to list vm groups",
         SerializedName = @"hypervisorId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
+        public long HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }
@@ -106,12 +106,12 @@ namespace Commvault.Powershell.Cmdlets
         /// on that response. Implement this method in a partial class to enable this behavior
         /// </summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Commvault.Powershell.Models.IPaths1Oy9W65V4VmgroupGetResponses200ContentApplicationJsonSchema"
+        /// <param name="response">the body result as a <see cref="Commvault.Powershell.Models.IPathsK929ZxV4VmgroupsGetResponses200ContentApplicationJsonSchema"
         /// /> from the remote call</param>
         /// <param name="returnNow">/// Determines if the rest of the onOk method should be processed, or if the method should return
         /// immediately (set to true to skip further processing )</param>
 
-        partial void overrideOnOk(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Commvault.Powershell.Models.IPaths1Oy9W65V4VmgroupGetResponses200ContentApplicationJsonSchema> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
+        partial void overrideOnOk(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Commvault.Powershell.Models.IPathsK929ZxV4VmgroupsGetResponses200ContentApplicationJsonSchema> response, ref global::System.Threading.Tasks.Task<bool> returnNow);
 
         /// <summary>
         /// (overrides the default BeginProcessing method in global::System.Management.Automation.PSCmdlet)
@@ -249,12 +249,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetAllVMGroups(this.InvocationInformation.BoundParameters.ContainsKey("HypervisorId") ? HypervisorId : default(int?), onOk, onNotFound, this, Pipeline);
+                    await this.Client.GetAllVMGroups(this.InvocationInformation.BoundParameters.ContainsKey("HypervisorId") ? HypervisorId : default(long?), onOk, onNotFound, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  HypervisorId=this.InvocationInformation.BoundParameters.ContainsKey("HypervisorId") ? HypervisorId : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  HypervisorId=this.InvocationInformation.BoundParameters.ContainsKey("HypervisorId") ? HypervisorId : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });
@@ -300,12 +300,12 @@ namespace Commvault.Powershell.Cmdlets
 
         /// <summary>a delegate that is called when the remote service returns 200 (OK).</summary>
         /// <param name="responseMessage">the raw response message as an global::System.Net.Http.HttpResponseMessage.</param>
-        /// <param name="response">the body result as a <see cref="Commvault.Powershell.Models.IPaths1Oy9W65V4VmgroupGetResponses200ContentApplicationJsonSchema"
+        /// <param name="response">the body result as a <see cref="Commvault.Powershell.Models.IPathsK929ZxV4VmgroupsGetResponses200ContentApplicationJsonSchema"
         /// /> from the remote call</param>
         /// <returns>
         /// A <see cref="global::System.Threading.Tasks.Task" /> that will be complete when handling of the method is completed.
         /// </returns>
-        private async global::System.Threading.Tasks.Task onOk(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Commvault.Powershell.Models.IPaths1Oy9W65V4VmgroupGetResponses200ContentApplicationJsonSchema> response)
+        private async global::System.Threading.Tasks.Task onOk(global::System.Net.Http.HttpResponseMessage responseMessage, global::System.Threading.Tasks.Task<Commvault.Powershell.Models.IPathsK929ZxV4VmgroupsGetResponses200ContentApplicationJsonSchema> response)
         {
             using( NoSynchronizationContext )
             {

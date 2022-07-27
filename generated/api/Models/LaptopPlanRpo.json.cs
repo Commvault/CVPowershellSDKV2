@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.SlaOptions.FromJson(__jsonSla) : Sla;}
-            {_backupFrequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupFrequency"), out var __jsonBackupFrequency) ? (int?)__jsonBackupFrequency : BackupFrequency;}
+            {_backupFrequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupFrequency"), out var __jsonBackupFrequency) ? (long?)__jsonBackupFrequency : BackupFrequency;}
             AfterFromJson(json);
         }
 
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._sla ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sla.ToJson(null,serializationMode) : null, "SLA" ,container.Add );
-            AddIf( null != this._backupFrequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._backupFrequency) : null, "backupFrequency" ,container.Add );
+            AddIf( null != this._backupFrequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupFrequency) : null, "backupFrequency" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

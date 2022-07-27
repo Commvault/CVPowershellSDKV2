@@ -34,11 +34,11 @@ namespace Commvault.Powershell.Models
         public string Email { get => this._email; set => this._email = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>id of the laptop</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="LastBackupJobInfo" /> property.</summary>
         private Commvault.Powershell.Models.ILastBackupJobInfo _lastBackupJobInfo;
@@ -52,7 +52,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Returns the job id of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LastBackupJobInfoJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackupJobInfo).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackupJobInfo).JobId = value ?? default(int); }
+        public long? LastBackupJobInfoJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackupJobInfo).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackupJobInfo).JobId = value ?? default(long); }
 
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -65,11 +65,11 @@ namespace Commvault.Powershell.Models
         public long? LastBackupJobInfoTime { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackupJobInfo).Time; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackupJobInfo).Time = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="LastSuccessfulBackup" /> property.</summary>
-        private int? _lastSuccessfulBackup;
+        private long? _lastSuccessfulBackup;
 
         /// <summary>time (in unix timestamp) for the last successful backup</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LastSuccessfulBackup { get => this._lastSuccessfulBackup; set => this._lastSuccessfulBackup = value; }
+        public long? LastSuccessfulBackup { get => this._lastSuccessfulBackup; set => this._lastSuccessfulBackup = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -124,11 +124,11 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdNameType[] Tags { get => this._tags; set => this._tags = value; }
 
         /// <summary>Backing field for <see cref="TotalBackupSize" /> property.</summary>
-        private int? _totalBackupSize;
+        private long? _totalBackupSize;
 
         /// <summary>application size (in bytes) for the laptop</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TotalBackupSize { get => this._totalBackupSize; set => this._totalBackupSize = value; }
+        public long? TotalBackupSize { get => this._totalBackupSize; set => this._totalBackupSize = value; }
 
         /// <summary>Backing field for <see cref="Username" /> property.</summary>
         private string _username;
@@ -168,8 +168,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the laptop",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Gives the reason for the last backup job failing, if the last backup job fails.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -184,8 +184,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Returns the job id of the last backup job performed.",
         SerializedName = @"jobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupJobInfoJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupJobInfoJobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -210,8 +210,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"time (in unix timestamp) for the last successful backup",
         SerializedName = @"lastSuccessfulBackup",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastSuccessfulBackup { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastSuccessfulBackup { get; set; }
         /// <summary>name of the laptop</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -234,8 +234,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -282,8 +282,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"application size (in bytes) for the laptop",
         SerializedName = @"totalBackupSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TotalBackupSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TotalBackupSize { get; set; }
         /// <summary>comma seperated value for username of the laptop</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -302,13 +302,13 @@ namespace Commvault.Powershell.Models
         /// <summary>comma seperated value for email of the laptop</summary>
         string Email { get; set; }
         /// <summary>id of the laptop</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         Commvault.Powershell.Models.ILastBackupJobInfo LastBackupJobInfo { get; set; }
         /// <summary>Gives the reason for the last backup job failing, if the last backup job fails.</summary>
         string LastBackupJobInfoFailureReason { get; set; }
         /// <summary>Returns the job id of the last backup job performed.</summary>
-        int? LastBackupJobInfoJobId { get; set; }
+        long? LastBackupJobInfoJobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         string LastBackupJobInfoStatus { get; set; }
         /// <summary>
@@ -316,7 +316,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         long? LastBackupJobInfoTime { get; set; }
         /// <summary>time (in unix timestamp) for the last successful backup</summary>
-        int? LastSuccessfulBackup { get; set; }
+        long? LastSuccessfulBackup { get; set; }
         /// <summary>name of the laptop</summary>
         string Name { get; set; }
 
@@ -324,7 +324,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
 
@@ -338,7 +338,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdNameType[] Tags { get; set; }
         /// <summary>application size (in bytes) for the laptop</summary>
-        int? TotalBackupSize { get; set; }
+        long? TotalBackupSize { get; set; }
         /// <summary>comma seperated value for username of the laptop</summary>
         string Username { get; set; }
 

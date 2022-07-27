@@ -48,7 +48,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }
 
         /// <summary>Backing field for <see cref="KmsId" /> property.</summary>
-        private int _kmsId;
+        private long _kmsId;
 
         /// <summary>Id of Key Management Server</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of Key Management Server")]
@@ -57,9 +57,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of Key Management Server",
         SerializedName = @"kmsId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int KmsId { get => this._kmsId; set => this._kmsId = value; }
+        public long KmsId { get => this._kmsId; set => this._kmsId = value; }
 
         /// <summary>
         /// <see cref="IEventListener" /> cancellation delegate. Stops the cmdlet when called.

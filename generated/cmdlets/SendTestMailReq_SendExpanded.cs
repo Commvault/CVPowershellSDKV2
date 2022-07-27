@@ -143,8 +143,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"The port number that connects to the mail server.",
         SerializedName = @"SMTPPort",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SmtpPort { get => Body.SmtpPort; set => Body.SmtpPort = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SmtpPort { get => Body.SmtpPort; set => Body.SmtpPort = value; }
 
         /// <summary>
         /// The name of the mail server that sends alerts, scheduled reports, log files, and additional information.

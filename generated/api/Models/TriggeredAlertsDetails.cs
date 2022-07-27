@@ -33,11 +33,11 @@ namespace Commvault.Powershell.Models
         public string DetectedCriteria { get => this._detectedCriteria; set => this._detectedCriteria = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>id of the triggered alert</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Severity" /> property.</summary>
         private string _severity;
@@ -86,8 +86,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the triggered alert",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Alert Severity Level</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -109,7 +109,7 @@ namespace Commvault.Powershell.Models
         /// <summary>detection criteria for the triggered alert to be generated</summary>
         string DetectedCriteria { get; set; }
         /// <summary>id of the triggered alert</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Alert Severity Level</summary>
         string Severity { get; set; }
 

@@ -34,13 +34,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.ICredentialOwner Owner { get => (this._owner = this._owner ?? new Commvault.Powershell.Models.CredentialOwner()); set => this._owner = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserGroupId { get => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserGroupId; set => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserGroupId = value ?? default(int); }
+        public long? UserGroupId { get => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserGroupId; set => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserGroupId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserGroupName { get => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserGroupName; set => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserGroupName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserId { get => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserId; set => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserId = value ?? default(int); }
+        public long? UserId { get => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserId; set => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserName { get => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserName; set => ((Commvault.Powershell.Models.ICredentialOwnerInternal)Owner).UserName = value ?? null; }
@@ -68,8 +68,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -84,8 +84,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -108,11 +108,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName OwnerUserGroup { get; set; }
 
-        int? UserGroupId { get; set; }
+        long? UserGroupId { get; set; }
 
         string UserGroupName { get; set; }
 
-        int? UserId { get; set; }
+        long? UserId { get; set; }
 
         string UserName { get; set; }
 

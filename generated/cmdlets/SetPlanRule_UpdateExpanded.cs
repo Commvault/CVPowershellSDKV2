@@ -81,8 +81,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int PlanId { get => Body.PlanId ?? default(int); set => Body.PlanId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long PlanId { get => Body.PlanId ?? default(long); set => Body.PlanId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -119,8 +119,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"[Optional] - This field will suggest rank/priority of rule.",
         SerializedName = @"rank",
-        PossibleTypes = new [] { typeof(int) })]
-        public int Rank { get => Body.Rank ?? default(int); set => Body.Rank = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long Rank { get => Body.Rank ?? default(long); set => Body.Rank = value; }
 
         /// <summary>
         /// This will include list of regions that should be evaluated against workload region for plan association.
@@ -144,8 +144,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RuleId { get => Body.RuleId ?? default(int); set => Body.RuleId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RuleId { get => Body.RuleId ?? default(long); set => Body.RuleId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]

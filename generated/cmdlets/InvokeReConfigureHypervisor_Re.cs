@@ -45,7 +45,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="HypervisorId" /> property.</summary>
-        private int _hypervisorId;
+        private long _hypervisorId;
 
         /// <summary>Hypervisor client ID to reconfigure</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Hypervisor client ID to reconfigure")]
@@ -54,9 +54,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Hypervisor client ID to reconfigure",
         SerializedName = @"hypervisorId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
+        public long HypervisorId { get => this._hypervisorId; set => this._hypervisorId = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }

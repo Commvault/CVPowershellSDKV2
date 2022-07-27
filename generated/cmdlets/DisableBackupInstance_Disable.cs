@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="EnableAfterADelay" /> property.</summary>
-        private int _enableAfterADelay;
+        private long _enableAfterADelay;
 
         /// <summary>Provide UTC time in unix format.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Provide UTC time in unix format.")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Provide UTC time in unix format.",
         SerializedName = @"enableAfterADelay",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
+        public long EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -59,7 +59,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.Runtime.SendAsyncStep[] HttpPipelinePrepend { get; set; }
 
         /// <summary>Backing field for <see cref="InstanceId" /> property.</summary>
-        private int _instanceId;
+        private long _instanceId;
 
         /// <summary>Id of the instance to modify</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the instance to modify")]
@@ -68,9 +68,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the instance to modify",
         SerializedName = @"instanceId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int InstanceId { get => this._instanceId; set => this._instanceId = value; }
+        public long InstanceId { get => this._instanceId; set => this._instanceId = value; }
 
         /// <summary>Accessor for our copy of the InvocationInfo.</summary>
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }
@@ -256,12 +256,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.DisableBackupInstance(InstanceId, this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?), onOk, this, Pipeline);
+                    await this.Client.DisableBackupInstance(InstanceId, this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?), onOk, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  InstanceId=InstanceId,EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  InstanceId=InstanceId,EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

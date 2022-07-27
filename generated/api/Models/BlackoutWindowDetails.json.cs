@@ -64,8 +64,8 @@ namespace Commvault.Powershell.Models
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_doNotRunJob = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("doNotRunJob"), out var __jsonDoNotRunJob) ? If( __jsonDoNotRunJob as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IDoNotRunJobDetails[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IDoNotRunJobDetails) (Commvault.Powershell.Models.DoNotRunJobDetails.FromJson(__u) )) ))() : null : DoNotRunJob;}
             {_betweenDates = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("betweenDates"), out var __jsonBetweenDates) ? (bool?)__jsonBetweenDates : BetweenDates;}
-            {_startDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startDate"), out var __jsonStartDate) ? (int?)__jsonStartDate : StartDate;}
-            {_endDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("endDate"), out var __jsonEndDate) ? (int?)__jsonEndDate : EndDate;}
+            {_startDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("startDate"), out var __jsonStartDate) ? (long?)__jsonStartDate : StartDate;}
+            {_endDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("endDate"), out var __jsonEndDate) ? (long?)__jsonEndDate : EndDate;}
             {_doNotSubmitJob = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("doNotSubmitJob"), out var __jsonDoNotSubmitJob) ? (bool?)__jsonDoNotSubmitJob : DoNotSubmitJob;}
             AfterFromJson(json);
         }
@@ -111,8 +111,8 @@ namespace Commvault.Powershell.Models
                 container.Add("doNotRunJob",__w);
             }
             AddIf( null != this._betweenDates ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._betweenDates) : null, "betweenDates" ,container.Add );
-            AddIf( null != this._startDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._startDate) : null, "startDate" ,container.Add );
-            AddIf( null != this._endDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._endDate) : null, "endDate" ,container.Add );
+            AddIf( null != this._startDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._startDate) : null, "startDate" ,container.Add );
+            AddIf( null != this._endDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._endDate) : null, "endDate" ,container.Add );
             AddIf( null != this._doNotSubmitJob ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._doNotSubmitJob) : null, "doNotSubmitJob" ,container.Add );
             AfterToJson(ref container);
             return container;

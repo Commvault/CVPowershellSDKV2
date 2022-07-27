@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="CommCellId" /> property.</summary>
-        private int? _commCellId;
+        private long? _commCellId;
 
         /// <summary>ID of the registered CommCell</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CommCellId { get => this._commCellId; set => this._commCellId = value; }
+        public long? CommCellId { get => this._commCellId; set => this._commCellId = value; }
 
         /// <summary>Backing field for <see cref="CommServeIPAddress" /> property.</summary>
         private string _commServeIPAddress;
@@ -33,11 +33,11 @@ namespace Commvault.Powershell.Models
         public string Edition { get => this._edition; set => this._edition = value; }
 
         /// <summary>Backing field for <see cref="ExpiryDate" /> property.</summary>
-        private int? _expiryDate;
+        private long? _expiryDate;
 
         /// <summary>Expiry date of current license in epoch format</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ExpiryDate { get => this._expiryDate; set => this._expiryDate = value; }
+        public long? ExpiryDate { get => this._expiryDate; set => this._expiryDate = value; }
 
         /// <summary>Backing field for <see cref="LicenseIPAddress" /> property.</summary>
         private string _licenseIPAddress;
@@ -83,8 +83,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"ID of the registered CommCell",
         SerializedName = @"commCellId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CommCellId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CommCellId { get; set; }
         /// <summary>IP Address of CommServe</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -107,8 +107,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Expiry date of current license in epoch format",
         SerializedName = @"expiryDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExpiryDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExpiryDate { get; set; }
         /// <summary>IP Address of License</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -148,13 +148,13 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>ID of the registered CommCell</summary>
-        int? CommCellId { get; set; }
+        long? CommCellId { get; set; }
         /// <summary>IP Address of CommServe</summary>
         string CommServeIPAddress { get; set; }
         /// <summary>The license is for this software product</summary>
         string Edition { get; set; }
         /// <summary>Expiry date of current license in epoch format</summary>
-        int? ExpiryDate { get; set; }
+        long? ExpiryDate { get; set; }
         /// <summary>IP Address of License</summary>
         string LicenseIPAddress { get; set; }
         /// <summary>This license is intended for the specified usage scenario</summary>

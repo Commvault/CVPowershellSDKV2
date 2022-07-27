@@ -61,9 +61,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_providerId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("providerId"), out var __jsonProviderId) ? (int?)__jsonProviderId : ProviderId;}
+            {_providerId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("providerId"), out var __jsonProviderId) ? (long?)__jsonProviderId : ProviderId;}
             {_providerName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("providerName"), out var __jsonProviderName) ? (string)__jsonProviderName : (string)ProviderName;}
             AfterFromJson(json);
         }
@@ -97,9 +97,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
-            AddIf( null != this._providerId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._providerId) : null, "providerId" ,container.Add );
+            AddIf( null != this._providerId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._providerId) : null, "providerId" ,container.Add );
             AddIf( null != (((object)this._providerName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._providerName.ToString()) : null, "providerName" ,container.Add );
             AfterToJson(ref container);
             return container;

@@ -11,13 +11,13 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="BackupFrequency" /> property.</summary>
-        private int? _backupFrequency;
+        private long? _backupFrequency;
 
         /// <summary>
         /// Specify incremental backup frequency in minutes. Backup operation will start as per the time zone of the associated server.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupFrequency { get => this._backupFrequency; set => this._backupFrequency = value; }
+        public long? BackupFrequency { get => this._backupFrequency; set => this._backupFrequency = value; }
 
         /// <summary>Internal Acessors for Sla</summary>
         Commvault.Powershell.Models.ISlaUpdateOptions Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal.Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaUpdateOptions()); set { {_sla = value;} } }
@@ -34,7 +34,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay = value ?? default(int); }
+        public long? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).EnableAfterDelay = value ?? default(long); }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -46,7 +46,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod = value ?? default(int); }
+        public long? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod = value ?? default(long); }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -69,16 +69,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specify incremental backup frequency in minutes. Backup operation will start as per the time zone of the associated server.",
         SerializedName = @"backupFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequency { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaEnableAfterDelay { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -101,8 +101,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -119,20 +119,20 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Specify incremental backup frequency in minutes. Backup operation will start as per the time zone of the associated server.
         /// </summary>
-        int? BackupFrequency { get; set; }
+        long? BackupFrequency { get; set; }
         /// <summary>
         /// A server meets SLA (Service Level Agreement) when all of its subclients have at least one successful backup during the
         /// number of days specified at the CommCell, Server Group or plan level.
         /// </summary>
         Commvault.Powershell.Models.ISlaUpdateOptions Sla { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        int? SlaEnableAfterDelay { get; set; }
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         bool? SlaExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
         string SlaExclusionReason { get; set; }
         /// <summary>SLA Period in Days</summary>
-        int? SlaPeriod { get; set; }
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? SlaUseSystemDefaultSla { get; set; }
 

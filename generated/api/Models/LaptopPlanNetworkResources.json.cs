@@ -70,8 +70,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_throttleSend = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("throttleSend"), out var __jsonThrottleSend) ? (int?)__jsonThrottleSend : ThrottleSend;}
-            {_throttleReceive = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("throttleReceive"), out var __jsonThrottleReceive) ? (int?)__jsonThrottleReceive : ThrottleReceive;}
+            {_throttleSend = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("throttleSend"), out var __jsonThrottleSend) ? (long?)__jsonThrottleSend : ThrottleSend;}
+            {_throttleReceive = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("throttleReceive"), out var __jsonThrottleReceive) ? (long?)__jsonThrottleReceive : ThrottleReceive;}
             AfterFromJson(json);
         }
 
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._throttleSend ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._throttleSend) : null, "throttleSend" ,container.Add );
-            AddIf( null != this._throttleReceive ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._throttleReceive) : null, "throttleReceive" ,container.Add );
+            AddIf( null != this._throttleSend ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._throttleSend) : null, "throttleSend" ,container.Add );
+            AddIf( null != this._throttleReceive ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._throttleReceive) : null, "throttleReceive" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

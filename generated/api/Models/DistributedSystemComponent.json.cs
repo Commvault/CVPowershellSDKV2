@@ -60,7 +60,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_applicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationId"), out var __jsonApplicationId) ? (int?)__jsonApplicationId : ApplicationId;}
+            {_applicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationId"), out var __jsonApplicationId) ? (long?)__jsonApplicationId : ApplicationId;}
             AfterFromJson(json);
         }
 
@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._applicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationId) : null, "applicationId" ,container.Add );
+            AddIf( null != this._applicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationId) : null, "applicationId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

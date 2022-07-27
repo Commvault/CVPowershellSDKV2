@@ -12,30 +12,30 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="AcrpInterval" /> property.</summary>
-        private int? _acrpInterval;
+        private long? _acrpInterval;
 
         /// <summary>
         /// Gives information about application consistent recovery point interval in seconds
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? AcrpInterval { get => this._acrpInterval; set => this._acrpInterval = value; }
+        public long? AcrpInterval { get => this._acrpInterval; set => this._acrpInterval = value; }
 
         /// <summary>Backing field for <see cref="CcrpInterval" /> property.</summary>
-        private int? _ccrpInterval;
+        private long? _ccrpInterval;
 
         /// <summary>Time interval between crash consistent recovery points in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CcrpInterval { get => this._ccrpInterval; set => this._ccrpInterval = value; }
+        public long? CcrpInterval { get => this._ccrpInterval; set => this._ccrpInterval = value; }
 
         /// <summary>Internal Acessors for RecoverypointStore</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IReplicationMonitorDetailRecoveryOptionsInternal.RecoverypointStore { get => (this._recoverypointStore = this._recoverypointStore ?? new Commvault.Powershell.Models.IdName()); set { {_recoverypointStore = value;} } }
 
         /// <summary>Backing field for <see cref="MergeRecoveryPointsOlderThan" /> property.</summary>
-        private int? _mergeRecoveryPointsOlderThan;
+        private long? _mergeRecoveryPointsOlderThan;
 
         /// <summary>Time which should be satisfied to merge recovery points in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? MergeRecoveryPointsOlderThan { get => this._mergeRecoveryPointsOlderThan; set => this._mergeRecoveryPointsOlderThan = value; }
+        public long? MergeRecoveryPointsOlderThan { get => this._mergeRecoveryPointsOlderThan; set => this._mergeRecoveryPointsOlderThan = value; }
 
         /// <summary>Backing field for <see cref="PruneAndMergeOffPeakOnly" /> property.</summary>
         private bool? _pruneAndMergeOffPeakOnly;
@@ -53,33 +53,33 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName RecoverypointStore { get => (this._recoverypointStore = this._recoverypointStore ?? new Commvault.Powershell.Models.IdName()); set => this._recoverypointStore = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoverypointStoreId { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoverypointStore).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoverypointStore).Id = value ?? default(int); }
+        public long? RecoverypointStoreId { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoverypointStore).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoverypointStore).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RecoverypointStoreName { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoverypointStore).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoverypointStore).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="RetainRecoveryPointsFor" /> property.</summary>
-        private int? _retainRecoveryPointsFor;
+        private long? _retainRecoveryPointsFor;
 
         /// <summary>Recovery points retention time in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RetainRecoveryPointsFor { get => this._retainRecoveryPointsFor; set => this._retainRecoveryPointsFor = value; }
+        public long? RetainRecoveryPointsFor { get => this._retainRecoveryPointsFor; set => this._retainRecoveryPointsFor = value; }
 
         /// <summary>Backing field for <see cref="RpIntervalAfterRetention" /> property.</summary>
-        private int? _rpIntervalAfterRetention;
+        private long? _rpIntervalAfterRetention;
 
         /// <summary>Recovery point interval at the end of retention time in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RpIntervalAfterRetention { get => this._rpIntervalAfterRetention; set => this._rpIntervalAfterRetention = value; }
+        public long? RpIntervalAfterRetention { get => this._rpIntervalAfterRetention; set => this._rpIntervalAfterRetention = value; }
 
         /// <summary>Backing field for <see cref="SwitchToLatestIfStoreOfflineFor" /> property.</summary>
-        private int? _switchToLatestIfStoreOfflineFor;
+        private long? _switchToLatestIfStoreOfflineFor;
 
         /// <summary>
         /// Gives information about switching to latest recovery point store to latest if it is offline for time in seconds
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SwitchToLatestIfStoreOfflineFor { get => this._switchToLatestIfStoreOfflineFor; set => this._switchToLatestIfStoreOfflineFor = value; }
+        public long? SwitchToLatestIfStoreOfflineFor { get => this._switchToLatestIfStoreOfflineFor; set => this._switchToLatestIfStoreOfflineFor = value; }
 
         /// <summary>Creates an new <see cref="ReplicationMonitorDetailRecoveryOptions" /> instance.</summary>
         public ReplicationMonitorDetailRecoveryOptions()
@@ -99,24 +99,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gives information about application consistent recovery point interval in seconds",
         SerializedName = @"ACRPInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AcrpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AcrpInterval { get; set; }
         /// <summary>Time interval between crash consistent recovery points in seconds</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Time interval between crash consistent recovery points in seconds",
         SerializedName = @"CCRPInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CcrpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CcrpInterval { get; set; }
         /// <summary>Time which should be satisfied to merge recovery points in seconds</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Time which should be satisfied to merge recovery points in seconds",
         SerializedName = @"mergeRecoveryPointsOlderThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? MergeRecoveryPointsOlderThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? MergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Boolean which determines Prune and Merge Recovery Points during off peak time only.
         /// </summary>
@@ -133,8 +133,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoverypointStoreId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoverypointStoreId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -149,16 +149,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Recovery points retention time in seconds",
         SerializedName = @"retainRecoveryPointsFor",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RetainRecoveryPointsFor { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetainRecoveryPointsFor { get; set; }
         /// <summary>Recovery point interval at the end of retention time in seconds</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Recovery point interval at the end of retention time in seconds",
         SerializedName = @"RPIntervalAfterRetention",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RpIntervalAfterRetention { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RpIntervalAfterRetention { get; set; }
         /// <summary>
         /// Gives information about switching to latest recovery point store to latest if it is offline for time in seconds
         /// </summary>
@@ -167,8 +167,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gives information about switching to  latest recovery point store to latest if it is offline for time  in seconds",
         SerializedName = @"switchToLatestIfStoreOfflineFor",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SwitchToLatestIfStoreOfflineFor { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SwitchToLatestIfStoreOfflineFor { get; set; }
 
     }
     /// Gives information about the recovery options for replication group
@@ -178,11 +178,11 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Gives information about application consistent recovery point interval in seconds
         /// </summary>
-        int? AcrpInterval { get; set; }
+        long? AcrpInterval { get; set; }
         /// <summary>Time interval between crash consistent recovery points in seconds</summary>
-        int? CcrpInterval { get; set; }
+        long? CcrpInterval { get; set; }
         /// <summary>Time which should be satisfied to merge recovery points in seconds</summary>
-        int? MergeRecoveryPointsOlderThan { get; set; }
+        long? MergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Boolean which determines Prune and Merge Recovery Points during off peak time only.
         /// </summary>
@@ -190,17 +190,17 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName RecoverypointStore { get; set; }
 
-        int? RecoverypointStoreId { get; set; }
+        long? RecoverypointStoreId { get; set; }
 
         string RecoverypointStoreName { get; set; }
         /// <summary>Recovery points retention time in seconds</summary>
-        int? RetainRecoveryPointsFor { get; set; }
+        long? RetainRecoveryPointsFor { get; set; }
         /// <summary>Recovery point interval at the end of retention time in seconds</summary>
-        int? RpIntervalAfterRetention { get; set; }
+        long? RpIntervalAfterRetention { get; set; }
         /// <summary>
         /// Gives information about switching to latest recovery point store to latest if it is offline for time in seconds
         /// </summary>
-        int? SwitchToLatestIfStoreOfflineFor { get; set; }
+        long? SwitchToLatestIfStoreOfflineFor { get; set; }
 
     }
 }

@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.ISolutionDetailInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ISolutionDetailInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISolutionDetailInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ISolutionDetailInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue = (int?) content.GetValueForProperty("CommandCenterStateValue",((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue = (long?) content.GetValueForProperty("CommandCenterStateValue",((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterState = (string) content.GetValueForProperty("CommandCenterState",((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterState, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.ISolutionDetailInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ISolutionDetailInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISolutionDetailInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ISolutionDetailInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue = (int?) content.GetValueForProperty("CommandCenterStateValue",((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue = (long?) content.GetValueForProperty("CommandCenterStateValue",((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterStateValue, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterState = (string) content.GetValueForProperty("CommandCenterState",((Commvault.Powershell.Models.ISolutionDetailInternal)this).CommandCenterState, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ApplicationId" /> property.</summary>
-        private int? _applicationId;
+        private long? _applicationId;
 
         /// <summary>Application id of the distributed system component</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationId { get => this._applicationId; set => this._applicationId = value; }
+        public long? ApplicationId { get => this._applicationId; set => this._applicationId = value; }
 
         /// <summary>Creates an new <see cref="DistributedSystemComponent" /> instance.</summary>
         public DistributedSystemComponent()
@@ -32,15 +32,15 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Application id of the distributed system component",
         SerializedName = @"applicationId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationId { get; set; }
 
     }
     internal partial interface IDistributedSystemComponentInternal
 
     {
         /// <summary>Application id of the distributed system component</summary>
-        int? ApplicationId { get; set; }
+        long? ApplicationId { get; set; }
 
     }
 }

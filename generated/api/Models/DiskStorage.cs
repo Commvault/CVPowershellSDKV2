@@ -69,11 +69,11 @@ namespace Commvault.Powershell.Models
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(int); }
+        public long? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(long); }
 
         /// <summary>User Group Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ExternalUserGroupId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupId = value ?? default(int); }
+        public long? ExternalUserGroupId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupId = value ?? default(long); }
 
         /// <summary>External Group Name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -81,7 +81,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Provider id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ExternalUserGroupProviderId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderId = value ?? default(int); }
+        public long? ExternalUserGroupProviderId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderId = value ?? default(long); }
 
         /// <summary>Provider Name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -95,33 +95,33 @@ namespace Commvault.Powershell.Models
 
         /// <summary>specifies the capacity of the storage pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralCapacity { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).Capacity; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).Capacity = value ?? default(int); }
+        public long? GeneralCapacity { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).Capacity; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).Capacity = value ?? default(long); }
 
         /// <summary>
         /// specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralDedupeSavingsPercent { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).DedupeSavingsPercent; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).DedupeSavingsPercent = value ?? default(int); }
+        public long? GeneralDedupeSavingsPercent { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).DedupeSavingsPercent; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).DedupeSavingsPercent = value ?? default(long); }
 
         /// <summary>specifies the available space on the storage pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralFreeSpace { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).FreeSpace; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).FreeSpace = value ?? default(int); }
+        public long? GeneralFreeSpace { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).FreeSpace; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).FreeSpace = value ?? default(long); }
 
         /// <summary>
         /// Size on disk refers to the actual amount of space being taken by the storage pool on the disk.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? GeneralSizeOnDisk { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).SizeOnDisk; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).SizeOnDisk = value ?? default(int); }
+        public long? GeneralSizeOnDisk { get => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).SizeOnDisk; set => ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)General).SizeOnDisk = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Id of the Disk Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(int); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string KeyProviderName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName = value ?? null; }
@@ -134,7 +134,7 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RoleId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleId = value ?? default(int); }
+        public long? RoleId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RoleName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleName = value ?? null; }
@@ -156,13 +156,13 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IPermissionResp[] SecurityPermissionList { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).PermissionList; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).PermissionList = value ?? null /* arrayOf */; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserGroupId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupId = value ?? default(int); }
+        public long? UserGroupId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserGroupName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserId = value ?? default(int); }
+        public long? UserId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserName = value ?? null; }
@@ -219,16 +219,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128 and 256. DES3 accepts only 192. GOST accepts only 256. ",
         SerializedName = @"keyLength",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EncryptionKeyLength { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EncryptionKeyLength { get; set; }
         /// <summary>User Group Id</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"User Group Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExternalUserGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExternalUserGroupId { get; set; }
         /// <summary>External Group Name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -243,8 +243,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Provider id",
         SerializedName = @"providerId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExternalUserGroupProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExternalUserGroupProviderId { get; set; }
         /// <summary>Provider Name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -259,8 +259,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"specifies the capacity of the storage pool",
         SerializedName = @"capacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralCapacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralCapacity { get; set; }
         /// <summary>
         /// specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.
         /// </summary>
@@ -269,16 +269,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.",
         SerializedName = @"dedupeSavingsPercent",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralDedupeSavingsPercent { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralDedupeSavingsPercent { get; set; }
         /// <summary>specifies the available space on the storage pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"specifies the available space on the storage pool",
         SerializedName = @"freeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralFreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralFreeSpace { get; set; }
         /// <summary>
         /// Size on disk refers to the actual amount of space being taken by the storage pool on the disk.
         /// </summary>
@@ -287,24 +287,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Size on disk refers to the actual amount of space being taken by the storage pool on the disk.",
         SerializedName = @"sizeOnDisk",
-        PossibleTypes = new [] { typeof(int) })]
-        int? GeneralSizeOnDisk { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? GeneralSizeOnDisk { get; set; }
         /// <summary>Id of the Disk Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Id of the Disk Storage Pool",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? KeyProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -327,8 +327,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RoleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RoleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -359,8 +359,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -375,8 +375,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -406,41 +406,41 @@ namespace Commvault.Powershell.Models
         /// Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
-        int? EncryptionKeyLength { get; set; }
+        long? EncryptionKeyLength { get; set; }
 
         Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get; set; }
         /// <summary>User Group Id</summary>
-        int? ExternalUserGroupId { get; set; }
+        long? ExternalUserGroupId { get; set; }
         /// <summary>External Group Name</summary>
         string ExternalUserGroupName { get; set; }
         /// <summary>Provider id</summary>
-        int? ExternalUserGroupProviderId { get; set; }
+        long? ExternalUserGroupProviderId { get; set; }
         /// <summary>Provider Name</summary>
         string ExternalUserGroupProviderName { get; set; }
 
         Commvault.Powershell.Models.IDiskStorageGeneralInfo General { get; set; }
         /// <summary>specifies the capacity of the storage pool</summary>
-        int? GeneralCapacity { get; set; }
+        long? GeneralCapacity { get; set; }
         /// <summary>
         /// specifies the savings that occurred due to deduplication. Only available for dedupe storage pools.
         /// </summary>
-        int? GeneralDedupeSavingsPercent { get; set; }
+        long? GeneralDedupeSavingsPercent { get; set; }
         /// <summary>specifies the available space on the storage pool</summary>
-        int? GeneralFreeSpace { get; set; }
+        long? GeneralFreeSpace { get; set; }
         /// <summary>
         /// Size on disk refers to the actual amount of space being taken by the storage pool on the disk.
         /// </summary>
-        int? GeneralSizeOnDisk { get; set; }
+        long? GeneralSizeOnDisk { get; set; }
         /// <summary>Id of the Disk Storage Pool</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
 
-        int? KeyProviderId { get; set; }
+        long? KeyProviderId { get; set; }
 
         string KeyProviderName { get; set; }
         /// <summary>Name of the Disk Storage Pool</summary>
         string Name { get; set; }
 
-        int? RoleId { get; set; }
+        long? RoleId { get; set; }
 
         string RoleName { get; set; }
         /// <summary>
@@ -461,11 +461,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName SecurityUserGroup { get; set; }
 
-        int? UserGroupId { get; set; }
+        long? UserGroupId { get; set; }
 
         string UserGroupName { get; set; }
 
-        int? UserId { get; set; }
+        long? UserId { get; set; }
 
         string UserName { get; set; }
 

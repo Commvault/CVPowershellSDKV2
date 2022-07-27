@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_smtpServerName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("SMTPServerName"), out var __jsonSmtpServerName) ? (string)__jsonSmtpServerName : (string)SmtpServerName;}
-            {_smtpPort = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SMTPPort"), out var __jsonSmtpPort) ? (int)__jsonSmtpPort : SmtpPort;}
+            {_smtpPort = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SMTPPort"), out var __jsonSmtpPort) ? (long)__jsonSmtpPort : SmtpPort;}
             {_senderEmail = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("senderEmail"), out var __jsonSenderEmail) ? (string)__jsonSenderEmail : (string)SenderEmail;}
             {_senderName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("senderName"), out var __jsonSenderName) ? (string)__jsonSenderName : (string)SenderName;}
             {_encryptionAlgorithm = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("encryptionAlgorithm"), out var __jsonEncryptionAlgorithm) ? (string)__jsonEncryptionAlgorithm : (string)EncryptionAlgorithm;}

@@ -66,14 +66,14 @@ namespace Commvault.Powershell.Models
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_commcell = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("commcell"), out var __jsonCommcell) ? Commvault.Powershell.Models.CommcellInfo.FromJson(__jsonCommcell) : Commcell;}
-            {_applicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationId"), out var __jsonApplicationId) ? (int?)__jsonApplicationId : ApplicationId;}
+            {_applicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationId"), out var __jsonApplicationId) ? (long?)__jsonApplicationId : ApplicationId;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_vendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vendor"), out var __jsonVendor) ? (string)__jsonVendor : (string)Vendor;}
             {_databaseEngine = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("databaseEngine"), out var __jsonDatabaseEngine) ? (string)__jsonDatabaseEngine : (string)DatabaseEngine;}
             {_recoveryModel = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("recoveryModel"), out var __jsonRecoveryModel) ? (string)__jsonRecoveryModel : (string)RecoveryModel;}
             {_slaStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("SLAStatus"), out var __jsonSlaStatus) ? (string)__jsonSlaStatus : (string)SlaStatus;}
-            {_lastBackupSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupSize"), out var __jsonLastBackupSize) ? (int?)__jsonLastBackupSize : LastBackupSize;}
-            {_lastBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupTime"), out var __jsonLastBackupTime) ? (int?)__jsonLastBackupTime : LastBackupTime;}
+            {_lastBackupSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupSize"), out var __jsonLastBackupSize) ? (long?)__jsonLastBackupSize : LastBackupSize;}
+            {_lastBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupTime"), out var __jsonLastBackupTime) ? (long?)__jsonLastBackupTime : LastBackupTime;}
             AfterFromJson(json);
         }
 
@@ -111,14 +111,14 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != this._commcell ? (Commvault.Powershell.Runtime.Json.JsonNode) this._commcell.ToJson(null,serializationMode) : null, "commcell" ,container.Add );
-            AddIf( null != this._applicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationId) : null, "applicationId" ,container.Add );
+            AddIf( null != this._applicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationId) : null, "applicationId" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._vendor)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vendor.ToString()) : null, "vendor" ,container.Add );
             AddIf( null != (((object)this._databaseEngine)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._databaseEngine.ToString()) : null, "databaseEngine" ,container.Add );
             AddIf( null != (((object)this._recoveryModel)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._recoveryModel.ToString()) : null, "recoveryModel" ,container.Add );
             AddIf( null != (((object)this._slaStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._slaStatus.ToString()) : null, "SLAStatus" ,container.Add );
-            AddIf( null != this._lastBackupSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._lastBackupSize) : null, "lastBackupSize" ,container.Add );
-            AddIf( null != this._lastBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._lastBackupTime) : null, "lastBackupTime" ,container.Add );
+            AddIf( null != this._lastBackupSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastBackupSize) : null, "lastBackupSize" ,container.Add );
+            AddIf( null != this._lastBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastBackupTime) : null, "lastBackupTime" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

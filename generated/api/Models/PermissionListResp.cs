@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Category { get => (this._category = this._category ?? new Commvault.Powershell.Models.IdName()); set => this._category = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CategoryId { get => ((Commvault.Powershell.Models.IIdNameInternal)Category).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Category).Id = value ?? default(int); }
+        public long? CategoryId { get => ((Commvault.Powershell.Models.IIdNameInternal)Category).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Category).Id = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="CategoryList" /> property.</summary>
         private Commvault.Powershell.Models.ICategoryList[] _categoryList;
@@ -56,8 +56,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CategoryId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CategoryId { get; set; }
         /// <summary>
         /// Returns a list of categories and their permissions associated with the main category. eg: roles category is belongs to
         /// User Management category.
@@ -92,7 +92,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Category { get; set; }
 
-        int? CategoryId { get; set; }
+        long? CategoryId { get; set; }
         /// <summary>
         /// Returns a list of categories and their permissions associated with the main category. eg: roles category is belongs to
         /// User Management category.

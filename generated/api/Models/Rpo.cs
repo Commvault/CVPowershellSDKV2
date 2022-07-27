@@ -12,13 +12,13 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ReplicationFrequency" /> property.</summary>
-        private int? _replicationFrequency;
+        private long? _replicationFrequency;
 
         /// <summary>
         /// Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ReplicationFrequency { get => this._replicationFrequency; set => this._replicationFrequency = value; }
+        public long? ReplicationFrequency { get => this._replicationFrequency; set => this._replicationFrequency = value; }
 
         /// <summary>Creates an new <see cref="Rpo" /> instance.</summary>
         public Rpo()
@@ -38,8 +38,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes",
         SerializedName = @"replicationFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ReplicationFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ReplicationFrequency { get; set; }
 
     }
     /// Frequency of replication
@@ -49,7 +49,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Max amount of time for which data can be lost during a service disruption. Determines frequency of backup jobs in minutes
         /// </summary>
-        int? ReplicationFrequency { get; set; }
+        long? ReplicationFrequency { get; set; }
 
     }
 }

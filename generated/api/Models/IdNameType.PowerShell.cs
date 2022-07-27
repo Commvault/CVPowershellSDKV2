@@ -92,7 +92,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Type, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IIdNameTypeInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IIdNameTypeInternal)this).Type, global::System.Convert.ToString);
             AfterDeserializePSObject(content);

@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount = (int?) content.GetValueForProperty("ServerGroupCount",((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount = (long?) content.GetValueForProperty("ServerGroupCount",((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroups = (Commvault.Powershell.Models.IServerGroupList[]) content.GetValueForProperty("ServerGroups",((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroups, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IServerGroupList>(__y, Commvault.Powershell.Models.ServerGroupListTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount = (int?) content.GetValueForProperty("ServerGroupCount",((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount = (long?) content.GetValueForProperty("ServerGroupCount",((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroupCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroups = (Commvault.Powershell.Models.IServerGroupList[]) content.GetValueForProperty("ServerGroups",((Commvault.Powershell.Models.IGetServerGroupsRespInternal)this).ServerGroups, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IServerGroupList>(__y, Commvault.Powershell.Models.ServerGroupListTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

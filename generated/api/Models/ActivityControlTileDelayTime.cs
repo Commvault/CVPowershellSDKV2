@@ -15,11 +15,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IActivityControlTileDelayTimeInternal.TimeZone { get => (this._timeZone = this._timeZone ?? new Commvault.Powershell.Models.IdName()); set { {_timeZone = value;} } }
 
         /// <summary>Backing field for <see cref="Time" /> property.</summary>
-        private int? _time;
+        private long? _time;
 
         /// <summary>delay time in unix timestamp</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Time { get => this._time; set => this._time = value; }
+        public long? Time { get => this._time; set => this._time = value; }
 
         /// <summary>Backing field for <see cref="TimeZone" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _timeZone;
@@ -28,7 +28,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName TimeZone { get => (this._timeZone = this._timeZone ?? new Commvault.Powershell.Models.IdName()); set => this._timeZone = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TimeZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id = value ?? default(int); }
+        public long? TimeZoneId { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimeZoneName { get => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)TimeZone).Name = value ?? null; }
@@ -56,16 +56,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"delay time in unix timestamp",
         SerializedName = @"time",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Time { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Time { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -89,11 +89,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>delay time in unix timestamp</summary>
-        int? Time { get; set; }
+        long? Time { get; set; }
 
         Commvault.Powershell.Models.IIdName TimeZone { get; set; }
 
-        int? TimeZoneId { get; set; }
+        long? TimeZoneId { get; set; }
 
         string TimeZoneName { get; set; }
         /// <summary>actual delay time value in string format according to the timezone</summary>

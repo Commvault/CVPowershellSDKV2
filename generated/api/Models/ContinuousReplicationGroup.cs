@@ -19,11 +19,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Option to create crash-consistent recovery points</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionCrashConsistentRpInterval { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).CrashConsistentRpInterval; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).CrashConsistentRpInterval = value ?? default(int); }
+        public long? RecoveryOptionCrashConsistentRpInterval { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).CrashConsistentRpInterval; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).CrashConsistentRpInterval = value ?? default(long); }
 
         /// <summary>Option to combine older recovery points into larger recovery points</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionMergeRecoveryPointsOlderThan { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan = value ?? default(int); }
+        public long? RecoveryOptionMergeRecoveryPointsOlderThan { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).MergeRecoveryPointsOlderThan = value ?? default(long); }
 
         /// <summary>
         /// Specify whether to transfer updates for the oldest recovery points to destination computer during off-peak hours.
@@ -35,7 +35,7 @@ namespace Commvault.Powershell.Models
         /// Option to specify the time interval between the oldest recovery points in the RP Store
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionRecoveryPointInterval { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RecoveryPointInterval; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RecoveryPointInterval = value ?? default(int); }
+        public long? RecoveryOptionRecoveryPointInterval { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RecoveryPointInterval; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RecoveryPointInterval = value ?? default(long); }
 
         /// <summary>
         /// Select the Recovery Point Store on the destination site where journal entries for each recovery point are stored
@@ -51,7 +51,7 @@ namespace Commvault.Powershell.Models
         /// Option to specify how long journal entries for a recovery point should be retained
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryOptionRetainRecoveryPointsFor { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor = value ?? default(int); }
+        public long? RecoveryOptionRetainRecoveryPointsFor { get => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor; set => ((Commvault.Powershell.Models.IRecoveryOptionsInternal)RecoveryOptions).RetainRecoveryPointsFor = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="RecoveryOptions" /> property.</summary>
         private Commvault.Powershell.Models.IRecoveryOptions _recoveryOptions;
@@ -110,16 +110,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Option to create crash-consistent recovery points",
         SerializedName = @"crashConsistentRpInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionCrashConsistentRpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionCrashConsistentRpInterval { get; set; }
         /// <summary>Option to combine older recovery points into larger recovery points</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Option to combine older recovery points into larger recovery points",
         SerializedName = @"mergeRecoveryPointsOlderThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Specify whether to transfer updates for the oldest recovery points to destination computer during off-peak hours.
         /// </summary>
@@ -138,8 +138,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Option to specify the time interval between the oldest recovery points in the RP Store",
         SerializedName = @"recoveryPointInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionRecoveryPointInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionRecoveryPointInterval { get; set; }
         /// <summary>
         /// Select the Recovery Point Store on the destination site where journal entries for each recovery point are stored
         /// </summary>
@@ -166,8 +166,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Option to specify how long journal entries for a recovery point should be retained",
         SerializedName = @"retainRecoveryPointsFor",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryOptionRetainRecoveryPointsFor { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryOptionRetainRecoveryPointsFor { get; set; }
         /// <summary>replication configuration of a continuous group</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -223,9 +223,9 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Option to create crash-consistent recovery points</summary>
-        int? RecoveryOptionCrashConsistentRpInterval { get; set; }
+        long? RecoveryOptionCrashConsistentRpInterval { get; set; }
         /// <summary>Option to combine older recovery points into larger recovery points</summary>
-        int? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
+        long? RecoveryOptionMergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Specify whether to transfer updates for the oldest recovery points to destination computer during off-peak hours.
         /// </summary>
@@ -233,7 +233,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Option to specify the time interval between the oldest recovery points in the RP Store
         /// </summary>
-        int? RecoveryOptionRecoveryPointInterval { get; set; }
+        long? RecoveryOptionRecoveryPointInterval { get; set; }
         /// <summary>
         /// Select the Recovery Point Store on the destination site where journal entries for each recovery point are stored
         /// </summary>
@@ -243,7 +243,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Option to specify how long journal entries for a recovery point should be retained
         /// </summary>
-        int? RecoveryOptionRetainRecoveryPointsFor { get; set; }
+        long? RecoveryOptionRetainRecoveryPointsFor { get; set; }
         /// <summary>Recovery options to be specified for a continuous replication group</summary>
         Commvault.Powershell.Models.IRecoveryOptions RecoveryOptions { get; set; }
         /// <summary>replication configuration of a continuous group</summary>

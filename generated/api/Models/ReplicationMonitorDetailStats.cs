@@ -12,58 +12,58 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="IoDelta" /> property.</summary>
-        private int? _ioDelta;
+        private long? _ioDelta;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? IoDelta { get => this._ioDelta; set => this._ioDelta = value; }
+        public long? IoDelta { get => this._ioDelta; set => this._ioDelta = value; }
 
         /// <summary>Backing field for <see cref="IopsDelta" /> property.</summary>
-        private int? _iopsDelta;
+        private long? _iopsDelta;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? IopsDelta { get => this._iopsDelta; set => this._iopsDelta = value; }
+        public long? IopsDelta { get => this._iopsDelta; set => this._iopsDelta = value; }
 
         /// <summary>Backing field for <see cref="RepDataDeltaActual" /> property.</summary>
-        private int? _repDataDeltaActual;
+        private long? _repDataDeltaActual;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RepDataDeltaActual { get => this._repDataDeltaActual; set => this._repDataDeltaActual = value; }
+        public long? RepDataDeltaActual { get => this._repDataDeltaActual; set => this._repDataDeltaActual = value; }
 
         /// <summary>Backing field for <see cref="RepDataDeltaComp" /> property.</summary>
-        private int? _repDataDeltaComp;
+        private long? _repDataDeltaComp;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RepDataDeltaComp { get => this._repDataDeltaComp; set => this._repDataDeltaComp = value; }
+        public long? RepDataDeltaComp { get => this._repDataDeltaComp; set => this._repDataDeltaComp = value; }
 
         /// <summary>Backing field for <see cref="RepSetSize" /> property.</summary>
-        private int? _repSetSize;
+        private long? _repSetSize;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RepSetSize { get => this._repSetSize; set => this._repSetSize = value; }
+        public long? RepSetSize { get => this._repSetSize; set => this._repSetSize = value; }
 
         /// <summary>Backing field for <see cref="Retention" /> property.</summary>
-        private int? _retention;
+        private long? _retention;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Retention { get => this._retention; set => this._retention = value; }
+        public long? Retention { get => this._retention; set => this._retention = value; }
 
         /// <summary>Backing field for <see cref="SizeInRpStore" /> property.</summary>
-        private int? _sizeInRpStore;
+        private long? _sizeInRpStore;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SizeInRpStore { get => this._sizeInRpStore; set => this._sizeInRpStore = value; }
+        public long? SizeInRpStore { get => this._sizeInRpStore; set => this._sizeInRpStore = value; }
 
         /// <summary>Backing field for <see cref="TimeStamp" /> property.</summary>
-        private int? _timeStamp;
+        private long? _timeStamp;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TimeStamp { get => this._timeStamp; set => this._timeStamp = value; }
+        public long? TimeStamp { get => this._timeStamp; set => this._timeStamp = value; }
 
         /// <summary>Creates an new <see cref="ReplicationMonitorDetailStats" /> instance.</summary>
         public ReplicationMonitorDetailStats()
@@ -80,95 +80,95 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"IODelta",
-        PossibleTypes = new [] { typeof(int) })]
-        int? IoDelta { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? IoDelta { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"IOPSDelta",
-        PossibleTypes = new [] { typeof(int) })]
-        int? IopsDelta { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? IopsDelta { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"repDataDeltaActual",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RepDataDeltaActual { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RepDataDeltaActual { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"repDataDeltaComp",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RepDataDeltaComp { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RepDataDeltaComp { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"repSetSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RepSetSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RepSetSize { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"retention",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Retention { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Retention { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"sizeInRpStore",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SizeInRpStore { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SizeInRpStore { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"timeStamp",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TimeStamp { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimeStamp { get; set; }
 
     }
     /// Gives statistics information for Replication performance and Journal retention
     internal partial interface IReplicationMonitorDetailStatsInternal
 
     {
-        int? Id { get; set; }
+        long? Id { get; set; }
 
-        int? IoDelta { get; set; }
+        long? IoDelta { get; set; }
 
-        int? IopsDelta { get; set; }
+        long? IopsDelta { get; set; }
 
-        int? RepDataDeltaActual { get; set; }
+        long? RepDataDeltaActual { get; set; }
 
-        int? RepDataDeltaComp { get; set; }
+        long? RepDataDeltaComp { get; set; }
 
-        int? RepSetSize { get; set; }
+        long? RepSetSize { get; set; }
 
-        int? Retention { get; set; }
+        long? Retention { get; set; }
 
-        int? SizeInRpStore { get; set; }
+        long? SizeInRpStore { get; set; }
 
-        int? TimeStamp { get; set; }
+        long? TimeStamp { get; set; }
 
     }
 }

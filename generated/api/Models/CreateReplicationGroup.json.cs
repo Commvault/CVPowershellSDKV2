@@ -69,7 +69,7 @@ namespace Commvault.Powershell.Models
             {_recoveryTarget = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("recoveryTarget"), out var __jsonRecoveryTarget) ? Commvault.Powershell.Models.IdName.FromJson(__jsonRecoveryTarget) : RecoveryTarget;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_vms = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("vms"), out var __jsonVms) ? If( __jsonVms as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.INameGuid[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.INameGuid) (Commvault.Powershell.Models.NameGuid.FromJson(__u) )) ))() : null : Vms;}
-            {_frequencyInMinutes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("frequencyInMinutes"), out var __jsonFrequencyInMinutes) ? (int?)__jsonFrequencyInMinutes : FrequencyInMinutes;}
+            {_frequencyInMinutes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("frequencyInMinutes"), out var __jsonFrequencyInMinutes) ? (long?)__jsonFrequencyInMinutes : FrequencyInMinutes;}
             {_storage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("storage"), out var __jsonStorage) ? If( __jsonStorage as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IStorageCopyCreate[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IStorageCopyCreate) (Commvault.Powershell.Models.StorageCopyCreate.FromJson(__p) )) ))() : null : Storage;}
             AfterFromJson(json);
         }
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("vms",__w);
             }
-            AddIf( null != this._frequencyInMinutes ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._frequencyInMinutes) : null, "frequencyInMinutes" ,container.Add );
+            AddIf( null != this._frequencyInMinutes ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._frequencyInMinutes) : null, "frequencyInMinutes" ,container.Add );
             if (null != this._storage)
             {
                 var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();

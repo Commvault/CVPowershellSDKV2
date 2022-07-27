@@ -89,8 +89,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort = (int?) content.GetValueForProperty("TunnelPort",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval = (int?) content.GetValueForProperty("KeepAliveInterval",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort = (long?) content.GetValueForProperty("TunnelPort",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval = (long?) content.GetValueForProperty("KeepAliveInterval",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -108,8 +108,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort = (int?) content.GetValueForProperty("TunnelPort",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval = (int?) content.GetValueForProperty("KeepAliveInterval",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort = (long?) content.GetValueForProperty("TunnelPort",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).TunnelPort, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval = (long?) content.GetValueForProperty("KeepAliveInterval",((Commvault.Powershell.Models.IFirewallGroupAdvancedOptionsInternal)this).KeepAliveInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

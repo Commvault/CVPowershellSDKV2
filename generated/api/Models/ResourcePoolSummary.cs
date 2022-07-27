@@ -25,11 +25,11 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IAccessNodes[] AccessNodes { get => this._accessNodes; set => this._accessNodes = value; }
 
         /// <summary>Backing field for <see cref="AssociatedPlans" /> property.</summary>
-        private int? _associatedPlans;
+        private long? _associatedPlans;
 
         /// <summary>Refers to the number of plans associated to the resource pool.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? AssociatedPlans { get => this._associatedPlans; set => this._associatedPlans = value; }
+        public long? AssociatedPlans { get => this._associatedPlans; set => this._associatedPlans = value; }
 
         /// <summary>Internal Acessors for IndexServer</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IResourcePoolSummaryInternal.IndexServer { get => (this._indexServer = this._indexServer ?? new Commvault.Powershell.Models.IdName()); set { {_indexServer = value;} } }
@@ -38,11 +38,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IResourcePoolSummaryInternal.Storage { get => (this._storage = this._storage ?? new Commvault.Powershell.Models.IdName()); set { {_storage = value;} } }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Resource Pool id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="IndexServer" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _indexServer;
@@ -51,7 +51,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName IndexServer { get => (this._indexServer = this._indexServer ?? new Commvault.Powershell.Models.IdName()); set => this._indexServer = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? IndexServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id = value ?? default(int); }
+        public long? IndexServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string IndexServerName { get => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)IndexServer).Name = value ?? null; }
@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Storage { get => (this._storage = this._storage ?? new Commvault.Powershell.Models.IdName()); set => this._storage = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(int); }
+        public long? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name = value ?? null; }
@@ -116,24 +116,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Refers to the number of plans associated to the resource pool.",
         SerializedName = @"associatedPlans",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AssociatedPlans { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AssociatedPlans { get; set; }
         /// <summary>Resource Pool id</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Resource Pool id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? IndexServerId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? IndexServerId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -172,8 +172,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StorageId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StorageId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -195,13 +195,13 @@ namespace Commvault.Powershell.Models
         /// <summary>List of access nodes associated to the resource pool</summary>
         Commvault.Powershell.Models.IAccessNodes[] AccessNodes { get; set; }
         /// <summary>Refers to the number of plans associated to the resource pool.</summary>
-        int? AssociatedPlans { get; set; }
+        long? AssociatedPlans { get; set; }
         /// <summary>Resource Pool id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         Commvault.Powershell.Models.IIdName IndexServer { get; set; }
 
-        int? IndexServerId { get; set; }
+        long? IndexServerId { get; set; }
 
         string IndexServerName { get; set; }
         /// <summary>Denotes if the resource pool is associated to any plan with indexing enabled</summary>
@@ -213,7 +213,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Storage { get; set; }
 
-        int? StorageId { get; set; }
+        long? StorageId { get; set; }
 
         string StorageName { get; set; }
 

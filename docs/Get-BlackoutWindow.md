@@ -13,7 +13,7 @@ Get All Blackout Windows
 ## SYNTAX
 
 ```
-Get-BlackoutWindow [-CommcellId <String>] [-CompanyId <Int32>] [-ServerGroupId <String>]
+Get-BlackoutWindow [-CommcellId <String>] [-CompanyId <Int64>] [-ServerGroupId <String>]
  [-ShowOnlyCommcellLevel] [-PassThru] [<CommonParameters>]
 ```
 
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 Shows blackout windows associated with the company whose id has been provided.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

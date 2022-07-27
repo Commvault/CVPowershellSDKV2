@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
             }
             {_credentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("credentials"), out var __jsonCredentials) ? Commvault.Powershell.Models.UserNamePassword.FromJson(__jsonCredentials) : Credentials;}
             {_hostName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hostName"), out var __jsonHostName) ? (string)__jsonHostName : (string)HostName;}
-            {_authType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("authType"), out var __jsonAuthType) ? (int?)__jsonAuthType : AuthType;}
+            {_authType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("authType"), out var __jsonAuthType) ? (long?)__jsonAuthType : AuthType;}
             AfterFromJson(json);
         }
 
@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._credentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._credentials.ToJson(null,serializationMode) : null, "credentials" ,container.Add );
             AddIf( null != (((object)this._hostName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hostName.ToString()) : null, "hostName" ,container.Add );
-            AddIf( null != this._authType ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._authType) : null, "authType" ,container.Add );
+            AddIf( null != this._authType ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._authType) : null, "authType" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

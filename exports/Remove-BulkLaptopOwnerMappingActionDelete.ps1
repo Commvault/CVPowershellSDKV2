@@ -37,7 +37,7 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 BODY <IDeleteLaptopOwnerMapping>: This model accepts the list of laptop owner mapping to be deleted
-  LaptopOwnerMapping <Int32[]>: Accepts list of laptop owner mapping ids to be deleted
+  LaptopOwnerMapping <Int64[]>: Accepts list of laptop owner mapping ids to be deleted
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/remove-bulklaptopownermappingactiondelete
 #>
@@ -54,7 +54,7 @@ param(
 
     [Parameter(ParameterSetName='DeleteExpanded', Mandatory)]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32[]]
+    [System.Int64[]]
     # Accepts list of laptop owner mapping ids to be deleted
     ${LaptopOwnerMapping},
 

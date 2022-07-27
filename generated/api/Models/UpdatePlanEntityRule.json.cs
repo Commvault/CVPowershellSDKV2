@@ -111,7 +111,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("regions",__m);
             }
-            AddIf( null != this._rank ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._rank) : null, "rank" ,container.Add );
+            AddIf( null != this._rank ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._rank) : null, "rank" ,container.Add );
             if (null != this._solutions)
             {
                 var __h = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -151,7 +151,7 @@ namespace Commvault.Powershell.Models
             {_workloads = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("workloads"), out var __jsonWorkloads) ? If( __jsonWorkloads as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : Workloads;}
             {_serverGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("serverGroups"), out var __jsonServerGroups) ? If( __jsonServerGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__p) )) ))() : null : ServerGroups;}
             {_regions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("regions"), out var __jsonRegions) ? If( __jsonRegions as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : Regions;}
-            {_rank = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("rank"), out var __jsonRank) ? (int?)__jsonRank : Rank;}
+            {_rank = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("rank"), out var __jsonRank) ? (long?)__jsonRank : Rank;}
             {_solutions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("solutions"), out var __jsonSolutions) ? If( __jsonSolutions as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__f) )) ))() : null : Solutions;}
             {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tags"), out var __jsonTags) ? If( __jsonTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __b) ? new global::System.Func<Commvault.Powershell.Models.IPlanEntityRuleTag[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__b, (__a)=>(Commvault.Powershell.Models.IPlanEntityRuleTag) (Commvault.Powershell.Models.PlanEntityRuleTag.FromJson(__a) )) ))() : null : Tags;}
             AfterFromJson(json);

@@ -93,7 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount = (int?) content.GetValueForProperty("ClusterCount",((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount = (long?) content.GetValueForProperty("ClusterCount",((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IListClustersInternal)this).Clusters = (Commvault.Powershell.Models.IClusterListResp[]) content.GetValueForProperty("Clusters",((Commvault.Powershell.Models.IListClustersInternal)this).Clusters, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IClusterListResp>(__y, Commvault.Powershell.Models.ClusterListRespTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount = (int?) content.GetValueForProperty("ClusterCount",((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount = (long?) content.GetValueForProperty("ClusterCount",((Commvault.Powershell.Models.IListClustersInternal)this).ClusterCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IListClustersInternal)this).Clusters = (Commvault.Powershell.Models.IClusterListResp[]) content.GetValueForProperty("Clusters",((Commvault.Powershell.Models.IListClustersInternal)this).Clusters, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IClusterListResp>(__y, Commvault.Powershell.Models.ClusterListRespTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

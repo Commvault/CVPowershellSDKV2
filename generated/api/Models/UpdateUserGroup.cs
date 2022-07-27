@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName LaptopPlan { get => (this._laptopPlan = this._laptopPlan ?? new Commvault.Powershell.Models.IdName()); set => this._laptopPlan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LaptopPlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)LaptopPlan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)LaptopPlan).Id = value ?? default(int); }
+        public long? LaptopPlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)LaptopPlan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)LaptopPlan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string LaptopPlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)LaptopPlan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)LaptopPlan).Name = value ?? null; }
@@ -134,11 +134,11 @@ namespace Commvault.Powershell.Models
         public string PlanOperationType { get => this._planOperationType; set => this._planOperationType = value; }
 
         /// <summary>Backing field for <see cref="QuotaLimitInGb" /> property.</summary>
-        private int? _quotaLimitInGb;
+        private long? _quotaLimitInGb;
 
         /// <summary>if enforceFSquota is enabled, the quota limit can be provided in GBs</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? QuotaLimitInGb { get => this._quotaLimitInGb; set => this._quotaLimitInGb = value; }
+        public long? QuotaLimitInGb { get => this._quotaLimitInGb; set => this._quotaLimitInGb = value; }
 
         /// <summary>Backing field for <see cref="UserOperationType" /> property.</summary>
         private string _userOperationType;
@@ -259,8 +259,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LaptopPlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LaptopPlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -312,8 +312,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"if enforceFSquota is enabled, the quota limit can be provided in GBs",
         SerializedName = @"quotaLimitInGB",
-        PossibleTypes = new [] { typeof(int) })]
-        int? QuotaLimitInGb { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? QuotaLimitInGb { get; set; }
         /// <summary>
         /// determines if an existing user has to be added to the user group or removed from the user group
         /// </summary>
@@ -369,7 +369,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName LaptopPlan { get; set; }
 
-        int? LaptopPlanId { get; set; }
+        long? LaptopPlanId { get; set; }
 
         string LaptopPlanName { get; set; }
         /// <summary>
@@ -386,7 +386,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string PlanOperationType { get; set; }
         /// <summary>if enforceFSquota is enabled, the quota limit can be provided in GBs</summary>
-        int? QuotaLimitInGb { get; set; }
+        long? QuotaLimitInGb { get; set; }
         /// <summary>
         /// determines if an existing user has to be added to the user group or removed from the user group
         /// </summary>

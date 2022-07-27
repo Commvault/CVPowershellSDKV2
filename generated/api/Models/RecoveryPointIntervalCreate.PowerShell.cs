@@ -100,8 +100,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval = (int?) content.GetValueForProperty("CrashConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval = (int?) content.GetValueForProperty("ApplicationConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval = (long?) content.GetValueForProperty("CrashConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval = (long?) content.GetValueForProperty("ApplicationConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -119,8 +119,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval = (int?) content.GetValueForProperty("CrashConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval = (int?) content.GetValueForProperty("ApplicationConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval = (long?) content.GetValueForProperty("CrashConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).CrashConsistentRpInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval = (long?) content.GetValueForProperty("ApplicationConsistentRpInterval",((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)this).ApplicationConsistentRpInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

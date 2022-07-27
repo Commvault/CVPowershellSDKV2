@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int MediaAgentId { get => Body.MediaAgentId ?? default(int); set => Body.MediaAgentId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long MediaAgentId { get => Body.MediaAgentId ?? default(long); set => Body.MediaAgentId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -156,8 +156,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SavedCredentialsId { get => Body.SavedCredentialsId ?? default(int); set => Body.SavedCredentialsId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SavedCredentialsId { get => Body.SavedCredentialsId ?? default(long); set => Body.SavedCredentialsId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -349,7 +349,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.CloudStorageId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.CreateCloudStorageMetaDataCache(InputObject.CloudStorageId ?? default(int), Body, onOk, onNotFound, onInternalServerError, this, Pipeline);
+                    await this.Client.CreateCloudStorageMetaDataCache(InputObject.CloudStorageId ?? default(long), Body, onOk, onNotFound, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

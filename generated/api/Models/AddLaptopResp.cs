@@ -18,10 +18,10 @@ namespace Commvault.Powershell.Models
         public string[] JobIds { get => this._jobIds; set => this._jobIds = value; }
 
         /// <summary>Backing field for <see cref="TaskId" /> property.</summary>
-        private int? _taskId;
+        private long? _taskId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TaskId { get => this._taskId; set => this._taskId = value; }
+        public long? TaskId { get => this._taskId; set => this._taskId = value; }
 
         /// <summary>Creates an new <see cref="AddLaptopResp" /> instance.</summary>
         public AddLaptopResp()
@@ -46,8 +46,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"taskId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TaskId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TaskId { get; set; }
 
     }
     /// AddLaptopResp
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
     {
         string[] JobIds { get; set; }
 
-        int? TaskId { get; set; }
+        long? TaskId { get; set; }
 
     }
 }

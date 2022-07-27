@@ -60,8 +60,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_retireAfterDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retireAfterDays"), out var __jsonRetireAfterDays) ? (int?)__jsonRetireAfterDays : RetireAfterDays;}
-            {_deleteAfterDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("deleteAfterDays"), out var __jsonDeleteAfterDays) ? (int?)__jsonDeleteAfterDays : DeleteAfterDays;}
+            {_retireAfterDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retireAfterDays"), out var __jsonRetireAfterDays) ? (long?)__jsonRetireAfterDays : RetireAfterDays;}
+            {_deleteAfterDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("deleteAfterDays"), out var __jsonDeleteAfterDays) ? (long?)__jsonDeleteAfterDays : DeleteAfterDays;}
             AfterFromJson(json);
         }
 
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._retireAfterDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retireAfterDays) : null, "retireAfterDays" ,container.Add );
-            AddIf( null != this._deleteAfterDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._deleteAfterDays) : null, "deleteAfterDays" ,container.Add );
+            AddIf( null != this._retireAfterDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retireAfterDays) : null, "retireAfterDays" ,container.Add );
+            AddIf( null != this._deleteAfterDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._deleteAfterDays) : null, "deleteAfterDays" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -78,7 +78,7 @@ namespace Commvault.Powershell.Models
             {_numOfFiles = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numOfFiles"), out var __jsonNumOfFiles) ? (long?)__jsonNumOfFiles : NumOfFiles;}
             {_sourcePath = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("sourcePath"), out var __jsonSourcePath) ? (string)__jsonSourcePath : (string)SourcePath;}
             {_syncStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("syncStatus"), out var __jsonSyncStatus) ? (string)__jsonSyncStatus : (string)SyncStatus;}
-            {_replicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("replicationId"), out var __jsonReplicationId) ? (int?)__jsonReplicationId : ReplicationId;}
+            {_replicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("replicationId"), out var __jsonReplicationId) ? (long?)__jsonReplicationId : ReplicationId;}
             AfterFromJson(json);
         }
 
@@ -108,7 +108,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._numOfFiles ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._numOfFiles) : null, "numOfFiles" ,container.Add );
             AddIf( null != (((object)this._sourcePath)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._sourcePath.ToString()) : null, "sourcePath" ,container.Add );
             AddIf( null != (((object)this._syncStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._syncStatus.ToString()) : null, "syncStatus" ,container.Add );
-            AddIf( null != this._replicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._replicationId) : null, "replicationId" ,container.Add );
+            AddIf( null != this._replicationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._replicationId) : null, "replicationId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

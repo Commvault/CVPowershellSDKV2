@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).DiskProvisioning = (string) content.GetValueForProperty("DiskProvisioning",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).DiskProvisioning, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).TransportMode = (string) content.GetValueForProperty("TransportMode",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).TransportMode, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).UnconditionalOverwrite = (bool?) content.GetValueForProperty("UnconditionalOverwrite",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).UnconditionalOverwrite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain = (int?) content.GetValueForProperty("SnapshotsToRetain",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain = (long?) content.GetValueForProperty("SnapshotsToRetain",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -124,7 +124,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).DiskProvisioning = (string) content.GetValueForProperty("DiskProvisioning",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).DiskProvisioning, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).TransportMode = (string) content.GetValueForProperty("TransportMode",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).TransportMode, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).UnconditionalOverwrite = (bool?) content.GetValueForProperty("UnconditionalOverwrite",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).UnconditionalOverwrite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain = (int?) content.GetValueForProperty("SnapshotsToRetain",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain = (long?) content.GetValueForProperty("SnapshotsToRetain",((Commvault.Powershell.Models.IReplicationGroupAdvOptionsVMWareCreateInternal)this).SnapshotsToRetain, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

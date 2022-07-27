@@ -38,21 +38,21 @@ To create the parameters described below, construct a hash table containing the 
 
 BODY <IDeleteMultipleUsers>: Used to delete multiple users and carry out property transfership of deleted users
   [Users <IDeleteUsers[]>]: 
-    [NewUserGroupId <Int32?>]: 
+    [NewUserGroupId <Int64?>]: 
     [NewUserGroupName <String>]: 
-    [NewUserId <Int32?>]: 
+    [NewUserId <Int64?>]: 
     [NewUserName <String>]: 
     [SkipOwnerTransfer <Boolean?>]: 
-    [UserId <Int32?>]: 
+    [UserId <Int64?>]: 
     [UserName <String>]: 
 
 USERS <IDeleteUsers[]>: .
-  [NewUserGroupId <Int32?>]: 
+  [NewUserGroupId <Int64?>]: 
   [NewUserGroupName <String>]: 
-  [NewUserId <Int32?>]: 
+  [NewUserId <Int64?>]: 
   [NewUserName <String>]: 
   [SkipOwnerTransfer <Boolean?>]: 
-  [UserId <Int32?>]: 
+  [UserId <Int64?>]: 
   [UserName <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/remove-multipleuser

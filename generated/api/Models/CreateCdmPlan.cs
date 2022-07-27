@@ -34,11 +34,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Commit frequency in hours</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DatabaseOptionCommitFrequencyInHours { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours = value ?? default(int); }
+        public long? DatabaseOptionCommitFrequencyInHours { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours = value ?? default(long); }
 
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DatabaseOptionLogBackupRpoMins { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins = value ?? default(int); }
+        public long? DatabaseOptionLogBackupRpoMins { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins = value ?? default(long); }
 
         /// <summary>Use disk cache for log backups</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -78,7 +78,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapshotOptionBackupCopyRpoMins { get => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins; set => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins = value ?? default(int); }
+        public long? SnapshotOptionBackupCopyRpoMins { get => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins; set => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins = value ?? default(long); }
 
         /// <summary>Flag to enable backup copy</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -89,14 +89,14 @@ namespace Commvault.Powershell.Models
         /// this takes precedence.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapshotOptionRetentionPeriodDays { get => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).RetentionPeriodDays; set => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).RetentionPeriodDays = value ?? default(int); }
+        public long? SnapshotOptionRetentionPeriodDays { get => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).RetentionPeriodDays; set => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).RetentionPeriodDays = value ?? default(long); }
 
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
         /// for default snap copy.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapshotOptionSnapRecoveryPoints { get => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).SnapRecoveryPoints; set => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).SnapRecoveryPoints = value ?? default(int); }
+        public long? SnapshotOptionSnapRecoveryPoints { get => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).SnapRecoveryPoints; set => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).SnapRecoveryPoints = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="SnapshotOptions" /> property.</summary>
         private Commvault.Powershell.Models.ICreatePlanSnapshotOptions _snapshotOptions;
@@ -136,16 +136,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Commit frequency in hours",
         SerializedName = @"commitFrequencyInHours",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseOptionCommitFrequencyInHours { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseOptionCommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Log backup RPO in minutes",
         SerializedName = @"logBackupRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseOptionLogBackupRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseOptionLogBackupRpoMins { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -184,8 +184,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Backup copy RPO in minutes",
         SerializedName = @"backupCopyRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapshotOptionBackupCopyRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapshotOptionBackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -203,8 +203,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapshotOptionRetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapshotOptionRetentionPeriodDays { get; set; }
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
         /// for default snap copy.
@@ -214,8 +214,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.",
         SerializedName = @"snapRecoveryPoints",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapshotOptionSnapRecoveryPoints { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapshotOptionSnapRecoveryPoints { get; set; }
 
     }
     internal partial interface ICreateCdmPlanInternal
@@ -226,9 +226,9 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Commit frequency in hours</summary>
-        int? DatabaseOptionCommitFrequencyInHours { get; set; }
+        long? DatabaseOptionCommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
-        int? DatabaseOptionLogBackupRpoMins { get; set; }
+        long? DatabaseOptionLogBackupRpoMins { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         bool? DatabaseOptionUseDiskCacheForLogBackups { get; set; }
         /// <summary>This feature applies only to database agents</summary>
@@ -247,19 +247,19 @@ namespace Commvault.Powershell.Models
         /// <summary>Backup window for full backup</summary>
         Commvault.Powershell.Models.IDayAndTime[] RpoFullBackupWindow { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>
-        int? SnapshotOptionBackupCopyRpoMins { get; set; }
+        long? SnapshotOptionBackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         bool? SnapshotOptionEnableBackupCopy { get; set; }
         /// <summary>
         /// Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified,
         /// this takes precedence.
         /// </summary>
-        int? SnapshotOptionRetentionPeriodDays { get; set; }
+        long? SnapshotOptionRetentionPeriodDays { get; set; }
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
         /// for default snap copy.
         /// </summary>
-        int? SnapshotOptionSnapRecoveryPoints { get; set; }
+        long? SnapshotOptionSnapRecoveryPoints { get; set; }
         /// <summary>This feature applies only to File System Agents</summary>
         Commvault.Powershell.Models.ICreatePlanSnapshotOptions SnapshotOptions { get; set; }
 

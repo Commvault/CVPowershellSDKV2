@@ -26,17 +26,17 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Destination { get => (this._destination = this._destination ?? new Commvault.Powershell.Models.IdName()); set => this._destination = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationId { get => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id = value ?? default(int); }
+        public long? DestinationId { get => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationName { get => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>id of the replication group. Either taskId or id is available in the list</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -59,7 +59,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Source { get => (this._source = this._source ?? new Commvault.Powershell.Models.IdName()); set => this._source = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id = value ?? default(int); }
+        public long? SourceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name = value ?? null; }
@@ -72,11 +72,11 @@ namespace Commvault.Powershell.Models
         public string State { get => this._state; set => this._state = value; }
 
         /// <summary>Backing field for <see cref="TaskId" /> property.</summary>
-        private int? _taskId;
+        private long? _taskId;
 
         /// <summary>taskid of the replication group. Either taskId or id is available in the list</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TaskId { get => this._taskId; set => this._taskId = value; }
+        public long? TaskId { get => this._taskId; set => this._taskId = value; }
 
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
@@ -100,8 +100,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -116,8 +116,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the replication group. Either taskId or id is available in the list",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Replication group name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -140,8 +140,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -164,8 +164,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"taskid of the replication group. Either taskId or id is available in the list",
         SerializedName = @"taskId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TaskId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TaskId { get; set; }
         /// <summary>Application type. Virtual Machine, Oracle</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -182,11 +182,11 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Destination { get; set; }
 
-        int? DestinationId { get; set; }
+        long? DestinationId { get; set; }
 
         string DestinationName { get; set; }
         /// <summary>id of the replication group. Either taskId or id is available in the list</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Replication group name</summary>
         string Name { get; set; }
         /// <summary>Replication group type. Values are case sensitive</summary>
@@ -194,13 +194,13 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Source { get; set; }
 
-        int? SourceId { get; set; }
+        long? SourceId { get; set; }
 
         string SourceName { get; set; }
         /// <summary>State of replication group. Values are case sensitive</summary>
         string State { get; set; }
         /// <summary>taskid of the replication group. Either taskId or id is available in the list</summary>
-        int? TaskId { get; set; }
+        long? TaskId { get; set; }
         /// <summary>Application type. Virtual Machine, Oracle</summary>
         string Type { get; set; }
 

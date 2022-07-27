@@ -43,7 +43,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdName Credentials { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).Credentials; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).Credentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? CredentialsId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId = value; }
+        public long? CredentialsId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string CredentialsName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName = value; }
@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName WorkloadRegion { get => (this._workloadRegion = this._workloadRegion ?? new Commvault.Powershell.Models.IdName()); set => this._workloadRegion = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? WorkloadRegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)WorkloadRegion).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)WorkloadRegion).Id = value ?? default(int); }
+        public long? WorkloadRegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)WorkloadRegion).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)WorkloadRegion).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string WorkloadRegionName { get => ((Commvault.Powershell.Models.IIdNameInternal)WorkloadRegion).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)WorkloadRegion).Name = value ?? null; }
@@ -157,8 +157,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? WorkloadRegionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? WorkloadRegionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -186,7 +186,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName WorkloadRegion { get; set; }
 
-        int? WorkloadRegionId { get; set; }
+        long? WorkloadRegionId { get; set; }
 
         string WorkloadRegionName { get; set; }
 

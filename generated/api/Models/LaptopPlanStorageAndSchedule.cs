@@ -11,7 +11,7 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="BackupFrequency" /> property.</summary>
-        private int? _backupFrequency;
+        private long? _backupFrequency;
 
         /// <summary>
         /// Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO
@@ -19,7 +19,7 @@ namespace Commvault.Powershell.Models
         /// here is your RPO if none of the automatic options are met. Default is 480 minutes (8 hours).
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupFrequency { get => this._backupFrequency; set => this._backupFrequency = value; }
+        public long? BackupFrequency { get => this._backupFrequency; set => this._backupFrequency = value; }
 
         /// <summary>Internal Acessors for PrimaryStorage</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ILaptopPlanStorageAndScheduleInternal.PrimaryStorage { get => (this._primaryStorage = this._primaryStorage ?? new Commvault.Powershell.Models.IdName()); set { {_primaryStorage = value;} } }
@@ -34,7 +34,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName PrimaryStorage { get => (this._primaryStorage = this._primaryStorage ?? new Commvault.Powershell.Models.IdName()); set => this._primaryStorage = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PrimaryStorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)PrimaryStorage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)PrimaryStorage).Id = value ?? default(int); }
+        public long? PrimaryStorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)PrimaryStorage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)PrimaryStorage).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PrimaryStorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)PrimaryStorage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)PrimaryStorage).Name = value ?? null; }
@@ -46,7 +46,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SecondaryStorage { get => (this._secondaryStorage = this._secondaryStorage ?? new Commvault.Powershell.Models.IdName()); set => this._secondaryStorage = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SecondaryStorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)SecondaryStorage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SecondaryStorage).Id = value ?? default(int); }
+        public long? SecondaryStorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)SecondaryStorage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SecondaryStorage).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SecondaryStorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)SecondaryStorage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SecondaryStorage).Name = value ?? null; }
@@ -70,16 +70,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO determines the frequency of your backup jobs. Your RPO is met through automatic options. The time specified in minutes here is your RPO if none of the automatic options are met. Default is 480 minutes (8 hours).",
         SerializedName = @"backupFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupFrequency { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PrimaryStorageId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PrimaryStorageId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SecondaryStorageId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SecondaryStorageId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -114,17 +114,17 @@ namespace Commvault.Powershell.Models
         /// determines the frequency of your backup jobs. Your RPO is met through automatic options. The time specified in minutes
         /// here is your RPO if none of the automatic options are met. Default is 480 minutes (8 hours).
         /// </summary>
-        int? BackupFrequency { get; set; }
+        long? BackupFrequency { get; set; }
 
         Commvault.Powershell.Models.IIdName PrimaryStorage { get; set; }
 
-        int? PrimaryStorageId { get; set; }
+        long? PrimaryStorageId { get; set; }
 
         string PrimaryStorageName { get; set; }
 
         Commvault.Powershell.Models.IIdName SecondaryStorage { get; set; }
 
-        int? SecondaryStorageId { get; set; }
+        long? SecondaryStorageId { get; set; }
 
         string SecondaryStorageName { get; set; }
 

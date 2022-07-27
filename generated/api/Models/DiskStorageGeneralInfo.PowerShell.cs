@@ -89,10 +89,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity = (int?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace = (int?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk = (int?) content.GetValueForProperty("SizeOnDisk",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent = (int?) content.GetValueForProperty("DedupeSavingsPercent",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity = (long?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace = (long?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk = (long?) content.GetValueForProperty("SizeOnDisk",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent = (long?) content.GetValueForProperty("DedupeSavingsPercent",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -110,10 +110,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity = (int?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace = (int?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk = (int?) content.GetValueForProperty("SizeOnDisk",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent = (int?) content.GetValueForProperty("DedupeSavingsPercent",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity = (long?) content.GetValueForProperty("Capacity",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).Capacity, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace = (long?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).FreeSpace, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk = (long?) content.GetValueForProperty("SizeOnDisk",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).SizeOnDisk, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent = (long?) content.GetValueForProperty("DedupeSavingsPercent",((Commvault.Powershell.Models.IDiskStorageGeneralInfoInternal)this).DedupeSavingsPercent, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

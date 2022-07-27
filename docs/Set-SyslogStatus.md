@@ -16,7 +16,7 @@ This endpoint configures a syslog server.
 ```
 Set-SyslogStatus -Hostname <String> [-CertificateAuthorityContent <String>]
  [-CertificateAuthorityName <String>] [-ForwardToSyslogAlerts] [-ForwardToSyslogAudit]
- [-ForwardToSyslogEvents] [-Port <Int32>] [-SecureMessaging] [-PassThru] [-Confirm] [-WhatIf]
+ [-ForwardToSyslogEvents] [-Port <Int64>] [-SecureMessaging] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 The port on which the syslog server accepts the logs.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: ConfigureExpanded
 Aliases:
 
@@ -262,7 +262,7 @@ BODY <ISyslogConfigure>: This operation configures a syslog server.
   - `[ForwardToSyslogAlerts <Boolean?>]`: Forward the system log for alerts to the server.
   - `[ForwardToSyslogAudit <Boolean?>]`: Forward the system log for audit trails to the server.
   - `[ForwardToSyslogEvents <Boolean?>]`: Forward the system log for events to the server.
-  - `[Port <Int32?>]`: The port on which the syslog server accepts the logs.
+  - `[Port <Int64?>]`: The port on which the syslog server accepts the logs.
   - `[SecureMessaging <Boolean?>]`: When false UDP port will be used, when true TLS encryption will be used to connect to Syslog Server. To upload Certificate Authority file it should be enabled.
 
 ## RELATED LINKS

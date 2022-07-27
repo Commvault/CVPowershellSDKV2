@@ -21,11 +21,11 @@ namespace Commvault.Powershell.Models
         public string NewName { get => this._newName; set => this._newName = value; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
-        private int? _retentionPeriodDays;
+        private long? _retentionPeriodDays;
 
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
+        public long? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
 
         /// <summary>Backing field for <see cref="SourceCopy" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _sourceCopy;
@@ -34,7 +34,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceCopy { get => (this._sourceCopy = this._sourceCopy ?? new Commvault.Powershell.Models.IdName()); set => this._sourceCopy = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceCopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id = value ?? default(int); }
+        public long? SourceCopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceCopyName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name = value ?? null; }
@@ -62,16 +62,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retention period in days. -1 can be specified for infinite retention.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceCopyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceCopyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -88,11 +88,11 @@ namespace Commvault.Powershell.Models
         /// <summary>New name for backup destination</summary>
         string NewName { get; set; }
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
-        int? RetentionPeriodDays { get; set; }
+        long? RetentionPeriodDays { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceCopy { get; set; }
 
-        int? SourceCopyId { get; set; }
+        long? SourceCopyId { get; set; }
 
         string SourceCopyName { get; set; }
 

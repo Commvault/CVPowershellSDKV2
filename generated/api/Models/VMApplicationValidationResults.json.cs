@@ -79,9 +79,9 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._bootStatus ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._bootStatus) : null, "bootStatus" ,container.Add );
-            AddIf( null != this._lastValidationJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._lastValidationJobId) : null, "lastValidationJobId" ,container.Add );
-            AddIf( null != this._backupValidated ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._backupValidated) : null, "backupValidated" ,container.Add );
-            AddIf( null != this._backupCompletionDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._backupCompletionDate) : null, "backupCompletionDate" ,container.Add );
+            AddIf( null != this._lastValidationJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastValidationJobId) : null, "lastValidationJobId" ,container.Add );
+            AddIf( null != this._backupValidated ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupValidated) : null, "backupValidated" ,container.Add );
+            AddIf( null != this._backupCompletionDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupCompletionDate) : null, "backupCompletionDate" ,container.Add );
             if (null != this._appsDiscovered)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -108,9 +108,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_bootStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("bootStatus"), out var __jsonBootStatus) ? (bool?)__jsonBootStatus : BootStatus;}
-            {_lastValidationJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastValidationJobId"), out var __jsonLastValidationJobId) ? (int?)__jsonLastValidationJobId : LastValidationJobId;}
-            {_backupValidated = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupValidated"), out var __jsonBackupValidated) ? (int?)__jsonBackupValidated : BackupValidated;}
-            {_backupCompletionDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupCompletionDate"), out var __jsonBackupCompletionDate) ? (int?)__jsonBackupCompletionDate : BackupCompletionDate;}
+            {_lastValidationJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastValidationJobId"), out var __jsonLastValidationJobId) ? (long?)__jsonLastValidationJobId : LastValidationJobId;}
+            {_backupValidated = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupValidated"), out var __jsonBackupValidated) ? (long?)__jsonBackupValidated : BackupValidated;}
+            {_backupCompletionDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupCompletionDate"), out var __jsonBackupCompletionDate) ? (long?)__jsonBackupCompletionDate : BackupCompletionDate;}
             {_appsDiscovered = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("appsDiscovered"), out var __jsonAppsDiscovered) ? If( __jsonAppsDiscovered as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IVMAppsDiscovered[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IVMAppsDiscovered) (Commvault.Powershell.Models.VMAppsDiscovered.FromJson(__u) )) ))() : null : AppsDiscovered;}
             AfterFromJson(json);
         }

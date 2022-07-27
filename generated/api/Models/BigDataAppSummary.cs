@@ -12,18 +12,18 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ApplicationId" /> property.</summary>
-        private int? _applicationId;
+        private long? _applicationId;
 
         /// <summary>This gives the application id of the big data app.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationId { get => this._applicationId; set => this._applicationId = value; }
+        public long? ApplicationId { get => this._applicationId; set => this._applicationId = value; }
 
         /// <summary>Backing field for <see cref="ApplicationSize" /> property.</summary>
-        private int? _applicationSize;
+        private long? _applicationSize;
 
         /// <summary>Provides the application size of the big data app. It is provided in bytes.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ApplicationSize { get => this._applicationSize; set => this._applicationSize = value; }
+        public long? ApplicationSize { get => this._applicationSize; set => this._applicationSize = value; }
 
         /// <summary>Backing field for <see cref="ClusterType" /> property.</summary>
         private string _clusterType;
@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -83,11 +83,11 @@ namespace Commvault.Powershell.Models
         public string Guid { get => this._guid; set => this._guid = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>This gives the id of the big data app.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Instance" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _instance;
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set => this._instance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(int); }
+        public long? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
@@ -113,7 +113,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Returns the job id of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId = value ?? default(int); }
+        public long? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId = value ?? default(long); }
 
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -139,7 +139,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -174,16 +174,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This gives the application id of the big data app.",
         SerializedName = @"applicationId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationId { get; set; }
         /// <summary>Provides the application size of the big data app. It is provided in bytes.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Provides the application size of the big data app. It is provided in bytes.",
         SerializedName = @"applicationSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationSize { get; set; }
         /// <summary>This returns the clusterType of the big data app</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -198,8 +198,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -240,16 +240,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This gives the id of the big data app.",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? InstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? InstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -272,8 +272,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Returns the job id of the last backup job performed.",
         SerializedName = @"jobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupJobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -306,8 +306,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -339,15 +339,15 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>This gives the application id of the big data app.</summary>
-        int? ApplicationId { get; set; }
+        long? ApplicationId { get; set; }
         /// <summary>Provides the application size of the big data app. It is provided in bytes.</summary>
-        int? ApplicationSize { get; set; }
+        long? ApplicationSize { get; set; }
         /// <summary>This returns the clusterType of the big data app</summary>
         string ClusterType { get; set; }
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>This returns if the big data app is configured or deconfigured.</summary>
@@ -359,11 +359,11 @@ namespace Commvault.Powershell.Models
         /// <summary>This returns the Globally Unique Identifier of the big data app.</summary>
         string Guid { get; set; }
         /// <summary>This gives the id of the big data app.</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         Commvault.Powershell.Models.IIdName Instance { get; set; }
 
-        int? InstanceId { get; set; }
+        long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
 
@@ -371,7 +371,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Gives the reason for the last backup job failing, if the last backup job fails.</summary>
         string LastBackupFailureReason { get; set; }
         /// <summary>Returns the job id of the last backup job performed.</summary>
-        int? LastBackupJobId { get; set; }
+        long? LastBackupJobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         string LastBackupStatus { get; set; }
         /// <summary>
@@ -383,7 +383,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
 

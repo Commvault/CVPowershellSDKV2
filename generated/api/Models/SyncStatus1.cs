@@ -19,11 +19,11 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.INameMessage[] ErrorMessage { get => this._errorMessage; set => this._errorMessage = value; }
 
         /// <summary>Backing field for <see cref="LastSyncedWithIdp" /> property.</summary>
-        private int? _lastSyncedWithIdp;
+        private long? _lastSyncedWithIdp;
 
         /// <summary>returns the last synced time with IDP(unix time format)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LastSyncedWithIdp { get => this._lastSyncedWithIdp; set => this._lastSyncedWithIdp = value; }
+        public long? LastSyncedWithIdp { get => this._lastSyncedWithIdp; set => this._lastSyncedWithIdp = value; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -56,8 +56,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"returns the last synced time with IDP(unix time format)",
         SerializedName = @"lastSyncedWithIDP",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastSyncedWithIdp { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastSyncedWithIdp { get; set; }
         /// <summary>status of the commcell</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
         /// <summary>errorMessage if the commcell failed to sync</summary>
         Commvault.Powershell.Models.INameMessage[] ErrorMessage { get; set; }
         /// <summary>returns the last synced time with IDP(unix time format)</summary>
-        int? LastSyncedWithIdp { get; set; }
+        long? LastSyncedWithIdp { get; set; }
         /// <summary>status of the commcell</summary>
         string Status { get; set; }
 

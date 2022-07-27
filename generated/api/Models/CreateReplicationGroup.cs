@@ -22,11 +22,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreateReplicationGroupInternal.SourceHypervisor { get => (this._sourceHypervisor = this._sourceHypervisor ?? new Commvault.Powershell.Models.IdName()); set { {_sourceHypervisor = value;} } }
 
         /// <summary>Backing field for <see cref="FrequencyInMinutes" /> property.</summary>
-        private int? _frequencyInMinutes;
+        private long? _frequencyInMinutes;
 
         /// <summary>The field denotes the frequency of replication.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FrequencyInMinutes { get => this._frequencyInMinutes; set => this._frequencyInMinutes = value; }
+        public long? FrequencyInMinutes { get => this._frequencyInMinutes; set => this._frequencyInMinutes = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -42,7 +42,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName RecoveryTarget { get => (this._recoveryTarget = this._recoveryTarget ?? new Commvault.Powershell.Models.IdName()); set => this._recoveryTarget = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryTargetId { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Id = value ?? default(int); }
+        public long? RecoveryTargetId { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RecoveryTargetName { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Name = value ?? null; }
@@ -54,7 +54,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceHypervisor { get => (this._sourceHypervisor = this._sourceHypervisor ?? new Commvault.Powershell.Models.IdName()); set => this._sourceHypervisor = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceHypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceHypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceHypervisor).Id = value ?? default(int); }
+        public long? SourceHypervisorId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceHypervisor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceHypervisor).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceHypervisorName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceHypervisor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceHypervisor).Name = value ?? null; }
@@ -94,8 +94,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The field denotes the frequency of replication.",
         SerializedName = @"frequencyInMinutes",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FrequencyInMinutes { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FrequencyInMinutes { get; set; }
         /// <summary>The name of the replication group being created</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -110,8 +110,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryTargetId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryTargetId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -126,8 +126,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceHypervisorId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceHypervisorId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -164,19 +164,19 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>The field denotes the frequency of replication.</summary>
-        int? FrequencyInMinutes { get; set; }
+        long? FrequencyInMinutes { get; set; }
         /// <summary>The name of the replication group being created</summary>
         string Name { get; set; }
 
         Commvault.Powershell.Models.IIdName RecoveryTarget { get; set; }
 
-        int? RecoveryTargetId { get; set; }
+        long? RecoveryTargetId { get; set; }
 
         string RecoveryTargetName { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceHypervisor { get; set; }
 
-        int? SourceHypervisorId { get; set; }
+        long? SourceHypervisorId { get; set; }
 
         string SourceHypervisorName { get; set; }
         /// <summary>

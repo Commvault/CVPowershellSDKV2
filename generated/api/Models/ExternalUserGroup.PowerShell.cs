@@ -86,9 +86,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId = (int?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId = (long?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderName = (string) content.GetValueForProperty("ProviderName",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -107,9 +107,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId = (int?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId = (long?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderName = (string) content.GetValueForProperty("ProviderName",((Commvault.Powershell.Models.IExternalUserGroupInternal)this).ProviderName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="UserGroupId" /> property.</summary>
-        private int _userGroupId;
+        private long _userGroupId;
 
         /// <summary>Returns the list of users associated to the userGroupId provided.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Returns the list of users associated to the userGroupId provided.")]
@@ -109,9 +109,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Returns the list of users associated to the userGroupId provided.",
         SerializedName = @"userGroupId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int UserGroupId { get => this._userGroupId; set => this._userGroupId = value; }
+        public long UserGroupId { get => this._userGroupId; set => this._userGroupId = value; }
 
         /// <summary>
         /// <c>overrideOnNotFound</c> will be called before the regular onNotFound has been processed, allowing customization of what
@@ -270,12 +270,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetUsers(this.InvocationInformation.BoundParameters.ContainsKey("LaptopUsers") ? LaptopUsers : default(global::System.Management.Automation.SwitchParameter?), this.InvocationInformation.BoundParameters.ContainsKey("UserGroupId") ? UserGroupId : default(int?), onOk, onNotFound, this, Pipeline);
+                    await this.Client.GetUsers(this.InvocationInformation.BoundParameters.ContainsKey("LaptopUsers") ? LaptopUsers : default(global::System.Management.Automation.SwitchParameter?), this.InvocationInformation.BoundParameters.ContainsKey("UserGroupId") ? UserGroupId : default(long?), onOk, onNotFound, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  LaptopUsers=this.InvocationInformation.BoundParameters.ContainsKey("LaptopUsers") ? LaptopUsers : default(global::System.Management.Automation.SwitchParameter?),UserGroupId=this.InvocationInformation.BoundParameters.ContainsKey("UserGroupId") ? UserGroupId : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  LaptopUsers=this.InvocationInformation.BoundParameters.ContainsKey("LaptopUsers") ? LaptopUsers : default(global::System.Management.Automation.SwitchParameter?),UserGroupId=this.InvocationInformation.BoundParameters.ContainsKey("UserGroupId") ? UserGroupId : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

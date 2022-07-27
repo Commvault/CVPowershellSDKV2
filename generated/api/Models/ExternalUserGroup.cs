@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>User Group Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -26,11 +26,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="ProviderId" /> property.</summary>
-        private int? _providerId;
+        private long? _providerId;
 
         /// <summary>Provider id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ProviderId { get => this._providerId; set => this._providerId = value; }
+        public long? ProviderId { get => this._providerId; set => this._providerId = value; }
 
         /// <summary>Backing field for <see cref="ProviderName" /> property.</summary>
         private string _providerName;
@@ -55,8 +55,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"User Group Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>External Group Name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -71,8 +71,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Provider id",
         SerializedName = @"providerId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ProviderId { get; set; }
         /// <summary>Provider Name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -88,11 +88,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>User Group Id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>External Group Name</summary>
         string Name { get; set; }
         /// <summary>Provider id</summary>
-        int? ProviderId { get; set; }
+        long? ProviderId { get; set; }
         /// <summary>Provider Name</summary>
         string ProviderName { get; set; }
 

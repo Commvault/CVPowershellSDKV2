@@ -14,7 +14,7 @@ Create a Blackout Window
 
 ```
 New-BlackoutWindow -Name <String> [-BackupOperations <String[]>] [-BetweenDateEnd <Int64>]
- [-BetweenDateStart <Int64>] [-CompanyId <Int32>] [-CompanyName <String>] [-Days <String[]>] [-DoNotSubmitJob]
+ [-BetweenDateStart <Int64>] [-CompanyId <Int64>] [-CompanyName <String>] [-Days <String[]>] [-DoNotSubmitJob]
  [-Time <IStartEnd[]>] [-Weeks <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

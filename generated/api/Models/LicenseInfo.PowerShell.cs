@@ -93,14 +93,14 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId = (int?) content.GetValueForProperty("CommCellId",((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId = (long?) content.GetValueForProperty("CommCellId",((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommServeIPAddress = (string) content.GetValueForProperty("CommServeIPAddress",((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommServeIPAddress, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseIPAddress = (string) content.GetValueForProperty("LicenseIPAddress",((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseIPAddress, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).Edition = (string) content.GetValueForProperty("Edition",((Commvault.Powershell.Models.ILicenseInfoInternal)this).Edition, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseMode = (string) content.GetValueForProperty("LicenseMode",((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseMode, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).SerialNumber = (string) content.GetValueForProperty("SerialNumber",((Commvault.Powershell.Models.ILicenseInfoInternal)this).SerialNumber, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).RegistrationCode = (string) content.GetValueForProperty("RegistrationCode",((Commvault.Powershell.Models.ILicenseInfoInternal)this).RegistrationCode, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate = (int?) content.GetValueForProperty("ExpiryDate",((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate = (long?) content.GetValueForProperty("ExpiryDate",((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -118,14 +118,14 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId = (int?) content.GetValueForProperty("CommCellId",((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId = (long?) content.GetValueForProperty("CommCellId",((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommCellId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommServeIPAddress = (string) content.GetValueForProperty("CommServeIPAddress",((Commvault.Powershell.Models.ILicenseInfoInternal)this).CommServeIPAddress, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseIPAddress = (string) content.GetValueForProperty("LicenseIPAddress",((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseIPAddress, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).Edition = (string) content.GetValueForProperty("Edition",((Commvault.Powershell.Models.ILicenseInfoInternal)this).Edition, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseMode = (string) content.GetValueForProperty("LicenseMode",((Commvault.Powershell.Models.ILicenseInfoInternal)this).LicenseMode, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).SerialNumber = (string) content.GetValueForProperty("SerialNumber",((Commvault.Powershell.Models.ILicenseInfoInternal)this).SerialNumber, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILicenseInfoInternal)this).RegistrationCode = (string) content.GetValueForProperty("RegistrationCode",((Commvault.Powershell.Models.ILicenseInfoInternal)this).RegistrationCode, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate = (int?) content.GetValueForProperty("ExpiryDate",((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate = (long?) content.GetValueForProperty("ExpiryDate",((Commvault.Powershell.Models.ILicenseInfoInternal)this).ExpiryDate, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

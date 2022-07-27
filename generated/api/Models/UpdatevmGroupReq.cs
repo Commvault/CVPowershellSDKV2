@@ -47,7 +47,7 @@ namespace Commvault.Powershell.Models
         public bool? BackupActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterDelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterDelay = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId = value ?? default(int); }
+        public long? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName = value ?? null; }
@@ -131,7 +131,7 @@ namespace Commvault.Powershell.Models
         public string CredentialsPassword { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CredentialsPassword; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CredentialsPassword = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CrossAccountCopyDestinationClientId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientId = value ?? default(int); }
+        public long? CrossAccountCopyDestinationClientId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CrossAccountCopyDestinationClientName { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientName; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientName = value ?? null; }
@@ -182,7 +182,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -196,13 +196,13 @@ namespace Commvault.Powershell.Models
         public bool? RestoreActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterDelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterDelay = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId = value ?? default(int); }
+        public long? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RestoreActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SavedCredentialsId { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsId; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsId = value ?? default(int); }
+        public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsId; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SavedCredentialsName { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsName; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsName = value ?? null; }
@@ -237,7 +237,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>precentage of datastore free space check value</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SettingDatastoreFreespaceRequired { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceRequired; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceRequired = value ?? default(int); }
+        public long? SettingDatastoreFreespaceRequired { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceRequired; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceRequired = value ?? default(long); }
 
         /// <summary>Is the VM App Aware</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -245,11 +245,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Start Time for the VM Group Job</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SettingJobStartTime { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).JobStartTime; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).JobStartTime = value ?? default(int); }
+        public long? SettingJobStartTime { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).JobStartTime; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).JobStartTime = value ?? default(long); }
 
         /// <summary>Number of readers for backup</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SettingNoOfReaders { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).NoOfReaders; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).NoOfReaders = value ?? default(int); }
+        public long? SettingNoOfReaders { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).NoOfReaders; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).NoOfReaders = value ?? default(long); }
 
         /// <summary>transport mode based on environment. Values are case sensitive</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -273,13 +273,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IVMGroupSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.VMGroupSettings()); set => this._settings = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapEngineId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineId = value ?? default(int); }
+        public long? SnapEngineId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SnapEngineName { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineName; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SnapMountProxyId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapMountProxyId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapMountProxyId = value ?? default(int); }
+        public long? SnapMountProxyId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapMountProxyId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapMountProxyId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SnapMountProxyName { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapMountProxyName; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapMountProxyName = value ?? null; }
@@ -335,7 +335,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Storage { get => (this._storage = this._storage ?? new Commvault.Powershell.Models.IdName()); set => this._storage = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(int); }
+        public long? StorageId { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name = value ?? null; }
@@ -403,8 +403,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupActivityControlOptionsTimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupActivityControlOptionsTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -461,8 +461,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CrossAccountCopyDestinationClientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CrossAccountCopyDestinationClientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -527,8 +527,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -559,8 +559,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -575,8 +575,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -641,8 +641,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"precentage of datastore free space check value",
         SerializedName = @"datastoreFreespaceRequired",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SettingDatastoreFreespaceRequired { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SettingDatastoreFreespaceRequired { get; set; }
         /// <summary>Is the VM App Aware</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -657,16 +657,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Start Time for the VM Group Job",
         SerializedName = @"jobStartTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SettingJobStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SettingJobStartTime { get; set; }
         /// <summary>Number of readers for backup</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Number of readers for backup",
         SerializedName = @"noOfReaders",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SettingNoOfReaders { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SettingNoOfReaders { get; set; }
         /// <summary>transport mode based on environment. Values are case sensitive</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -705,8 +705,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapEngineId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapEngineId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -721,8 +721,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapMountProxyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapMountProxyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -812,8 +812,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StorageId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StorageId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -848,7 +848,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName BackupActivityControlOptionTimeZone { get; set; }
 
-        int? BackupActivityControlOptionsTimeZoneId { get; set; }
+        long? BackupActivityControlOptionsTimeZoneId { get; set; }
 
         string BackupActivityControlOptionsTimeZoneName { get; set; }
         /// <summary>RuleContent</summary>
@@ -866,7 +866,7 @@ namespace Commvault.Powershell.Models
         /// <summary>password to access the network path</summary>
         string CredentialsPassword { get; set; }
 
-        int? CrossAccountCopyDestinationClientId { get; set; }
+        long? CrossAccountCopyDestinationClientId { get; set; }
 
         string CrossAccountCopyDestinationClientName { get; set; }
 
@@ -892,7 +892,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>Delayed by n Hrs</summary>
@@ -902,11 +902,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName RestoreActivityControlOptionTimeZone { get; set; }
 
-        int? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
 
         string RestoreActivityControlOptionsTimeZoneName { get; set; }
 
-        int? SavedCredentialsId { get; set; }
+        long? SavedCredentialsId { get; set; }
 
         string SavedCredentialsName { get; set; }
 
@@ -924,15 +924,15 @@ namespace Commvault.Powershell.Models
         /// <summary>True if Datastore Free space check is enabled</summary>
         bool? SettingDatastoreFreespaceCheck { get; set; }
         /// <summary>precentage of datastore free space check value</summary>
-        int? SettingDatastoreFreespaceRequired { get; set; }
+        long? SettingDatastoreFreespaceRequired { get; set; }
         /// <summary>guestCredentialInfo</summary>
         Commvault.Powershell.Models.IGuestCredentialInfo SettingGuestCredentials { get; set; }
         /// <summary>Is the VM App Aware</summary>
         bool? SettingIsApplicationAware { get; set; }
         /// <summary>Start Time for the VM Group Job</summary>
-        int? SettingJobStartTime { get; set; }
+        long? SettingJobStartTime { get; set; }
         /// <summary>Number of readers for backup</summary>
-        int? SettingNoOfReaders { get; set; }
+        long? SettingNoOfReaders { get; set; }
         /// <summary>transport mode based on environment. Values are case sensitive</summary>
         string SettingTransportMode { get; set; }
         /// <summary>True if Changed Block Tracking is enabled</summary>
@@ -944,11 +944,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IVMGroupSettings Settings { get; set; }
 
-        int? SnapEngineId { get; set; }
+        long? SnapEngineId { get; set; }
 
         string SnapEngineName { get; set; }
 
-        int? SnapMountProxyId { get; set; }
+        long? SnapMountProxyId { get; set; }
 
         string SnapMountProxyName { get; set; }
 
@@ -983,7 +983,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Storage { get; set; }
 
-        int? StorageId { get; set; }
+        long? StorageId { get; set; }
 
         string StorageName { get; set; }
 

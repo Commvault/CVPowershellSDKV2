@@ -32,8 +32,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int AccessNodeId { get => Body.AccessNodeId ?? default(int); set => Body.AccessNodeId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long AccessNodeId { get => Body.AccessNodeId ?? default(long); set => Body.AccessNodeId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -277,7 +277,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.HypervisorId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.SetHypervisorAccessNode(InputObject.HypervisorId ?? default(int), Body, onOk, onInternalServerError, this, Pipeline);
+                    await this.Client.SetHypervisorAccessNode(InputObject.HypervisorId ?? default(long), Body, onOk, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

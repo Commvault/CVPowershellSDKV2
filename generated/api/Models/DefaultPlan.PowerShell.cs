@@ -67,7 +67,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Subtype = (string) content.GetValueForProperty("Subtype",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Subtype, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Name, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -87,7 +87,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Subtype = (string) content.GetValueForProperty("Subtype",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Subtype, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IDefaultPlanInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IDefaultPlanInternal)this).Name, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

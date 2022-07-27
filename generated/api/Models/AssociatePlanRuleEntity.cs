@@ -29,7 +29,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -41,7 +41,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdName()); set => this._rule = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RuleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id = value ?? default(int); }
+        public long? RuleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RuleName { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name = value ?? null; }
@@ -53,7 +53,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Subclient { get => (this._subclient = this._subclient ?? new Commvault.Powershell.Models.IdName()); set => this._subclient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id = value ?? default(int); }
+        public long? SubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SubclientName { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Name = value ?? null; }
@@ -73,8 +73,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -89,8 +89,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RuleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RuleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -105,8 +105,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SubclientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SubclientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -123,19 +123,19 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
 
         Commvault.Powershell.Models.IIdName Rule { get; set; }
 
-        int? RuleId { get; set; }
+        long? RuleId { get; set; }
 
         string RuleName { get; set; }
 
         Commvault.Powershell.Models.IIdName Subclient { get; set; }
 
-        int? SubclientId { get; set; }
+        long? SubclientId { get; set; }
 
         string SubclientName { get; set; }
 

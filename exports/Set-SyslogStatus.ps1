@@ -43,7 +43,7 @@ BODY <ISyslogConfigure>: This operation configures a syslog server.
   [ForwardToSyslogAlerts <Boolean?>]: Forward the system log for alerts to the server.
   [ForwardToSyslogAudit <Boolean?>]: Forward the system log for audit trails to the server.
   [ForwardToSyslogEvents <Boolean?>]: Forward the system log for events to the server.
-  [Port <Int32?>]: The port on which the syslog server accepts the logs.
+  [Port <Int64?>]: The port on which the syslog server accepts the logs.
   [SecureMessaging <Boolean?>]: When false UDP port will be used, when true TLS encryption will be used to connect to Syslog Server. To upload Certificate Authority file it should be enabled.
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-syslogstatus
@@ -99,7 +99,7 @@ param(
 
     [Parameter(ParameterSetName='ConfigureExpanded')]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # The port on which the syslog server accepts the logs.
     ${Port},
 

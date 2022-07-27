@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="UserId" /> property.</summary>
-        private int _userId;
+        private long _userId;
 
         /// <summary>user id to be filtered</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "user id to be filtered")]
@@ -86,9 +86,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"user id to be filtered",
         SerializedName = @"userId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int UserId { get => this._userId; set => this._userId = value; }
+        public long UserId { get => this._userId; set => this._userId = value; }
 
         /// <summary>Backing field for <see cref="Vendor" /> property.</summary>
         private string _vendor;
@@ -252,12 +252,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetAccessNodes(this.InvocationInformation.BoundParameters.ContainsKey("Vendor") ? Vendor : null, this.InvocationInformation.BoundParameters.ContainsKey("UserId") ? UserId : default(int?), onOk, this, Pipeline);
+                    await this.Client.GetAccessNodes(this.InvocationInformation.BoundParameters.ContainsKey("Vendor") ? Vendor : null, this.InvocationInformation.BoundParameters.ContainsKey("UserId") ? UserId : default(long?), onOk, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  Vendor=this.InvocationInformation.BoundParameters.ContainsKey("Vendor") ? Vendor : null,UserId=this.InvocationInformation.BoundParameters.ContainsKey("UserId") ? UserId : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  Vendor=this.InvocationInformation.BoundParameters.ContainsKey("Vendor") ? Vendor : null,UserId=this.InvocationInformation.BoundParameters.ContainsKey("UserId") ? UserId : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

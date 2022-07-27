@@ -62,8 +62,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_fileTimestampMethod = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("fileTimestampMethod"), out var __jsonFileTimestampMethod) ? (string)__jsonFileTimestampMethod : (string)FileTimestampMethod;}
-            {_fileTimestamp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileTimestamp"), out var __jsonFileTimestamp) ? (int?)__jsonFileTimestamp : FileTimestamp;}
-            {_fileSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileSize"), out var __jsonFileSize) ? (int?)__jsonFileSize : FileSize;}
+            {_fileTimestamp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileTimestamp"), out var __jsonFileTimestamp) ? (long?)__jsonFileTimestamp : FileTimestamp;}
+            {_fileSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("fileSize"), out var __jsonFileSize) ? (long?)__jsonFileSize : FileSize;}
             {_afterArchiving = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("afterArchiving"), out var __jsonAfterArchiving) ? (string)__jsonAfterArchiving : (string)AfterArchiving;}
             AfterFromJson(json);
         }
@@ -98,8 +98,8 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._fileTimestampMethod)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._fileTimestampMethod.ToString()) : null, "fileTimestampMethod" ,container.Add );
-            AddIf( null != this._fileTimestamp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._fileTimestamp) : null, "fileTimestamp" ,container.Add );
-            AddIf( null != this._fileSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._fileSize) : null, "fileSize" ,container.Add );
+            AddIf( null != this._fileTimestamp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._fileTimestamp) : null, "fileTimestamp" ,container.Add );
+            AddIf( null != this._fileSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._fileSize) : null, "fileSize" ,container.Add );
             AddIf( null != (((object)this._afterArchiving)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._afterArchiving.ToString()) : null, "afterArchiving" ,container.Add );
             AfterToJson(ref container);
             return container;

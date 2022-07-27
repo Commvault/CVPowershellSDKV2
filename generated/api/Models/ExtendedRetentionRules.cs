@@ -35,7 +35,7 @@ namespace Commvault.Powershell.Models
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FirstExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)FirstExtendedRetentionRule).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)FirstExtendedRetentionRule).RetentionPeriodDays = value ?? default(int); }
+        public long? FirstExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)FirstExtendedRetentionRule).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)FirstExtendedRetentionRule).RetentionPeriodDays = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FirstExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)FirstExtendedRetentionRule).Type; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)FirstExtendedRetentionRule).Type = value ?? null; }
@@ -53,7 +53,7 @@ namespace Commvault.Powershell.Models
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SecondExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)SecondExtendedRetentionRule).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)SecondExtendedRetentionRule).RetentionPeriodDays = value ?? default(int); }
+        public long? SecondExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)SecondExtendedRetentionRule).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)SecondExtendedRetentionRule).RetentionPeriodDays = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SecondExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)SecondExtendedRetentionRule).Type; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)SecondExtendedRetentionRule).Type = value ?? null; }
@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ThirdExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)ThirdExtendedRetentionRule).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)ThirdExtendedRetentionRule).RetentionPeriodDays = value ?? default(int); }
+        public long? ThirdExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)ThirdExtendedRetentionRule).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)ThirdExtendedRetentionRule).RetentionPeriodDays = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ThirdExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)ThirdExtendedRetentionRule).Type; set => ((Commvault.Powershell.Models.IPlanRetentionRuleInternal)ThirdExtendedRetentionRule).Type = value ?? null; }
@@ -101,8 +101,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -127,8 +127,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -153,8 +153,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -175,7 +175,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
-        int? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        long? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         string FirstExtendedRetentionRuleType { get; set; }
 
@@ -185,7 +185,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
-        int? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        long? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         string SecondExtendedRetentionRuleType { get; set; }
 
@@ -195,7 +195,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
-        int? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        long? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         string ThirdExtendedRetentionRuleType { get; set; }
 

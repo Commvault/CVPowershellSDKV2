@@ -116,8 +116,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RegionId { get => Body.RegionId ?? default(int); set => Body.RegionId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RegionId { get => Body.RegionId ?? default(long); set => Body.RegionId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -138,8 +138,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Backup copy RPO in minutes",
         SerializedName = @"backupCopyRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionBackupCopyRpoMins { get => Body.SnapshotOptionBackupCopyRpoMins ?? default(int); set => Body.SnapshotOptionBackupCopyRpoMins = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionBackupCopyRpoMins { get => Body.SnapshotOptionBackupCopyRpoMins ?? default(long); set => Body.SnapshotOptionBackupCopyRpoMins = value; }
 
         /// <summary>Flag to enable backup copy</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Flag to enable backup copy")]
@@ -163,8 +163,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionRetentionPeriodDays { get => Body.SnapshotOptionRetentionPeriodDays ?? default(int); set => Body.SnapshotOptionRetentionPeriodDays = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionRetentionPeriodDays { get => Body.SnapshotOptionRetentionPeriodDays ?? default(long); set => Body.SnapshotOptionRetentionPeriodDays = value; }
 
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
@@ -177,8 +177,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.",
         SerializedName = @"snapRecoveryPoints",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionSnapRecoveryPoints { get => Body.SnapshotOptionSnapRecoveryPoints ?? default(int); set => Body.SnapshotOptionSnapRecoveryPoints = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionSnapRecoveryPoints { get => Body.SnapshotOptionSnapRecoveryPoints ?? default(long); set => Body.SnapshotOptionSnapRecoveryPoints = value; }
 
         /// <summary>
         /// <c>overrideOnNotFound</c> will be called before the regular onNotFound has been processed, allowing customization of what
@@ -348,7 +348,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.PlanId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.CreateLaptopBackupDestination(InputObject.PlanId ?? default(int), Body, onOk, onNotFound, this, Pipeline);
+                    await this.Client.CreateLaptopBackupDestination(InputObject.PlanId ?? default(long), Body, onOk, onNotFound, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

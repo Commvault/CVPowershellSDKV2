@@ -196,8 +196,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ZoneId { get => Body.ZoneId ?? default(int); set => Body.ZoneId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ZoneId { get => Body.ZoneId ?? default(long); set => Body.ZoneId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -369,7 +369,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.RegionId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.UpdateRegion(InputObject.RegionId ?? default(int), Body, onOk, onInternalServerError, this, Pipeline);
+                    await this.Client.UpdateRegion(InputObject.RegionId ?? default(long), Body, onOk, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

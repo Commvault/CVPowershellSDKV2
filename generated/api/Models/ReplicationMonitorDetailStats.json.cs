@@ -71,15 +71,15 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
-            {_repDataDeltaActual = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("repDataDeltaActual"), out var __jsonRepDataDeltaActual) ? (int?)__jsonRepDataDeltaActual : RepDataDeltaActual;}
-            {_ioDelta = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("IODelta"), out var __jsonIoDelta) ? (int?)__jsonIoDelta : IoDelta;}
-            {_repSetSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("repSetSize"), out var __jsonRepSetSize) ? (int?)__jsonRepSetSize : RepSetSize;}
-            {_iopsDelta = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("IOPSDelta"), out var __jsonIopsDelta) ? (int?)__jsonIopsDelta : IopsDelta;}
-            {_sizeInRpStore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeInRpStore"), out var __jsonSizeInRpStore) ? (int?)__jsonSizeInRpStore : SizeInRpStore;}
-            {_repDataDeltaComp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("repDataDeltaComp"), out var __jsonRepDataDeltaComp) ? (int?)__jsonRepDataDeltaComp : RepDataDeltaComp;}
-            {_retention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retention"), out var __jsonRetention) ? (int?)__jsonRetention : Retention;}
-            {_timeStamp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("timeStamp"), out var __jsonTimeStamp) ? (int?)__jsonTimeStamp : TimeStamp;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
+            {_repDataDeltaActual = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("repDataDeltaActual"), out var __jsonRepDataDeltaActual) ? (long?)__jsonRepDataDeltaActual : RepDataDeltaActual;}
+            {_ioDelta = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("IODelta"), out var __jsonIoDelta) ? (long?)__jsonIoDelta : IoDelta;}
+            {_repSetSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("repSetSize"), out var __jsonRepSetSize) ? (long?)__jsonRepSetSize : RepSetSize;}
+            {_iopsDelta = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("IOPSDelta"), out var __jsonIopsDelta) ? (long?)__jsonIopsDelta : IopsDelta;}
+            {_sizeInRpStore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeInRpStore"), out var __jsonSizeInRpStore) ? (long?)__jsonSizeInRpStore : SizeInRpStore;}
+            {_repDataDeltaComp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("repDataDeltaComp"), out var __jsonRepDataDeltaComp) ? (long?)__jsonRepDataDeltaComp : RepDataDeltaComp;}
+            {_retention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retention"), out var __jsonRetention) ? (long?)__jsonRetention : Retention;}
+            {_timeStamp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("timeStamp"), out var __jsonTimeStamp) ? (long?)__jsonTimeStamp : TimeStamp;}
             AfterFromJson(json);
         }
 
@@ -102,15 +102,15 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
-            AddIf( null != this._repDataDeltaActual ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._repDataDeltaActual) : null, "repDataDeltaActual" ,container.Add );
-            AddIf( null != this._ioDelta ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._ioDelta) : null, "IODelta" ,container.Add );
-            AddIf( null != this._repSetSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._repSetSize) : null, "repSetSize" ,container.Add );
-            AddIf( null != this._iopsDelta ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._iopsDelta) : null, "IOPSDelta" ,container.Add );
-            AddIf( null != this._sizeInRpStore ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._sizeInRpStore) : null, "sizeInRpStore" ,container.Add );
-            AddIf( null != this._repDataDeltaComp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._repDataDeltaComp) : null, "repDataDeltaComp" ,container.Add );
-            AddIf( null != this._retention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retention) : null, "retention" ,container.Add );
-            AddIf( null != this._timeStamp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._timeStamp) : null, "timeStamp" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._repDataDeltaActual ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._repDataDeltaActual) : null, "repDataDeltaActual" ,container.Add );
+            AddIf( null != this._ioDelta ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._ioDelta) : null, "IODelta" ,container.Add );
+            AddIf( null != this._repSetSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._repSetSize) : null, "repSetSize" ,container.Add );
+            AddIf( null != this._iopsDelta ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._iopsDelta) : null, "IOPSDelta" ,container.Add );
+            AddIf( null != this._sizeInRpStore ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._sizeInRpStore) : null, "sizeInRpStore" ,container.Add );
+            AddIf( null != this._repDataDeltaComp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._repDataDeltaComp) : null, "repDataDeltaComp" ,container.Add );
+            AddIf( null != this._retention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retention) : null, "retention" ,container.Add );
+            AddIf( null != this._timeStamp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._timeStamp) : null, "timeStamp" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -74,8 +74,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_crashConsistentRpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("crashConsistentRpInterval"), out var __jsonCrashConsistentRpInterval) ? (int?)__jsonCrashConsistentRpInterval : CrashConsistentRpInterval;}
-            {_applicationConsistentRpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationConsistentRpInterval"), out var __jsonApplicationConsistentRpInterval) ? (int?)__jsonApplicationConsistentRpInterval : ApplicationConsistentRpInterval;}
+            {_crashConsistentRpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("crashConsistentRpInterval"), out var __jsonCrashConsistentRpInterval) ? (long?)__jsonCrashConsistentRpInterval : CrashConsistentRpInterval;}
+            {_applicationConsistentRpInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationConsistentRpInterval"), out var __jsonApplicationConsistentRpInterval) ? (long?)__jsonApplicationConsistentRpInterval : ApplicationConsistentRpInterval;}
             AfterFromJson(json);
         }
 
@@ -98,8 +98,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._crashConsistentRpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._crashConsistentRpInterval) : null, "crashConsistentRpInterval" ,container.Add );
-            AddIf( null != this._applicationConsistentRpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationConsistentRpInterval) : null, "applicationConsistentRpInterval" ,container.Add );
+            AddIf( null != this._crashConsistentRpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._crashConsistentRpInterval) : null, "crashConsistentRpInterval" ,container.Add );
+            AddIf( null != this._applicationConsistentRpInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationConsistentRpInterval) : null, "applicationConsistentRpInterval" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -46,7 +46,7 @@ namespace Commvault.Powershell.Models
         /// Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupContentFileSystemQuota { get => ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)BackupContent).FileSystemQuota; set => ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)BackupContent).FileSystemQuota = value ?? default(int); }
+        public long? BackupContentFileSystemQuota { get => ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)BackupContent).FileSystemQuota; set => ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)BackupContent).FileSystemQuota = value ?? default(long); }
 
         /// <summary>Paths to exclude for Mac</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -104,27 +104,27 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Custom version rule: Retain daily versions for this many day(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionDailyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDailyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDailyVersions = value ?? default(int); }
+        public long? FileVersionDailyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDailyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDailyVersions = value ?? default(long); }
 
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionDays { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDays; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDays = value ?? default(int); }
+        public long? FileVersionDays { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDays; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionDays = value ?? default(long); }
 
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionMonthlyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionMonthlyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionMonthlyVersions = value ?? default(int); }
+        public long? FileVersionMonthlyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionMonthlyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionMonthlyVersions = value ?? default(long); }
 
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionVersions = value ?? default(int); }
+        public long? FileVersionVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionVersions = value ?? default(long); }
 
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionWeeklyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionWeeklyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionWeeklyVersions = value ?? default(int); }
+        public long? FileVersionWeeklyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionWeeklyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).FileVersionWeeklyVersions = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="General" /> property.</summary>
         private Commvault.Powershell.Models.ILaptopPlanUpdateGeneralInfo _general;
@@ -144,14 +144,14 @@ namespace Commvault.Powershell.Models
         /// i.e. no limit
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? NetworkResourceThrottleReceive { get => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleReceive; set => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleReceive = value ?? default(int); }
+        public long? NetworkResourceThrottleReceive { get => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleReceive; set => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleReceive = value ?? default(long); }
 
         /// <summary>
         /// Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? NetworkResourceThrottleSend { get => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleSend; set => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleSend = value ?? default(int); }
+        public long? NetworkResourceThrottleSend { get => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleSend; set => ((Commvault.Powershell.Models.ILaptopPlanNetworkResourcesInternal)NetworkResources).ThrottleSend = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="NetworkResources" /> property.</summary>
         private Commvault.Powershell.Models.ILaptopPlanNetworkResources _networkResources;
@@ -170,13 +170,13 @@ namespace Commvault.Powershell.Models
         /// The offline laptops are automatically deleted when the number of days are met. -1 means never.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? OfflineLaptopDeleteAfterDays { get => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).DeleteAfterDays; set => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).DeleteAfterDays = value ?? default(int); }
+        public long? OfflineLaptopDeleteAfterDays { get => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).DeleteAfterDays; set => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).DeleteAfterDays = value ?? default(long); }
 
         /// <summary>
         /// The offline laptops are retired when the number of days are met. -1 means never.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? OfflineLaptopRetireAfterDays { get => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).RetireAfterDays; set => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).RetireAfterDays = value ?? default(int); }
+        public long? OfflineLaptopRetireAfterDays { get => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).RetireAfterDays; set => ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)OfflineLaptops).RetireAfterDays = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="OfflineLaptops" /> property.</summary>
         private Commvault.Powershell.Models.IAutoRetireDevices _offlineLaptops;
@@ -213,7 +213,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName RegionToConfigure { get => (this._regionToConfigure = this._regionToConfigure ?? new Commvault.Powershell.Models.IdName()); set => this._regionToConfigure = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionToConfigureId { get => ((Commvault.Powershell.Models.IIdNameInternal)RegionToConfigure).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RegionToConfigure).Id = value ?? default(int); }
+        public long? RegionToConfigureId { get => ((Commvault.Powershell.Models.IIdNameInternal)RegionToConfigure).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RegionToConfigure).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RegionToConfigureName { get => ((Commvault.Powershell.Models.IIdNameInternal)RegionToConfigure).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)RegionToConfigure).Name = value ?? null; }
@@ -228,7 +228,7 @@ namespace Commvault.Powershell.Models
         /// Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RetentionDeletedItemRetention { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).DeletedItemRetention; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).DeletedItemRetention = value ?? default(int); }
+        public long? RetentionDeletedItemRetention { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).DeletedItemRetention; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionInternal)Retention).DeletedItemRetention = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="Rpo" /> property.</summary>
         private Commvault.Powershell.Models.ILaptopPlanUpdateRpo _rpo;
@@ -240,11 +240,11 @@ namespace Commvault.Powershell.Models
         /// Specify incremental backup frequency in minutes. Backup operation will start as per the time zone of the associated server.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RpoBackupFrequency { get => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).BackupFrequency; set => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).BackupFrequency = value ?? default(int); }
+        public long? RpoBackupFrequency { get => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).BackupFrequency; set => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).BackupFrequency = value ?? default(long); }
 
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaEnableAfterDelay; set => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaEnableAfterDelay = value ?? default(int); }
+        public long? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaEnableAfterDelay; set => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaEnableAfterDelay = value ?? default(long); }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -256,7 +256,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SlaPeriod { get => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaPeriod = value ?? default(int); }
+        public long? SlaPeriod { get => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)Rpo).SlaPeriod = value ?? default(long); }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -310,8 +310,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.",
         SerializedName = @"fileSystemQuota",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupContentFileSystemQuota { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupContentFileSystemQuota { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -366,8 +366,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Custom version rule: Retain daily versions for this many day(s)",
         SerializedName = @"dailyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionDailyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionDailyVersions { get; set; }
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
@@ -376,16 +376,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retain files for this many days. Year(s) or month(s) need to be converted to day(s)",
         SerializedName = @"days",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionDays { get; set; }
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Custom version rule: Retain monthly versions for this many month(s)",
         SerializedName = @"monthlyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionMonthlyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionMonthlyVersions { get; set; }
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
@@ -394,16 +394,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retain this many file versions. This is considered as default if no file retention rule is specified.",
         SerializedName = @"versions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionVersions { get; set; }
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Custom version rule: Retain weekly versions for this many week(s)",
         SerializedName = @"weeklyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionWeeklyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionWeeklyVersions { get; set; }
         /// <summary>
         /// This feature allows laptops to write backup directly to the cloud storage. It helps to optimize scale by reducing server
         /// dependency and extra data hops. Once the feature is enabled, the existing and the newly-added laptops use optimized backups.
@@ -424,8 +424,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit",
         SerializedName = @"throttleReceive",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NetworkResourceThrottleReceive { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NetworkResourceThrottleReceive { get; set; }
         /// <summary>
         /// Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
@@ -435,8 +435,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit",
         SerializedName = @"throttleSend",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NetworkResourceThrottleSend { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NetworkResourceThrottleSend { get; set; }
         /// <summary>New plan name to update</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -453,8 +453,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The offline laptops are automatically deleted when the number of days are met. -1 means never.",
         SerializedName = @"deleteAfterDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? OfflineLaptopDeleteAfterDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? OfflineLaptopDeleteAfterDays { get; set; }
         /// <summary>
         /// The offline laptops are retired when the number of days are met. -1 means never.
         /// </summary>
@@ -463,8 +463,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The offline laptops are retired when the number of days are met. -1 means never.",
         SerializedName = @"retireAfterDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? OfflineLaptopRetireAfterDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? OfflineLaptopRetireAfterDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -503,8 +503,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionToConfigureId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionToConfigureId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -521,8 +521,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.",
         SerializedName = @"deletedItemRetention",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RetentionDeletedItemRetention { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionDeletedItemRetention { get; set; }
         /// <summary>
         /// Specify incremental backup frequency in minutes. Backup operation will start as per the time zone of the associated server.
         /// </summary>
@@ -531,16 +531,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specify incremental backup frequency in minutes. Backup operation will start as per the time zone of the associated server.",
         SerializedName = @"backupFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RpoBackupFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RpoBackupFrequency { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaEnableAfterDelay { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -563,8 +563,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -590,7 +590,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.
         /// </summary>
-        int? BackupContentFileSystemQuota { get; set; }
+        long? BackupContentFileSystemQuota { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         string[] BackupContentMacExcludedPaths { get; set; }
         /// <summary>Paths to include for Mac</summary>
@@ -604,19 +604,19 @@ namespace Commvault.Powershell.Models
         /// <summary>Paths to include for Windows</summary>
         string[] BackupContentWindowsIncludedPaths { get; set; }
         /// <summary>Custom version rule: Retain daily versions for this many day(s)</summary>
-        int? FileVersionDailyVersions { get; set; }
+        long? FileVersionDailyVersions { get; set; }
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
-        int? FileVersionDays { get; set; }
+        long? FileVersionDays { get; set; }
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
-        int? FileVersionMonthlyVersions { get; set; }
+        long? FileVersionMonthlyVersions { get; set; }
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
-        int? FileVersionVersions { get; set; }
+        long? FileVersionVersions { get; set; }
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
-        int? FileVersionWeeklyVersions { get; set; }
+        long? FileVersionWeeklyVersions { get; set; }
 
         Commvault.Powershell.Models.ILaptopPlanUpdateGeneralInfo General { get; set; }
         /// <summary>
@@ -628,12 +628,12 @@ namespace Commvault.Powershell.Models
         /// Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
         /// </summary>
-        int? NetworkResourceThrottleReceive { get; set; }
+        long? NetworkResourceThrottleReceive { get; set; }
         /// <summary>
         /// Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
         /// </summary>
-        int? NetworkResourceThrottleSend { get; set; }
+        long? NetworkResourceThrottleSend { get; set; }
 
         Commvault.Powershell.Models.ILaptopPlanNetworkResources NetworkResources { get; set; }
         /// <summary>New plan name to update</summary>
@@ -641,11 +641,11 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// The offline laptops are automatically deleted when the number of days are met. -1 means never.
         /// </summary>
-        int? OfflineLaptopDeleteAfterDays { get; set; }
+        long? OfflineLaptopDeleteAfterDays { get; set; }
         /// <summary>
         /// The offline laptops are retired when the number of days are met. -1 means never.
         /// </summary>
-        int? OfflineLaptopRetireAfterDays { get; set; }
+        long? OfflineLaptopRetireAfterDays { get; set; }
 
         Commvault.Powershell.Models.IAutoRetireDevices OfflineLaptops { get; set; }
 
@@ -664,7 +664,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName RegionToConfigure { get; set; }
 
-        int? RegionToConfigureId { get; set; }
+        long? RegionToConfigureId { get; set; }
 
         string RegionToConfigureName { get; set; }
 
@@ -672,7 +672,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.
         /// </summary>
-        int? RetentionDeletedItemRetention { get; set; }
+        long? RetentionDeletedItemRetention { get; set; }
         /// <summary>
         /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
         /// not defined then, 5 versions are considered the default setting.
@@ -683,20 +683,20 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Specify incremental backup frequency in minutes. Backup operation will start as per the time zone of the associated server.
         /// </summary>
-        int? RpoBackupFrequency { get; set; }
+        long? RpoBackupFrequency { get; set; }
         /// <summary>
         /// A server meets SLA (Service Level Agreement) when all of its subclients have at least one successful backup during the
         /// number of days specified at the CommCell, Server Group or plan level.
         /// </summary>
         Commvault.Powershell.Models.ISlaUpdateOptions RpoSla { get; set; }
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        int? SlaEnableAfterDelay { get; set; }
+        long? SlaEnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         bool? SlaExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
         string SlaExclusionReason { get; set; }
         /// <summary>SLA Period in Days</summary>
-        int? SlaPeriod { get; set; }
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? SlaUseSystemDefaultSla { get; set; }
 

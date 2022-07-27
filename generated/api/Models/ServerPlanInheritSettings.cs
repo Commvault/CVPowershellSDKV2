@@ -32,7 +32,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName BasePlan { get => (this._basePlan = this._basePlan ?? new Commvault.Powershell.Models.IdName()); set => this._basePlan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BasePlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)BasePlan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)BasePlan).Id = value ?? default(int); }
+        public long? BasePlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)BasePlan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)BasePlan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BasePlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)BasePlan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)BasePlan).Name = value ?? null; }
@@ -109,8 +109,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BasePlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BasePlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -166,7 +166,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName BasePlan { get; set; }
 
-        int? BasePlanId { get; set; }
+        long? BasePlanId { get; set; }
 
         string BasePlanName { get; set; }
         /// <summary>PlanOverridenOptions</summary>

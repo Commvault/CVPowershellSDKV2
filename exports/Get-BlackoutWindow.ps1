@@ -44,7 +44,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # Shows blackout windows associated with the company whose id has been provided.
     ${CompanyId},
 

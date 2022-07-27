@@ -17,10 +17,10 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IVirtualMachineSummary[] VirtualMachines { get => this._virtualMachines; set => this._virtualMachines = value; }
 
         /// <summary>Backing field for <see cref="VirtualMachinesCount" /> property.</summary>
-        private int? _virtualMachinesCount;
+        private long? _virtualMachinesCount;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? VirtualMachinesCount { get => this._virtualMachinesCount; set => this._virtualMachinesCount = value; }
+        public long? VirtualMachinesCount { get => this._virtualMachinesCount; set => this._virtualMachinesCount = value; }
 
         /// <summary>Creates an new <see cref="VirtualMachineListResp" /> instance.</summary>
         public VirtualMachineListResp()
@@ -44,8 +44,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"virtualMachinesCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? VirtualMachinesCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? VirtualMachinesCount { get; set; }
 
     }
     internal partial interface IVirtualMachineListRespInternal
@@ -53,7 +53,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IVirtualMachineSummary[] VirtualMachines { get; set; }
 
-        int? VirtualMachinesCount { get; set; }
+        long? VirtualMachinesCount { get; set; }
 
     }
 }

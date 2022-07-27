@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePool = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("StoragePool",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePool, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).IsDedupe = (bool) content.GetValueForProperty("IsDedupe",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).IsDedupe, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId = (int?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId = (long?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolName = (string) content.GetValueForProperty("StoragePoolName",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -119,7 +119,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePool = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("StoragePool",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePool, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).IsDedupe = (bool) content.GetValueForProperty("IsDedupe",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).IsDedupe, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId = (int?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId = (long?) content.GetValueForProperty("StoragePoolId",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolName = (string) content.GetValueForProperty("StoragePoolName",((Commvault.Powershell.Models.IStorageCopyCreateInternal)this).StoragePoolName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

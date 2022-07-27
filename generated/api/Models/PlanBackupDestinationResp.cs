@@ -20,7 +20,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IGenericResp Error { get => (this._error = this._error ?? new Commvault.Powershell.Models.GenericResp()); set => this._error = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ErrorCode { get => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorCode; set => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorCode = value ?? default(int); }
+        public long? ErrorCode { get => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorCode; set => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorCode = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ErrorMessage { get => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage; set => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage = value ?? null; }
@@ -53,8 +53,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"errorCode",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ErrorCode { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ErrorCode { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -86,7 +86,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IGenericResp Error { get; set; }
 
-        int? ErrorCode { get; set; }
+        long? ErrorCode { get; set; }
 
         string ErrorMessage { get; set; }
         /// <summary>List of destinations for which the operation failed</summary>

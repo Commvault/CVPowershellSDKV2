@@ -76,7 +76,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Port for proxy configuration</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Port { get => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port; set => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port = value; }
+        public long? Port { get => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port; set => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port = value; }
 
         /// <summary>Backing field for <see cref="PrivateKeyPassword" /> property.</summary>
         private string _privateKeyPassword;

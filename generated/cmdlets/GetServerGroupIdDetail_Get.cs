@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="ServerGroupId" /> property.</summary>
-        private int _serverGroupId;
+        private long _serverGroupId;
 
         /// <summary>Id of the serverGroupId whose details have to be fetched</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the serverGroupId whose details have to be fetched")]
@@ -106,9 +106,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the serverGroupId whose details have to be fetched",
         SerializedName = @"serverGroupId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int ServerGroupId { get => this._serverGroupId; set => this._serverGroupId = value; }
+        public long ServerGroupId { get => this._serverGroupId; set => this._serverGroupId = value; }
 
         /// <summary>
         /// <c>overrideOnNotFound</c> will be called before the regular onNotFound has been processed, allowing customization of what

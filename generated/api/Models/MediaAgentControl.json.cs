@@ -74,7 +74,7 @@ namespace Commvault.Powershell.Models
             {_optimizeForConcurrentLanBackups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("optimizeForConcurrentLANBackups"), out var __jsonOptimizeForConcurrentLanBackups) ? (bool?)__jsonOptimizeForConcurrentLanBackups : OptimizeForConcurrentLanBackups;}
             {_maintenanceMode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("maintenanceMode"), out var __jsonMaintenanceMode) ? (bool?)__jsonMaintenanceMode : MaintenanceMode;}
             {_ransomwareProtection = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("ransomwareProtection"), out var __jsonRansomwareProtection) ? (bool?)__jsonRansomwareProtection : RansomwareProtection;}
-            {_parallelDataTransferOperations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("parallelDataTransferOperations"), out var __jsonParallelDataTransferOperations) ? (int?)__jsonParallelDataTransferOperations : ParallelDataTransferOperations;}
+            {_parallelDataTransferOperations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("parallelDataTransferOperations"), out var __jsonParallelDataTransferOperations) ? (long?)__jsonParallelDataTransferOperations : ParallelDataTransferOperations;}
             AfterFromJson(json);
         }
 
@@ -101,7 +101,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._optimizeForConcurrentLanBackups ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._optimizeForConcurrentLanBackups) : null, "optimizeForConcurrentLANBackups" ,container.Add );
             AddIf( null != this._maintenanceMode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._maintenanceMode) : null, "maintenanceMode" ,container.Add );
             AddIf( null != this._ransomwareProtection ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._ransomwareProtection) : null, "ransomwareProtection" ,container.Add );
-            AddIf( null != this._parallelDataTransferOperations ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._parallelDataTransferOperations) : null, "parallelDataTransferOperations" ,container.Add );
+            AddIf( null != this._parallelDataTransferOperations ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._parallelDataTransferOperations) : null, "parallelDataTransferOperations" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

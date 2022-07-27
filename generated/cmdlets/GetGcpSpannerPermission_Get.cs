@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="CloudAccountId" /> property.</summary>
-        private int _cloudAccountId;
+        private long _cloudAccountId;
 
         /// <summary>the id of the node where the browse request is sent</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "the id of the node where the browse request is sent")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"the id of the node where the browse request is sent",
         SerializedName = @"cloudAccountId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int CloudAccountId { get => this._cloudAccountId; set => this._cloudAccountId = value; }
+        public long CloudAccountId { get => this._cloudAccountId; set => this._cloudAccountId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -253,12 +253,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetGcpSpannerPermissions(this.InvocationInformation.BoundParameters.ContainsKey("CloudAccountId") ? CloudAccountId : default(int?), this.InvocationInformation.BoundParameters.ContainsKey("ProjectName") ? ProjectName : null, onOk, this, Pipeline);
+                    await this.Client.GetGcpSpannerPermissions(this.InvocationInformation.BoundParameters.ContainsKey("CloudAccountId") ? CloudAccountId : default(long?), this.InvocationInformation.BoundParameters.ContainsKey("ProjectName") ? ProjectName : null, onOk, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  CloudAccountId=this.InvocationInformation.BoundParameters.ContainsKey("CloudAccountId") ? CloudAccountId : default(int?),ProjectName=this.InvocationInformation.BoundParameters.ContainsKey("ProjectName") ? ProjectName : null})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  CloudAccountId=this.InvocationInformation.BoundParameters.ContainsKey("CloudAccountId") ? CloudAccountId : default(long?),ProjectName=this.InvocationInformation.BoundParameters.ContainsKey("ProjectName") ? ProjectName : null})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

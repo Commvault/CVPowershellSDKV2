@@ -92,7 +92,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IServerDetailsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServerDetailsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServerDetailsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServerDetailsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServerDetailsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IServerDetailsInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServerDetailsInternal)this).Agent = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("Agent",((Commvault.Powershell.Models.IServerDetailsInternal)this).Agent, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IServerDetailsInternal)this).Version = (string) content.GetValueForProperty("Version",((Commvault.Powershell.Models.IServerDetailsInternal)this).Version, global::System.Convert.ToString);
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IServerDetailsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServerDetailsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServerDetailsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IServerDetailsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServerDetailsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IServerDetailsInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServerDetailsInternal)this).Agent = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("Agent",((Commvault.Powershell.Models.IServerDetailsInternal)this).Agent, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IServerDetailsInternal)this).Version = (string) content.GetValueForProperty("Version",((Commvault.Powershell.Models.IServerDetailsInternal)this).Version, global::System.Convert.ToString);

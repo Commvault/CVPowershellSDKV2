@@ -61,7 +61,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_applications = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("applications"), out var __jsonApplications) ? If( __jsonApplications as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IApplicationSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IApplicationSummary) (Commvault.Powershell.Models.ApplicationSummary.FromJson(__u) )) ))() : null : Applications;}
-            {_applicationsCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationsCount"), out var __jsonApplicationsCount) ? (int?)__jsonApplicationsCount : ApplicationsCount;}
+            {_applicationsCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationsCount"), out var __jsonApplicationsCount) ? (long?)__jsonApplicationsCount : ApplicationsCount;}
             AfterFromJson(json);
         }
 
@@ -103,7 +103,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("applications",__w);
             }
-            AddIf( null != this._applicationsCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._applicationsCount) : null, "applicationsCount" ,container.Add );
+            AddIf( null != this._applicationsCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationsCount) : null, "applicationsCount" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

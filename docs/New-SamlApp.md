@@ -404,15 +404,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 ASSOCIATIONCOMPANIES <IIdName[]>: Companies associated with SAML
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ASSOCIATIONDOMAINS <IIdName[]>: Domains associated with SAML
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ASSOCIATIONUSERGROUPS <IIdName[]>: user groups associated with SAML
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

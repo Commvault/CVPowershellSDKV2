@@ -14,8 +14,8 @@ Create a Kubernetes application group
 
 ```
 New-ApplicationGroup -Name <String> [-ContentOverwrite] [-ContentRuleGroups <IRuleGroupContent[]>]
- [-ContentVirtualMachines <IVirtualMachinecontent[]>] [-HypervisorId <Int32>] [-HypervisorName <String>]
- [-PlanId <Int32>] [-PlanName <String>] [-StorageId <Int32>] [-StorageName <String>] [-Confirm] [-WhatIf]
+ [-ContentVirtualMachines <IVirtualMachinecontent[]>] [-HypervisorId <Int64>] [-HypervisorName <String>]
+ [-PlanId <Int64>] [-PlanName <String>] [-StorageId <Int64>] [-StorageName <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

@@ -191,8 +191,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Commit frequency in hours",
         SerializedName = @"commitFrequencyInHours",
-        PossibleTypes = new [] { typeof(int) })]
-        public int DatabaseOptionCommitFrequencyInHours { get => Body.DatabaseOptionCommitFrequencyInHours ?? default(int); set => Body.DatabaseOptionCommitFrequencyInHours = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long DatabaseOptionCommitFrequencyInHours { get => Body.DatabaseOptionCommitFrequencyInHours ?? default(long); set => Body.DatabaseOptionCommitFrequencyInHours = value; }
 
         /// <summary>Log backup RPO in minutes</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Log backup RPO in minutes")]
@@ -202,8 +202,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Log backup RPO in minutes",
         SerializedName = @"logBackupRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        public int DatabaseOptionLogBackupRpoMins { get => Body.DatabaseOptionLogBackupRpoMins ?? default(int); set => Body.DatabaseOptionLogBackupRpoMins = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long DatabaseOptionLogBackupRpoMins { get => Body.DatabaseOptionLogBackupRpoMins ?? default(long); set => Body.DatabaseOptionLogBackupRpoMins = value; }
 
         /// <summary>Use disk cache for log backups</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Use disk cache for log backups")]
@@ -280,8 +280,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ParentPlanId { get => Body.ParentPlanId ?? default(int); set => Body.ParentPlanId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ParentPlanId { get => Body.ParentPlanId ?? default(long); set => Body.ParentPlanId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -365,8 +365,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Backup copy RPO in minutes",
         SerializedName = @"backupCopyRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionBackupCopyRpoMins { get => Body.SnapshotOptionBackupCopyRpoMins ?? default(int); set => Body.SnapshotOptionBackupCopyRpoMins = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionBackupCopyRpoMins { get => Body.SnapshotOptionBackupCopyRpoMins ?? default(long); set => Body.SnapshotOptionBackupCopyRpoMins = value; }
 
         /// <summary>Flag to enable backup copy</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Flag to enable backup copy")]
@@ -390,8 +390,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionRetentionPeriodDays { get => Body.SnapshotOptionRetentionPeriodDays ?? default(int); set => Body.SnapshotOptionRetentionPeriodDays = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionRetentionPeriodDays { get => Body.SnapshotOptionRetentionPeriodDays ?? default(long); set => Body.SnapshotOptionRetentionPeriodDays = value; }
 
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
@@ -404,8 +404,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.",
         SerializedName = @"snapRecoveryPoints",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SnapshotOptionSnapRecoveryPoints { get => Body.SnapshotOptionSnapRecoveryPoints ?? default(int); set => Body.SnapshotOptionSnapRecoveryPoints = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SnapshotOptionSnapRecoveryPoints { get => Body.SnapshotOptionSnapRecoveryPoints ?? default(long); set => Body.SnapshotOptionSnapRecoveryPoints = value; }
 
         /// <summary>
         /// <c>overrideOnNotFound</c> will be called before the regular onNotFound has been processed, allowing customization of what

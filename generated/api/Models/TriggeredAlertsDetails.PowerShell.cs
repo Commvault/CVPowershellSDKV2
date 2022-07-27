@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Severity = (string) content.GetValueForProperty("Severity",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Severity, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).AlertType = (string) content.GetValueForProperty("AlertType",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).AlertType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Description, global::System.Convert.ToString);
@@ -124,7 +124,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Severity = (string) content.GetValueForProperty("Severity",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Severity, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).AlertType = (string) content.GetValueForProperty("AlertType",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).AlertType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.ITriggeredAlertsDetailsInternal)this).Description, global::System.Convert.ToString);

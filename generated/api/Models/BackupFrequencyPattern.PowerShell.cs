@@ -65,13 +65,13 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).ScheduleFrequencyType = (string) content.GetValueForProperty("ScheduleFrequencyType",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).ScheduleFrequencyType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency = (int?) content.GetValueForProperty("Frequency",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency = (long?) content.GetValueForProperty("Frequency",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeeklyDays = (string[]) content.GetValueForProperty("WeeklyDays",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeeklyDays, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth = (int?) content.GetValueForProperty("DayOfMonth",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth = (long?) content.GetValueForProperty("DayOfMonth",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeekOfMonth = (string) content.GetValueForProperty("WeekOfMonth",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeekOfMonth, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfWeek = (string) content.GetValueForProperty("DayOfWeek",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfWeek, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).MonthOfYear = (string) content.GetValueForProperty("MonthOfYear",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).MonthOfYear, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime = (int?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime = (long?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -90,13 +90,13 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).ScheduleFrequencyType = (string) content.GetValueForProperty("ScheduleFrequencyType",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).ScheduleFrequencyType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency = (int?) content.GetValueForProperty("Frequency",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency = (long?) content.GetValueForProperty("Frequency",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).Frequency, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeeklyDays = (string[]) content.GetValueForProperty("WeeklyDays",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeeklyDays, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth = (int?) content.GetValueForProperty("DayOfMonth",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth = (long?) content.GetValueForProperty("DayOfMonth",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfMonth, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeekOfMonth = (string) content.GetValueForProperty("WeekOfMonth",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).WeekOfMonth, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfWeek = (string) content.GetValueForProperty("DayOfWeek",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).DayOfWeek, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).MonthOfYear = (string) content.GetValueForProperty("MonthOfYear",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).MonthOfYear, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime = (int?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime = (long?) content.GetValueForProperty("StartTime",((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)this).StartTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

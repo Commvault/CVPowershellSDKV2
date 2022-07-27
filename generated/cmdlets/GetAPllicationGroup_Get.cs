@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="ClusterId" /> property.</summary>
-        private int _clusterId;
+        private long _clusterId;
 
         /// <summary>Id of the hypervisor to list application groups</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Id of the hypervisor to list application groups")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the hypervisor to list application groups",
         SerializedName = @"ClusterId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int ClusterId { get => this._clusterId; set => this._clusterId = value; }
+        public long ClusterId { get => this._clusterId; set => this._clusterId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -251,12 +251,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetAllAPllicationGroups(this.InvocationInformation.BoundParameters.ContainsKey("ClusterId") ? ClusterId : default(int?), onOk, onNotFound, this, Pipeline);
+                    await this.Client.GetAllAPllicationGroups(this.InvocationInformation.BoundParameters.ContainsKey("ClusterId") ? ClusterId : default(long?), onOk, onNotFound, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ClusterId=this.InvocationInformation.BoundParameters.ContainsKey("ClusterId") ? ClusterId : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ClusterId=this.InvocationInformation.BoundParameters.ContainsKey("ClusterId") ? ClusterId : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

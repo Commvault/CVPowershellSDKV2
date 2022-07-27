@@ -15,11 +15,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="EnableAfterDelay" /> property.</summary>
-        private int? _enableAfterDelay;
+        private long? _enableAfterDelay;
 
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? EnableAfterDelay { get => this._enableAfterDelay; set => this._enableAfterDelay = value; }
+        public long? EnableAfterDelay { get => this._enableAfterDelay; set => this._enableAfterDelay = value; }
 
         /// <summary>Backing field for <see cref="ExcludeFromSla" /> property.</summary>
         private bool? _excludeFromSla;
@@ -43,18 +43,18 @@ namespace Commvault.Powershell.Models
         public string InheritedFrom { get => this._inheritedFrom; set => this._inheritedFrom = value; }
 
         /// <summary>Backing field for <see cref="InheritedSlaPeriod" /> property.</summary>
-        private int? _inheritedSlaPeriod;
+        private long? _inheritedSlaPeriod;
 
         /// <summary>Inherited SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? InheritedSlaPeriod { get => this._inheritedSlaPeriod; set => this._inheritedSlaPeriod = value; }
+        public long? InheritedSlaPeriod { get => this._inheritedSlaPeriod; set => this._inheritedSlaPeriod = value; }
 
         /// <summary>Backing field for <see cref="SlaPeriod" /> property.</summary>
-        private int? _slaPeriod;
+        private long? _slaPeriod;
 
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SlaPeriod { get => this._slaPeriod; set => this._slaPeriod = value; }
+        public long? SlaPeriod { get => this._slaPeriod; set => this._slaPeriod = value; }
 
         /// <summary>Backing field for <see cref="UseSystemDefaultSla" /> property.</summary>
         private bool? _useSystemDefaultSla;
@@ -80,8 +80,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EnableAfterDelay { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -112,16 +112,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Inherited SLA Period in Days",
         SerializedName = @"inheritedSLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? InheritedSlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? InheritedSlaPeriod { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SlaPeriod { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -138,7 +138,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        int? EnableAfterDelay { get; set; }
+        long? EnableAfterDelay { get; set; }
         /// <summary>Flag to set to exclude plan from SLA</summary>
         bool? ExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
@@ -146,9 +146,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Tells us from where SLA Period was inherited</summary>
         string InheritedFrom { get; set; }
         /// <summary>Inherited SLA Period in Days</summary>
-        int? InheritedSlaPeriod { get; set; }
+        long? InheritedSlaPeriod { get; set; }
         /// <summary>SLA Period in Days</summary>
-        int? SlaPeriod { get; set; }
+        long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? UseSystemDefaultSla { get; set; }
 

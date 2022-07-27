@@ -12,32 +12,32 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ParamIndex" /> property.</summary>
-        private int? _paramIndex;
+        private long? _paramIndex;
 
         /// <summary>Param order index</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ParamIndex { get => this._paramIndex; set => this._paramIndex = value; }
+        public long? ParamIndex { get => this._paramIndex; set => this._paramIndex = value; }
 
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
-        private int? _type;
+        private long? _type;
 
         /// <summary>Input value type (default 0 = no input required)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Type { get => this._type; set => this._type = value; }
+        public long? Type { get => this._type; set => this._type = value; }
 
         /// <summary>Backing field for <see cref="Unit" /> property.</summary>
-        private int? _unit;
+        private long? _unit;
 
         /// <summary>Unit of the criteria(For eg. :Hrs,min)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Unit { get => this._unit; set => this._unit = value; }
+        public long? Unit { get => this._unit; set => this._unit = value; }
 
         /// <summary>Backing field for <see cref="Value" /> property.</summary>
-        private int? _value;
+        private long? _value;
 
         /// <summary>Value of the criteria (deefault 0 : if no value required)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Value { get => this._value; set => this._value = value; }
+        public long? Value { get => this._value; set => this._value = value; }
 
         /// <summary>Creates an new <see cref="AlertDefinitionsCriteriaParams" /> instance.</summary>
         public AlertDefinitionsCriteriaParams()
@@ -55,32 +55,32 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Param order index",
         SerializedName = @"paramIndex",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ParamIndex { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParamIndex { get; set; }
         /// <summary>Input value type (default 0 = no input required)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Input value type (default 0 = no input required)",
         SerializedName = @"type",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Type { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Type { get; set; }
         /// <summary>Unit of the criteria(For eg. :Hrs,min)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Unit of the criteria(For eg. :Hrs,min)",
         SerializedName = @"unit",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Unit { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Unit { get; set; }
         /// <summary>Value of the criteria (deefault 0 : if no value required)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Value of the criteria (deefault 0 : if no value required)",
         SerializedName = @"value",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Value { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Value { get; set; }
 
     }
     /// AlertDefinitionsCriteriaParams
@@ -88,13 +88,13 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Param order index</summary>
-        int? ParamIndex { get; set; }
+        long? ParamIndex { get; set; }
         /// <summary>Input value type (default 0 = no input required)</summary>
-        int? Type { get; set; }
+        long? Type { get; set; }
         /// <summary>Unit of the criteria(For eg. :Hrs,min)</summary>
-        int? Unit { get; set; }
+        long? Unit { get; set; }
         /// <summary>Value of the criteria (deefault 0 : if no value required)</summary>
-        int? Value { get; set; }
+        long? Value { get; set; }
 
     }
 }

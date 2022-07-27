@@ -13,7 +13,7 @@ Endpoint to get the list of access nodes
 ## SYNTAX
 
 ```
-Get-AccessNode [-UserId <Int32>] [-Vendor <String>] [<CommonParameters>]
+Get-AccessNode [-UserId <Int64>] [-Vendor <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ PS C:\> {{ Add code here }}
 user id to be filtered
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

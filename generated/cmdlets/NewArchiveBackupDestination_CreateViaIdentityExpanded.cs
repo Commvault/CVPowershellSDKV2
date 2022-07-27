@@ -116,8 +116,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RegionId { get => Body.RegionId ?? default(int); set => Body.RegionId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RegionId { get => Body.RegionId ?? default(long); set => Body.RegionId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -298,7 +298,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.PlanId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.CreateArchiveBackupDestination(InputObject.PlanId ?? default(int), Body, onOk, onNotFound, this, Pipeline);
+                    await this.Client.CreateArchiveBackupDestination(InputObject.PlanId ?? default(long), Body, onOk, onNotFound, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

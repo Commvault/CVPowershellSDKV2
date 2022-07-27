@@ -61,8 +61,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_applicationGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("applicationGroup"), out var __jsonApplicationGroup) ? Commvault.Powershell.Models.IdName.FromJson(__jsonApplicationGroup) : ApplicationGroup;}
-            {_warningCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("warningCode"), out var __jsonWarningCode) ? (int?)__jsonWarningCode : WarningCode;}
-            {_errorCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("errorCode"), out var __jsonErrorCode) ? (int?)__jsonErrorCode : ErrorCode;}
+            {_warningCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("warningCode"), out var __jsonWarningCode) ? (long?)__jsonWarningCode : WarningCode;}
+            {_errorCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("errorCode"), out var __jsonErrorCode) ? (long?)__jsonErrorCode : ErrorCode;}
             {_errorMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("errorMessage"), out var __jsonErrorMessage) ? (string)__jsonErrorMessage : (string)ErrorMessage;}
             {_warningMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("warningMessage"), out var __jsonWarningMessage) ? (string)__jsonWarningMessage : (string)WarningMessage;}
             AfterFromJson(json);
@@ -98,8 +98,8 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._applicationGroup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._applicationGroup.ToJson(null,serializationMode) : null, "applicationGroup" ,container.Add );
-            AddIf( null != this._warningCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._warningCode) : null, "warningCode" ,container.Add );
-            AddIf( null != this._errorCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._errorCode) : null, "errorCode" ,container.Add );
+            AddIf( null != this._warningCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._warningCode) : null, "warningCode" ,container.Add );
+            AddIf( null != this._errorCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._errorCode) : null, "errorCode" ,container.Add );
             AddIf( null != (((object)this._errorMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._errorMessage.ToString()) : null, "errorMessage" ,container.Add );
             AddIf( null != (((object)this._warningMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._warningMessage.ToString()) : null, "warningMessage" ,container.Add );
             AfterToJson(ref container);

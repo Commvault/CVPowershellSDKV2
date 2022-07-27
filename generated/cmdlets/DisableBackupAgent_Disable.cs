@@ -37,7 +37,7 @@ namespace Commvault.Powershell.Cmdlets
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
         /// <summary>Backing field for <see cref="AgentId" /> property.</summary>
-        private int _agentId;
+        private long _agentId;
 
         /// <summary>Id of the agent to be modified</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the agent to be modified")]
@@ -46,9 +46,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the agent to be modified",
         SerializedName = @"agentId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int AgentId { get => this._agentId; set => this._agentId = value; }
+        public long AgentId { get => this._agentId; set => this._agentId = value; }
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
@@ -59,7 +59,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="EnableAfterADelay" /> property.</summary>
-        private int _enableAfterADelay;
+        private long _enableAfterADelay;
 
         /// <summary>Provide UTC time in unix format.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Provide UTC time in unix format.")]
@@ -68,9 +68,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Provide UTC time in unix format.",
         SerializedName = @"enableAfterADelay",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
+        public long EnableAfterADelay { get => this._enableAfterADelay; set => this._enableAfterADelay = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -124,7 +124,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="ServerId" /> property.</summary>
-        private int _serverId;
+        private long _serverId;
 
         /// <summary>Id of the server to modify</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the server to modify")]
@@ -133,9 +133,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the server to modify",
         SerializedName = @"serverId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int ServerId { get => this._serverId; set => this._serverId = value; }
+        public long ServerId { get => this._serverId; set => this._serverId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing
@@ -299,12 +299,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.DisableBackupAgent(ServerId, AgentId, this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?), onOk, onInternalServerError, this, Pipeline);
+                    await this.Client.DisableBackupAgent(ServerId, AgentId, this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?), onOk, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ServerId=ServerId,AgentId=AgentId,EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  ServerId=ServerId,AgentId=AgentId,EnableAfterADelay=this.InvocationInformation.BoundParameters.ContainsKey("EnableAfterADelay") ? EnableAfterADelay : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

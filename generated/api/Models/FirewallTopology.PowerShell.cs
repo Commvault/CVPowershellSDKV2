@@ -88,7 +88,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).Topology = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Topology",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).Topology, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyType = (string) content.GetValueForProperty("TopologyType",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).ClientType = (string) content.GetValueForProperty("ClientType",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).ClientType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId = (int?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId = (long?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyName = (string) content.GetValueForProperty("TopologyName",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).Topology = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Topology",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).Topology, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyType = (string) content.GetValueForProperty("TopologyType",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).ClientType = (string) content.GetValueForProperty("ClientType",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).ClientType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId = (int?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId = (long?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyName = (string) content.GetValueForProperty("TopologyName",((Commvault.Powershell.Models.IFirewallTopologyInternal)this).TopologyName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

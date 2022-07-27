@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="AssociatedEntitiesCount" /> property.</summary>
-        private int? _associatedEntitiesCount;
+        private long? _associatedEntitiesCount;
 
         /// <summary>Gives the number of entities associated with the company</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? AssociatedEntitiesCount { get => this._associatedEntitiesCount; set => this._associatedEntitiesCount = value; }
+        public long? AssociatedEntitiesCount { get => this._associatedEntitiesCount; set => this._associatedEntitiesCount = value; }
 
         /// <summary>Backing field for <see cref="Deactivated" /> property.</summary>
         private bool? _deactivated;
@@ -25,11 +25,11 @@ namespace Commvault.Powershell.Models
         public bool? Deactivated { get => this._deactivated; set => this._deactivated = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Company Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -59,8 +59,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gives the number of entities associated with the company",
         SerializedName = @"associatedEntitiesCount",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AssociatedEntitiesCount { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AssociatedEntitiesCount { get; set; }
         /// <summary>Gives the company status</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -75,8 +75,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Company Id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Company name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -99,11 +99,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Gives the number of entities associated with the company</summary>
-        int? AssociatedEntitiesCount { get; set; }
+        long? AssociatedEntitiesCount { get; set; }
         /// <summary>Gives the company status</summary>
         bool? Deactivated { get; set; }
         /// <summary>Company Id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Company name</summary>
         string Name { get; set; }
 

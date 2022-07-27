@@ -93,9 +93,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Provider = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Provider",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Provider, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId = (int?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId = (long?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderName = (string) content.GetValueForProperty("ProviderName",((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -115,9 +115,9 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Provider = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Provider",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Provider, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameProviderInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameProviderInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId = (int?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId = (long?) content.GetValueForProperty("ProviderId",((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderName = (string) content.GetValueForProperty("ProviderName",((Commvault.Powershell.Models.IIdNameProviderInternal)this).ProviderName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -25,7 +25,7 @@ namespace Commvault.Powershell.Cmdlets
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
         /// <summary>Backing field for <see cref="BackupLocationId" /> property.</summary>
-        private int _backupLocationId;
+        private long _backupLocationId;
 
         /// <summary>
         /// Id of the backup location whose details have to be fetched to add a new access path
@@ -36,9 +36,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the backup location whose details have to be fetched to add a new access path",
         SerializedName = @"backupLocationId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int BackupLocationId { get => this._backupLocationId; set => this._backupLocationId = value; }
+        public long BackupLocationId { get => this._backupLocationId; set => this._backupLocationId = value; }
 
         /// <summary>Backing field for <see cref="Body" /> property.</summary>
         private Commvault.Powershell.Models.IAddDiskAccessPath _body= new Commvault.Powershell.Models.AddDiskAccessPath();
@@ -118,7 +118,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="StoragePoolId" /> property.</summary>
-        private int _storagePoolId;
+        private long _storagePoolId;
 
         /// <summary>
         /// Id of the disk storage pool whose details have to be fetched to add a new access path
@@ -129,9 +129,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the disk storage pool whose details have to be fetched to add a new access path",
         SerializedName = @"storagePoolId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
+        public long StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing

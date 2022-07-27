@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).OptimizeForConcurrentLanBackups = (bool?) content.GetValueForProperty("OptimizeForConcurrentLanBackups",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).OptimizeForConcurrentLanBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).MaintenanceMode = (bool?) content.GetValueForProperty("MaintenanceMode",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).MaintenanceMode, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).RansomwareProtection = (bool?) content.GetValueForProperty("RansomwareProtection",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).RansomwareProtection, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations = (int?) content.GetValueForProperty("ParallelDataTransferOperations",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations = (long?) content.GetValueForProperty("ParallelDataTransferOperations",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -118,7 +118,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).OptimizeForConcurrentLanBackups = (bool?) content.GetValueForProperty("OptimizeForConcurrentLanBackups",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).OptimizeForConcurrentLanBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).MaintenanceMode = (bool?) content.GetValueForProperty("MaintenanceMode",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).MaintenanceMode, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).RansomwareProtection = (bool?) content.GetValueForProperty("RansomwareProtection",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).RansomwareProtection, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations = (int?) content.GetValueForProperty("ParallelDataTransferOperations",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations = (long?) content.GetValueForProperty("ParallelDataTransferOperations",((Commvault.Powershell.Models.IMediaAgentControlInternal)this).ParallelDataTransferOperations, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

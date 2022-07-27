@@ -80,11 +80,11 @@ namespace Commvault.Powershell.Models
             {_mountedHost = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mountedHost"), out var __jsonMountedHost) ? Commvault.Powershell.Models.IdName.FromJson(__jsonMountedHost) : MountedHost;}
             {_targetInstance = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("targetInstance"), out var __jsonTargetInstance) ? Commvault.Powershell.Models.IdName.FromJson(__jsonTargetInstance) : TargetInstance;}
             {_commcell = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("commcell"), out var __jsonCommcell) ? Commvault.Powershell.Models.CommcellInfo.FromJson(__jsonCommcell) : Commcell;}
-            {_cloneJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("cloneJobId"), out var __jsonCloneJobId) ? (int?)__jsonCloneJobId : CloneJobId;}
-            {_sqlRecoveryId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sqlRecoveryId"), out var __jsonSqlRecoveryId) ? (int?)__jsonSqlRecoveryId : SqlRecoveryId;}
-            {_databaseAsOfTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("databaseAsOfTime"), out var __jsonDatabaseAsOfTime) ? (int?)__jsonDatabaseAsOfTime : DatabaseAsOfTime;}
-            {_creationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("creationTime"), out var __jsonCreationTime) ? (int?)__jsonCreationTime : CreationTime;}
-            {_expirationDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationDate"), out var __jsonExpirationDate) ? (int?)__jsonExpirationDate : ExpirationDate;}
+            {_cloneJobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("cloneJobId"), out var __jsonCloneJobId) ? (long?)__jsonCloneJobId : CloneJobId;}
+            {_sqlRecoveryId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sqlRecoveryId"), out var __jsonSqlRecoveryId) ? (long?)__jsonSqlRecoveryId : SqlRecoveryId;}
+            {_databaseAsOfTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("databaseAsOfTime"), out var __jsonDatabaseAsOfTime) ? (long?)__jsonDatabaseAsOfTime : DatabaseAsOfTime;}
+            {_creationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("creationTime"), out var __jsonCreationTime) ? (long?)__jsonCreationTime : CreationTime;}
+            {_expirationDate = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationDate"), out var __jsonExpirationDate) ? (long?)__jsonExpirationDate : ExpirationDate;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             AfterFromJson(json);
         }
@@ -113,11 +113,11 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._mountedHost ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mountedHost.ToJson(null,serializationMode) : null, "mountedHost" ,container.Add );
             AddIf( null != this._targetInstance ? (Commvault.Powershell.Runtime.Json.JsonNode) this._targetInstance.ToJson(null,serializationMode) : null, "targetInstance" ,container.Add );
             AddIf( null != this._commcell ? (Commvault.Powershell.Runtime.Json.JsonNode) this._commcell.ToJson(null,serializationMode) : null, "commcell" ,container.Add );
-            AddIf( null != this._cloneJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._cloneJobId) : null, "cloneJobId" ,container.Add );
-            AddIf( null != this._sqlRecoveryId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._sqlRecoveryId) : null, "sqlRecoveryId" ,container.Add );
-            AddIf( null != this._databaseAsOfTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._databaseAsOfTime) : null, "databaseAsOfTime" ,container.Add );
-            AddIf( null != this._creationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._creationTime) : null, "creationTime" ,container.Add );
-            AddIf( null != this._expirationDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._expirationDate) : null, "expirationDate" ,container.Add );
+            AddIf( null != this._cloneJobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._cloneJobId) : null, "cloneJobId" ,container.Add );
+            AddIf( null != this._sqlRecoveryId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._sqlRecoveryId) : null, "sqlRecoveryId" ,container.Add );
+            AddIf( null != this._databaseAsOfTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._databaseAsOfTime) : null, "databaseAsOfTime" ,container.Add );
+            AddIf( null != this._creationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._creationTime) : null, "creationTime" ,container.Add );
+            AddIf( null != this._expirationDate ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._expirationDate) : null, "expirationDate" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AfterToJson(ref container);
             return container;

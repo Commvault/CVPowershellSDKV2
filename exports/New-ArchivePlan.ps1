@@ -38,13 +38,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BACKUPDESTINATIONS <ICreateArchivePlanBackupDestination[]>: .
   BackupDestinationName <String>: Backup destination details. Enter the name during creation.
-  [BackupStartTime <Int32?>]: Backup start time in seconds. The time is provided in unix time format.
-  [RegionId <Int32?>]: 
+  [BackupStartTime <Int64?>]: Backup start time in seconds. The time is provided in unix time format.
+  [RegionId <Int64?>]: 
   [RegionName <String>]: 
-  [RetentionPeriodDays <Int32?>]: Retention period in days. -1 can be specified for infinite retention.
-  [SourceCopyId <Int32?>]: 
+  [RetentionPeriodDays <Int64?>]: Retention period in days. -1 can be specified for infinite retention.
+  [SourceCopyId <Int64?>]: 
   [SourceCopyName <String>]: 
-  [StoragePoolId <Int32?>]: 
+  [StoragePoolId <Int64?>]: 
   [StoragePoolName <String>]: 
 
 RPOARCHIVEWINDOW <IDayAndTime[]>: Archive job will run only in the specified archive window
@@ -73,7 +73,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # Frequency of the schedule based on schedule frequency type eg.
     # for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days.
     # for Monthly 2 is it repeats every 2 months
@@ -81,7 +81,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # Day on which to run the schedule, applicable for monthly, yearly
     ${ArchiveFrequencyDayOfMonth},
 
@@ -105,7 +105,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # start time of schedule in seconds for daily, weekly, monthly, yearly frequency
     ${ArchiveFrequencyStartTime},
 
@@ -129,13 +129,13 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # To archive files based on the size of the file, specify the minimum file size in KB.
     ${ArchivingRuleFileSize},
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
     # Should be supplied with fileTimestampMethod.
     ${ArchivingRuleFileTimestamp},
@@ -173,7 +173,7 @@ param(
 
     [Parameter()]
     [Commvault.Powershell.Category('Body')]
-    [System.Int32]
+    [System.Int64]
     # .
     ${ParentPlanId},
 

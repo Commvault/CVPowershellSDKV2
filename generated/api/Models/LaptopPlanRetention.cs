@@ -14,37 +14,37 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ILaptopPlanRetentionFileVersions Commvault.Powershell.Models.ILaptopPlanRetentionInternal.FileVersions { get => (this._fileVersions = this._fileVersions ?? new Commvault.Powershell.Models.LaptopPlanRetentionFileVersions()); set { {_fileVersions = value;} } }
 
         /// <summary>Backing field for <see cref="DeletedItemRetention" /> property.</summary>
-        private int? _deletedItemRetention;
+        private long? _deletedItemRetention;
 
         /// <summary>
         /// Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DeletedItemRetention { get => this._deletedItemRetention; set => this._deletedItemRetention = value; }
+        public long? DeletedItemRetention { get => this._deletedItemRetention; set => this._deletedItemRetention = value; }
 
         /// <summary>Custom version rule: Retain daily versions for this many day(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionDailyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).DailyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).DailyVersions = value ?? default(int); }
+        public long? FileVersionDailyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).DailyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).DailyVersions = value ?? default(long); }
 
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionDays { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Days; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Days = value ?? default(int); }
+        public long? FileVersionDays { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Days; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Days = value ?? default(long); }
 
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionMonthlyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).MonthlyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).MonthlyVersions = value ?? default(int); }
+        public long? FileVersionMonthlyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).MonthlyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).MonthlyVersions = value ?? default(long); }
 
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Versions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Versions = value ?? default(int); }
+        public long? FileVersionVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Versions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).Versions = value ?? default(long); }
 
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FileVersionWeeklyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).WeeklyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).WeeklyVersions = value ?? default(int); }
+        public long? FileVersionWeeklyVersions { get => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).WeeklyVersions; set => ((Commvault.Powershell.Models.ILaptopPlanRetentionFileVersionsInternal)FileVersions).WeeklyVersions = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="FileVersions" /> property.</summary>
         private Commvault.Powershell.Models.ILaptopPlanRetentionFileVersions _fileVersions;
@@ -73,16 +73,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.",
         SerializedName = @"deletedItemRetention",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DeletedItemRetention { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DeletedItemRetention { get; set; }
         /// <summary>Custom version rule: Retain daily versions for this many day(s)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Custom version rule: Retain daily versions for this many day(s)",
         SerializedName = @"dailyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionDailyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionDailyVersions { get; set; }
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
@@ -91,16 +91,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retain files for this many days. Year(s) or month(s) need to be converted to day(s)",
         SerializedName = @"days",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionDays { get; set; }
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Custom version rule: Retain monthly versions for this many month(s)",
         SerializedName = @"monthlyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionMonthlyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionMonthlyVersions { get; set; }
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
@@ -109,16 +109,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retain this many file versions. This is considered as default if no file retention rule is specified.",
         SerializedName = @"versions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionVersions { get; set; }
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Custom version rule: Retain weekly versions for this many week(s)",
         SerializedName = @"weeklyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileVersionWeeklyVersions { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileVersionWeeklyVersions { get; set; }
 
     }
     internal partial interface ILaptopPlanRetentionInternal
@@ -127,21 +127,21 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.
         /// </summary>
-        int? DeletedItemRetention { get; set; }
+        long? DeletedItemRetention { get; set; }
         /// <summary>Custom version rule: Retain daily versions for this many day(s)</summary>
-        int? FileVersionDailyVersions { get; set; }
+        long? FileVersionDailyVersions { get; set; }
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
         /// </summary>
-        int? FileVersionDays { get; set; }
+        long? FileVersionDays { get; set; }
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
-        int? FileVersionMonthlyVersions { get; set; }
+        long? FileVersionMonthlyVersions { get; set; }
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
         /// </summary>
-        int? FileVersionVersions { get; set; }
+        long? FileVersionVersions { get; set; }
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
-        int? FileVersionWeeklyVersions { get; set; }
+        long? FileVersionWeeklyVersions { get; set; }
         /// <summary>
         /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
         /// not defined then, 5 versions are considered the default setting.

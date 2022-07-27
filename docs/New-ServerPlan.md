@@ -19,12 +19,12 @@ New-ServerPlan -BackupDestinations <ICreatePlanBackupDestination[]> -PlanName <S
  [-BackupContentUnixExcludedPaths <String[]>] [-BackupContentUnixIncludedPaths <String[]>]
  [-BackupContentUseVssForSystemState] [-BackupContentWindowsExcludedPaths <String[]>]
  [-BackupContentWindowsIncludedPaths <String[]>] [-BackupFrequencySchedules <IPlanSchedule[]>]
- [-DatabaseOptionCommitFrequencyInHours <Int32>] [-DatabaseOptionLogBackupRpoMins <Int32>]
+ [-DatabaseOptionCommitFrequencyInHours <Int64>] [-DatabaseOptionLogBackupRpoMins <Int64>]
  [-DatabaseOptionUseDiskCacheForLogBackups] [-OverrideRestrictionBackupContent <String>]
- [-OverrideRestrictionRpo <String>] [-OverrideRestrictionStoragePool <String>] [-ParentPlanId <Int32>]
+ [-OverrideRestrictionRpo <String>] [-OverrideRestrictionStoragePool <String>] [-ParentPlanId <Int64>]
  [-ParentPlanName <String>] [-RpoBackupWindow <IDayAndTime[]>] [-RpoFullBackupWindow <IDayAndTime[]>]
- [-SnapshotOptionBackupCopyRpoMins <Int32>] [-SnapshotOptionEnableBackupCopy]
- [-SnapshotOptionRetentionPeriodDays <Int32>] [-SnapshotOptionSnapRecoveryPoints <Int32>] [-PassThru]
+ [-SnapshotOptionBackupCopyRpoMins <Int64>] [-SnapshotOptionEnableBackupCopy]
+ [-SnapshotOptionRetentionPeriodDays <Int64>] [-SnapshotOptionSnapRecoveryPoints <Int64>] [-PassThru]
  [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -241,7 +241,7 @@ Accept wildcard characters: False
 Commit frequency in hours
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 Log backup RPO in minutes
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -423,7 +423,7 @@ Accept wildcard characters: False
 Backup copy RPO in minutes
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -455,7 +455,7 @@ Retention period in days.
 If this and snapRecoveryPoints both are not specified, this takes precedence.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -471,7 +471,7 @@ Number of snap recovery points for default snap copy for retention.
 Can be specified instead of retention period in Days for default snap copy.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -533,35 +533,35 @@ To create the parameters described below, construct a hash table containing the 
 
 BACKUPDESTINATIONS <ICreatePlanBackupDestination[]>: Backup destinations for the plan. Specify where you want to store your backup data.
   - `BackupDestinationName <String>`: Backup destination details. Enter the name during creation.
-  - `[BackupStartTime <Int32?>]`: Backup start time in seconds. The time is provided in unix time format.
+  - `[BackupStartTime <Int64?>]`: Backup start time in seconds. The time is provided in unix time format.
   - `[BackupsToCopy <String>]`: 
   - `[FirstExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: 
-  - `[FirstExtendedRetentionRuleRetentionPeriodDays <Int32?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
+  - `[FirstExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
   - `[FirstExtendedRetentionRuleType <String>]`: 
   - `[IsMirrorCopy <Boolean?>]`: Is this a mirror copy? Only considered when isSnapCopy is true.
   - `[IsSnapCopy <Boolean?>]`: Is this a snap copy? If isMirrorCopy is not set, then default is Vault/Replica.
   - `[Mappings <ISnapshotCopyMapping[]>]`: 
-    - `[SourceId <Int32?>]`: 
+    - `[SourceId <Int64?>]`: 
     - `[SourceName <String>]`: 
-    - `[TargetId <Int32?>]`: 
+    - `[TargetId <Int64?>]`: 
     - `[TargetName <String>]`: 
     - `[Vendor <String>]`: Snapshot vendors available for Snap Copy mappings
   - `[NetAppCloudTarget <Boolean?>]`: Only for snap copy. Enabling this changes SVM Mapping  to NetApp cloud targets only.
   - `[OptimizeForInstantClone <Boolean?>]`: Flag to specify if primary storage is copy data management enabled.
-  - `[RegionId <Int32?>]`: 
+  - `[RegionId <Int64?>]`: 
   - `[RegionName <String>]`: 
-  - `[RetentionPeriodDays <Int32?>]`: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes  precedence.
+  - `[RetentionPeriodDays <Int64?>]`: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes  precedence.
   - `[RetentionRuleType <String>]`: Which type of retention rule should be used for the given backup destination
   - `[SecondExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: 
-  - `[SecondExtendedRetentionRuleRetentionPeriodDays <Int32?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
+  - `[SecondExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
   - `[SecondExtendedRetentionRuleType <String>]`: 
-  - `[SnapRecoveryPoints <Int32?>]`: Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.
-  - `[SourceCopyId <Int32?>]`: 
+  - `[SnapRecoveryPoints <Int64?>]`: Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.
+  - `[SourceCopyId <Int64?>]`: 
   - `[SourceCopyName <String>]`: 
-  - `[StoragePoolId <Int32?>]`: 
+  - `[StoragePoolId <Int64?>]`: 
   - `[StoragePoolName <String>]`: 
   - `[ThirdExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: 
-  - `[ThirdExtendedRetentionRuleRetentionPeriodDays <Int32?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
+  - `[ThirdExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
   - `[ThirdExtendedRetentionRuleType <String>]`: 
   - `[UseExtendedRetentionRules <Boolean?>]`: Use extended retention rules
 
@@ -570,27 +570,27 @@ BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
   - `ForDatabasesOnly <Boolean>`: Boolean to indicate if schedule is for database agents
   - `ScheduleOperation <String>`: Operation being performed on schedule
   - `SchedulePatternScheduleFrequencyType <String>`: schedule frequency type
-  - `[PolicyId <Int32?>]`: Schedule policy Id to which the schedule belongs
-  - `[ScheduleId <Int32?>]`: Id of the schedule if available, required for modifying, deleting schedule
+  - `[PolicyId <Int64?>]`: Schedule policy Id to which the schedule belongs
+  - `[ScheduleId <Int64?>]`: Id of the schedule if available, required for modifying, deleting schedule
   - `[ScheduleName <String>]`: Name of the schedule, for modify
-  - `[SchedulePatternDayOfMonth <Int32?>]`: Day on which to run the schedule, applicable for monthly, yearly
+  - `[SchedulePatternDayOfMonth <Int64?>]`: Day on which to run the schedule, applicable for monthly, yearly
   - `[SchedulePatternDayOfWeek <String>]`: 
-  - `[SchedulePatternDaysBetweenSyntheticFulls <Int32?>]`: No of days between two synthetic full jobs
-  - `[SchedulePatternEndDate <Int32?>]`: Schedule end date in epoch format
+  - `[SchedulePatternDaysBetweenSyntheticFulls <Int64?>]`: No of days between two synthetic full jobs
+  - `[SchedulePatternEndDate <Int64?>]`: Schedule end date in epoch format
   - `[SchedulePatternExceptions <IScheduleRunException[]>]`: Exceptions to when a schedule should not run, either in dates or week of month and days
-    - `[OnDates <Int32[]>]`: list of dates in a month. For ex: 1, 20
+    - `[OnDates <Int64[]>]`: list of dates in a month. For ex: 1, 20
     - `[OnDayOfTheWeek <String[]>]`: On which days, for ex: MONDAY, FRIDAY
     - `[OnWeekOfTheMonth <String[]>]`: On which week of month, for ex: FIRST, LAST
-  - `[SchedulePatternFrequency <Int32?>]`: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
+  - `[SchedulePatternFrequency <Int64?>]`: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
   - `[SchedulePatternMonthOfYear <String>]`: 
-  - `[SchedulePatternNoOfTimes <Int32?>]`: The number of times you want the schedule to run.
-  - `[SchedulePatternRepeatIntervalInMinutes <Int32?>]`: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
-  - `[SchedulePatternRepeatUntilTime <Int32?>]`: Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
-  - `[SchedulePatternStartDate <Int32?>]`: start date of schedule in epoch format
-  - `[SchedulePatternStartTime <Int32?>]`: start time of schedule in seconds
+  - `[SchedulePatternNoOfTimes <Int64?>]`: The number of times you want the schedule to run.
+  - `[SchedulePatternRepeatIntervalInMinutes <Int64?>]`: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
+  - `[SchedulePatternRepeatUntilTime <Int64?>]`: Until what time to repeat the schedule in a day, requires repeatIntervalInMinutes
+  - `[SchedulePatternStartDate <Int64?>]`: start date of schedule in epoch format
+  - `[SchedulePatternStartTime <Int64?>]`: start time of schedule in seconds
   - `[SchedulePatternWeekOfMonth <String>]`: Specific week of a month
   - `[SchedulePatternWeeklyDays <String[]>]`: Days of the week for weekly frequency
-  - `[TimezoneId <Int32?>]`: 
+  - `[TimezoneId <Int64?>]`: 
   - `[TimezoneName <String>]`: 
 
 RPOBACKUPWINDOW <IDayAndTime[]>: Backup window for incremental backup

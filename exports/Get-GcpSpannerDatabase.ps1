@@ -38,7 +38,7 @@ function Get-GcpSpannerDatabase {
 param(
     [Parameter(Mandatory)]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # the id of the node where the browse request is sent
     ${CloudAccountId},
 

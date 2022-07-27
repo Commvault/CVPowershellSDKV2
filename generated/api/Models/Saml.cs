@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName CreatedForCompany { get => (this._createdForCompany = this._createdForCompany ?? new Commvault.Powershell.Models.IdName()); set => this._createdForCompany = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CreatedForCompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)CreatedForCompany).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)CreatedForCompany).Id = value ?? default(int); }
+        public long? CreatedForCompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)CreatedForCompany).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)CreatedForCompany).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CreatedForCompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)CreatedForCompany).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)CreatedForCompany).Name = value ?? null; }
@@ -150,7 +150,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName UserGroup { get => (this._userGroup = this._userGroup ?? new Commvault.Powershell.Models.IdName()); set => this._userGroup = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)UserGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)UserGroup).Id = value ?? default(int); }
+        public long? UserGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)UserGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)UserGroup).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)UserGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)UserGroup).Name = value ?? null; }
@@ -231,8 +231,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CreatedForCompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CreatedForCompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -327,8 +327,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -373,7 +373,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName CreatedForCompany { get; set; }
 
-        int? CreatedForCompanyId { get; set; }
+        long? CreatedForCompanyId { get; set; }
 
         string CreatedForCompanyName { get; set; }
         /// <summary>SAML description</summary>
@@ -403,7 +403,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName UserGroup { get; set; }
 
-        int? UserGroupId { get; set; }
+        long? UserGroupId { get; set; }
 
         string UserGroupName { get; set; }
         /// <summary>

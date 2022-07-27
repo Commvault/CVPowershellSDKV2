@@ -35,11 +35,11 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 PLANS <IIdName[]>: Select data protection plans to use for the company. The plans that are selected are the plans that the tenant administrator can choose from.
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 
 SERVICECOMMCELLS <IIdName[]>: Used to add service commcells to the master commcell. Either id or name can be provided. If both are provided, id will be taken into consideration.
-  [Id <Int32?>]: 
+  [Id <Int64?>]: 
   [Name <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-company

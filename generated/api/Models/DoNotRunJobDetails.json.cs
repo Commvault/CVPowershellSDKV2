@@ -62,8 +62,8 @@ namespace Commvault.Powershell.Models
             }
             {_onDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("onDays"), out var __jsonOnDays) ? If( __jsonOnDays as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : OnDays;}
             {_ofWeeks = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("ofWeeks"), out var __jsonOfWeeks) ? If( __jsonOfWeeks as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(string) (__p is Commvault.Powershell.Runtime.Json.JsonString __o ? (string)(__o.ToString()) : null)) ))() : null : OfWeeks;}
-            {_dayTimeStart = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dayTimeStart"), out var __jsonDayTimeStart) ? (int?)__jsonDayTimeStart : DayTimeStart;}
-            {_dayTimeEnd = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dayTimeEnd"), out var __jsonDayTimeEnd) ? (int?)__jsonDayTimeEnd : DayTimeEnd;}
+            {_dayTimeStart = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dayTimeStart"), out var __jsonDayTimeStart) ? (long?)__jsonDayTimeStart : DayTimeStart;}
+            {_dayTimeEnd = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dayTimeEnd"), out var __jsonDayTimeEnd) ? (long?)__jsonDayTimeEnd : DayTimeEnd;}
             AfterFromJson(json);
         }
 
@@ -114,8 +114,8 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("ofWeeks",__r);
             }
-            AddIf( null != this._dayTimeStart ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._dayTimeStart) : null, "dayTimeStart" ,container.Add );
-            AddIf( null != this._dayTimeEnd ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._dayTimeEnd) : null, "dayTimeEnd" ,container.Add );
+            AddIf( null != this._dayTimeStart ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._dayTimeStart) : null, "dayTimeStart" ,container.Add );
+            AddIf( null != this._dayTimeEnd ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._dayTimeEnd) : null, "dayTimeEnd" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

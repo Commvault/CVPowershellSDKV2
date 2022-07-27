@@ -30,14 +30,14 @@ namespace Commvault.Powershell.Models
         public bool? Encrypt { get => this._encrypt; set => this._encrypt = value; }
 
         /// <summary>Backing field for <see cref="KeyLength" /> property.</summary>
-        private int? _keyLength;
+        private long? _keyLength;
 
         /// <summary>
         /// Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? KeyLength { get => this._keyLength; set => this._keyLength = value; }
+        public long? KeyLength { get => this._keyLength; set => this._keyLength = value; }
 
         /// <summary>Backing field for <see cref="KeyProvider" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _keyProvider;
@@ -46,7 +46,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName KeyProvider { get => (this._keyProvider = this._keyProvider ?? new Commvault.Powershell.Models.IdName()); set => this._keyProvider = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? KeyProviderId { get => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Id = value ?? default(int); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string KeyProviderName { get => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Name = value ?? null; }
@@ -88,16 +88,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128 and 256. DES3 accepts only 192. GOST accepts only 256. ",
         SerializedName = @"keyLength",
-        PossibleTypes = new [] { typeof(int) })]
-        int? KeyLength { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? KeyLength { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? KeyProviderId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -122,11 +122,11 @@ namespace Commvault.Powershell.Models
         /// Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
-        int? KeyLength { get; set; }
+        long? KeyLength { get; set; }
 
         Commvault.Powershell.Models.IIdName KeyProvider { get; set; }
 
-        int? KeyProviderId { get; set; }
+        long? KeyProviderId { get; set; }
 
         string KeyProviderName { get; set; }
 

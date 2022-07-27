@@ -63,7 +63,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount = (int?) content.GetValueForProperty("ApplicationGroupCount",((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount = (long?) content.GetValueForProperty("ApplicationGroupCount",((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroups = (Commvault.Powershell.Models.IApplicationGroupSummary[]) content.GetValueForProperty("ApplicationGroups",((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroups, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IApplicationGroupSummary>(__y, Commvault.Powershell.Models.ApplicationGroupSummaryTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -82,7 +82,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount = (int?) content.GetValueForProperty("ApplicationGroupCount",((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount = (long?) content.GetValueForProperty("ApplicationGroupCount",((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroupCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroups = (Commvault.Powershell.Models.IApplicationGroupSummary[]) content.GetValueForProperty("ApplicationGroups",((Commvault.Powershell.Models.IApplicationGroupListRespInternal)this).ApplicationGroups, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IApplicationGroupSummary>(__y, Commvault.Powershell.Models.ApplicationGroupSummaryTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

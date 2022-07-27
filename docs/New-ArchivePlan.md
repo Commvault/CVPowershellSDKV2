@@ -13,15 +13,15 @@ Create Archive Plan
 ## SYNTAX
 
 ```
-New-ArchivePlan -PlanName <String> [-AllowPlanOverride] [-ArchiveFrequency <Int32>]
- [-ArchiveFrequencyDayOfMonth <Int32>] [-ArchiveFrequencyDayOfWeek <String>]
+New-ArchivePlan -PlanName <String> [-AllowPlanOverride] [-ArchiveFrequency <Int64>]
+ [-ArchiveFrequencyDayOfMonth <Int64>] [-ArchiveFrequencyDayOfWeek <String>]
  [-ArchiveFrequencyMonthOfYear <String>] [-ArchiveFrequencyScheduleFrequencyType <String>]
- [-ArchiveFrequencyStartTime <Int32>] [-ArchiveFrequencyWeeklyDays <String[]>]
+ [-ArchiveFrequencyStartTime <Int64>] [-ArchiveFrequencyWeeklyDays <String[]>]
  [-ArchiveFrequencyWeekOfMonth <String>] [-ArchivingRuleAfterArchiving <String>]
- [-ArchivingRuleFileSize <Int32>] [-ArchivingRuleFileTimestamp <Int32>]
+ [-ArchivingRuleFileSize <Int64>] [-ArchivingRuleFileTimestamp <Int64>]
  [-ArchivingRuleFileTimestampMethod <String>] [-BackupDestinations <ICreateArchivePlanBackupDestination[]>]
  [-OverrideRestrictionArchivingRules <String>] [-OverrideRestrictionRpo <String>]
- [-OverrideRestrictionStoragePool <String>] [-ParentPlanId <Int32>] [-ParentPlanName <String>]
+ [-OverrideRestrictionStoragePool <String>] [-ParentPlanId <Int64>] [-ParentPlanName <String>]
  [-RpoArchiveWindow <IDayAndTime[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -72,7 +72,7 @@ for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 
 for Monthly 2 is it repeats every 2 months
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -87,7 +87,7 @@ Accept wildcard characters: False
 Day on which to run the schedule, applicable for monthly, yearly
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -147,7 +147,7 @@ Accept wildcard characters: False
 start time of schedule in seconds for daily, weekly, monthly, yearly frequency
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -207,7 +207,7 @@ Accept wildcard characters: False
 To archive files based on the size of the file, specify the minimum file size in KB.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -223,7 +223,7 @@ To archive files based on the last accessed or modified date of each file within
 Should be supplied with fileTimestampMethod.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -314,7 +314,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -424,13 +424,13 @@ To create the parameters described below, construct a hash table containing the 
 
 BACKUPDESTINATIONS <ICreateArchivePlanBackupDestination[]>: .
   - `BackupDestinationName <String>`: Backup destination details. Enter the name during creation.
-  - `[BackupStartTime <Int32?>]`: Backup start time in seconds. The time is provided in unix time format.
-  - `[RegionId <Int32?>]`: 
+  - `[BackupStartTime <Int64?>]`: Backup start time in seconds. The time is provided in unix time format.
+  - `[RegionId <Int64?>]`: 
   - `[RegionName <String>]`: 
-  - `[RetentionPeriodDays <Int32?>]`: Retention period in days. -1 can be specified for infinite retention.
-  - `[SourceCopyId <Int32?>]`: 
+  - `[RetentionPeriodDays <Int64?>]`: Retention period in days. -1 can be specified for infinite retention.
+  - `[SourceCopyId <Int64?>]`: 
   - `[SourceCopyName <String>]`: 
-  - `[StoragePoolId <Int32?>]`: 
+  - `[StoragePoolId <Int64?>]`: 
   - `[StoragePoolName <String>]`: 
 
 RPOARCHIVEWINDOW <IDayAndTime[]>: Archive job will run only in the specified archive window

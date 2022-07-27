@@ -48,7 +48,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.InvocationInfo InvocationInformation { get => __invocationInfo = __invocationInfo ?? this.MyInvocation ; set { __invocationInfo = value; } }
 
         /// <summary>Backing field for <see cref="MediaAgentId" /> property.</summary>
-        private int _mediaAgentId;
+        private long _mediaAgentId;
 
         /// <summary>Id of the Media Agent whose details have to be fetched</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the Media Agent whose details have to be fetched")]
@@ -57,9 +57,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the Media Agent whose details have to be fetched",
         SerializedName = @"mediaAgentId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int MediaAgentId { get => this._mediaAgentId; set => this._mediaAgentId = value; }
+        public long MediaAgentId { get => this._mediaAgentId; set => this._mediaAgentId = value; }
 
         /// <summary>
         /// <see cref="IEventListener" /> cancellation delegate. Stops the cmdlet when called.

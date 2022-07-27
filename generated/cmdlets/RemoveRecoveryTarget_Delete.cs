@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="RecoveryTargetId" /> property.</summary>
-        private int _recoveryTargetId;
+        private long _recoveryTargetId;
 
         /// <summary>id of recovery target</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "id of recovery target")]
@@ -86,9 +86,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"id of recovery target",
         SerializedName = @"recoveryTargetId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int RecoveryTargetId { get => this._recoveryTargetId; set => this._recoveryTargetId = value; }
+        public long RecoveryTargetId { get => this._recoveryTargetId; set => this._recoveryTargetId = value; }
 
         /// <summary>
         /// <c>overrideOnNotFound</c> will be called before the regular onNotFound has been processed, allowing customization of what

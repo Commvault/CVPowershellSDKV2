@@ -39,13 +39,13 @@ namespace Commvault.Powershell.Models
         /// VMs. Applicable only for Point in time recovery.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryPointIntervalApplicationConsistentRpInterval { get => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).ApplicationConsistentRpInterval; set => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).ApplicationConsistentRpInterval = value ?? default(int); }
+        public long? RecoveryPointIntervalApplicationConsistentRpInterval { get => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).ApplicationConsistentRpInterval; set => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).ApplicationConsistentRpInterval = value ?? default(long); }
 
         /// <summary>
         /// Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryPointIntervalCrashConsistentRpInterval { get => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).CrashConsistentRpInterval; set => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).CrashConsistentRpInterval = value ?? default(int); }
+        public long? RecoveryPointIntervalCrashConsistentRpInterval { get => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).CrashConsistentRpInterval; set => ((Commvault.Powershell.Models.IRecoveryPointIntervalCreateInternal)RecoveryPointInterval).CrashConsistentRpInterval = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="RecoveryPointRetention" /> property.</summary>
         private Commvault.Powershell.Models.IRecoveryPointRetentionCreate _recoveryPointRetention;
@@ -66,7 +66,7 @@ namespace Commvault.Powershell.Models
         /// exceed the value of retainRecoveryPointsFor.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryPointRetentionMergeRecoveryPointsOlderThan { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).MergeRecoveryPointsOlderThan; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).MergeRecoveryPointsOlderThan = value ?? default(int); }
+        public long? RecoveryPointRetentionMergeRecoveryPointsOlderThan { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).MergeRecoveryPointsOlderThan; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).MergeRecoveryPointsOlderThan = value ?? default(long); }
 
         /// <summary>
         /// Transfers the updates of the oldest recovery points to destination VM only during off-peak hours. The peak interval time
@@ -81,20 +81,20 @@ namespace Commvault.Powershell.Models
         /// or 86400 seconds(1 day).
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryPointRetentionRecoveryPointIntervalAtEndofRetention { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RecoveryPointIntervalAtEndofRetention; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RecoveryPointIntervalAtEndofRetention = value ?? default(int); }
+        public long? RecoveryPointRetentionRecoveryPointIntervalAtEndofRetention { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RecoveryPointIntervalAtEndofRetention; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RecoveryPointIntervalAtEndofRetention = value ?? default(long); }
 
         /// <summary>
         /// The lengh of time(in seconds) to a retain the recovery point entries. Applicable only for Point in time recovery.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryPointRetentionRetainRecoveryPointsFor { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RetainRecoveryPointsFor; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RetainRecoveryPointsFor = value ?? default(int); }
+        public long? RecoveryPointRetentionRetainRecoveryPointsFor { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RetainRecoveryPointsFor; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RetainRecoveryPointsFor = value ?? default(long); }
 
         /// <summary>
         /// Time(in seconds) after which the recovery type is switched to 'Latest recovery' if RP store is offline. Applicable only
         /// for Point in time recovery.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryPointRetentionRpStoreOfflineFor { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RpStoreOfflineFor; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RpStoreOfflineFor = value ?? default(int); }
+        public long? RecoveryPointRetentionRpStoreOfflineFor { get => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RpStoreOfflineFor; set => ((Commvault.Powershell.Models.IRecoveryPointRetentionCreateInternal)RecoveryPointRetention).RpStoreOfflineFor = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="RecoveryPointStore" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _recoveryPointStore;
@@ -103,7 +103,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName RecoveryPointStore { get => (this._recoveryPointStore = this._recoveryPointStore ?? new Commvault.Powershell.Models.IdName()); set => this._recoveryPointStore = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecoveryPointStoreId { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryPointStore).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryPointStore).Id = value ?? default(int); }
+        public long? RecoveryPointStoreId { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryPointStore).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryPointStore).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RecoveryPointStoreName { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryPointStore).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryPointStore).Name = value ?? null; }
@@ -136,8 +136,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time(in seconds) after which the source VMs are quiesced to create application-consistent recovery points for destination VMs. Applicable only for Point in time recovery.",
         SerializedName = @"applicationConsistentRpInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryPointIntervalApplicationConsistentRpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryPointIntervalApplicationConsistentRpInterval { get; set; }
         /// <summary>
         /// Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.
         /// </summary>
@@ -146,8 +146,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.",
         SerializedName = @"crashConsistentRpInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryPointIntervalCrashConsistentRpInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryPointIntervalCrashConsistentRpInterval { get; set; }
         /// <summary>
         /// Merge the recovery points beyond the time provided in mergeRecoveryPointsOlderThan
         /// </summary>
@@ -168,8 +168,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Applicable only if mergeRecoveryPoints is set to true. Beyond this period(in seconds), older recovery points will be merged into progressively coarser intervals going back in time. Applicable only for Point in time recovery. The value cannot exceed the value of retainRecoveryPointsFor.",
         SerializedName = @"mergeRecoveryPointsOlderThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryPointRetentionMergeRecoveryPointsOlderThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryPointRetentionMergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Transfers the updates of the oldest recovery points to destination VM only during off-peak hours. The peak interval time
         /// should be configured in the RP store. Applicable only for Point in time recovery.
@@ -191,8 +191,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Applicable only if mergeRecoveryPoints is set to true.  Time interval(in seconds) between the older recovery points. Applicable only if mergeRecoveryPointsOlderThan and Point in time recovery is selected. The value cannot exceed the value of retainRecoveryPointsFor or 86400 seconds(1 day).",
         SerializedName = @"recoveryPointIntervalAtEndofRetention",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryPointRetentionRecoveryPointIntervalAtEndofRetention { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryPointRetentionRecoveryPointIntervalAtEndofRetention { get; set; }
         /// <summary>
         /// The lengh of time(in seconds) to a retain the recovery point entries. Applicable only for Point in time recovery.
         /// </summary>
@@ -201,8 +201,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The lengh of time(in seconds) to a retain the recovery point entries. Applicable only for Point in time recovery.",
         SerializedName = @"retainRecoveryPointsFor",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryPointRetentionRetainRecoveryPointsFor { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryPointRetentionRetainRecoveryPointsFor { get; set; }
         /// <summary>
         /// Time(in seconds) after which the recovery type is switched to 'Latest recovery' if RP store is offline. Applicable only
         /// for Point in time recovery.
@@ -212,16 +212,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Time(in seconds) after which the recovery type is switched to 'Latest recovery' if RP store is offline. Applicable only for Point in time recovery.",
         SerializedName = @"rpStoreOfflineFor",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryPointRetentionRpStoreOfflineFor { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryPointRetentionRpStoreOfflineFor { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecoveryPointStoreId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryPointStoreId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -255,11 +255,11 @@ namespace Commvault.Powershell.Models
         /// Time(in seconds) after which the source VMs are quiesced to create application-consistent recovery points for destination
         /// VMs. Applicable only for Point in time recovery.
         /// </summary>
-        int? RecoveryPointIntervalApplicationConsistentRpInterval { get; set; }
+        long? RecoveryPointIntervalApplicationConsistentRpInterval { get; set; }
         /// <summary>
         /// Minimum time interval(in seconds) between VM recovery points. Applicable only for Point in time recovery.
         /// </summary>
-        int? RecoveryPointIntervalCrashConsistentRpInterval { get; set; }
+        long? RecoveryPointIntervalCrashConsistentRpInterval { get; set; }
         /// <summary>Recovery point retention inputs for continuous replication group.</summary>
         Commvault.Powershell.Models.IRecoveryPointRetentionCreate RecoveryPointRetention { get; set; }
         /// <summary>
@@ -271,7 +271,7 @@ namespace Commvault.Powershell.Models
         /// into progressively coarser intervals going back in time. Applicable only for Point in time recovery. The value cannot
         /// exceed the value of retainRecoveryPointsFor.
         /// </summary>
-        int? RecoveryPointRetentionMergeRecoveryPointsOlderThan { get; set; }
+        long? RecoveryPointRetentionMergeRecoveryPointsOlderThan { get; set; }
         /// <summary>
         /// Transfers the updates of the oldest recovery points to destination VM only during off-peak hours. The peak interval time
         /// should be configured in the RP store. Applicable only for Point in time recovery.
@@ -282,20 +282,20 @@ namespace Commvault.Powershell.Models
         /// only if mergeRecoveryPointsOlderThan and Point in time recovery is selected. The value cannot exceed the value of retainRecoveryPointsFor
         /// or 86400 seconds(1 day).
         /// </summary>
-        int? RecoveryPointRetentionRecoveryPointIntervalAtEndofRetention { get; set; }
+        long? RecoveryPointRetentionRecoveryPointIntervalAtEndofRetention { get; set; }
         /// <summary>
         /// The lengh of time(in seconds) to a retain the recovery point entries. Applicable only for Point in time recovery.
         /// </summary>
-        int? RecoveryPointRetentionRetainRecoveryPointsFor { get; set; }
+        long? RecoveryPointRetentionRetainRecoveryPointsFor { get; set; }
         /// <summary>
         /// Time(in seconds) after which the recovery type is switched to 'Latest recovery' if RP store is offline. Applicable only
         /// for Point in time recovery.
         /// </summary>
-        int? RecoveryPointRetentionRpStoreOfflineFor { get; set; }
+        long? RecoveryPointRetentionRpStoreOfflineFor { get; set; }
 
         Commvault.Powershell.Models.IIdName RecoveryPointStore { get; set; }
 
-        int? RecoveryPointStoreId { get; set; }
+        long? RecoveryPointStoreId { get; set; }
 
         string RecoveryPointStoreName { get; set; }
         /// <summary>Type of recovery.</summary>

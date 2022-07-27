@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Destination { get => (this._destination = this._destination ?? new Commvault.Powershell.Models.IdName()); set => this._destination = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationId { get => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id = value ?? default(int); }
+        public long? DestinationId { get => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationName { get => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Name = value ?? null; }
@@ -37,11 +37,11 @@ namespace Commvault.Powershell.Models
         public string RecoveryType { get => this._recoveryType; set => this._recoveryType = value; }
 
         /// <summary>Backing field for <see cref="ReplicationLag" /> property.</summary>
-        private int? _replicationLag;
+        private long? _replicationLag;
 
         /// <summary>Lag time in seconds</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ReplicationLag { get => this._replicationLag; set => this._replicationLag = value; }
+        public long? ReplicationLag { get => this._replicationLag; set => this._replicationLag = value; }
 
         /// <summary>Backing field for <see cref="Source" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _source;
@@ -50,7 +50,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Source { get => (this._source = this._source ?? new Commvault.Powershell.Models.IdName()); set => this._source = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id = value ?? default(int); }
+        public long? SourceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name = value ?? null; }
@@ -77,8 +77,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -101,16 +101,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Lag time in seconds",
         SerializedName = @"replicationLag",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ReplicationLag { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ReplicationLag { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -135,17 +135,17 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Destination { get; set; }
 
-        int? DestinationId { get; set; }
+        long? DestinationId { get; set; }
 
         string DestinationName { get; set; }
         /// <summary>Gives information about the recovery type of replication group</summary>
         string RecoveryType { get; set; }
         /// <summary>Lag time in seconds</summary>
-        int? ReplicationLag { get; set; }
+        long? ReplicationLag { get; set; }
 
         Commvault.Powershell.Models.IIdName Source { get; set; }
 
-        int? SourceId { get; set; }
+        long? SourceId { get; set; }
 
         string SourceName { get; set; }
         /// <summary>Gives information about the synchronization status</summary>

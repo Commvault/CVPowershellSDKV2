@@ -96,8 +96,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users = (int?) content.GetValueForProperty("Users",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops = (int?) content.GetValueForProperty("Laptops",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users = (long?) content.GetValueForProperty("Users",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops = (long?) content.GetValueForProperty("Laptops",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).OptimizedForCloudBackups = (bool?) content.GetValueForProperty("OptimizedForCloudBackups",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).OptimizedForCloudBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).StorageResourcePoolMap = (Commvault.Powershell.Models.IStorageResourcePoolMap[]) content.GetValueForProperty("StorageResourcePoolMap",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).StorageResourcePoolMap, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IStorageResourcePoolMap>(__y, Commvault.Powershell.Models.StorageResourcePoolMapTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
@@ -117,8 +117,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users = (int?) content.GetValueForProperty("Users",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops = (int?) content.GetValueForProperty("Laptops",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users = (long?) content.GetValueForProperty("Users",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Users, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops = (long?) content.GetValueForProperty("Laptops",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).Laptops, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).OptimizedForCloudBackups = (bool?) content.GetValueForProperty("OptimizedForCloudBackups",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).OptimizedForCloudBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).StorageResourcePoolMap = (Commvault.Powershell.Models.IStorageResourcePoolMap[]) content.GetValueForProperty("StorageResourcePoolMap",((Commvault.Powershell.Models.ILaptopPlanGeneralInfoInternal)this).StorageResourcePoolMap, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IStorageResourcePoolMap>(__y, Commvault.Powershell.Models.StorageResourcePoolMapTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);

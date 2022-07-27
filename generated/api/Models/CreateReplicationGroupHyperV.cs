@@ -53,7 +53,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>The field denotes the frequency of replication.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? FrequencyInMinutes { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).FrequencyInMinutes; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).FrequencyInMinutes = value; }
+        public long? FrequencyInMinutes { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).FrequencyInMinutes; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).FrequencyInMinutes = value; }
 
         /// <summary>The name of the replication group being created</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -73,7 +73,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdName RecoveryTarget { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTarget; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTarget = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? RecoveryTargetId { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTargetId; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTargetId = value; }
+        public long? RecoveryTargetId { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTargetId; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTargetId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string RecoveryTargetName { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTargetName; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).RecoveryTargetName = value; }
@@ -82,7 +82,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdName SourceHypervisor { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisor; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisor = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? SourceHypervisorId { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisorId; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisorId = value; }
+        public long? SourceHypervisorId { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisorId; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisorId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string SourceHypervisorName { get => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisorName; set => ((Commvault.Powershell.Models.ICreateReplicationGroupInternal)__createReplicationGroup).SourceHypervisorName = value; }

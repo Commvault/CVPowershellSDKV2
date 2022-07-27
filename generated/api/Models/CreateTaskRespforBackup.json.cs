@@ -61,7 +61,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_taskId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("taskId"), out var __jsonTaskId) ? (int?)__jsonTaskId : TaskId;}
+            {_taskId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("taskId"), out var __jsonTaskId) ? (long?)__jsonTaskId : TaskId;}
             {_jobIds = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("jobIds"), out var __jsonJobIds) ? If( __jsonJobIds as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAny[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAny) (Commvault.Powershell.Models.Any.FromJson(__u) )) ))() : null : JobIds;}
             AfterFromJson(json);
         }
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._taskId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._taskId) : null, "taskId" ,container.Add );
+            AddIf( null != this._taskId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._taskId) : null, "taskId" ,container.Add );
             if (null != this._jobIds)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

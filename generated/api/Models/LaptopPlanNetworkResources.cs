@@ -11,24 +11,24 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ThrottleReceive" /> property.</summary>
-        private int? _throttleReceive;
+        private long? _throttleReceive;
 
         /// <summary>
         /// Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ThrottleReceive { get => this._throttleReceive; set => this._throttleReceive = value; }
+        public long? ThrottleReceive { get => this._throttleReceive; set => this._throttleReceive = value; }
 
         /// <summary>Backing field for <see cref="ThrottleSend" /> property.</summary>
-        private int? _throttleSend;
+        private long? _throttleSend;
 
         /// <summary>
         /// Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ThrottleSend { get => this._throttleSend; set => this._throttleSend = value; }
+        public long? ThrottleSend { get => this._throttleSend; set => this._throttleSend = value; }
 
         /// <summary>Creates an new <see cref="LaptopPlanNetworkResources" /> instance.</summary>
         public LaptopPlanNetworkResources()
@@ -48,8 +48,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit",
         SerializedName = @"throttleReceive",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ThrottleReceive { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ThrottleReceive { get; set; }
         /// <summary>
         /// Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
@@ -59,8 +59,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit",
         SerializedName = @"throttleSend",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ThrottleSend { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ThrottleSend { get; set; }
 
     }
     internal partial interface ILaptopPlanNetworkResourcesInternal
@@ -70,12 +70,12 @@ namespace Commvault.Powershell.Models
         /// Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
         /// </summary>
-        int? ThrottleReceive { get; set; }
+        long? ThrottleReceive { get; set; }
         /// <summary>
         /// Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed
         /// i.e. no limit
         /// </summary>
-        int? ThrottleSend { get; set; }
+        long? ThrottleSend { get; set; }
 
     }
 }

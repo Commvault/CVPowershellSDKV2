@@ -26,10 +26,10 @@ namespace Commvault.Powershell.Models
         public string ClusterUrl { get => this._clusterUrl; set => this._clusterUrl = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -76,8 +76,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
         /// <summary>URL of the distributed storage cluster</summary>
         string ClusterUrl { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         string Name { get; set; }
         /// <summary>Username of the distributed storage user</summary>

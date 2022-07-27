@@ -94,7 +94,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePool = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("ResourcePool",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePool, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).AppType = (string) content.GetValueForProperty("AppType",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).AppType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId = (int?) content.GetValueForProperty("ResourcePoolId",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId = (long?) content.GetValueForProperty("ResourcePoolId",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolName = (string) content.GetValueForProperty("ResourcePoolName",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePool = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("ResourcePool",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePool, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).AppType = (string) content.GetValueForProperty("AppType",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).AppType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId = (int?) content.GetValueForProperty("ResourcePoolId",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId = (long?) content.GetValueForProperty("ResourcePoolId",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolName = (string) content.GetValueForProperty("ResourcePoolName",((Commvault.Powershell.Models.IResourcePoolInfoInternal)this).ResourcePoolName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

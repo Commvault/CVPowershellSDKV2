@@ -54,11 +54,11 @@ namespace Commvault.Powershell.Models
         public string TunnelProtocol { get => this._tunnelProtocol; set => this._tunnelProtocol = value; }
 
         /// <summary>Backing field for <see cref="TunnelsPerRoute" /> property.</summary>
-        private int? _tunnelsPerRoute;
+        private long? _tunnelsPerRoute;
 
         /// <summary>The number of tunnel connections per route</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TunnelsPerRoute { get => this._tunnelsPerRoute; set => this._tunnelsPerRoute = value; }
+        public long? TunnelsPerRoute { get => this._tunnelsPerRoute; set => this._tunnelsPerRoute = value; }
 
         /// <summary>Backing field for <see cref="UseWildCardProxy" /> property.</summary>
         private bool? _useWildCardProxy;
@@ -135,8 +135,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The number of tunnel connections per route",
         SerializedName = @"tunnelsPerRoute",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TunnelsPerRoute { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TunnelsPerRoute { get; set; }
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines
         /// </summary>
@@ -168,7 +168,7 @@ namespace Commvault.Powershell.Models
         /// <summary>The protocol for outgoing communication</summary>
         string TunnelProtocol { get; set; }
         /// <summary>The number of tunnel connections per route</summary>
-        int? TunnelsPerRoute { get; set; }
+        long? TunnelsPerRoute { get; set; }
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines
         /// </summary>

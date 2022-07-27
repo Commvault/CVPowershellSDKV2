@@ -85,7 +85,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="TransferToUserGroupId" /> property.</summary>
-        private int _transferToUserGroupId;
+        private long _transferToUserGroupId;
 
         /// <summary>Optionally transfer the ownership to user group</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optionally transfer the ownership to user group")]
@@ -94,12 +94,12 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Optionally transfer the ownership to user group",
         SerializedName = @"transferToUserGroupId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int TransferToUserGroupId { get => this._transferToUserGroupId; set => this._transferToUserGroupId = value; }
+        public long TransferToUserGroupId { get => this._transferToUserGroupId; set => this._transferToUserGroupId = value; }
 
         /// <summary>Backing field for <see cref="TransferToUserId" /> property.</summary>
-        private int _transferToUserId;
+        private long _transferToUserId;
 
         /// <summary>Optionally transfer the ownership to user</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Optionally transfer the ownership to user")]
@@ -108,9 +108,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Optionally transfer the ownership to user",
         SerializedName = @"transferToUserId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int TransferToUserId { get => this._transferToUserId; set => this._transferToUserId = value; }
+        public long TransferToUserId { get => this._transferToUserId; set => this._transferToUserId = value; }
 
         /// <summary>
         /// <c>overrideOnOk</c> will be called before the regular onOk has been processed, allowing customization of what happens
@@ -261,12 +261,12 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.DomainId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.DeleteAdldap(InputObject.DomainId ?? default(int), this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserId") ? TransferToUserId : default(int?), this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserGroupId") ? TransferToUserGroupId : default(int?), onOk, this, Pipeline);
+                    await this.Client.DeleteAdldap(InputObject.DomainId ?? default(long), this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserId") ? TransferToUserId : default(long?), this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserGroupId") ? TransferToUserGroupId : default(long?), onOk, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  TransferToUserId=this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserId") ? TransferToUserId : default(int?),TransferToUserGroupId=this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserGroupId") ? TransferToUserGroupId : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  TransferToUserId=this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserId") ? TransferToUserId : default(long?),TransferToUserGroupId=this.InvocationInformation.BoundParameters.ContainsKey("TransferToUserGroupId") ? TransferToUserGroupId : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

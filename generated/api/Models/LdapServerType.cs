@@ -49,7 +49,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Required when configuring an existing dummy domain as LDAP/AD</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Id { get => ((Commvault.Powershell.Models.ILdapRequestInternal)__ldapRequest).Id; set => ((Commvault.Powershell.Models.ILdapRequestInternal)__ldapRequest).Id = value; }
+        public long? Id { get => ((Commvault.Powershell.Models.ILdapRequestInternal)__ldapRequest).Id; set => ((Commvault.Powershell.Models.ILdapRequestInternal)__ldapRequest).Id = value; }
 
         /// <summary>Custom attribute string of LDAP query paramters</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]

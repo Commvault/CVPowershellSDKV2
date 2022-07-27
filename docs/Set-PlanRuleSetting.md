@@ -14,7 +14,7 @@ API to set plan rule execution settings
 
 ### PutExpanded (Default)
 ```
-Set-PlanRuleSetting [-ExecutionInterval <Int32>] [-ExecutionMode <String>] [-Confirm] [-WhatIf]
+Set-PlanRuleSetting [-ExecutionInterval <Int64>] [-ExecutionMode <String>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: PutExpanded
 Aliases:
 
@@ -146,7 +146,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODY <IPlanRuleExecutionSettings>: Message object to hold settings for plan rule execution.
-  - `[ExecutionInterval <Int32?>]`: Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
+  - `[ExecutionInterval <Int64?>]`: Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
   - `[ExecutionMode <String>]`: Plan rule execution mode
 
 ## RELATED LINKS

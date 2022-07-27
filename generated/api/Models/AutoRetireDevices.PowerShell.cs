@@ -63,8 +63,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays = (int?) content.GetValueForProperty("RetireAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays = (int?) content.GetValueForProperty("DeleteAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays = (long?) content.GetValueForProperty("RetireAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays = (long?) content.GetValueForProperty("DeleteAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -82,8 +82,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays = (int?) content.GetValueForProperty("RetireAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays = (int?) content.GetValueForProperty("DeleteAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays = (long?) content.GetValueForProperty("RetireAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).RetireAfterDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays = (long?) content.GetValueForProperty("DeleteAfterDays",((Commvault.Powershell.Models.IAutoRetireDevicesInternal)this).DeleteAfterDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

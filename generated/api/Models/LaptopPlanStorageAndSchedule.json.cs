@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
             }
             {_primaryStorage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("primaryStorage"), out var __jsonPrimaryStorage) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPrimaryStorage) : PrimaryStorage;}
             {_secondaryStorage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("secondaryStorage"), out var __jsonSecondaryStorage) ? Commvault.Powershell.Models.IdName.FromJson(__jsonSecondaryStorage) : SecondaryStorage;}
-            {_backupFrequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupFrequency"), out var __jsonBackupFrequency) ? (int?)__jsonBackupFrequency : BackupFrequency;}
+            {_backupFrequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupFrequency"), out var __jsonBackupFrequency) ? (long?)__jsonBackupFrequency : BackupFrequency;}
             AfterFromJson(json);
         }
 
@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._primaryStorage ? (Commvault.Powershell.Runtime.Json.JsonNode) this._primaryStorage.ToJson(null,serializationMode) : null, "primaryStorage" ,container.Add );
             AddIf( null != this._secondaryStorage ? (Commvault.Powershell.Runtime.Json.JsonNode) this._secondaryStorage.ToJson(null,serializationMode) : null, "secondaryStorage" ,container.Add );
-            AddIf( null != this._backupFrequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._backupFrequency) : null, "backupFrequency" ,container.Add );
+            AddIf( null != this._backupFrequency ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupFrequency) : null, "backupFrequency" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -12,11 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="BackupCopyRpoMins" /> property.</summary>
-        private int? _backupCopyRpoMins;
+        private long? _backupCopyRpoMins;
 
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupCopyRpoMins { get => this._backupCopyRpoMins; set => this._backupCopyRpoMins = value; }
+        public long? BackupCopyRpoMins { get => this._backupCopyRpoMins; set => this._backupCopyRpoMins = value; }
 
         /// <summary>Backing field for <see cref="EnableBackupCopy" /> property.</summary>
         private bool? _enableBackupCopy;
@@ -26,24 +26,24 @@ namespace Commvault.Powershell.Models
         public bool? EnableBackupCopy { get => this._enableBackupCopy; set => this._enableBackupCopy = value; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
-        private int? _retentionPeriodDays;
+        private long? _retentionPeriodDays;
 
         /// <summary>
         /// Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified,
         /// this takes precedence.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
+        public long? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
 
         /// <summary>Backing field for <see cref="SnapRecoveryPoints" /> property.</summary>
-        private int? _snapRecoveryPoints;
+        private long? _snapRecoveryPoints;
 
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
         /// for default snap copy.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SnapRecoveryPoints { get => this._snapRecoveryPoints; set => this._snapRecoveryPoints = value; }
+        public long? SnapRecoveryPoints { get => this._snapRecoveryPoints; set => this._snapRecoveryPoints = value; }
 
         /// <summary>Creates an new <see cref="CreatePlanSnapshotOptions" /> instance.</summary>
         public CreatePlanSnapshotOptions()
@@ -61,8 +61,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Backup copy RPO in minutes",
         SerializedName = @"backupCopyRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupCopyRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -80,8 +80,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes precedence.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionPeriodDays { get; set; }
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
         /// for default snap copy.
@@ -91,8 +91,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days for default snap copy.",
         SerializedName = @"snapRecoveryPoints",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapRecoveryPoints { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapRecoveryPoints { get; set; }
 
     }
     /// This feature applies only to File System Agents
@@ -100,19 +100,19 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Backup copy RPO in minutes</summary>
-        int? BackupCopyRpoMins { get; set; }
+        long? BackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
         bool? EnableBackupCopy { get; set; }
         /// <summary>
         /// Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified,
         /// this takes precedence.
         /// </summary>
-        int? RetentionPeriodDays { get; set; }
+        long? RetentionPeriodDays { get; set; }
         /// <summary>
         /// Number of snap recovery points for default snap copy for retention. Can be specified instead of retention period in Days
         /// for default snap copy.
         /// </summary>
-        int? SnapRecoveryPoints { get; set; }
+        long? SnapRecoveryPoints { get; set; }
 
     }
 }

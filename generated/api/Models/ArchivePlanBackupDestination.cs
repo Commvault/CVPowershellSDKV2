@@ -48,7 +48,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName PlanBackupDestination { get => (this._planBackupDestination = this._planBackupDestination ?? new Commvault.Powershell.Models.IdName()); set => this._planBackupDestination = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanBackupDestinationId { get => ((Commvault.Powershell.Models.IIdNameInternal)PlanBackupDestination).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)PlanBackupDestination).Id = value ?? default(int); }
+        public long? PlanBackupDestinationId { get => ((Commvault.Powershell.Models.IIdNameInternal)PlanBackupDestination).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)PlanBackupDestination).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanBackupDestinationName { get => ((Commvault.Powershell.Models.IIdNameInternal)PlanBackupDestination).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)PlanBackupDestination).Name = value ?? null; }
@@ -63,17 +63,17 @@ namespace Commvault.Powershell.Models
         public string RegionDisplayName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).DisplayName; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).DisplayName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionId { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id = value ?? default(int); }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RegionName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
-        private int? _retentionPeriodDays;
+        private long? _retentionPeriodDays;
 
         /// <summary>Retention period in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
+        public long? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
 
         /// <summary>Backing field for <see cref="SourceCopy" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _sourceCopy;
@@ -82,7 +82,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceCopy { get => (this._sourceCopy = this._sourceCopy ?? new Commvault.Powershell.Models.IdName()); set => this._sourceCopy = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceCopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id = value ?? default(int); }
+        public long? SourceCopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceCopyName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name = value ?? null; }
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Id of Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? StoragePoolId { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Id; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Id = value ?? default(int); }
+        public long? StoragePoolId { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Id; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Id = value ?? default(long); }
 
         /// <summary>Name of Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -151,8 +151,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanBackupDestinationId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanBackupDestinationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -175,8 +175,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -191,16 +191,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retention period in days",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceCopyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceCopyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -215,8 +215,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of Storage Pool",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StoragePoolId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StoragePoolId { get; set; }
         /// <summary>Name of Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -254,7 +254,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName PlanBackupDestination { get; set; }
 
-        int? PlanBackupDestinationId { get; set; }
+        long? PlanBackupDestinationId { get; set; }
 
         string PlanBackupDestinationName { get; set; }
 
@@ -262,21 +262,21 @@ namespace Commvault.Powershell.Models
 
         string RegionDisplayName { get; set; }
 
-        int? RegionId { get; set; }
+        long? RegionId { get; set; }
 
         string RegionName { get; set; }
         /// <summary>Retention period in days</summary>
-        int? RetentionPeriodDays { get; set; }
+        long? RetentionPeriodDays { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceCopy { get; set; }
 
-        int? SourceCopyId { get; set; }
+        long? SourceCopyId { get; set; }
 
         string SourceCopyName { get; set; }
         /// <summary>StoragePool</summary>
         Commvault.Powershell.Models.IStoragePool StoragePool { get; set; }
         /// <summary>Id of Storage Pool</summary>
-        int? StoragePoolId { get; set; }
+        long? StoragePoolId { get; set; }
         /// <summary>Name of Storage Pool</summary>
         string StoragePoolName { get; set; }
         /// <summary>Type of Storage Pool</summary>

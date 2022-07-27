@@ -63,8 +63,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity = (int?) content.GetValueForProperty("TotalCapacity",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace = (int?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity = (long?) content.GetValueForProperty("TotalCapacity",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace = (long?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).DiskAccessPaths = (Commvault.Powershell.Models.IAccessPathDetails[]) content.GetValueForProperty("DiskAccessPaths",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).DiskAccessPaths, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAccessPathDetails>(__y, Commvault.Powershell.Models.AccessPathDetailsTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -83,8 +83,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity = (int?) content.GetValueForProperty("TotalCapacity",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace = (int?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity = (long?) content.GetValueForProperty("TotalCapacity",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).TotalCapacity, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace = (long?) content.GetValueForProperty("FreeSpace",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).FreeSpace, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).DiskAccessPaths = (Commvault.Powershell.Models.IAccessPathDetails[]) content.GetValueForProperty("DiskAccessPaths",((Commvault.Powershell.Models.IBackupLocationDetailsInternal)this).DiskAccessPaths, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAccessPathDetails>(__y, Commvault.Powershell.Models.AccessPathDetailsTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

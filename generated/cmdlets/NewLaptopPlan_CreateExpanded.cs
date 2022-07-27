@@ -68,8 +68,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Maximum number of gigabytes that you can store in the File System. Giving value as -1 means infinite file system quota.",
         SerializedName = @"fileSystemQuota",
-        PossibleTypes = new [] { typeof(int) })]
-        public int BackupContentFileSystemQuota { get => Body.BackupContentFileSystemQuota ?? default(int); set => Body.BackupContentFileSystemQuota = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long BackupContentFileSystemQuota { get => Body.BackupContentFileSystemQuota ?? default(long); set => Body.BackupContentFileSystemQuota = value; }
 
         /// <summary>Paths to exclude for Mac</summary>
         [global::System.Management.Automation.AllowEmptyCollection]
@@ -165,8 +165,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Custom version rule: Retain daily versions for this many day(s)",
         SerializedName = @"dailyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        public int FileVersionDailyVersions { get => Body.FileVersionDailyVersions ?? default(int); set => Body.FileVersionDailyVersions = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long FileVersionDailyVersions { get => Body.FileVersionDailyVersions ?? default(long); set => Body.FileVersionDailyVersions = value; }
 
         /// <summary>
         /// Retain files for this many days. Year(s) or month(s) need to be converted to day(s)
@@ -178,8 +178,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Retain files for this many days. Year(s) or month(s) need to be converted to day(s)",
         SerializedName = @"days",
-        PossibleTypes = new [] { typeof(int) })]
-        public int FileVersionDays { get => Body.FileVersionDays ?? default(int); set => Body.FileVersionDays = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long FileVersionDays { get => Body.FileVersionDays ?? default(long); set => Body.FileVersionDays = value; }
 
         /// <summary>Custom version rule: Retain monthly versions for this many month(s)</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Custom version rule: Retain monthly versions for this many month(s)")]
@@ -189,8 +189,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Custom version rule: Retain monthly versions for this many month(s)",
         SerializedName = @"monthlyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        public int FileVersionMonthlyVersions { get => Body.FileVersionMonthlyVersions ?? default(int); set => Body.FileVersionMonthlyVersions = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long FileVersionMonthlyVersions { get => Body.FileVersionMonthlyVersions ?? default(long); set => Body.FileVersionMonthlyVersions = value; }
 
         /// <summary>
         /// Retain this many file versions. This is considered as default if no file retention rule is specified.
@@ -202,8 +202,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Retain this many file versions. This is considered as default if no file retention rule is specified.",
         SerializedName = @"versions",
-        PossibleTypes = new [] { typeof(int) })]
-        public int FileVersionVersions { get => Body.FileVersionVersions ?? default(int); set => Body.FileVersionVersions = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long FileVersionVersions { get => Body.FileVersionVersions ?? default(long); set => Body.FileVersionVersions = value; }
 
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Custom version rule: Retain weekly versions for this many week(s)")]
@@ -213,8 +213,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Custom version rule: Retain weekly versions for this many week(s)",
         SerializedName = @"weeklyVersions",
-        PossibleTypes = new [] { typeof(int) })]
-        public int FileVersionWeeklyVersions { get => Body.FileVersionWeeklyVersions ?? default(int); set => Body.FileVersionWeeklyVersions = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long FileVersionWeeklyVersions { get => Body.FileVersionWeeklyVersions ?? default(long); set => Body.FileVersionWeeklyVersions = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -264,8 +264,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Maximum kilobits per second to throttle the receiving speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit",
         SerializedName = @"throttleReceive",
-        PossibleTypes = new [] { typeof(int) })]
-        public int NetworkResourceThrottleReceive { get => Body.NetworkResourceThrottleReceive ?? default(int); set => Body.NetworkResourceThrottleReceive = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long NetworkResourceThrottleReceive { get => Body.NetworkResourceThrottleReceive ?? default(long); set => Body.NetworkResourceThrottleReceive = value; }
 
         /// <summary>
         /// Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed
@@ -278,8 +278,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Maximum kilobits per second to throttle the emitting speed of data. Giving value as -1 means infinite throttle send speed i.e. no limit",
         SerializedName = @"throttleSend",
-        PossibleTypes = new [] { typeof(int) })]
-        public int NetworkResourceThrottleSend { get => Body.NetworkResourceThrottleSend ?? default(int); set => Body.NetworkResourceThrottleSend = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long NetworkResourceThrottleSend { get => Body.NetworkResourceThrottleSend ?? default(long); set => Body.NetworkResourceThrottleSend = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -333,8 +333,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int ParentPlanId { get => Body.ParentPlanId ?? default(int); set => Body.ParentPlanId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long ParentPlanId { get => Body.ParentPlanId ?? default(long); set => Body.ParentPlanId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -371,8 +371,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int PrimaryStorageId { get => Body.PrimaryStorageId ?? default(int); set => Body.PrimaryStorageId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long PrimaryStorageId { get => Body.PrimaryStorageId ?? default(long); set => Body.PrimaryStorageId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -411,8 +411,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Amount of days after deletion of files to keep the items. Giving value as -1 means to retain files indefinitely.",
         SerializedName = @"deletedItemRetention",
-        PossibleTypes = new [] { typeof(int) })]
-        public int RetentionDeletedItemRetention { get => Body.RetentionDeletedItemRetention ?? default(int); set => Body.RetentionDeletedItemRetention = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long RetentionDeletedItemRetention { get => Body.RetentionDeletedItemRetention ?? default(long); set => Body.RetentionDeletedItemRetention = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -422,8 +422,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SecondaryStorageId { get => Body.SecondaryStorageId ?? default(int); set => Body.SecondaryStorageId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SecondaryStorageId { get => Body.SecondaryStorageId ?? default(long); set => Body.SecondaryStorageId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]
@@ -448,8 +448,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO determines the frequency of your backup jobs. Your RPO is met through automatic options. The time specified in minutes here is your RPO if none of the automatic options are met. Default is 480 minutes (8 hours).",
         SerializedName = @"backupFrequency",
-        PossibleTypes = new [] { typeof(int) })]
-        public int StorageAndScheduleBackupFrequency { get => Body.StorageAndScheduleBackupFrequency ?? default(int); set => Body.StorageAndScheduleBackupFrequency = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long StorageAndScheduleBackupFrequency { get => Body.StorageAndScheduleBackupFrequency ?? default(long); set => Body.StorageAndScheduleBackupFrequency = value; }
 
         /// <summary>
         /// <c>overrideOnBadRequest</c> will be called before the regular onBadRequest has been processed, allowing customization

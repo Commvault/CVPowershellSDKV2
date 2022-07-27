@@ -11,18 +11,18 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="DayTimeEnd" /> property.</summary>
-        private int? _dayTimeEnd;
+        private long? _dayTimeEnd;
 
         /// <summary>day time end in seconds, during which the operation will not run.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DayTimeEnd { get => this._dayTimeEnd; set => this._dayTimeEnd = value; }
+        public long? DayTimeEnd { get => this._dayTimeEnd; set => this._dayTimeEnd = value; }
 
         /// <summary>Backing field for <see cref="DayTimeStart" /> property.</summary>
-        private int? _dayTimeStart;
+        private long? _dayTimeStart;
 
         /// <summary>day time start in seconds, during which the operation will not run.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DayTimeStart { get => this._dayTimeStart; set => this._dayTimeStart = value; }
+        public long? DayTimeStart { get => this._dayTimeStart; set => this._dayTimeStart = value; }
 
         /// <summary>Backing field for <see cref="OfWeeks" /> property.</summary>
         private string[] _ofWeeks;
@@ -51,16 +51,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"day time end in seconds, during which the operation will not run.",
         SerializedName = @"dayTimeEnd",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DayTimeEnd { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DayTimeEnd { get; set; }
         /// <summary>day time start in seconds, during which the operation will not run.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"day time start in seconds, during which the operation will not run.",
         SerializedName = @"dayTimeStart",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DayTimeStart { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DayTimeStart { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -83,9 +83,9 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>day time end in seconds, during which the operation will not run.</summary>
-        int? DayTimeEnd { get; set; }
+        long? DayTimeEnd { get; set; }
         /// <summary>day time start in seconds, during which the operation will not run.</summary>
-        int? DayTimeStart { get; set; }
+        long? DayTimeStart { get; set; }
 
         string[] OfWeeks { get; set; }
 

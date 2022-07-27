@@ -40,11 +40,11 @@ namespace Commvault.Powershell.Models
         public string Resiliency { get => this._resiliency; set => this._resiliency = value; }
 
         /// <summary>Backing field for <see cref="SizeOndisk" /> property.</summary>
-        private int? _sizeOndisk;
+        private long? _sizeOndisk;
 
         /// <summary>The total amount of data stored on the disk after deduplication and compression</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SizeOndisk { get => this._sizeOndisk; set => this._sizeOndisk = value; }
+        public long? SizeOndisk { get => this._sizeOndisk; set => this._sizeOndisk = value; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -56,18 +56,18 @@ namespace Commvault.Powershell.Models
         public string Status { get => this._status; set => this._status = value; }
 
         /// <summary>Backing field for <see cref="TotalCapacity" /> property.</summary>
-        private int? _totalCapacity;
+        private long? _totalCapacity;
 
         /// <summary>The total storage capacity of the selected HyperScale Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TotalCapacity { get => this._totalCapacity; set => this._totalCapacity = value; }
+        public long? TotalCapacity { get => this._totalCapacity; set => this._totalCapacity = value; }
 
         /// <summary>Backing field for <see cref="TotalFreeSpace" /> property.</summary>
-        private int? _totalFreeSpace;
+        private long? _totalFreeSpace;
 
         /// <summary>The total free space available in the HyperScale storage pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TotalFreeSpace { get => this._totalFreeSpace; set => this._totalFreeSpace = value; }
+        public long? TotalFreeSpace { get => this._totalFreeSpace; set => this._totalFreeSpace = value; }
 
         /// <summary>Creates an new <see cref="HyperScaleStorageGeneralInfo" /> instance.</summary>
         public HyperScaleStorageGeneralInfo()
@@ -117,8 +117,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total amount of data stored on the disk after deduplication and compression",
         SerializedName = @"sizeOndisk",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SizeOndisk { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SizeOndisk { get; set; }
         /// <summary>
         /// The status of the hyperscale storage pool - whether the storage pool is online or offline
         /// </summary>
@@ -135,16 +135,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The total storage capacity of the selected HyperScale Storage Pool",
         SerializedName = @"totalCapacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TotalCapacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TotalCapacity { get; set; }
         /// <summary>The total free space available in the HyperScale storage pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"The total free space available in the HyperScale storage pool",
         SerializedName = @"totalFreeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TotalFreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TotalFreeSpace { get; set; }
 
     }
     /// HyperScaleStorageGeneralInfo
@@ -160,15 +160,15 @@ namespace Commvault.Powershell.Models
         /// <summary>Resiliency or redundancy of this HyperScale storage</summary>
         string Resiliency { get; set; }
         /// <summary>The total amount of data stored on the disk after deduplication and compression</summary>
-        int? SizeOndisk { get; set; }
+        long? SizeOndisk { get; set; }
         /// <summary>
         /// The status of the hyperscale storage pool - whether the storage pool is online or offline
         /// </summary>
         string Status { get; set; }
         /// <summary>The total storage capacity of the selected HyperScale Storage Pool</summary>
-        int? TotalCapacity { get; set; }
+        long? TotalCapacity { get; set; }
         /// <summary>The total free space available in the HyperScale storage pool</summary>
-        int? TotalFreeSpace { get; set; }
+        long? TotalFreeSpace { get; set; }
 
     }
 }

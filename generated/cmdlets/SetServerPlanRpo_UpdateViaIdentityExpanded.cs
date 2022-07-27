@@ -137,8 +137,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
         SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SlaEnableAfterDelay { get => Body.SlaEnableAfterDelay ?? default(int); set => Body.SlaEnableAfterDelay = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SlaEnableAfterDelay { get => Body.SlaEnableAfterDelay ?? default(long); set => Body.SlaEnableAfterDelay = value; }
 
         /// <summary>Flag to set to exclude plan from SLA</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Flag to set to exclude plan from SLA")]
@@ -170,8 +170,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"SLA Period in Days",
         SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(int) })]
-        public int SlaPeriod { get => Body.SlaPeriod ?? default(int); set => Body.SlaPeriod = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long SlaPeriod { get => Body.SlaPeriod ?? default(long); set => Body.SlaPeriod = value; }
 
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Flag to set to use System Default Service Level Agreement")]
@@ -355,7 +355,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.PlanId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.UpdateServerPlanRpo(InputObject.PlanId ?? default(int), Body, onOk, onBadRequest, onInternalServerError, this, Pipeline);
+                    await this.Client.UpdateServerPlanRpo(InputObject.PlanId ?? default(long), Body, onOk, onBadRequest, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

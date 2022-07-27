@@ -73,7 +73,7 @@ namespace Commvault.Powershell.Models
             }
             {_storagePool = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("storagePool"), out var __jsonStoragePool) ? Commvault.Powershell.Models.IdName.FromJson(__jsonStoragePool) : StoragePool;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_retention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retention"), out var __jsonRetention) ? (int?)__jsonRetention : Retention;}
+            {_retention = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retention"), out var __jsonRetention) ? (long?)__jsonRetention : Retention;}
             AfterFromJson(json);
         }
 
@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._storagePool ? (Commvault.Powershell.Runtime.Json.JsonNode) this._storagePool.ToJson(null,serializationMode) : null, "storagePool" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
-            AddIf( null != this._retention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._retention) : null, "retention" ,container.Add );
+            AddIf( null != this._retention ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retention) : null, "retention" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

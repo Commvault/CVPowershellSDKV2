@@ -38,7 +38,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter Break { get; set; }
 
         /// <summary>Backing field for <see cref="BucketId" /> property.</summary>
-        private int _bucketId;
+        private long _bucketId;
 
         /// <summary>Id of Bucket</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of Bucket")]
@@ -47,15 +47,15 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of Bucket",
         SerializedName = @"bucketId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int BucketId { get => this._bucketId; set => this._bucketId = value; }
+        public long BucketId { get => this._bucketId; set => this._bucketId = value; }
 
         /// <summary>The reference to the client API class.</summary>
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="CloudStorageId" /> property.</summary>
-        private int _cloudStorageId;
+        private long _cloudStorageId;
 
         /// <summary>Id of cloud Storage</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of cloud Storage")]
@@ -64,9 +64,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of cloud Storage",
         SerializedName = @"cloudStorageId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int CloudStorageId { get => this._cloudStorageId; set => this._cloudStorageId = value; }
+        public long CloudStorageId { get => this._cloudStorageId; set => this._cloudStorageId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -91,8 +91,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @".",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        public int MediaAgentId { get => Body.MediaAgentId ?? default(int); set => Body.MediaAgentId = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long MediaAgentId { get => Body.MediaAgentId ?? default(long); set => Body.MediaAgentId = value; }
 
         /// <summary>.</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = ".")]

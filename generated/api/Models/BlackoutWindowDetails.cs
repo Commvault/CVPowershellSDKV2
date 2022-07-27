@@ -56,11 +56,11 @@ namespace Commvault.Powershell.Models
         public bool? DoNotSubmitJob { get => this._doNotSubmitJob; set => this._doNotSubmitJob = value; }
 
         /// <summary>Backing field for <see cref="EndDate" /> property.</summary>
-        private int? _endDate;
+        private long? _endDate;
 
         /// <summary>End date in seconds, during which the operation will not run</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? EndDate { get => this._endDate; set => this._endDate = value; }
+        public long? EndDate { get => this._endDate; set => this._endDate = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -70,11 +70,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="StartDate" /> property.</summary>
-        private int? _startDate;
+        private long? _startDate;
 
         /// <summary>Start date in seconds, during which the operation will not run</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? StartDate { get => this._startDate; set => this._startDate = value; }
+        public long? StartDate { get => this._startDate; set => this._startDate = value; }
 
         /// <summary>Creates an new <see cref="BlackoutWindowDetails" /> instance.</summary>
         public BlackoutWindowDetails()
@@ -147,8 +147,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"End date in seconds, during which the operation will not run",
         SerializedName = @"endDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EndDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EndDate { get; set; }
         /// <summary>Name of the blackout window operation rule</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -163,8 +163,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Start date in seconds, during which the operation will not run",
         SerializedName = @"startDate",
-        PossibleTypes = new [] { typeof(int) })]
-        int? StartDate { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? StartDate { get; set; }
 
     }
     internal partial interface IBlackoutWindowDetailsInternal
@@ -187,11 +187,11 @@ namespace Commvault.Powershell.Models
         /// <summary>To skip a scheduled job</summary>
         bool? DoNotSubmitJob { get; set; }
         /// <summary>End date in seconds, during which the operation will not run</summary>
-        int? EndDate { get; set; }
+        long? EndDate { get; set; }
         /// <summary>Name of the blackout window operation rule</summary>
         string Name { get; set; }
         /// <summary>Start date in seconds, during which the operation will not run</summary>
-        int? StartDate { get; set; }
+        long? StartDate { get; set; }
 
     }
 }

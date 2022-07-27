@@ -64,7 +64,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId = (int?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId = (long?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAddLaptopRespInternal)this).JobIds = (string[]) content.GetValueForProperty("JobIds",((Commvault.Powershell.Models.IAddLaptopRespInternal)this).JobIds, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             AfterDeserializeDictionary(content);
         }
@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId = (int?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId = (long?) content.GetValueForProperty("TaskId",((Commvault.Powershell.Models.IAddLaptopRespInternal)this).TaskId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAddLaptopRespInternal)this).JobIds = (string[]) content.GetValueForProperty("JobIds",((Commvault.Powershell.Models.IAddLaptopRespInternal)this).JobIds, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             AfterDeserializePSObject(content);
         }

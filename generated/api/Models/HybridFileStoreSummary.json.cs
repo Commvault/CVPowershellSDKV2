@@ -74,7 +74,7 @@ namespace Commvault.Powershell.Models
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_indexServer = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("indexServer"), out var __jsonIndexServer) ? Commvault.Powershell.Models.IdName.FromJson(__jsonIndexServer) : IndexServer;}
             {_fileServer = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("fileServer"), out var __jsonFileServer) ? Commvault.Powershell.Models.IdName.FromJson(__jsonFileServer) : FileServer;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_statusSummary = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("statusSummary"), out var __jsonStatusSummary) ? (string)__jsonStatusSummary : (string)StatusSummary;}
@@ -103,7 +103,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._indexServer ? (Commvault.Powershell.Runtime.Json.JsonNode) this._indexServer.ToJson(null,serializationMode) : null, "indexServer" ,container.Add );
             AddIf( null != this._fileServer ? (Commvault.Powershell.Runtime.Json.JsonNode) this._fileServer.ToJson(null,serializationMode) : null, "fileServer" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != (((object)this._statusSummary)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._statusSummary.ToString()) : null, "statusSummary" ,container.Add );

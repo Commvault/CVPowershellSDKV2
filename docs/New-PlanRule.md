@@ -14,8 +14,8 @@ Request body will suggest plan against which rule need to be created and type of
 ## SYNTAX
 
 ```
-New-PlanRule [-CompanyId <Int32>] [-CompanyName <String>] [-PlanId <Int32>] [-PlanName <String>]
- [-Rank <Int32>] [-Regions <IIdName[]>] [-ServerGroups <IIdName[]>] [-Solutions <IIdName[]>]
+New-PlanRule [-CompanyId <Int64>] [-CompanyName <String>] [-PlanId <Int64>] [-PlanName <String>]
+ [-Rank <Int64>] [-Regions <IIdName[]>] [-ServerGroups <IIdName[]>] [-Solutions <IIdName[]>]
  [-Tags <IPlanEntityRuleTag[]>] [-Workloads <IIdName[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -49,7 +49,7 @@ PS C:\> {{ Add code here }}
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -79,7 +79,7 @@ Accept wildcard characters: False
 .
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -110,7 +110,7 @@ Optional field to suggest priority/rank of the rule.
 If not present, we will process rule in the same order they are created.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 
@@ -253,24 +253,24 @@ To create the parameters described below, construct a hash table containing the 
 
 
 REGIONS <IIdName[]>: This will include list of regions that should be evaluated against workload region for plan association.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 SERVERGROUPS <IIdName[]>: This will include list of Server groups that should be evaluated against workload server group for plan association.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 SOLUTIONS <IIdName[]>: This will include list of solutions that should be evaluated against workload for plan association
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 TAGS <IPlanEntityRuleTag[]>: This will include list of tags that should be evaluated against workload for plan association
-  - `[Id <Int32?>]`: Id for the tag
+  - `[Id <Int64?>]`: Id for the tag
   - `[Name <String>]`: Name for the plan rule tag which need to be matched against tag of the workload.
   - `[Value <String>]`: Possible value that need to matched against value of tag associated to workload.
 
 WORKLOADS <IIdName[]>: This will include list of apptypes that should be evaluated against workload apptype for plan association.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

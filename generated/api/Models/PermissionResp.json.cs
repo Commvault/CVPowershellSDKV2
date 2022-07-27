@@ -75,9 +75,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_permissionId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("permissionId"), out var __jsonPermissionId) ? (int?)__jsonPermissionId : PermissionId;}
+            {_permissionId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("permissionId"), out var __jsonPermissionId) ? (long?)__jsonPermissionId : PermissionId;}
             {_permissionName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("permissionName"), out var __jsonPermissionName) ? (string)__jsonPermissionName : (string)PermissionName;}
-            {_categoryId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("categoryId"), out var __jsonCategoryId) ? (int?)__jsonCategoryId : CategoryId;}
+            {_categoryId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("categoryId"), out var __jsonCategoryId) ? (long?)__jsonCategoryId : CategoryId;}
             {_categoryName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("categoryName"), out var __jsonCategoryName) ? (string)__jsonCategoryName : (string)CategoryName;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             AfterFromJson(json);
@@ -102,9 +102,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._permissionId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._permissionId) : null, "permissionId" ,container.Add );
+            AddIf( null != this._permissionId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._permissionId) : null, "permissionId" ,container.Add );
             AddIf( null != (((object)this._permissionName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._permissionName.ToString()) : null, "permissionName" ,container.Add );
-            AddIf( null != this._categoryId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._categoryId) : null, "categoryId" ,container.Add );
+            AddIf( null != this._categoryId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._categoryId) : null, "categoryId" ,container.Add );
             AddIf( null != (((object)this._categoryName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._categoryName.ToString()) : null, "categoryName" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AfterToJson(ref container);

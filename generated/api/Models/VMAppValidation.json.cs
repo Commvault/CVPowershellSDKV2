@@ -86,7 +86,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._recoveryTarget)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._recoveryTarget.ToString()) : null, "recoveryTarget" ,container.Add );
             AddIf( null != this._useSourceVMEsxToMount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useSourceVMEsxToMount) : null, "useSourceVmESXToMount" ,container.Add );
             AddIf( null != this._keepValidatedVMSRunning ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._keepValidatedVMSRunning) : null, "keepValidatedVMsRunning" ,container.Add );
-            AddIf( null != this._maximumNoOfThreads ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._maximumNoOfThreads) : null, "maximumNoOfThreads" ,container.Add );
+            AddIf( null != this._maximumNoOfThreads ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._maximumNoOfThreads) : null, "maximumNoOfThreads" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -111,7 +111,7 @@ namespace Commvault.Powershell.Models
             {_recoveryTarget = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("recoveryTarget"), out var __jsonRecoveryTarget) ? (string)__jsonRecoveryTarget : (string)RecoveryTarget;}
             {_useSourceVMEsxToMount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useSourceVmESXToMount"), out var __jsonUseSourceVMEsxToMount) ? (bool?)__jsonUseSourceVMEsxToMount : UseSourceVMEsxToMount;}
             {_keepValidatedVMSRunning = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("keepValidatedVMsRunning"), out var __jsonKeepValidatedVMSRunning) ? (bool?)__jsonKeepValidatedVMSRunning : KeepValidatedVMSRunning;}
-            {_maximumNoOfThreads = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maximumNoOfThreads"), out var __jsonMaximumNoOfThreads) ? (int?)__jsonMaximumNoOfThreads : MaximumNoOfThreads;}
+            {_maximumNoOfThreads = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maximumNoOfThreads"), out var __jsonMaximumNoOfThreads) ? (long?)__jsonMaximumNoOfThreads : MaximumNoOfThreads;}
             AfterFromJson(json);
         }
     }

@@ -19,11 +19,11 @@ namespace Commvault.Powershell.Models
         public System.Security.SecureString Password { get => this._password; set => this._password = value; }
 
         /// <summary>Backing field for <see cref="Port" /> property.</summary>
-        private int? _port;
+        private long? _port;
 
         /// <summary>Port for proxy configuration</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Port { get => this._port; set => this._port = value; }
+        public long? Port { get => this._port; set => this._port = value; }
 
         /// <summary>Backing field for <see cref="ProxyAddress" /> property.</summary>
         private string _proxyAddress;
@@ -66,8 +66,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Port for proxy configuration",
         SerializedName = @"port",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Port { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Port { get; set; }
         /// <summary>
         /// If the MediaAgent accesses the mount path using a proxy then proxy server address needs to be provided. If you want to
         /// remove proxy information, pass empty string in proxyAddress.
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Password for proxy configuration (Should be in Base64 format)</summary>
         System.Security.SecureString Password { get; set; }
         /// <summary>Port for proxy configuration</summary>
-        int? Port { get; set; }
+        long? Port { get; set; }
         /// <summary>
         /// If the MediaAgent accesses the mount path using a proxy then proxy server address needs to be provided. If you want to
         /// remove proxy information, pass empty string in proxyAddress.

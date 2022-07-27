@@ -66,7 +66,7 @@ namespace Commvault.Powershell.Models
         public string NewName { get => this._newName; set => this._newName = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ZoneId { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneId; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneId = value ?? default(int); }
+        public long? ZoneId { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneId; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ZoneName { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneName; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneName = value ?? null; }
@@ -152,8 +152,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ZoneId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -190,7 +190,7 @@ namespace Commvault.Powershell.Models
         /// <summary>New name for the region</summary>
         string NewName { get; set; }
 
-        int? ZoneId { get; set; }
+        long? ZoneId { get; set; }
 
         string ZoneName { get; set; }
 

@@ -57,11 +57,11 @@ namespace Commvault.Powershell.Models
         public string Hostname { get => this._hostname; set => this._hostname = value; }
 
         /// <summary>Backing field for <see cref="Port" /> property.</summary>
-        private int? _port;
+        private long? _port;
 
         /// <summary>The port on which the syslog server accepts the logs.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Port { get => this._port; set => this._port = value; }
+        public long? Port { get => this._port; set => this._port = value; }
 
         /// <summary>Backing field for <see cref="SecureMessaging" /> property.</summary>
         private bool? _secureMessaging;
@@ -139,8 +139,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The port on which the syslog server accepts the logs.",
         SerializedName = @"port",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Port { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Port { get; set; }
         /// <summary>
         /// When false UDP port will be used, when true TLS encryption will be used to connect to Syslog Server. To upload Certificate
         /// Authority file it should be enabled.
@@ -175,7 +175,7 @@ namespace Commvault.Powershell.Models
         /// <summary>The hostname or the IP address of the syslog server.</summary>
         string Hostname { get; set; }
         /// <summary>The port on which the syslog server accepts the logs.</summary>
-        int? Port { get; set; }
+        long? Port { get; set; }
         /// <summary>
         /// When false UDP port will be used, when true TLS encryption will be used to connect to Syslog Server. To upload Certificate
         /// Authority file it should be enabled.

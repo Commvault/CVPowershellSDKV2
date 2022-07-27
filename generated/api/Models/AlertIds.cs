@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="AlertId" /> property.</summary>
-        private int[] _alertId;
+        private long[] _alertId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int[] AlertId { get => this._alertId; set => this._alertId = value; }
+        public long[] AlertId { get => this._alertId; set => this._alertId = value; }
 
         /// <summary>Creates an new <see cref="AlertIds" /> instance.</summary>
         public AlertIds()
@@ -32,15 +32,15 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"alertId",
-        PossibleTypes = new [] { typeof(int) })]
-        int[] AlertId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long[] AlertId { get; set; }
 
     }
     /// Array of ids of an entity
     internal partial interface IAlertIdsInternal
 
     {
-        int[] AlertId { get; set; }
+        long[] AlertId { get; set; }
 
     }
 }

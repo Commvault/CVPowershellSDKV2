@@ -40,7 +40,7 @@ function Get-LaptopOwnerMapping {
 param(
     [Parameter()]
     [Commvault.Powershell.Category('Query')]
-    [System.Int32]
+    [System.Int64]
     # Id of the company for which the laptop owner mapping needs to be returned
     ${CompanyId},
 

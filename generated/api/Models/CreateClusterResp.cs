@@ -11,10 +11,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="ClusterId" /> property.</summary>
-        private int? _clusterId;
+        private long? _clusterId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ClusterId { get => this._clusterId; set => this._clusterId = value; }
+        public long? ClusterId { get => this._clusterId; set => this._clusterId = value; }
 
         /// <summary>Backing field for <see cref="ClusterName" /> property.</summary>
         private string _clusterName;
@@ -24,10 +24,10 @@ namespace Commvault.Powershell.Models
         public string ClusterName { get => this._clusterName; set => this._clusterName = value; }
 
         /// <summary>Backing field for <see cref="ErrorCode" /> property.</summary>
-        private int? _errorCode;
+        private long? _errorCode;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ErrorCode { get => this._errorCode; set => this._errorCode = value; }
+        public long? ErrorCode { get => this._errorCode; set => this._errorCode = value; }
 
         /// <summary>Backing field for <see cref="ErrorMessage" /> property.</summary>
         private string _errorMessage;
@@ -37,10 +37,10 @@ namespace Commvault.Powershell.Models
         public string ErrorMessage { get => this._errorMessage; set => this._errorMessage = value; }
 
         /// <summary>Backing field for <see cref="WarningCode" /> property.</summary>
-        private int? _warningCode;
+        private long? _warningCode;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? WarningCode { get => this._warningCode; set => this._warningCode = value; }
+        public long? WarningCode { get => this._warningCode; set => this._warningCode = value; }
 
         /// <summary>Backing field for <see cref="WarningMessage" /> property.</summary>
         private string _warningMessage;
@@ -63,8 +63,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"clusterId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClusterId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClusterId { get; set; }
         /// <summary>Name of the cluster created</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -79,8 +79,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"errorCode",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ErrorCode { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ErrorCode { get; set; }
         /// <summary>Response message</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -95,8 +95,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"warningCode",
-        PossibleTypes = new [] { typeof(int) })]
-        int? WarningCode { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? WarningCode { get; set; }
         /// <summary>Response message</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -110,15 +110,15 @@ namespace Commvault.Powershell.Models
     internal partial interface ICreateClusterRespInternal
 
     {
-        int? ClusterId { get; set; }
+        long? ClusterId { get; set; }
         /// <summary>Name of the cluster created</summary>
         string ClusterName { get; set; }
 
-        int? ErrorCode { get; set; }
+        long? ErrorCode { get; set; }
         /// <summary>Response message</summary>
         string ErrorMessage { get; set; }
 
-        int? WarningCode { get; set; }
+        long? WarningCode { get; set; }
         /// <summary>Response message</summary>
         string WarningMessage { get; set; }
 

@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IVMPasskeyInternal)this).AuthType = (string) content.GetValueForProperty("AuthType",((Commvault.Powershell.Models.IVMPasskeyInternal)this).AuthType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime = (int?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime = (long?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IVMPasskeyInternal)this).PassKeyRequiredForRestore = (bool?) content.GetValueForProperty("PassKeyRequiredForRestore",((Commvault.Powershell.Models.IVMPasskeyInternal)this).PassKeyRequiredForRestore, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IVMPasskeyInternal)this).EnableAuthorizeForRestore = (bool?) content.GetValueForProperty("EnableAuthorizeForRestore",((Commvault.Powershell.Models.IVMPasskeyInternal)this).EnableAuthorizeForRestore, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
@@ -120,7 +120,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IVMPasskeyInternal)this).AuthType = (string) content.GetValueForProperty("AuthType",((Commvault.Powershell.Models.IVMPasskeyInternal)this).AuthType, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime = (int?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime = (long?) content.GetValueForProperty("ExpirationTime",((Commvault.Powershell.Models.IVMPasskeyInternal)this).ExpirationTime, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IVMPasskeyInternal)this).PassKeyRequiredForRestore = (bool?) content.GetValueForProperty("PassKeyRequiredForRestore",((Commvault.Powershell.Models.IVMPasskeyInternal)this).PassKeyRequiredForRestore, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IVMPasskeyInternal)this).EnableAuthorizeForRestore = (bool?) content.GetValueForProperty("EnableAuthorizeForRestore",((Commvault.Powershell.Models.IVMPasskeyInternal)this).EnableAuthorizeForRestore, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);

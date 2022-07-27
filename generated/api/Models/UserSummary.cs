@@ -40,7 +40,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
@@ -74,11 +74,11 @@ namespace Commvault.Powershell.Models
         public string Guid { get => this._guid; set => this._guid = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>User id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="LockInfo" /> property.</summary>
         private Commvault.Powershell.Models.ILockProperties _lockInfo;
@@ -88,7 +88,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>If the user is locked, it returns user lock end time in unix time format.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LockInfoEndTime { get => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).EndTime; set => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).EndTime = value ?? default(int); }
+        public long? LockInfoEndTime { get => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).EndTime; set => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).EndTime = value ?? default(long); }
 
         /// <summary>Returns if the user is locked or unlocked.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>If the user is locked, it returns user lock start time in unix time format.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LockInfoStartTime { get => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).StartTime; set => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).StartTime = value ?? default(int); }
+        public long? LockInfoStartTime { get => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).StartTime; set => ((Commvault.Powershell.Models.ILockPropertiesInternal)LockInfo).StartTime = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -106,11 +106,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="NumberOfLaptops" /> property.</summary>
-        private int? _numberOfLaptops;
+        private long? _numberOfLaptops;
 
         /// <summary>Returns the number of laptops associated with the user</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? NumberOfLaptops { get => this._numberOfLaptops; set => this._numberOfLaptops = value; }
+        public long? NumberOfLaptops { get => this._numberOfLaptops; set => this._numberOfLaptops = value; }
 
         /// <summary>Backing field for <see cref="Plan" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _plan;
@@ -119,7 +119,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -156,8 +156,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -204,16 +204,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"User id",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>If the user is locked, it returns user lock end time in unix time format.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"If the user is locked, it returns user lock end time in unix time format.",
         SerializedName = @"endTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LockInfoEndTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LockInfoEndTime { get; set; }
         /// <summary>Returns if the user is locked or unlocked.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -228,8 +228,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"If the user is locked, it returns user lock start time in unix time format.",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LockInfoStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LockInfoStartTime { get; set; }
         /// <summary>The user name of the user.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -244,16 +244,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Returns the number of laptops associated with the user",
         SerializedName = @"numberOfLaptops",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NumberOfLaptops { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NumberOfLaptops { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -284,7 +284,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>Email-id of the user. This email-id can be used for logging in the user.</summary>
@@ -296,23 +296,23 @@ namespace Commvault.Powershell.Models
         /// <summary>globally unique identifier</summary>
         string Guid { get; set; }
         /// <summary>User id</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
 
         Commvault.Powershell.Models.ILockProperties LockInfo { get; set; }
         /// <summary>If the user is locked, it returns user lock end time in unix time format.</summary>
-        int? LockInfoEndTime { get; set; }
+        long? LockInfoEndTime { get; set; }
         /// <summary>Returns if the user is locked or unlocked.</summary>
         bool? LockInfoIsLocked { get; set; }
         /// <summary>If the user is locked, it returns user lock start time in unix time format.</summary>
-        int? LockInfoStartTime { get; set; }
+        long? LockInfoStartTime { get; set; }
         /// <summary>The user name of the user.</summary>
         string Name { get; set; }
         /// <summary>Returns the number of laptops associated with the user</summary>
-        int? NumberOfLaptops { get; set; }
+        long? NumberOfLaptops { get; set; }
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>

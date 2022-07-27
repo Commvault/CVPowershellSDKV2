@@ -84,7 +84,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter ProxyUseDefaultCredentials { get; set; }
 
         /// <summary>Backing field for <see cref="StoragePoolId" /> property.</summary>
-        private int _storagePoolId;
+        private long _storagePoolId;
 
         /// <summary>Id of the disk storage pool to delete</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the disk storage pool to delete")]
@@ -93,9 +93,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the disk storage pool to delete",
         SerializedName = @"storagePoolId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
+        public long StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing

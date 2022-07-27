@@ -37,7 +37,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>id of the category of the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CategoryId { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CategoryId; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CategoryId = value ?? default(int); }
+        public long? CategoryId { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CategoryId; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CategoryId = value ?? default(long); }
 
         /// <summary>category of the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -69,20 +69,20 @@ namespace Commvault.Powershell.Models
 
         /// <summary>id of the criteria of detection for the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CriterionId { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionId; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionId = value ?? default(int); }
+        public long? CriterionId { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionId; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionId = value ?? default(long); }
 
         /// <summary>criteria of detection for the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CriterionName { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionName; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionName = value ?? null; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LocaleId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleId = value ?? default(int); }
+        public long? LocaleId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string LocaleName { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleName; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleName = value ?? null; }
@@ -107,7 +107,7 @@ namespace Commvault.Powershell.Models
         /// of webhooks, use api GET Webhook
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RecipientWebHookId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientWebHookId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientWebHookId = value ?? default(int); }
+        public long? RecipientWebHookId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientWebHookId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientWebHookId = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="SendIndividualNotifications" /> property.</summary>
         private bool? _sendIndividualNotifications;
@@ -143,7 +143,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>id of the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TypeId { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).TypeId; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).TypeId = value ?? default(int); }
+        public long? TypeId { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).TypeId; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).TypeId = value ?? default(long); }
 
         /// <summary>type of the alert definitions</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -180,8 +180,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the category of the alert definition",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CategoryId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CategoryId { get; set; }
         /// <summary>category of the alert definition</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -196,8 +196,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the criteria of detection for the alert definition",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CriterionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CriterionId { get; set; }
         /// <summary>criteria of detection for the alert definition</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -212,16 +212,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LocaleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LocaleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -271,8 +271,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list of webhooks, use api GET Webhook",
         SerializedName = @"webHookId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RecipientWebHookId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecipientWebHookId { get; set; }
         /// <summary>true if individual notifications are on for the alert definitions</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -321,8 +321,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"id of the alert definition",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TypeId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TypeId { get; set; }
         /// <summary>type of the alert definitions</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -354,17 +354,17 @@ namespace Commvault.Powershell.Models
         /// <summary>AlertDefinitionsAssociations</summary>
         Commvault.Powershell.Models.IAlertAssociationIdNameType1[] Associations { get; set; }
         /// <summary>id of the category of the alert definition</summary>
-        int? CategoryId { get; set; }
+        long? CategoryId { get; set; }
         /// <summary>category of the alert definition</summary>
         string CategoryName { get; set; }
         /// <summary>id of the criteria of detection for the alert definition</summary>
-        int? CriterionId { get; set; }
+        long? CriterionId { get; set; }
         /// <summary>criteria of detection for the alert definition</summary>
         string CriterionName { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
 
-        int? LocaleId { get; set; }
+        long? LocaleId { get; set; }
 
         string LocaleName { get; set; }
 
@@ -379,7 +379,7 @@ namespace Commvault.Powershell.Models
         /// id of the webhook to be associated with the alert definition. Only needed incase of webhook notif selected. To get a list
         /// of webhooks, use api GET Webhook
         /// </summary>
-        int? RecipientWebHookId { get; set; }
+        long? RecipientWebHookId { get; set; }
         /// <summary>true if individual notifications are on for the alert definitions</summary>
         bool? SendIndividualNotifications { get; set; }
         /// <summary>AlertDefinitionsTemplate</summary>
@@ -397,7 +397,7 @@ namespace Commvault.Powershell.Models
         /// <summary>the message template for the webhook notification</summary>
         string TemplateWebhookMessage { get; set; }
         /// <summary>id of the alert definition</summary>
-        int? TypeId { get; set; }
+        long? TypeId { get; set; }
         /// <summary>type of the alert definitions</summary>
         string TypeName { get; set; }
 

@@ -24,11 +24,11 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Commit frequency in hours</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DatabaseOptionCommitFrequencyInHours { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours = value ?? default(int); }
+        public long? DatabaseOptionCommitFrequencyInHours { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).CommitFrequencyInHours = value ?? default(long); }
 
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DatabaseOptionLogBackupRpoMins { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins = value ?? default(int); }
+        public long? DatabaseOptionLogBackupRpoMins { get => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins; set => ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)DatabaseOptions).LogBackupRpoMins = value ?? default(long); }
 
         /// <summary>Use disk cache for log backups</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -81,16 +81,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Commit frequency in hours",
         SerializedName = @"commitFrequencyInHours",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseOptionCommitFrequencyInHours { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseOptionCommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Log backup RPO in minutes",
         SerializedName = @"logBackupRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatabaseOptionLogBackupRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatabaseOptionLogBackupRpoMins { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -122,9 +122,9 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Commit frequency in hours</summary>
-        int? DatabaseOptionCommitFrequencyInHours { get; set; }
+        long? DatabaseOptionCommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
-        int? DatabaseOptionLogBackupRpoMins { get; set; }
+        long? DatabaseOptionLogBackupRpoMins { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         bool? DatabaseOptionUseDiskCacheForLogBackups { get; set; }
         /// <summary>This feature applies only to database agents</summary>

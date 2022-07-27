@@ -73,7 +73,7 @@ namespace Commvault.Powershell.Models
             }
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_errorMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("errorMessage"), out var __jsonErrorMessage) ? If( __jsonErrorMessage as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.INameMessage[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.INameMessage) (Commvault.Powershell.Models.NameMessage.FromJson(__u) )) ))() : null : ErrorMessage;}
-            {_lastSyncedWithIdp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastSyncedWithIDP"), out var __jsonLastSyncedWithIdp) ? (int?)__jsonLastSyncedWithIdp : LastSyncedWithIdp;}
+            {_lastSyncedWithIdp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastSyncedWithIDP"), out var __jsonLastSyncedWithIdp) ? (long?)__jsonLastSyncedWithIdp : LastSyncedWithIdp;}
             AfterFromJson(json);
         }
 
@@ -106,7 +106,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("errorMessage",__w);
             }
-            AddIf( null != this._lastSyncedWithIdp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._lastSyncedWithIdp) : null, "lastSyncedWithIDP" ,container.Add );
+            AddIf( null != this._lastSyncedWithIdp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastSyncedWithIdp) : null, "lastSyncedWithIDP" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

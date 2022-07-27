@@ -61,8 +61,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_totalCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCount"), out var __jsonTotalCount) ? (int?)__jsonTotalCount : TotalCount;}
-            {_unreadCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("unreadCount"), out var __jsonUnreadCount) ? (int?)__jsonUnreadCount : UnreadCount;}
+            {_totalCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("totalCount"), out var __jsonTotalCount) ? (long?)__jsonTotalCount : TotalCount;}
+            {_unreadCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("unreadCount"), out var __jsonUnreadCount) ? (long?)__jsonUnreadCount : UnreadCount;}
             {_alertsTriggered = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("alertsTriggered"), out var __jsonAlertsTriggered) ? If( __jsonAlertsTriggered as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAlertTriggeredSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAlertTriggeredSummary) (Commvault.Powershell.Models.AlertTriggeredSummary.FromJson(__u) )) ))() : null : AlertsTriggered;}
             AfterFromJson(json);
         }
@@ -96,8 +96,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._totalCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._totalCount) : null, "totalCount" ,container.Add );
-            AddIf( null != this._unreadCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._unreadCount) : null, "unreadCount" ,container.Add );
+            AddIf( null != this._totalCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._totalCount) : null, "totalCount" ,container.Add );
+            AddIf( null != this._unreadCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._unreadCount) : null, "unreadCount" ,container.Add );
             if (null != this._alertsTriggered)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

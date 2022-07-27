@@ -73,7 +73,7 @@ namespace Commvault.Powershell.Models
             }
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_commandCenterStateValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("commandCenterStateValue"), out var __jsonCommandCenterStateValue) ? (int?)__jsonCommandCenterStateValue : CommandCenterStateValue;}
+            {_commandCenterStateValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("commandCenterStateValue"), out var __jsonCommandCenterStateValue) ? (long?)__jsonCommandCenterStateValue : CommandCenterStateValue;}
             {_commandCenterState = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("commandCenterState"), out var __jsonCommandCenterState) ? (string)__jsonCommandCenterState : (string)CommandCenterState;}
             AfterFromJson(json);
         }
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
-            AddIf( null != this._commandCenterStateValue ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._commandCenterStateValue) : null, "commandCenterStateValue" ,container.Add );
+            AddIf( null != this._commandCenterStateValue ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._commandCenterStateValue) : null, "commandCenterStateValue" ,container.Add );
             AddIf( null != (((object)this._commandCenterState)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._commandCenterState.ToString()) : null, "commandCenterState" ,container.Add );
             AfterToJson(ref container);
             return container;

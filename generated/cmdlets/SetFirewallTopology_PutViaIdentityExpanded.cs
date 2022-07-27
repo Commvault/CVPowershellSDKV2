@@ -174,8 +174,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"The number of tunnel connections per route",
         SerializedName = @"tunnelsPerRoute",
-        PossibleTypes = new [] { typeof(int) })]
-        public int TunnelsPerRoute { get => Body.TunnelsPerRoute ?? default(int); set => Body.TunnelsPerRoute = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long TunnelsPerRoute { get => Body.TunnelsPerRoute ?? default(long); set => Body.TunnelsPerRoute = value; }
 
         /// <summary>
         /// Flag determining wether network gateways are used to connect all infrastructure machines

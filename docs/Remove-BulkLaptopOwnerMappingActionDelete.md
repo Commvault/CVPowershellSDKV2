@@ -14,7 +14,7 @@ API is used to delete multiple laptopowner mappings
 
 ### DeleteExpanded (Default)
 ```
-Remove-BulkLaptopOwnerMappingActionDelete -LaptopOwnerMapping <Int32[]> [-Confirm] [-WhatIf]
+Remove-BulkLaptopOwnerMappingActionDelete -LaptopOwnerMapping <Int64[]> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 Accepts list of laptop owner mapping ids to be deleted
 
 ```yaml
-Type: System.Int32[]
+Type: System.Int64[]
 Parameter Sets: DeleteExpanded
 Aliases:
 
@@ -132,7 +132,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODY <IDeleteLaptopOwnerMapping>: This model accepts the list of laptop owner mapping to be deleted
-  - `LaptopOwnerMapping <Int32[]>`: Accepts list of laptop owner mapping ids to be deleted
+  - `LaptopOwnerMapping <Int64[]>`: Accepts list of laptop owner mapping ids to be deleted
 
 ## RELATED LINKS
 

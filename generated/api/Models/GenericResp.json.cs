@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_errorMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("errorMessage"), out var __jsonErrorMessage) ? (string)__jsonErrorMessage : (string)ErrorMessage;}
-            {_errorCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("errorCode"), out var __jsonErrorCode) ? (int?)__jsonErrorCode : ErrorCode;}
+            {_errorCode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("errorCode"), out var __jsonErrorCode) ? (long?)__jsonErrorCode : ErrorCode;}
             AfterFromJson(json);
         }
 
@@ -95,7 +95,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._errorMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._errorMessage.ToString()) : null, "errorMessage" ,container.Add );
-            AddIf( null != this._errorCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._errorCode) : null, "errorCode" ,container.Add );
+            AddIf( null != this._errorCode ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._errorCode) : null, "errorCode" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

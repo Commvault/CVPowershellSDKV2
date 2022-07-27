@@ -12,18 +12,18 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="AssociatedRegionBasedPlans" /> property.</summary>
-        private int? _associatedRegionBasedPlans;
+        private long? _associatedRegionBasedPlans;
 
         /// <summary>Number of plans associated to the region</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? AssociatedRegionBasedPlans { get => this._associatedRegionBasedPlans; set => this._associatedRegionBasedPlans = value; }
+        public long? AssociatedRegionBasedPlans { get => this._associatedRegionBasedPlans; set => this._associatedRegionBasedPlans = value; }
 
         /// <summary>Backing field for <see cref="AssociatedServers" /> property.</summary>
-        private int? _associatedServers;
+        private long? _associatedServers;
 
         /// <summary>Number of servers associated to the region</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? AssociatedServers { get => this._associatedServers; set => this._associatedServers = value; }
+        public long? AssociatedServers { get => this._associatedServers; set => this._associatedServers = value; }
 
         /// <summary>Backing field for <see cref="DisplayName" /> property.</summary>
         private string _displayName;
@@ -32,10 +32,10 @@ namespace Commvault.Powershell.Models
         public string DisplayName { get => this._displayName; set => this._displayName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Locations" /> property.</summary>
         private Commvault.Powershell.Models.ILocationSummary[] _locations;
@@ -73,16 +73,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of plans associated to the region",
         SerializedName = @"associatedRegionBasedPlans",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AssociatedRegionBasedPlans { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AssociatedRegionBasedPlans { get; set; }
         /// <summary>Number of servers associated to the region</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Number of servers associated to the region",
         SerializedName = @"associatedServers",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AssociatedServers { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AssociatedServers { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -97,8 +97,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>List of locations in the region</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -130,13 +130,13 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Number of plans associated to the region</summary>
-        int? AssociatedRegionBasedPlans { get; set; }
+        long? AssociatedRegionBasedPlans { get; set; }
         /// <summary>Number of servers associated to the region</summary>
-        int? AssociatedServers { get; set; }
+        long? AssociatedServers { get; set; }
 
         string DisplayName { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>List of locations in the region</summary>
         Commvault.Powershell.Models.ILocationSummary[] Locations { get; set; }
 

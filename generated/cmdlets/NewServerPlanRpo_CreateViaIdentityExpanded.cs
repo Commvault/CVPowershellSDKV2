@@ -57,8 +57,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Commit frequency in hours",
         SerializedName = @"commitFrequencyInHours",
-        PossibleTypes = new [] { typeof(int) })]
-        public int DatabaseOptionCommitFrequencyInHours { get => Body.DatabaseOptionCommitFrequencyInHours ?? default(int); set => Body.DatabaseOptionCommitFrequencyInHours = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long DatabaseOptionCommitFrequencyInHours { get => Body.DatabaseOptionCommitFrequencyInHours ?? default(long); set => Body.DatabaseOptionCommitFrequencyInHours = value; }
 
         /// <summary>Log backup RPO in minutes</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Log backup RPO in minutes")]
@@ -68,8 +68,8 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Log backup RPO in minutes",
         SerializedName = @"logBackupRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        public int DatabaseOptionLogBackupRpoMins { get => Body.DatabaseOptionLogBackupRpoMins ?? default(int); set => Body.DatabaseOptionLogBackupRpoMins = value; }
+        PossibleTypes = new [] { typeof(long) })]
+        public long DatabaseOptionLogBackupRpoMins { get => Body.DatabaseOptionLogBackupRpoMins ?? default(long); set => Body.DatabaseOptionLogBackupRpoMins = value; }
 
         /// <summary>Use disk cache for log backups</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Use disk cache for log backups")]
@@ -333,7 +333,7 @@ namespace Commvault.Powershell.Cmdlets
                     {
                         ThrowTerminatingError( new global::System.Management.Automation.ErrorRecord(new global::System.Exception("InputObject has null value for InputObject.PlanId"),string.Empty, global::System.Management.Automation.ErrorCategory.InvalidArgument, InputObject) );
                     }
-                    await this.Client.CreateServerPlanRpo(InputObject.PlanId ?? default(int), Body, onOk, onNotFound, this, Pipeline);
+                    await this.Client.CreateServerPlanRpo(InputObject.PlanId ?? default(long), Body, onOk, onNotFound, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)

@@ -25,7 +25,7 @@ namespace Commvault.Powershell.Cmdlets
         private global::System.Threading.CancellationTokenSource _cancellationTokenSource = new global::System.Threading.CancellationTokenSource();
 
         /// <summary>Backing field for <see cref="BackupDestinationId" /> property.</summary>
-        private int _backupDestinationId;
+        private long _backupDestinationId;
 
         /// <summary>Id of the backupDestination to be deleted</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the backupDestination to be deleted")]
@@ -34,9 +34,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the backupDestination to be deleted",
         SerializedName = @"BackupDestinationId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int BackupDestinationId { get => this._backupDestinationId; set => this._backupDestinationId = value; }
+        public long BackupDestinationId { get => this._backupDestinationId; set => this._backupDestinationId = value; }
 
         /// <summary>Wait for .NET debugger to attach</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "Wait for .NET debugger to attach")]
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Cmdlets
         private Commvault.Powershell.Runtime.HttpPipeline Pipeline { get; set; }
 
         /// <summary>Backing field for <see cref="PlanId" /> property.</summary>
-        private int _planId;
+        private long _planId;
 
         /// <summary>Id of the Plan to modify</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the Plan to modify")]
@@ -84,9 +84,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the Plan to modify",
         SerializedName = @"planId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int PlanId { get => this._planId; set => this._planId = value; }
+        public long PlanId { get => this._planId; set => this._planId = value; }
 
         /// <summary>The URI for the proxy server to use</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "The URI for the proxy server to use")]

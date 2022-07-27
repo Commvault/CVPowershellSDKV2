@@ -18,11 +18,11 @@ namespace Commvault.Powershell.Models
         public string FailureReason { get => this._failureReason; set => this._failureReason = value; }
 
         /// <summary>Backing field for <see cref="JobId" /> property.</summary>
-        private int? _jobId;
+        private long? _jobId;
 
         /// <summary>Returns the job id of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? JobId { get => this._jobId; set => this._jobId = value; }
+        public long? JobId { get => this._jobId; set => this._jobId = value; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -63,8 +63,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Returns the job id of the last backup job performed.",
         SerializedName = @"jobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? JobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? JobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Gives the reason for the last backup job failing, if the last backup job fails.</summary>
         string FailureReason { get; set; }
         /// <summary>Returns the job id of the last backup job performed.</summary>
-        int? JobId { get; set; }
+        long? JobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         string Status { get; set; }
         /// <summary>

@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Storage = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Storage",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Storage, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Resources = (Commvault.Powershell.Models.IResourcePoolInfo[]) content.GetValueForProperty("Resources",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Resources, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IResourcePoolInfo>(__y, Commvault.Powershell.Models.ResourcePoolInfoTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId = (int?) content.GetValueForProperty("StorageId",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId = (long?) content.GetValueForProperty("StorageId",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageName = (string) content.GetValueForProperty("StorageName",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -119,7 +119,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Storage = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Storage",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Storage, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Resources = (Commvault.Powershell.Models.IResourcePoolInfo[]) content.GetValueForProperty("Resources",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).Resources, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IResourcePoolInfo>(__y, Commvault.Powershell.Models.ResourcePoolInfoTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId = (int?) content.GetValueForProperty("StorageId",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId = (long?) content.GetValueForProperty("StorageId",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageName = (string) content.GetValueForProperty("StorageName",((Commvault.Powershell.Models.IStorageResourcePoolMapInternal)this).StorageName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

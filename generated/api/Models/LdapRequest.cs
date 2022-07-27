@@ -29,11 +29,11 @@ namespace Commvault.Powershell.Models
         public bool? DoNotValidateNetBiosName { get => this._doNotValidateNetBiosName; set => this._doNotValidateNetBiosName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>Required when configuring an existing dummy domain as LDAP/AD</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Password" /> property.</summary>
         private string _password;
@@ -93,8 +93,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Required when configuring an existing dummy domain as LDAP/AD",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Password to create LDAP app, it should be base64 encoded</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -135,7 +135,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         bool? DoNotValidateNetBiosName { get; set; }
         /// <summary>Required when configuring an existing dummy domain as LDAP/AD</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Password to create LDAP app, it should be base64 encoded</summary>
         string Password { get; set; }
         /// <summary>

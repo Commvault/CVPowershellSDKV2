@@ -64,12 +64,12 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgent = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("MediaAgent",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgent, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Path = (string) content.GetValueForProperty("Path",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Path, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).UserName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Access = (string) content.GetValueForProperty("Access",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Access, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Accessible = (bool?) content.GetValueForProperty("Accessible",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Accessible, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId = (int?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId = (long?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentName = (string) content.GetValueForProperty("MediaAgentName",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -89,12 +89,12 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgent = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("MediaAgent",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgent, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Path = (string) content.GetValueForProperty("Path",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Path, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).UserName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Access = (string) content.GetValueForProperty("Access",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Access, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Accessible = (bool?) content.GetValueForProperty("Accessible",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).Accessible, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId = (int?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId = (long?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentName = (string) content.GetValueForProperty("MediaAgentName",((Commvault.Powershell.Models.IAccessPathDetailsInternal)this).MediaAgentName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -70,8 +70,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_users = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("users"), out var __jsonUsers) ? (int?)__jsonUsers : Users;}
-            {_laptops = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("laptops"), out var __jsonLaptops) ? (int?)__jsonLaptops : Laptops;}
+            {_users = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("users"), out var __jsonUsers) ? (long?)__jsonUsers : Users;}
+            {_laptops = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("laptops"), out var __jsonLaptops) ? (long?)__jsonLaptops : Laptops;}
             {_optimizedForCloudBackups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("optimizedForCloudBackups"), out var __jsonOptimizedForCloudBackups) ? (bool?)__jsonOptimizedForCloudBackups : OptimizedForCloudBackups;}
             {_storageResourcePoolMap = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("storageResourcePoolMap"), out var __jsonStorageResourcePoolMap) ? If( __jsonStorageResourcePoolMap as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IStorageResourcePoolMap[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IStorageResourcePoolMap) (Commvault.Powershell.Models.StorageResourcePoolMap.FromJson(__u) )) ))() : null : StorageResourcePoolMap;}
             AfterFromJson(json);
@@ -96,8 +96,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._users ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._users) : null, "users" ,container.Add );
-            AddIf( null != this._laptops ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._laptops) : null, "laptops" ,container.Add );
+            AddIf( null != this._users ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._users) : null, "users" ,container.Add );
+            AddIf( null != this._laptops ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._laptops) : null, "laptops" ,container.Add );
             AddIf( null != this._optimizedForCloudBackups ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._optimizedForCloudBackups) : null, "optimizedForCloudBackups" ,container.Add );
             if (null != this._storageResourcePoolMap)
             {

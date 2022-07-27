@@ -21,11 +21,11 @@ namespace Commvault.Powershell.Models
         public string DiskProvisioning { get => this._diskProvisioning; set => this._diskProvisioning = value; }
 
         /// <summary>Backing field for <see cref="SnapshotsToRetain" /> property.</summary>
-        private int? _snapshotsToRetain;
+        private long? _snapshotsToRetain;
 
         /// <summary>Number of snapshots to retain on destination VM</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SnapshotsToRetain { get => this._snapshotsToRetain; set => this._snapshotsToRetain = value; }
+        public long? SnapshotsToRetain { get => this._snapshotsToRetain; set => this._snapshotsToRetain = value; }
 
         /// <summary>Backing field for <see cref="TransportMode" /> property.</summary>
         private string _transportMode;
@@ -76,8 +76,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of snapshots to retain on destination VM",
         SerializedName = @"SnapshotsToRetain",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapshotsToRetain { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapshotsToRetain { get; set; }
         /// <summary>Choose transport mode based on environment. Values are case sensitive</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -115,7 +115,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string DiskProvisioning { get; set; }
         /// <summary>Number of snapshots to retain on destination VM</summary>
-        int? SnapshotsToRetain { get; set; }
+        long? SnapshotsToRetain { get; set; }
         /// <summary>Choose transport mode based on environment. Values are case sensitive</summary>
         string TransportMode { get; set; }
         /// <summary>Replace an existing virtual machine with the same name in the target location</summary>

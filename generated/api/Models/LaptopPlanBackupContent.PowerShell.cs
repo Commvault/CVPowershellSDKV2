@@ -102,7 +102,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).MacExcludedPaths = (string[]) content.GetValueForProperty("MacExcludedPaths",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).MacExcludedPaths, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixIncludedPaths = (string[]) content.GetValueForProperty("UnixIncludedPaths",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixIncludedPaths, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixExcludedPaths = (string[]) content.GetValueForProperty("UnixExcludedPaths",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixExcludedPaths, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota = (int?) content.GetValueForProperty("FileSystemQuota",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota = (long?) content.GetValueForProperty("FileSystemQuota",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -126,7 +126,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).MacExcludedPaths = (string[]) content.GetValueForProperty("MacExcludedPaths",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).MacExcludedPaths, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixIncludedPaths = (string[]) content.GetValueForProperty("UnixIncludedPaths",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixIncludedPaths, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixExcludedPaths = (string[]) content.GetValueForProperty("UnixExcludedPaths",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).UnixExcludedPaths, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota = (int?) content.GetValueForProperty("FileSystemQuota",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota = (long?) content.GetValueForProperty("FileSystemQuota",((Commvault.Powershell.Models.ILaptopPlanBackupContentInternal)this).FileSystemQuota, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

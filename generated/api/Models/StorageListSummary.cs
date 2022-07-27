@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="Capacity" /> property.</summary>
-        private int? _capacity;
+        private long? _capacity;
 
         /// <summary>provides the capacity of the storage pool. Provided in megabytes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Capacity { get => this._capacity; set => this._capacity = value; }
+        public long? Capacity { get => this._capacity; set => this._capacity = value; }
 
         /// <summary>Backing field for <see cref="Commcell" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _commcell;
@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Commcell { get => (this._commcell = this._commcell ?? new Commvault.Powershell.Models.IdName()); set => this._commcell = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CommcellId { get => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id = value ?? default(int); }
+        public long? CommcellId { get => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CommcellName { get => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Commcell).Name = value ?? null; }
@@ -42,24 +42,24 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="FreeSpace" /> property.</summary>
-        private int? _freeSpace;
+        private long? _freeSpace;
 
         /// <summary>provides the free space available on the storage pool. Provided in megabytes.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
+        public long? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         /// <summary>id of the storage pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -96,16 +96,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"provides the capacity of the storage pool. Provided in megabytes",
         SerializedName = @"capacity",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Capacity { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Capacity { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CommcellId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CommcellId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -120,8 +120,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -136,16 +136,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"provides the free space available on the storage pool. Provided in megabytes.",
         SerializedName = @"freeSpace",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FreeSpace { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FreeSpace { get; set; }
         /// <summary>id of the storage pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"id of the storage pool",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>storage pool name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -176,23 +176,23 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>provides the capacity of the storage pool. Provided in megabytes</summary>
-        int? Capacity { get; set; }
+        long? Capacity { get; set; }
 
         Commvault.Powershell.Models.IIdName Commcell { get; set; }
 
-        int? CommcellId { get; set; }
+        long? CommcellId { get; set; }
 
         string CommcellName { get; set; }
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
         /// <summary>provides the free space available on the storage pool. Provided in megabytes.</summary>
-        int? FreeSpace { get; set; }
+        long? FreeSpace { get; set; }
         /// <summary>id of the storage pool</summary>
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>storage pool name</summary>
         string Name { get; set; }
         /// <summary>mentions if the storage pool is enabled</summary>

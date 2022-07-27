@@ -97,11 +97,11 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).UseSystemDefaultSla = (bool?) content.GetValueForProperty("UseSystemDefaultSla",((Commvault.Powershell.Models.ISlaOptionsInternal)this).UseSystemDefaultSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod = (int?) content.GetValueForProperty("InheritedSlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod = (long?) content.GetValueForProperty("InheritedSlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedFrom = (string) content.GetValueForProperty("InheritedFrom",((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedFrom, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod = (int?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod = (long?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla = (bool?) content.GetValueForProperty("ExcludeFromSla",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay = (int?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay = (long?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason = (string) content.GetValueForProperty("ExclusionReason",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -121,11 +121,11 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).UseSystemDefaultSla = (bool?) content.GetValueForProperty("UseSystemDefaultSla",((Commvault.Powershell.Models.ISlaOptionsInternal)this).UseSystemDefaultSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod = (int?) content.GetValueForProperty("InheritedSlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod = (long?) content.GetValueForProperty("InheritedSlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedSlaPeriod, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedFrom = (string) content.GetValueForProperty("InheritedFrom",((Commvault.Powershell.Models.ISlaOptionsInternal)this).InheritedFrom, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod = (int?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod = (long?) content.GetValueForProperty("SlaPeriod",((Commvault.Powershell.Models.ISlaOptionsInternal)this).SlaPeriod, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla = (bool?) content.GetValueForProperty("ExcludeFromSla",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay = (int?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay = (long?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason = (string) content.GetValueForProperty("ExclusionReason",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

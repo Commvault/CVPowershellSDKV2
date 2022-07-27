@@ -14,11 +14,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="OnDates" /> property.</summary>
-        private int[] _onDates;
+        private long[] _onDates;
 
         /// <summary>list of dates in a month. For ex: 1, 20</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int[] OnDates { get => this._onDates; set => this._onDates = value; }
+        public long[] OnDates { get => this._onDates; set => this._onDates = value; }
 
         /// <summary>Backing field for <see cref="OnDayOfTheWeek" /> property.</summary>
         private string[] _onDayOfTheWeek;
@@ -50,8 +50,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"list of dates in a month. For ex: 1, 20",
         SerializedName = @"onDates",
-        PossibleTypes = new [] { typeof(int) })]
-        int[] OnDates { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long[] OnDates { get; set; }
         /// <summary>On which days, for ex: MONDAY, FRIDAY</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -75,7 +75,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>list of dates in a month. For ex: 1, 20</summary>
-        int[] OnDates { get; set; }
+        long[] OnDates { get; set; }
         /// <summary>On which days, for ex: MONDAY, FRIDAY</summary>
         string[] OnDayOfTheWeek { get; set; }
         /// <summary>On which week of month, for ex: FIRST, LAST</summary>

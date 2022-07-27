@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName ApplicationGroup { get => (this._applicationGroup = this._applicationGroup ?? new Commvault.Powershell.Models.IdName()); set => this._applicationGroup = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ApplicationGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id = value ?? default(int); }
+        public long? ApplicationGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ApplicationGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationGroup).Name = value ?? null; }
@@ -32,7 +32,7 @@ namespace Commvault.Powershell.Models
         public string ClusterDisplayName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).DisplayName; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).DisplayName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ClusterId { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).Id = value ?? default(int); }
+        public long? ClusterId { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ClusterName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).Name; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Cluster).Name = value ?? null; }
@@ -70,21 +70,21 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Id of company</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyId { get => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).Id; set => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).Id = value ?? default(int); }
+        public long? CompanyId { get => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).Id; set => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).Id = value ?? default(long); }
 
         /// <summary>Multi Commcell Id of company</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? CompanyMultiCommcellId { get => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).MultiCommcellId; set => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).MultiCommcellId = value ?? default(int); }
+        public long? CompanyMultiCommcellId { get => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).MultiCommcellId; set => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).MultiCommcellId = value ?? default(long); }
 
         /// <summary>Name of company</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).Name; set => ((Commvault.Powershell.Models.ICompanyInfoInternal)Company).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
-        private int? _id;
+        private long? _id;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? Id { get => this._id; set => this._id = value; }
+        public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="IndexingStatus" /> property.</summary>
         private string _indexingStatus;
@@ -100,7 +100,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set => this._instance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(int); }
+        public long? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
@@ -124,7 +124,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Returns the job id of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId = value ?? default(int); }
+        public long? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId = value ?? default(long); }
 
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -149,7 +149,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(int); }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
@@ -188,8 +188,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApplicationGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -212,8 +212,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClusterId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClusterId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -236,16 +236,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Id of company",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyId { get; set; }
         /// <summary>Multi Commcell Id of company</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Multi Commcell Id of company",
         SerializedName = @"multiCommcellId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CompanyMultiCommcellId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CompanyMultiCommcellId { get; set; }
         /// <summary>Name of company</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -260,8 +260,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? Id { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Type of indexing status.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -276,8 +276,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? InstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? InstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -308,8 +308,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Returns the job id of the last backup job performed.",
         SerializedName = @"jobId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LastBackupJobId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupJobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -342,8 +342,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PlanId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -383,7 +383,7 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName ApplicationGroup { get; set; }
 
-        int? ApplicationGroupId { get; set; }
+        long? ApplicationGroupId { get; set; }
 
         string ApplicationGroupName { get; set; }
 
@@ -391,7 +391,7 @@ namespace Commvault.Powershell.Models
 
         string ClusterDisplayName { get; set; }
 
-        int? ClusterId { get; set; }
+        long? ClusterId { get; set; }
 
         string ClusterName { get; set; }
 
@@ -399,19 +399,19 @@ namespace Commvault.Powershell.Models
         /// <summary>companyInfo</summary>
         Commvault.Powershell.Models.ICompanyInfo Company { get; set; }
         /// <summary>Id of company</summary>
-        int? CompanyId { get; set; }
+        long? CompanyId { get; set; }
         /// <summary>Multi Commcell Id of company</summary>
-        int? CompanyMultiCommcellId { get; set; }
+        long? CompanyMultiCommcellId { get; set; }
         /// <summary>Name of company</summary>
         string CompanyName { get; set; }
 
-        int? Id { get; set; }
+        long? Id { get; set; }
         /// <summary>Type of indexing status.</summary>
         string IndexingStatus { get; set; }
 
         Commvault.Powershell.Models.IIdName Instance { get; set; }
 
-        int? InstanceId { get; set; }
+        long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
         /// <summary>True if subclient is default subclient</summary>
@@ -421,7 +421,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Gives the reason for the last backup job failing, if the last backup job fails.</summary>
         string LastBackupFailureReason { get; set; }
         /// <summary>Returns the job id of the last backup job performed.</summary>
-        int? LastBackupJobId { get; set; }
+        long? LastBackupJobId { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         string LastBackupStatus { get; set; }
         /// <summary>
@@ -433,7 +433,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
-        int? PlanId { get; set; }
+        long? PlanId { get; set; }
 
         string PlanName { get; set; }
         /// <summary>true if snap backup enabled</summary>

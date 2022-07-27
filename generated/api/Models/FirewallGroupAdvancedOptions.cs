@@ -11,20 +11,20 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="KeepAliveInterval" /> property.</summary>
-        private int? _keepAliveInterval;
+        private long? _keepAliveInterval;
 
         /// <summary>
         /// The interval in seconds for sending keep-alive packets, to maintain the session if backup traffic has an extended pause.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? KeepAliveInterval { get => this._keepAliveInterval; set => this._keepAliveInterval = value; }
+        public long? KeepAliveInterval { get => this._keepAliveInterval; set => this._keepAliveInterval = value; }
 
         /// <summary>Backing field for <see cref="TunnelPort" /> property.</summary>
-        private int? _tunnelPort;
+        private long? _tunnelPort;
 
         /// <summary>The port defined for communications</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TunnelPort { get => this._tunnelPort; set => this._tunnelPort = value; }
+        public long? TunnelPort { get => this._tunnelPort; set => this._tunnelPort = value; }
 
         /// <summary>Creates an new <see cref="FirewallGroupAdvancedOptions" /> instance.</summary>
         public FirewallGroupAdvancedOptions()
@@ -43,16 +43,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The interval in seconds for sending keep-alive packets, to maintain the session if backup traffic has an extended pause.",
         SerializedName = @"keepAliveInterval",
-        PossibleTypes = new [] { typeof(int) })]
-        int? KeepAliveInterval { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? KeepAliveInterval { get; set; }
         /// <summary>The port defined for communications</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"The port defined for communications",
         SerializedName = @"tunnelPort",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TunnelPort { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TunnelPort { get; set; }
 
     }
     internal partial interface IFirewallGroupAdvancedOptionsInternal
@@ -61,9 +61,9 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// The interval in seconds for sending keep-alive packets, to maintain the session if backup traffic has an extended pause.
         /// </summary>
-        int? KeepAliveInterval { get; set; }
+        long? KeepAliveInterval { get; set; }
         /// <summary>The port defined for communications</summary>
-        int? TunnelPort { get; set; }
+        long? TunnelPort { get; set; }
 
     }
 }

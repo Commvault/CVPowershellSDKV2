@@ -67,11 +67,11 @@ namespace Commvault.Powershell.Models
         public bool? DatastoreFreespaceCheck { get => this._datastoreFreespaceCheck; set => this._datastoreFreespaceCheck = value; }
 
         /// <summary>Backing field for <see cref="DatastoreFreespaceRequired" /> property.</summary>
-        private int? _datastoreFreespaceRequired;
+        private long? _datastoreFreespaceRequired;
 
         /// <summary>precentage of datastore free space check value</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? DatastoreFreespaceRequired { get => this._datastoreFreespaceRequired; set => this._datastoreFreespaceRequired = value; }
+        public long? DatastoreFreespaceRequired { get => this._datastoreFreespaceRequired; set => this._datastoreFreespaceRequired = value; }
 
         /// <summary>Backing field for <see cref="GuestCredentials" /> property.</summary>
         private Commvault.Powershell.Models.IGuestCredentialInfo _guestCredentials;
@@ -88,21 +88,21 @@ namespace Commvault.Powershell.Models
         public bool? IsApplicationAware { get => this._isApplicationAware; set => this._isApplicationAware = value; }
 
         /// <summary>Backing field for <see cref="JobStartTime" /> property.</summary>
-        private int? _jobStartTime;
+        private long? _jobStartTime;
 
         /// <summary>Start Time for the VM Group Job</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? JobStartTime { get => this._jobStartTime; set => this._jobStartTime = value; }
+        public long? JobStartTime { get => this._jobStartTime; set => this._jobStartTime = value; }
 
         /// <summary>Backing field for <see cref="NoOfReaders" /> property.</summary>
-        private int? _noOfReaders;
+        private long? _noOfReaders;
 
         /// <summary>Number of readers for backup</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? NoOfReaders { get => this._noOfReaders; set => this._noOfReaders = value; }
+        public long? NoOfReaders { get => this._noOfReaders; set => this._noOfReaders = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SavedCredentialsId { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId = value ?? default(int); }
+        public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SavedCredentialsName { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsName; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsName = value ?? null; }
@@ -207,8 +207,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"precentage of datastore free space check value",
         SerializedName = @"datastoreFreespaceRequired",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DatastoreFreespaceRequired { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DatastoreFreespaceRequired { get; set; }
         /// <summary>Is the VM App Aware</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -223,24 +223,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Start Time for the VM Group Job",
         SerializedName = @"jobStartTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? JobStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? JobStartTime { get; set; }
         /// <summary>Number of readers for backup</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Number of readers for backup",
         SerializedName = @"noOfReaders",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NoOfReaders { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NoOfReaders { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SavedCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SavedCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -303,7 +303,7 @@ namespace Commvault.Powershell.Models
         /// <summary>True if Datastore Free space check is enabled</summary>
         bool? DatastoreFreespaceCheck { get; set; }
         /// <summary>precentage of datastore free space check value</summary>
-        int? DatastoreFreespaceRequired { get; set; }
+        long? DatastoreFreespaceRequired { get; set; }
         /// <summary>guestCredentialInfo</summary>
         Commvault.Powershell.Models.IGuestCredentialInfo GuestCredentials { get; set; }
 
@@ -313,11 +313,11 @@ namespace Commvault.Powershell.Models
         /// <summary>Is the VM App Aware</summary>
         bool? IsApplicationAware { get; set; }
         /// <summary>Start Time for the VM Group Job</summary>
-        int? JobStartTime { get; set; }
+        long? JobStartTime { get; set; }
         /// <summary>Number of readers for backup</summary>
-        int? NoOfReaders { get; set; }
+        long? NoOfReaders { get; set; }
 
-        int? SavedCredentialsId { get; set; }
+        long? SavedCredentialsId { get; set; }
 
         string SavedCredentialsName { get; set; }
         /// <summary>transport mode based on environment. Values are case sensitive</summary>

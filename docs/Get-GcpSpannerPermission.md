@@ -13,7 +13,7 @@ Get permission status for a cloudAccount on a GCP project
 ## SYNTAX
 
 ```
-Get-GcpSpannerPermission [-CloudAccountId <Int32>] [-ProjectName <String>] [<CommonParameters>]
+Get-GcpSpannerPermission [-CloudAccountId <Int64>] [-ProjectName <String>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ PS C:\> {{ Add code here }}
 the id of the node where the browse request is sent
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

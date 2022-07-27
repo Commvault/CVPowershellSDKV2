@@ -37,11 +37,11 @@ namespace Commvault.Powershell.Models
         public bool? OptimizeForConcurrentLanBackups { get => this._optimizeForConcurrentLanBackups; set => this._optimizeForConcurrentLanBackups = value; }
 
         /// <summary>Backing field for <see cref="ParallelDataTransferOperations" /> property.</summary>
-        private int? _parallelDataTransferOperations;
+        private long? _parallelDataTransferOperations;
 
         /// <summary>Specifies the number of parallel data operations that can take place.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ParallelDataTransferOperations { get => this._parallelDataTransferOperations; set => this._parallelDataTransferOperations = value; }
+        public long? ParallelDataTransferOperations { get => this._parallelDataTransferOperations; set => this._parallelDataTransferOperations = value; }
 
         /// <summary>Backing field for <see cref="RansomwareProtection" /> property.</summary>
         private bool? _ransomwareProtection;
@@ -97,8 +97,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specifies the number of parallel data operations that can take place. ",
         SerializedName = @"parallelDataTransferOperations",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ParallelDataTransferOperations { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParallelDataTransferOperations { get; set; }
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
         /// media agent is disabled.
@@ -127,7 +127,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         bool? OptimizeForConcurrentLanBackups { get; set; }
         /// <summary>Specifies the number of parallel data operations that can take place.</summary>
-        int? ParallelDataTransferOperations { get; set; }
+        long? ParallelDataTransferOperations { get; set; }
         /// <summary>
         /// If set to true, ransomware protection against the media agent is enabled. If set to false, ransomware protection against
         /// media agent is disabled.

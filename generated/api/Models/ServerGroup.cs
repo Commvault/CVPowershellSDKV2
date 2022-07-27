@@ -98,13 +98,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName PowerManagement { get => (this._powerManagement = this._powerManagement ?? new Commvault.Powershell.Models.IdName()); set => this._powerManagement = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? PowerManagementId { get => ((Commvault.Powershell.Models.IIdNameInternal)PowerManagement).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)PowerManagement).Id = value ?? default(int); }
+        public long? PowerManagementId { get => ((Commvault.Powershell.Models.IIdNameInternal)PowerManagement).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)PowerManagement).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PowerManagementName { get => ((Commvault.Powershell.Models.IIdNameInternal)PowerManagement).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)PowerManagement).Name = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionId { get => ((Commvault.Powershell.Models.IGeneralInfoServerGroupInternal)General).RegionId; set => ((Commvault.Powershell.Models.IGeneralInfoServerGroupInternal)General).RegionId = value ?? default(int); }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IGeneralInfoServerGroupInternal)General).RegionId; set => ((Commvault.Powershell.Models.IGeneralInfoServerGroupInternal)General).RegionId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RegionName { get => ((Commvault.Powershell.Models.IGeneralInfoServerGroupInternal)General).RegionName; set => ((Commvault.Powershell.Models.IGeneralInfoServerGroupInternal)General).RegionName = value ?? null; }
@@ -122,7 +122,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName ServerGroup1 { get => (this._serverGroup1 = this._serverGroup1 ?? new Commvault.Powershell.Models.IdName()); set => this._serverGroup1 = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ServerGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)ServerGroup1).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ServerGroup1).Id = value ?? default(int); }
+        public long? ServerGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)ServerGroup1).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ServerGroup1).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ServerGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)ServerGroup1).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ServerGroup1).Name = value ?? null; }
@@ -225,8 +225,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? PowerManagementId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? PowerManagementId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -241,8 +241,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -265,8 +265,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ServerGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ServerGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -313,11 +313,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName PowerManagement { get; set; }
 
-        int? PowerManagementId { get; set; }
+        long? PowerManagementId { get; set; }
 
         string PowerManagementName { get; set; }
 
-        int? RegionId { get; set; }
+        long? RegionId { get; set; }
 
         string RegionName { get; set; }
 
@@ -325,7 +325,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName ServerGroup1 { get; set; }
 
-        int? ServerGroupId { get; set; }
+        long? ServerGroupId { get; set; }
 
         string ServerGroupName { get; set; }
 

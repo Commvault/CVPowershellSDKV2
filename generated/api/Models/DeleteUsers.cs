@@ -32,13 +32,13 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName NewUserGroup { get => (this._newUserGroup = this._newUserGroup ?? new Commvault.Powershell.Models.IdName()); set => this._newUserGroup = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? NewUserGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)NewUserGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)NewUserGroup).Id = value ?? default(int); }
+        public long? NewUserGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)NewUserGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)NewUserGroup).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string NewUserGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)NewUserGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)NewUserGroup).Name = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? NewUserId { get => ((Commvault.Powershell.Models.IIdNameInternal)NewUser).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)NewUser).Id = value ?? default(int); }
+        public long? NewUserId { get => ((Commvault.Powershell.Models.IIdNameInternal)NewUser).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)NewUser).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string NewUserName { get => ((Commvault.Powershell.Models.IIdNameInternal)NewUser).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)NewUser).Name = value ?? null; }
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName User { get => (this._user = this._user ?? new Commvault.Powershell.Models.IdName()); set => this._user = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? UserId { get => ((Commvault.Powershell.Models.IIdNameInternal)User).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)User).Id = value ?? default(int); }
+        public long? UserId { get => ((Commvault.Powershell.Models.IIdNameInternal)User).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)User).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string UserName { get => ((Commvault.Powershell.Models.IIdNameInternal)User).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)User).Name = value ?? null; }
@@ -75,8 +75,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NewUserGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NewUserGroupId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -91,8 +91,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? NewUserId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? NewUserId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -115,8 +115,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? UserId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? UserId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -134,11 +134,11 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName NewUserGroup { get; set; }
 
-        int? NewUserGroupId { get; set; }
+        long? NewUserGroupId { get; set; }
 
         string NewUserGroupName { get; set; }
 
-        int? NewUserId { get; set; }
+        long? NewUserId { get; set; }
 
         string NewUserName { get; set; }
 
@@ -146,7 +146,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName User { get; set; }
 
-        int? UserId { get; set; }
+        long? UserId { get; set; }
 
         string UserName { get; set; }
 

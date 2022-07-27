@@ -23,7 +23,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Source { get => (this._source = this._source ?? new Commvault.Powershell.Models.IdName()); set => this._source = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id = value ?? default(int); }
+        public long? SourceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name = value ?? null; }
@@ -35,7 +35,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Target { get => (this._target = this._target ?? new Commvault.Powershell.Models.IdName()); set => this._target = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? TargetId { get => ((Commvault.Powershell.Models.IIdNameInternal)Target).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Target).Id = value ?? default(int); }
+        public long? TargetId { get => ((Commvault.Powershell.Models.IIdNameInternal)Target).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Target).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TargetName { get => ((Commvault.Powershell.Models.IIdNameInternal)Target).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Target).Name = value ?? null; }
@@ -61,8 +61,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -77,8 +77,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TargetId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TargetId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -102,13 +102,13 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Source { get; set; }
 
-        int? SourceId { get; set; }
+        long? SourceId { get; set; }
 
         string SourceName { get; set; }
 
         Commvault.Powershell.Models.IIdName Target { get; set; }
 
-        int? TargetId { get; set; }
+        long? TargetId { get; set; }
 
         string TargetName { get; set; }
         /// <summary>Snapshot vendors available for Snap Copy mappings</summary>

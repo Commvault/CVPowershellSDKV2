@@ -111,7 +111,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationCity = (string) content.GetValueForProperty("LocationCity",((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationCity, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLatitude = (double) content.GetValueForProperty("LocationLatitude",((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLatitude, (__y)=> (double) global::System.Convert.ChangeType(__y, typeof(double)));
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLongitude = (double) content.GetValueForProperty("LocationLongitude",((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLongitude, (__y)=> (double) global::System.Convert.ChangeType(__y, typeof(double)));
-            ((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId = (int?) content.GetValueForProperty("ZoneId",((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId = (long?) content.GetValueForProperty("ZoneId",((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneName = (string) content.GetValueForProperty("ZoneName",((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -140,7 +140,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationCity = (string) content.GetValueForProperty("LocationCity",((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationCity, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLatitude = (double) content.GetValueForProperty("LocationLatitude",((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLatitude, (__y)=> (double) global::System.Convert.ChangeType(__y, typeof(double)));
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLongitude = (double) content.GetValueForProperty("LocationLongitude",((Commvault.Powershell.Models.IUpdateRegionInternal)this).LocationLongitude, (__y)=> (double) global::System.Convert.ChangeType(__y, typeof(double)));
-            ((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId = (int?) content.GetValueForProperty("ZoneId",((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId = (long?) content.GetValueForProperty("ZoneId",((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneName = (string) content.GetValueForProperty("ZoneName",((Commvault.Powershell.Models.IUpdateRegionInternal)this).ZoneName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -30,7 +30,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Request id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? Id { get => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Id; set => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Id = value; }
+        public long? Id { get => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Id; set => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Id = value; }
 
         /// <summary>Request name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -40,7 +40,7 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IIdName Owner { get => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Owner; set => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Owner = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? OwnerId { get => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).OwnerId; set => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).OwnerId = value; }
+        public long? OwnerId { get => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).OwnerId; set => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).OwnerId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string OwnerName { get => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).OwnerName; set => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).OwnerName = value; }

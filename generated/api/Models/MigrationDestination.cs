@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName DestinationCredentials { get => (this._destinationCredentials = this._destinationCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._destinationCredentials = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? DestinationCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id = value ?? default(int); }
+        public long? DestinationCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)DestinationCredentials).Name = value ?? null; }
@@ -52,7 +52,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdName()); set => this._region = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? RegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id = value ?? default(int); }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RegionName { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name = value ?? null; }
@@ -81,8 +81,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? DestinationCredentialsId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationCredentialsId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -105,8 +105,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RegionId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -126,7 +126,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName DestinationCredentials { get; set; }
 
-        int? DestinationCredentialsId { get; set; }
+        long? DestinationCredentialsId { get; set; }
 
         string DestinationCredentialsName { get; set; }
         /// <summary>Azure storage account</summary>
@@ -134,7 +134,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdName Region { get; set; }
 
-        int? RegionId { get; set; }
+        long? RegionId { get; set; }
 
         string RegionName { get; set; }
 

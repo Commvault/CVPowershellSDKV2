@@ -98,7 +98,7 @@ namespace Commvault.Powershell.Cmdlets
         public global::System.Management.Automation.SwitchParameter SkipOwnerShipTransfer { get => this._skipOwnerShipTransfer; set => this._skipOwnerShipTransfer = value; }
 
         /// <summary>Backing field for <see cref="TransferToUser" /> property.</summary>
-        private int _transferToUser;
+        private long _transferToUser;
 
         /// <summary>If user group properties needs to be transferred to other user</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "If user group properties needs to be transferred to other user")]
@@ -107,12 +107,12 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"If user group properties needs to be transferred to other user",
         SerializedName = @"transferToUser",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int TransferToUser { get => this._transferToUser; set => this._transferToUser = value; }
+        public long TransferToUser { get => this._transferToUser; set => this._transferToUser = value; }
 
         /// <summary>Backing field for <see cref="TransfertoUserGroup" /> property.</summary>
-        private int _transfertoUserGroup;
+        private long _transfertoUserGroup;
 
         /// <summary>If user group properties needs to be transferred to other userGroup</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "If user group properties needs to be transferred to other userGroup")]
@@ -121,12 +121,12 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"If user group properties needs to be transferred to other userGroup",
         SerializedName = @"transfertoUserGroup",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int TransfertoUserGroup { get => this._transfertoUserGroup; set => this._transfertoUserGroup = value; }
+        public long TransfertoUserGroup { get => this._transfertoUserGroup; set => this._transfertoUserGroup = value; }
 
         /// <summary>Backing field for <see cref="UserGroupId" /> property.</summary>
-        private int _userGroupId;
+        private long _userGroupId;
 
         /// <summary>Id of the user-group to delete</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the user-group to delete")]
@@ -135,9 +135,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the user-group to delete",
         SerializedName = @"userGroupId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int UserGroupId { get => this._userGroupId; set => this._userGroupId = value; }
+        public long UserGroupId { get => this._userGroupId; set => this._userGroupId = value; }
 
         /// <summary>
         /// <c>overrideOnInternalServerError</c> will be called before the regular onInternalServerError has been processed, allowing
@@ -304,12 +304,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.DeleteUserGroup(UserGroupId, this.InvocationInformation.BoundParameters.ContainsKey("SkipOwnerShipTransfer") ? SkipOwnerShipTransfer : default(global::System.Management.Automation.SwitchParameter?), this.InvocationInformation.BoundParameters.ContainsKey("TransferToUser") ? TransferToUser : default(int?), this.InvocationInformation.BoundParameters.ContainsKey("TransfertoUserGroup") ? TransfertoUserGroup : default(int?), onOk, onNotFound, onInternalServerError, this, Pipeline);
+                    await this.Client.DeleteUserGroup(UserGroupId, this.InvocationInformation.BoundParameters.ContainsKey("SkipOwnerShipTransfer") ? SkipOwnerShipTransfer : default(global::System.Management.Automation.SwitchParameter?), this.InvocationInformation.BoundParameters.ContainsKey("TransferToUser") ? TransferToUser : default(long?), this.InvocationInformation.BoundParameters.ContainsKey("TransfertoUserGroup") ? TransfertoUserGroup : default(long?), onOk, onNotFound, onInternalServerError, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  UserGroupId=UserGroupId,SkipOwnerShipTransfer=this.InvocationInformation.BoundParameters.ContainsKey("SkipOwnerShipTransfer") ? SkipOwnerShipTransfer : default(global::System.Management.Automation.SwitchParameter?),TransferToUser=this.InvocationInformation.BoundParameters.ContainsKey("TransferToUser") ? TransferToUser : default(int?),TransfertoUserGroup=this.InvocationInformation.BoundParameters.ContainsKey("TransfertoUserGroup") ? TransfertoUserGroup : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  UserGroupId=UserGroupId,SkipOwnerShipTransfer=this.InvocationInformation.BoundParameters.ContainsKey("SkipOwnerShipTransfer") ? SkipOwnerShipTransfer : default(global::System.Management.Automation.SwitchParameter?),TransferToUser=this.InvocationInformation.BoundParameters.ContainsKey("TransferToUser") ? TransferToUser : default(long?),TransfertoUserGroup=this.InvocationInformation.BoundParameters.ContainsKey("TransfertoUserGroup") ? TransfertoUserGroup : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

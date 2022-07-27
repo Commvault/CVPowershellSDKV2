@@ -63,9 +63,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId = (int?) content.GetValueForProperty("ClusterId",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode = (int?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId = (long?) content.GetValueForProperty("ClusterId",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode = (long?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName = (string) content.GetValueForProperty("ClusterName",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage, global::System.Convert.ToString);
@@ -86,9 +86,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId = (int?) content.GetValueForProperty("ClusterId",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode = (int?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode = (int?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId = (long?) content.GetValueForProperty("ClusterId",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode = (long?) content.GetValueForProperty("WarningCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName = (string) content.GetValueForProperty("ClusterName",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage, global::System.Convert.ToString);

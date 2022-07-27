@@ -35,8 +35,8 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 RULES <IPlanEntityRuleRank[]>: Lits of plan entity rule object suggesting their ranks.
-  [Rank <Int32?>]: This will suggest rank/priority of the plan rule.
-  [RuleId <Int32?>]: 
+  [Rank <Int64?>]: This will suggest rank/priority of the plan rule.
+  [RuleId <Int64?>]: 
   [RuleName <String>]: 
 .Link
 https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-planrulerank

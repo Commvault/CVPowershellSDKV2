@@ -26,14 +26,14 @@ namespace Commvault.Powershell.Models
         public bool? EnableAuthorizeForRestore { get => this._enableAuthorizeForRestore; set => this._enableAuthorizeForRestore = value; }
 
         /// <summary>Backing field for <see cref="ExpirationTime" /> property.</summary>
-        private int? _expirationTime;
+        private long? _expirationTime;
 
         /// <summary>
         /// The duration(in unix time) for which a user can continue browsing and restoring backup data without being prompted to
         /// enter the passkey, again.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? ExpirationTime { get => this._expirationTime; set => this._expirationTime = value; }
+        public long? ExpirationTime { get => this._expirationTime; set => this._expirationTime = value; }
 
         /// <summary>Backing field for <see cref="PassKeyRequiredForRestore" /> property.</summary>
         private bool? _passKeyRequiredForRestore;
@@ -77,8 +77,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"The duration(in unix time) for which a user can continue browsing and restoring backup data without being prompted to enter the passkey, again.",
         SerializedName = @"expirationTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ExpirationTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExpirationTime { get; set; }
         /// <summary>To tell if passkey is required for browse and restore</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -101,7 +101,7 @@ namespace Commvault.Powershell.Models
         /// The duration(in unix time) for which a user can continue browsing and restoring backup data without being prompted to
         /// enter the passkey, again.
         /// </summary>
-        int? ExpirationTime { get; set; }
+        long? ExpirationTime { get; set; }
         /// <summary>To tell if passkey is required for browse and restore</summary>
         bool? PassKeyRequiredForRestore { get; set; }
 

@@ -22,23 +22,23 @@ namespace Commvault.Powershell.Models
         public string AfterArchiving { get => this._afterArchiving; set => this._afterArchiving = value; }
 
         /// <summary>Backing field for <see cref="FileSize" /> property.</summary>
-        private int? _fileSize;
+        private long? _fileSize;
 
         /// <summary>
         /// To archive files based on the size of the file, specify the minimum file size in KB.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FileSize { get => this._fileSize; set => this._fileSize = value; }
+        public long? FileSize { get => this._fileSize; set => this._fileSize = value; }
 
         /// <summary>Backing field for <see cref="FileTimestamp" /> property.</summary>
-        private int? _fileTimestamp;
+        private long? _fileTimestamp;
 
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? FileTimestamp { get => this._fileTimestamp; set => this._fileTimestamp = value; }
+        public long? FileTimestamp { get => this._fileTimestamp; set => this._fileTimestamp = value; }
 
         /// <summary>Backing field for <see cref="FileTimestampMethod" /> property.</summary>
         private string _fileTimestampMethod;
@@ -75,8 +75,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the size of the file, specify the minimum file size in KB.",
         SerializedName = @"fileSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileSize { get; set; }
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
@@ -86,8 +86,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the last accessed or modified date of each file within the folder, specify the number of days. Should be supplied with fileTimestampMethod.",
         SerializedName = @"fileTimestamp",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FileTimestamp { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FileTimestamp { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -110,12 +110,12 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// To archive files based on the size of the file, specify the minimum file size in KB.
         /// </summary>
-        int? FileSize { get; set; }
+        long? FileSize { get; set; }
         /// <summary>
         /// To archive files based on the last accessed or modified date of each file within the folder, specify the number of days.
         /// Should be supplied with fileTimestampMethod.
         /// </summary>
-        int? FileTimestamp { get; set; }
+        long? FileTimestamp { get; set; }
 
         string FileTimestampMethod { get; set; }
 

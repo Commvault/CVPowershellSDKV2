@@ -251,11 +251,11 @@ To create the parameters described below, construct a hash table containing the 
 
 
 PLANS <IIdName[]>: Select data protection plans to use for the company. The plans that are selected are the plans that the tenant administrator can choose from.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 SERVICECOMMCELLS <IIdName[]>: Used to add service commcells to the master commcell. Either id or name can be provided. If both are provided, id will be taken into consideration.
-  - `[Id <Int32?>]`: 
+  - `[Id <Int64?>]`: 
   - `[Name <String>]`: 
 
 ## RELATED LINKS

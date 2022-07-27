@@ -12,25 +12,25 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="CommitFrequencyInHours" /> property.</summary>
-        private int? _commitFrequencyInHours;
+        private long? _commitFrequencyInHours;
 
         /// <summary>Commit frequency in hours</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? CommitFrequencyInHours { get => this._commitFrequencyInHours; set => this._commitFrequencyInHours = value; }
+        public long? CommitFrequencyInHours { get => this._commitFrequencyInHours; set => this._commitFrequencyInHours = value; }
 
         /// <summary>Backing field for <see cref="LogBackupRpoMins" /> property.</summary>
-        private int? _logBackupRpoMins;
+        private long? _logBackupRpoMins;
 
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? LogBackupRpoMins { get => this._logBackupRpoMins; set => this._logBackupRpoMins = value; }
+        public long? LogBackupRpoMins { get => this._logBackupRpoMins; set => this._logBackupRpoMins = value; }
 
         /// <summary>Backing field for <see cref="RunFullBackupEvery" /> property.</summary>
-        private int? _runFullBackupEvery;
+        private long? _runFullBackupEvery;
 
         /// <summary>Full backup frequency in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RunFullBackupEvery { get => this._runFullBackupEvery; set => this._runFullBackupEvery = value; }
+        public long? RunFullBackupEvery { get => this._runFullBackupEvery; set => this._runFullBackupEvery = value; }
 
         /// <summary>Backing field for <see cref="UseDiskCacheForLogBackups" /> property.</summary>
         private bool? _useDiskCacheForLogBackups;
@@ -55,24 +55,24 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Commit frequency in hours",
         SerializedName = @"commitFrequencyInHours",
-        PossibleTypes = new [] { typeof(int) })]
-        int? CommitFrequencyInHours { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? CommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Log backup RPO in minutes",
         SerializedName = @"logBackupRPOMins",
-        PossibleTypes = new [] { typeof(int) })]
-        int? LogBackupRpoMins { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? LogBackupRpoMins { get; set; }
         /// <summary>Full backup frequency in days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Full backup frequency in days",
         SerializedName = @"runFullBackupEvery",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RunFullBackupEvery { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RunFullBackupEvery { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -88,11 +88,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Commit frequency in hours</summary>
-        int? CommitFrequencyInHours { get; set; }
+        long? CommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
-        int? LogBackupRpoMins { get; set; }
+        long? LogBackupRpoMins { get; set; }
         /// <summary>Full backup frequency in days</summary>
-        int? RunFullBackupEvery { get; set; }
+        long? RunFullBackupEvery { get; set; }
         /// <summary>Use disk cache for log backups</summary>
         bool? UseDiskCacheForLogBackups { get; set; }
 

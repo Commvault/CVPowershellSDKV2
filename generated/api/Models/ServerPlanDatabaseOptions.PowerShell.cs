@@ -97,9 +97,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins = (int?) content.GetValueForProperty("LogBackupRpoMins",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins = (long?) content.GetValueForProperty("LogBackupRpoMins",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).UseDiskCacheForLogBackups = (bool?) content.GetValueForProperty("UseDiskCacheForLogBackups",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).UseDiskCacheForLogBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours = (int?) content.GetValueForProperty("CommitFrequencyInHours",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours = (long?) content.GetValueForProperty("CommitFrequencyInHours",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -117,9 +117,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins = (int?) content.GetValueForProperty("LogBackupRpoMins",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins = (long?) content.GetValueForProperty("LogBackupRpoMins",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).LogBackupRpoMins, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).UseDiskCacheForLogBackups = (bool?) content.GetValueForProperty("UseDiskCacheForLogBackups",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).UseDiskCacheForLogBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours = (int?) content.GetValueForProperty("CommitFrequencyInHours",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours = (long?) content.GetValueForProperty("CommitFrequencyInHours",((Commvault.Powershell.Models.IServerPlanDatabaseOptionsInternal)this).CommitFrequencyInHours, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

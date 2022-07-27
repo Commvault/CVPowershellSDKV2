@@ -64,8 +64,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount = (int?) content.GetValueForProperty("TotalCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount = (int?) content.GetValueForProperty("UnreadCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount = (long?) content.GetValueForProperty("TotalCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount = (long?) content.GetValueForProperty("UnreadCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).AlertsTriggered = (Commvault.Powershell.Models.IAlertTriggeredSummary[]) content.GetValueForProperty("AlertsTriggered",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).AlertsTriggered, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTriggeredSummary>(__y, Commvault.Powershell.Models.AlertTriggeredSummaryTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -84,8 +84,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount = (int?) content.GetValueForProperty("TotalCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount = (int?) content.GetValueForProperty("UnreadCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount = (long?) content.GetValueForProperty("TotalCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).TotalCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount = (long?) content.GetValueForProperty("UnreadCount",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).UnreadCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).AlertsTriggered = (Commvault.Powershell.Models.IAlertTriggeredSummary[]) content.GetValueForProperty("AlertsTriggered",((Commvault.Powershell.Models.IAlertsTriggeredListRespInternal)this).AlertsTriggered, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTriggeredSummary>(__y, Commvault.Powershell.Models.AlertTriggeredSummaryTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

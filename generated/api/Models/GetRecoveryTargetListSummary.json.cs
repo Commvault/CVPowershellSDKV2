@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_destinationHypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("destinationHypervisor"), out var __jsonDestinationHypervisor) ? Commvault.Powershell.Models.IdName.FromJson(__jsonDestinationHypervisor) : DestinationHypervisor;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_vendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vendor"), out var __jsonVendor) ? (string)__jsonVendor : (string)Vendor;}
             {_applicationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("applicationType"), out var __jsonApplicationType) ? (string)__jsonApplicationType : (string)ApplicationType;}
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._destinationHypervisor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._destinationHypervisor.ToJson(null,serializationMode) : null, "destinationHypervisor" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._vendor)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vendor.ToString()) : null, "vendor" ,container.Add );
             AddIf( null != (((object)this._applicationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._applicationType.ToString()) : null, "applicationType" ,container.Add );

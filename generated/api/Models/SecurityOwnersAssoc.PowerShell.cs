@@ -93,9 +93,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId = (int?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId = (long?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId = (int?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId = (long?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupName = (string) content.GetValueForProperty("UserGroupName",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -114,9 +114,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId = (int?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId = (long?) content.GetValueForProperty("UserId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId = (int?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId = (long?) content.GetValueForProperty("UserGroupId",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupName = (string) content.GetValueForProperty("UserGroupName",((Commvault.Powershell.Models.ISecurityOwnersAssocInternal)this).UserGroupName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

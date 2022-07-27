@@ -92,9 +92,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameCountInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameCountInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameCountInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameCountInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Count = (int?) content.GetValueForProperty("Count",((Commvault.Powershell.Models.IIdNameCountInternal)this).Count, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Count = (long?) content.GetValueForProperty("Count",((Commvault.Powershell.Models.IIdNameCountInternal)this).Count, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -112,9 +112,9 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Id = (int?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameCountInternal)this).Id, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IIdNameCountInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IIdNameCountInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IIdNameCountInternal)this).Name, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Count = (int?) content.GetValueForProperty("Count",((Commvault.Powershell.Models.IIdNameCountInternal)this).Count, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IIdNameCountInternal)this).Count = (long?) content.GetValueForProperty("Count",((Commvault.Powershell.Models.IIdNameCountInternal)this).Count, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

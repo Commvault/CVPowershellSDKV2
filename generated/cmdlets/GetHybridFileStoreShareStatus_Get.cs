@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="HfsShareId" /> property.</summary>
-        private int _hfsShareId;
+        private long _hfsShareId;
 
         /// <summary>Id of the HFS Share to fetch its status</summary>
         [global::System.Management.Automation.Parameter(Mandatory = true, HelpMessage = "Id of the HFS Share to fetch its status")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the HFS Share to fetch its status",
         SerializedName = @"HFSShareId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Path)]
-        public int HfsShareId { get => this._hfsShareId; set => this._hfsShareId = value; }
+        public long HfsShareId { get => this._hfsShareId; set => this._hfsShareId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]

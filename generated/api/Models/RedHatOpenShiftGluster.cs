@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="AuthType" /> property.</summary>
-        private int? _authType;
+        private long? _authType;
 
         /// <summary>Gluster Host authtype</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? AuthType { get => this._authType; set => this._authType = value; }
+        public long? AuthType { get => this._authType; set => this._authType = value; }
 
         /// <summary>Internal Acessors for Credentials</summary>
         Commvault.Powershell.Models.IUserNamePassword Commvault.Powershell.Models.IRedHatOpenShiftGlusterInternal.Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.UserNamePassword()); set { {_credentials = value;} } }
@@ -56,8 +56,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Gluster Host authtype ",
         SerializedName = @"authType",
-        PossibleTypes = new [] { typeof(int) })]
-        int? AuthType { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? AuthType { get; set; }
         /// <summary>username to access the network path</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -88,7 +88,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>Gluster Host authtype</summary>
-        int? AuthType { get; set; }
+        long? AuthType { get; set; }
 
         Commvault.Powershell.Models.IUserNamePassword Credentials { get; set; }
         /// <summary>username to access the network path</summary>

@@ -72,7 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_enableBackupCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableBackupCopy"), out var __jsonEnableBackupCopy) ? (bool?)__jsonEnableBackupCopy : EnableBackupCopy;}
-            {_backupCopyRpoMins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupCopyRPOMins"), out var __jsonBackupCopyRpoMins) ? (int?)__jsonBackupCopyRpoMins : BackupCopyRpoMins;}
+            {_backupCopyRpoMins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupCopyRPOMins"), out var __jsonBackupCopyRpoMins) ? (long?)__jsonBackupCopyRpoMins : BackupCopyRpoMins;}
             AfterFromJson(json);
         }
 
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._enableBackupCopy ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableBackupCopy) : null, "enableBackupCopy" ,container.Add );
-            AddIf( null != this._backupCopyRpoMins ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._backupCopyRpoMins) : null, "backupCopyRPOMins" ,container.Add );
+            AddIf( null != this._backupCopyRpoMins ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupCopyRpoMins) : null, "backupCopyRPOMins" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -60,10 +60,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_capacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("capacity"), out var __jsonCapacity) ? (int?)__jsonCapacity : Capacity;}
-            {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("freeSpace"), out var __jsonFreeSpace) ? (int?)__jsonFreeSpace : FreeSpace;}
-            {_sizeOnDisk = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeOnDisk"), out var __jsonSizeOnDisk) ? (int?)__jsonSizeOnDisk : SizeOnDisk;}
-            {_dedupeSavingsPercent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dedupeSavingsPercent"), out var __jsonDedupeSavingsPercent) ? (int?)__jsonDedupeSavingsPercent : DedupeSavingsPercent;}
+            {_capacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("capacity"), out var __jsonCapacity) ? (long?)__jsonCapacity : Capacity;}
+            {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("freeSpace"), out var __jsonFreeSpace) ? (long?)__jsonFreeSpace : FreeSpace;}
+            {_sizeOnDisk = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("sizeOnDisk"), out var __jsonSizeOnDisk) ? (long?)__jsonSizeOnDisk : SizeOnDisk;}
+            {_dedupeSavingsPercent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("dedupeSavingsPercent"), out var __jsonDedupeSavingsPercent) ? (long?)__jsonDedupeSavingsPercent : DedupeSavingsPercent;}
             AfterFromJson(json);
         }
 
@@ -96,10 +96,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._capacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._capacity) : null, "capacity" ,container.Add );
-            AddIf( null != this._freeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._freeSpace) : null, "freeSpace" ,container.Add );
-            AddIf( null != this._sizeOnDisk ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._sizeOnDisk) : null, "sizeOnDisk" ,container.Add );
-            AddIf( null != this._dedupeSavingsPercent ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._dedupeSavingsPercent) : null, "dedupeSavingsPercent" ,container.Add );
+            AddIf( null != this._capacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._capacity) : null, "capacity" ,container.Add );
+            AddIf( null != this._freeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._freeSpace) : null, "freeSpace" ,container.Add );
+            AddIf( null != this._sizeOnDisk ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._sizeOnDisk) : null, "sizeOnDisk" ,container.Add );
+            AddIf( null != this._dedupeSavingsPercent ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._dedupeSavingsPercent) : null, "dedupeSavingsPercent" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

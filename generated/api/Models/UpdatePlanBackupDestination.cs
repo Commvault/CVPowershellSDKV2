@@ -11,13 +11,13 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="BackupStartTime" /> property.</summary>
-        private int? _backupStartTime;
+        private long? _backupStartTime;
 
         /// <summary>
         /// Specify the Backup start time in seconds. The time is provided in unix time format.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? BackupStartTime { get => this._backupStartTime; set => this._backupStartTime = value; }
+        public long? BackupStartTime { get => this._backupStartTime; set => this._backupStartTime = value; }
 
         /// <summary>Backing field for <see cref="BackupsToCopy" /> property.</summary>
         private string _backupsToCopy;
@@ -56,7 +56,7 @@ namespace Commvault.Powershell.Models
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? FirstExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleRetentionPeriodDays = value ?? default(int); }
+        public long? FirstExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleRetentionPeriodDays = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FirstExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleType; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleType = value ?? null; }
@@ -75,11 +75,11 @@ namespace Commvault.Powershell.Models
         public string NewName { get => this._newName; set => this._newName = value; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
-        private int? _retentionPeriodDays;
+        private long? _retentionPeriodDays;
 
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
+        public long? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
 
         /// <summary>Backing field for <see cref="RetentionRuleType" /> property.</summary>
         private string _retentionRuleType;
@@ -95,20 +95,20 @@ namespace Commvault.Powershell.Models
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SecondExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleRetentionPeriodDays = value ?? default(int); }
+        public long? SecondExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleRetentionPeriodDays = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SecondExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleType; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleType = value ?? null; }
 
         /// <summary>Backing field for <see cref="SnapRecoveryPoints" /> property.</summary>
-        private int? _snapRecoveryPoints;
+        private long? _snapRecoveryPoints;
 
         /// <summary>
         /// Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap
         /// copy.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? SnapRecoveryPoints { get => this._snapRecoveryPoints; set => this._snapRecoveryPoints = value; }
+        public long? SnapRecoveryPoints { get => this._snapRecoveryPoints; set => this._snapRecoveryPoints = value; }
 
         /// <summary>Backing field for <see cref="SourceCopy" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _sourceCopy;
@@ -117,7 +117,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName SourceCopy { get => (this._sourceCopy = this._sourceCopy ?? new Commvault.Powershell.Models.IdName()); set => this._sourceCopy = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SourceCopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id = value ?? default(int); }
+        public long? SourceCopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceCopyName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name = value ?? null; }
@@ -129,7 +129,7 @@ namespace Commvault.Powershell.Models
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ThirdExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleRetentionPeriodDays = value ?? default(int); }
+        public long? ThirdExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleRetentionPeriodDays = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ThirdExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleType; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleType = value ?? null; }
@@ -160,8 +160,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Specify the Backup start time in seconds. The time is provided in unix time format.",
         SerializedName = @"backupStartTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupStartTime { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -186,8 +186,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -218,8 +218,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Retention period in days. -1 can be specified for infinite retention.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? RetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionPeriodDays { get; set; }
         /// <summary>Which type of retention rule should be used for the given backup destination</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -244,8 +244,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -263,16 +263,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.",
         SerializedName = @"snapRecoveryPoints",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SnapRecoveryPoints { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SnapRecoveryPoints { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SourceCopyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SourceCopyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -297,8 +297,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
         SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -325,7 +325,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Specify the Backup start time in seconds. The time is provided in unix time format.
         /// </summary>
-        int? BackupStartTime { get; set; }
+        long? BackupStartTime { get; set; }
 
         string BackupsToCopy { get; set; }
 
@@ -343,7 +343,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
-        int? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        long? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         string FirstExtendedRetentionRuleType { get; set; }
 
@@ -351,7 +351,7 @@ namespace Commvault.Powershell.Models
         /// <summary>New name for backup destination</summary>
         string NewName { get; set; }
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
-        int? RetentionPeriodDays { get; set; }
+        long? RetentionPeriodDays { get; set; }
         /// <summary>Which type of retention rule should be used for the given backup destination</summary>
         string RetentionRuleType { get; set; }
 
@@ -359,18 +359,18 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
-        int? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        long? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         string SecondExtendedRetentionRuleType { get; set; }
         /// <summary>
         /// Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap
         /// copy.
         /// </summary>
-        int? SnapRecoveryPoints { get; set; }
+        long? SnapRecoveryPoints { get; set; }
 
         Commvault.Powershell.Models.IIdName SourceCopy { get; set; }
 
-        int? SourceCopyId { get; set; }
+        long? SourceCopyId { get; set; }
 
         string SourceCopyName { get; set; }
 
@@ -378,7 +378,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
         /// </summary>
-        int? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        long? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
 
         string ThirdExtendedRetentionRuleType { get; set; }
         /// <summary>

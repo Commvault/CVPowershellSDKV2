@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Cmdlets
         public Commvault.Powershell.CommvaultPowerShell Client => Commvault.Powershell.Module.Instance.ClientAPI;
 
         /// <summary>Backing field for <see cref="CompanyId" /> property.</summary>
-        private int _companyId;
+        private long _companyId;
 
         /// <summary>Id of the company for which the laptop owner mapping needs to be returned</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, HelpMessage = "Id of the company for which the laptop owner mapping needs to be returned")]
@@ -42,9 +42,9 @@ namespace Commvault.Powershell.Cmdlets
         ReadOnly = false,
         Description = @"Id of the company for which the laptop owner mapping needs to be returned",
         SerializedName = @"companyId",
-        PossibleTypes = new [] { typeof(int) })]
+        PossibleTypes = new [] { typeof(long) })]
         [global::Commvault.Powershell.Category(global::Commvault.Powershell.ParameterCategory.Query)]
-        public int CompanyId { get => this._companyId; set => this._companyId = value; }
+        public long CompanyId { get => this._companyId; set => this._companyId = value; }
 
         /// <summary>SendAsync Pipeline Steps to be appended to the front of the pipeline</summary>
         [global::System.Management.Automation.Parameter(Mandatory = false, DontShow = true, HelpMessage = "SendAsync Pipeline Steps to be appended to the front of the pipeline")]
@@ -262,12 +262,12 @@ namespace Commvault.Powershell.Cmdlets
                 try
                 {
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletBeforeAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
-                    await this.Client.GetLaptopOwnerMapping(this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(int?), onOk, onNotFound, onServiceUnavailable, this, Pipeline);
+                    await this.Client.GetLaptopOwnerMapping(this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(long?), onOk, onNotFound, onServiceUnavailable, this, Pipeline);
                     await ((Commvault.Powershell.Runtime.IEventListener)this).Signal(Commvault.Powershell.Runtime.Events.CmdletAfterAPICall); if( ((Commvault.Powershell.Runtime.IEventListener)this).Token.IsCancellationRequested ) { return; }
                 }
                 catch (Commvault.Powershell.Runtime.UndeclaredResponseException urexception)
                 {
-                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  CompanyId=this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(int?)})
+                    WriteError(new global::System.Management.Automation.ErrorRecord(urexception, urexception.StatusCode.ToString(), global::System.Management.Automation.ErrorCategory.InvalidOperation, new {  CompanyId=this.InvocationInformation.BoundParameters.ContainsKey("CompanyId") ? CompanyId : default(long?)})
                     {
                       ErrorDetails = new global::System.Management.Automation.ErrorDetails(urexception.Message) { RecommendedAction = urexception.Action }
                     });

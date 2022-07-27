@@ -13,7 +13,7 @@ Used to disable data verification property for commcell
 ## SYNTAX
 
 ```
-Disable-DataVerificationCommcell [-EnableAfterADelay <Int32>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Disable-DataVerificationCommcell [-EnableAfterADelay <Int64>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -45,7 +45,7 @@ PS C:\> {{ Add code here }}
 Provide UTC time in unix format.
 
 ```yaml
-Type: System.Int32
+Type: System.Int64
 Parameter Sets: (All)
 Aliases:
 

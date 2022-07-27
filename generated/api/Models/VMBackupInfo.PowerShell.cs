@@ -97,12 +97,12 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount = (int?) content.GetValueForProperty("VMPendingCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount = (int?) content.GetValueForProperty("VMProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount = (int?) content.GetValueForProperty("VMNotProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount = (int?) content.GetValueForProperty("VMNeverBackedUpCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount = (int?) content.GetValueForProperty("VMBackedUpWithErrorCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount = (int?) content.GetValueForProperty("VMTotalCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount = (long?) content.GetValueForProperty("VMPendingCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount = (long?) content.GetValueForProperty("VMProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount = (long?) content.GetValueForProperty("VMNotProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount = (long?) content.GetValueForProperty("VMNeverBackedUpCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount = (long?) content.GetValueForProperty("VMBackedUpWithErrorCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount = (long?) content.GetValueForProperty("VMTotalCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -120,12 +120,12 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount = (int?) content.GetValueForProperty("VMPendingCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount = (int?) content.GetValueForProperty("VMProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount = (int?) content.GetValueForProperty("VMNotProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount = (int?) content.GetValueForProperty("VMNeverBackedUpCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount = (int?) content.GetValueForProperty("VMBackedUpWithErrorCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
-            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount = (int?) content.GetValueForProperty("VMTotalCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount = (long?) content.GetValueForProperty("VMPendingCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMPendingCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount = (long?) content.GetValueForProperty("VMProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMProtectedCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount = (long?) content.GetValueForProperty("VMNotProtectedCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNotProtectedCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount = (long?) content.GetValueForProperty("VMNeverBackedUpCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMNeverBackedUpCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount = (long?) content.GetValueForProperty("VMBackedUpWithErrorCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMBackedUpWithErrorCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount = (long?) content.GetValueForProperty("VMTotalCount",((Commvault.Powershell.Models.IVMBackupInfoInternal)this).VMTotalCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
     }

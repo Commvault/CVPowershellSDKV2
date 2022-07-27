@@ -23,7 +23,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchiveFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).DayOfMonth; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).DayOfMonth = value ?? default(int); }
+        public long? ArchiveFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).DayOfMonth; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).DayOfMonth = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ArchiveFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).DayOfWeek; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).DayOfWeek = value ?? null; }
@@ -33,7 +33,7 @@ namespace Commvault.Powershell.Models
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchiveFrequencyFrequency { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).Frequency; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).Frequency = value ?? default(int); }
+        public long? ArchiveFrequencyFrequency { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).Frequency; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).Frequency = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ArchiveFrequencyMonthOfYear { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).MonthOfYear; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).MonthOfYear = value ?? null; }
@@ -44,7 +44,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchiveFrequencyStartTime { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).StartTime; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).StartTime = value ?? default(int); }
+        public long? ArchiveFrequencyStartTime { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).StartTime; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)ArchiveFrequency).StartTime = value ?? default(long); }
 
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -81,8 +81,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Day on which to run the schedule, applicable for monthly, yearly",
         SerializedName = @"dayOfMonth",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchiveFrequencyDayOfMonth { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchiveFrequencyDayOfMonth { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -100,8 +100,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months",
         SerializedName = @"frequency",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchiveFrequencyFrequency { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchiveFrequencyFrequency { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -124,8 +124,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"start time of schedule in seconds for daily, weekly, monthly, yearly frequency",
         SerializedName = @"startTime",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchiveFrequencyStartTime { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchiveFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -160,20 +160,20 @@ namespace Commvault.Powershell.Models
         /// <summary>Used to describe the frequency of backup</summary>
         Commvault.Powershell.Models.IBackupFrequencyPattern ArchiveFrequency { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
-        int? ArchiveFrequencyDayOfMonth { get; set; }
+        long? ArchiveFrequencyDayOfMonth { get; set; }
 
         string ArchiveFrequencyDayOfWeek { get; set; }
         /// <summary>
         /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
-        int? ArchiveFrequencyFrequency { get; set; }
+        long? ArchiveFrequencyFrequency { get; set; }
 
         string ArchiveFrequencyMonthOfYear { get; set; }
         /// <summary>schedule frequency type</summary>
         string ArchiveFrequencyScheduleFrequencyType { get; set; }
         /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
-        int? ArchiveFrequencyStartTime { get; set; }
+        long? ArchiveFrequencyStartTime { get; set; }
         /// <summary>Specific week of a month</summary>
         string ArchiveFrequencyWeekOfMonth { get; set; }
         /// <summary>Days of the week for weekly frequency</summary>

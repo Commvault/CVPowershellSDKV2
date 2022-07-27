@@ -67,13 +67,13 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.ICredentialOwner SecurityOwner { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).SecurityOwner; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).SecurityOwner = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? UserGroupId { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserGroupId; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserGroupId = value; }
+        public long? UserGroupId { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserGroupId; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserGroupId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string UserGroupName { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserGroupName; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserGroupName = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public int? UserId { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserId; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserId = value; }
+        public long? UserId { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserId; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string UserName { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserName; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).UserName = value; }

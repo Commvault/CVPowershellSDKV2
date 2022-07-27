@@ -79,11 +79,11 @@ namespace Commvault.Powershell.Models
             }
             {_storage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("storage"), out var __jsonStorage) ? Commvault.Powershell.Models.IdName.FromJson(__jsonStorage) : Storage;}
             {_indexServer = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("indexServer"), out var __jsonIndexServer) ? Commvault.Powershell.Models.IdName.FromJson(__jsonIndexServer) : IndexServer;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (int?)__jsonId : Id;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_solutionType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("solutionType"), out var __jsonSolutionType) ? (string)__jsonSolutionType : (string)SolutionType;}
             {_accessNodes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNodes"), out var __jsonAccessNodes) ? If( __jsonAccessNodes as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAccessNodes[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAccessNodes) (Commvault.Powershell.Models.AccessNodes.FromJson(__u) )) ))() : null : AccessNodes;}
-            {_associatedPlans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedPlans"), out var __jsonAssociatedPlans) ? (int?)__jsonAssociatedPlans : AssociatedPlans;}
+            {_associatedPlans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedPlans"), out var __jsonAssociatedPlans) ? (long?)__jsonAssociatedPlans : AssociatedPlans;}
             {_isIndexingEnabledOnAnyPlan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isIndexingEnabledOnAnyPlan"), out var __jsonIsIndexingEnabledOnAnyPlan) ? (bool?)__jsonIsIndexingEnabledOnAnyPlan : IsIndexingEnabledOnAnyPlan;}
             AfterFromJson(json);
         }
@@ -109,7 +109,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._storage ? (Commvault.Powershell.Runtime.Json.JsonNode) this._storage.ToJson(null,serializationMode) : null, "storage" ,container.Add );
             AddIf( null != this._indexServer ? (Commvault.Powershell.Runtime.Json.JsonNode) this._indexServer.ToJson(null,serializationMode) : null, "indexServer" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._id) : null, "id" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._solutionType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._solutionType.ToString()) : null, "solutionType" ,container.Add );
             if (null != this._accessNodes)
@@ -121,7 +121,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("accessNodes",__w);
             }
-            AddIf( null != this._associatedPlans ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._associatedPlans) : null, "associatedPlans" ,container.Add );
+            AddIf( null != this._associatedPlans ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._associatedPlans) : null, "associatedPlans" ,container.Add );
             AddIf( null != this._isIndexingEnabledOnAnyPlan ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isIndexingEnabledOnAnyPlan) : null, "isIndexingEnabledOnAnyPlan" ,container.Add );
             AfterToJson(ref container);
             return container;

@@ -18,7 +18,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Apptype { get => (this._apptype = this._apptype ?? new Commvault.Powershell.Models.IdName()); set => this._apptype = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ApptypeId { get => ((Commvault.Powershell.Models.IIdNameInternal)Apptype).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Apptype).Id = value ?? default(int); }
+        public long? ApptypeId { get => ((Commvault.Powershell.Models.IIdNameInternal)Apptype).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Apptype).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ApptypeName { get => ((Commvault.Powershell.Models.IIdNameInternal)Apptype).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Apptype).Name = value ?? null; }
@@ -30,7 +30,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Backupset { get => (this._backupset = this._backupset ?? new Commvault.Powershell.Models.IdName()); set => this._backupset = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? BackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id = value ?? default(int); }
+        public long? BackupsetId { get => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupsetName { get => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Backupset).Name = value ?? null; }
@@ -42,7 +42,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Client { get => (this._client = this._client ?? new Commvault.Powershell.Models.IdName()); set => this._client = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id = value ?? default(int); }
+        public long? ClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Name = value ?? null; }
@@ -69,7 +69,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set => this._instance = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(int); }
+        public long? InstanceId { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
@@ -81,7 +81,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IIdName Subclient { get => (this._subclient = this._subclient ?? new Commvault.Powershell.Models.IdName()); set => this._subclient = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? SubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id = value ?? default(int); }
+        public long? SubclientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SubclientName { get => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Subclient).Name = value ?? null; }
@@ -101,8 +101,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ApptypeId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApptypeId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -117,8 +117,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? BackupsetId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupsetId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -133,8 +133,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ClientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -149,8 +149,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? InstanceId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? InstanceId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -165,8 +165,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? SubclientId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SubclientId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -183,31 +183,31 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IIdName Apptype { get; set; }
 
-        int? ApptypeId { get; set; }
+        long? ApptypeId { get; set; }
 
         string ApptypeName { get; set; }
 
         Commvault.Powershell.Models.IIdName Backupset { get; set; }
 
-        int? BackupsetId { get; set; }
+        long? BackupsetId { get; set; }
 
         string BackupsetName { get; set; }
 
         Commvault.Powershell.Models.IIdName Client { get; set; }
 
-        int? ClientId { get; set; }
+        long? ClientId { get; set; }
 
         string ClientName { get; set; }
 
         Commvault.Powershell.Models.IIdName Instance { get; set; }
 
-        int? InstanceId { get; set; }
+        long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
 
         Commvault.Powershell.Models.IIdName Subclient { get; set; }
 
-        int? SubclientId { get; set; }
+        long? SubclientId { get; set; }
 
         string SubclientName { get; set; }
 

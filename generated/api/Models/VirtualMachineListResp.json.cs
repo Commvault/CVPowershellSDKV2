@@ -86,7 +86,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("virtualMachines",__w);
             }
-            AddIf( null != this._virtualMachinesCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._virtualMachinesCount) : null, "virtualMachinesCount" ,container.Add );
+            AddIf( null != this._virtualMachinesCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._virtualMachinesCount) : null, "virtualMachinesCount" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -104,7 +104,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_virtualMachines = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("virtualMachines"), out var __jsonVirtualMachines) ? If( __jsonVirtualMachines as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IVirtualMachineSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IVirtualMachineSummary) (Commvault.Powershell.Models.VirtualMachineSummary.FromJson(__u) )) ))() : null : VirtualMachines;}
-            {_virtualMachinesCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("virtualMachinesCount"), out var __jsonVirtualMachinesCount) ? (int?)__jsonVirtualMachinesCount : VirtualMachinesCount;}
+            {_virtualMachinesCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("virtualMachinesCount"), out var __jsonVirtualMachinesCount) ? (long?)__jsonVirtualMachinesCount : VirtualMachinesCount;}
             AfterFromJson(json);
         }
     }

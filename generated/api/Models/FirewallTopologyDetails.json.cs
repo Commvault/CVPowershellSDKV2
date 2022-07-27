@@ -68,7 +68,7 @@ namespace Commvault.Powershell.Models
             {_firewallGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("firewallGroups"), out var __jsonFirewallGroups) ? If( __jsonFirewallGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IFirewallTopologyGroups[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IFirewallTopologyGroups) (Commvault.Powershell.Models.FirewallTopologyGroups.FromJson(__u) )) ))() : null : FirewallGroups;}
             {_encryptTraffic = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("encryptTraffic"), out var __jsonEncryptTraffic) ? (bool?)__jsonEncryptTraffic : EncryptTraffic;}
             {_tunnelProtocol = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("tunnelProtocol"), out var __jsonTunnelProtocol) ? (string)__jsonTunnelProtocol : (string)TunnelProtocol;}
-            {_tunnelsPerRoute = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("tunnelsPerRoute"), out var __jsonTunnelsPerRoute) ? (int?)__jsonTunnelsPerRoute : TunnelsPerRoute;}
+            {_tunnelsPerRoute = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("tunnelsPerRoute"), out var __jsonTunnelsPerRoute) ? (long?)__jsonTunnelsPerRoute : TunnelsPerRoute;}
             AfterFromJson(json);
         }
 
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._encryptTraffic ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._encryptTraffic) : null, "encryptTraffic" ,container.Add );
             AddIf( null != (((object)this._tunnelProtocol)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._tunnelProtocol.ToString()) : null, "tunnelProtocol" ,container.Add );
-            AddIf( null != this._tunnelsPerRoute ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._tunnelsPerRoute) : null, "tunnelsPerRoute" ,container.Add );
+            AddIf( null != this._tunnelsPerRoute ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._tunnelsPerRoute) : null, "tunnelsPerRoute" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

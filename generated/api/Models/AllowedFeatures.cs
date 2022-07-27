@@ -33,45 +33,45 @@ namespace Commvault.Powershell.Models
         /// To archive files based on the last accessed date of each file within the folder, specify the number of days
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileAccessTimeOlderThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileAccessTimeOlderThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileAccessTimeOlderThan = value ?? default(int); }
+        public long? ArchivingRuleFileAccessTimeOlderThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileAccessTimeOlderThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileAccessTimeOlderThan = value ?? default(long); }
 
         /// <summary>
         /// To archive files based on the time the files were created within the folder, specify the number of days
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileCreatedTimeOlderThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileCreatedTimeOlderThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileCreatedTimeOlderThan = value ?? default(int); }
+        public long? ArchivingRuleFileCreatedTimeOlderThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileCreatedTimeOlderThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileCreatedTimeOlderThan = value ?? default(long); }
 
         /// <summary>
         /// To archive files based on the last modified date of each file within the folder, specify the number of days
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileModifiedTimeOlderThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileModifiedTimeOlderThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileModifiedTimeOlderThan = value ?? default(int); }
+        public long? ArchivingRuleFileModifiedTimeOlderThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileModifiedTimeOlderThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileModifiedTimeOlderThan = value ?? default(long); }
 
         /// <summary>
         /// To archive files based on the size of the file, specify the minimum file size in KB. All files whose size ranges between
         /// the minimum and maximum values are archived.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleFileSizeGreaterThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileSizeGreaterThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileSizeGreaterThan = value ?? default(int); }
+        public long? ArchivingRuleFileSizeGreaterThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileSizeGreaterThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).FileSizeGreaterThan = value ?? default(long); }
 
         /// <summary>
         /// To archive files based on the size of the file, specify the maximum file size in KB. All files whose size ranges between
         /// the minimum and maximum values are archived.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleMaximumFileSize { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).MaximumFileSize; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).MaximumFileSize = value ?? default(int); }
+        public long? ArchivingRuleMaximumFileSize { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).MaximumFileSize; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).MaximumFileSize = value ?? default(long); }
 
         /// <summary>
         /// When free disk space falls below specified amount (in percentage), start cleaning up the disk
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleStartCleaningIfLessThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StartCleaningIfLessThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StartCleaningIfLessThan = value ?? default(int); }
+        public long? ArchivingRuleStartCleaningIfLessThan { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StartCleaningIfLessThan; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StartCleaningIfLessThan = value ?? default(long); }
 
         /// <summary>
         /// When free disk space more than specified amount (in percentage), stop cleaning up the disk
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? ArchivingRuleStopCleaningIfupto { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StopCleaningIfupto; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StopCleaningIfupto = value ?? default(int); }
+        public long? ArchivingRuleStopCleaningIfupto { get => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StopCleaningIfupto; set => ((Commvault.Powershell.Models.IArchivingRulesInternal)ArchivingRules).StopCleaningIfupto = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="ArchivingRules" /> property.</summary>
         private Commvault.Powershell.Models.IArchivingRules _archivingRules;
@@ -114,7 +114,7 @@ namespace Commvault.Powershell.Models
         /// Maximum number of gigabytes that you can store in the Edge Drive. Value as -1 means no quota is set.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? EdgeDriveSettingEdgeDriveQuota { get => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).EdgeDriveQuota; set => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).EdgeDriveQuota = value ?? default(int); }
+        public long? EdgeDriveSettingEdgeDriveQuota { get => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).EdgeDriveQuota; set => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).EdgeDriveQuota = value ?? default(long); }
 
         /// <summary>
         /// Enables alert notification feature which allows the share user or share owner to subscribe for share notifications when
@@ -131,7 +131,7 @@ namespace Commvault.Powershell.Models
         internal Commvault.Powershell.Models.IEdgeDriveSettings EdgeDriveSettings { get => (this._edgeDriveSettings = this._edgeDriveSettings ?? new Commvault.Powershell.Models.EdgeDriveSettings()); set => this._edgeDriveSettings = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public int? IndexServerId { get => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).IndexServerId; set => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).IndexServerId = value ?? default(int); }
+        public long? IndexServerId { get => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).IndexServerId; set => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).IndexServerId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string IndexServerName { get => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).IndexServerName; set => ((Commvault.Powershell.Models.IEdgeDriveSettingsInternal)EdgeDriveSettings).IndexServerName = value ?? null; }
@@ -181,8 +181,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the last accessed date of each file within the folder, specify the number of days",
         SerializedName = @"fileAccessTimeOlderThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileAccessTimeOlderThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileAccessTimeOlderThan { get; set; }
         /// <summary>
         /// To archive files based on the time the files were created within the folder, specify the number of days
         /// </summary>
@@ -191,8 +191,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the time the files were created within the folder, specify the number of days",
         SerializedName = @"fileCreatedTimeOlderThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileCreatedTimeOlderThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileCreatedTimeOlderThan { get; set; }
         /// <summary>
         /// To archive files based on the last modified date of each file within the folder, specify the number of days
         /// </summary>
@@ -201,8 +201,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the last modified date of each file within the folder, specify the number of days",
         SerializedName = @"fileModifiedTimeOlderThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileModifiedTimeOlderThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileModifiedTimeOlderThan { get; set; }
         /// <summary>
         /// To archive files based on the size of the file, specify the minimum file size in KB. All files whose size ranges between
         /// the minimum and maximum values are archived.
@@ -212,8 +212,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the size of the file, specify the minimum file size in KB. All files whose size ranges between the minimum and maximum values are archived.",
         SerializedName = @"fileSizeGreaterThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleFileSizeGreaterThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleFileSizeGreaterThan { get; set; }
         /// <summary>
         /// To archive files based on the size of the file, specify the maximum file size in KB. All files whose size ranges between
         /// the minimum and maximum values are archived.
@@ -223,8 +223,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"To archive files based on the size of the file, specify the maximum file size in KB. All files whose size ranges between the minimum and maximum values are archived.",
         SerializedName = @"maximumFileSize",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleMaximumFileSize { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleMaximumFileSize { get; set; }
         /// <summary>
         /// When free disk space falls below specified amount (in percentage), start cleaning up the disk
         /// </summary>
@@ -233,8 +233,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"When free disk space falls below specified amount (in percentage), start cleaning up the disk",
         SerializedName = @"startCleaningIfLessThan",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleStartCleaningIfLessThan { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleStartCleaningIfLessThan { get; set; }
         /// <summary>
         /// When free disk space more than specified amount (in percentage), stop cleaning up the disk
         /// </summary>
@@ -243,8 +243,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"When free disk space more than specified amount (in percentage), stop cleaning up the disk",
         SerializedName = @"stopCleaningIfupto",
-        PossibleTypes = new [] { typeof(int) })]
-        int? ArchivingRuleStopCleaningIfupto { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArchivingRuleStopCleaningIfupto { get; set; }
         /// <summary>Flag to enable Data loss protection</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -280,8 +280,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Maximum number of gigabytes that you can store in the Edge Drive. Value as -1 means no quota is set.",
         SerializedName = @"edgeDriveQuota",
-        PossibleTypes = new [] { typeof(int) })]
-        int? EdgeDriveSettingEdgeDriveQuota { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? EdgeDriveSettingEdgeDriveQuota { get; set; }
         /// <summary>
         /// Enables alert notification feature which allows the share user or share owner to subscribe for share notifications when
         /// any activities are performed on the Edge Drive or the Collaborative share. The user can receive the notifications on the
@@ -300,8 +300,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"id",
-        PossibleTypes = new [] { typeof(int) })]
-        int? IndexServerId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? IndexServerId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -328,33 +328,33 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// To archive files based on the last accessed date of each file within the folder, specify the number of days
         /// </summary>
-        int? ArchivingRuleFileAccessTimeOlderThan { get; set; }
+        long? ArchivingRuleFileAccessTimeOlderThan { get; set; }
         /// <summary>
         /// To archive files based on the time the files were created within the folder, specify the number of days
         /// </summary>
-        int? ArchivingRuleFileCreatedTimeOlderThan { get; set; }
+        long? ArchivingRuleFileCreatedTimeOlderThan { get; set; }
         /// <summary>
         /// To archive files based on the last modified date of each file within the folder, specify the number of days
         /// </summary>
-        int? ArchivingRuleFileModifiedTimeOlderThan { get; set; }
+        long? ArchivingRuleFileModifiedTimeOlderThan { get; set; }
         /// <summary>
         /// To archive files based on the size of the file, specify the minimum file size in KB. All files whose size ranges between
         /// the minimum and maximum values are archived.
         /// </summary>
-        int? ArchivingRuleFileSizeGreaterThan { get; set; }
+        long? ArchivingRuleFileSizeGreaterThan { get; set; }
         /// <summary>
         /// To archive files based on the size of the file, specify the maximum file size in KB. All files whose size ranges between
         /// the minimum and maximum values are archived.
         /// </summary>
-        int? ArchivingRuleMaximumFileSize { get; set; }
+        long? ArchivingRuleMaximumFileSize { get; set; }
         /// <summary>
         /// When free disk space falls below specified amount (in percentage), start cleaning up the disk
         /// </summary>
-        int? ArchivingRuleStartCleaningIfLessThan { get; set; }
+        long? ArchivingRuleStartCleaningIfLessThan { get; set; }
         /// <summary>
         /// When free disk space more than specified amount (in percentage), stop cleaning up the disk
         /// </summary>
-        int? ArchivingRuleStopCleaningIfupto { get; set; }
+        long? ArchivingRuleStopCleaningIfupto { get; set; }
         /// <summary>These rules are enforced only when archiving is set to true</summary>
         Commvault.Powershell.Models.IArchivingRules ArchivingRules { get; set; }
         /// <summary>Flag to enable Data loss protection</summary>
@@ -369,7 +369,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// Maximum number of gigabytes that you can store in the Edge Drive. Value as -1 means no quota is set.
         /// </summary>
-        int? EdgeDriveSettingEdgeDriveQuota { get; set; }
+        long? EdgeDriveSettingEdgeDriveQuota { get; set; }
 
         Commvault.Powershell.Models.IIdName EdgeDriveSettingIndexServer { get; set; }
         /// <summary>
@@ -381,7 +381,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IEdgeDriveSettings EdgeDriveSettings { get; set; }
 
-        int? IndexServerId { get; set; }
+        long? IndexServerId { get; set; }
 
         string IndexServerName { get; set; }
 
