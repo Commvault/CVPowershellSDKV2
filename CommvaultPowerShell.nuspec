@@ -3,13 +3,12 @@
   <metadata>
     <id>CommvaultPowerShell</id>
     <version>0.1.0</version>
-    <authors></authors>
-    <owners></owners>
+    <authors>COMMVAULT</authors>
+    <owners>COMMVAULT</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl></licenseUrl>
-    <projectUrl></projectUrl>
-    <description></description>
-    <releaseNotes></releaseNotes>
+    <projectUrl>https://cloud.commvault.com</projectUrl>
+    <description>COMMVAULT POWERSHELL</description>
+    <releaseNotes>COMMVAULT</releaseNotes>
     <copyright></copyright>
     <tags></tags>
   </metadata>
