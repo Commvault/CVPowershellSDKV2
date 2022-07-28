@@ -24,4 +24,7 @@ To get all the command:
 -PS > Get-Command -Module CommvaultPowershell
 
 - For information on any Commvault PowerShell command, run Get-Help [command] 
-- For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples
+- For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples, Get-Help [command] -Full
+- To use a commandlet which accept data in hastable please create the hashtable with the model prefix
+- For example : New-User requires an input Users which has a model [Commvault.Powershell.ICreateUser] . To create a hashtable for creating a user prefix the model before the curly braces
+  $userdata = [Commvault.Powershell.ICreateUser]{...}
