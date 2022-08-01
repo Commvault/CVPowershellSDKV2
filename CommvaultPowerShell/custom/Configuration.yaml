@@ -1,0 +1,36 @@
+directive:
+    - from: swagger-document
+      where: >-
+          $.servers[0].url
+      set: >-
+        http://WebserverUrl.Commvault.com/webconsole/api/
+      
+    - from : swagger-document
+      where: >-
+        $.paths..content
+      transform: >-
+        const json_obj = {};
+        for(var each in $)
+        {
+          if(each != "application/xml")
+          {
+              json_obj[each] = $[each];
+          }
+        }
+        return json_obj
+        
+    - from: swagger-document
+      where: >-
+        $.paths
+      transform: >-
+        for (var each in $)
+        {
+        const json_key = Object.keys($[each])[0];
+        const json_get = $[each][json_key];
+        const tags = json_get.tags[0];
+        const id = tags+"_"+each.substring(each.lastIndexOf("/") + 1, each.length)+"_"+json_key;
+        $[each][json_key].operationId = id
+        }
+     
+help-link-prefix: https://documentation.commvault.com
+       

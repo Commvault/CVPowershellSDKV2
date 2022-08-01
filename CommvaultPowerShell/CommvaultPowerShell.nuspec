@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>CommvaultPowerShell</id>
+    <version>0.2.4</version>
+    <authors></authors>
+    <owners></owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/Commvault/CVPowershellSDKV2/CommvaultPowerShell/blob/2022E/license.txt</licenseUrl>
+    <projectUrl></projectUrl>
+    <description></description>
+    <releaseNotes></releaseNotes>
+    <copyright></copyright>
+    <tags></tags>
+  </metadata>
+  <files>
+    <file src="CommvaultPowerShell.format.ps1xml" />
+    <file src="CommvaultPowerShell.psd1" />
+    <file src="CommvaultPowerShell.psm1" />
+    <!-- https://github.com/NuGet/Home/issues/3584 -->
+    <file src="bin/CommvaultPowerShell.private.dll" target="bin" />
+    <file src="bin\CommvaultPowerShell.private.deps.json" target="bin" />
+    <file src="internal\**\*.*" exclude="internal\readme.md" target="internal" />
+    <file src="custom\**\*.*" exclude="custom\readme.md;custom\**\*.cs" target="custom" />
+    <file src="docs\**\*.md" exclude="docs\readme.md" target="docs" />
+    <file src="exports\**\ProxyCmdletDefinitions.ps1" target="exports" />
+    <file src="utils\**\*.*" target="utils" />
+  </files>
+</package>

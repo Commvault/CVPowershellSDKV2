@@ -1,0 +1,5 @@
+C:\cvpowers\CommvaultPowerShell\bin\CommvaultPowerShell.private.dll
+C:\cvpowers\CommvaultPowerShell\bin\CommvaultPowerShell.private.deps.json
+C:\cvpowers\CommvaultPowerShell\bin\CommvaultPowerShell.private.pdb
+C:\cvpowers\CommvaultPowerShell\bin\Microsoft.CSharp.dll
+C:\cvpowers\CommvaultPowerShell\bin\System.Management.Automation.dll
