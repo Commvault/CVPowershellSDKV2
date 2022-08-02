@@ -13,6 +13,9 @@ Installation
 ------------
 - Install-Module -Name CommvaultPowerShell
 
+Please refer to the gallery
+<a>https://www.powershellgallery.com/packages/CommvaultPowerShell</a>
+
 Usage
 -----
 Login to Commcell:
