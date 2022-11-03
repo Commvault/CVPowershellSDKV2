@@ -4,6 +4,8 @@ C:\cvpowers\CommvaultPowerShell\bin\CommvaultPowerShell.private.pdb
 C:\cvpowers\CommvaultPowerShell\bin\Microsoft.CSharp.dll
 C:\cvpowers\CommvaultPowerShell\bin\System.Management.Automation.dll
 C:\cvpowers\CommvaultPowerShell\obj\Release\CommvaultPowerShell.csproj.AssemblyReference.cache
+C:\cvpowers\CommvaultPowerShell\obj\Release\Commvault.Powershell.generated.runtime.Properties.Resources.resources
+C:\cvpowers\CommvaultPowerShell\obj\Release\CommvaultPowerShell.csproj.GenerateResource.cache
 C:\cvpowers\CommvaultPowerShell\obj\Release\CommvaultPowerShell.GeneratedMSBuildEditorConfig.editorconfig
 C:\cvpowers\CommvaultPowerShell\obj\Release\CommvaultPowerShell.AssemblyInfoInputs.cache
 C:\cvpowers\CommvaultPowerShell\obj\Release\CommvaultPowerShell.AssemblyInfo.cs

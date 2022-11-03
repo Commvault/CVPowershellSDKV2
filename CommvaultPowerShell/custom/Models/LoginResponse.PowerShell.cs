@@ -93,18 +93,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).AliasName = (string) content.GetValueForProperty("AliasName",((Commvault.Powershell.Models.ILoginResponseInternal)this).AliasName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).Capability = (float) content.GetValueForProperty("Capability",((Commvault.Powershell.Models.ILoginResponseInternal)this).Capability, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).Ccn = (float) content.GetValueForProperty("Ccn",((Commvault.Powershell.Models.ILoginResponseInternal)this).Ccn, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).ErrList = (string[]) content.GetValueForProperty("ErrList",((Commvault.Powershell.Models.ILoginResponseInternal)this).ErrList, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).ForcePasswordChange = (bool) content.GetValueForProperty("ForcePasswordChange",((Commvault.Powershell.Models.ILoginResponseInternal)this).ForcePasswordChange, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).IsAccountLocked = (bool) content.GetValueForProperty("IsAccountLocked",((Commvault.Powershell.Models.ILoginResponseInternal)this).IsAccountLocked, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).LoginAttempts = (float) content.GetValueForProperty("LoginAttempts",((Commvault.Powershell.Models.ILoginResponseInternal)this).LoginAttempts, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).ProviderType = (float) content.GetValueForProperty("ProviderType",((Commvault.Powershell.Models.ILoginResponseInternal)this).ProviderType, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).RemainingLockTime = (float) content.GetValueForProperty("RemainingLockTime",((Commvault.Powershell.Models.ILoginResponseInternal)this).RemainingLockTime, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
             ((Commvault.Powershell.Models.ILoginResponseInternal)this).SmtpAddress = (string) content.GetValueForProperty("SmtpAddress",((Commvault.Powershell.Models.ILoginResponseInternal)this).SmtpAddress, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILoginResponseInternal)this).Token = (string) content.GetValueForProperty("Token",((Commvault.Powershell.Models.ILoginResponseInternal)this).Token, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).UserGuid = (string) content.GetValueForProperty("UserGuid",((Commvault.Powershell.Models.ILoginResponseInternal)this).UserGuid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILoginResponseInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ILoginResponseInternal)this).UserName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -123,18 +113,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).AliasName = (string) content.GetValueForProperty("AliasName",((Commvault.Powershell.Models.ILoginResponseInternal)this).AliasName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).Capability = (float) content.GetValueForProperty("Capability",((Commvault.Powershell.Models.ILoginResponseInternal)this).Capability, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).Ccn = (float) content.GetValueForProperty("Ccn",((Commvault.Powershell.Models.ILoginResponseInternal)this).Ccn, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).ErrList = (string[]) content.GetValueForProperty("ErrList",((Commvault.Powershell.Models.ILoginResponseInternal)this).ErrList, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).ForcePasswordChange = (bool) content.GetValueForProperty("ForcePasswordChange",((Commvault.Powershell.Models.ILoginResponseInternal)this).ForcePasswordChange, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).IsAccountLocked = (bool) content.GetValueForProperty("IsAccountLocked",((Commvault.Powershell.Models.ILoginResponseInternal)this).IsAccountLocked, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).LoginAttempts = (float) content.GetValueForProperty("LoginAttempts",((Commvault.Powershell.Models.ILoginResponseInternal)this).LoginAttempts, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).ProviderType = (float) content.GetValueForProperty("ProviderType",((Commvault.Powershell.Models.ILoginResponseInternal)this).ProviderType, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).RemainingLockTime = (float) content.GetValueForProperty("RemainingLockTime",((Commvault.Powershell.Models.ILoginResponseInternal)this).RemainingLockTime, (__y)=> (float) global::System.Convert.ChangeType(__y, typeof(float)));
             ((Commvault.Powershell.Models.ILoginResponseInternal)this).SmtpAddress = (string) content.GetValueForProperty("SmtpAddress",((Commvault.Powershell.Models.ILoginResponseInternal)this).SmtpAddress, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILoginResponseInternal)this).Token = (string) content.GetValueForProperty("Token",((Commvault.Powershell.Models.ILoginResponseInternal)this).Token, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ILoginResponseInternal)this).UserGuid = (string) content.GetValueForProperty("UserGuid",((Commvault.Powershell.Models.ILoginResponseInternal)this).UserGuid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILoginResponseInternal)this).UserName = (string) content.GetValueForProperty("UserName",((Commvault.Powershell.Models.ILoginResponseInternal)this).UserName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -1,49 +1,21 @@
-CVPowershellSDKV2
-===============
-CVPowershellSDKV2 is a Windows PowerShell package for Commvault software which offers variety of cmdlets apart from the already existing powershell module.
+<!-- region Generated -->
+# CommvaultPowerShell
+This directory contains the PowerShell module for the CommvaultPowerShell service.
 
-CVPowershellSDKV2 uses the Commvault REST API to perform operations on a CommCell via the WebConsole.
+---
+## Status
+[![CommvaultPowerShell](https://img.shields.io/powershellgallery/v/CommvaultPowerShell.svg?style=flat-square&label=CommvaultPowerShell "CommvaultPowerShell")](https://www.powershellgallery.com/packages/CommvaultPowerShell/)
 
-Requirements
-------------
-- Windows PowerShell version 5.1 or above
-- Commvault Software v11 SP28 or later release with WebServer installed
+## Info
+- Modifiable: yes
+- Generated: all
+- Committed: yes
+- Packaged: yes
 
-Installation
-------------
-- Install-Module -Name CommvaultPowerShell
+---
+## Detail
+This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
-Please refer to the gallery
-<a>https://www.powershellgallery.com/packages/CommvaultPowerShell</a>
-
-Usage
------
-Login to Commcell:
-- PS > Invoke-SetupLogin -Username "#username" -Password "#base64Encodedpassword" -WebServerURL "http://#csName/webconsole/api"
-
-To get all the command:
--PS > Get-Command -Module CommvaultPowershell
-
-- For information on any Commvault PowerShell command, run Get-Help [command] 
-- For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples, Get-Help [command] -Full
-- To use a commandlet which accept data in hastable please create the hashtable with the model prefix
-- For example : New-User requires an input Users which has a model [Commvault.Powershell.ICreateUser] . To create a hashtable for creating a user prefix the model before the curly braces
-```
-  $userdata = [Commvault.Powershell.Models.ICreateUser]@{}
-```
-- Fill the required values in the hashtable created.
-- Another way is to create entire hashtable by prepending the model 
-``` 
-$userdata = [Commvault.Powershell.Models.ICreateUser]@{
- Name = "TempUser"
- email = "Temp@tempdomain.com"
- FullName = "Temp User"
- Password = "XXXX"
- UserGroups = @{
- id = 1
- name = "master"
- }
- useSystemGeneratePassword = $false
- inviteUser = $false
- }
-```
+## Development
+For information on how to develop for `CommvaultPowerShell`, see [how-to.md](how-to.md).
+<!-- endregion -->

@@ -10,61 +10,6 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ILoginResponse,
         Commvault.Powershell.Models.ILoginResponseInternal
     {
-
-        /// <summary>Backing field for <see cref="AliasName" /> property.</summary>
-        private string _aliasName;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string AliasName { get => this._aliasName; set => this._aliasName = value; }
-
-        /// <summary>Backing field for <see cref="Capability" /> property.</summary>
-        private float _capability;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public float Capability { get => this._capability; set => this._capability = value; }
-
-        /// <summary>Backing field for <see cref="Ccn" /> property.</summary>
-        private float _ccn;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public float Ccn { get => this._ccn; set => this._ccn = value; }
-
-        /// <summary>Backing field for <see cref="ErrList" /> property.</summary>
-        private string[] _errList;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string[] ErrList { get => this._errList; set => this._errList = value; }
-
-        /// <summary>Backing field for <see cref="ForcePasswordChange" /> property.</summary>
-        private bool _forcePasswordChange;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool ForcePasswordChange { get => this._forcePasswordChange; set => this._forcePasswordChange = value; }
-
-        /// <summary>Backing field for <see cref="IsAccountLocked" /> property.</summary>
-        private bool _isAccountLocked;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool IsAccountLocked { get => this._isAccountLocked; set => this._isAccountLocked = value; }
-
-        /// <summary>Backing field for <see cref="LoginAttempts" /> property.</summary>
-        private float _loginAttempts;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public float LoginAttempts { get => this._loginAttempts; set => this._loginAttempts = value; }
-
-        /// <summary>Backing field for <see cref="ProviderType" /> property.</summary>
-        private float _providerType;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public float ProviderType { get => this._providerType; set => this._providerType = value; }
-
-        /// <summary>Backing field for <see cref="RemainingLockTime" /> property.</summary>
-        private float _remainingLockTime;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public float RemainingLockTime { get => this._remainingLockTime; set => this._remainingLockTime = value; }
-
         /// <summary>Backing field for <see cref="SmtpAddress" /> property.</summary>
         private string _smtpAddress;
 
@@ -76,12 +21,6 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Token { get => this._token; set => this._token = value; }
-
-        /// <summary>Backing field for <see cref="UserGuid" /> property.</summary>
-        private string _userGuid;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string UserGuid { get => this._userGuid; set => this._userGuid = value; }
 
         /// <summary>Backing field for <see cref="UserName" /> property.</summary>
         private string _userName;
@@ -99,77 +38,6 @@ namespace Commvault.Powershell.Models
     public partial interface ILoginResponse :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"aliasName",
-        PossibleTypes = new [] { typeof(string) })]
-        string AliasName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"capability",
-        PossibleTypes = new [] { typeof(float) })]
-        float Capability { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"ccn",
-        PossibleTypes = new [] { typeof(float) })]
-        float Ccn { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"errList",
-        PossibleTypes = new [] { typeof(string) })]
-        string[] ErrList { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"forcePasswordChange",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool ForcePasswordChange { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"isAccountLocked",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool IsAccountLocked { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"loginAttempts",
-        PossibleTypes = new [] { typeof(float) })]
-        float LoginAttempts { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"providerType",
-        PossibleTypes = new [] { typeof(float) })]
-        float ProviderType { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"remainingLockTime",
-        PossibleTypes = new [] { typeof(float) })]
-        float RemainingLockTime { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -191,14 +59,6 @@ namespace Commvault.Powershell.Models
         Required = true,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"userGUID",
-        PossibleTypes = new [] { typeof(string) })]
-        string UserGuid { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = true,
-        ReadOnly = false,
-        Description = @"",
         SerializedName = @"userName",
         PossibleTypes = new [] { typeof(string) })]
         string UserName { get; set; }
@@ -208,29 +68,11 @@ namespace Commvault.Powershell.Models
     internal partial interface ILoginResponseInternal
 
     {
-        string AliasName { get; set; }
-
-        float Capability { get; set; }
-
-        float Ccn { get; set; }
-
-        string[] ErrList { get; set; }
-
-        bool ForcePasswordChange { get; set; }
-
-        bool IsAccountLocked { get; set; }
-
-        float LoginAttempts { get; set; }
-
-        float ProviderType { get; set; }
-
-        float RemainingLockTime { get; set; }
+        
 
         string SmtpAddress { get; set; }
 
         string Token { get; set; }
-
-        string UserGuid { get; set; }
 
         string UserName { get; set; }
 

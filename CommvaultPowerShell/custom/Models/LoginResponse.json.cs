@@ -71,18 +71,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_aliasName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("aliasName"), out var __jsonAliasName) ? (string)__jsonAliasName : (string)AliasName;}
-            {_capability = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("capability"), out var __jsonCapability) ? (float)__jsonCapability : Capability;}
-            {_ccn = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("ccn"), out var __jsonCcn) ? (float)__jsonCcn : Ccn;}
-            {_errList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("errList"), out var __jsonErrList) ? If( __jsonErrList as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : ErrList;}
-            {_forcePasswordChange = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("forcePasswordChange"), out var __jsonForcePasswordChange) ? (bool)__jsonForcePasswordChange : ForcePasswordChange;}
-            {_isAccountLocked = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isAccountLocked"), out var __jsonIsAccountLocked) ? (bool)__jsonIsAccountLocked : IsAccountLocked;}
-            {_loginAttempts = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("loginAttempts"), out var __jsonLoginAttempts) ? (float)__jsonLoginAttempts : LoginAttempts;}
-            {_providerType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("providerType"), out var __jsonProviderType) ? (float)__jsonProviderType : ProviderType;}
-            {_remainingLockTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("remainingLockTime"), out var __jsonRemainingLockTime) ? (float)__jsonRemainingLockTime : RemainingLockTime;}
             {_smtpAddress = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("smtpAddress"), out var __jsonSmtpAddress) ? (string)__jsonSmtpAddress : (string)SmtpAddress;}
             {_token = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("token"), out var __jsonToken) ? (string)__jsonToken : (string)Token;}
-            {_userGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userGUID"), out var __jsonUserGuid) ? (string)__jsonUserGuid : (string)UserGuid;}
             {_userName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userName"), out var __jsonUserName) ? (string)__jsonUserName : (string)UserName;}
             AfterFromJson(json);
         }
@@ -106,26 +96,8 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != (((object)this._aliasName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._aliasName.ToString()) : null, "aliasName" ,container.Add );
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber(this._capability), "capability" ,container.Add );
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber(this._ccn), "ccn" ,container.Add );
-            if (null != this._errList)
-            {
-                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._errList )
-                {
-                    AddIf(null != (((object)__x)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__x.ToString()) : null ,__w.Add);
-                }
-                container.Add("errList",__w);
-            }
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean(this._forcePasswordChange), "forcePasswordChange" ,container.Add );
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean(this._isAccountLocked), "isAccountLocked" ,container.Add );
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber(this._loginAttempts), "loginAttempts" ,container.Add );
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber(this._providerType), "providerType" ,container.Add );
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber(this._remainingLockTime), "remainingLockTime" ,container.Add );
             AddIf( null != (((object)this._smtpAddress)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._smtpAddress.ToString()) : null, "smtpAddress" ,container.Add );
             AddIf( null != (((object)this._token)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._token.ToString()) : null, "token" ,container.Add );
-            AddIf( null != (((object)this._userGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userGuid.ToString()) : null, "userGUID" ,container.Add );
             AddIf( null != (((object)this._userName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userName.ToString()) : null, "userName" ,container.Add );
             AfterToJson(ref container);
             return container;

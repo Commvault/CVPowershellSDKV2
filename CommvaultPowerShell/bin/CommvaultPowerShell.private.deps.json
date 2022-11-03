@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "CommvaultPowerShell.private/0.2.4": {
+      "CommvaultPowerShell.private/0.2.11": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.1",
           "NETStandard.Library": "2.0.3",
@@ -42,7 +42,7 @@
     }
   },
   "libraries": {
-    "CommvaultPowerShell.private/0.2.4": {
+    "CommvaultPowerShell.private/0.2.11": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

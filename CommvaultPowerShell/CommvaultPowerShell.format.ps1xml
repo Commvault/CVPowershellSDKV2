@@ -43,40 +43,10 @@
       <TableControl>
         <TableHeaders>
           <TableColumnHeader>
-            <Label>AliasName</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Capability</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Ccn</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>ErrList</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>ForcePasswordChange</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>IsAccountLocked</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>LoginAttempts</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>ProviderType</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>RemainingLockTime</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
             <Label>SmtpAddress</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>Token</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>UserGuid</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>UserName</Label>
@@ -86,89 +56,13 @@
           <TableRowEntry>
             <TableColumnItems>
               <TableColumnItem>
-                <PropertyName>AliasName</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Capability</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Ccn</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>ErrList</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>ForcePasswordChange</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>IsAccountLocked</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>LoginAttempts</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>ProviderType</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>RemainingLockTime</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
                 <PropertyName>SmtpAddress</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Token</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>UserGuid</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
                 <PropertyName>UserName</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
-      <Name>Commvault.Powershell.Models.AccessNodeInfo</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.AccessNodeInfo</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>DisplayName</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Guid</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>HostName</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Id</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Name</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>DisplayName</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Guid</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>HostName</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Id</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Name</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
@@ -237,6 +131,46 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Type</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.AccessNodesAutoGenerated</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.AccessNodesAutoGenerated</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>DisplayName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>HostName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Name</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>DisplayName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>HostName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Name</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
@@ -2054,28 +1988,6 @@
       </TableControl>
     </View>
     <View>
-      <Name>Commvault.Powershell.Models.ApplicationGroupListResp</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.ApplicationGroupListResp</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>ApplicationGroupCount</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>ApplicationGroupCount</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
       <Name>Commvault.Powershell.Models.ApplicationGroupResp</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.ApplicationGroupResp</TypeName>
@@ -2567,28 +2479,6 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Type</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
-      <Name>Commvault.Powershell.Models.AssociatedRegionBasedPlans</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.AssociatedRegionBasedPlans</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>PlansCount</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>PlansCount</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
@@ -4633,7 +4523,43 @@
       <TableControl>
         <TableHeaders>
           <TableColumnHeader>
+            <Label>CacheConfigurationEnable</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>EncryptionCipher</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>EncryptionEncrypt</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>EncryptionKeyLength</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralDeduplicationSavings</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralFreeSpace</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralSizeOndisk</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralTotalCapacity</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>GeneralVendorType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
             <Label>Id</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>KeyManagementServerId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>KeyManagementServerName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>Name</Label>
@@ -4643,7 +4569,43 @@
           <TableRowEntry>
             <TableColumnItems>
               <TableColumnItem>
+                <PropertyName>CacheConfigurationEnable</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EncryptionCipher</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EncryptionEncrypt</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>EncryptionKeyLength</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralDeduplicationSavings</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralFreeSpace</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralSizeOndisk</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralTotalCapacity</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>GeneralVendorType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
                 <PropertyName>Id</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>KeyManagementServerId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>KeyManagementServerName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Name</PropertyName>
@@ -4667,7 +4629,7 @@
             <Label>FreeSpace</Label>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>SizeOnDisk</Label>
+            <Label>SizeOndisk</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>TotalCapacity</Label>
@@ -4689,7 +4651,7 @@
                 <PropertyName>FreeSpace</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>SizeOnDisk</PropertyName>
+                <PropertyName>SizeOndisk</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>TotalCapacity</PropertyName>
@@ -5285,6 +5247,228 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Name</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.Components1FxfpbtSchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesStoragepolicy</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.Components1FxfpbtSchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesStoragepolicy</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>StoragePolicyId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>StoragePolicyName</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>StoragePolicyId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>StoragePolicyName</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.Components1Prb9OySchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesUsername</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.Components1Prb9OySchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesUsername</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>UserId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>UserName</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>UserId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>UserName</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.Components1S10F9TSchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesDestinationclient</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.Components1S10F9TSchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesDestinationclient</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ClientId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ClientName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>DisplayName</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>ClientId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ClientName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DisplayName</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.ComponentsFmi374SchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesDatasource</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.ComponentsFmi374SchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesDatasource</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>DataSourceId</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>DataSourceId</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.ComponentsUyvunhSchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesDestinationdisplayclient</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.ComponentsUyvunhSchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesDestinationdisplayclient</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ClientId</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>ClientId</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.ComponentsVmztmySchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesSubclient</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.ComponentsVmztmySchemasGetjobsPropertiesJobsItemsPropertiesJobsummaryPropertiesSubclient</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>AppName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ApplicationId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupsetId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupsetName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ClientId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ClientName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>CommCellName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>InstanceId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>InstanceName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SubclientId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SubclientName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>WorkloadId</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>AppName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ApplicationId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupsetId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupsetName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ClientId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ClientName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CommCellName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InstanceId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>InstanceName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SubclientId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SubclientName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>WorkloadId</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
@@ -9346,28 +9530,6 @@
       </TableControl>
     </View>
     <View>
-      <Name>Commvault.Powershell.Models.FileServerListResp</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.FileServerListResp</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>FileServerCount</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>FileServerCount</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
       <Name>Commvault.Powershell.Models.FileServerSummary</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.FileServerSummary</TypeName>
@@ -10114,6 +10276,336 @@
       </TableControl>
     </View>
     <View>
+      <Name>Commvault.Powershell.Models.Getjobs</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.Getjobs</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>TotalRecordsWithoutPaging</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>TotalRecordsWithoutPaging</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.GetjobsJobsItemJobSummary</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.GetjobsJobsItemJobSummary</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>AlertColorLevel</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>AppTypeName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>AttemptStartTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>AverageThroughput</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupLevel</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupLevelName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>BackupSetName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>CommcellId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>CurrentPhase</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>CurrentPhaseName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>CurrentPhaseType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>CurrentThroughput</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>DestClientName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>DistributedAppsClusterType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ErrorType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>IsAged</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>IsPreemptable</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>IsVisible</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>JobAttributes</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>JobAttributesEx</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>JobElapsedTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>JobEndTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>JobId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>JobStartTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>JobType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>LastUpdateTime</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>LocalizedBackupLevelName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>LocalizedOperationName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>LocalizedStatus</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>OpType</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PendingReason</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PendingReasonErrorCode</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PercentComplete</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>PercentSavings</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SizeOfApplication</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SizeOfMediaOnDisk</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Status</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>StatusColor</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>SubclientName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>TotalFailedFiles</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>TotalFailedFolders</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>TotalNumOfFiles</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>VsaParentJobId</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>AlertColorLevel</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AppTypeName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AttemptStartTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>AverageThroughput</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupLevel</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupLevelName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>BackupSetName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CommcellId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CurrentPhase</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CurrentPhaseName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CurrentPhaseType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>CurrentThroughput</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DestClientName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DistributedAppsClusterType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ErrorType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IsAged</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IsPreemptable</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>IsVisible</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>JobAttributes</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>JobAttributesEx</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>JobElapsedTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>JobEndTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>JobId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>JobStartTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>JobType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LastUpdateTime</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LocalizedBackupLevelName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LocalizedOperationName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>LocalizedStatus</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>OpType</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>PendingReason</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>PendingReasonErrorCode</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>PercentComplete</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>PercentSavings</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SizeOfApplication</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SizeOfMediaOnDisk</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Status</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>StatusColor</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SubclientName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>TotalFailedFiles</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>TotalFailedFolders</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>TotalNumOfFiles</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>VsaParentJobId</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
+      <Name>Commvault.Powershell.Models.GetjobsJobsPropertiesItemsItem</Name>
+      <ViewSelectedBy>
+        <TypeName>Commvault.Powershell.Models.GetjobsJobsPropertiesItemsItem</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>ClientGroupId</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>ClientGroupName</Label>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Type</Label>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <PropertyName>ClientGroupId</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>ClientGroupName</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Type</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+    <View>
       <Name>Commvault.Powershell.Models.GetRecoveryTargetListSummary</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.GetRecoveryTargetListSummary</TypeName>
@@ -10147,28 +10639,6 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Vendor</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
-      <Name>Commvault.Powershell.Models.GetServerGroupsResp</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.GetServerGroupsResp</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>ServerGroupCount</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>ServerGroupCount</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
@@ -13884,28 +14354,6 @@
       </TableControl>
     </View>
     <View>
-      <Name>Commvault.Powershell.Models.ListHypervisors</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.ListHypervisors</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>HypervisorCount</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>HypervisorCount</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
       <Name>Commvault.Powershell.Models.LocationDetails</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.LocationDetails</TypeName>
@@ -16895,7 +17343,7 @@
             <Label>GeneralFreeSpace</Label>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>GeneralSizeOnDisk</Label>
+            <Label>GeneralSizeOndisk</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>GeneralTotalCapacity</Label>
@@ -16910,10 +17358,10 @@
             <Label>Id</Label>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>KeyProviderId</Label>
+            <Label>KeyManagementServerId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>KeyProviderName</Label>
+            <Label>KeyManagementServerName</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>Name</Label>
@@ -16941,7 +17389,7 @@
                 <PropertyName>GeneralFreeSpace</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>GeneralSizeOnDisk</PropertyName>
+                <PropertyName>GeneralSizeOndisk</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>GeneralTotalCapacity</PropertyName>
@@ -16956,10 +17404,10 @@
                 <PropertyName>Id</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>KeyProviderId</PropertyName>
+                <PropertyName>KeyManagementServerId</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>KeyProviderName</PropertyName>
+                <PropertyName>KeyManagementServerName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Name</PropertyName>
@@ -17827,28 +18275,6 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Status</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
-      <Name>Commvault.Powershell.Models.PlanSummaryListResp</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.PlanSummaryListResp</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>PlansCount</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>PlansCount</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
@@ -21208,28 +21634,6 @@
       </TableControl>
     </View>
     <View>
-      <Name>Commvault.Powershell.Models.ServersListResp</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.ServersListResp</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>TotalServers</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>TotalServers</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
       <Name>Commvault.Powershell.Models.ServerSummary</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.ServerSummary</TypeName>
@@ -21261,7 +21665,7 @@
             <Label>OS</Label>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>UpdateState</Label>
+            <Label>UpdateStatus</Label>
           </TableColumnHeader>
           <TableColumnHeader>
             <Label>Version</Label>
@@ -21295,7 +21699,7 @@
                 <PropertyName>OS</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
-                <PropertyName>UpdateState</PropertyName>
+                <PropertyName>UpdateStatus</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>Version</PropertyName>
@@ -25274,28 +25678,6 @@
       </TableControl>
     </View>
     <View>
-      <Name>Commvault.Powershell.Models.UserListResp</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.UserListResp</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>NumberOfUsers</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>NumberOfUsers</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
       <Name>Commvault.Powershell.Models.UserNamePassword</Name>
       <ViewSelectedBy>
         <TypeName>Commvault.Powershell.Models.UserNamePassword</TypeName>
@@ -25517,28 +25899,6 @@
             <TableColumnItems>
               <TableColumnItem>
                 <PropertyName>DisplayName</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
-      <Name>Commvault.Powershell.Models.VirtualMachineListResp</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.VirtualMachineListResp</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>VirtualMachinesCount</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>VirtualMachinesCount</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>
