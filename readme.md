@@ -1,19 +1,31 @@
 CVPowershellSDKV2
 ===============
-CVPowershellSDKV2 is a Windows PowerShell package for Commvault software which offers variety of cmdlets apart from the already existing powershell module.
 
-CVPowershellSDKV2 uses the Commvault REST API to perform operations on a CommCell via the WebConsole.
+<ul>
+<li>
+CVPowershellSDKV2 is a Windows PowerShell package for Commvault software which offers variety of cmdlets including the commandlets already existing powershell module.
+</li>
+<li>
+CVPowershellSDKV2 uses the Commvault REST API to perform operations on a CommCell via the WebConsole.</li>
+</ul>
+
+<h2>
+The latest version of the SDK combines both the CVPowershellSDK and CVPowershellSDKV2 . Using the same session a user can execute the commandlets of both the SDKs
+</h2>
 
 Requirements
 ------------
 - Windows PowerShell version 5.1 or above
-- Commvault Software v11 SP26 or later release with WebServer installed
+- Commvault Software v11 SP28 or later release with WebServer installed
 
 Installation
 ------------
-Download the Install Folder and Run InstallCVModule-Auto
-- PS C:\Users\UserName\Downloads\PSSDK\Install> .\InstallCVModule-Auto.ps1
+- Install-Module -Name CommvaultPowerShell
 
+Link to the PowershellGallery
+-------------------
+- <a href="https://www.powershellgallery.com/packages/CommvaultPowerShell/">Latest version</a>
+- Install/Update the module to the latest version from the gallery
 
 Usage
 -----
@@ -24,5 +36,44 @@ To get all the command:
 -PS > Get-Command -Module CommvaultPowershell
 
 - For information on any Commvault PowerShell command, run Get-Help [command] 
-- For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples
+- For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples, Get-Help [command] -Full
+- To use a commandlet which accept data in hastable please create the hashtable with the model prefix. You can find the model prefix for a particular command using Get-help [command] -Full. Hashtable inputs are case sensitive. 
+- For example : New-User requires an input Users which has a model [Commvault.Powershell.ICreateUser] . To create a hashtable for creating a user prefix the model before the curly braces which will populate the keys for which the values has to be updated. 
+```
+PS > $data = [Commvault.Powershell.Models.ICreateUser]@{}
+PS > $data.Email
+PS > $data.Email = "test@domain.com"
+PS > $data.FullName = "Testuser "
+PS > $data.Name = "Test"
+PS > $data.Password = "QwVXRJZ4Fh1NhkA"
+PS > $data.UserGroups = @{
+>> id = 1
+>> name = "master"
+>> }
+PS > $data.InviteUser = $false
+PS > New-CVUser -Users $data
 
+Output:
+
+Guid                                 Id     Name
+----                                 --     ----
+F37D1722-BE70-430D-95BD-38775574D7A7 373668 Test
+
+```
+- Fill the required values in the hashtable created.
+- Another way is to create entire hashtable  
+``` 
+$userdata = @{
+ Name = "TempUser"
+ email = "Temp@tempdomain.com"
+ FullName = "Temp User"
+ Password = "XXXX"
+ UserGroups = @{
+ id = 1
+ name = "master"
+ }
+ useSystemGeneratePassword = $false
+ inviteUser = $false
+ }
+ PS> New-CVUser -Users $userdata
+```
