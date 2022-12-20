@@ -37,6 +37,7 @@ To get all the command:
 
 - For information on any Commvault PowerShell command, run Get-Help [command] 
 - For detailed examples on any Commvault PowerShell command, run Get-Help [command] -Examples, Get-Help [command] -Full
+- Switch Parameter of any cmdlet if provided will pass true in the payload . If false has to be provided please use the syntax like -<Switch_Name>:$false
 - To use a commandlet which accept data in hastable please create the hashtable with the model prefix. You can find the model prefix for a particular command using Get-help [command] -Full. Hashtable inputs are case sensitive. 
 - For example : New-User requires an input Users which has a model [Commvault.Powershell.ICreateUser] . To create a hashtable for creating a user prefix the model before the curly braces which will populate the keys for which the values has to be updated. 
 ```
