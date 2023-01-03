@@ -78,3 +78,5 @@ $userdata = @{
  }
  PS> New-CVUser -Users $userdata
 ```
+<h3>Please visit swagger Api Explorer in commserver for more information on the payload structure for the cmdlets using POST , PUT APIs</h3>
+<h3>Documentation about swagger : <a href="https://documentation.commvault.com/11.24/essential/107350_apiexplorer.html">link</a></h3>
