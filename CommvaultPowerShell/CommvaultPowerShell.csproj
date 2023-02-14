@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.2.11</Version>
+    <Version>0.2.13</Version>
     <LangVersion>7.1</LangVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
@@ -14,8 +14,7 @@
     <NuspecFile>CommvaultPowerShell.nuspec</NuspecFile>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <!-- Some methods are marked async and don't have an await in them -->
-    <!-- warning CS1591: Missing XML comment for publicly visible type or member -->
-    <NoWarn>1998, 1591</NoWarn>
+    <NoWarn>1998</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>

@@ -4899,9 +4899,6 @@
             <Label>InstanceId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
-            <Label>InventoryEntityName</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
             <Label>KmsId</Label>
           </TableColumnHeader>
           <TableColumnHeader>
@@ -5036,9 +5033,6 @@
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>InstanceId</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>InventoryEntityName</PropertyName>
               </TableColumnItem>
               <TableColumnItem>
                 <PropertyName>KmsId</PropertyName>
@@ -17271,46 +17265,6 @@
             <TableColumnItems>
               <TableColumnItem>
                 <PropertyName>BackupLocation</PropertyName>
-              </TableColumnItem>
-            </TableColumnItems>
-          </TableRowEntry>
-        </TableRowEntries>
-      </TableControl>
-    </View>
-    <View>
-      <Name>Commvault.Powershell.Models.PathsSz5LoqV4StorageCloudCloudstorageidBucketPostResponses200ContentApplicationJsonSchema</Name>
-      <ViewSelectedBy>
-        <TypeName>Commvault.Powershell.Models.PathsSz5LoqV4StorageCloudCloudstorageidBucketPostResponses200ContentApplicationJsonSchema</TypeName>
-      </ViewSelectedBy>
-      <TableControl>
-        <TableHeaders>
-          <TableColumnHeader>
-            <Label>ErrorCode</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>ErrorMessage</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Id</Label>
-          </TableColumnHeader>
-          <TableColumnHeader>
-            <Label>Name</Label>
-          </TableColumnHeader>
-        </TableHeaders>
-        <TableRowEntries>
-          <TableRowEntry>
-            <TableColumnItems>
-              <TableColumnItem>
-                <PropertyName>ErrorCode</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>ErrorMessage</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Id</PropertyName>
-              </TableColumnItem>
-              <TableColumnItem>
-                <PropertyName>Name</PropertyName>
               </TableColumnItem>
             </TableColumnItems>
           </TableRowEntry>

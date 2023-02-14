@@ -17,7 +17,7 @@ namespace Commvault.Powershell
         }
     }
 
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
+    [AttributeUsage(AttributeTargets.Class)]
     public class DoNotExportAttribute : Attribute
     {
     }

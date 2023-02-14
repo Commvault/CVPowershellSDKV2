@@ -1,0 +1,73 @@
+Add-AEnums
+function Get-CVReplicationGroupDetail{
+<#
+    .Synopsis
+        Get details of a replication group based on replicationGroupId
+    .Description
+        Get details of a replication group based on replicationGroupId
+    .Example
+        {{ Add code here }}
+    .Example
+        {{ Add code here }}
+    .PARAMETER OverrideReplicationOptions
+        Set to true if you want to see override replication options for a periodic replication group
+    .PARAMETER viewReplicationOptions
+        Set to true if want to show replication options for a continuous replication group 
+    .PARAMETER ReplicationGroupId
+        ID of the replicationGroup
+    .OUTPUTS
+        Outputs [PSCustomObject] containing ReplicationGroup details.
+    .NOTES
+        Author: Jnanesh D
+        Company: Commvault
+    #>
+    [OutputType([PSCustomObject])]
+    param(
+        [Parameter(Mandatory=$false)]
+        [bool] $OverrideReplicationOptions = $false,
+
+        [Parameter(Mandatory=$false)]
+        [bool] $viewReplicationOptions = $false,
+
+        [Parameter(Mandatory = $True)]
+        [ValidateNotNullorEmpty()]
+        [Int64] $ReplicationGroupId
+    )
+
+    begin { Write-Debug -Message "$($MyInvocation.MyCommand): begin"
+
+        try {
+            $sessionObj = Get-CVSessionDetail $MyInvocation.MyCommand.Name
+            $endpointSave = $sessionObj.requestProps.endpoint
+        }
+        catch {
+            throw $_
+        }
+    }
+    
+    process { Write-Debug -Message "$($MyInvocation.MyCommand): process"
+
+        try {
+
+            $sessionObj.requestProps.endpoint = $endpointSave
+            $sessionObj.requestProps.endpoint = $sessionObj.requestProps.endpoint -creplace ('{ReplicationGroupId}', $ReplicationGroupId)
+            $headerObj = Get-CVRESTHeader $sessionObj
+            $body = ''
+            $payload = @{ }
+            $payload.Add('headerObject', $headerObj)
+            $payload.Add('body', $body)
+
+            $response = Submit-CVRESTRequest $payload 
+
+            Write-Output $response.Content
+
+
+        }
+        catch {
+            throw $_
+        }
+    }
+
+    end { Write-Debug -Message "$($MyInvocation.MyCommand): end"
+    }
+}

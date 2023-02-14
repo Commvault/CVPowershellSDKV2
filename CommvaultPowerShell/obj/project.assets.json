@@ -281,7 +281,7 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "0.2.11",
+    "version": "0.2.13",
     "restore": {
       "projectUniqueName": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowerShell.csproj",
       "projectName": "CommvaultPowerShell.private",

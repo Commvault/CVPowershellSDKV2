@@ -21,8 +21,6 @@ namespace Commvault.Powershell.Runtime.PowerShell
 
     private const string ModelNamespace = @"Commvault.Powershell.Models";
     private const string SupportNamespace = @"Commvault.Powershell.Support";
-    private const string PropertiesExcludedForTableview = @"";
-
     private static readonly bool IsAzure = Convert.ToBoolean(@"false");
 
     protected override void ProcessRecord()
@@ -57,7 +55,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
       return types.Select(t => new ViewParameters(t, t.GetProperties()
           .Select(p => new PropertyFormat(p))
           .Where(pf => !pf.Property.GetCustomAttributes<DoNotFormatAttribute>().Any()
-                       && (!PropertiesExcludedForTableview.Split(',').Contains(pf.Property.Name))
+                       && (!IsAzure || pf.Property.Name != "Id")
                        && (pf.FormatTable != null || (pf.Origin != PropertyOrigin.Inlined && pf.Property.PropertyType.IsPsSimple())))
           .OrderByDescending(pf => pf.Index.HasValue)
           .ThenBy(pf => pf.Index)

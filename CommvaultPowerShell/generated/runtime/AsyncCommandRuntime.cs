@@ -38,10 +38,6 @@ namespace Commvault.Powershell.Runtime.PowerShell
             this.originalThread = System.Threading.Thread.CurrentThread;
             this.cancellationToken = cancellationToken;
             this.cmdlet = cmdlet;
-            if (cmdlet.PagingParameters != null)
-            {
-                WriteDebug("Client side pagination is enabled for this cmdlet");
-            }
             cmdlet.CommandRuntime = this;
         }
 

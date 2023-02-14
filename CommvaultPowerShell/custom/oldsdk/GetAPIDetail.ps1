@@ -766,6 +766,91 @@ function GetAPIDetail ([String] $Request) {
                 Method      = 'Delete'
                 Body        = ''
             }
+
+            'Get-CVCredentialDetail' = @{
+
+                Description = "This operation gets the details of a credential"
+                Endpoint    = "V4/Credential/{name}"
+                Method      = "Get"
+                Body        = ''
+            }
+
+            'Set-CVCredential' = @{
+
+                Description = "This operation gets the details of a credential"
+                Endpoint    = "V4/Credential/{name}"
+                Method      = "Put"
+                Body        = ''
+            }
+
+            'New-CVLdap' = @{
+                Description = "This operation create a new ldap entity in the commcell"
+                Endpoint    = "V4/Ldap"
+                Method      = "Post"
+                Body        = ''
+            }
+
+            'New-CVCloudStorage' = @{
+                Description = "This operation creates a new credential"
+                EndPoint    = "V4/Credential"
+                Method      = "Post"
+                Body        = ''
+            }
+
+            'New-CVReplicationGroup' = @{
+                Description = "This operation creates a new replication group"
+                EndPoint    = "V4/ReplicationGroup"
+                Method      = "Post"
+                Body        = ''
+            }
+
+            'Get-CVReplicationGroupDetail' = @{
+                Description = "This operation gets the details of a replication group"
+                EndPoint    = "V4/ReplicationGroup/{ReplicationGroupId}"
+                Method      = "Get"
+                Body        = ''
+            }
+
+            'Set-CVHypervisor' =@{
+                Description = "This operation updates the properties of the hypervisor"
+                Endpoint    = "V4/Hypervisor/{hypervisorId}"
+                Method      = "Put"
+                Body        = ''
+            }
+
+            'New-CVHypervisor' =@{
+                Description = "This operation creates a new hypervisor"
+                Endpoint    = "V4/Hypervisor"
+                Method      = "Post"
+                Body        = ''
+            }
+            'Update-CVHyperVisorCredentials' = @{
+                Description = "This operation updates the credential for the hypervisor"
+                Endpoint    = "V4/Hypervisor/{HypervisorId}/Credentials/"
+                Method      = "Post"
+                Body        = ""
+            }
+
+            'New-CVBucketforCloudStorage' = @{
+                Description = "This operation creates a new bucket for the cloud storage"
+                Endpoint    = "V4/Storage/Cloud/{cloudStorageId}/Bucket"
+                Method      = "Post"
+                Body        = ""
+            }
+
+            'Invoke-CVBrowseHypervisorInventory' = @{
+                Description = "This operation creates a new bucket for the cloud storage"
+                Endpoint    = "V4/Hypervisor/{hypervisorId}/{InventoryEntityName}/Browse"
+                Method      = "Get"
+                Body        = ""
+            }
+
+            'New-CVCredentials' = @{
+                Description = "This operation creates a credential"
+                Endpoint    = "V4/credential"
+                Method      = "Post"
+                Body        = ""
+            }
         }
     }
     catch {
