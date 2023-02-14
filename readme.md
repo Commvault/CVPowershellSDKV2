@@ -22,10 +22,18 @@ Installation
 ------------
 - Install-Module -Name CommvaultPowerShell
 
+Status
+------------
+[![CommvaultPowerShell](https://img.shields.io/powershellgallery/v/CommvaultPowerShell.svg?style=flat-square&label=CommvaultPowerShell "CommvaultPowerShell")](https://www.powershellgallery.com/packages/CommvaultPowerShell/)
+
 Link to the PowershellGallery
--------------------
+-------------
 - <a href="https://www.powershellgallery.com/packages/CommvaultPowerShell/">Latest version</a>
 - Install/Update the module to the latest version from the gallery
+
+Versions
+-------------
+Version <a href="https://www.powershellgallery.com/packages/CommvaultPowerShell/0.2.10">0.2.10</a> - SDK is supported on Commvault Version 2022E
 
 Usage
 -----
