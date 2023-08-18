@@ -11,6 +11,16 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal
     {
 
+        /// <summary>Backing field for <see cref="EnableAlertNotification" /> property.</summary>
+        private bool? _enableAlertNotification;
+
+        /// <summary>
+        /// Set this to enable/disable notification over email for subclients pending plan associationover 24 hours. By default, notification
+        /// will be enabled.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnableAlertNotification { get => this._enableAlertNotification; set => this._enableAlertNotification = value; }
+
         /// <summary>Backing field for <see cref="ExecutionInterval" /> property.</summary>
         private long? _executionInterval;
 
@@ -38,6 +48,17 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Runtime.IJsonSerializable
     {
         /// <summary>
+        /// Set this to enable/disable notification over email for subclients pending plan associationover 24 hours. By default, notification
+        /// will be enabled.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set this to enable/disable notification over email for subclients pending plan associationover 24 hours. By default, notification will be enabled.",
+        SerializedName = @"enableAlertNotification",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnableAlertNotification { get; set; }
+        /// <summary>
         /// Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
@@ -61,6 +82,11 @@ namespace Commvault.Powershell.Models
     internal partial interface IPlanRuleExecutionSettingsInternal
 
     {
+        /// <summary>
+        /// Set this to enable/disable notification over email for subclients pending plan associationover 24 hours. By default, notification
+        /// will be enabled.
+        /// </summary>
+        bool? EnableAlertNotification { get; set; }
         /// <summary>
         /// Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
         /// </summary>

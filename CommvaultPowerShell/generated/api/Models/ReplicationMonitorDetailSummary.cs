@@ -29,6 +29,20 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationName { get => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Destination).Name = value ?? null; }
 
+        /// <summary>Backing field for <see cref="EventMessage" /> property.</summary>
+        private string _eventMessage;
+
+        /// <summary>additional description of current pair status</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string EventMessage { get => this._eventMessage; set => this._eventMessage = value; }
+
+        /// <summary>Backing field for <see cref="Id" /> property.</summary>
+        private long? _id;
+
+        /// <summary>Id of replication pair</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? Id { get => this._id; set => this._id = value; }
+
         /// <summary>Backing field for <see cref="RecoveryType" /> property.</summary>
         private string _recoveryType;
 
@@ -87,6 +101,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string DestinationName { get; set; }
+        /// <summary>additional description of current pair status</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"additional description of current pair status",
+        SerializedName = @"eventMessage",
+        PossibleTypes = new [] { typeof(string) })]
+        string EventMessage { get; set; }
+        /// <summary>Id of replication pair</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of replication pair",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
         /// <summary>Gives information about the recovery type of replication group</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -138,6 +168,10 @@ namespace Commvault.Powershell.Models
         long? DestinationId { get; set; }
 
         string DestinationName { get; set; }
+        /// <summary>additional description of current pair status</summary>
+        string EventMessage { get; set; }
+        /// <summary>Id of replication pair</summary>
+        long? Id { get; set; }
         /// <summary>Gives information about the recovery type of replication group</summary>
         string RecoveryType { get; set; }
         /// <summary>Lag time in seconds</summary>

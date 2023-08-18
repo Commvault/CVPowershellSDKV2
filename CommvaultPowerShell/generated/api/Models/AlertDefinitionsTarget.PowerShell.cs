@@ -5,7 +5,9 @@ namespace Commvault.Powershell.Models
 {
     using Commvault.Powershell.Runtime.PowerShell;
 
-    /// <summary>AlertDefinitionsTarget</summary>
+    /// <summary>
+    /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
+    /// </summary>
     [System.ComponentModel.TypeConverter(typeof(AlertDefinitionsTargetTypeConverter))]
     public partial class AlertDefinitionsTarget
     {
@@ -66,6 +68,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).Recipients = (Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients) content.GetValueForProperty("Recipients",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).Recipients, Commvault.Powershell.Models.AlertDefinitionsTargetRecipientsTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).SendAlertTo = (string[]) content.GetValueForProperty("SendAlertTo",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).SendAlertTo, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
+            ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientsOperationType = (string) content.GetValueForProperty("RecipientsOperationType",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientsOperationType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientTo = (Commvault.Powershell.Models.IAlertTargetIdNameType1[]) content.GetValueForProperty("RecipientTo",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientTo, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTargetIdNameType1>(__y, Commvault.Powershell.Models.AlertTargetIdNameType1TypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientCc = (Commvault.Powershell.Models.IAlertTargetIdNameType1[]) content.GetValueForProperty("RecipientCc",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientCc, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTargetIdNameType1>(__y, Commvault.Powershell.Models.AlertTargetIdNameType1TypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientBcc = (Commvault.Powershell.Models.IAlertTargetIdNameType1[]) content.GetValueForProperty("RecipientBcc",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientBcc, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTargetIdNameType1>(__y, Commvault.Powershell.Models.AlertTargetIdNameType1TypeConverter.ConvertFrom));
@@ -89,6 +92,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).Recipients = (Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients) content.GetValueForProperty("Recipients",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).Recipients, Commvault.Powershell.Models.AlertDefinitionsTargetRecipientsTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).SendAlertTo = (string[]) content.GetValueForProperty("SendAlertTo",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).SendAlertTo, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
+            ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientsOperationType = (string) content.GetValueForProperty("RecipientsOperationType",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientsOperationType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientTo = (Commvault.Powershell.Models.IAlertTargetIdNameType1[]) content.GetValueForProperty("RecipientTo",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientTo, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTargetIdNameType1>(__y, Commvault.Powershell.Models.AlertTargetIdNameType1TypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientCc = (Commvault.Powershell.Models.IAlertTargetIdNameType1[]) content.GetValueForProperty("RecipientCc",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientCc, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTargetIdNameType1>(__y, Commvault.Powershell.Models.AlertTargetIdNameType1TypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientBcc = (Commvault.Powershell.Models.IAlertTargetIdNameType1[]) content.GetValueForProperty("RecipientBcc",((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)this).RecipientBcc, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertTargetIdNameType1>(__y, Commvault.Powershell.Models.AlertTargetIdNameType1TypeConverter.ConvertFrom));
@@ -134,7 +138,7 @@ namespace Commvault.Powershell.Models
         /// <returns>a <see cref="System.String" /> containing this model serialized to JSON text.</returns>
         public string ToJsonString() => ToJson(null, Commvault.Powershell.Runtime.SerializationMode.IncludeAll)?.ToString();
     }
-    /// AlertDefinitionsTarget
+    /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
     [System.ComponentModel.TypeConverter(typeof(AlertDefinitionsTargetTypeConverter))]
     public partial interface IAlertDefinitionsTarget
 

@@ -33,9 +33,11 @@ Link to the PowershellGallery
 
 Versions
 -------------
-Version 0.2.11 >= - SDK is supported on Commvault Version 2023E<br/>
+Version 0.2.14 - SDK is supported on Commvault Version 2023E or 11.32<br />
+Version 0.2.11 to 0.2.13 - SDK is supported on Commvault Version 2023 or 11.30<br/>
 Version <a href="https://www.powershellgallery.com/packages/CommvaultPowerShell/0.2.10">0.2.10</a> - SDK is supported on Commvault Version 2022E
 
+[More info](https://documentation.commvault.com/v11/essential/2619_platform_release_schedule_and_lifecycles.html)
 Usage
 -----
 Login to Commcell:

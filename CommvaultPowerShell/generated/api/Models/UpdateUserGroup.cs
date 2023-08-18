@@ -32,20 +32,36 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IIdName[] AssociatedLocalGroups { get => this._associatedLocalGroups; set => this._associatedLocalGroups = value; }
 
+        /// <summary>Backing field for <see cref="AzureGuid" /> property.</summary>
+        private string _azureGuid;
+
+        /// <summary>
+        /// Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AzureGuid { get => this._azureGuid; set => this._azureGuid = value; }
+
         /// <summary>Internal Acessors for LaptopPlan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateUserGroupInternal.LaptopPlan { get => (this._laptopPlan = this._laptopPlan ?? new Commvault.Powershell.Models.IdName()); set { {_laptopPlan = value;} } }
 
-        /// <summary>Backing field for <see cref="ConsoleType" /> property.</summary>
-        private string[] _consoleType;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string[] ConsoleType { get => this._consoleType; set => this._consoleType = value; }
+        /// <summary>Internal Acessors for RestrictConsoleTypes</summary>
+        Commvault.Powershell.Models.IRestrictConsoleTypes Commvault.Powershell.Models.IUpdateUserGroupInternal.RestrictConsoleTypes { get => (this._restrictConsoleTypes = this._restrictConsoleTypes ?? new Commvault.Powershell.Models.RestrictConsoleTypes()); set { {_restrictConsoleTypes = value;} } }
 
         /// <summary>Backing field for <see cref="ConsoleTypeOperationType" /> property.</summary>
         private string _consoleTypeOperationType;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ConsoleTypeOperationType { get => this._consoleTypeOperationType; set => this._consoleTypeOperationType = value; }
+
+        /// <summary>Backing field for <see cref="EnableLocalAuthentication" /> property.</summary>
+        private string _enableLocalAuthentication;
+
+        /// <summary>
+        /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
+        /// on user preferences. There will be usergroups that will not have this option.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string EnableLocalAuthentication { get => this._enableLocalAuthentication; set => this._enableLocalAuthentication = value; }
 
         /// <summary>Backing field for <see cref="EnableTwoFactorAuthentication" /> property.</summary>
         private string _enableTwoFactorAuthentication;
@@ -140,6 +156,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? QuotaLimitInGb { get => this._quotaLimitInGb; set => this._quotaLimitInGb = value; }
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] RestrictConsoleType { get => ((Commvault.Powershell.Models.IRestrictConsoleTypesInternal)RestrictConsoleTypes).ConsoleType; set => ((Commvault.Powershell.Models.IRestrictConsoleTypesInternal)RestrictConsoleTypes).ConsoleType = value ?? null /* arrayOf */; }
+
+        /// <summary>Backing field for <see cref="RestrictConsoleTypes" /> property.</summary>
+        private Commvault.Powershell.Models.IRestrictConsoleTypes _restrictConsoleTypes;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IRestrictConsoleTypes RestrictConsoleTypes { get => (this._restrictConsoleTypes = this._restrictConsoleTypes ?? new Commvault.Powershell.Models.RestrictConsoleTypes()); set => this._restrictConsoleTypes = value; }
+
         /// <summary>Backing field for <see cref="UserOperationType" /> property.</summary>
         private string _userOperationType;
 
@@ -191,14 +216,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"associatedLocalGroups",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
         Commvault.Powershell.Models.IIdName[] AssociatedLocalGroups { get; set; }
-
+        /// <summary>
+        /// Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login
+        /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
-        SerializedName = @"consoleType",
+        Description = @"Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login",
+        SerializedName = @"azureGUID",
         PossibleTypes = new [] { typeof(string) })]
-        string[] ConsoleType { get; set; }
+        string AzureGuid { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -207,6 +234,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"consoleTypeOperationType",
         PossibleTypes = new [] { typeof(string) })]
         string ConsoleTypeOperationType { get; set; }
+        /// <summary>
+        /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
+        /// on user preferences. There will be usergroups that will not have this option.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based on user preferences. There will be usergroups that will not have this option.",
+        SerializedName = @"enableLocalAuthentication",
+        PossibleTypes = new [] { typeof(string) })]
+        string EnableLocalAuthentication { get; set; }
         /// <summary>
         /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
         /// on user preferences. There will be usergroups that will not have this option.
@@ -314,6 +352,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"quotaLimitInGB",
         PossibleTypes = new [] { typeof(long) })]
         long? QuotaLimitInGb { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"consoleType",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] RestrictConsoleType { get; set; }
         /// <summary>
         /// determines if an existing user has to be added to the user group or removed from the user group
         /// </summary>
@@ -346,10 +392,17 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName[] AssociatedExternalGroups { get; set; }
 
         Commvault.Powershell.Models.IIdName[] AssociatedLocalGroups { get; set; }
-
-        string[] ConsoleType { get; set; }
+        /// <summary>
+        /// Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login
+        /// </summary>
+        string AzureGuid { get; set; }
 
         string ConsoleTypeOperationType { get; set; }
+        /// <summary>
+        /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
+        /// on user preferences. There will be usergroups that will not have this option.
+        /// </summary>
+        string EnableLocalAuthentication { get; set; }
         /// <summary>
         /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
         /// on user preferences. There will be usergroups that will not have this option.
@@ -387,6 +440,10 @@ namespace Commvault.Powershell.Models
         string PlanOperationType { get; set; }
         /// <summary>if enforceFSquota is enabled, the quota limit can be provided in GBs</summary>
         long? QuotaLimitInGb { get; set; }
+
+        string[] RestrictConsoleType { get; set; }
+
+        Commvault.Powershell.Models.IRestrictConsoleTypes RestrictConsoleTypes { get; set; }
         /// <summary>
         /// determines if an existing user has to be added to the user group or removed from the user group
         /// </summary>

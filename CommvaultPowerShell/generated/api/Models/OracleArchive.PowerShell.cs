@@ -93,14 +93,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).Credentials = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Credentials",((Commvault.Powershell.Models.IOracleArchiveInternal)this).Credentials, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CloudType = (string) content.GetValueForProperty("CloudType",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CloudType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).ServiceHost = (string) content.GetValueForProperty("ServiceHost",((Commvault.Powershell.Models.IOracleArchiveInternal)this).ServiceHost, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).TenancyOcid = (string) content.GetValueForProperty("TenancyOcid",((Commvault.Powershell.Models.IOracleArchiveInternal)this).TenancyOcid, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).UserOcid = (string) content.GetValueForProperty("UserOcid",((Commvault.Powershell.Models.IOracleArchiveInternal)this).UserOcid, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).KeyFingerprint = (string) content.GetValueForProperty("KeyFingerprint",((Commvault.Powershell.Models.IOracleArchiveInternal)this).KeyFingerprint, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CompartmentName = (string) content.GetValueForProperty("CompartmentName",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CompartmentName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).PemKeyFilename = (string) content.GetValueForProperty("PemKeyFilename",((Commvault.Powershell.Models.IOracleArchiveInternal)this).PemKeyFilename, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).PrivateKeyPassword = (string) content.GetValueForProperty("PrivateKeyPassword",((Commvault.Powershell.Models.IOracleArchiveInternal)this).PrivateKeyPassword, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).Bucket = (string) content.GetValueForProperty("Bucket",((Commvault.Powershell.Models.IOracleArchiveInternal)this).Bucket, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentId = (long?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentName = (string) content.GetValueForProperty("MediaAgentName",((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentName, global::System.Convert.ToString);
@@ -108,6 +104,8 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICloudStorageInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICloudStorageInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDedupeStorageListInternal)this).UseDeduplication = (bool?) content.GetValueForProperty("UseDeduplication",((Commvault.Powershell.Models.IDedupeStorageListInternal)this).UseDeduplication, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IDedupeStorageListInternal)this).DeduplicationDbLocation = (Commvault.Powershell.Models.IDedupePath[]) content.GetValueForProperty("DeduplicationDbLocation",((Commvault.Powershell.Models.IDedupeStorageListInternal)this).DeduplicationDbLocation, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IDedupePath>(__y, Commvault.Powershell.Models.DedupePathTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsId = (long?) content.GetValueForProperty("CredentialsId",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsName = (string) content.GetValueForProperty("CredentialsName",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -125,14 +123,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).Credentials = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Credentials",((Commvault.Powershell.Models.IOracleArchiveInternal)this).Credentials, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CloudType = (string) content.GetValueForProperty("CloudType",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CloudType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).ServiceHost = (string) content.GetValueForProperty("ServiceHost",((Commvault.Powershell.Models.IOracleArchiveInternal)this).ServiceHost, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).TenancyOcid = (string) content.GetValueForProperty("TenancyOcid",((Commvault.Powershell.Models.IOracleArchiveInternal)this).TenancyOcid, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).UserOcid = (string) content.GetValueForProperty("UserOcid",((Commvault.Powershell.Models.IOracleArchiveInternal)this).UserOcid, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).KeyFingerprint = (string) content.GetValueForProperty("KeyFingerprint",((Commvault.Powershell.Models.IOracleArchiveInternal)this).KeyFingerprint, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CompartmentName = (string) content.GetValueForProperty("CompartmentName",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CompartmentName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).PemKeyFilename = (string) content.GetValueForProperty("PemKeyFilename",((Commvault.Powershell.Models.IOracleArchiveInternal)this).PemKeyFilename, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).PrivateKeyPassword = (string) content.GetValueForProperty("PrivateKeyPassword",((Commvault.Powershell.Models.IOracleArchiveInternal)this).PrivateKeyPassword, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IOracleArchiveInternal)this).Bucket = (string) content.GetValueForProperty("Bucket",((Commvault.Powershell.Models.IOracleArchiveInternal)this).Bucket, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentId = (long?) content.GetValueForProperty("MediaAgentId",((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentName = (string) content.GetValueForProperty("MediaAgentName",((Commvault.Powershell.Models.ICloudStorageInternal)this).MediaAgentName, global::System.Convert.ToString);
@@ -140,6 +134,8 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICloudStorageInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICloudStorageInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IDedupeStorageListInternal)this).UseDeduplication = (bool?) content.GetValueForProperty("UseDeduplication",((Commvault.Powershell.Models.IDedupeStorageListInternal)this).UseDeduplication, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IDedupeStorageListInternal)this).DeduplicationDbLocation = (Commvault.Powershell.Models.IDedupePath[]) content.GetValueForProperty("DeduplicationDbLocation",((Commvault.Powershell.Models.IDedupeStorageListInternal)this).DeduplicationDbLocation, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IDedupePath>(__y, Commvault.Powershell.Models.DedupePathTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsId = (long?) content.GetValueForProperty("CredentialsId",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsName = (string) content.GetValueForProperty("CredentialsName",((Commvault.Powershell.Models.IOracleArchiveInternal)this).CredentialsName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

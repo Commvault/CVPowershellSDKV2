@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using Commvault.Powershell.Runtime.PowerShell;
 
-    /// <summary>Used to get a list of existing companies</summary>
+    /// <summary>List of existing companies</summary>
     [System.ComponentModel.TypeConverter(typeof(CompanyListResponseTypeConverter))]
     public partial class CompanyListResponse
     {
@@ -65,6 +65,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies = (Commvault.Powershell.Models.ICompanySummary[]) content.GetValueForProperty("Companies",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICompanySummary>(__y, Commvault.Powershell.Models.CompanySummaryTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount = (long?) content.GetValueForProperty("CompanyCount",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -83,6 +84,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies = (Commvault.Powershell.Models.ICompanySummary[]) content.GetValueForProperty("Companies",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICompanySummary>(__y, Commvault.Powershell.Models.CompanySummaryTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount = (long?) content.GetValueForProperty("CompanyCount",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 
@@ -120,7 +122,7 @@ namespace Commvault.Powershell.Models
         /// <returns>a <see cref="System.String" /> containing this model serialized to JSON text.</returns>
         public string ToJsonString() => ToJson(null, Commvault.Powershell.Runtime.SerializationMode.IncludeAll)?.ToString();
     }
-    /// Used to get a list of existing companies
+    /// List of existing companies
     [System.ComponentModel.TypeConverter(typeof(CompanyListResponseTypeConverter))]
     public partial interface ICompanyListResponse
 

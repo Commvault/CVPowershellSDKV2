@@ -791,8 +791,8 @@ function GetAPIDetail ([String] $Request) {
             }
 
             'New-CVCloudStorage' = @{
-                Description = "This operation creates a new credential"
-                EndPoint    = "V4/Credential"
+                Description = "This operation creates a new cloud storage"
+                EndPoint    = "V4/Storage/Cloud"
                 Method      = "Post"
                 Body        = ''
             }

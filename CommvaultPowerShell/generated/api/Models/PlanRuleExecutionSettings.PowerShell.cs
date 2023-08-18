@@ -99,6 +99,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode = (string) content.GetValueForProperty("ExecutionMode",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval = (long?) content.GetValueForProperty("ExecutionInterval",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).EnableAlertNotification = (bool?) content.GetValueForProperty("EnableAlertNotification",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).EnableAlertNotification, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
         }
 
@@ -118,6 +119,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode = (string) content.GetValueForProperty("ExecutionMode",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionMode, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval = (long?) content.GetValueForProperty("ExecutionInterval",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).ExecutionInterval, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).EnableAlertNotification = (bool?) content.GetValueForProperty("EnableAlertNotification",((Commvault.Powershell.Models.IPlanRuleExecutionSettingsInternal)this).EnableAlertNotification, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);
         }
 

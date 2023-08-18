@@ -10,6 +10,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ICompanySummaryInternal
     {
 
+        /// <summary>Backing field for <see cref="Alias" /> property.</summary>
+        private string _alias;
+
+        /// <summary>The company domain or NetBIOS name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Alias { get => this._alias; set => this._alias = value; }
+
         /// <summary>Backing field for <see cref="AssociatedEntitiesCount" /> property.</summary>
         private long? _associatedEntitiesCount;
 
@@ -17,12 +24,33 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? AssociatedEntitiesCount { get => this._associatedEntitiesCount; set => this._associatedEntitiesCount = value; }
 
-        /// <summary>Backing field for <see cref="Deactivated" /> property.</summary>
-        private bool? _deactivated;
+        /// <summary>Backing field for <see cref="Commcell" /> property.</summary>
+        private Commvault.Powershell.Models.ICommcellNameDisplayNameInfo _commcell;
 
-        /// <summary>Gives the company status</summary>
+        /// <summary>CommcellNameDisplayNameInfo</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool? Deactivated { get => this._deactivated; set => this._deactivated = value; }
+        internal Commvault.Powershell.Models.ICommcellNameDisplayNameInfo Commcell { get => (this._commcell = this._commcell ?? new Commvault.Powershell.Models.CommcellNameDisplayNameInfo()); set => this._commcell = value; }
+
+        /// <summary>Display name of the commcell the entity belongs to.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string CommcellDisplayName { get => ((Commvault.Powershell.Models.ICommcellNameDisplayNameInfoInternal)Commcell).DisplayName; set => ((Commvault.Powershell.Models.ICommcellNameDisplayNameInfoInternal)Commcell).DisplayName = value ?? null; }
+
+        /// <summary>Name of the commcell the entity belongs to.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string CommcellName { get => ((Commvault.Powershell.Models.ICommcellNameDisplayNameInfoInternal)Commcell).Name; set => ((Commvault.Powershell.Models.ICommcellNameDisplayNameInfoInternal)Commcell).Name = value ?? null; }
+
+        /// <summary>Internal Acessors for Commcell</summary>
+        Commvault.Powershell.Models.ICommcellNameDisplayNameInfo Commvault.Powershell.Models.ICompanySummaryInternal.Commcell { get => (this._commcell = this._commcell ?? new Commvault.Powershell.Models.CommcellNameDisplayNameInfo()); set { {_commcell = value;} } }
+
+        /// <summary>Internal Acessors for Tags</summary>
+        Commvault.Powershell.Models.IIdNameValue Commvault.Powershell.Models.ICompanySummaryInternal.Tags { get => (this._tags = this._tags ?? new Commvault.Powershell.Models.IdNameValue()); set { {_tags = value;} } }
+
+        /// <summary>Backing field for <see cref="Guid" /> property.</summary>
+        private string _guid;
+
+        /// <summary>GUID of the company</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Guid { get => this._guid; set => this._guid = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
@@ -31,6 +59,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? Id { get => this._id; set => this._id = value; }
 
+        /// <summary>Backing field for <see cref="IsReseller" /> property.</summary>
+        private bool? _isReseller;
+
+        /// <summary>
+        /// Enable reseller mode. A reseller is a user or user groups who can operate multiple tenant environments. The service provider
+        /// can assign one or more resellers as the tenant operator for a company. The reseller can switch to any of their assigned
+        /// tenant environment and operate on the company as a tenant user. Once enabled, the reseller mode cannot be disabled.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsReseller { get => this._isReseller; set => this._isReseller = value; }
+
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
@@ -38,11 +77,40 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
+        /// <summary>Backing field for <see cref="Operators" /> property.</summary>
+        private Commvault.Powershell.Models.ICompanyOperator[] _operators;
+
+        /// <summary>List of operators configured for the company</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.ICompanyOperator[] Operators { get => this._operators; set => this._operators = value; }
+
         /// <summary>Backing field for <see cref="PrimaryContacts" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _primaryContacts;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IIdName[] PrimaryContacts { get => this._primaryContacts; set => this._primaryContacts = value; }
+
+        /// <summary>Backing field for <see cref="Status" /> property.</summary>
+        private string _status;
+
+        /// <summary>Gives the company status</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Status { get => this._status; set => this._status = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? TagId { get => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Id; set => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TagName { get => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Name; set => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TagValue { get => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Value; set => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Value = value ?? null; }
+
+        /// <summary>Backing field for <see cref="Tags" /> property.</summary>
+        private Commvault.Powershell.Models.IIdNameValue _tags;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdNameValue Tags { get => (this._tags = this._tags ?? new Commvault.Powershell.Models.IdNameValue()); set => this._tags = value; }
 
         /// <summary>Creates an new <see cref="CompanySummary" /> instance.</summary>
         public CompanySummary()
@@ -53,6 +121,14 @@ namespace Commvault.Powershell.Models
     public partial interface ICompanySummary :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>The company domain or NetBIOS name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The company domain or NetBIOS name",
+        SerializedName = @"alias",
+        PossibleTypes = new [] { typeof(string) })]
+        string Alias { get; set; }
         /// <summary>Gives the number of entities associated with the company</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -61,14 +137,30 @@ namespace Commvault.Powershell.Models
         SerializedName = @"associatedEntitiesCount",
         PossibleTypes = new [] { typeof(long) })]
         long? AssociatedEntitiesCount { get; set; }
-        /// <summary>Gives the company status</summary>
+        /// <summary>Display name of the commcell the entity belongs to.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Gives the company status",
-        SerializedName = @"deactivated",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? Deactivated { get; set; }
+        Description = @"Display name of the commcell the entity belongs to.",
+        SerializedName = @"displayName",
+        PossibleTypes = new [] { typeof(string) })]
+        string CommcellDisplayName { get; set; }
+        /// <summary>Name of the commcell the entity belongs to.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the commcell the entity belongs to.",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string CommcellName { get; set; }
+        /// <summary>GUID of the company</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"GUID of the company",
+        SerializedName = @"GUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string Guid { get; set; }
         /// <summary>Company Id</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -77,6 +169,18 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? Id { get; set; }
+        /// <summary>
+        /// Enable reseller mode. A reseller is a user or user groups who can operate multiple tenant environments. The service provider
+        /// can assign one or more resellers as the tenant operator for a company. The reseller can switch to any of their assigned
+        /// tenant environment and operate on the company as a tenant user. Once enabled, the reseller mode cannot be disabled.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Enable reseller mode. A reseller is a user or user groups who can operate multiple tenant environments. The service provider can assign one or more resellers as the tenant operator for a company. The reseller can switch to any of their assigned tenant environment and operate on the company as a tenant user. Once enabled, the reseller mode cannot be disabled.",
+        SerializedName = @"isReseller",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsReseller { get; set; }
         /// <summary>Company name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -85,6 +189,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
+        /// <summary>List of operators configured for the company</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of operators configured for the company",
+        SerializedName = @"operators",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICompanyOperator) })]
+        Commvault.Powershell.Models.ICompanyOperator[] Operators { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -93,21 +205,79 @@ namespace Commvault.Powershell.Models
         SerializedName = @"primaryContacts",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
         Commvault.Powershell.Models.IIdName[] PrimaryContacts { get; set; }
+        /// <summary>Gives the company status</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Gives the company status",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string Status { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? TagId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string TagName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string TagValue { get; set; }
 
     }
     internal partial interface ICompanySummaryInternal
 
     {
+        /// <summary>The company domain or NetBIOS name</summary>
+        string Alias { get; set; }
         /// <summary>Gives the number of entities associated with the company</summary>
         long? AssociatedEntitiesCount { get; set; }
-        /// <summary>Gives the company status</summary>
-        bool? Deactivated { get; set; }
+        /// <summary>CommcellNameDisplayNameInfo</summary>
+        Commvault.Powershell.Models.ICommcellNameDisplayNameInfo Commcell { get; set; }
+        /// <summary>Display name of the commcell the entity belongs to.</summary>
+        string CommcellDisplayName { get; set; }
+        /// <summary>Name of the commcell the entity belongs to.</summary>
+        string CommcellName { get; set; }
+        /// <summary>GUID of the company</summary>
+        string Guid { get; set; }
         /// <summary>Company Id</summary>
         long? Id { get; set; }
+        /// <summary>
+        /// Enable reseller mode. A reseller is a user or user groups who can operate multiple tenant environments. The service provider
+        /// can assign one or more resellers as the tenant operator for a company. The reseller can switch to any of their assigned
+        /// tenant environment and operate on the company as a tenant user. Once enabled, the reseller mode cannot be disabled.
+        /// </summary>
+        bool? IsReseller { get; set; }
         /// <summary>Company name</summary>
         string Name { get; set; }
+        /// <summary>List of operators configured for the company</summary>
+        Commvault.Powershell.Models.ICompanyOperator[] Operators { get; set; }
 
         Commvault.Powershell.Models.IIdName[] PrimaryContacts { get; set; }
+        /// <summary>Gives the company status</summary>
+        string Status { get; set; }
+
+        long? TagId { get; set; }
+
+        string TagName { get; set; }
+
+        string TagValue { get; set; }
+
+        Commvault.Powershell.Models.IIdNameValue Tags { get; set; }
 
     }
 }

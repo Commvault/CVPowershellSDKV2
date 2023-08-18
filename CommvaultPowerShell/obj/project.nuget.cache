@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l/LnONY9pbA68DCc8nNkJdY1z/hCqUTH8ZT8fA6BcFs4ernlILalNrdFPwA4XkhQkmcB6NLHLBDWeCJAXn/OGg==",
+  "dgSpecHash": "DhBVM3P1C665+EeGAq9NFiV3v6VP0aQ4EodbDJiiIcScqXpe1aA7JlzUq8XM7Y9u1YH2YVy7de7I2KKgOATIbg==",
   "success": true,
-  "projectFilePath": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowerShell.csproj",
+  "projectFilePath": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowershell.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.4.1\\microsoft.csharp.4.4.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

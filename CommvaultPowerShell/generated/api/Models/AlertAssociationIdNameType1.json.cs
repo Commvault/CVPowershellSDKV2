@@ -5,7 +5,10 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>AlertAssociationIdNameType</summary>
+    /// <summary>
+    /// Hierarchy starts at the top at client level(parentEntity1) and ends at backupset level(parentEntity4) when defining parents
+    /// for the associated entity. Parent entities must be defined application and lower entities.
+    /// </summary>
     public partial class AlertAssociationIdNameType1
     {
 
@@ -61,6 +64,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_parentEntity1 = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("parentEntity1"), out var __jsonParentEntity1) ? Commvault.Powershell.Models.AlertAssocParentEntity.FromJson(__jsonParentEntity1) : ParentEntity1;}
+            {_parentEntity2 = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("parentEntity2"), out var __jsonParentEntity2) ? Commvault.Powershell.Models.AlertAssocParentEntity.FromJson(__jsonParentEntity2) : ParentEntity2;}
+            {_parentEntity3 = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("parentEntity3"), out var __jsonParentEntity3) ? Commvault.Powershell.Models.AlertAssocParentEntity.FromJson(__jsonParentEntity3) : ParentEntity3;}
+            {_parentEntity4 = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("parentEntity4"), out var __jsonParentEntity4) ? Commvault.Powershell.Models.AlertAssocParentEntity.FromJson(__jsonParentEntity4) : ParentEntity4;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
@@ -96,6 +103,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._parentEntity1 ? (Commvault.Powershell.Runtime.Json.JsonNode) this._parentEntity1.ToJson(null,serializationMode) : null, "parentEntity1" ,container.Add );
+            AddIf( null != this._parentEntity2 ? (Commvault.Powershell.Runtime.Json.JsonNode) this._parentEntity2.ToJson(null,serializationMode) : null, "parentEntity2" ,container.Add );
+            AddIf( null != this._parentEntity3 ? (Commvault.Powershell.Runtime.Json.JsonNode) this._parentEntity3.ToJson(null,serializationMode) : null, "parentEntity3" ,container.Add );
+            AddIf( null != this._parentEntity4 ? (Commvault.Powershell.Runtime.Json.JsonNode) this._parentEntity4.ToJson(null,serializationMode) : null, "parentEntity4" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );

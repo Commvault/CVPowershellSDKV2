@@ -91,7 +91,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).Error = (Commvault.Powershell.Models.IGenericResp) content.GetValueForProperty("Error",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).Error, Commvault.Powershell.Models.GenericRespTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId = (int?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId = (long?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
@@ -112,7 +112,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).Error = (Commvault.Powershell.Models.IGenericResp) content.GetValueForProperty("Error",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).Error, Commvault.Powershell.Models.GenericRespTypeConverter.ConvertFrom);
-            ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId = (int?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId, (__y)=> (int) global::System.Convert.ChangeType(__y, typeof(int)));
+            ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId = (long?) content.GetValueForProperty("TopologyId",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).TopologyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.IFirewallTopologyCreateRespInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);

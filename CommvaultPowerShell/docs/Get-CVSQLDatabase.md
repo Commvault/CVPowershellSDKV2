@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-cvsqldatabase
 schema: 2.0.0
 ---
@@ -48,10 +48,8 @@ If the Name parameter is provided, SQL databases matching the name will be outpu
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -59,10 +57,8 @@ If the Name parameter is provided, SQL databases matching the name will be outpu
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 

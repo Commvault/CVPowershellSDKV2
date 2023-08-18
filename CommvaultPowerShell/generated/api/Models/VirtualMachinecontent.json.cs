@@ -78,9 +78,12 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._guestCredentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._guestCredentials.ToJson(null,serializationMode) : null, "guestCredentials" ,container.Add );
+            AddIf( null != this._existingCredential ? (Commvault.Powershell.Runtime.Json.JsonNode) this._existingCredential.ToJson(null,serializationMode) : null, "existingCredential" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._guid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._guid.ToString()) : null, "GUID" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
+            AddIf( null != this._guestCredentialAssocId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._guestCredentialAssocId) : null, "guestCredentialAssocId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -97,9 +100,12 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_guestCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("guestCredentials"), out var __jsonGuestCredentials) ? Commvault.Powershell.Models.VMGuestCredentials.FromJson(__jsonGuestCredentials) : GuestCredentials;}
+            {_existingCredential = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("existingCredential"), out var __jsonExistingCredential) ? Commvault.Powershell.Models.VMExistingCredential.FromJson(__jsonExistingCredential) : ExistingCredential;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_guid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("GUID"), out var __jsonGuid) ? (string)__jsonGuid : (string)Guid;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
+            {_guestCredentialAssocId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("guestCredentialAssocId"), out var __jsonGuestCredentialAssocId) ? (long?)__jsonGuestCredentialAssocId : GuestCredentialAssocId;}
             AfterFromJson(json);
         }
     }

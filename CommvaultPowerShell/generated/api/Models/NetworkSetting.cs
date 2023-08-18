@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>NetworkSetting</summary>
+    /// <summary>The schema for mapping source network with destination network</summary>
     public partial class NetworkSetting :
         Commvault.Powershell.Models.INetworkSetting,
         Commvault.Powershell.Models.INetworkSettingInternal
@@ -25,13 +25,20 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Source { get => this._source; set => this._source = value; }
 
+        /// <summary>Backing field for <see cref="SourceId" /> property.</summary>
+        private string _sourceId;
+
+        /// <summary>Source network ID</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string SourceId { get => this._sourceId; set => this._sourceId = value; }
+
         /// <summary>Creates an new <see cref="NetworkSetting" /> instance.</summary>
         public NetworkSetting()
         {
 
         }
     }
-    /// NetworkSetting
+    /// The schema for mapping source network with destination network
     public partial interface INetworkSetting :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
@@ -51,9 +58,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"source",
         PossibleTypes = new [] { typeof(string) })]
         string Source { get; set; }
+        /// <summary>Source network ID</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Source network ID",
+        SerializedName = @"sourceId",
+        PossibleTypes = new [] { typeof(string) })]
+        string SourceId { get; set; }
 
     }
-    /// NetworkSetting
+    /// The schema for mapping source network with destination network
     internal partial interface INetworkSettingInternal
 
     {
@@ -61,6 +76,8 @@ namespace Commvault.Powershell.Models
         string Destination { get; set; }
         /// <summary>Source network name</summary>
         string Source { get; set; }
+        /// <summary>Source network ID</summary>
+        string SourceId { get; set; }
 
     }
 }

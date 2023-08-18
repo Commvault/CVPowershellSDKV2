@@ -21,13 +21,13 @@ if(-not $Isolated) {
   return
 }
 
-$dll = Join-Path $PSScriptRoot 'bin\CommvaultPowerShell.private.dll'
+$dll = Join-Path $PSScriptRoot 'bin\CommvaultPowershell.private.dll'
 if(-not (Test-Path $dll)) {
   Write-Error "Unable to find output assembly in '$binFolder'."
 }
 $null = Import-Module -Name $dll
 
-$moduleName = 'CommvaultPowerShell'
+$moduleName = 'CommvaultPowershell'
 $exportsFolder = Join-Path $PSScriptRoot 'exports'
 $resourcesFolder = Join-Path $PSScriptRoot 'resources'
 

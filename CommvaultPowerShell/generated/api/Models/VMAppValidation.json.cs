@@ -78,12 +78,12 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._recoveryTarget ? (Commvault.Powershell.Runtime.Json.JsonNode) this._recoveryTarget.ToJson(null,serializationMode) : null, "recoveryTarget" ,container.Add );
             AddIf( null != this._schedule ? (Commvault.Powershell.Runtime.Json.JsonNode) this._schedule.ToJson(null,serializationMode) : null, "schedule" ,container.Add );
             AddIf( null != this._customValidationScript ? (Commvault.Powershell.Runtime.Json.JsonNode) this._customValidationScript.ToJson(null,serializationMode) : null, "customValidationScript" ,container.Add );
             AddIf( null != this._guestCredentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._guestCredentials.ToJson(null,serializationMode) : null, "guestCredentials" ,container.Add );
             AddIf( null != this._copy ? (Commvault.Powershell.Runtime.Json.JsonNode) this._copy.ToJson(null,serializationMode) : null, "copy" ,container.Add );
             AddIf( null != this._validateVMBackups ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._validateVMBackups) : null, "validateVMBackups" ,container.Add );
-            AddIf( null != (((object)this._recoveryTarget)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._recoveryTarget.ToString()) : null, "recoveryTarget" ,container.Add );
             AddIf( null != this._useSourceVMEsxToMount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useSourceVMEsxToMount) : null, "useSourceVmESXToMount" ,container.Add );
             AddIf( null != this._keepValidatedVMSRunning ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._keepValidatedVMSRunning) : null, "keepValidatedVMsRunning" ,container.Add );
             AddIf( null != this._maximumNoOfThreads ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._maximumNoOfThreads) : null, "maximumNoOfThreads" ,container.Add );
@@ -103,12 +103,12 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_recoveryTarget = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("recoveryTarget"), out var __jsonRecoveryTarget) ? Commvault.Powershell.Models.IdName.FromJson(__jsonRecoveryTarget) : RecoveryTarget;}
             {_schedule = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("schedule"), out var __jsonSchedule) ? Commvault.Powershell.Models.ValidationScheduleObject.FromJson(__jsonSchedule) : Schedule;}
             {_customValidationScript = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("customValidationScript"), out var __jsonCustomValidationScript) ? Commvault.Powershell.Models.AppValidationScript.FromJson(__jsonCustomValidationScript) : CustomValidationScript;}
             {_guestCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("guestCredentials"), out var __jsonGuestCredentials) ? Commvault.Powershell.Models.GuestCredentialInfo.FromJson(__jsonGuestCredentials) : GuestCredentials;}
-            {_copy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("copy"), out var __jsonCopy) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCopy) : Copy;}
+            {_copy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("copy"), out var __jsonCopy) ? Commvault.Powershell.Models.AppValidationSourceCopy.FromJson(__jsonCopy) : Copy;}
             {_validateVMBackups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("validateVMBackups"), out var __jsonValidateVMBackups) ? (bool?)__jsonValidateVMBackups : ValidateVMBackups;}
-            {_recoveryTarget = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("recoveryTarget"), out var __jsonRecoveryTarget) ? (string)__jsonRecoveryTarget : (string)RecoveryTarget;}
             {_useSourceVMEsxToMount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useSourceVmESXToMount"), out var __jsonUseSourceVMEsxToMount) ? (bool?)__jsonUseSourceVMEsxToMount : UseSourceVMEsxToMount;}
             {_keepValidatedVMSRunning = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("keepValidatedVMsRunning"), out var __jsonKeepValidatedVMSRunning) ? (bool?)__jsonKeepValidatedVMSRunning : KeepValidatedVMSRunning;}
             {_maximumNoOfThreads = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maximumNoOfThreads"), out var __jsonMaximumNoOfThreads) ? (long?)__jsonMaximumNoOfThreads : MaximumNoOfThreads;}

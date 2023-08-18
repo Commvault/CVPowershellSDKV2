@@ -31,6 +31,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
+        /// <summary>Backing field for <see cref="Overwrite" /> property.</summary>
+        private bool? _overwrite;
+
+        /// <summary>
+        /// True if disk filter in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Overwrite { get => this._overwrite; set => this._overwrite = value; }
+
         /// <summary>Backing field for <see cref="VMGuid" /> property.</summary>
         private string _vMGuid;
 
@@ -40,6 +49,25 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string VMGuid { get => this._vMGuid; set => this._vMGuid = value; }
+
+        /// <summary>Backing field for <see cref="VMName" /> property.</summary>
+        private string _vMName;
+
+        /// <summary>
+        /// VM Name of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type
+        /// from all Vms added in content will be filtered
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string VMName { get => this._vMName; set => this._vMName = value; }
+
+        /// <summary>Backing field for <see cref="Value" /> property.</summary>
+        private string _value;
+
+        /// <summary>
+        /// The value string to be filtered, in case of disk tag , value of tag to be filtered
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Value { get => this._value; set => this._value = value; }
 
         /// <summary>Creates an new <see cref="VMDiskFilter" /> instance.</summary>
         public VMDiskFilter()
@@ -76,6 +104,16 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
         /// <summary>
+        /// True if disk filter in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if disk filter in vmgroup has to be overwritten, by default it will append the content",
+        SerializedName = @"overwrite",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Overwrite { get; set; }
+        /// <summary>
         /// VM Guid of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type
         /// from all Vms added in content will be filtered
         /// </summary>
@@ -86,6 +124,27 @@ namespace Commvault.Powershell.Models
         SerializedName = @"vmGuid",
         PossibleTypes = new [] { typeof(string) })]
         string VMGuid { get; set; }
+        /// <summary>
+        /// VM Name of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type
+        /// from all Vms added in content will be filtered
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"VM Name of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type from all Vms added in content will be filtered",
+        SerializedName = @"vmName",
+        PossibleTypes = new [] { typeof(string) })]
+        string VMName { get; set; }
+        /// <summary>
+        /// The value string to be filtered, in case of disk tag , value of tag to be filtered
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The value string to be filtered, in case of disk tag , value of tag to be filtered",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string Value { get; set; }
 
     }
     /// vmDiskFilter
@@ -99,10 +158,23 @@ namespace Commvault.Powershell.Models
         /// <summary>The string to be filtered</summary>
         string Name { get; set; }
         /// <summary>
+        /// True if disk filter in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        bool? Overwrite { get; set; }
+        /// <summary>
         /// VM Guid of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type
         /// from all Vms added in content will be filtered
         /// </summary>
         string VMGuid { get; set; }
+        /// <summary>
+        /// VM Name of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type
+        /// from all Vms added in content will be filtered
+        /// </summary>
+        string VMName { get; set; }
+        /// <summary>
+        /// The value string to be filtered, in case of disk tag , value of tag to be filtered
+        /// </summary>
+        string Value { get; set; }
 
     }
 }

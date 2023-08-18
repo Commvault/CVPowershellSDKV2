@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-cvcredential
 schema: 2.0.0
 ---
@@ -23,10 +23,8 @@ Edit credential whose name has been provided by credential owner
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -34,10 +32,8 @@ Edit credential whose name has been provided by credential owner
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 

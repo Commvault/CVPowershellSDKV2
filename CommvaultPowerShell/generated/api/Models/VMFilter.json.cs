@@ -78,6 +78,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._overwrite ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._overwrite) : null, "overwrite" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AddIf( null != (((object)this._op)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._op.ToString()) : null, "op" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
@@ -100,6 +101,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_overwrite = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("overwrite"), out var __jsonOverwrite) ? (bool?)__jsonOverwrite : Overwrite;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             {_op = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("op"), out var __jsonOp) ? (string)__jsonOp : (string)Op;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}

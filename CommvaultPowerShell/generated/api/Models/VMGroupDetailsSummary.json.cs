@@ -80,11 +80,14 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._region ? (Commvault.Powershell.Runtime.Json.JsonNode) this._region.ToJson(null,serializationMode) : null, "region" ,container.Add );
+            AddIf( null != this._replicationGroup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._replicationGroup.ToJson(null,serializationMode) : null, "replicationGroup" ,container.Add );
             AddIf( null != this._timeZone ? (Commvault.Powershell.Runtime.Json.JsonNode) this._timeZone.ToJson(null,serializationMode) : null, "timeZone" ,container.Add );
             AddIf( null != (((object)this._hypervisorName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hypervisorName.ToString()) : null, "hypervisorName" ,container.Add );
             AddIf( null != this._lastBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastBackupTime) : null, "lastBackupTime" ,container.Add );
             AddIf( null != this._lastBackupSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._lastBackupSize) : null, "lastBackupSize" ,container.Add );
             AddIf( null != this._nextBackupTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._nextBackupTime) : null, "nextBackupTime" ,container.Add );
+            AddIf( null != this._isDefaultVMGroup ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDefaultVMGroup) : null, "isDefaultVMGroup" ,container.Add );
+            AddIf( null != (((object)this._backupActivityStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._backupActivityStatus.ToString()) : null, "backupActivityStatus" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -103,11 +106,14 @@ namespace Commvault.Powershell.Models
             }
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.PlanIdNameType.FromJson(__jsonPlan) : Plan;}
             {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.RegionInfo.FromJson(__jsonRegion) : Region;}
+            {_replicationGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("replicationGroup"), out var __jsonReplicationGroup) ? Commvault.Powershell.Models.IdName.FromJson(__jsonReplicationGroup) : ReplicationGroup;}
             {_timeZone = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("timeZone"), out var __jsonTimeZone) ? Commvault.Powershell.Models.IdName.FromJson(__jsonTimeZone) : TimeZone;}
             {_hypervisorName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hypervisorName"), out var __jsonHypervisorName) ? (string)__jsonHypervisorName : (string)HypervisorName;}
             {_lastBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupTime"), out var __jsonLastBackupTime) ? (long?)__jsonLastBackupTime : LastBackupTime;}
             {_lastBackupSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("lastBackupSize"), out var __jsonLastBackupSize) ? (long?)__jsonLastBackupSize : LastBackupSize;}
             {_nextBackupTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("nextBackupTime"), out var __jsonNextBackupTime) ? (long?)__jsonNextBackupTime : NextBackupTime;}
+            {_isDefaultVMGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDefaultVMGroup"), out var __jsonIsDefaultVMGroup) ? (bool?)__jsonIsDefaultVMGroup : IsDefaultVMGroup;}
+            {_backupActivityStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("backupActivityStatus"), out var __jsonBackupActivityStatus) ? (string)__jsonBackupActivityStatus : (string)BackupActivityStatus;}
             AfterFromJson(json);
         }
     }

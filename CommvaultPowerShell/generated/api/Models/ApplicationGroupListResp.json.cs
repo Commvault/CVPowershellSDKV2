@@ -60,6 +60,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_applicationGroupCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationGroupCount"), out var __jsonApplicationGroupCount) ? (long?)__jsonApplicationGroupCount : ApplicationGroupCount;}
             {_applicationGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("applicationGroups"), out var __jsonApplicationGroups) ? If( __jsonApplicationGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IApplicationGroupSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IApplicationGroupSummary) (Commvault.Powershell.Models.ApplicationGroupSummary.FromJson(__u) )) ))() : null : ApplicationGroups;}
             AfterFromJson(json);
         }
@@ -93,6 +94,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._applicationGroupCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationGroupCount) : null, "applicationGroupCount" ,container.Add );
             if (null != this._applicationGroups)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

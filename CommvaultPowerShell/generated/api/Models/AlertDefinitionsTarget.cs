@@ -5,7 +5,9 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>AlertDefinitionsTarget</summary>
+    /// <summary>
+    /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
+    /// </summary>
     public partial class AlertDefinitionsTarget :
         Commvault.Powershell.Models.IAlertDefinitionsTarget,
         Commvault.Powershell.Models.IAlertDefinitionsTargetInternal
@@ -37,6 +39,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients Recipients { get => (this._recipients = this._recipients ?? new Commvault.Powershell.Models.AlertDefinitionsTargetRecipients()); set => this._recipients = value; }
 
+        /// <summary>Backing field for <see cref="RecipientsOperationType" /> property.</summary>
+        private string _recipientsOperationType;
+
+        /// <summary>
+        /// Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string RecipientsOperationType { get => this._recipientsOperationType; set => this._recipientsOperationType = value; }
+
         /// <summary>Backing field for <see cref="SendAlertTo" /> property.</summary>
         private string[] _sendAlertTo;
 
@@ -49,7 +60,7 @@ namespace Commvault.Powershell.Models
 
         }
     }
-    /// AlertDefinitionsTarget
+    /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
     public partial interface IAlertDefinitionsTarget :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
@@ -87,6 +98,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"webHookId",
         PossibleTypes = new [] { typeof(long) })]
         long? RecipientWebHookId { get; set; }
+        /// <summary>
+        /// Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients",
+        SerializedName = @"recipientsOperationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string RecipientsOperationType { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -97,7 +118,7 @@ namespace Commvault.Powershell.Models
         string[] SendAlertTo { get; set; }
 
     }
-    /// AlertDefinitionsTarget
+    /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
     internal partial interface IAlertDefinitionsTargetInternal
 
     {
@@ -113,6 +134,10 @@ namespace Commvault.Powershell.Models
         long? RecipientWebHookId { get; set; }
         /// <summary>AlertDefinitionsTargetRecipients</summary>
         Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients Recipients { get; set; }
+        /// <summary>
+        /// Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients
+        /// </summary>
+        string RecipientsOperationType { get; set; }
 
         string[] SendAlertTo { get; set; }
 

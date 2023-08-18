@@ -70,14 +70,17 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_operatingSystem = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("operatingSystem"), out var __jsonOperatingSystem) ? Commvault.Powershell.Models.IdName.FromJson(__jsonOperatingSystem) : OperatingSystem;}
+            {_operatingSystem = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("operatingSystem"), out var __jsonOperatingSystem) ? Commvault.Powershell.Models.IdNameType.FromJson(__jsonOperatingSystem) : OperatingSystem;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
+            {_isUnlicensedMa = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isUnlicensedMA"), out var __jsonIsUnlicensedMa) ? (bool?)__jsonIsUnlicensedMa : IsUnlicensedMa;}
             {_offlineReason = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("offlineReason"), out var __jsonOfflineReason) ? (string)__jsonOfflineReason : (string)OfflineReason;}
+            {_offlineReasonValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("offlineReasonValue"), out var __jsonOfflineReasonValue) ? (long?)__jsonOfflineReasonValue : OfflineReasonValue;}
             {_version = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("version"), out var __jsonVersion) ? (string)__jsonVersion : (string)Version;}
+            {_releaseId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("releaseId"), out var __jsonReleaseId) ? (long?)__jsonReleaseId : ReleaseId;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             AfterFromJson(json);
         }
@@ -107,8 +110,11 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._displayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayName.ToString()) : null, "displayName" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
+            AddIf( null != this._isUnlicensedMa ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isUnlicensedMa) : null, "isUnlicensedMA" ,container.Add );
             AddIf( null != (((object)this._offlineReason)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._offlineReason.ToString()) : null, "offlineReason" ,container.Add );
+            AddIf( null != this._offlineReasonValue ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._offlineReasonValue) : null, "offlineReasonValue" ,container.Add );
             AddIf( null != (((object)this._version)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._version.ToString()) : null, "version" ,container.Add );
+            AddIf( null != this._releaseId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._releaseId) : null, "releaseId" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AfterToJson(ref container);
             return container;

@@ -85,6 +85,16 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._serviceType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._serviceType.ToString()) : null, "serviceType" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
+            AddIf( null != this._allowMultipleCompanyMembers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._allowMultipleCompanyMembers) : null, "allowMultipleCompanyMembers" ,container.Add );
+            if (null != this._users)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._users )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("users",__w);
+            }
             AfterToJson(ref container);
             return container;
         }
@@ -109,6 +119,8 @@ namespace Commvault.Powershell.Models
             {_serviceType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serviceType"), out var __jsonServiceType) ? (string)__jsonServiceType : (string)ServiceType;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
+            {_allowMultipleCompanyMembers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("allowMultipleCompanyMembers"), out var __jsonAllowMultipleCompanyMembers) ? (bool?)__jsonAllowMultipleCompanyMembers : AllowMultipleCompanyMembers;}
+            {_users = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("users"), out var __jsonUsers) ? If( __jsonUsers as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : Users;}
             AfterFromJson(json);
         }
     }

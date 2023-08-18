@@ -40,6 +40,20 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? IsIndexingV2 { get => this._isIndexingV2; set => this._isIndexingV2 = value; }
 
+        /// <summary>Backing field for <see cref="IsRegionBasedBackup" /> property.</summary>
+        private bool? _isRegionBasedBackup;
+
+        /// <summary>True if region based backup is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsRegionBasedBackup { get => this._isRegionBasedBackup; set => this._isRegionBasedBackup = value; }
+
+        /// <summary>Backing field for <see cref="IsSnapBackupEnabled" /> property.</summary>
+        private bool? _isSnapBackupEnabled;
+
+        /// <summary>True if the hypervisor is snap backup enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsSnapBackupEnabled { get => this._isSnapBackupEnabled; set => this._isSnapBackupEnabled = value; }
+
         /// <summary>Backing field for <see cref="RetirePhase" /> property.</summary>
         private string _retirePhase;
 
@@ -88,6 +102,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isIndexingV2",
         PossibleTypes = new [] { typeof(bool) })]
         bool? IsIndexingV2 { get; set; }
+        /// <summary>True if region based backup is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if region based backup is enabled",
+        SerializedName = @"isRegionBasedBackup",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsRegionBasedBackup { get; set; }
+        /// <summary>True if the hypervisor is snap backup enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if the hypervisor is snap backup enabled",
+        SerializedName = @"isSnapBackupEnabled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsSnapBackupEnabled { get; set; }
         /// <summary>RetireClientPhase</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -111,6 +141,10 @@ namespace Commvault.Powershell.Models
         bool? IsDeconfigured { get; set; }
         /// <summary>True if Indexing version is 2</summary>
         bool? IsIndexingV2 { get; set; }
+        /// <summary>True if region based backup is enabled</summary>
+        bool? IsRegionBasedBackup { get; set; }
+        /// <summary>True if the hypervisor is snap backup enabled</summary>
+        bool? IsSnapBackupEnabled { get; set; }
         /// <summary>RetireClientPhase</summary>
         string RetirePhase { get; set; }
 

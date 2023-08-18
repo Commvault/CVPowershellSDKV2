@@ -71,6 +71,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_error = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("error"), out var __jsonError) ? Commvault.Powershell.Models.GenericResp.FromJson(__jsonError) : Error;}
             {_laptopOwnerMapping1 = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("laptopOwnerMapping"), out var __jsonLaptopOwnerMapping) ? If( __jsonLaptopOwnerMapping as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ILaptopOwnerInfo[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ILaptopOwnerInfo) (Commvault.Powershell.Models.LaptopOwnerInfo.FromJson(__u) )) ))() : null : LaptopOwnerMapping1;}
             AfterFromJson(json);
         }
@@ -94,6 +95,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._error ? (Commvault.Powershell.Runtime.Json.JsonNode) this._error.ToJson(null,serializationMode) : null, "error" ,container.Add );
             if (null != this._laptopOwnerMapping1)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

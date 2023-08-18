@@ -27,12 +27,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
 
-        /// <summary>Backing field for <see cref="SizeOndisk" /> property.</summary>
-        private long? _sizeOndisk;
+        /// <summary>Backing field for <see cref="SizeOnDisk" /> property.</summary>
+        private long? _sizeOnDisk;
 
         /// <summary>Amount of space consumed</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public long? SizeOndisk { get => this._sizeOndisk; set => this._sizeOndisk = value; }
+        public long? SizeOnDisk { get => this._sizeOnDisk; set => this._sizeOnDisk = value; }
 
         /// <summary>Backing field for <see cref="TotalCapacity" /> property.</summary>
         private long? _totalCapacity;
@@ -88,9 +88,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"Amount of space consumed",
-        SerializedName = @"sizeOndisk",
+        SerializedName = @"sizeOnDisk",
         PossibleTypes = new [] { typeof(long) })]
-        long? SizeOndisk { get; set; }
+        long? SizeOnDisk { get; set; }
         /// <summary>Total capacity of this cloud storage</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -128,7 +128,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Free space available on this cloud storage</summary>
         long? FreeSpace { get; set; }
         /// <summary>Amount of space consumed</summary>
-        long? SizeOndisk { get; set; }
+        long? SizeOnDisk { get; set; }
         /// <summary>Total capacity of this cloud storage</summary>
         long? TotalCapacity { get; set; }
         /// <summary>Type of the cloud storage server</summary>

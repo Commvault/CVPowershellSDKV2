@@ -63,6 +63,7 @@ namespace Commvault.Powershell.Models
             }
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("type"), out var __jsonType) ? (long?)__jsonType : Type;}
             AfterFromJson(json);
         }
@@ -98,6 +99,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != (((object)this._displayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayName.ToString()) : null, "displayName" ,container.Add );
             AddIf( null != this._type ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._type) : null, "type" ,container.Add );
             AfterToJson(ref container);
             return container;

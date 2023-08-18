@@ -10,6 +10,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IVMGroupSettingsInternal
     {
 
+        /// <summary>Backing field for <see cref="AllowEmptySubclient" /> property.</summary>
+        private bool? _allowEmptySubclient;
+
+        /// <summary>True if empty subclient is allowed</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? AllowEmptySubclient { get => this._allowEmptySubclient; set => this._allowEmptySubclient = value; }
+
         /// <summary>Backing field for <see cref="AutoDetectVMOwner" /> property.</summary>
         private bool? _autoDetectVMOwner;
 
@@ -35,6 +42,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? CollectFileDetailsforGranularRecovery { get => this._collectFileDetailsforGranularRecovery; set => this._collectFileDetailsforGranularRecovery = value; }
 
+        /// <summary>Internal Acessors for CrossAccount</summary>
+        Commvault.Powershell.Models.IAmazonCrossAccount Commvault.Powershell.Models.IVMGroupSettingsInternal.CrossAccount { get => (this._crossAccount = this._crossAccount ?? new Commvault.Powershell.Models.AmazonCrossAccount()); set { {_crossAccount = value;} } }
+
+        /// <summary>Internal Acessors for CrossAccountDestinationAccount</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMGroupSettingsInternal.CrossAccountDestinationAccount { get => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).DestinationAccount; set => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).DestinationAccount = value; }
+
         /// <summary>Internal Acessors for GuestCredentials</summary>
         Commvault.Powershell.Models.IGuestCredentialInfo Commvault.Powershell.Models.IVMGroupSettingsInternal.GuestCredentials { get => (this._guestCredentials = this._guestCredentials ?? new Commvault.Powershell.Models.GuestCredentialInfo()); set { {_guestCredentials = value;} } }
 
@@ -52,12 +65,37 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CredentialsPassword { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).CredentialsPassword; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).CredentialsPassword = value ?? null; }
 
+        /// <summary>Backing field for <see cref="CrossAccount" /> property.</summary>
+        private Commvault.Powershell.Models.IAmazonCrossAccount _crossAccount;
+
+        /// <summary>AmazonCrossAccount</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAmazonCrossAccount CrossAccount { get => (this._crossAccount = this._crossAccount ?? new Commvault.Powershell.Models.AmazonCrossAccount()); set => this._crossAccount = value; }
+
+        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? CrossAccountFullCopy { get => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).FullCopy; set => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).FullCopy = value ?? default(bool); }
+
+        /// <summary>
+        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
+        /// is enabled
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? CrossAccountShareOnly { get => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).ShareOnly; set => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).ShareOnly = value ?? default(bool); }
+
         /// <summary>Backing field for <see cref="CustomSnapshotResourceGroup" /> property.</summary>
         private string _customSnapshotResourceGroup;
 
-        /// <summary>Custom snapshot resource group GUID for Azure</summary>
+        /// <summary>Custom snapshot resource group name for Azure</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string CustomSnapshotResourceGroup { get => this._customSnapshotResourceGroup; set => this._customSnapshotResourceGroup = value; }
+
+        /// <summary>Backing field for <see cref="CustomSnapshotTags" /> property.</summary>
+        private Commvault.Powershell.Models.IResourceTag[] _customSnapshotTags;
+
+        /// <summary>represents custom tags to be set on snapshots</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IResourceTag[] CustomSnapshotTags { get => this._customSnapshotTags; set => this._customSnapshotTags = value; }
 
         /// <summary>Backing field for <see cref="DatastoreFreespaceCheck" /> property.</summary>
         private bool? _datastoreFreespaceCheck;
@@ -73,6 +111,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? DatastoreFreespaceRequired { get => this._datastoreFreespaceRequired; set => this._datastoreFreespaceRequired = value; }
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? DestinationAccountId { get => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).DestinationAccountId; set => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).DestinationAccountId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string DestinationAccountName { get => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).DestinationAccountName; set => ((Commvault.Powershell.Models.IAmazonCrossAccountInternal)CrossAccount).DestinationAccountName = value ?? null; }
+
         /// <summary>Backing field for <see cref="GuestCredentials" /> property.</summary>
         private Commvault.Powershell.Models.IGuestCredentialInfo _guestCredentials;
 
@@ -87,6 +131,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? IsApplicationAware { get => this._isApplicationAware; set => this._isApplicationAware = value; }
 
+        /// <summary>Backing field for <see cref="IsVMGroupDiskFiltersIncluded" /> property.</summary>
+        private bool? _isVMGroupDiskFiltersIncluded;
+
+        /// <summary>Is VM group disk filters included in VM instance disk filters</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsVMGroupDiskFiltersIncluded { get => this._isVMGroupDiskFiltersIncluded; set => this._isVMGroupDiskFiltersIncluded = value; }
+
         /// <summary>Backing field for <see cref="JobStartTime" /> property.</summary>
         private long? _jobStartTime;
 
@@ -100,6 +151,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Number of readers for backup</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? NoOfReaders { get => this._noOfReaders; set => this._noOfReaders = value; }
+
+        /// <summary>Backing field for <see cref="RegionalSnapshot" /> property.</summary>
+        private bool? _regionalSnapshot;
+
+        /// <summary>True when snapshot storage location is regional</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? RegionalSnapshot { get => this._regionalSnapshot; set => this._regionalSnapshot = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId = value ?? default(long); }
@@ -143,6 +201,14 @@ namespace Commvault.Powershell.Models
     public partial interface IVMGroupSettings :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>True if empty subclient is allowed</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if empty subclient is allowed",
+        SerializedName = @"allowEmptySubclient",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? AllowEmptySubclient { get; set; }
         /// <summary>True if auto detect VM Owner enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -185,14 +251,41 @@ namespace Commvault.Powershell.Models
         SerializedName = @"password",
         PossibleTypes = new [] { typeof(string) })]
         string CredentialsPassword { get; set; }
-        /// <summary>Custom snapshot resource group GUID for Azure</summary>
+        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Custom snapshot resource group GUID for Azure",
+        Description = @"True if full copy of amazon snapshot to different amazon account is enabled",
+        SerializedName = @"fullCopy",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? CrossAccountFullCopy { get; set; }
+        /// <summary>
+        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
+        /// is enabled
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled",
+        SerializedName = @"shareOnly",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? CrossAccountShareOnly { get; set; }
+        /// <summary>Custom snapshot resource group name for Azure</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Custom snapshot resource group name for Azure",
         SerializedName = @"customSnapshotResourceGroup",
         PossibleTypes = new [] { typeof(string) })]
         string CustomSnapshotResourceGroup { get; set; }
+        /// <summary>represents custom tags to be set on snapshots</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"represents custom tags to be set on snapshots",
+        SerializedName = @"customSnapshotTags",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IResourceTag) })]
+        Commvault.Powershell.Models.IResourceTag[] CustomSnapshotTags { get; set; }
         /// <summary>True if Datastore Free space check is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -209,6 +302,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"datastoreFreespaceRequired",
         PossibleTypes = new [] { typeof(long) })]
         long? DatastoreFreespaceRequired { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? DestinationAccountId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string DestinationAccountName { get; set; }
         /// <summary>Is the VM App Aware</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -217,6 +326,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isApplicationAware",
         PossibleTypes = new [] { typeof(bool) })]
         bool? IsApplicationAware { get; set; }
+        /// <summary>Is VM group disk filters included in VM instance disk filters</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Is VM group disk filters included in VM instance disk filters",
+        SerializedName = @"isVMGroupDiskFiltersIncluded",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsVMGroupDiskFiltersIncluded { get; set; }
         /// <summary>Start Time for the VM Group Job</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -233,6 +350,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"noOfReaders",
         PossibleTypes = new [] { typeof(long) })]
         long? NoOfReaders { get; set; }
+        /// <summary>True when snapshot storage location is regional</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True when snapshot storage location is regional",
+        SerializedName = @"regionalSnapshot",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? RegionalSnapshot { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -286,6 +411,8 @@ namespace Commvault.Powershell.Models
     internal partial interface IVMGroupSettingsInternal
 
     {
+        /// <summary>True if empty subclient is allowed</summary>
+        bool? AllowEmptySubclient { get; set; }
         /// <summary>True if auto detect VM Owner enabled</summary>
         bool? AutoDetectVMOwner { get; set; }
         /// <summary>
@@ -298,12 +425,29 @@ namespace Commvault.Powershell.Models
         string CredentialsName { get; set; }
         /// <summary>password to access the network path</summary>
         string CredentialsPassword { get; set; }
-        /// <summary>Custom snapshot resource group GUID for Azure</summary>
+        /// <summary>AmazonCrossAccount</summary>
+        Commvault.Powershell.Models.IAmazonCrossAccount CrossAccount { get; set; }
+
+        Commvault.Powershell.Models.IIdName CrossAccountDestinationAccount { get; set; }
+        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
+        bool? CrossAccountFullCopy { get; set; }
+        /// <summary>
+        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
+        /// is enabled
+        /// </summary>
+        bool? CrossAccountShareOnly { get; set; }
+        /// <summary>Custom snapshot resource group name for Azure</summary>
         string CustomSnapshotResourceGroup { get; set; }
+        /// <summary>represents custom tags to be set on snapshots</summary>
+        Commvault.Powershell.Models.IResourceTag[] CustomSnapshotTags { get; set; }
         /// <summary>True if Datastore Free space check is enabled</summary>
         bool? DatastoreFreespaceCheck { get; set; }
         /// <summary>precentage of datastore free space check value</summary>
         long? DatastoreFreespaceRequired { get; set; }
+
+        long? DestinationAccountId { get; set; }
+
+        string DestinationAccountName { get; set; }
         /// <summary>guestCredentialInfo</summary>
         Commvault.Powershell.Models.IGuestCredentialInfo GuestCredentials { get; set; }
 
@@ -312,10 +456,14 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName GuestCredentialsSavedCredentials { get; set; }
         /// <summary>Is the VM App Aware</summary>
         bool? IsApplicationAware { get; set; }
+        /// <summary>Is VM group disk filters included in VM instance disk filters</summary>
+        bool? IsVMGroupDiskFiltersIncluded { get; set; }
         /// <summary>Start Time for the VM Group Job</summary>
         long? JobStartTime { get; set; }
         /// <summary>Number of readers for backup</summary>
         long? NoOfReaders { get; set; }
+        /// <summary>True when snapshot storage location is regional</summary>
+        bool? RegionalSnapshot { get; set; }
 
         long? SavedCredentialsId { get; set; }
 

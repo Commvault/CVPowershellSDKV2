@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cvkubernetescluster
 schema: 2.0.0
 ---
@@ -14,8 +14,10 @@ Create Kubernetes cluster
 
 ```
 New-CVKubernetescluster -AccessNodes <IIdName[]> -CredentialsName <String> -Endpointurl <String>
- -Name <String> [-CredentialsId <Int64>] [-Password <String>] [-SecretKey <String>] [-ServiceName <String>]
- [-SkipCredentialValidation] [-UserName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
+ -Name <String> -PlanEntityName <String> -PlanName <String> [-CredentialsId <Int64>] [-EtcdProtectionEnabled]
+ [-K8ServiceType <String>] [-Password <String>] [-PlanEntityId <Int64>] [-PlanId <Int64>]
+ [-SecretKey <String>] [-ServiceName <String>] [-SkipCredentialValidation] [-UserName <String>] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,10 +27,8 @@ Create Kubernetes cluster
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -36,10 +36,8 @@ Create Kubernetes cluster
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -108,6 +106,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EtcdProtectionEnabled
+Denote if etcd protection is enabled
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -K8ServiceType
+.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -Name
 The name of the hypervisor group being created
 
@@ -132,6 +160,66 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PlanEntityId
+.
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PlanEntityName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PlanId
+.
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PlanName
+.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False

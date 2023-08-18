@@ -15,8 +15,8 @@ namespace Commvault.Powershell.Models
         private string _access;
 
         /// <summary>
-        /// The access type for the cloud access path can be either read (writing to path not allowed) or read and write (writing
-        /// to path allowed)
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Access { get => this._access; set => this._access = value; }
@@ -39,13 +39,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Runtime.IJsonSerializable
     {
         /// <summary>
-        /// The access type for the cloud access path can be either read (writing to path not allowed) or read and write (writing
-        /// to path allowed)
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"The access type for the cloud access path can be either read (writing to path not allowed) or read and write (writing to path allowed)",
+        Description = @"The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path allowed).",
         SerializedName = @"access",
         PossibleTypes = new [] { typeof(string) })]
         string Access { get; set; }
@@ -64,8 +64,8 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>
-        /// The access type for the cloud access path can be either read (writing to path not allowed) or read and write (writing
-        /// to path allowed)
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
         /// </summary>
         string Access { get; set; }
         /// <summary>Enable/Disable access of bucket to a media Agent</summary>

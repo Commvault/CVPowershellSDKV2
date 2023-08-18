@@ -79,6 +79,8 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._content ? (Commvault.Powershell.Runtime.Json.JsonNode) this._content.ToJson(null,serializationMode) : null, "content" ,container.Add );
+            AddIf( null != this._filters ? (Commvault.Powershell.Runtime.Json.JsonNode) this._filters.ToJson(null,serializationMode) : null, "filters" ,container.Add );
+            AddIf( null != this._diskFilters ? (Commvault.Powershell.Runtime.Json.JsonNode) this._diskFilters.ToJson(null,serializationMode) : null, "diskFilters" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -96,6 +98,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_content = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("content"), out var __jsonContent) ? Commvault.Powershell.Models.VMContent.FromJson(__jsonContent) : Content;}
+            {_filters = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("filters"), out var __jsonFilters) ? Commvault.Powershell.Models.VMContent.FromJson(__jsonFilters) : Filters;}
+            {_diskFilters = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("diskFilters"), out var __jsonDiskFilters) ? Commvault.Powershell.Models.VMDiskFilterProp.FromJson(__jsonDiskFilters) : DiskFilters;}
             AfterFromJson(json);
         }
     }

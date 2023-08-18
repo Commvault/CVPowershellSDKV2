@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/invoke-cvreturnlist
 schema: 2.0.0
 ---
@@ -12,6 +12,12 @@ This endpoint is used to return the list of tape storages.
 
 ## SYNTAX
 
+### Return (Default)
+```
+Invoke-CVReturnList [-PassThru] [<CommonParameters>]
+```
+
+### Return1
 ```
 Invoke-CVReturnList [-PassThru] [<CommonParameters>]
 ```
@@ -23,10 +29,8 @@ This endpoint is used to return the list of tape storages.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -34,10 +38,8 @@ This endpoint is used to return the list of tape storages.
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -66,6 +68,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## INPUTS
 
 ## OUTPUTS
+
+### Commvault.Powershell.Models.IGenericResp
+
+### Commvault.Powershell.Models.ILocationsDetails
 
 ### Commvault.Powershell.Models.ITapeSummary
 

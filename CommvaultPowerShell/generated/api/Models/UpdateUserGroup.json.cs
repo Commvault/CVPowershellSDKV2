@@ -78,6 +78,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._laptopPlan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._laptopPlan.ToJson(null,serializationMode) : null, "laptopPlan" ,container.Add );
+            AddIf( null != this._restrictConsoleTypes ? (Commvault.Powershell.Runtime.Json.JsonNode) this._restrictConsoleTypes.ToJson(null,serializationMode) : null, "restrictConsoleTypes" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
             AddIf( null != (((object)this._newDescription)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newDescription.ToString()) : null, "newDescription" ,container.Add );
             AddIf( null != (((object)this._planOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._planOperationType.ToString()) : null, "planOperationType" ,container.Add );
@@ -85,6 +86,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._enforceFsQuota ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enforceFsQuota) : null, "enforceFSQuota" ,container.Add );
             AddIf( null != this._quotaLimitInGb ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._quotaLimitInGb) : null, "quotaLimitInGB" ,container.Add );
             AddIf( null != (((object)this._enableTwoFactorAuthentication)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._enableTwoFactorAuthentication.ToString()) : null, "enableTwoFactorAuthentication" ,container.Add );
+            AddIf( null != (((object)this._enableLocalAuthentication)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._enableLocalAuthentication.ToString()) : null, "enableLocalAuthentication" ,container.Add );
             if (null != this._associatedExternalGroups)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -118,15 +120,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._userOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userOperationType.ToString()) : null, "userOperationType" ,container.Add );
             AddIf( null != this._allowMultipleCompanyMembers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._allowMultipleCompanyMembers) : null, "allowMultipleCompanyMembers" ,container.Add );
             AddIf( null != (((object)this._consoleTypeOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._consoleTypeOperationType.ToString()) : null, "consoleTypeOperationType" ,container.Add );
-            if (null != this._consoleType)
-            {
-                var __h = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __i in this._consoleType )
-                {
-                    AddIf(null != (((object)__i)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__i.ToString()) : null ,__h.Add);
-                }
-                container.Add("consoleType",__h);
-            }
+            AddIf( null != (((object)this._azureGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._azureGuid.ToString()) : null, "azureGUID" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -144,6 +138,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_laptopPlan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("laptopPlan"), out var __jsonLaptopPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonLaptopPlan) : LaptopPlan;}
+            {_restrictConsoleTypes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("restrictConsoleTypes"), out var __jsonRestrictConsoleTypes) ? Commvault.Powershell.Models.RestrictConsoleTypes.FromJson(__jsonRestrictConsoleTypes) : RestrictConsoleTypes;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_newDescription = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newDescription"), out var __jsonNewDescription) ? (string)__jsonNewDescription : (string)NewDescription;}
             {_planOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("planOperationType"), out var __jsonPlanOperationType) ? (string)__jsonPlanOperationType : (string)PlanOperationType;}
@@ -151,6 +146,7 @@ namespace Commvault.Powershell.Models
             {_enforceFsQuota = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enforceFSQuota"), out var __jsonEnforceFsQuota) ? (bool?)__jsonEnforceFsQuota : EnforceFsQuota;}
             {_quotaLimitInGb = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("quotaLimitInGB"), out var __jsonQuotaLimitInGb) ? (long?)__jsonQuotaLimitInGb : QuotaLimitInGb;}
             {_enableTwoFactorAuthentication = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("enableTwoFactorAuthentication"), out var __jsonEnableTwoFactorAuthentication) ? (string)__jsonEnableTwoFactorAuthentication : (string)EnableTwoFactorAuthentication;}
+            {_enableLocalAuthentication = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("enableLocalAuthentication"), out var __jsonEnableLocalAuthentication) ? (string)__jsonEnableLocalAuthentication : (string)EnableLocalAuthentication;}
             {_associatedExternalGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("associatedExternalGroups"), out var __jsonAssociatedExternalGroups) ? If( __jsonAssociatedExternalGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : AssociatedExternalGroups;}
             {_externalUserGroupsOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("externalUserGroupsOperationType"), out var __jsonExternalUserGroupsOperationType) ? (string)__jsonExternalUserGroupsOperationType : (string)ExternalUserGroupsOperationType;}
             {_laptopAdmins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("laptopAdmins"), out var __jsonLaptopAdmins) ? (bool?)__jsonLaptopAdmins : LaptopAdmins;}
@@ -160,7 +156,7 @@ namespace Commvault.Powershell.Models
             {_userOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userOperationType"), out var __jsonUserOperationType) ? (string)__jsonUserOperationType : (string)UserOperationType;}
             {_allowMultipleCompanyMembers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("allowMultipleCompanyMembers"), out var __jsonAllowMultipleCompanyMembers) ? (bool?)__jsonAllowMultipleCompanyMembers : AllowMultipleCompanyMembers;}
             {_consoleTypeOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("consoleTypeOperationType"), out var __jsonConsoleTypeOperationType) ? (string)__jsonConsoleTypeOperationType : (string)ConsoleTypeOperationType;}
-            {_consoleType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("consoleType"), out var __jsonConsoleType) ? If( __jsonConsoleType as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(string) (__f is Commvault.Powershell.Runtime.Json.JsonString __e ? (string)(__e.ToString()) : null)) ))() : null : ConsoleType;}
+            {_azureGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("azureGUID"), out var __jsonAzureGuid) ? (string)__jsonAzureGuid : (string)AzureGuid;}
             AfterFromJson(json);
         }
     }

@@ -73,6 +73,7 @@ namespace Commvault.Powershell.Models
             {_instance = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("instance"), out var __jsonInstance) ? Commvault.Powershell.Models.IdName.FromJson(__jsonInstance) : Instance;}
             {_clientActivityControl = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("clientActivityControl"), out var __jsonClientActivityControl) ? Commvault.Powershell.Models.ActivityControlOptionsProp.FromJson(__jsonClientActivityControl) : ClientActivityControl;}
             {_commcell = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("commcell"), out var __jsonCommcell) ? Commvault.Powershell.Models.CommcellInfo.FromJson(__jsonCommcell) : Commcell;}
+            {_manageSnapshot = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("manageSnapshot"), out var __jsonManageSnapshot) ? Commvault.Powershell.Models.IdName.FromJson(__jsonManageSnapshot) : ManageSnapshot;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
@@ -106,6 +107,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._instance ? (Commvault.Powershell.Runtime.Json.JsonNode) this._instance.ToJson(null,serializationMode) : null, "instance" ,container.Add );
             AddIf( null != this._clientActivityControl ? (Commvault.Powershell.Runtime.Json.JsonNode) this._clientActivityControl.ToJson(null,serializationMode) : null, "clientActivityControl" ,container.Add );
             AddIf( null != this._commcell ? (Commvault.Powershell.Runtime.Json.JsonNode) this._commcell.ToJson(null,serializationMode) : null, "commcell" ,container.Add );
+            AddIf( null != this._manageSnapshot ? (Commvault.Powershell.Runtime.Json.JsonNode) this._manageSnapshot.ToJson(null,serializationMode) : null, "manageSnapshot" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._displayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayName.ToString()) : null, "displayName" ,container.Add );

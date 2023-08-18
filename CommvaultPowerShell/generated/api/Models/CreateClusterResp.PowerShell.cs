@@ -69,6 +69,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName = (string) content.GetValueForProperty("ClusterName",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).EtcdSubclientResponse = (Commvault.Powershell.Models.ICreateEtcdSubclientResp[]) content.GetValueForProperty("EtcdSubclientResponse",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).EtcdSubclientResponse, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICreateEtcdSubclientResp>(__y, Commvault.Powershell.Models.CreateEtcdSubclientRespTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -92,6 +93,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName = (string) content.GetValueForProperty("ClusterName",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ClusterName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage = (string) content.GetValueForProperty("WarningMessage",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).WarningMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateClusterRespInternal)this).EtcdSubclientResponse = (Commvault.Powershell.Models.ICreateEtcdSubclientResp[]) content.GetValueForProperty("EtcdSubclientResponse",((Commvault.Powershell.Models.ICreateClusterRespInternal)this).EtcdSubclientResponse, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICreateEtcdSubclientResp>(__y, Commvault.Powershell.Models.CreateEtcdSubclientRespTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 

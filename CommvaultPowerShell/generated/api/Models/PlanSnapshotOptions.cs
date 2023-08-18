@@ -11,12 +11,55 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IPlanSnapshotOptionsInternal
     {
 
+        /// <summary>Backing field for <see cref="BackupCopyFrequency" /> property.</summary>
+        private Commvault.Powershell.Models.IBackupFrequencyPattern _backupCopyFrequency;
+
+        /// <summary>Used to describe the frequency of backup</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IBackupFrequencyPattern BackupCopyFrequency { get => (this._backupCopyFrequency = this._backupCopyFrequency ?? new Commvault.Powershell.Models.BackupFrequencyPattern()); set => this._backupCopyFrequency = value; }
+
+        /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? BackupCopyFrequencyDayOfMonth { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).DayOfMonth; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).DayOfMonth = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupCopyFrequencyDayOfWeek { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).DayOfWeek; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).DayOfWeek = value ?? null; }
+
+        /// <summary>
+        /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
+        /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? BackupCopyFrequencyFrequency { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).Frequency; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).Frequency = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupCopyFrequencyMonthOfYear { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).MonthOfYear; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).MonthOfYear = value ?? null; }
+
+        /// <summary>schedule frequency type</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupCopyFrequencyScheduleFrequencyType { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).ScheduleFrequencyType; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).ScheduleFrequencyType = value ?? null; }
+
+        /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? BackupCopyFrequencyStartTime { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).StartTime; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).StartTime = value ?? default(long); }
+
+        /// <summary>Specific week of a month</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupCopyFrequencyWeekOfMonth { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).WeekOfMonth; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).WeekOfMonth = value ?? null; }
+
+        /// <summary>Days of the week for weekly frequency</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] BackupCopyFrequencyWeeklyDays { get => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).WeeklyDays; set => ((Commvault.Powershell.Models.IBackupFrequencyPatternInternal)BackupCopyFrequency).WeeklyDays = value ?? null /* arrayOf */; }
+
         /// <summary>Backing field for <see cref="BackupCopyRpoMins" /> property.</summary>
         private long? _backupCopyRpoMins;
 
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? BackupCopyRpoMins { get => this._backupCopyRpoMins; set => this._backupCopyRpoMins = value; }
+
+        /// <summary>Internal Acessors for BackupCopyFrequency</summary>
+        Commvault.Powershell.Models.IBackupFrequencyPattern Commvault.Powershell.Models.IPlanSnapshotOptionsInternal.BackupCopyFrequency { get => (this._backupCopyFrequency = this._backupCopyFrequency ?? new Commvault.Powershell.Models.BackupFrequencyPattern()); set { {_backupCopyFrequency = value;} } }
 
         /// <summary>Backing field for <see cref="EnableBackupCopy" /> property.</summary>
         private bool? _enableBackupCopy;
@@ -35,6 +78,73 @@ namespace Commvault.Powershell.Models
     public partial interface IPlanSnapshotOptions :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Day on which to run the schedule, applicable for monthly, yearly",
+        SerializedName = @"dayOfMonth",
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupCopyFrequencyDayOfMonth { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"dayOfWeek",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupCopyFrequencyDayOfWeek { get; set; }
+        /// <summary>
+        /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
+        /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months",
+        SerializedName = @"frequency",
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupCopyFrequencyFrequency { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"monthOfYear",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupCopyFrequencyMonthOfYear { get; set; }
+        /// <summary>schedule frequency type</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"schedule frequency type",
+        SerializedName = @"scheduleFrequencyType",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupCopyFrequencyScheduleFrequencyType { get; set; }
+        /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"start time of schedule in seconds for daily, weekly, monthly, yearly frequency",
+        SerializedName = @"startTime",
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupCopyFrequencyStartTime { get; set; }
+        /// <summary>Specific week of a month</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Specific week of a month",
+        SerializedName = @"weekOfMonth",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupCopyFrequencyWeekOfMonth { get; set; }
+        /// <summary>Days of the week for weekly frequency</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Days of the week for weekly frequency",
+        SerializedName = @"weeklyDays",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] BackupCopyFrequencyWeeklyDays { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -57,6 +167,27 @@ namespace Commvault.Powershell.Models
     internal partial interface IPlanSnapshotOptionsInternal
 
     {
+        /// <summary>Used to describe the frequency of backup</summary>
+        Commvault.Powershell.Models.IBackupFrequencyPattern BackupCopyFrequency { get; set; }
+        /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
+        long? BackupCopyFrequencyDayOfMonth { get; set; }
+
+        string BackupCopyFrequencyDayOfWeek { get; set; }
+        /// <summary>
+        /// Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes,
+        /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
+        /// </summary>
+        long? BackupCopyFrequencyFrequency { get; set; }
+
+        string BackupCopyFrequencyMonthOfYear { get; set; }
+        /// <summary>schedule frequency type</summary>
+        string BackupCopyFrequencyScheduleFrequencyType { get; set; }
+        /// <summary>start time of schedule in seconds for daily, weekly, monthly, yearly frequency</summary>
+        long? BackupCopyFrequencyStartTime { get; set; }
+        /// <summary>Specific week of a month</summary>
+        string BackupCopyFrequencyWeekOfMonth { get; set; }
+        /// <summary>Days of the week for weekly frequency</summary>
+        string[] BackupCopyFrequencyWeeklyDays { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>
         long? BackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>

@@ -93,7 +93,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).Error = (Commvault.Powershell.Models.IGenericResp) content.GetValueForProperty("Error",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).Error, Commvault.Powershell.Models.GenericRespTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).LaptopOwnerMapping1 = (Commvault.Powershell.Models.ILaptopOwnerInfo[]) content.GetValueForProperty("LaptopOwnerMapping1",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).LaptopOwnerMapping1, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILaptopOwnerInfo>(__y, Commvault.Powershell.Models.LaptopOwnerInfoTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -111,7 +114,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).Error = (Commvault.Powershell.Models.IGenericResp) content.GetValueForProperty("Error",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).Error, Commvault.Powershell.Models.GenericRespTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).LaptopOwnerMapping1 = (Commvault.Powershell.Models.ILaptopOwnerInfo[]) content.GetValueForProperty("LaptopOwnerMapping1",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).LaptopOwnerMapping1, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILaptopOwnerInfo>(__y, Commvault.Powershell.Models.LaptopOwnerInfoTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ILaptopOwnerMappingInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

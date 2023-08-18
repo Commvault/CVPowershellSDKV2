@@ -11,11 +11,21 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IVMGroupDetailsSummaryInternal
     {
 
+        /// <summary>Backing field for <see cref="BackupActivityStatus" /> property.</summary>
+        private string _backupActivityStatus;
+
+        /// <summary>Current backup activity status</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string BackupActivityStatus { get => this._backupActivityStatus; set => this._backupActivityStatus = value; }
+
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IPlanIdNameType Commvault.Powershell.Models.IVMGroupDetailsSummaryInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.PlanIdNameType()); set { {_plan = value;} } }
 
         /// <summary>Internal Acessors for Region</summary>
         Commvault.Powershell.Models.IRegionInfo Commvault.Powershell.Models.IVMGroupDetailsSummaryInternal.Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.RegionInfo()); set { {_region = value;} } }
+
+        /// <summary>Internal Acessors for ReplicationGroup</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMGroupDetailsSummaryInternal.ReplicationGroup { get => (this._replicationGroup = this._replicationGroup ?? new Commvault.Powershell.Models.IdName()); set { {_replicationGroup = value;} } }
 
         /// <summary>Internal Acessors for TimeZone</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMGroupDetailsSummaryInternal.TimeZone { get => (this._timeZone = this._timeZone ?? new Commvault.Powershell.Models.IdName()); set { {_timeZone = value;} } }
@@ -25,6 +35,13 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string HypervisorName { get => this._hypervisorName; set => this._hypervisorName = value; }
+
+        /// <summary>Backing field for <see cref="IsDefaultVMGroup" /> property.</summary>
+        private bool? _isDefaultVMGroup;
+
+        /// <summary>True if subclient is default subclient</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsDefaultVMGroup { get => this._isDefaultVMGroup; set => this._isDefaultVMGroup = value; }
 
         /// <summary>Backing field for <see cref="LastBackupSize" /> property.</summary>
         private long? _lastBackupSize;
@@ -89,6 +106,18 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RegionName { get => ((Commvault.Powershell.Models.IRegionInfoInternal)Region).Name; set => ((Commvault.Powershell.Models.IRegionInfoInternal)Region).Name = value ?? null; }
 
+        /// <summary>Backing field for <see cref="ReplicationGroup" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _replicationGroup;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName ReplicationGroup { get => (this._replicationGroup = this._replicationGroup ?? new Commvault.Powershell.Models.IdName()); set => this._replicationGroup = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ReplicationGroupId { get => ((Commvault.Powershell.Models.IIdNameInternal)ReplicationGroup).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ReplicationGroup).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ReplicationGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)ReplicationGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ReplicationGroup).Name = value ?? null; }
+
         /// <summary>Backing field for <see cref="TimeZone" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _timeZone;
 
@@ -111,6 +140,15 @@ namespace Commvault.Powershell.Models
     public partial interface IVMGroupDetailsSummary :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Current backup activity status</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Current backup activity status",
+        SerializedName = @"backupActivityStatus",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupActivityStatus { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
@@ -118,6 +156,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"hypervisorName",
         PossibleTypes = new [] { typeof(string) })]
         string HypervisorName { get; set; }
+        /// <summary>True if subclient is default subclient</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if subclient is default subclient",
+        SerializedName = @"isDefaultVMGroup",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsDefaultVMGroup { get; set; }
         /// <summary>Last Backup Job Size</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -213,6 +259,22 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
+        long? ReplicationGroupId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ReplicationGroupName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
         long? TimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
@@ -228,7 +290,12 @@ namespace Commvault.Powershell.Models
     internal partial interface IVMGroupDetailsSummaryInternal
 
     {
+        /// <summary>Current backup activity status</summary>
+        string BackupActivityStatus { get; set; }
+
         string HypervisorName { get; set; }
+        /// <summary>True if subclient is default subclient</summary>
+        bool? IsDefaultVMGroup { get; set; }
         /// <summary>Last Backup Job Size</summary>
         long? LastBackupSize { get; set; }
         /// <summary>Last Backup time of the VMGroup</summary>
@@ -255,6 +322,12 @@ namespace Commvault.Powershell.Models
         string RegionLongitude { get; set; }
         /// <summary>Region Name</summary>
         string RegionName { get; set; }
+
+        Commvault.Powershell.Models.IIdName ReplicationGroup { get; set; }
+
+        long? ReplicationGroupId { get; set; }
+
+        string ReplicationGroupName { get; set; }
 
         Commvault.Powershell.Models.IIdName TimeZone { get; set; }
 

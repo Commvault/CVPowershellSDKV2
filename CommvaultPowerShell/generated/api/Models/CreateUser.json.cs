@@ -64,6 +64,7 @@ namespace Commvault.Powershell.Models
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_fullName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("fullName"), out var __jsonFullName) ? (string)__jsonFullName : (string)FullName;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_externalProviderId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("externalProviderId"), out var __jsonExternalProviderId) ? (long?)__jsonExternalProviderId : ExternalProviderId;}
             {_email = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("email"), out var __jsonEmail) ? (string)__jsonEmail : (string)Email;}
             {_userGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("userGroups"), out var __jsonUserGroups) ? If( __jsonUserGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : UserGroups;}
             {_useSystemGeneratePassword = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useSystemGeneratePassword"), out var __jsonUseSystemGeneratePassword) ? (bool?)__jsonUseSystemGeneratePassword : UseSystemGeneratePassword;}
@@ -105,6 +106,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != (((object)this._fullName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._fullName.ToString()) : null, "fullName" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != this._externalProviderId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._externalProviderId) : null, "externalProviderId" ,container.Add );
             AddIf( null != (((object)this._email)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._email.ToString()) : null, "email" ,container.Add );
             if (null != this._userGroups)
             {

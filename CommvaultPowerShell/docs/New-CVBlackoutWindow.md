@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cvblackoutwindow
 schema: 2.0.0
 ---
@@ -13,9 +13,9 @@ Create a Blackout Window
 ## SYNTAX
 
 ```
-New-CVBlackoutWindow -Name <String> [-BackupOperations <String[]>] [-BetweenDateEnd <Int64>]
- [-BetweenDateStart <Int64>] [-CompanyId <Int64>] [-CompanyName <String>] [-Days <String[]>] [-DoNotSubmitJob]
- [-Time <IStartEnd[]>] [-Weeks <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-CVBlackoutWindow -Name <String> [-AllDays <IDaysAndTimes[]>] [-BackupOperations <String[]>]
+ [-BetweenDateEnd <Int64>] [-BetweenDateStart <Int64>] [-CompanyId <Int64>] [-CompanyName <String>]
+ [-DoNotSubmitJob] [-Weeks <String[]>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -25,10 +25,8 @@ Create a Blackout Window
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -36,16 +34,30 @@ Create a Blackout Window
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AllDays
+Days of the week along with the time on which the black out window will be in effect.
+To construct, see NOTES section for ALLDAYS properties and create a hash table.
+
+```yaml
+Type: Commvault.Powershell.Models.IDaysAndTimes[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -BackupOperations
 Refers to backup types to include in the blackout window
@@ -122,21 +134,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Days
-Days of the week when the blackout window will be in effect.
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -DoNotSubmitJob
 Allows or Denies submitting a job when the blackout window is in effect.
 If set to false, the job is submitted and resumed once the blackout window ends.
@@ -173,23 +170,6 @@ Returns true when the command succeeds
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Time
-Refers to the time between which the blackout window will be in effect.
-It has to be provided in seconds
-To construct, see NOTES section for TIME properties and create a hash table.
-
-```yaml
-Type: Commvault.Powershell.Models.IStartEnd[]
 Parameter Sets: (All)
 Aliases:
 
@@ -264,9 +244,10 @@ COMPLEX PARAMETER PROPERTIES
 To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
 
 
-TIME <IStartEnd[]>: Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
-  - `[End <Int64?>]`: the blackout window is no longer in effect from this point on.
-  - `[Start <Int64?>]`: the blackout window comes into effect at this point.
+ALLDAYS <IDaysAndTimes[]>: Days of the week along with the time on which the black out window will be in effect.
+  - `[Days <String[]>]`: Days of the week when the blackout window will be in effect.
+  - `[TimeEnd <Int64?>]`: the blackout window is no longer in effect from this point on.
+  - `[TimeStart <Int64?>]`: the blackout window comes into effect at this point.
 
 ## RELATED LINKS
 

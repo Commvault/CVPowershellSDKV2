@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-cvsyslogstatus
 schema: 2.0.0
 ---
@@ -15,7 +15,7 @@ This endpoint configures a syslog server.
 ### ConfigureExpanded (Default)
 ```
 Set-CVSyslogStatus -Hostname <String> [-CertificateAuthorityContent <String>]
- [-CertificateAuthorityName <String>] [-ForwardToSyslogAlerts] [-ForwardToSyslogAudit]
+ [-CertificateAuthorityName <String>] [-Enabled] [-ForwardToSyslogAlerts] [-ForwardToSyslogAudit]
  [-ForwardToSyslogEvents] [-Port <Int64>] [-SecureMessaging] [-PassThru] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
@@ -32,10 +32,8 @@ This endpoint configures a syslog server.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -43,10 +41,8 @@ This endpoint configures a syslog server.
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -92,6 +88,21 @@ File name of the uploaded certificate authority file
 
 ```yaml
 Type: System.String
+Parameter Sets: ConfigureExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Enabled
+Specifies if the syslog server is enabled or disabled
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: ConfigureExpanded
 Aliases:
 
@@ -263,6 +274,7 @@ BODY <ISyslogConfigure>: This operation configures a syslog server.
   - `Hostname <String>`: The hostname or the IP address of the syslog server.
   - `[CertificateAuthorityContent <String>]`: Content of the uploaded certificate authority file. It should be base64 encoded. Accepted fileTypes are key,crt,pem.
   - `[CertificateAuthorityName <String>]`: File name of the uploaded certificate authority file
+  - `[Enabled <Boolean?>]`: Specifies if the syslog server is enabled or disabled
   - `[ForwardToSyslogAlerts <Boolean?>]`: Forward the system log for alerts to the server.
   - `[ForwardToSyslogAudit <Boolean?>]`: Forward the system log for audit trails to the server.
   - `[ForwardToSyslogEvents <Boolean?>]`: Forward the system log for events to the server.

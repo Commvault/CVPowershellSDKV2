@@ -47,12 +47,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
-        /// <summary>Backing field for <see cref="Vendor" /> property.</summary>
-        private string _vendor;
+        /// <summary>Backing field for <see cref="PolicyType" /> property.</summary>
+        private string _policyType;
 
-        /// <summary>Recovery target vendor name</summary>
+        /// <summary>Recovery target policy type name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string Vendor { get => this._vendor; set => this._vendor = value; }
+        public string PolicyType { get => this._policyType; set => this._policyType = value; }
 
         /// <summary>Creates an new <see cref="GetRecoveryTargetListSummary" /> instance.</summary>
         public GetRecoveryTargetListSummary()
@@ -104,14 +104,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
-        /// <summary>Recovery target vendor name</summary>
+        /// <summary>Recovery target policy type name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Recovery target vendor name",
-        SerializedName = @"vendor",
+        Description = @"Recovery target policy type name",
+        SerializedName = @"policyType",
         PossibleTypes = new [] { typeof(string) })]
-        string Vendor { get; set; }
+        string PolicyType { get; set; }
 
     }
     /// GetRecoveryTargetListSummary
@@ -130,8 +130,8 @@ namespace Commvault.Powershell.Models
         long? Id { get; set; }
         /// <summary>Recovery Target name</summary>
         string Name { get; set; }
-        /// <summary>Recovery target vendor name</summary>
-        string Vendor { get; set; }
+        /// <summary>Recovery target policy type name</summary>
+        string PolicyType { get; set; }
 
     }
 }

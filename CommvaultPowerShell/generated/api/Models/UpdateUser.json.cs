@@ -96,6 +96,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._validationPassword)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._validationPassword.ToString()) : null, "validationPassword" ,container.Add );
             AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
             AddIf( null != (((object)this._userPrincipalName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userPrincipalName.ToString()) : null, "userPrincipalName" ,container.Add );
+            AddIf( null != (((object)this._authenticationMethod)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._authenticationMethod.ToString()) : null, "authenticationMethod" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -122,6 +123,7 @@ namespace Commvault.Powershell.Models
             {_validationPassword = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("validationPassword"), out var __jsonValidationPassword) ? (string)__jsonValidationPassword : (string)ValidationPassword;}
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
             {_userPrincipalName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userPrincipalName"), out var __jsonUserPrincipalName) ? (string)__jsonUserPrincipalName : (string)UserPrincipalName;}
+            {_authenticationMethod = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("authenticationMethod"), out var __jsonAuthenticationMethod) ? (string)__jsonAuthenticationMethod : (string)AuthenticationMethod;}
             AfterFromJson(json);
         }
     }

@@ -94,6 +94,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Company = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Company",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Company, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Client = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Client",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Client, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Id = (long) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).SerialNumber = (string) content.GetValueForProperty("SerialNumber",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).SerialNumber, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).LaptopName = (string) content.GetValueForProperty("LaptopName",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).LaptopName, global::System.Convert.ToString);
@@ -101,8 +102,11 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerEmail = (string) content.GetValueForProperty("OwnerEmail",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerEmail, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerUpn = (string) content.GetValueForProperty("OwnerUpn",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerUpn, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OSType = (string) content.GetValueForProperty("OSType",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OSType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Configured = (bool?) content.GetValueForProperty("Configured",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Configured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyId = (long?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyName = (string) content.GetValueForProperty("CompanyName",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientId = (long?) content.GetValueForProperty("ClientId",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientName = (string) content.GetValueForProperty("ClientName",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -121,6 +125,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Company = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Company",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Company, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Client = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Client",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Client, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Id = (long) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).SerialNumber = (string) content.GetValueForProperty("SerialNumber",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).SerialNumber, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).LaptopName = (string) content.GetValueForProperty("LaptopName",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).LaptopName, global::System.Convert.ToString);
@@ -128,8 +133,11 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerEmail = (string) content.GetValueForProperty("OwnerEmail",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerEmail, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerUpn = (string) content.GetValueForProperty("OwnerUpn",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OwnerUpn, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OSType = (string) content.GetValueForProperty("OSType",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).OSType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Configured = (bool?) content.GetValueForProperty("Configured",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).Configured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyId = (long?) content.GetValueForProperty("CompanyId",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyName = (string) content.GetValueForProperty("CompanyName",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).CompanyName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientId = (long?) content.GetValueForProperty("ClientId",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientName = (string) content.GetValueForProperty("ClientName",((Commvault.Powershell.Models.ILaptopOwnerInfoInternal)this).ClientName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

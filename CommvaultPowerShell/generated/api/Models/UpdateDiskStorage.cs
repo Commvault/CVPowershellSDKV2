@@ -13,8 +13,8 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for DataEncryption</summary>
         Commvault.Powershell.Models.IEncryption Commvault.Powershell.Models.IUpdateDiskStorageInternal.DataEncryption { get => (this._dataEncryption = this._dataEncryption ?? new Commvault.Powershell.Models.Encryption()); set { {_dataEncryption = value;} } }
 
-        /// <summary>Internal Acessors for DataEncryptionKeyManagementServer</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateDiskStorageInternal.DataEncryptionKeyManagementServer { get => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyManagementServer; set => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyManagementServer = value; }
+        /// <summary>Internal Acessors for DataEncryptionKeyProvider</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateDiskStorageInternal.DataEncryptionKeyProvider { get => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyProvider; set => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyProvider = value; }
 
         /// <summary>Backing field for <see cref="DataEncryption" /> property.</summary>
         private Commvault.Powershell.Models.IEncryption _dataEncryption;
@@ -40,10 +40,10 @@ namespace Commvault.Powershell.Models
         public long? DataEncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyLength = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? KeyManagementServerId { get => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyManagementServerId; set => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyManagementServerId = value ?? default(long); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyProviderId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string KeyManagementServerName { get => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyManagementServerName; set => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyManagementServerName = value ?? null; }
+        public string KeyProviderName { get => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyProviderName; set => ((Commvault.Powershell.Models.IEncryptionInternal)DataEncryption).KeyProviderName = value ?? null; }
 
         /// <summary>Backing field for <see cref="NewName" /> property.</summary>
         private string _newName;
@@ -103,7 +103,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -111,7 +111,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
         /// <summary>change the name of the storage pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -147,11 +147,11 @@ namespace Commvault.Powershell.Models
         /// </summary>
         long? DataEncryptionKeyLength { get; set; }
 
-        Commvault.Powershell.Models.IIdName DataEncryptionKeyManagementServer { get; set; }
+        Commvault.Powershell.Models.IIdName DataEncryptionKeyProvider { get; set; }
 
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
         /// <summary>change the name of the storage pool</summary>
         string NewName { get; set; }
 

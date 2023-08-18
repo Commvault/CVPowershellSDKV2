@@ -16,7 +16,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         private Commvault.Powershell.Models.IRmRequestSummary __rmRequestSummary = new Commvault.Powershell.Models.RmRequestSummary();
 
-        /// <summary>Enum to signify the source application of the request</summary>
+        /// <summary>Enum to signify the application under Activate</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string Application { get => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Application; set => ((Commvault.Powershell.Models.IRmRequestSummaryInternal)__rmRequestSummary).Application = value; }
 

@@ -11,14 +11,64 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IHypervisorSettingsInternal
     {
 
+        /// <summary>Backing field for <see cref="ApplicationCredentials" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _applicationCredentials;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName ApplicationCredentials { get => (this._applicationCredentials = this._applicationCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._applicationCredentials = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ApplicationCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationCredentials).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ApplicationCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ApplicationCredentials).Name = value ?? null; }
+
+        /// <summary>Internal Acessors for ApplicationCredentials</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorSettingsInternal.ApplicationCredentials { get => (this._applicationCredentials = this._applicationCredentials ?? new Commvault.Powershell.Models.IdName()); set { {_applicationCredentials = value;} } }
+
+        /// <summary>Internal Acessors for CustomAttributes</summary>
+        Commvault.Powershell.Models.IHypervisorCustomAttribute Commvault.Powershell.Models.IHypervisorSettingsInternal.CustomAttributes { get => (this._customAttributes = this._customAttributes ?? new Commvault.Powershell.Models.HypervisorCustomAttribute()); set { {_customAttributes = value;} } }
+
+        /// <summary>Internal Acessors for GuestCredentials</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorSettingsInternal.GuestCredentials { get => (this._guestCredentials = this._guestCredentials ?? new Commvault.Powershell.Models.IdName()); set { {_guestCredentials = value;} } }
+
         /// <summary>Internal Acessors for MetricsMonitoringPolicy</summary>
         Commvault.Powershell.Models.IHypervisorMonitoringPolicy Commvault.Powershell.Models.IHypervisorSettingsInternal.MetricsMonitoringPolicy { get => (this._metricsMonitoringPolicy = this._metricsMonitoringPolicy ?? new Commvault.Powershell.Models.HypervisorMonitoringPolicy()); set { {_metricsMonitoringPolicy = value;} } }
+
+        /// <summary>Internal Acessors for MountAccessNode</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorSettingsInternal.MountAccessNode { get => (this._mountAccessNode = this._mountAccessNode ?? new Commvault.Powershell.Models.IdName()); set { {_mountAccessNode = value;} } }
 
         /// <summary>Internal Acessors for RegionInfo</summary>
         Commvault.Powershell.Models.IRegionInfo Commvault.Powershell.Models.IHypervisorSettingsInternal.RegionInfo { get => (this._regionInfo = this._regionInfo ?? new Commvault.Powershell.Models.RegionInfo()); set { {_regionInfo = value;} } }
 
         /// <summary>Internal Acessors for TimeZone</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorSettingsInternal.TimeZone { get => (this._timeZone = this._timeZone ?? new Commvault.Powershell.Models.IdName()); set { {_timeZone = value;} } }
+
+        /// <summary>client custom attribute type . Ex- 3 - For client 8- For clientGroup</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? CustomAttributeType { get => ((Commvault.Powershell.Models.IHypervisorCustomAttributeInternal)CustomAttributes).Type; set => ((Commvault.Powershell.Models.IHypervisorCustomAttributeInternal)CustomAttributes).Type = value ?? default(long); }
+
+        /// <summary>client/Client Group custom attribute value</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string CustomAttributeValue { get => ((Commvault.Powershell.Models.IHypervisorCustomAttributeInternal)CustomAttributes).Value; set => ((Commvault.Powershell.Models.IHypervisorCustomAttributeInternal)CustomAttributes).Value = value ?? null; }
+
+        /// <summary>Backing field for <see cref="CustomAttributes" /> property.</summary>
+        private Commvault.Powershell.Models.IHypervisorCustomAttribute _customAttributes;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IHypervisorCustomAttribute CustomAttributes { get => (this._customAttributes = this._customAttributes ?? new Commvault.Powershell.Models.HypervisorCustomAttribute()); set => this._customAttributes = value; }
+
+        /// <summary>Backing field for <see cref="GuestCredentials" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _guestCredentials;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName GuestCredentials { get => (this._guestCredentials = this._guestCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._guestCredentials = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? GuestCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)GuestCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)GuestCredentials).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)GuestCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)GuestCredentials).Name = value ?? null; }
 
         /// <summary>Metrics Moitoring PolicyId</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -37,6 +87,18 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IHypervisorMonitoringPolicy MetricsMonitoringPolicy { get => (this._metricsMonitoringPolicy = this._metricsMonitoringPolicy ?? new Commvault.Powershell.Models.HypervisorMonitoringPolicy()); set => this._metricsMonitoringPolicy = value; }
+
+        /// <summary>Backing field for <see cref="MountAccessNode" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _mountAccessNode;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName MountAccessNode { get => (this._mountAccessNode = this._mountAccessNode ?? new Commvault.Powershell.Models.IdName()); set => this._mountAccessNode = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MountAccessNodeId { get => ((Commvault.Powershell.Models.IIdNameInternal)MountAccessNode).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MountAccessNode).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MountAccessNodeName { get => ((Commvault.Powershell.Models.IIdNameInternal)MountAccessNode).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)MountAccessNode).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="RegionInfo" /> property.</summary>
         private Commvault.Powershell.Models.IRegionInfo _regionInfo;
@@ -87,6 +149,53 @@ namespace Commvault.Powershell.Models
     public partial interface IHypervisorSettings :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationCredentialsId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ApplicationCredentialsName { get; set; }
+        /// <summary>client custom attribute type . Ex- 3 - For client 8- For clientGroup</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"client custom attribute type . Ex- 3 - For client 8- For clientGroup",
+        SerializedName = @"type",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CustomAttributeType { get; set; }
+        /// <summary>client/Client Group custom attribute value</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"client/Client Group custom attribute value",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string CustomAttributeValue { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? GuestCredentialsId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredentialsName { get; set; }
         /// <summary>Metrics Moitoring PolicyId</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -111,6 +220,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string MetricMonitoringPolicyName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MountAccessNodeId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string MountAccessNodeName { get; set; }
         /// <summary>Display Name of Region</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -173,6 +298,23 @@ namespace Commvault.Powershell.Models
     internal partial interface IHypervisorSettingsInternal
 
     {
+        Commvault.Powershell.Models.IIdName ApplicationCredentials { get; set; }
+
+        long? ApplicationCredentialsId { get; set; }
+
+        string ApplicationCredentialsName { get; set; }
+        /// <summary>client custom attribute type . Ex- 3 - For client 8- For clientGroup</summary>
+        long? CustomAttributeType { get; set; }
+        /// <summary>client/Client Group custom attribute value</summary>
+        string CustomAttributeValue { get; set; }
+
+        Commvault.Powershell.Models.IHypervisorCustomAttribute CustomAttributes { get; set; }
+
+        Commvault.Powershell.Models.IIdName GuestCredentials { get; set; }
+
+        long? GuestCredentialsId { get; set; }
+
+        string GuestCredentialsName { get; set; }
         /// <summary>Metrics Moitoring PolicyId</summary>
         long? MetricMonitoringPolicyId { get; set; }
         /// <summary>True if Metrics Monioring policy is enabled</summary>
@@ -181,6 +323,12 @@ namespace Commvault.Powershell.Models
         string MetricMonitoringPolicyName { get; set; }
 
         Commvault.Powershell.Models.IHypervisorMonitoringPolicy MetricsMonitoringPolicy { get; set; }
+
+        Commvault.Powershell.Models.IIdName MountAccessNode { get; set; }
+
+        long? MountAccessNodeId { get; set; }
+
+        string MountAccessNodeName { get; set; }
         /// <summary>RegionInfo</summary>
         Commvault.Powershell.Models.IRegionInfo RegionInfo { get; set; }
         /// <summary>Display Name of Region</summary>

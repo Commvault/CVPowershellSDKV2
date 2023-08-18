@@ -11,8 +11,17 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IVMAppValidationInternal
     {
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? BackupDestinationId { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).BackupDestinationId; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).BackupDestinationId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupDestinationName { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).BackupDestinationName; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).BackupDestinationName = value ?? null; }
+
         /// <summary>Internal Acessors for Copy</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMAppValidationInternal.Copy { get => (this._copy = this._copy ?? new Commvault.Powershell.Models.IdName()); set { {_copy = value;} } }
+        Commvault.Powershell.Models.IAppValidationSourceCopy Commvault.Powershell.Models.IVMAppValidationInternal.Copy { get => (this._copy = this._copy ?? new Commvault.Powershell.Models.AppValidationSourceCopy()); set { {_copy = value;} } }
+
+        /// <summary>Internal Acessors for CopyBackupDestination</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMAppValidationInternal.CopyBackupDestination { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).BackupDestination; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).BackupDestination = value; }
 
         /// <summary>Internal Acessors for CustomValidationScript</summary>
         Commvault.Powershell.Models.IAppValidationScript Commvault.Powershell.Models.IVMAppValidationInternal.CustomValidationScript { get => (this._customValidationScript = this._customValidationScript ?? new Commvault.Powershell.Models.AppValidationScript()); set { {_customValidationScript = value;} } }
@@ -32,6 +41,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for GuestCredentialsSavedCredentials</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMAppValidationInternal.GuestCredentialsSavedCredentials { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentials; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentials = value; }
 
+        /// <summary>Internal Acessors for RecoveryTarget</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMAppValidationInternal.RecoveryTarget { get => (this._recoveryTarget = this._recoveryTarget ?? new Commvault.Powershell.Models.IdName()); set { {_recoveryTarget = value;} } }
+
         /// <summary>Internal Acessors for Schedule</summary>
         Commvault.Powershell.Models.IValidationScheduleObject Commvault.Powershell.Models.IVMAppValidationInternal.Schedule { get => (this._schedule = this._schedule ?? new Commvault.Powershell.Models.ValidationScheduleObject()); set { {_schedule = value;} } }
 
@@ -48,16 +60,33 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMAppValidationInternal.WindowUncSavedCredentials { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowUncSavedCredentials; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowUncSavedCredentials = value; }
 
         /// <summary>Backing field for <see cref="Copy" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _copy;
+        private Commvault.Powershell.Models.IAppValidationSourceCopy _copy;
 
+        /// <summary>Application validation source copy details</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName Copy { get => (this._copy = this._copy ?? new Commvault.Powershell.Models.IdName()); set => this._copy = value; }
+        internal Commvault.Powershell.Models.IAppValidationSourceCopy Copy { get => (this._copy = this._copy ?? new Commvault.Powershell.Models.AppValidationSourceCopy()); set => this._copy = value; }
 
+        /// <summary>Id of the source copy</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? CopyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Id = value ?? default(long); }
+        public long? CopyId { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).Id; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).Id = value ?? default(long); }
 
+        /// <summary>Is this an active backup destination?</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CopyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Copy).Name = value ?? null; }
+        public bool? CopyIsActive { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).IsActive; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).IsActive = value ?? default(bool); }
+
+        /// <summary>Is this a snap copy?</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? CopyIsSnapCopy { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).IsSnapCopy; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).IsSnapCopy = value ?? default(bool); }
+
+        /// <summary>Name of the source copy</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string CopyName { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).Name; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).Name = value ?? null; }
+
+        /// <summary>
+        /// Order of backup destination copy created in storage policy. Primary copy will be used as default copy.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? CopyPrecedence { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).CopyPrecedence; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).CopyPrecedence = value ?? default(long); }
 
         /// <summary>username to access the network path</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -98,11 +127,16 @@ namespace Commvault.Powershell.Models
         public long? MaximumNoOfThreads { get => this._maximumNoOfThreads; set => this._maximumNoOfThreads = value; }
 
         /// <summary>Backing field for <see cref="RecoveryTarget" /> property.</summary>
-        private string _recoveryTarget;
+        private Commvault.Powershell.Models.IIdName _recoveryTarget;
 
-        /// <summary>Recovery Target for Application Validation</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string RecoveryTarget { get => this._recoveryTarget; set => this._recoveryTarget = value; }
+        internal Commvault.Powershell.Models.IIdName RecoveryTarget { get => (this._recoveryTarget = this._recoveryTarget ?? new Commvault.Powershell.Models.IdName()); set => this._recoveryTarget = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? RecoveryTargetId { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RecoveryTargetName { get => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)RecoveryTarget).Name = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId; set => ((Commvault.Powershell.Models.IGuestCredentialInfoInternal)GuestCredentials).SavedCredentialsId = value ?? default(long); }
@@ -140,9 +174,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? UnixIsDisabled { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixIsDisabled; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixIsDisabled = value ?? default(bool); }
 
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? UnixIsUnc { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixIsUnc; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixIsUnc = value ?? default(bool); }
+        public bool? UnixIsLocal { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixIsLocal; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).UnixIsLocal = value ?? default(bool); }
 
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -184,9 +218,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? WindowIsDisabled { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowIsDisabled; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowIsDisabled = value ?? default(bool); }
 
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? WindowIsUnc { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowIsUnc; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowIsUnc = value ?? default(bool); }
+        public bool? WindowIsLocal { get => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowIsLocal; set => ((Commvault.Powershell.Models.IAppValidationScriptInternal)CustomValidationScript).WindowIsLocal = value ?? default(bool); }
 
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -222,7 +256,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? CopyId { get; set; }
+        long? BackupDestinationId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -230,7 +264,49 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
+        string BackupDestinationName { get; set; }
+        /// <summary>Id of the source copy</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of the source copy",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CopyId { get; set; }
+        /// <summary>Is this an active backup destination?</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Is this an active backup destination?",
+        SerializedName = @"isActive",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? CopyIsActive { get; set; }
+        /// <summary>Is this a snap copy?</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Is this a snap copy?",
+        SerializedName = @"isSnapCopy",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? CopyIsSnapCopy { get; set; }
+        /// <summary>Name of the source copy</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the source copy",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
         string CopyName { get; set; }
+        /// <summary>
+        /// Order of backup destination copy created in storage policy. Primary copy will be used as default copy.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Order of backup destination copy created in storage policy. Primary copy will be used as default copy.",
+        SerializedName = @"copyPrecedence",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CopyPrecedence { get; set; }
         /// <summary>username to access the network path</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -265,14 +341,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"maximumNoOfThreads",
         PossibleTypes = new [] { typeof(long) })]
         long? MaximumNoOfThreads { get; set; }
-        /// <summary>Recovery Target for Application Validation</summary>
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Recovery Target for Application Validation",
-        SerializedName = @"recoveryTarget",
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryTargetId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string RecoveryTarget { get; set; }
+        string RecoveryTargetName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -337,14 +421,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isDisabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? UnixIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"True if the script is a UNC script, False if it is a local script",
-        SerializedName = @"isUNC",
+        Description = @"True if the script is local",
+        SerializedName = @"isLocal",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? UnixIsUnc { get; set; }
+        bool? UnixIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -417,14 +501,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isDisabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? WindowIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"True if the script is a UNC script, False if it is a local script",
-        SerializedName = @"isUNC",
+        Description = @"True if the script is local",
+        SerializedName = @"isLocal",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? WindowIsUnc { get; set; }
+        bool? WindowIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -471,11 +555,25 @@ namespace Commvault.Powershell.Models
     internal partial interface IVMAppValidationInternal
 
     {
-        Commvault.Powershell.Models.IIdName Copy { get; set; }
+        long? BackupDestinationId { get; set; }
 
+        string BackupDestinationName { get; set; }
+        /// <summary>Application validation source copy details</summary>
+        Commvault.Powershell.Models.IAppValidationSourceCopy Copy { get; set; }
+
+        Commvault.Powershell.Models.IIdName CopyBackupDestination { get; set; }
+        /// <summary>Id of the source copy</summary>
         long? CopyId { get; set; }
-
+        /// <summary>Is this an active backup destination?</summary>
+        bool? CopyIsActive { get; set; }
+        /// <summary>Is this a snap copy?</summary>
+        bool? CopyIsSnapCopy { get; set; }
+        /// <summary>Name of the source copy</summary>
         string CopyName { get; set; }
+        /// <summary>
+        /// Order of backup destination copy created in storage policy. Primary copy will be used as default copy.
+        /// </summary>
+        long? CopyPrecedence { get; set; }
         /// <summary>username to access the network path</summary>
         string CredentialsName { get; set; }
         /// <summary>password to access the network path</summary>
@@ -498,8 +596,12 @@ namespace Commvault.Powershell.Models
         bool? KeepValidatedVMSRunning { get; set; }
         /// <summary>Number of backup Validation Threads</summary>
         long? MaximumNoOfThreads { get; set; }
-        /// <summary>Recovery Target for Application Validation</summary>
-        string RecoveryTarget { get; set; }
+
+        Commvault.Powershell.Models.IIdName RecoveryTarget { get; set; }
+
+        long? RecoveryTargetId { get; set; }
+
+        string RecoveryTargetName { get; set; }
 
         long? SavedCredentialsId { get; set; }
 
@@ -518,8 +620,8 @@ namespace Commvault.Powershell.Models
         string UnixArguments { get; set; }
         /// <summary>Is the script disabled</summary>
         bool? UnixIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
-        bool? UnixIsUnc { get; set; }
+        /// <summary>True if the script is local</summary>
+        bool? UnixIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         string UnixPath { get; set; }
 
@@ -542,8 +644,8 @@ namespace Commvault.Powershell.Models
         string WindowArguments { get; set; }
         /// <summary>Is the script disabled</summary>
         bool? WindowIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
-        bool? WindowIsUnc { get; set; }
+        /// <summary>True if the script is local</summary>
+        bool? WindowIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         string WindowPath { get; set; }
 

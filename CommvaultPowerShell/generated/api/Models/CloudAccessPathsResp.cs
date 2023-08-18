@@ -14,7 +14,10 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="Access" /> property.</summary>
         private string _access;
 
-        /// <summary>Type of access provided to the cloud storage are Read and Read/Write</summary>
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Access { get => this._access; set => this._access = value; }
 
@@ -74,11 +77,14 @@ namespace Commvault.Powershell.Models
     public partial interface ICloudAccessPathsResp :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        /// <summary>Type of access provided to the cloud storage are Read and Read/Write</summary>
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
+        /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Type of access provided to the cloud storage are Read and Read/Write",
+        Description = @"The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path allowed).",
         SerializedName = @"access",
         PossibleTypes = new [] { typeof(string) })]
         string Access { get; set; }
@@ -144,7 +150,10 @@ namespace Commvault.Powershell.Models
     internal partial interface ICloudAccessPathsRespInternal
 
     {
-        /// <summary>Type of access provided to the cloud storage are Read and Read/Write</summary>
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
+        /// </summary>
         string Access { get; set; }
         /// <summary>Id of cloud access path</summary>
         long? AccessPathId { get; set; }

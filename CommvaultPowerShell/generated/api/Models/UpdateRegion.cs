@@ -14,42 +14,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUpdateRegionInternal
     {
 
-        /// <summary>Internal Acessors for LocationZone</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateRegionInternal.LocationZone { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Zone; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Zone = value; }
-
-        /// <summary>Internal Acessors for Locations</summary>
-        Commvault.Powershell.Models.ILocationDetailsWithZone Commvault.Powershell.Models.IUpdateRegionInternal.Locations { get => (this._locations = this._locations ?? new Commvault.Powershell.Models.LocationDetailsWithZone()); set { {_locations = value;} } }
-
-        /// <summary>Name of city for the location</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string LocationCity { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).City; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).City = value ?? null; }
-
-        /// <summary>Name of continent for the location</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string LocationContinent { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Continent; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Continent = value ?? null; }
-
-        /// <summary>Name of country for the location</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string LocationCountry { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Country; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Country = value ?? null; }
-
-        /// <summary>Latitude for the location</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public double? LocationLatitude { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Latitude; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Latitude = value ?? default(double); }
-
-        /// <summary>Longitude for the location</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public double? LocationLongitude { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Longitude; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).Longitude = value ?? default(double); }
-
-        /// <summary>Name of state for the location</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string LocationState { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).State; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).State = value ?? null; }
-
         /// <summary>Backing field for <see cref="Locations" /> property.</summary>
-        private Commvault.Powershell.Models.ILocationDetailsWithZone _locations;
+        private Commvault.Powershell.Models.ILocationDetailsWithZone[] _locations;
 
-        /// <summary>Details of a location with Zone</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.ILocationDetailsWithZone Locations { get => (this._locations = this._locations ?? new Commvault.Powershell.Models.LocationDetailsWithZone()); set => this._locations = value; }
+        public Commvault.Powershell.Models.ILocationDetailsWithZone[] Locations { get => this._locations; set => this._locations = value; }
 
         /// <summary>Backing field for <see cref="LocationsOperationType" /> property.</summary>
         private string _locationsOperationType;
@@ -65,12 +34,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
 
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? ZoneId { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneId; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string ZoneName { get => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneName; set => ((Commvault.Powershell.Models.ILocationDetailsWithZoneInternal)Locations).ZoneName = value ?? null; }
-
         /// <summary>Creates an new <see cref="UpdateRegion" /> instance.</summary>
         public UpdateRegion()
         {
@@ -82,54 +45,13 @@ namespace Commvault.Powershell.Models
     public partial interface IUpdateRegion :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        /// <summary>Name of city for the location</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Name of city for the location",
-        SerializedName = @"city",
-        PossibleTypes = new [] { typeof(string) })]
-        string LocationCity { get; set; }
-        /// <summary>Name of continent for the location</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Name of continent for the location",
-        SerializedName = @"continent",
-        PossibleTypes = new [] { typeof(string) })]
-        string LocationContinent { get; set; }
-        /// <summary>Name of country for the location</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Name of country for the location",
-        SerializedName = @"country",
-        PossibleTypes = new [] { typeof(string) })]
-        string LocationCountry { get; set; }
-        /// <summary>Latitude for the location</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Latitude for the location",
-        SerializedName = @"latitude",
-        PossibleTypes = new [] { typeof(double) })]
-        double? LocationLatitude { get; set; }
-        /// <summary>Longitude for the location</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Longitude for the location",
-        SerializedName = @"longitude",
-        PossibleTypes = new [] { typeof(double) })]
-        double? LocationLongitude { get; set; }
-        /// <summary>Name of state for the location</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Name of state for the location",
-        SerializedName = @"state",
-        PossibleTypes = new [] { typeof(string) })]
-        string LocationState { get; set; }
+        Description = @"",
+        SerializedName = @"locations",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ILocationDetailsWithZone) })]
+        Commvault.Powershell.Models.ILocationDetailsWithZone[] Locations { get; set; }
         /// <summary>Type of operation to be performed for locations</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -147,52 +69,17 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string NewName { get; set; }
 
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? ZoneId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string ZoneName { get; set; }
-
     }
     /// For newly added location - country, latitude and longitude are mandatory fields. Any existing location added to locations
     /// array needs to have all the existing fields.
     internal partial interface IUpdateRegionInternal
 
     {
-        /// <summary>Name of city for the location</summary>
-        string LocationCity { get; set; }
-        /// <summary>Name of continent for the location</summary>
-        string LocationContinent { get; set; }
-        /// <summary>Name of country for the location</summary>
-        string LocationCountry { get; set; }
-        /// <summary>Latitude for the location</summary>
-        double? LocationLatitude { get; set; }
-        /// <summary>Longitude for the location</summary>
-        double? LocationLongitude { get; set; }
-        /// <summary>Name of state for the location</summary>
-        string LocationState { get; set; }
-
-        Commvault.Powershell.Models.IIdName LocationZone { get; set; }
-        /// <summary>Details of a location with Zone</summary>
-        Commvault.Powershell.Models.ILocationDetailsWithZone Locations { get; set; }
+        Commvault.Powershell.Models.ILocationDetailsWithZone[] Locations { get; set; }
         /// <summary>Type of operation to be performed for locations</summary>
         string LocationsOperationType { get; set; }
         /// <summary>New name for the region</summary>
         string NewName { get; set; }
-
-        long? ZoneId { get; set; }
-
-        string ZoneName { get; set; }
 
     }
 }

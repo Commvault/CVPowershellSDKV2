@@ -31,8 +31,19 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string CredentialsName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName = value; }
 
+        /// <summary>Create an application group etcd (system generated) with pre-defined content</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IEtcdProtectionItem EtcdProtection { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtection; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtection = value; }
+
+        /// <summary>Denote if etcd protection is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? EtcdProtectionEnabled { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionEnabled; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionEnabled = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IIdName EtcdProtectionPlan { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionPlan; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionPlan = value; }
+
         /// <summary>Backing field for <see cref="HypervisorType" /> property.</summary>
-        private string _hypervisorType= @"VMware";
+        private string _hypervisorType= @"VMW";
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string HypervisorType { get => this._hypervisorType; }
@@ -47,6 +58,21 @@ namespace Commvault.Powershell.Models
         /// <summary>Vcenter password</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Password { get => this._password; set => this._password = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IIdName PlanEntity { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntity; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntity = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public long? PlanEntityId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityId = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public string PlanEntityName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityName = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public long? PlanId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanId = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public string PlanName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanName = value; }
 
         /// <summary>if credential validation has to be skipped.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -116,7 +142,7 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Runtime.Info(
         Required = true,
         ReadOnly = false,
-        Description = @"Vcenter hostname ",
+        Description = @"Vcenter hostname",
         SerializedName = @"vcenterHostName",
         PossibleTypes = new [] { typeof(string) })]
         string VcenterHostName { get; set; }

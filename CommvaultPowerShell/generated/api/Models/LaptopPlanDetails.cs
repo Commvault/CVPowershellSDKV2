@@ -16,6 +16,14 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IPlanAdditionalProperties AdditionalProperties { get => (this._additionalProperties = this._additionalProperties ?? new Commvault.Powershell.Models.PlanAdditionalProperties()); set => this._additionalProperties = value; }
 
+        /// <summary>The least RPO in minutes for the plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? AdditionalPropertyRpo { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Rpo; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Rpo = value ?? default(long); }
+
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AdditionalPropertyStatus { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Status; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Status = value ?? null; }
+
         /// <summary>Database options should be shown with this plan</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? AddonDatabase { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonDatabase; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonDatabase = value ?? default(bool); }
@@ -501,6 +509,22 @@ namespace Commvault.Powershell.Models
     public partial interface ILaptopPlanDetails :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>The least RPO in minutes for the plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The least RPO in minutes for the plan",
+        SerializedName = @"RPO",
+        PossibleTypes = new [] { typeof(long) })]
+        long? AdditionalPropertyRpo { get; set; }
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"status if plan backups are enabled or disabled",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string AdditionalPropertyStatus { get; set; }
         /// <summary>Database options should be shown with this plan</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -1146,6 +1170,10 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IPlanAdditionalProperties AdditionalProperties { get; set; }
 
         Commvault.Powershell.Models.IPlanAddons AdditionalPropertyAddons { get; set; }
+        /// <summary>The least RPO in minutes for the plan</summary>
+        long? AdditionalPropertyRpo { get; set; }
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        string AdditionalPropertyStatus { get; set; }
         /// <summary>Database options should be shown with this plan</summary>
         bool? AddonDatabase { get; set; }
         /// <summary>File system options should be shown with this plan</summary>
@@ -1353,8 +1381,8 @@ namespace Commvault.Powershell.Models
         /// </summary>
         long? RetentionDeletedItemRetention { get; set; }
         /// <summary>
-        /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-        /// not defined then, 5 versions are considered the default setting.
+        /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+        /// defined then, 5 versions are considered the default setting.
         /// </summary>
         Commvault.Powershell.Models.ILaptopPlanRetentionFileVersions RetentionFileVersions { get; set; }
         /// <summary>Flag telling if this setting is currently being overriden</summary>

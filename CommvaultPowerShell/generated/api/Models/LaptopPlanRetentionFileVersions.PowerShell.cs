@@ -6,8 +6,8 @@ namespace Commvault.Powershell.Models
     using Commvault.Powershell.Runtime.PowerShell;
 
     /// <summary>
-    /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-    /// not defined then, 5 versions are considered the default setting.
+    /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+    /// defined then, 5 versions are considered the default setting.
     /// </summary>
     [System.ComponentModel.TypeConverter(typeof(LaptopPlanRetentionFileVersionsTypeConverter))]
     public partial class LaptopPlanRetentionFileVersions
@@ -135,8 +135,8 @@ namespace Commvault.Powershell.Models
         /// <returns>a <see cref="System.String" /> containing this model serialized to JSON text.</returns>
         public string ToJsonString() => ToJson(null, Commvault.Powershell.Runtime.SerializationMode.IncludeAll)?.ToString();
     }
-    /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-    /// not defined then, 5 versions are considered the default setting.
+    /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+    /// defined then, 5 versions are considered the default setting.
     [System.ComponentModel.TypeConverter(typeof(LaptopPlanRetentionFileVersionsTypeConverter))]
     public partial interface ILaptopPlanRetentionFileVersions
 

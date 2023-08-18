@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cvcdmplan
 schema: 2.0.0
 ---
@@ -14,12 +14,12 @@ Create a CDM Plan
 
 ```
 New-CVCdmPlan -BackupDestinations <ICreatePlanBackupDestination[]> -PlanName <String>
- [-BackupFrequencySchedules <IPlanSchedule[]>] [-DatabaseOptionCommitFrequencyInHours <Int64>]
- [-DatabaseOptionLogBackupRpoMins <Int64>] [-DatabaseOptionUseDiskCacheForLogBackups]
- [-RpoBackupWindow <IDayAndTime[]>] [-RpoFullBackupWindow <IDayAndTime[]>]
- [-SnapshotOptionBackupCopyRpoMins <Int64>] [-SnapshotOptionEnableBackupCopy]
- [-SnapshotOptionRetentionPeriodDays <Int64>] [-SnapshotOptionSnapRecoveryPoints <Int64>] [-PassThru]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-BackupFrequencyOperationType <String>] [-BackupFrequencySchedules <IPlanSchedule[]>]
+ [-DatabaseOptionCommitFrequencyInHours <Int64>] [-DatabaseOptionLogBackupRpoMins <Int64>]
+ [-DatabaseOptionUseDiskCacheForLogBackups] [-RpoBackupWindow <IDayAndTime[]>]
+ [-RpoFullBackupWindow <IDayAndTime[]>] [-SnapshotOptionBackupCopyRpoMins <Int64>]
+ [-SnapshotOptionEnableBackupCopy] [-SnapshotOptionRetentionPeriodDays <Int64>]
+ [-SnapshotOptionSnapRecoveryPoints <Int64>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,10 +29,8 @@ Create a CDM Plan
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -40,10 +38,8 @@ Create a CDM Plan
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -62,6 +58,21 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -BackupFrequencyOperationType
+Operation type for the list
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -306,45 +317,57 @@ To create the parameters described below, construct a hash table containing the 
 BACKUPDESTINATIONS <ICreatePlanBackupDestination[]>: Copy destinations for the plan. Specify where you want to store your data.
   - `BackupDestinationName <String>`: Backup destination details. Enter the name during creation.
   - `[BackupStartTime <Int64?>]`: Backup start time in seconds. The time is provided in unix time format.
-  - `[BackupsToCopy <String>]`: 
-  - `[FirstExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: 
-  - `[FirstExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-  - `[FirstExtendedRetentionRuleType <String>]`: 
+  - `[BackupsToCopy <String>]`: All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+  - `[FirstExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: If this is set as true, no need to specify retentionPeriodDays.
+  - `[FirstExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: If this is set, no need to specify isInfiniteRetention as false.
+  - `[FirstExtendedRetentionRuleType <String>]`: All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+  - `[FullBackupTypesToCopy <String>]`: Which type of backup type should be copied for the given backup destination when backup type is not all jobs. Default is LAST while adding new backup destination.
   - `[IsMirrorCopy <Boolean?>]`: Is this a mirror copy? Only considered when isSnapCopy is true.
   - `[IsSnapCopy <Boolean?>]`: Is this a snap copy? If isMirrorCopy is not set, then default is Vault/Replica.
   - `[Mappings <ISnapshotCopyMapping[]>]`: 
     - `[SourceId <Int64?>]`: 
     - `[SourceName <String>]`: 
+    - `[SourceVendorId <Int64?>]`: 
+    - `[SourceVendorName <String>]`: 
     - `[TargetId <Int64?>]`: 
     - `[TargetName <String>]`: 
+    - `[TargetVendorId <Int64?>]`: 
+    - `[TargetVendorName <String>]`: 
     - `[Vendor <String>]`: Snapshot vendors available for Snap Copy mappings
   - `[NetAppCloudTarget <Boolean?>]`: Only for snap copy. Enabling this changes SVM Mapping  to NetApp cloud targets only.
   - `[OptimizeForInstantClone <Boolean?>]`: Flag to specify if primary storage is copy data management enabled.
+  - `[OverrideRetentionSettings <Boolean?>]`: Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to use retention defined on this copy.
   - `[RegionId <Int64?>]`: 
   - `[RegionName <String>]`: 
   - `[RetentionPeriodDays <Int64?>]`: Retention period in days. -1 can be specified for infinite retention. If this and snapRecoveryPoints both are not specified, this takes  precedence.
   - `[RetentionRuleType <String>]`: Which type of retention rule should be used for the given backup destination
-  - `[SecondExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: 
-  - `[SecondExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-  - `[SecondExtendedRetentionRuleType <String>]`: 
+  - `[SecondExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: If this is set as true, no need to specify retentionPeriodDays.
+  - `[SecondExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: If this is set, no need to specify isInfiniteRetention as false.
+  - `[SecondExtendedRetentionRuleType <String>]`: All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
   - `[SnapRecoveryPoints <Int64?>]`: Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap copy.
   - `[SourceCopyId <Int64?>]`: 
   - `[SourceCopyName <String>]`: 
   - `[StoragePoolId <Int64?>]`: 
   - `[StoragePoolName <String>]`: 
-  - `[ThirdExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: 
-  - `[ThirdExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-  - `[ThirdExtendedRetentionRuleType <String>]`: 
+  - `[StorageType <String>]`: StorageType
+  - `[ThirdExtendedRetentionRuleIsInfiniteRetention <Boolean?>]`: If this is set as true, no need to specify retentionPeriodDays.
+  - `[ThirdExtendedRetentionRuleRetentionPeriodDays <Int64?>]`: If this is set, no need to specify isInfiniteRetention as false.
+  - `[ThirdExtendedRetentionRuleType <String>]`: All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
   - `[UseExtendedRetentionRules <Boolean?>]`: Use extended retention rules
 
 BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
   - `BackupType <String>`: Schedule Backup level
-  - `ForDatabasesOnly <Boolean>`: Boolean to indicate if schedule is for database agents
-  - `ScheduleOperation <String>`: Operation being performed on schedule
   - `SchedulePatternScheduleFrequencyType <String>`: schedule frequency type
+  - `[ForDatabasesOnly <Boolean?>]`: Boolean to indicate if schedule is for database agents
   - `[PolicyId <Int64?>]`: Schedule policy Id to which the schedule belongs
   - `[ScheduleId <Int64?>]`: Id of the schedule if available, required for modifying, deleting schedule
   - `[ScheduleName <String>]`: Name of the schedule, for modify
+  - `[ScheduleOperation <String>]`: Operation being performed on schedule
+  - `[ScheduleOptionCommitFrequencyInHours <Int64?>]`: Commit frequency in hours for disk cache backups from automatic schedules
+  - `[ScheduleOptionDaysBetweenAutoConvert <Int64?>]`: Number of days between auto conversion of backup level applicable for databases on incremental and differential schedules of server plan
+  - `[ScheduleOptionJobRunningTimeInMins <Int64?>]`: total job running time in minutes
+  - `[ScheduleOptionO365ItemSelectionOption <String>]`: item backup option for O365 V2 backup jobs
+  - `[ScheduleOptionUseDiskCacheForLogBackups <Boolean?>]`: Used to enable disk caching feature on databases for automatic schedules on server plan
   - `[SchedulePatternDayOfMonth <Int64?>]`: Day on which to run the schedule, applicable for monthly, yearly
   - `[SchedulePatternDayOfWeek <String>]`: 
   - `[SchedulePatternDaysBetweenSyntheticFulls <Int64?>]`: No of days between two synthetic full jobs
@@ -354,6 +377,7 @@ BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
     - `[OnDayOfTheWeek <String[]>]`: On which days, for ex: MONDAY, FRIDAY
     - `[OnWeekOfTheMonth <String[]>]`: On which week of month, for ex: FIRST, LAST
   - `[SchedulePatternFrequency <Int64?>]`: Frequency of the schedule based on schedule frequency type eg. for Hours, value 2 is 2 hours, for Minutes, 30 is 30 minutes, for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
+  - `[SchedulePatternMaxBackupIntervalInMins <Int64?>]`: The number of mins to force a backup on automatic schedule.
   - `[SchedulePatternMonthOfYear <String>]`: 
   - `[SchedulePatternNoOfTimes <Int64?>]`: The number of times you want the schedule to run.
   - `[SchedulePatternRepeatIntervalInMinutes <Int64?>]`: How often in minutes in a day the schedule runs, applicable for daily, weekly, monthly and yearly frequency types.
@@ -364,6 +388,7 @@ BACKUPFREQUENCYSCHEDULES <IPlanSchedule[]>: .
   - `[SchedulePatternWeeklyDays <String[]>]`: Days of the week for weekly frequency
   - `[TimezoneId <Int64?>]`: 
   - `[TimezoneName <String>]`: 
+  - `[VMOperationType <String>]`: Type of DR operation (only applicable for Failover groups)
 
 RPOBACKUPWINDOW <IDayAndTime[]>: Backup window for incremental backup
   - `[DayOfWeek <String[]>]`: 

@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cvarchiveplan
 schema: 2.0.0
 ---
@@ -32,10 +32,8 @@ Create Archive Plan
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -43,10 +41,8 @@ Create Archive Plan
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -428,7 +424,7 @@ To create the parameters described below, construct a hash table containing the 
 
 BACKUPDESTINATIONS <ICreateArchivePlanBackupDestination[]>: .
   - `BackupDestinationName <String>`: Backup destination details. Enter the name during creation.
-  - `[BackupStartTime <Int64?>]`: Backup start time in seconds. The time is provided in unix time format.
+  - `[OverrideRetentionSettings <Boolean?>]`: Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to use retention defined on this copy.
   - `[RegionId <Int64?>]`: 
   - `[RegionName <String>]`: 
   - `[RetentionPeriodDays <Int64?>]`: Retention period in days. -1 can be specified for infinite retention.

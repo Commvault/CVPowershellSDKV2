@@ -29,6 +29,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMDetailSummaryInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
 
+        /// <summary>Internal Acessors for Sla</summary>
+        Commvault.Powershell.Models.IVMSla Commvault.Powershell.Models.IVMDetailSummaryInternal.Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.VMSla()); set { {_sla = value;} } }
+
         /// <summary>Internal Acessors for VMGroup</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVMDetailSummaryInternal.VMGroup { get => (this._vMGroup = this._vMGroup ?? new Commvault.Powershell.Models.IdName()); set { {_vMGroup = value;} } }
 
@@ -97,6 +100,21 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="Sla" /> property.</summary>
+        private Commvault.Powershell.Models.IVMSla _sla;
+
+        /// <summary>VMSLA</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IVMSla Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.VMSla()); set => this._sla = value; }
+
+        /// <summary>The reason for the current SLA status of the VM client</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SlaReason { get => ((Commvault.Powershell.Models.IVMSlaInternal)Sla).Reason; set => ((Commvault.Powershell.Models.IVMSlaInternal)Sla).Reason = value ?? null; }
+
+        /// <summary>Provides the SLA status.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SlaStatus { get => ((Commvault.Powershell.Models.IVMSlaInternal)Sla).Status; set => ((Commvault.Powershell.Models.IVMSlaInternal)Sla).Status = value ?? null; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -230,6 +248,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string PlanName { get; set; }
+        /// <summary>The reason for the current SLA status of the VM client</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The reason for the current SLA status of the VM client",
+        SerializedName = @"reason",
+        PossibleTypes = new [] { typeof(string) })]
+        string SlaReason { get; set; }
+        /// <summary>Provides the SLA status.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Provides the SLA status.",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string SlaStatus { get; set; }
         /// <summary>The status of the backup for the VM, instance, or container.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -306,6 +340,12 @@ namespace Commvault.Powershell.Models
         long? PlanId { get; set; }
 
         string PlanName { get; set; }
+        /// <summary>VMSLA</summary>
+        Commvault.Powershell.Models.IVMSla Sla { get; set; }
+        /// <summary>The reason for the current SLA status of the VM client</summary>
+        string SlaReason { get; set; }
+        /// <summary>Provides the SLA status.</summary>
+        string SlaStatus { get; set; }
         /// <summary>The status of the backup for the VM, instance, or container.</summary>
         string Status { get; set; }
 

@@ -32,6 +32,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="Company" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _company;
 
+        /// <summary>Organization corresponding to alert</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
 
@@ -228,7 +229,7 @@ namespace Commvault.Powershell.Models
         long? ClientId { get; set; }
 
         string ClientName { get; set; }
-
+        /// <summary>Organization corresponding to alert</summary>
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
         long? CompanyId { get; set; }

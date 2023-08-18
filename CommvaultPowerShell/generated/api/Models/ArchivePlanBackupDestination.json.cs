@@ -67,8 +67,11 @@ namespace Commvault.Powershell.Models
             {_isDefault = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDefault"), out var __jsonIsDefault) ? (bool?)__jsonIsDefault : IsDefault;}
             {_copyType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("copyType"), out var __jsonCopyType) ? (string)__jsonCopyType : (string)CopyType;}
             {_copyTypeName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("copyTypeName"), out var __jsonCopyTypeName) ? (string)__jsonCopyTypeName : (string)CopyTypeName;}
+            {_copyPrecedence = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("copyPrecedence"), out var __jsonCopyPrecedence) ? (long?)__jsonCopyPrecedence : CopyPrecedence;}
             {_storageType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("storageType"), out var __jsonStorageType) ? (string)__jsonStorageType : (string)StorageType;}
+            {_enableDataAging = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableDataAging"), out var __jsonEnableDataAging) ? (bool?)__jsonEnableDataAging : EnableDataAging;}
             {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
+            {_overrideRetentionSettings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("overrideRetentionSettings"), out var __jsonOverrideRetentionSettings) ? (bool?)__jsonOverrideRetentionSettings : OverrideRetentionSettings;}
             AfterFromJson(json);
         }
 
@@ -108,8 +111,11 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._isDefault ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDefault) : null, "isDefault" ,container.Add );
             AddIf( null != (((object)this._copyType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._copyType.ToString()) : null, "copyType" ,container.Add );
             AddIf( null != (((object)this._copyTypeName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._copyTypeName.ToString()) : null, "copyTypeName" ,container.Add );
+            AddIf( null != this._copyPrecedence ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._copyPrecedence) : null, "copyPrecedence" ,container.Add );
             AddIf( null != (((object)this._storageType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._storageType.ToString()) : null, "storageType" ,container.Add );
+            AddIf( null != this._enableDataAging ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableDataAging) : null, "enableDataAging" ,container.Add );
             AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
+            AddIf( null != this._overrideRetentionSettings ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._overrideRetentionSettings) : null, "overrideRetentionSettings" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

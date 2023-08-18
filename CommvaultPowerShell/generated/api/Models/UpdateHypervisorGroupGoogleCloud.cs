@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.IUpdateHypervisorGroupReq __updateHypervisorGroupReq = new Commvault.Powershell.Models.UpdateHypervisorGroupReq();
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNode; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNode = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public Commvault.Powershell.Models.IActivityControlOptions ActivityControl { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).ActivityControl; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).ActivityControl = value; }
@@ -72,6 +72,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string NewName { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).NewName; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).NewName = value; }
 
+        /// <summary>Backing field for <see cref="Password" /> property.</summary>
+        private string _password;
+
+        /// <summary>Base64 encrypted Service Account ID</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Password { get => this._password; set => this._password = value; }
+
         /// <summary>Delayed by n Hrs</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string RestoreActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).RestoreActivityControlOptionDelayTime; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).RestoreActivityControlOptionDelayTime = value; }
@@ -105,6 +112,10 @@ namespace Commvault.Powershell.Models
         /// <summary>service account id of google cloud</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ServiceAccountId { get => this._serviceAccountId; set => this._serviceAccountId = value; }
+
+        /// <summary>hypervisorSettings</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IHypervisorSettings Settings { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).Settings; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).Settings = value; }
 
         /// <summary>if credential validation has to be skipped.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -147,6 +158,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"hypervisorType",
         PossibleTypes = new [] { typeof(string) })]
         string HypervisorType { get; set; }
+        /// <summary>Base64 encrypted Service Account ID</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Base64 encrypted Service Account ID",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string Password { get; set; }
         /// <summary>service account id of google cloud</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -170,6 +189,8 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal
     {
         string HypervisorType { get; set; }
+        /// <summary>Base64 encrypted Service Account ID</summary>
+        string Password { get; set; }
         /// <summary>service account id of google cloud</summary>
         string ServiceAccountId { get; set; }
         /// <summary>username of GCP login Application</summary>

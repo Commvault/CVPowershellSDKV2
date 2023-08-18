@@ -63,6 +63,8 @@ namespace Commvault.Powershell.Models
             }
             __cloudStorageProxy = new Commvault.Powershell.Models.CloudStorageProxy(json);
             __cloudStorageAdvanced = new Commvault.Powershell.Models.CloudStorageAdvanced(json);
+            __modifyCloudBucketConfiguration = new Commvault.Powershell.Models.ModifyCloudBucketConfiguration(json);
+            {_mediaAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mediaAgent"), out var __jsonMediaAgent) ? Commvault.Powershell.Models.IdName.FromJson(__jsonMediaAgent) : MediaAgent;}
             {_credentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("credentials"), out var __jsonCredentials) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCredentials) : Credentials;}
             {_cloudType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("cloudType"), out var __jsonCloudType) ? (string)__jsonCloudType : (string)CloudType;}
             {_serviceHost = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serviceHost"), out var __jsonServiceHost) ? (string)__jsonServiceHost : (string)ServiceHost;}
@@ -104,6 +106,8 @@ namespace Commvault.Powershell.Models
             }
             __cloudStorageProxy?.ToJson(container, serializationMode);
             __cloudStorageAdvanced?.ToJson(container, serializationMode);
+            __modifyCloudBucketConfiguration?.ToJson(container, serializationMode);
+            AddIf( null != this._mediaAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mediaAgent.ToJson(null,serializationMode) : null, "mediaAgent" ,container.Add );
             AddIf( null != this._credentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._credentials.ToJson(null,serializationMode) : null, "credentials" ,container.Add );
             AddIf( null != (((object)this._cloudType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._cloudType.ToString()) : null, "cloudType" ,container.Add );
             AddIf( null != (((object)this._serviceHost)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._serviceHost.ToString()) : null, "serviceHost" ,container.Add );

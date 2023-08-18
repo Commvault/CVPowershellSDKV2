@@ -72,6 +72,8 @@ namespace Commvault.Powershell.Models
             }
             {_source = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("source"), out var __jsonSource) ? Commvault.Powershell.Models.IdName.FromJson(__jsonSource) : Source;}
             {_target = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("target"), out var __jsonTarget) ? Commvault.Powershell.Models.IdName.FromJson(__jsonTarget) : Target;}
+            {_sourceVendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("sourceVendor"), out var __jsonSourceVendor) ? Commvault.Powershell.Models.IdName.FromJson(__jsonSourceVendor) : SourceVendor;}
+            {_targetVendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("targetVendor"), out var __jsonTargetVendor) ? Commvault.Powershell.Models.IdName.FromJson(__jsonTargetVendor) : TargetVendor;}
             {_vendor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vendor"), out var __jsonVendor) ? (string)__jsonVendor : (string)Vendor;}
             AfterFromJson(json);
         }
@@ -97,6 +99,8 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._source ? (Commvault.Powershell.Runtime.Json.JsonNode) this._source.ToJson(null,serializationMode) : null, "source" ,container.Add );
             AddIf( null != this._target ? (Commvault.Powershell.Runtime.Json.JsonNode) this._target.ToJson(null,serializationMode) : null, "target" ,container.Add );
+            AddIf( null != this._sourceVendor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sourceVendor.ToJson(null,serializationMode) : null, "sourceVendor" ,container.Add );
+            AddIf( null != this._targetVendor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._targetVendor.ToJson(null,serializationMode) : null, "targetVendor" ,container.Add );
             AddIf( null != (((object)this._vendor)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vendor.ToString()) : null, "vendor" ,container.Add );
             AfterToJson(ref container);
             return container;

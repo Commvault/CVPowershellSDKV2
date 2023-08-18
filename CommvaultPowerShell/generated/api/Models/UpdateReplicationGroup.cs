@@ -11,10 +11,39 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUpdateReplicationGroupInternal
     {
 
+        /// <summary>Set to true to continue to the next priority machines on failure.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? AdvancedOptionContinueOnFailure { get => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).ContinueOnFailure; set => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).ContinueOnFailure = value ?? default(bool); }
+
+        /// <summary>The delay between machines in different priorities. Mention in minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? AdvancedOptionDelayBetweenPriorityMachines { get => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).DelayBetweenPriorityMachines; set => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).DelayBetweenPriorityMachines = value ?? default(long); }
+
+        /// <summary>All the scripts of replication group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IReplicationGroupScript AdvancedOptionScript { get => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).Script; set => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).Script = value ?? null /* model class */; }
+
+        /// <summary>Backing field for <see cref="AdvancedOptions" /> property.</summary>
+        private Commvault.Powershell.Models.IReplicationGroupAdvancedOptions _advancedOptions;
+
+        /// <summary>The advanced option for replication group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IReplicationGroupAdvancedOptions AdvancedOptions { get => (this._advancedOptions = this._advancedOptions ?? new Commvault.Powershell.Models.ReplicationGroupAdvancedOptions()); set => this._advancedOptions = value; }
+
+        /// <summary>Internal Acessors for AdvancedOptions</summary>
+        Commvault.Powershell.Models.IReplicationGroupAdvancedOptions Commvault.Powershell.Models.IUpdateReplicationGroupInternal.AdvancedOptions { get => (this._advancedOptions = this._advancedOptions ?? new Commvault.Powershell.Models.ReplicationGroupAdvancedOptions()); set { {_advancedOptions = value;} } }
+
+        /// <summary>Backing field for <see cref="Disable" /> property.</summary>
+        private bool? _disable;
+
+        /// <summary>Used to disable a replication group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Disable { get => this._disable; set => this._disable = value; }
+
         /// <summary>Backing field for <see cref="Enable" /> property.</summary>
         private bool? _enable;
 
-        /// <summary>Used to enable or disable a replication group</summary>
+        /// <summary>Used to enable a replication group</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? Enable { get => this._enable; set => this._enable = value; }
 
@@ -35,11 +64,43 @@ namespace Commvault.Powershell.Models
     public partial interface IUpdateReplicationGroup :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        /// <summary>Used to enable or disable a replication group</summary>
+        /// <summary>Set to true to continue to the next priority machines on failure.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Used to enable or disable a replication group",
+        Description = @"Set to true to continue to the next priority machines on failure.",
+        SerializedName = @"continueOnFailure",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? AdvancedOptionContinueOnFailure { get; set; }
+        /// <summary>The delay between machines in different priorities. Mention in minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The delay between machines in different priorities. Mention in minutes",
+        SerializedName = @"delayBetweenPriorityMachines",
+        PossibleTypes = new [] { typeof(long) })]
+        long? AdvancedOptionDelayBetweenPriorityMachines { get; set; }
+        /// <summary>All the scripts of replication group</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"All the scripts of replication group",
+        SerializedName = @"script",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IReplicationGroupScript) })]
+        Commvault.Powershell.Models.IReplicationGroupScript AdvancedOptionScript { get; set; }
+        /// <summary>Used to disable a replication group</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to disable a replication group",
+        SerializedName = @"disable",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Disable { get; set; }
+        /// <summary>Used to enable a replication group</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to enable a replication group",
         SerializedName = @"enable",
         PossibleTypes = new [] { typeof(bool) })]
         bool? Enable { get; set; }
@@ -57,7 +118,17 @@ namespace Commvault.Powershell.Models
     internal partial interface IUpdateReplicationGroupInternal
 
     {
-        /// <summary>Used to enable or disable a replication group</summary>
+        /// <summary>Set to true to continue to the next priority machines on failure.</summary>
+        bool? AdvancedOptionContinueOnFailure { get; set; }
+        /// <summary>The delay between machines in different priorities. Mention in minutes</summary>
+        long? AdvancedOptionDelayBetweenPriorityMachines { get; set; }
+        /// <summary>All the scripts of replication group</summary>
+        Commvault.Powershell.Models.IReplicationGroupScript AdvancedOptionScript { get; set; }
+        /// <summary>The advanced option for replication group</summary>
+        Commvault.Powershell.Models.IReplicationGroupAdvancedOptions AdvancedOptions { get; set; }
+        /// <summary>Used to disable a replication group</summary>
+        bool? Disable { get; set; }
+        /// <summary>Used to enable a replication group</summary>
         bool? Enable { get; set; }
         /// <summary>Used to change the name of a replication group</summary>
         string NewName { get; set; }

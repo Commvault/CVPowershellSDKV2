@@ -22,6 +22,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="BackupsToCopy" /> property.</summary>
         private string _backupsToCopy;
 
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string BackupsToCopy { get => this._backupsToCopy; set => this._backupsToCopy = value; }
 
@@ -40,6 +43,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for SourceCopy</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatePlanBackupDestinationInternal.SourceCopy { get => (this._sourceCopy = this._sourceCopy ?? new Commvault.Powershell.Models.IdName()); set { {_sourceCopy = value;} } }
 
+        /// <summary>Backing field for <see cref="EnableDataAging" /> property.</summary>
+        private bool? _enableDataAging;
+
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnableDataAging { get => this._enableDataAging; set => this._enableDataAging = value; }
+
         /// <summary>Backing field for <see cref="ExtendedRetentionRules" /> property.</summary>
         private Commvault.Powershell.Models.IExtendedRetentionRules _extendedRetentionRules;
 
@@ -49,15 +59,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IExtendedRetentionRules ExtendedRetentionRules { get => (this._extendedRetentionRules = this._extendedRetentionRules ?? new Commvault.Powershell.Models.ExtendedRetentionRules()); set => this._extendedRetentionRules = value; }
 
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? FirstExtendedRetentionRuleIsInfiniteRetention { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleIsInfiniteRetention; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleIsInfiniteRetention = value ?? default(bool); }
 
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? FirstExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleRetentionPeriodDays = value ?? default(long); }
 
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FirstExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleType; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).FirstExtendedRetentionRuleType = value ?? null; }
 
@@ -74,6 +86,16 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
 
+        /// <summary>Backing field for <see cref="OverrideRetentionSettings" /> property.</summary>
+        private bool? _overrideRetentionSettings;
+
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? OverrideRetentionSettings { get => this._overrideRetentionSettings; set => this._overrideRetentionSettings = value; }
+
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
         private long? _retentionPeriodDays;
 
@@ -88,15 +110,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string RetentionRuleType { get => this._retentionRuleType; set => this._retentionRuleType = value; }
 
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? SecondExtendedRetentionRuleIsInfiniteRetention { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleIsInfiniteRetention; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleIsInfiniteRetention = value ?? default(bool); }
 
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SecondExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleRetentionPeriodDays = value ?? default(long); }
 
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SecondExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleType; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).SecondExtendedRetentionRuleType = value ?? null; }
 
@@ -122,15 +146,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceCopyName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceCopy).Name = value ?? null; }
 
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? ThirdExtendedRetentionRuleIsInfiniteRetention { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleIsInfiniteRetention; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleIsInfiniteRetention = value ?? default(bool); }
 
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? ThirdExtendedRetentionRuleRetentionPeriodDays { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleRetentionPeriodDays; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleRetentionPeriodDays = value ?? default(long); }
 
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ThirdExtendedRetentionRuleType { get => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleType; set => ((Commvault.Powershell.Models.IExtendedRetentionRulesInternal)ExtendedRetentionRules).ThirdExtendedRetentionRuleType = value ?? null; }
 
@@ -162,37 +188,47 @@ namespace Commvault.Powershell.Models
         SerializedName = @"backupStartTime",
         PossibleTypes = new [] { typeof(long) })]
         long? BackupStartTime { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"backupsToCopy",
-        PossibleTypes = new [] { typeof(string) })]
-        string BackupsToCopy { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"isInfiniteRetention",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? FirstExtendedRetentionRuleIsInfiniteRetention { get; set; }
         /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
-        SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(long) })]
-        long? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
-
+        Description = @"All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.",
+        SerializedName = @"backupsToCopy",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupsToCopy { get; set; }
+        /// <summary>Tells if this copy has data aging enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"Tells if this copy has data aging enabled",
+        SerializedName = @"enableDataAging",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnableDataAging { get; set; }
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"If this is set as true, no need to specify retentionPeriodDays.",
+        SerializedName = @"isInfiniteRetention",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? FirstExtendedRetentionRuleIsInfiniteRetention { get; set; }
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"If this is set, no need to specify isInfiniteRetention as false.",
+        SerializedName = @"retentionPeriodDays",
+        PossibleTypes = new [] { typeof(long) })]
+        long? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.",
         SerializedName = @"type",
         PossibleTypes = new [] { typeof(string) })]
         string FirstExtendedRetentionRuleType { get; set; }
@@ -212,6 +248,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"newName",
         PossibleTypes = new [] { typeof(string) })]
         string NewName { get; set; }
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to use retention defined on this copy.",
+        SerializedName = @"overrideRetentionSettings",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? OverrideRetentionSettings { get; set; }
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -228,29 +275,29 @@ namespace Commvault.Powershell.Models
         SerializedName = @"retentionRuleType",
         PossibleTypes = new [] { typeof(string) })]
         string RetentionRuleType { get; set; }
-
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"If this is set as true, no need to specify retentionPeriodDays.",
         SerializedName = @"isInfiniteRetention",
         PossibleTypes = new [] { typeof(bool) })]
         bool? SecondExtendedRetentionRuleIsInfiniteRetention { get; set; }
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"If this is set, no need to specify isInfiniteRetention as false.",
+        SerializedName = @"retentionPeriodDays",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
         /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
-        SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
+        Description = @"All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.",
         SerializedName = @"type",
         PossibleTypes = new [] { typeof(string) })]
         string SecondExtendedRetentionRuleType { get; set; }
@@ -281,29 +328,29 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string SourceCopyName { get; set; }
-
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"If this is set as true, no need to specify retentionPeriodDays.",
         SerializedName = @"isInfiniteRetention",
         PossibleTypes = new [] { typeof(bool) })]
         bool? ThirdExtendedRetentionRuleIsInfiniteRetention { get; set; }
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"If this is set, no need to specify isInfiniteRetention as false.",
+        SerializedName = @"retentionPeriodDays",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
         /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
-        SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(long) })]
-        long? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
+        Description = @"All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.",
         SerializedName = @"type",
         PossibleTypes = new [] { typeof(string) })]
         string ThirdExtendedRetentionRuleType { get; set; }
@@ -326,8 +373,12 @@ namespace Commvault.Powershell.Models
         /// Specify the Backup start time in seconds. The time is provided in unix time format.
         /// </summary>
         long? BackupStartTime { get; set; }
-
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         string BackupsToCopy { get; set; }
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        bool? EnableDataAging { get; set; }
 
         Commvault.Powershell.Models.IPlanRetentionRule ExtendedRetentionRuleFirstExtendedRetentionRule { get; set; }
 
@@ -338,29 +389,34 @@ namespace Commvault.Powershell.Models
         /// If you want to update, specify the whole object. Extended retention rules should be bigger than retention period.
         /// </summary>
         Commvault.Powershell.Models.IExtendedRetentionRules ExtendedRetentionRules { get; set; }
-
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         bool? FirstExtendedRetentionRuleIsInfiniteRetention { get; set; }
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         long? FirstExtendedRetentionRuleRetentionPeriodDays { get; set; }
-
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         string FirstExtendedRetentionRuleType { get; set; }
 
         Commvault.Powershell.Models.ISnapshotCopyMapping[] Mappings { get; set; }
         /// <summary>New name for backup destination</summary>
         string NewName { get; set; }
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        bool? OverrideRetentionSettings { get; set; }
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
         long? RetentionPeriodDays { get; set; }
         /// <summary>Which type of retention rule should be used for the given backup destination</summary>
         string RetentionRuleType { get; set; }
-
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         bool? SecondExtendedRetentionRuleIsInfiniteRetention { get; set; }
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         long? SecondExtendedRetentionRuleRetentionPeriodDays { get; set; }
-
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         string SecondExtendedRetentionRuleType { get; set; }
         /// <summary>
         /// Number of snap recovery points for snap copy for retention. Can be specified instead of retention period in Days for snap
@@ -373,13 +429,13 @@ namespace Commvault.Powershell.Models
         long? SourceCopyId { get; set; }
 
         string SourceCopyName { get; set; }
-
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         bool? ThirdExtendedRetentionRuleIsInfiniteRetention { get; set; }
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         long? ThirdExtendedRetentionRuleRetentionPeriodDays { get; set; }
-
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         string ThirdExtendedRetentionRuleType { get; set; }
         /// <summary>
         /// Use extended retention rules. Must specify if updating extended retention rules.

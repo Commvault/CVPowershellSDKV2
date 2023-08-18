@@ -5,11 +5,26 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>AlertAssociationIdNameType</summary>
+    /// <summary>
+    /// Hierarchy starts at the top at client level(parentEntity1) and ends at backupset level(parentEntity4) when defining parents
+    /// for the associated entity. Parent entities must be defined application and lower entities.
+    /// </summary>
     public partial class AlertAssociationIdNameType1 :
         Commvault.Powershell.Models.IAlertAssociationIdNameType1,
         Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal
     {
+
+        /// <summary>Internal Acessors for ParentEntity1</summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal.ParentEntity1 { get => (this._parentEntity1 = this._parentEntity1 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set { {_parentEntity1 = value;} } }
+
+        /// <summary>Internal Acessors for ParentEntity2</summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal.ParentEntity2 { get => (this._parentEntity2 = this._parentEntity2 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set { {_parentEntity2 = value;} } }
+
+        /// <summary>Internal Acessors for ParentEntity3</summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal.ParentEntity3 { get => (this._parentEntity3 = this._parentEntity3 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set { {_parentEntity3 = value;} } }
+
+        /// <summary>Internal Acessors for ParentEntity4</summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal.ParentEntity4 { get => (this._parentEntity4 = this._parentEntity4 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set { {_parentEntity4 = value;} } }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
@@ -25,6 +40,90 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
+        /// <summary>Backing field for <see cref="ParentEntity1" /> property.</summary>
+        private Commvault.Powershell.Models.IAlertAssocParentEntity _parentEntity1;
+
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity1 { get => (this._parentEntity1 = this._parentEntity1 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set => this._parentEntity1 = value; }
+
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ParentEntity1Id { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity1).Id; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity1).Id = value ?? default(long); }
+
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity1Name { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity1).Name; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity1).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity1Type { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity1).Type; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity1).Type = value ?? null; }
+
+        /// <summary>Backing field for <see cref="ParentEntity2" /> property.</summary>
+        private Commvault.Powershell.Models.IAlertAssocParentEntity _parentEntity2;
+
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity2 { get => (this._parentEntity2 = this._parentEntity2 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set => this._parentEntity2 = value; }
+
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ParentEntity2Id { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity2).Id; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity2).Id = value ?? default(long); }
+
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity2Name { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity2).Name; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity2).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity2Type { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity2).Type; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity2).Type = value ?? null; }
+
+        /// <summary>Backing field for <see cref="ParentEntity3" /> property.</summary>
+        private Commvault.Powershell.Models.IAlertAssocParentEntity _parentEntity3;
+
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity3 { get => (this._parentEntity3 = this._parentEntity3 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set => this._parentEntity3 = value; }
+
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ParentEntity3Id { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity3).Id; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity3).Id = value ?? default(long); }
+
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity3Name { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity3).Name; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity3).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity3Type { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity3).Type; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity3).Type = value ?? null; }
+
+        /// <summary>Backing field for <see cref="ParentEntity4" /> property.</summary>
+        private Commvault.Powershell.Models.IAlertAssocParentEntity _parentEntity4;
+
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity4 { get => (this._parentEntity4 = this._parentEntity4 ?? new Commvault.Powershell.Models.AlertAssocParentEntity()); set => this._parentEntity4 = value; }
+
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ParentEntity4Id { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity4).Id; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity4).Id = value ?? default(long); }
+
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity4Name { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity4).Name; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity4).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentEntity4Type { get => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity4).Type; set => ((Commvault.Powershell.Models.IAlertAssocParentEntityInternal)ParentEntity4).Type = value ?? null; }
+
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
 
@@ -37,7 +136,8 @@ namespace Commvault.Powershell.Models
 
         }
     }
-    /// AlertAssociationIdNameType
+    /// Hierarchy starts at the top at client level(parentEntity1) and ends at backupset level(parentEntity4) when defining parents
+    /// for the associated entity. Parent entities must be defined application and lower entities.
     public partial interface IAlertAssociationIdNameType1 :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
@@ -57,6 +157,102 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"id of the associated entity",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParentEntity1Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"name of the associated entity",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity1Name { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"type",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity1Type { get; set; }
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"id of the associated entity",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParentEntity2Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"name of the associated entity",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity2Name { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"type",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity2Type { get; set; }
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"id of the associated entity",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParentEntity3Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"name of the associated entity",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity3Name { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"type",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity3Type { get; set; }
+        /// <summary>id of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"id of the associated entity",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParentEntity4Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"name of the associated entity",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity4Name { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"type",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentEntity4Type { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -67,7 +263,8 @@ namespace Commvault.Powershell.Models
         string Type { get; set; }
 
     }
-    /// AlertAssociationIdNameType
+    /// Hierarchy starts at the top at client level(parentEntity1) and ends at backupset level(parentEntity4) when defining parents
+    /// for the associated entity. Parent entities must be defined application and lower entities.
     internal partial interface IAlertAssociationIdNameType1Internal
 
     {
@@ -75,6 +272,50 @@ namespace Commvault.Powershell.Models
         long? Id { get; set; }
         /// <summary>name of the associated entity</summary>
         string Name { get; set; }
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity1 { get; set; }
+        /// <summary>id of the associated entity</summary>
+        long? ParentEntity1Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        string ParentEntity1Name { get; set; }
+
+        string ParentEntity1Type { get; set; }
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity2 { get; set; }
+        /// <summary>id of the associated entity</summary>
+        long? ParentEntity2Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        string ParentEntity2Name { get; set; }
+
+        string ParentEntity2Type { get; set; }
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity3 { get; set; }
+        /// <summary>id of the associated entity</summary>
+        long? ParentEntity3Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        string ParentEntity3Name { get; set; }
+
+        string ParentEntity3Type { get; set; }
+        /// <summary>
+        /// parentEntity1 can only have type SERVER_ENTITY.parentEntity2 can only have type APPTYPE_ENTITY.parentEntity3 can only
+        /// have type INSTANCE_ENTITY.parentEntity4 can only have type BACKUPSET_ENTITY.
+        /// </summary>
+        Commvault.Powershell.Models.IAlertAssocParentEntity ParentEntity4 { get; set; }
+        /// <summary>id of the associated entity</summary>
+        long? ParentEntity4Id { get; set; }
+        /// <summary>name of the associated entity</summary>
+        string ParentEntity4Name { get; set; }
+
+        string ParentEntity4Type { get; set; }
 
         string Type { get; set; }
 

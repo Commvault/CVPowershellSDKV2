@@ -48,6 +48,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CriterionName { get => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).Name; set => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).Name = value ?? null; }
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] CriterionParamsList { get => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).ParamsList; set => ((Commvault.Powershell.Models.IAlertCriteriaIdName1Internal)Criteria).ParamsList = value ?? null /* arrayOf */; }
+
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private Commvault.Powershell.Models.IAlertTypeIdName1 _type;
 
@@ -104,6 +107,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CriterionName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"paramsList",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams) })]
+        Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] CriterionParamsList { get; set; }
         /// <summary>id of the alert definition</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -137,6 +148,8 @@ namespace Commvault.Powershell.Models
         long? CriterionId { get; set; }
         /// <summary>criteria of detection for the alert definition</summary>
         string CriterionName { get; set; }
+
+        Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] CriterionParamsList { get; set; }
 
         Commvault.Powershell.Models.IAlertTypeIdName1 Type { get; set; }
         /// <summary>id of the alert definition</summary>

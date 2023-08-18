@@ -14,6 +14,17 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for StorageAcceleratorCredentials</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICloudBucketConfigurationInternal.StorageAcceleratorCredentials { get => (this._storageAcceleratorCredentials = this._storageAcceleratorCredentials ?? new Commvault.Powershell.Models.IdName()); set { {_storageAcceleratorCredentials = value;} } }
 
+        /// <summary>
+        /// Backing field for <see cref="DisableBackupLocationForFutureBackups" /> property.
+        /// </summary>
+        private bool? _disableBackupLocationForFutureBackups;
+
+        /// <summary>
+        /// When true, prevents new data writes to backup location by changing number of writers to zero
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? DisableBackupLocationForFutureBackups { get => this._disableBackupLocationForFutureBackups; set => this._disableBackupLocationForFutureBackups = value; }
+
         /// <summary>Backing field for <see cref="Enable" /> property.</summary>
         private bool? _enable;
 
@@ -30,15 +41,6 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? PrepareForRetirement { get => this._prepareForRetirement; set => this._prepareForRetirement = value; }
-
-        /// <summary>Backing field for <see cref="PreventNewDataWritesToBackupLocation" /> property.</summary>
-        private bool? _preventNewDataWritesToBackupLocation;
-
-        /// <summary>
-        /// When true, prevents new data writes to backup location by changing number of writers to zero
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool? PreventNewDataWritesToBackupLocation { get => this._preventNewDataWritesToBackupLocation; set => this._preventNewDataWritesToBackupLocation = value; }
 
         /// <summary>Backing field for <see cref="StorageAcceleratorCredentials" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _storageAcceleratorCredentials;
@@ -62,6 +64,16 @@ namespace Commvault.Powershell.Models
     public partial interface ICloudBucketConfiguration :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// When true, prevents new data writes to backup location by changing number of writers to zero
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"When true, prevents new data writes to backup location by changing number of writers to zero",
+        SerializedName = @"disableBackupLocationForFutureBackups",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? DisableBackupLocationForFutureBackups { get; set; }
         /// <summary>When true, means mount path is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -81,16 +93,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"prepareForRetirement",
         PossibleTypes = new [] { typeof(bool) })]
         bool? PrepareForRetirement { get; set; }
-        /// <summary>
-        /// When true, prevents new data writes to backup location by changing number of writers to zero
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"When true, prevents new data writes to backup location by changing number of writers to zero",
-        SerializedName = @"preventNewDataWritesToBackupLocation",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? PreventNewDataWritesToBackupLocation { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -113,6 +115,10 @@ namespace Commvault.Powershell.Models
     internal partial interface ICloudBucketConfigurationInternal
 
     {
+        /// <summary>
+        /// When true, prevents new data writes to backup location by changing number of writers to zero
+        /// </summary>
+        bool? DisableBackupLocationForFutureBackups { get; set; }
         /// <summary>When true, means mount path is enabled</summary>
         bool? Enable { get; set; }
         /// <summary>
@@ -120,10 +126,6 @@ namespace Commvault.Powershell.Models
         /// library.
         /// </summary>
         bool? PrepareForRetirement { get; set; }
-        /// <summary>
-        /// When true, prevents new data writes to backup location by changing number of writers to zero
-        /// </summary>
-        bool? PreventNewDataWritesToBackupLocation { get; set; }
 
         Commvault.Powershell.Models.IIdName StorageAcceleratorCredentials { get; set; }
 

@@ -10,11 +10,21 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IHypervisorPropertiesRespInternal
     {
 
-        /// <summary>Backing field for <see cref="AccessNodes" /> property.</summary>
-        private Commvault.Powershell.Models.IAccessNodeModel[] _accessNodes;
+        /// <summary>Backing field for <see cref="AccessNodeList" /> property.</summary>
+        private Commvault.Powershell.Models.IAccessNodeListModel _accessNodeList;
 
+        /// <summary>accessNodeListModel</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get => this._accessNodes; set => this._accessNodes = value; }
+        internal Commvault.Powershell.Models.IAccessNodeListModel AccessNodeList { get => (this._accessNodeList = this._accessNodeList ?? new Commvault.Powershell.Models.AccessNodeListModel()); set => this._accessNodeList = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodeListAccessNode { get => ((Commvault.Powershell.Models.IAccessNodeListModelInternal)AccessNodeList).AccessNode; set => ((Commvault.Powershell.Models.IAccessNodeListModelInternal)AccessNodeList).AccessNode = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AccessNodeListAccessNodeMessage { get => ((Commvault.Powershell.Models.IAccessNodeListModelInternal)AccessNodeList).AccessNodeMessage; set => ((Commvault.Powershell.Models.IAccessNodeListModelInternal)AccessNodeList).AccessNodeMessage = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AccessNodeListResourcePoolName { get => ((Commvault.Powershell.Models.IAccessNodeListModelInternal)AccessNodeList).ResourcePoolName; set => ((Commvault.Powershell.Models.IAccessNodeListModelInternal)AccessNodeList).ResourcePoolName = value ?? null; }
 
         /// <summary>Host Name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -55,6 +65,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string BackupActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName = value ?? null; }
 
+        /// <summary>Internal Acessors for AccessNodeList</summary>
+        Commvault.Powershell.Models.IAccessNodeListModel Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.AccessNodeList { get => (this._accessNodeList = this._accessNodeList ?? new Commvault.Powershell.Models.AccessNodeListModel()); set { {_accessNodeList = value;} } }
+
         /// <summary>Internal Acessors for AccountDetails</summary>
         Commvault.Powershell.Models.IHypervisorAccountDetails Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.AccountDetails { get => (this._accountDetails = this._accountDetails ?? new Commvault.Powershell.Models.HypervisorAccountDetails()); set { {_accountDetails = value;} } }
 
@@ -85,20 +98,11 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Instance</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set { {_instance = value;} } }
 
+        /// <summary>Internal Acessors for ManageSnapshot</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.ManageSnapshot { get => (this._manageSnapshot = this._manageSnapshot ?? new Commvault.Powershell.Models.IdName()); set { {_manageSnapshot = value;} } }
+
         /// <summary>Internal Acessors for RestoreActivityControlOptionTimeZone</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.RestoreActivityControlOptionTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionTimeZone = value; }
-
-        /// <summary>Internal Acessors for SettingMetricsMonitoringPolicy</summary>
-        Commvault.Powershell.Models.IHypervisorMonitoringPolicy Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.SettingMetricsMonitoringPolicy { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricsMonitoringPolicy; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricsMonitoringPolicy = value; }
-
-        /// <summary>Internal Acessors for SettingRegionInfo</summary>
-        Commvault.Powershell.Models.IRegionInfo Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.SettingRegionInfo { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfo; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfo = value; }
-
-        /// <summary>Internal Acessors for SettingTimeZone</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.SettingTimeZone { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZone; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZone = value; }
-
-        /// <summary>Internal Acessors for Settings</summary>
-        Commvault.Powershell.Models.IHypervisorSettings Commvault.Powershell.Models.IHypervisorPropertiesRespInternal.Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.HypervisorSettings()); set { {_settings = value;} } }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? CompanyId { get => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).CompanyId; set => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).CompanyId = value ?? default(long); }
@@ -142,6 +146,14 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? HypervisorCommonPropertyIsIndexingV2 { get => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).IsIndexingV2; set => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).IsIndexingV2 = value ?? default(bool); }
 
+        /// <summary>True if region based backup is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? HypervisorCommonPropertyIsRegionBasedBackup { get => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).IsRegionBasedBackup; set => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).IsRegionBasedBackup = value ?? default(bool); }
+
+        /// <summary>True if the hypervisor is snap backup enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? HypervisorCommonPropertyIsSnapBackupEnabled { get => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).IsSnapBackupEnabled; set => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).IsSnapBackupEnabled = value ?? default(bool); }
+
         /// <summary>RetireClientPhase</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string HypervisorCommonPropertyRetirePhase { get => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).RetirePhase; set => ((Commvault.Powershell.Models.IHypervisorCommonPropsInternal)HypervisorCommonProperties).RetirePhase = value ?? null; }
@@ -164,17 +176,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
 
-        /// <summary>Metrics Moitoring PolicyId</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? MetricMonitoringPolicyId { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyId; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyId = value ?? default(long); }
+        /// <summary>Backing field for <see cref="ManageSnapshot" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _manageSnapshot;
 
-        /// <summary>True if Metrics Monioring policy is enabled</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? MetricMonitoringPolicyIsEnabled { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyIsEnabled; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyIsEnabled = value ?? default(bool); }
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName ManageSnapshot { get => (this._manageSnapshot = this._manageSnapshot ?? new Commvault.Powershell.Models.IdName()); set => this._manageSnapshot = value; }
 
-        /// <summary>Metrics Moitoring Policy Name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string MetricMonitoringPolicyName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyName = value ?? null; }
+        public long? ManageSnapshotId { get => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ManageSnapshotName { get => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -182,26 +194,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Hypervisor Name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
-
-        /// <summary>Display Name of Region</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionInfoDisplayName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoDisplayName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoDisplayName = value ?? null; }
-
-        /// <summary>Region Id</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RegionInfoId { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoId; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoId = value ?? default(long); }
-
-        /// <summary>Geolocation Latitude</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionInfoLatitude { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLatitude; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLatitude = value ?? null; }
-
-        /// <summary>Geolocation Longitude</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionInfoLongitude { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLongitude; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLongitude = value ?? null; }
-
-        /// <summary>Region Name</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionInfoName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoName = value ?? null; }
 
         /// <summary>Delayed by n Hrs</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -222,13 +214,7 @@ namespace Commvault.Powershell.Models
 
         /// <summary>hypervisorSettings</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IHypervisorSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.HypervisorSettings()); set => this._settings = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? TimeZoneId { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneId; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string TimeZoneName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneName = value ?? null; }
+        public Commvault.Powershell.Models.IHypervisorSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.HypervisorSettings()); set => this._settings = value; }
 
         /// <summary>VM Backed up with error count</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -267,9 +253,25 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"accessNodes",
+        SerializedName = @"accessNode",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAccessNodeModel) })]
-        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get; set; }
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodeListAccessNode { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"accessNodeMessage",
+        PossibleTypes = new [] { typeof(string) })]
+        string AccessNodeListAccessNodeMessage { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"resourcePoolName",
+        PossibleTypes = new [] { typeof(string) })]
+        string AccessNodeListResourcePoolName { get; set; }
         /// <summary>Host Name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -382,6 +384,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isIndexingV2",
         PossibleTypes = new [] { typeof(bool) })]
         bool? HypervisorCommonPropertyIsIndexingV2 { get; set; }
+        /// <summary>True if region based backup is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if region based backup is enabled",
+        SerializedName = @"isRegionBasedBackup",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? HypervisorCommonPropertyIsRegionBasedBackup { get; set; }
+        /// <summary>True if the hypervisor is snap backup enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if the hypervisor is snap backup enabled",
+        SerializedName = @"isSnapBackupEnabled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? HypervisorCommonPropertyIsSnapBackupEnabled { get; set; }
         /// <summary>RetireClientPhase</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -414,30 +432,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string InstanceName { get; set; }
-        /// <summary>Metrics Moitoring PolicyId</summary>
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Metrics Moitoring PolicyId",
+        Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? MetricMonitoringPolicyId { get; set; }
-        /// <summary>True if Metrics Monioring policy is enabled</summary>
+        long? ManageSnapshotId { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"True if Metrics Monioring policy is enabled",
-        SerializedName = @"isEnabled",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? MetricMonitoringPolicyIsEnabled { get; set; }
-        /// <summary>Metrics Moitoring Policy Name</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Metrics Moitoring Policy Name",
+        Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string MetricMonitoringPolicyName { get; set; }
+        string ManageSnapshotName { get; set; }
         /// <summary>Hypervisor Name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -446,46 +456,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
-        /// <summary>Display Name of Region</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Display Name of Region",
-        SerializedName = @"displayName",
-        PossibleTypes = new [] { typeof(string) })]
-        string RegionInfoDisplayName { get; set; }
-        /// <summary>Region Id</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Region Id",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? RegionInfoId { get; set; }
-        /// <summary>Geolocation Latitude</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Geolocation Latitude",
-        SerializedName = @"latitude",
-        PossibleTypes = new [] { typeof(string) })]
-        string RegionInfoLatitude { get; set; }
-        /// <summary>Geolocation Longitude</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Geolocation Longitude",
-        SerializedName = @"longitude",
-        PossibleTypes = new [] { typeof(string) })]
-        string RegionInfoLongitude { get; set; }
-        /// <summary>Region Name</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Region Name",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string RegionInfoName { get; set; }
         /// <summary>Delayed by n Hrs</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -518,22 +488,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string RestoreActivityControlOptionsTimeZoneName { get; set; }
-
+        /// <summary>hypervisorSettings</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? TimeZoneId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string TimeZoneName { get; set; }
+        Description = @"hypervisorSettings",
+        SerializedName = @"settings",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IHypervisorSettings) })]
+        Commvault.Powershell.Models.IHypervisorSettings Settings { get; set; }
         /// <summary>VM Backed up with error count</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -587,7 +549,14 @@ namespace Commvault.Powershell.Models
     internal partial interface IHypervisorPropertiesRespInternal
 
     {
-        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get; set; }
+        /// <summary>accessNodeListModel</summary>
+        Commvault.Powershell.Models.IAccessNodeListModel AccessNodeList { get; set; }
+
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodeListAccessNode { get; set; }
+
+        string AccessNodeListAccessNodeMessage { get; set; }
+
+        string AccessNodeListResourcePoolName { get; set; }
         /// <summary>Host Name</summary>
         string AccountDetailHostName { get; set; }
         /// <summary>hypervisorAccountDetails</summary>
@@ -634,6 +603,10 @@ namespace Commvault.Powershell.Models
         bool? HypervisorCommonPropertyIsDeconfigured { get; set; }
         /// <summary>True if Indexing version is 2</summary>
         bool? HypervisorCommonPropertyIsIndexingV2 { get; set; }
+        /// <summary>True if region based backup is enabled</summary>
+        bool? HypervisorCommonPropertyIsRegionBasedBackup { get; set; }
+        /// <summary>True if the hypervisor is snap backup enabled</summary>
+        bool? HypervisorCommonPropertyIsSnapBackupEnabled { get; set; }
         /// <summary>RetireClientPhase</summary>
         string HypervisorCommonPropertyRetirePhase { get; set; }
 
@@ -644,24 +617,14 @@ namespace Commvault.Powershell.Models
         long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
-        /// <summary>Metrics Moitoring PolicyId</summary>
-        long? MetricMonitoringPolicyId { get; set; }
-        /// <summary>True if Metrics Monioring policy is enabled</summary>
-        bool? MetricMonitoringPolicyIsEnabled { get; set; }
-        /// <summary>Metrics Moitoring Policy Name</summary>
-        string MetricMonitoringPolicyName { get; set; }
+
+        Commvault.Powershell.Models.IIdName ManageSnapshot { get; set; }
+
+        long? ManageSnapshotId { get; set; }
+
+        string ManageSnapshotName { get; set; }
         /// <summary>Hypervisor Name</summary>
         string Name { get; set; }
-        /// <summary>Display Name of Region</summary>
-        string RegionInfoDisplayName { get; set; }
-        /// <summary>Region Id</summary>
-        long? RegionInfoId { get; set; }
-        /// <summary>Geolocation Latitude</summary>
-        string RegionInfoLatitude { get; set; }
-        /// <summary>Geolocation Longitude</summary>
-        string RegionInfoLongitude { get; set; }
-        /// <summary>Region Name</summary>
-        string RegionInfoName { get; set; }
         /// <summary>Delayed by n Hrs</summary>
         string RestoreActivityControlOptionDelayTime { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
@@ -672,18 +635,8 @@ namespace Commvault.Powershell.Models
         long? RestoreActivityControlOptionsTimeZoneId { get; set; }
 
         string RestoreActivityControlOptionsTimeZoneName { get; set; }
-
-        Commvault.Powershell.Models.IHypervisorMonitoringPolicy SettingMetricsMonitoringPolicy { get; set; }
-        /// <summary>RegionInfo</summary>
-        Commvault.Powershell.Models.IRegionInfo SettingRegionInfo { get; set; }
-
-        Commvault.Powershell.Models.IIdName SettingTimeZone { get; set; }
         /// <summary>hypervisorSettings</summary>
         Commvault.Powershell.Models.IHypervisorSettings Settings { get; set; }
-
-        long? TimeZoneId { get; set; }
-
-        string TimeZoneName { get; set; }
         /// <summary>VM Backed up with error count</summary>
         long? VMBackupInfoVmbackedUpWithErrorCount { get; set; }
         /// <summary>vm never Backed up count</summary>

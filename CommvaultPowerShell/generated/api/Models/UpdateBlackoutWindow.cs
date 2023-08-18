@@ -13,6 +13,15 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUpdateBlackoutWindowInternal
     {
 
+        /// <summary>Backing field for <see cref="AllDays" /> property.</summary>
+        private Commvault.Powershell.Models.IDaysAndTimes[] _allDays;
+
+        /// <summary>
+        /// Days of the week along with the time on which the black out window will be in effect.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IDaysAndTimes[] AllDays { get => this._allDays; set => this._allDays = value; }
+
         /// <summary>Backing field for <see cref="BackupOperations" /> property.</summary>
         private string[] _backupOperations;
 
@@ -52,13 +61,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
 
-        /// <summary>Backing field for <see cref="Days" /> property.</summary>
-        private string[] _days;
-
-        /// <summary>Days of the week when the blackout window will be in effect.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string[] Days { get => this._days; set => this._days = value; }
-
         /// <summary>Backing field for <see cref="DoNotSubmitJob" /> property.</summary>
         private bool? _doNotSubmitJob;
 
@@ -75,15 +77,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Refers to the newName given to the blackout Window.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
-
-        /// <summary>Backing field for <see cref="Time" /> property.</summary>
-        private Commvault.Powershell.Models.IStartEnd[] _time;
-
-        /// <summary>
-        /// Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IStartEnd[] Time { get => this._time; set => this._time = value; }
 
         /// <summary>Backing field for <see cref="Weeks" /> property.</summary>
         private string[] _weeks;
@@ -102,6 +95,16 @@ namespace Commvault.Powershell.Models
     public partial interface IUpdateBlackoutWindow :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// Days of the week along with the time on which the black out window will be in effect.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Days of the week along with the time on which the black out window will be in effect.",
+        SerializedName = @"allDays",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IDaysAndTimes) })]
+        Commvault.Powershell.Models.IDaysAndTimes[] AllDays { get; set; }
         /// <summary>Refers to backup types to include in the blackout window</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -142,14 +145,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CompanyName { get; set; }
-        /// <summary>Days of the week when the blackout window will be in effect.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Days of the week when the blackout window will be in effect.",
-        SerializedName = @"days",
-        PossibleTypes = new [] { typeof(string) })]
-        string[] Days { get; set; }
         /// <summary>
         /// Allows or Denies submitting a job when the blackout window is in effect. If allowed, the job is submitted and resumed
         /// once the blackout window ends.
@@ -169,16 +164,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"newName",
         PossibleTypes = new [] { typeof(string) })]
         string NewName { get; set; }
-        /// <summary>
-        /// Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Refers to the time between which the blackout window will be in effect. It has to be provided in seconds",
-        SerializedName = @"time",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IStartEnd) })]
-        Commvault.Powershell.Models.IStartEnd[] Time { get; set; }
         /// <summary>Refers to the weeks of the month that the blackout window will be in effect.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -193,6 +178,10 @@ namespace Commvault.Powershell.Models
     internal partial interface IUpdateBlackoutWindowInternal
 
     {
+        /// <summary>
+        /// Days of the week along with the time on which the black out window will be in effect.
+        /// </summary>
+        Commvault.Powershell.Models.IDaysAndTimes[] AllDays { get; set; }
         /// <summary>Refers to backup types to include in the blackout window</summary>
         string[] BackupOperations { get; set; }
         /// <summary>the blackout window is no longer in effect from this point on.</summary>
@@ -207,8 +196,6 @@ namespace Commvault.Powershell.Models
         long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
-        /// <summary>Days of the week when the blackout window will be in effect.</summary>
-        string[] Days { get; set; }
         /// <summary>
         /// Allows or Denies submitting a job when the blackout window is in effect. If allowed, the job is submitted and resumed
         /// once the blackout window ends.
@@ -216,10 +203,6 @@ namespace Commvault.Powershell.Models
         bool? DoNotSubmitJob { get; set; }
         /// <summary>Refers to the newName given to the blackout Window.</summary>
         string NewName { get; set; }
-        /// <summary>
-        /// Refers to the time between which the blackout window will be in effect. It has to be provided in seconds
-        /// </summary>
-        Commvault.Powershell.Models.IStartEnd[] Time { get; set; }
         /// <summary>Refers to the weeks of the month that the blackout window will be in effect.</summary>
         string[] Weeks { get; set; }
 

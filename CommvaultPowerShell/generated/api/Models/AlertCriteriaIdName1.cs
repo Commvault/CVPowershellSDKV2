@@ -24,6 +24,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
+        /// <summary>Backing field for <see cref="ParamsList" /> property.</summary>
+        private Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] _paramsList;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] ParamsList { get => this._paramsList; set => this._paramsList = value; }
+
         /// <summary>Creates an new <see cref="AlertCriteriaIdName1" /> instance.</summary>
         public AlertCriteriaIdName1()
         {
@@ -50,6 +56,14 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
 
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"paramsList",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams) })]
+        Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] ParamsList { get; set; }
+
     }
     internal partial interface IAlertCriteriaIdName1Internal
 
@@ -58,6 +72,8 @@ namespace Commvault.Powershell.Models
         long? Id { get; set; }
         /// <summary>criteria of detection for the alert definition</summary>
         string Name { get; set; }
+
+        Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] ParamsList { get; set; }
 
     }
 }

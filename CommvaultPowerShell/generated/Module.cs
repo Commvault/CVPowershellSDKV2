@@ -33,7 +33,7 @@ namespace Commvault.Powershell
         public static Commvault.Powershell.Module Instance => Commvault.Powershell.Module._instance?? (Commvault.Powershell.Module._instance = new Commvault.Powershell.Module());
 
         /// <summary>The Name of this module</summary>
-        public string Name => @"CommvaultPowerShell";
+        public string Name => @"CommvaultPowershell";
 
         /// <param name="invocationInfo">The <see cref="System.Management.Automation.InvocationInfo" /> from the cmdlet</param>
         /// <param name="pipeline">The HttpPipeline for the request</param>

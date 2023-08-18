@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_error = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("error"), out var __jsonError) ? Commvault.Powershell.Models.GenericResp.FromJson(__jsonError) : Error;}
-            {_topologyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("topologyId"), out var __jsonTopologyId) ? (int?)__jsonTopologyId : TopologyId;}
+            {_topologyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("topologyId"), out var __jsonTopologyId) ? (long?)__jsonTopologyId : TopologyId;}
             AfterFromJson(json);
         }
 
@@ -96,7 +96,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._error ? (Commvault.Powershell.Runtime.Json.JsonNode) this._error.ToJson(null,serializationMode) : null, "error" ,container.Add );
-            AddIf( null != this._topologyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((int)this._topologyId) : null, "topologyId" ,container.Add );
+            AddIf( null != this._topologyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._topologyId) : null, "topologyId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

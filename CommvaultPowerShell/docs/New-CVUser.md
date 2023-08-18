@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cvuser
 schema: 2.0.0
 ---
@@ -23,10 +23,8 @@ Create a User
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -34,10 +32,8 @@ Create a User
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -129,6 +125,7 @@ USERS <ICreateUser[]>: .
   - `Email <String>`: Used to provide an email-id to the new user. This email-id is used for logging in the user. Please note that email ids are compulsory for company and local users and optional for external users.
   - `[CompanyId <Int64?>]`: 
   - `[CompanyName <String>]`: 
+  - `[ExternalProviderId <Int64?>]`: Please provide this entity only when creating an AD user. Not needed for local and company users.
   - `[FullName <String>]`: Used to provide a name to the new user.
   - `[InviteUser <Boolean?>]`: User will receive an email to install backup software package on their device if this is set to true.
   - `[Name <String>]`: Used to provide the new user with a username. This username can be used for logging in the user instead of email-id when duplicate email-ids are present. For external user, it is necessary to provide the domain name along with the username (domainName\\username). To create a company user, the company id or name needs to be provided in the company entity.

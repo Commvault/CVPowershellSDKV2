@@ -62,10 +62,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_locale = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("locale"), out var __jsonLocale) ? Commvault.Powershell.Models.IdName.FromJson(__jsonLocale) : Locale;}
-            {_emailMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("emailMessage"), out var __jsonEmailMessage) ? (string)__jsonEmailMessage : (string)EmailMessage;}
-            {_consoleMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("consoleMessage"), out var __jsonConsoleMessage) ? (string)__jsonConsoleMessage : (string)ConsoleMessage;}
-            {_eventViewerMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("eventViewerMessage"), out var __jsonEventViewerMessage) ? (string)__jsonEventViewerMessage : (string)EventViewerMessage;}
-            {_webhookMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("webhookMessage"), out var __jsonWebhookMessage) ? (string)__jsonWebhookMessage : (string)WebhookMessage;}
+            {_email = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("email"), out var __jsonEmail) ? (string)__jsonEmail : (string)Email;}
+            {_console = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("console"), out var __jsonConsole) ? (string)__jsonConsole : (string)Console;}
+            {_eventViewer = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("eventViewer"), out var __jsonEventViewer) ? (string)__jsonEventViewer : (string)EventViewer;}
+            {_webhook = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("webhook"), out var __jsonWebhook) ? (string)__jsonWebhook : (string)Webhook;}
             AfterFromJson(json);
         }
 
@@ -99,10 +99,10 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._locale ? (Commvault.Powershell.Runtime.Json.JsonNode) this._locale.ToJson(null,serializationMode) : null, "locale" ,container.Add );
-            AddIf( null != (((object)this._emailMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._emailMessage.ToString()) : null, "emailMessage" ,container.Add );
-            AddIf( null != (((object)this._consoleMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._consoleMessage.ToString()) : null, "consoleMessage" ,container.Add );
-            AddIf( null != (((object)this._eventViewerMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._eventViewerMessage.ToString()) : null, "eventViewerMessage" ,container.Add );
-            AddIf( null != (((object)this._webhookMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._webhookMessage.ToString()) : null, "webhookMessage" ,container.Add );
+            AddIf( null != (((object)this._email)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._email.ToString()) : null, "email" ,container.Add );
+            AddIf( null != (((object)this._console)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._console.ToString()) : null, "console" ,container.Add );
+            AddIf( null != (((object)this._eventViewer)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._eventViewer.ToString()) : null, "eventViewer" ,container.Add );
+            AddIf( null != (((object)this._webhook)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._webhook.ToString()) : null, "webhook" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

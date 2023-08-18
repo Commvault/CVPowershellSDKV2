@@ -17,13 +17,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string BackupDestinationName { get => this._backupDestinationName; set => this._backupDestinationName = value; }
 
-        /// <summary>Backing field for <see cref="BackupStartTime" /> property.</summary>
-        private long? _backupStartTime;
-
-        /// <summary>Backup start time in seconds. The time is provided in unix time format.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public long? BackupStartTime { get => this._backupStartTime; set => this._backupStartTime = value; }
-
         /// <summary>Internal Acessors for Region</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreateArchivePlanBackupDestinationInternal.Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdName()); set { {_region = value;} } }
 
@@ -32,6 +25,16 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Internal Acessors for StoragePool</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreateArchivePlanBackupDestinationInternal.StoragePool { get => (this._storagePool = this._storagePool ?? new Commvault.Powershell.Models.IdName()); set { {_storagePool = value;} } }
+
+        /// <summary>Backing field for <see cref="OverrideRetentionSettings" /> property.</summary>
+        private bool? _overrideRetentionSettings;
+
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? OverrideRetentionSettings { get => this._overrideRetentionSettings; set => this._overrideRetentionSettings = value; }
 
         /// <summary>Backing field for <see cref="Region" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _region;
@@ -93,14 +96,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"backupDestinationName",
         PossibleTypes = new [] { typeof(string) })]
         string BackupDestinationName { get; set; }
-        /// <summary>Backup start time in seconds. The time is provided in unix time format.</summary>
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Backup start time in seconds. The time is provided in unix time format.",
-        SerializedName = @"backupStartTime",
-        PossibleTypes = new [] { typeof(long) })]
-        long? BackupStartTime { get; set; }
+        Description = @"Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to use retention defined on this copy.",
+        SerializedName = @"overrideRetentionSettings",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? OverrideRetentionSettings { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -164,8 +170,11 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Backup destination details. Enter the name during creation.</summary>
         string BackupDestinationName { get; set; }
-        /// <summary>Backup start time in seconds. The time is provided in unix time format.</summary>
-        long? BackupStartTime { get; set; }
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        bool? OverrideRetentionSettings { get; set; }
 
         Commvault.Powershell.Models.IIdName Region { get; set; }
 

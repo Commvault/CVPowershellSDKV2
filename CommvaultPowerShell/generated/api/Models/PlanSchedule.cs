@@ -18,6 +18,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string BackupType { get => this._backupType; set => this._backupType = value; }
 
+        /// <summary>Internal Acessors for ScheduleOption</summary>
+        Commvault.Powershell.Models.IScheduleOption Commvault.Powershell.Models.IPlanScheduleInternal.ScheduleOption { get => (this._scheduleOption = this._scheduleOption ?? new Commvault.Powershell.Models.ScheduleOption()); set { {_scheduleOption = value;} } }
+
         /// <summary>Internal Acessors for SchedulePattern</summary>
         Commvault.Powershell.Models.ISchedulePattern Commvault.Powershell.Models.IPlanScheduleInternal.SchedulePattern { get => (this._schedulePattern = this._schedulePattern ?? new Commvault.Powershell.Models.SchedulePattern()); set { {_schedulePattern = value;} } }
 
@@ -25,11 +28,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanScheduleInternal.SchedulePatternTimezone { get => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).Timezone; set => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).Timezone = value; }
 
         /// <summary>Backing field for <see cref="ForDatabasesOnly" /> property.</summary>
-        private bool _forDatabasesOnly;
+        private bool? _forDatabasesOnly;
 
         /// <summary>Boolean to indicate if schedule is for database agents</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool ForDatabasesOnly { get => this._forDatabasesOnly; set => this._forDatabasesOnly = value; }
+        public bool? ForDatabasesOnly { get => this._forDatabasesOnly; set => this._forDatabasesOnly = value; }
 
         /// <summary>Backing field for <see cref="PolicyId" /> property.</summary>
         private long? _policyId;
@@ -58,6 +61,38 @@ namespace Commvault.Powershell.Models
         /// <summary>Operation being performed on schedule</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ScheduleOperation { get => this._scheduleOperation; set => this._scheduleOperation = value; }
+
+        /// <summary>Backing field for <see cref="ScheduleOption" /> property.</summary>
+        private Commvault.Powershell.Models.IScheduleOption _scheduleOption;
+
+        /// <summary>Specific options to be set on schedules</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IScheduleOption ScheduleOption { get => (this._scheduleOption = this._scheduleOption ?? new Commvault.Powershell.Models.ScheduleOption()); set => this._scheduleOption = value; }
+
+        /// <summary>Commit frequency in hours for disk cache backups from automatic schedules</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ScheduleOptionCommitFrequencyInHours { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).CommitFrequencyInHours; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).CommitFrequencyInHours = value ?? default(long); }
+
+        /// <summary>
+        /// Number of days between auto conversion of backup level applicable for databases on incremental and differential schedules
+        /// of server plan
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ScheduleOptionDaysBetweenAutoConvert { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).DaysBetweenAutoConvert; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).DaysBetweenAutoConvert = value ?? default(long); }
+
+        /// <summary>total job running time in minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ScheduleOptionJobRunningTimeInMins { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).JobRunningTimeInMins; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).JobRunningTimeInMins = value ?? default(long); }
+
+        /// <summary>item backup option for O365 V2 backup jobs</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ScheduleOptionO365ItemSelectionOption { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).O365ItemSelectionOption; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).O365ItemSelectionOption = value ?? null; }
+
+        /// <summary>
+        /// Used to enable disk caching feature on databases for automatic schedules on server plan
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? ScheduleOptionUseDiskCacheForLogBackups { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).UseDiskCacheForLogBackups; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).UseDiskCacheForLogBackups = value ?? default(bool); }
 
         /// <summary>Backing field for <see cref="SchedulePattern" /> property.</summary>
         private Commvault.Powershell.Models.ISchedulePattern _schedulePattern;
@@ -93,6 +128,10 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SchedulePatternFrequency { get => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).Frequency; set => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).Frequency = value ?? default(long); }
+
+        /// <summary>The number of mins to force a backup on automatic schedule.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SchedulePatternMaxBackupIntervalInMins { get => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).MaxBackupIntervalInMins; set => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).MaxBackupIntervalInMins = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SchedulePatternMonthOfYear { get => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).MonthOfYear; set => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).MonthOfYear = value ?? null; }
@@ -139,6 +178,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimezoneName { get => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).TimezoneName; set => ((Commvault.Powershell.Models.ISchedulePatternInternal)SchedulePattern).TimezoneName = value ?? null; }
 
+        /// <summary>Backing field for <see cref="VMOperationType" /> property.</summary>
+        private string _vMOperationType;
+
+        /// <summary>Type of DR operation (only applicable for Failover groups)</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string VMOperationType { get => this._vMOperationType; set => this._vMOperationType = value; }
+
         /// <summary>Creates an new <see cref="PlanSchedule" /> instance.</summary>
         public PlanSchedule()
         {
@@ -159,12 +205,12 @@ namespace Commvault.Powershell.Models
         string BackupType { get; set; }
         /// <summary>Boolean to indicate if schedule is for database agents</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"Boolean to indicate if schedule is for database agents",
         SerializedName = @"forDatabasesOnly",
         PossibleTypes = new [] { typeof(bool) })]
-        bool ForDatabasesOnly { get; set; }
+        bool? ForDatabasesOnly { get; set; }
         /// <summary>Schedule policy Id to which the schedule belongs</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -191,12 +237,57 @@ namespace Commvault.Powershell.Models
         string ScheduleName { get; set; }
         /// <summary>Operation being performed on schedule</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"Operation being performed on schedule",
         SerializedName = @"scheduleOperation",
         PossibleTypes = new [] { typeof(string) })]
         string ScheduleOperation { get; set; }
+        /// <summary>Commit frequency in hours for disk cache backups from automatic schedules</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Commit frequency in hours for disk cache backups from automatic schedules",
+        SerializedName = @"commitFrequencyInHours",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleOptionCommitFrequencyInHours { get; set; }
+        /// <summary>
+        /// Number of days between auto conversion of backup level applicable for databases on incremental and differential schedules
+        /// of server plan
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of days between auto conversion of backup level applicable for databases on incremental and differential schedules of server plan",
+        SerializedName = @"daysBetweenAutoConvert",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleOptionDaysBetweenAutoConvert { get; set; }
+        /// <summary>total job running time in minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"total job running time in minutes",
+        SerializedName = @"jobRunningTimeInMins",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleOptionJobRunningTimeInMins { get; set; }
+        /// <summary>item backup option for O365 V2 backup jobs</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"item backup option for O365 V2 backup jobs",
+        SerializedName = @"o365ItemSelectionOption",
+        PossibleTypes = new [] { typeof(string) })]
+        string ScheduleOptionO365ItemSelectionOption { get; set; }
+        /// <summary>
+        /// Used to enable disk caching feature on databases for automatic schedules on server plan
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to enable disk caching feature on databases for automatic schedules on server plan",
+        SerializedName = @"useDiskCacheForLogBackups",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? ScheduleOptionUseDiskCacheForLogBackups { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -250,6 +341,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"frequency",
         PossibleTypes = new [] { typeof(long) })]
         long? SchedulePatternFrequency { get; set; }
+        /// <summary>The number of mins to force a backup on automatic schedule.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The number of mins to force a backup on automatic schedule.",
+        SerializedName = @"maxBackupIntervalInMins",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SchedulePatternMaxBackupIntervalInMins { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -342,6 +441,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string TimezoneName { get; set; }
+        /// <summary>Type of DR operation (only applicable for Failover groups)</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Type of DR operation (only applicable for Failover groups)",
+        SerializedName = @"vmOperationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string VMOperationType { get; set; }
 
     }
     /// Used to describe single plan schedule information
@@ -351,7 +458,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Schedule Backup level</summary>
         string BackupType { get; set; }
         /// <summary>Boolean to indicate if schedule is for database agents</summary>
-        bool ForDatabasesOnly { get; set; }
+        bool? ForDatabasesOnly { get; set; }
         /// <summary>Schedule policy Id to which the schedule belongs</summary>
         long? PolicyId { get; set; }
         /// <summary>Id of the schedule if available, required for modifying, deleting schedule</summary>
@@ -360,6 +467,23 @@ namespace Commvault.Powershell.Models
         string ScheduleName { get; set; }
         /// <summary>Operation being performed on schedule</summary>
         string ScheduleOperation { get; set; }
+        /// <summary>Specific options to be set on schedules</summary>
+        Commvault.Powershell.Models.IScheduleOption ScheduleOption { get; set; }
+        /// <summary>Commit frequency in hours for disk cache backups from automatic schedules</summary>
+        long? ScheduleOptionCommitFrequencyInHours { get; set; }
+        /// <summary>
+        /// Number of days between auto conversion of backup level applicable for databases on incremental and differential schedules
+        /// of server plan
+        /// </summary>
+        long? ScheduleOptionDaysBetweenAutoConvert { get; set; }
+        /// <summary>total job running time in minutes</summary>
+        long? ScheduleOptionJobRunningTimeInMins { get; set; }
+        /// <summary>item backup option for O365 V2 backup jobs</summary>
+        string ScheduleOptionO365ItemSelectionOption { get; set; }
+        /// <summary>
+        /// Used to enable disk caching feature on databases for automatic schedules on server plan
+        /// </summary>
+        bool? ScheduleOptionUseDiskCacheForLogBackups { get; set; }
         /// <summary>Used to describe when the schedule runs</summary>
         Commvault.Powershell.Models.ISchedulePattern SchedulePattern { get; set; }
         /// <summary>Day on which to run the schedule, applicable for monthly, yearly</summary>
@@ -379,6 +503,8 @@ namespace Commvault.Powershell.Models
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
         long? SchedulePatternFrequency { get; set; }
+        /// <summary>The number of mins to force a backup on automatic schedule.</summary>
+        long? SchedulePatternMaxBackupIntervalInMins { get; set; }
 
         string SchedulePatternMonthOfYear { get; set; }
         /// <summary>The number of times you want the schedule to run.</summary>
@@ -407,6 +533,8 @@ namespace Commvault.Powershell.Models
         long? TimezoneId { get; set; }
 
         string TimezoneName { get; set; }
+        /// <summary>Type of DR operation (only applicable for Failover groups)</summary>
+        string VMOperationType { get; set; }
 
     }
 }

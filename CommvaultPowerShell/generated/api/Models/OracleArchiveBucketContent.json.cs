@@ -73,14 +73,12 @@ namespace Commvault.Powershell.Models
             }
             __cloudStorageProxy = new Commvault.Powershell.Models.CloudStorageProxy(json);
             __cloudStorageAdvanced = new Commvault.Powershell.Models.CloudStorageAdvanced(json);
+            __modifyCloudBucketConfiguration = new Commvault.Powershell.Models.ModifyCloudBucketConfiguration(json);
+            {_mediaAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mediaAgent"), out var __jsonMediaAgent) ? Commvault.Powershell.Models.IdName.FromJson(__jsonMediaAgent) : MediaAgent;}
+            {_credentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("credentials"), out var __jsonCredentials) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCredentials) : Credentials;}
             {_cloudType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("cloudType"), out var __jsonCloudType) ? (string)__jsonCloudType : (string)CloudType;}
             {_serviceHost = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serviceHost"), out var __jsonServiceHost) ? (string)__jsonServiceHost : (string)ServiceHost;}
-            {_tenancyOcid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("tenancyOCID"), out var __jsonTenancyOcid) ? (string)__jsonTenancyOcid : (string)TenancyOcid;}
-            {_userOcid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userOCID"), out var __jsonUserOcid) ? (string)__jsonUserOcid : (string)UserOcid;}
-            {_keyFingerprint = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("keyFingerprint"), out var __jsonKeyFingerprint) ? (string)__jsonKeyFingerprint : (string)KeyFingerprint;}
             {_compartmentName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("compartmentName"), out var __jsonCompartmentName) ? (string)__jsonCompartmentName : (string)CompartmentName;}
-            {_pemKeyFilename = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("pemKeyFilename"), out var __jsonPemKeyFilename) ? (string)__jsonPemKeyFilename : (string)PemKeyFilename;}
-            {_privateKeyPassword = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("privateKeyPassword"), out var __jsonPrivateKeyPassword) ? (string)__jsonPrivateKeyPassword : (string)PrivateKeyPassword;}
             {_bucket = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("bucket"), out var __jsonBucket) ? (string)__jsonBucket : (string)Bucket;}
             AfterFromJson(json);
         }
@@ -106,14 +104,12 @@ namespace Commvault.Powershell.Models
             }
             __cloudStorageProxy?.ToJson(container, serializationMode);
             __cloudStorageAdvanced?.ToJson(container, serializationMode);
+            __modifyCloudBucketConfiguration?.ToJson(container, serializationMode);
+            AddIf( null != this._mediaAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mediaAgent.ToJson(null,serializationMode) : null, "mediaAgent" ,container.Add );
+            AddIf( null != this._credentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._credentials.ToJson(null,serializationMode) : null, "credentials" ,container.Add );
             AddIf( null != (((object)this._cloudType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._cloudType.ToString()) : null, "cloudType" ,container.Add );
             AddIf( null != (((object)this._serviceHost)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._serviceHost.ToString()) : null, "serviceHost" ,container.Add );
-            AddIf( null != (((object)this._tenancyOcid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._tenancyOcid.ToString()) : null, "tenancyOCID" ,container.Add );
-            AddIf( null != (((object)this._userOcid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userOcid.ToString()) : null, "userOCID" ,container.Add );
-            AddIf( null != (((object)this._keyFingerprint)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._keyFingerprint.ToString()) : null, "keyFingerprint" ,container.Add );
             AddIf( null != (((object)this._compartmentName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._compartmentName.ToString()) : null, "compartmentName" ,container.Add );
-            AddIf( null != (((object)this._pemKeyFilename)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._pemKeyFilename.ToString()) : null, "pemKeyFilename" ,container.Add );
-            AddIf( null != (((object)this._privateKeyPassword)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._privateKeyPassword.ToString()) : null, "privateKeyPassword" ,container.Add );
             AddIf( null != (((object)this._bucket)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._bucket.ToString()) : null, "bucket" ,container.Add );
             AfterToJson(ref container);
             return container;

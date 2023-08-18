@@ -60,6 +60,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? Frequency { get => this._frequency; set => this._frequency = value; }
 
+        /// <summary>Backing field for <see cref="MaxBackupIntervalInMins" /> property.</summary>
+        private long? _maxBackupIntervalInMins;
+
+        /// <summary>The number of mins to force a backup on automatic schedule.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? MaxBackupIntervalInMins { get => this._maxBackupIntervalInMins; set => this._maxBackupIntervalInMins = value; }
+
         /// <summary>Backing field for <see cref="MonthOfYear" /> property.</summary>
         private string _monthOfYear;
 
@@ -201,6 +208,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"frequency",
         PossibleTypes = new [] { typeof(long) })]
         long? Frequency { get; set; }
+        /// <summary>The number of mins to force a backup on automatic schedule.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The number of mins to force a backup on automatic schedule.",
+        SerializedName = @"maxBackupIntervalInMins",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MaxBackupIntervalInMins { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -316,6 +331,8 @@ namespace Commvault.Powershell.Models
         /// for Daily, 2 is 2 days. for Monthly 2 is it repeats every 2 months
         /// </summary>
         long? Frequency { get; set; }
+        /// <summary>The number of mins to force a backup on automatic schedule.</summary>
+        long? MaxBackupIntervalInMins { get; set; }
 
         string MonthOfYear { get; set; }
         /// <summary>The number of times you want the schedule to run.</summary>

@@ -24,12 +24,52 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? AgentId { get => this._agentId; set => this._agentId = value; }
 
+        /// <summary>Backing field for <see cref="AppGuid" /> property.</summary>
+        private string _appGuid;
+
+        /// <summary>GUID of the Application to get details</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AppGuid { get => this._appGuid; set => this._appGuid = value; }
+
+        /// <summary>Backing field for <see cref="AppId" /> property.</summary>
+        private long? _appId;
+
+        /// <summary>Commvault exchange app id</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? AppId { get => this._appId; set => this._appId = value; }
+
+        /// <summary>Backing field for <see cref="ApplicationGroupId" /> property.</summary>
+        private long? _applicationGroupId;
+
+        /// <summary>applicationGroupId is the ID of the Kubernetes application group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? ApplicationGroupId { get => this._applicationGroupId; set => this._applicationGroupId = value; }
+
+        /// <summary>Backing field for <see cref="ArrayId" /> property.</summary>
+        private long? _arrayId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? ArrayId { get => this._arrayId; set => this._arrayId = value; }
+
+        /// <summary>Backing field for <see cref="AssetId" /> property.</summary>
+        private string _assetId;
+
+        /// <summary>FQDN of the asset</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AssetId { get => this._assetId; set => this._assetId = value; }
+
         /// <summary>Backing field for <see cref="BackupDestinationId" /> property.</summary>
         private long? _backupDestinationId;
 
         /// <summary>Id of the backupDestination to be modified</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? BackupDestinationId { get => this._backupDestinationId; set => this._backupDestinationId = value; }
+
+        /// <summary>Backing field for <see cref="BackupDestionationId" /> property.</summary>
+        private long? _backupDestionationId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? BackupDestionationId { get => this._backupDestionationId; set => this._backupDestionationId = value; }
 
         /// <summary>Backing field for <see cref="BackupLocationId" /> property.</summary>
         private long? _backupLocationId;
@@ -52,6 +92,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? BucketId { get => this._bucketId; set => this._bucketId = value; }
 
+        /// <summary>Backing field for <see cref="ClientId" /> property.</summary>
+        private long? _clientId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? ClientId { get => this._clientId; set => this._clientId = value; }
+
         /// <summary>Backing field for <see cref="CloudStorageId" /> property.</summary>
         private long? _cloudStorageId;
 
@@ -59,12 +105,30 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? CloudStorageId { get => this._cloudStorageId; set => this._cloudStorageId = value; }
 
+        /// <summary>Backing field for <see cref="ClusterId" /> property.</summary>
+        private long? _clusterId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? ClusterId { get => this._clusterId; set => this._clusterId = value; }
+
         /// <summary>Backing field for <see cref="CompanyId" /> property.</summary>
         private long? _companyId;
 
         /// <summary>Id of the Company whose details have to be fetched</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? CompanyId { get => this._companyId; set => this._companyId = value; }
+
+        /// <summary>Backing field for <see cref="CopyId" /> property.</summary>
+        private long? _copyId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? CopyId { get => this._copyId; set => this._copyId = value; }
+
+        /// <summary>Backing field for <see cref="CredentialId" /> property.</summary>
+        private string _credentialId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string CredentialId { get => this._credentialId; set => this._credentialId = value; }
 
         /// <summary>Backing field for <see cref="CredentialName" /> property.</summary>
         private string _credentialName;
@@ -79,6 +143,20 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? DomainId { get => this._domainId; set => this._domainId = value; }
 
+        /// <summary>Backing field for <see cref="DrOperation" /> property.</summary>
+        private string _drOperation;
+
+        /// <summary>Name of DR operation. Case insensitive</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string DrOperation { get => this._drOperation; set => this._drOperation = value; }
+
+        /// <summary>Backing field for <see cref="DriveId" /> property.</summary>
+        private long? _driveId;
+
+        /// <summary>Id of the Drive of which the drive details has to be displayed</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? DriveId { get => this._driveId; set => this._driveId = value; }
+
         /// <summary>Backing field for <see cref="EntityId" /> property.</summary>
         private long? _entityId;
 
@@ -87,11 +165,18 @@ namespace Commvault.Powershell.Models
         public long? EntityId { get => this._entityId; set => this._entityId = value; }
 
         /// <summary>Backing field for <see cref="EntityType" /> property.</summary>
-        private long? _entityType;
+        private string _entityType;
 
         /// <summary>Type of the entity</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public long? EntityType { get => this._entityType; set => this._entityType = value; }
+        public string EntityType { get => this._entityType; set => this._entityType = value; }
+
+        /// <summary>Backing field for <see cref="FailoverGroupId" /> property.</summary>
+        private long? _failoverGroupId;
+
+        /// <summary>Id of the failover group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? FailoverGroupId { get => this._failoverGroupId; set => this._failoverGroupId = value; }
 
         /// <summary>Backing field for <see cref="GlobalSearchEntity" /> property.</summary>
         private string _globalSearchEntity;
@@ -127,6 +212,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? Id { get => this._id; set => this._id = value; }
 
+        /// <summary>Backing field for <see cref="IndexServerClientId" /> property.</summary>
+        private long? _indexServerClientId;
+
+        /// <summary>Pseudo client id of the index server</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? IndexServerClientId { get => this._indexServerClientId; set => this._indexServerClientId = value; }
+
         /// <summary>Backing field for <see cref="InstanceId" /> property.</summary>
         private long? _instanceId;
 
@@ -134,12 +226,32 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? InstanceId { get => this._instanceId; set => this._instanceId = value; }
 
+        /// <summary>Backing field for <see cref="InventoryId" /> property.</summary>
+        private long? _inventoryId;
+
+        /// <summary>Inventory id</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? InventoryId { get => this._inventoryId; set => this._inventoryId = value; }
+
+        /// <summary>Backing field for <see cref="JobId" /> property.</summary>
+        private long? _jobId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? JobId { get => this._jobId; set => this._jobId = value; }
+
         /// <summary>Backing field for <see cref="KmsId" /> property.</summary>
         private long? _kmsId;
 
         /// <summary>Id of Key Management Server</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? KmsId { get => this._kmsId; set => this._kmsId = value; }
+
+        /// <summary>Backing field for <see cref="LibraryId" /> property.</summary>
+        private long? _libraryId;
+
+        /// <summary>Id of the library to view the data</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? LibraryId { get => this._libraryId; set => this._libraryId = value; }
 
         /// <summary>Backing field for <see cref="MediaAgentId" /> property.</summary>
         private long? _mediaAgentId;
@@ -160,6 +272,13 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
+
+        /// <summary>Backing field for <see cref="NameSpace" /> property.</summary>
+        private string _nameSpace;
+
+        /// <summary>Name of the namespace to browse for content</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string NameSpace { get => this._nameSpace; set => this._nameSpace = value; }
 
         /// <summary>Backing field for <see cref="NodeId" /> property.</summary>
         private long? _nodeId;
@@ -237,16 +356,17 @@ namespace Commvault.Powershell.Models
         public long? RuleId { get => this._ruleId; set => this._ruleId = value; }
 
         /// <summary>Backing field for <see cref="ScheduleId" /> property.</summary>
-        private string _scheduleId;
+        private long? _scheduleId;
 
+        /// <summary>ID of the DR operation schedule</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string ScheduleId { get => this._scheduleId; set => this._scheduleId = value; }
+        public long? ScheduleId { get => this._scheduleId; set => this._scheduleId = value; }
 
         /// <summary>Backing field for <see cref="SchedulePolicyId" /> property.</summary>
-        private string _schedulePolicyId;
+        private long? _schedulePolicyId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string SchedulePolicyId { get => this._schedulePolicyId; set => this._schedulePolicyId = value; }
+        public long? SchedulePolicyId { get => this._schedulePolicyId; set => this._schedulePolicyId = value; }
 
         /// <summary>Backing field for <see cref="ServerGroupId" /> property.</summary>
         private long? _serverGroupId;
@@ -265,7 +385,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="StoragePoolId" /> property.</summary>
         private long? _storagePoolId;
 
-        /// <summary>Id of the disk storage pool whose details have to be fetched</summary>
+        /// <summary>Id of the storage pool whose associated copies have to be fetched</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? StoragePoolId { get => this._storagePoolId; set => this._storagePoolId = value; }
 
@@ -275,6 +395,20 @@ namespace Commvault.Powershell.Models
         /// <summary>Id of the subclient to modify</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? SubclientId { get => this._subclientId; set => this._subclientId = value; }
+
+        /// <summary>Backing field for <see cref="TagId" /> property.</summary>
+        private long? _tagId;
+
+        /// <summary>Id of the tag to delete</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? TagId { get => this._tagId; set => this._tagId = value; }
+
+        /// <summary>Backing field for <see cref="TagValue" /> property.</summary>
+        private string _tagValue;
+
+        /// <summary>tag value to delete</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string TagValue { get => this._tagValue; set => this._tagValue = value; }
 
         /// <summary>Backing field for <see cref="TopologyId" /> property.</summary>
         private string _topologyId;
@@ -303,12 +437,25 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? VMGroupId { get => this._vMGroupId; set => this._vMGroupId = value; }
 
+        /// <summary>Backing field for <see cref="VMGuid" /> property.</summary>
+        private string _vMGuid;
+
+        /// <summary>GUID of the Provisioned VM</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string VMGuid { get => this._vMGuid; set => this._vMGuid = value; }
+
         /// <summary>Backing field for <see cref="VMUuid" /> property.</summary>
         private string _vMUuid;
 
         /// <summary>The vmUUID can be obtained from GET /virtualMachines UUID property</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string VMUuid { get => this._vMUuid; set => this._vMUuid = value; }
+
+        /// <summary>Backing field for <see cref="VendorId" /> property.</summary>
+        private long? _vendorId;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? VendorId { get => this._vendorId; set => this._vendorId = value; }
 
         /// <summary>Creates an new <see cref="CommvaultPowerShellIdentity" /> instance.</summary>
         public CommvaultPowerShellIdentity()
@@ -335,6 +482,46 @@ namespace Commvault.Powershell.Models
         SerializedName = @"agentId",
         PossibleTypes = new [] { typeof(long) })]
         long? AgentId { get; set; }
+        /// <summary>GUID of the Application to get details</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"GUID of the Application to get details",
+        SerializedName = @"appGUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string AppGuid { get; set; }
+        /// <summary>Commvault exchange app id</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Commvault exchange app id",
+        SerializedName = @"appId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? AppId { get; set; }
+        /// <summary>applicationGroupId is the ID of the Kubernetes application group</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"applicationGroupId is the ID of the Kubernetes application group",
+        SerializedName = @"applicationGroupId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ApplicationGroupId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"arrayId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ArrayId { get; set; }
+        /// <summary>FQDN of the asset</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"FQDN of the asset",
+        SerializedName = @"assetId",
+        PossibleTypes = new [] { typeof(string) })]
+        string AssetId { get; set; }
         /// <summary>Id of the backupDestination to be modified</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -343,6 +530,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"BackupDestinationId",
         PossibleTypes = new [] { typeof(long) })]
         long? BackupDestinationId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"backupDestionationId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupDestionationId { get; set; }
         /// <summary>Id of the backup location whose details have to be fetched</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -367,6 +562,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"bucketId",
         PossibleTypes = new [] { typeof(long) })]
         long? BucketId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"clientId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClientId { get; set; }
         /// <summary>Id of cloud Storage</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -375,6 +578,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"cloudStorageId",
         PossibleTypes = new [] { typeof(long) })]
         long? CloudStorageId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"clusterId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ClusterId { get; set; }
         /// <summary>Id of the Company whose details have to be fetched</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -383,6 +594,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"companyId",
         PossibleTypes = new [] { typeof(long) })]
         long? CompanyId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"copyId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CopyId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"credentialId",
+        PossibleTypes = new [] { typeof(string) })]
+        string CredentialId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -399,6 +626,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"domainId",
         PossibleTypes = new [] { typeof(long) })]
         long? DomainId { get; set; }
+        /// <summary>Name of DR operation. Case insensitive</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of DR operation. Case insensitive",
+        SerializedName = @"drOperation",
+        PossibleTypes = new [] { typeof(string) })]
+        string DrOperation { get; set; }
+        /// <summary>Id of the Drive of which the drive details has to be displayed</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of the Drive of which the drive details has to be displayed",
+        SerializedName = @"driveId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? DriveId { get; set; }
         /// <summary>Unique id for the entity</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -413,8 +656,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"Type of the entity",
         SerializedName = @"entityType",
+        PossibleTypes = new [] { typeof(string) })]
+        string EntityType { get; set; }
+        /// <summary>Id of the failover group</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of the failover group",
+        SerializedName = @"failoverGroupId",
         PossibleTypes = new [] { typeof(long) })]
-        long? EntityType { get; set; }
+        long? FailoverGroupId { get; set; }
         /// <summary>name of global search entity</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -455,6 +706,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? Id { get; set; }
+        /// <summary>Pseudo client id of the index server</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Pseudo client id of the index server",
+        SerializedName = @"indexServerClientId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? IndexServerClientId { get; set; }
         /// <summary>Id of the instance to modify</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -463,6 +722,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"instanceId",
         PossibleTypes = new [] { typeof(long) })]
         long? InstanceId { get; set; }
+        /// <summary>Inventory id</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Inventory id",
+        SerializedName = @"inventoryId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? InventoryId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"jobId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? JobId { get; set; }
         /// <summary>Id of Key Management Server</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -471,6 +746,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"kmsId",
         PossibleTypes = new [] { typeof(long) })]
         long? KmsId { get; set; }
+        /// <summary>Id of the library to view the data</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of the library to view the data",
+        SerializedName = @"libraryId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? LibraryId { get; set; }
         /// <summary>Id of the Media Agent whose details have to be fetched</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -495,6 +778,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
+        /// <summary>Name of the namespace to browse for content</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the namespace to browse for content",
+        SerializedName = @"nameSpace",
+        PossibleTypes = new [] { typeof(string) })]
+        string NameSpace { get; set; }
         /// <summary>Id of node</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -585,22 +876,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"ruleId",
         PossibleTypes = new [] { typeof(long) })]
         long? RuleId { get; set; }
-
+        /// <summary>ID of the DR operation schedule</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"ID of the DR operation schedule",
         SerializedName = @"scheduleId",
-        PossibleTypes = new [] { typeof(string) })]
-        string ScheduleId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"schedulePolicyId",
-        PossibleTypes = new [] { typeof(string) })]
-        string SchedulePolicyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? SchedulePolicyId { get; set; }
         /// <summary>Id of the serverGroupId whose details have to be fetched</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -617,11 +908,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"serverId",
         PossibleTypes = new [] { typeof(long) })]
         long? ServerId { get; set; }
-        /// <summary>Id of the disk storage pool whose details have to be fetched</summary>
+        /// <summary>Id of the storage pool whose associated copies have to be fetched</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Id of the disk storage pool whose details have to be fetched",
+        Description = @"Id of the storage pool whose associated copies have to be fetched",
         SerializedName = @"storagePoolId",
         PossibleTypes = new [] { typeof(long) })]
         long? StoragePoolId { get; set; }
@@ -633,6 +924,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"subclientId",
         PossibleTypes = new [] { typeof(long) })]
         long? SubclientId { get; set; }
+        /// <summary>Id of the tag to delete</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of the tag to delete",
+        SerializedName = @"tagId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? TagId { get; set; }
+        /// <summary>tag value to delete</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"tag value to delete",
+        SerializedName = @"tagValue",
+        PossibleTypes = new [] { typeof(string) })]
+        string TagValue { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -665,6 +972,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"VmGroupId",
         PossibleTypes = new [] { typeof(long) })]
         long? VMGroupId { get; set; }
+        /// <summary>GUID of the Provisioned VM</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"GUID of the Provisioned VM",
+        SerializedName = @"vmGUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string VMGuid { get; set; }
         /// <summary>The vmUUID can be obtained from GET /virtualMachines UUID property</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -674,6 +989,14 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string VMUuid { get; set; }
 
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"vendorId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? VendorId { get; set; }
+
     }
     internal partial interface ICommvaultPowerShellIdentityInternal
 
@@ -682,26 +1005,52 @@ namespace Commvault.Powershell.Models
         long? AccessPathId { get; set; }
         /// <summary>Id of the agent to be modified</summary>
         long? AgentId { get; set; }
+        /// <summary>GUID of the Application to get details</summary>
+        string AppGuid { get; set; }
+        /// <summary>Commvault exchange app id</summary>
+        long? AppId { get; set; }
+        /// <summary>applicationGroupId is the ID of the Kubernetes application group</summary>
+        long? ApplicationGroupId { get; set; }
+
+        long? ArrayId { get; set; }
+        /// <summary>FQDN of the asset</summary>
+        string AssetId { get; set; }
         /// <summary>Id of the backupDestination to be modified</summary>
         long? BackupDestinationId { get; set; }
+
+        long? BackupDestionationId { get; set; }
         /// <summary>Id of the backup location whose details have to be fetched</summary>
         long? BackupLocationId { get; set; }
         /// <summary>Id of the Blackout Window whose details have to be fetched</summary>
         long? BlackoutWindowId { get; set; }
         /// <summary>Id of Bucket</summary>
         long? BucketId { get; set; }
+
+        long? ClientId { get; set; }
         /// <summary>Id of cloud Storage</summary>
         long? CloudStorageId { get; set; }
+
+        long? ClusterId { get; set; }
         /// <summary>Id of the Company whose details have to be fetched</summary>
         long? CompanyId { get; set; }
+
+        long? CopyId { get; set; }
+
+        string CredentialId { get; set; }
 
         string CredentialName { get; set; }
         /// <summary>ID of the AD/LDAP domain</summary>
         long? DomainId { get; set; }
+        /// <summary>Name of DR operation. Case insensitive</summary>
+        string DrOperation { get; set; }
+        /// <summary>Id of the Drive of which the drive details has to be displayed</summary>
+        long? DriveId { get; set; }
         /// <summary>Unique id for the entity</summary>
         long? EntityId { get; set; }
         /// <summary>Type of the entity</summary>
-        long? EntityType { get; set; }
+        string EntityType { get; set; }
+        /// <summary>Id of the failover group</summary>
+        long? FailoverGroupId { get; set; }
         /// <summary>name of global search entity</summary>
         string GlobalSearchEntity { get; set; }
         /// <summary>Id of the HFS Share to fetch its status</summary>
@@ -712,16 +1061,26 @@ namespace Commvault.Powershell.Models
         long? HypervisorId { get; set; }
 
         long? Id { get; set; }
+        /// <summary>Pseudo client id of the index server</summary>
+        long? IndexServerClientId { get; set; }
         /// <summary>Id of the instance to modify</summary>
         long? InstanceId { get; set; }
+        /// <summary>Inventory id</summary>
+        long? InventoryId { get; set; }
+
+        long? JobId { get; set; }
         /// <summary>Id of Key Management Server</summary>
         long? KmsId { get; set; }
+        /// <summary>Id of the library to view the data</summary>
+        long? LibraryId { get; set; }
         /// <summary>Id of the Media Agent whose details have to be fetched</summary>
         long? MediaAgentId { get; set; }
         /// <summary>Id of metadata cache</summary>
         long? MetadataCacheId { get; set; }
 
         string Name { get; set; }
+        /// <summary>Name of the namespace to browse for content</summary>
+        string NameSpace { get; set; }
         /// <summary>Id of node</summary>
         long? NodeId { get; set; }
 
@@ -746,18 +1105,22 @@ namespace Commvault.Powershell.Models
         string RpsId { get; set; }
         /// <summary>Id of the rule to update in Plan</summary>
         long? RuleId { get; set; }
+        /// <summary>ID of the DR operation schedule</summary>
+        long? ScheduleId { get; set; }
 
-        string ScheduleId { get; set; }
-
-        string SchedulePolicyId { get; set; }
+        long? SchedulePolicyId { get; set; }
         /// <summary>Id of the serverGroupId whose details have to be fetched</summary>
         long? ServerGroupId { get; set; }
         /// <summary>Id of the server to modify</summary>
         long? ServerId { get; set; }
-        /// <summary>Id of the disk storage pool whose details have to be fetched</summary>
+        /// <summary>Id of the storage pool whose associated copies have to be fetched</summary>
         long? StoragePoolId { get; set; }
         /// <summary>Id of the subclient to modify</summary>
         long? SubclientId { get; set; }
+        /// <summary>Id of the tag to delete</summary>
+        long? TagId { get; set; }
+        /// <summary>tag value to delete</summary>
+        string TagValue { get; set; }
 
         string TopologyId { get; set; }
         /// <summary>Id of the user-group whose details have to be fetched</summary>
@@ -766,8 +1129,12 @@ namespace Commvault.Powershell.Models
         long? UserId { get; set; }
         /// <summary>Id of the VMgroup to update</summary>
         long? VMGroupId { get; set; }
+        /// <summary>GUID of the Provisioned VM</summary>
+        string VMGuid { get; set; }
         /// <summary>The vmUUID can be obtained from GET /virtualMachines UUID property</summary>
         string VMUuid { get; set; }
+
+        long? VendorId { get; set; }
 
     }
 }

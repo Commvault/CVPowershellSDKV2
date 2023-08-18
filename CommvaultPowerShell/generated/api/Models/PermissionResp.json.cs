@@ -80,6 +80,7 @@ namespace Commvault.Powershell.Models
             {_categoryId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("categoryId"), out var __jsonCategoryId) ? (long?)__jsonCategoryId : CategoryId;}
             {_categoryName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("categoryName"), out var __jsonCategoryName) ? (string)__jsonCategoryName : (string)CategoryName;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
+            {_exclude = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("exclude"), out var __jsonExclude) ? (bool?)__jsonExclude : Exclude;}
             AfterFromJson(json);
         }
 
@@ -107,6 +108,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._categoryId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._categoryId) : null, "categoryId" ,container.Add );
             AddIf( null != (((object)this._categoryName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._categoryName.ToString()) : null, "categoryName" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
+            AddIf( null != this._exclude ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._exclude) : null, "exclude" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

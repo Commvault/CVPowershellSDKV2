@@ -10,6 +10,16 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUserGroupSummaryInternal
     {
 
+        /// <summary>Backing field for <see cref="AllowMultipleCompanyMembers" /> property.</summary>
+        private bool? _allowMultipleCompanyMembers;
+
+        /// <summary>
+        /// This property denotes that addition of users/groups from child companies is allowed. Only applicable for commcell and
+        /// reseller company group.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? AllowMultipleCompanyMembers { get => this._allowMultipleCompanyMembers; set => this._allowMultipleCompanyMembers = value; }
+
         /// <summary>Backing field for <see cref="Commcell" /> property.</summary>
         private Commvault.Powershell.Models.ICommcellInfo _commcell;
 
@@ -83,6 +93,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ServiceType { get => this._serviceType; set => this._serviceType = value; }
 
+        /// <summary>Backing field for <see cref="Users" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName[] _users;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IIdName[] Users { get => this._users; set => this._users = value; }
+
         /// <summary>Creates an new <see cref="UserGroupSummary" /> instance.</summary>
         public UserGroupSummary()
         {
@@ -92,6 +108,17 @@ namespace Commvault.Powershell.Models
     public partial interface IUserGroupSummary :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// This property denotes that addition of users/groups from child companies is allowed. Only applicable for commcell and
+        /// reseller company group.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"This property denotes that addition of users/groups from child companies is allowed. Only applicable for commcell and reseller company group.",
+        SerializedName = @"allowMultipleCompanyMembers",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? AllowMultipleCompanyMembers { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -168,10 +195,23 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string ServiceType { get; set; }
 
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"users",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
+        Commvault.Powershell.Models.IIdName[] Users { get; set; }
+
     }
     internal partial interface IUserGroupSummaryInternal
 
     {
+        /// <summary>
+        /// This property denotes that addition of users/groups from child companies is allowed. Only applicable for commcell and
+        /// reseller company group.
+        /// </summary>
+        bool? AllowMultipleCompanyMembers { get; set; }
         /// <summary>CommcellInfo</summary>
         Commvault.Powershell.Models.ICommcellInfo Commcell { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
@@ -197,6 +237,8 @@ namespace Commvault.Powershell.Models
         /// service users),4(hosted exchange users),5(company users),12(dummy domain users)
         /// </summary>
         string ServiceType { get; set; }
+
+        Commvault.Powershell.Models.IIdName[] Users { get; set; }
 
     }
 }

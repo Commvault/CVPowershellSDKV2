@@ -22,8 +22,13 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.ICloudStorageProxy __cloudStorageProxy = new Commvault.Powershell.Models.CloudStorageProxy();
 
         /// <summary>
-        /// The access type for the cloud access path can be either read (writing to path not allowed) or read and write (writing
-        /// to path allowed)
+        /// Backing field for Inherited model <see cref= "Commvault.Powershell.Models.IModifyCloudBucketConfiguration" />
+        /// </summary>
+        private Commvault.Powershell.Models.IModifyCloudBucketConfiguration __modifyCloudBucketConfiguration = new Commvault.Powershell.Models.ModifyCloudBucketConfiguration();
+
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string Access { get => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Access; set => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Access = value; }
@@ -42,8 +47,23 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string CloudType { get => this._cloudType; }
 
+        /// <summary>Backing field for <see cref="CombinedStorageClass" /> property.</summary>
+        private string _combinedStorageClass;
+
+        /// <summary>
+        /// Appropriate combined storage class for archive. Applicable only when useCombinedStorage is true.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string CombinedStorageClass { get => this._combinedStorageClass; set => this._combinedStorageClass = value; }
+
         /// <summary>Internal Acessors for CloudType</summary>
         string Commvault.Powershell.Models.IOracleObjectBucketContentInternal.CloudType { get => this._cloudType; set { {_cloudType = value;} } }
+
+        /// <summary>Internal Acessors for Credentials</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IOracleObjectBucketContentInternal.Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.IdName()); set { {_credentials = value;} } }
+
+        /// <summary>Internal Acessors for MediaAgent</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IOracleObjectBucketContentInternal.MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set { {_mediaAgent = value;} } }
 
         /// <summary>Backing field for <see cref="CompartmentName" /> property.</summary>
         private string _compartmentName;
@@ -52,38 +72,65 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string CompartmentName { get => this._compartmentName; set => this._compartmentName = value; }
 
+        /// <summary>CloudBucketConfiguration</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.ICloudBucketConfiguration Configuration { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).Configuration; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).Configuration = value; }
+
+        /// <summary>
+        /// When true, prevents new data writes to backup location by changing number of writers to zero
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? ConfigurationDisableBackupLocationForFutureBackups { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationDisableBackupLocationForFutureBackups; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationDisableBackupLocationForFutureBackups = value; }
+
+        /// <summary>When true, means mount path is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? ConfigurationEnable { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationEnable; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationEnable = value; }
+
+        /// <summary>
+        /// When true, the deduplicated blocks in the mount path will not be referenced when there are multiple mount paths in the
+        /// library.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? ConfigurationPrepareForRetirement { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationPrepareForRetirement; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationPrepareForRetirement = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IIdName ConfigurationStorageAcceleratorCredentials { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationStorageAcceleratorCredentials; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationStorageAcceleratorCredentials = value; }
+
+        /// <summary>Backing field for <see cref="Credentials" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _credentials;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.IdName()); set => this._credentials = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? CredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string CredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name = value ?? null; }
+
         /// <summary>Enable/Disable access of bucket to a media Agent</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public bool? Enable { get => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Enable; set => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Enable = value; }
 
-        /// <summary>Backing field for <see cref="KeyFingerprint" /> property.</summary>
-        private string _keyFingerprint;
+        /// <summary>Backing field for <see cref="MediaAgent" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _mediaAgent;
 
-        /// <summary>PEM key's fingerprint</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string KeyFingerprint { get => this._keyFingerprint; set => this._keyFingerprint = value; }
+        internal Commvault.Powershell.Models.IIdName MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set => this._mediaAgent = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MediaAgentName { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name = value ?? null; }
 
         /// <summary>Password for proxy configuration (Should be in Base64 format)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public System.Security.SecureString Password { get => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Password; set => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Password = value; }
 
-        /// <summary>Backing field for <see cref="PemKeyFilename" /> property.</summary>
-        private string _pemKeyFilename;
-
-        /// <summary>PEM filename containing the private-key</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string PemKeyFilename { get => this._pemKeyFilename; set => this._pemKeyFilename = value; }
-
         /// <summary>Port for proxy configuration</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public long? Port { get => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port; set => ((Commvault.Powershell.Models.ICloudStorageProxyInternal)__cloudStorageProxy).Port = value; }
-
-        /// <summary>Backing field for <see cref="PrivateKeyPassword" /> property.</summary>
-        private string _privateKeyPassword;
-
-        /// <summary>Password for the private key</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string PrivateKeyPassword { get => this._privateKeyPassword; set => this._privateKeyPassword = value; }
 
         /// <summary>
         /// If the MediaAgent accesses the mount path using a proxy then proxy server address needs to be provided. If you want to
@@ -101,19 +148,25 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ServiceHost { get => this._serviceHost; set => this._serviceHost = value; }
 
-        /// <summary>Backing field for <see cref="TenancyOcid" /> property.</summary>
-        private string _tenancyOcid;
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public long? StorageAcceleratorCredentialsId { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsId; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsId = value; }
 
-        /// <summary>Oracle Cloud ID</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public string StorageAcceleratorCredentialsName { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsName; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsName = value; }
+
+        /// <summary>Backing field for <see cref="StorageClass" /> property.</summary>
+        private string _storageClass;
+
+        /// <summary>Appropriate storage class for your account</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string TenancyOcid { get => this._tenancyOcid; set => this._tenancyOcid = value; }
+        public string StorageClass { get => this._storageClass; set => this._storageClass = value; }
 
-        /// <summary>Backing field for <see cref="UserOcid" /> property.</summary>
-        private string _userOcid;
+        /// <summary>Backing field for <see cref="UseCombinedStorage" /> property.</summary>
+        private bool? _useCombinedStorage;
 
-        /// <summary>User name for the Oracle Cloud ID</summary>
+        /// <summary>Applicable for Archive storage class only</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string UserOcid { get => this._userOcid; set => this._userOcid = value; }
+        public bool? UseCombinedStorage { get => this._useCombinedStorage; set => this._useCombinedStorage = value; }
 
         /// <summary>Username for proxy configuration</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -137,13 +190,16 @@ namespace Commvault.Powershell.Models
             await eventListener.AssertObjectIsValid(nameof(__cloudStorageProxy), __cloudStorageProxy);
             await eventListener.AssertNotNull(nameof(__cloudStorageAdvanced), __cloudStorageAdvanced);
             await eventListener.AssertObjectIsValid(nameof(__cloudStorageAdvanced), __cloudStorageAdvanced);
+            await eventListener.AssertNotNull(nameof(__modifyCloudBucketConfiguration), __modifyCloudBucketConfiguration);
+            await eventListener.AssertObjectIsValid(nameof(__modifyCloudBucketConfiguration), __modifyCloudBucketConfiguration);
         }
     }
     /// Oracle Cloud Infrastructure Object Storage
     public partial interface IOracleObjectBucketContent :
         Commvault.Powershell.Runtime.IJsonSerializable,
         Commvault.Powershell.Models.ICloudStorageProxy,
-        Commvault.Powershell.Models.ICloudStorageAdvanced
+        Commvault.Powershell.Models.ICloudStorageAdvanced,
+        Commvault.Powershell.Models.IModifyCloudBucketConfiguration
     {
         /// <summary>Name of the bucket</summary>
         [Commvault.Powershell.Runtime.Info(
@@ -161,6 +217,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"cloudType",
         PossibleTypes = new [] { typeof(string) })]
         string CloudType { get;  }
+        /// <summary>
+        /// Appropriate combined storage class for archive. Applicable only when useCombinedStorage is true.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Appropriate combined storage class for archive. Applicable only when useCombinedStorage is true.",
+        SerializedName = @"combinedStorageClass",
+        PossibleTypes = new [] { typeof(string) })]
+        string CombinedStorageClass { get; set; }
         /// <summary>OCI compartment name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -169,30 +235,38 @@ namespace Commvault.Powershell.Models
         SerializedName = @"compartmentName",
         PossibleTypes = new [] { typeof(string) })]
         string CompartmentName { get; set; }
-        /// <summary>PEM key's fingerprint</summary>
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"PEM key's fingerprint",
-        SerializedName = @"keyFingerprint",
-        PossibleTypes = new [] { typeof(string) })]
-        string KeyFingerprint { get; set; }
-        /// <summary>PEM filename containing the private-key</summary>
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CredentialsId { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"PEM filename containing the private-key",
-        SerializedName = @"pemKeyFilename",
+        Description = @"",
+        SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string PemKeyFilename { get; set; }
-        /// <summary>Password for the private key</summary>
+        string CredentialsName { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Password for the private key",
-        SerializedName = @"privateKeyPassword",
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MediaAgentId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string PrivateKeyPassword { get; set; }
+        string MediaAgentName { get; set; }
         /// <summary>
         /// IP address or fully qualified domain name or URL for the cloud library based on cloud vendor
         /// </summary>
@@ -203,49 +277,60 @@ namespace Commvault.Powershell.Models
         SerializedName = @"serviceHost",
         PossibleTypes = new [] { typeof(string) })]
         string ServiceHost { get; set; }
-        /// <summary>Oracle Cloud ID</summary>
+        /// <summary>Appropriate storage class for your account</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Oracle Cloud ID",
-        SerializedName = @"tenancyOCID",
+        Description = @"Appropriate storage class for your account",
+        SerializedName = @"storageClass",
         PossibleTypes = new [] { typeof(string) })]
-        string TenancyOcid { get; set; }
-        /// <summary>User name for the Oracle Cloud ID</summary>
+        string StorageClass { get; set; }
+        /// <summary>Applicable for Archive storage class only</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"User name for the Oracle Cloud ID",
-        SerializedName = @"userOCID",
-        PossibleTypes = new [] { typeof(string) })]
-        string UserOcid { get; set; }
+        Description = @"Applicable for Archive storage class only",
+        SerializedName = @"useCombinedStorage",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? UseCombinedStorage { get; set; }
 
     }
     /// Oracle Cloud Infrastructure Object Storage
     internal partial interface IOracleObjectBucketContentInternal :
         Commvault.Powershell.Models.ICloudStorageProxyInternal,
-        Commvault.Powershell.Models.ICloudStorageAdvancedInternal
+        Commvault.Powershell.Models.ICloudStorageAdvancedInternal,
+        Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal
     {
         /// <summary>Name of the bucket</summary>
         string Bucket { get; set; }
         /// <summary>Name of cloud vendor</summary>
         string CloudType { get; set; }
+        /// <summary>
+        /// Appropriate combined storage class for archive. Applicable only when useCombinedStorage is true.
+        /// </summary>
+        string CombinedStorageClass { get; set; }
         /// <summary>OCI compartment name</summary>
         string CompartmentName { get; set; }
-        /// <summary>PEM key's fingerprint</summary>
-        string KeyFingerprint { get; set; }
-        /// <summary>PEM filename containing the private-key</summary>
-        string PemKeyFilename { get; set; }
-        /// <summary>Password for the private key</summary>
-        string PrivateKeyPassword { get; set; }
+
+        Commvault.Powershell.Models.IIdName Credentials { get; set; }
+
+        long? CredentialsId { get; set; }
+
+        string CredentialsName { get; set; }
+
+        Commvault.Powershell.Models.IIdName MediaAgent { get; set; }
+
+        long? MediaAgentId { get; set; }
+
+        string MediaAgentName { get; set; }
         /// <summary>
         /// IP address or fully qualified domain name or URL for the cloud library based on cloud vendor
         /// </summary>
         string ServiceHost { get; set; }
-        /// <summary>Oracle Cloud ID</summary>
-        string TenancyOcid { get; set; }
-        /// <summary>User name for the Oracle Cloud ID</summary>
-        string UserOcid { get; set; }
+        /// <summary>Appropriate storage class for your account</summary>
+        string StorageClass { get; set; }
+        /// <summary>Applicable for Archive storage class only</summary>
+        bool? UseCombinedStorage { get; set; }
 
     }
 }

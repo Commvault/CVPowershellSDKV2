@@ -14,28 +14,28 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Locale</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal.Locale { get => (this._locale = this._locale ?? new Commvault.Powershell.Models.IdName()); set { {_locale = value;} } }
 
-        /// <summary>Backing field for <see cref="ConsoleMessage" /> property.</summary>
-        private string _consoleMessage;
+        /// <summary>Backing field for <see cref="Console" /> property.</summary>
+        private string _console;
 
         /// <summary>the message template for the console notification</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string ConsoleMessage { get => this._consoleMessage; set => this._consoleMessage = value; }
+        public string Console { get => this._console; set => this._console = value; }
 
-        /// <summary>Backing field for <see cref="EmailMessage" /> property.</summary>
-        private string _emailMessage;
+        /// <summary>Backing field for <see cref="Email" /> property.</summary>
+        private string _email;
 
         /// <summary>
         /// the message template for the email notification. Contains both email subject as well as body
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string EmailMessage { get => this._emailMessage; set => this._emailMessage = value; }
+        public string Email { get => this._email; set => this._email = value; }
 
-        /// <summary>Backing field for <see cref="EventViewerMessage" /> property.</summary>
-        private string _eventViewerMessage;
+        /// <summary>Backing field for <see cref="EventViewer" /> property.</summary>
+        private string _eventViewer;
 
         /// <summary>the message template for the event viewer notification</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string EventViewerMessage { get => this._eventViewerMessage; set => this._eventViewerMessage = value; }
+        public string EventViewer { get => this._eventViewer; set => this._eventViewer = value; }
 
         /// <summary>Backing field for <see cref="Locale" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _locale;
@@ -49,12 +49,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string LocaleName { get => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Locale).Name = value ?? null; }
 
-        /// <summary>Backing field for <see cref="WebhookMessage" /> property.</summary>
-        private string _webhookMessage;
+        /// <summary>Backing field for <see cref="Webhook" /> property.</summary>
+        private string _webhook;
 
         /// <summary>the message template for the webhook notification</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string WebhookMessage { get => this._webhookMessage; set => this._webhookMessage = value; }
+        public string Webhook { get => this._webhook; set => this._webhook = value; }
 
         /// <summary>Creates an new <see cref="AlertDefinitionsTemplate" /> instance.</summary>
         public AlertDefinitionsTemplate()
@@ -71,9 +71,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the console notification",
-        SerializedName = @"consoleMessage",
+        SerializedName = @"console",
         PossibleTypes = new [] { typeof(string) })]
-        string ConsoleMessage { get; set; }
+        string Console { get; set; }
         /// <summary>
         /// the message template for the email notification. Contains both email subject as well as body
         /// </summary>
@@ -81,17 +81,17 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the email notification. Contains both email subject as well as body",
-        SerializedName = @"emailMessage",
+        SerializedName = @"email",
         PossibleTypes = new [] { typeof(string) })]
-        string EmailMessage { get; set; }
+        string Email { get; set; }
         /// <summary>the message template for the event viewer notification</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the event viewer notification",
-        SerializedName = @"eventViewerMessage",
+        SerializedName = @"eventViewer",
         PossibleTypes = new [] { typeof(string) })]
-        string EventViewerMessage { get; set; }
+        string EventViewer { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -113,9 +113,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the webhook notification",
-        SerializedName = @"webhookMessage",
+        SerializedName = @"webhook",
         PossibleTypes = new [] { typeof(string) })]
-        string WebhookMessage { get; set; }
+        string Webhook { get; set; }
 
     }
     /// AlertDefinitionsTemplate
@@ -123,13 +123,13 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>the message template for the console notification</summary>
-        string ConsoleMessage { get; set; }
+        string Console { get; set; }
         /// <summary>
         /// the message template for the email notification. Contains both email subject as well as body
         /// </summary>
-        string EmailMessage { get; set; }
+        string Email { get; set; }
         /// <summary>the message template for the event viewer notification</summary>
-        string EventViewerMessage { get; set; }
+        string EventViewer { get; set; }
 
         Commvault.Powershell.Models.IIdName Locale { get; set; }
 
@@ -137,7 +137,7 @@ namespace Commvault.Powershell.Models
 
         string LocaleName { get; set; }
         /// <summary>the message template for the webhook notification</summary>
-        string WebhookMessage { get; set; }
+        string Webhook { get; set; }
 
     }
 }

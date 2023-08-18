@@ -66,7 +66,7 @@ namespace Commvault.Powershell.Models
             {_vOrganizationName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vOrganizationName"), out var __jsonVOrganizationName) ? (string)__jsonVOrganizationName : (string)VOrganizationName;}
             {_vOrganizationGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vOrganizationGuid"), out var __jsonVOrganizationGuid) ? (string)__jsonVOrganizationGuid : (string)VOrganizationGuid;}
             {_vCloudDirector = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vCloudDirector"), out var __jsonVCloudDirector) ? (string)__jsonVCloudDirector : (string)VCloudDirector;}
-            {_hostname = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hostname"), out var __jsonHostname) ? (string)__jsonHostname : (string)Hostname;}
+            {_hostName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hostName"), out var __jsonHostName) ? (string)__jsonHostName : (string)HostName;}
             {_userName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userName"), out var __jsonUserName) ? (string)__jsonUserName : (string)UserName;}
             {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? (string)__jsonPassword : (string)Password;}
             {_createOrgAccount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("createOrgAccount"), out var __jsonCreateOrgAccount) ? (bool?)__jsonCreateOrgAccount : CreateOrgAccount;}
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._vOrganizationName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vOrganizationName.ToString()) : null, "vOrganizationName" ,container.Add );
             AddIf( null != (((object)this._vOrganizationGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vOrganizationGuid.ToString()) : null, "vOrganizationGuid" ,container.Add );
             AddIf( null != (((object)this._vCloudDirector)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vCloudDirector.ToString()) : null, "vCloudDirector" ,container.Add );
-            AddIf( null != (((object)this._hostname)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hostname.ToString()) : null, "hostname" ,container.Add );
+            AddIf( null != (((object)this._hostName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hostName.ToString()) : null, "hostName" ,container.Add );
             AddIf( null != (((object)this._userName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userName.ToString()) : null, "userName" ,container.Add );
             AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._password.ToString()) : null, "password" ,container.Add );
             AddIf( null != this._createOrgAccount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._createOrgAccount) : null, "createOrgAccount" ,container.Add );

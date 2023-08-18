@@ -77,6 +77,7 @@ namespace Commvault.Powershell.Models
             {_serviceProviderMetaData = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("serviceProviderMetaData"), out var __jsonServiceProviderMetaData) ? Commvault.Powershell.Models.SamlspMetaDataResp.FromJson(__jsonServiceProviderMetaData) : ServiceProviderMetaData;}
             {_associations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("associations"), out var __jsonAssociations) ? Commvault.Powershell.Models.SamlAssociations.FromJson(__jsonAssociations) : Associations;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_appKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("appKey"), out var __jsonAppKey) ? (string)__jsonAppKey : (string)AppKey;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
             {_autoCreateUser = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("autoCreateUser"), out var __jsonAutoCreateUser) ? (bool?)__jsonAutoCreateUser : AutoCreateUser;}
@@ -111,6 +112,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._serviceProviderMetaData ? (Commvault.Powershell.Runtime.Json.JsonNode) this._serviceProviderMetaData.ToJson(null,serializationMode) : null, "serviceProviderMetaData" ,container.Add );
             AddIf( null != this._associations ? (Commvault.Powershell.Runtime.Json.JsonNode) this._associations.ToJson(null,serializationMode) : null, "associations" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != (((object)this._appKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._appKey.ToString()) : null, "appKey" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
             AddIf( null != this._autoCreateUser ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._autoCreateUser) : null, "autoCreateUser" ,container.Add );

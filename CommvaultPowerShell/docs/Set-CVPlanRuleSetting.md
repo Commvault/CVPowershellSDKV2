@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-cvplanrulesetting
 schema: 2.0.0
 ---
@@ -14,8 +14,8 @@ API to set plan rule execution settings
 
 ### PutExpanded (Default)
 ```
-Set-CVPlanRuleSetting [-ExecutionInterval <Int64>] [-ExecutionMode <String>] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-CVPlanRuleSetting [-EnableAlertNotification] [-ExecutionInterval <Int64>] [-ExecutionMode <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Put
@@ -30,10 +30,8 @@ API to set plan rule execution settings
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -41,10 +39,8 @@ API to set plan rule execution settings
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -65,6 +61,22 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -EnableAlertNotification
+Set this to enable/disable notification over email for subclients pending plan associationover 24 hours.
+By default, notification will be enabled.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: PutExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -150,6 +162,7 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODY <IPlanRuleExecutionSettings>: Message object to hold settings for plan rule execution.
+  - `[EnableAlertNotification <Boolean?>]`: Set this to enable/disable notification over email for subclients pending plan associationover 24 hours. By default, notification will be enabled.
   - `[ExecutionInterval <Int64?>]`: Setting to suggest evaluation frequency in case of evaluation mode being Automatic.
   - `[ExecutionMode <String>]`: Plan rule execution mode
 

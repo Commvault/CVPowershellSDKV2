@@ -62,7 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_taskId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("taskId"), out var __jsonTaskId) ? (long?)__jsonTaskId : TaskId;}
-            {_jobIds = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("jobIds"), out var __jsonJobIds) ? If( __jsonJobIds as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAny[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAny) (Commvault.Powershell.Models.Any.FromJson(__u) )) ))() : null : JobIds;}
+            {_jobIds = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("jobIds"), out var __jsonJobIds) ? If( __jsonJobIds as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : JobIds;}
             AfterFromJson(json);
         }
 
@@ -101,7 +101,7 @@ namespace Commvault.Powershell.Models
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
                 foreach( var __x in this._jobIds )
                 {
-                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                    AddIf(null != (((object)__x)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__x.ToString()) : null ,__w.Add);
                 }
                 container.Add("jobIds",__w);
             }

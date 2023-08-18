@@ -71,6 +71,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencySchedules = (Commvault.Powershell.Models.IPlanSchedule[]) content.GetValueForProperty("BackupFrequencySchedules",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencySchedules, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSchedule>(__y, Commvault.Powershell.Models.PlanScheduleTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencyOperationType = (string) content.GetValueForProperty("BackupFrequencyOperationType",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencyOperationType, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -96,6 +97,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorMessage = (string) content.GetValueForProperty("ErrorMessage",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorMessage, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorCode = (long?) content.GetValueForProperty("ErrorCode",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).ErrorCode, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencySchedules = (Commvault.Powershell.Models.IPlanSchedule[]) content.GetValueForProperty("BackupFrequencySchedules",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencySchedules, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSchedule>(__y, Commvault.Powershell.Models.PlanScheduleTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencyOperationType = (string) content.GetValueForProperty("BackupFrequencyOperationType",((Commvault.Powershell.Models.ICreateServerPlanRpoResponseInternal)this).BackupFrequencyOperationType, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

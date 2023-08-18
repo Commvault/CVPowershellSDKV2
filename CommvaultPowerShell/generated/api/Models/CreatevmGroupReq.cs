@@ -17,6 +17,12 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Hypervisor</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreatevmGroupReqInternal.Hypervisor { get => (this._hypervisor = this._hypervisor ?? new Commvault.Powershell.Models.IdName()); set { {_hypervisor = value;} } }
 
+        /// <summary>Internal Acessors for Meditech</summary>
+        Commvault.Powershell.Models.IMeditechPropResp Commvault.Powershell.Models.ICreatevmGroupReqInternal.Meditech { get => (this._meditech = this._meditech ?? new Commvault.Powershell.Models.MeditechPropResp()); set { {_meditech = value;} } }
+
+        /// <summary>Internal Acessors for MeditechUserAccount</summary>
+        Commvault.Powershell.Models.IUserNamePassword Commvault.Powershell.Models.ICreatevmGroupReqInternal.MeditechUserAccount { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).UserAccount; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).UserAccount = value; }
+
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreatevmGroupReqInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
 
@@ -42,6 +48,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get => ((Commvault.Powershell.Models.IVMContentInternal)Content).VirtualMachines; set => ((Commvault.Powershell.Models.IVMContentInternal)Content).VirtualMachines = value ?? null /* arrayOf */; }
 
+        /// <summary>Backing field for <see cref="EnableIntellisnap" /> property.</summary>
+        private bool? _enableIntellisnap;
+
+        /// <summary>True if Intellisnap has to be enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnableIntellisnap { get => this._enableIntellisnap; set => this._enableIntellisnap = value; }
+
         /// <summary>Backing field for <see cref="Hypervisor" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _hypervisor;
 
@@ -53,6 +66,29 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string HypervisorName { get => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Hypervisor).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="Meditech" /> property.</summary>
+        private Commvault.Powershell.Models.IMeditechPropResp _meditech;
+
+        /// <summary>meditechPropResp</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IMeditechPropResp Meditech { get => (this._meditech = this._meditech ?? new Commvault.Powershell.Models.MeditechPropResp()); set => this._meditech = value; }
+
+        /// <summary>Meditech Listener IP of FQDN name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MeditechListenerIP { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).ListenerIP; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).ListenerIP = value ?? null; }
+
+        /// <summary>Meditech Listener Port</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MeditechListenerPort { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).ListenerPort; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).ListenerPort = value ?? default(long); }
+
+        /// <summary>MBF timeout (in seconds)</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MeditechMbFtimeout { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).MbFtimeout; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).MbFtimeout = value ?? default(long); }
+
+        /// <summary>Meditech system name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MeditechSystemName { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).SystemName; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).SystemName = value ?? null; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -84,6 +120,14 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name = value ?? null; }
+
+        /// <summary>username to access the network path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string UserAccountName { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).UserAccountName; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).UserAccountName = value ?? null; }
+
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string UserAccountPassword { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).UserAccountPassword; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)Meditech).UserAccountPassword = value ?? null; }
 
         /// <summary>Creates an new <see cref="CreatevmGroupReq" /> instance.</summary>
         public CreatevmGroupReq()
@@ -121,6 +165,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"virtualMachines",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVirtualMachinecontent) })]
         Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get; set; }
+        /// <summary>True if Intellisnap has to be enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if Intellisnap has to be  enabled",
+        SerializedName = @"enableIntellisnap",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnableIntellisnap { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -137,6 +189,38 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string HypervisorName { get; set; }
+        /// <summary>Meditech Listener IP of FQDN name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Meditech Listener IP of FQDN name",
+        SerializedName = @"listenerIP",
+        PossibleTypes = new [] { typeof(string) })]
+        string MeditechListenerIP { get; set; }
+        /// <summary>Meditech Listener Port</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Meditech Listener Port",
+        SerializedName = @"listenerPort",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MeditechListenerPort { get; set; }
+        /// <summary>MBF timeout (in seconds)</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"MBF timeout (in seconds)",
+        SerializedName = @"MBFtimeout",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MeditechMbFtimeout { get; set; }
+        /// <summary>Meditech system name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Meditech system name",
+        SerializedName = @"systemName",
+        PossibleTypes = new [] { typeof(string) })]
+        string MeditechSystemName { get; set; }
         /// <summary>subclient name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -177,6 +261,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string StorageName { get; set; }
+        /// <summary>username to access the network path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"username to access the network path",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string UserAccountName { get; set; }
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"password to access the network path",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string UserAccountPassword { get; set; }
 
     }
     /// CreatevmGroupReq
@@ -193,12 +293,26 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IRuleGroupContent[] ContentRuleGroups { get; set; }
 
         Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get; set; }
+        /// <summary>True if Intellisnap has to be enabled</summary>
+        bool? EnableIntellisnap { get; set; }
 
         Commvault.Powershell.Models.IIdName Hypervisor { get; set; }
 
         long? HypervisorId { get; set; }
 
         string HypervisorName { get; set; }
+        /// <summary>meditechPropResp</summary>
+        Commvault.Powershell.Models.IMeditechPropResp Meditech { get; set; }
+        /// <summary>Meditech Listener IP of FQDN name</summary>
+        string MeditechListenerIP { get; set; }
+        /// <summary>Meditech Listener Port</summary>
+        long? MeditechListenerPort { get; set; }
+        /// <summary>MBF timeout (in seconds)</summary>
+        long? MeditechMbFtimeout { get; set; }
+        /// <summary>Meditech system name</summary>
+        string MeditechSystemName { get; set; }
+
+        Commvault.Powershell.Models.IUserNamePassword MeditechUserAccount { get; set; }
         /// <summary>subclient name</summary>
         string Name { get; set; }
 
@@ -213,6 +327,10 @@ namespace Commvault.Powershell.Models
         long? StorageId { get; set; }
 
         string StorageName { get; set; }
+        /// <summary>username to access the network path</summary>
+        string UserAccountName { get; set; }
+        /// <summary>password to access the network path</summary>
+        string UserAccountPassword { get; set; }
 
     }
 }

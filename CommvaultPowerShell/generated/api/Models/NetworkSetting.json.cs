@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>NetworkSetting</summary>
+    /// <summary>The schema for mapping source network with destination network</summary>
     public partial class NetworkSetting
     {
 
@@ -72,6 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_source = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("source"), out var __jsonSource) ? (string)__jsonSource : (string)Source;}
+            {_sourceId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("sourceId"), out var __jsonSourceId) ? (string)__jsonSourceId : (string)SourceId;}
             {_destination = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destination"), out var __jsonDestination) ? (string)__jsonDestination : (string)Destination;}
             AfterFromJson(json);
         }
@@ -96,6 +97,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._source)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._source.ToString()) : null, "source" ,container.Add );
+            AddIf( null != (((object)this._sourceId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._sourceId.ToString()) : null, "sourceId" ,container.Add );
             AddIf( null != (((object)this._destination)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destination.ToString()) : null, "destination" ,container.Add );
             AfterToJson(ref container);
             return container;

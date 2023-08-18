@@ -62,6 +62,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_credentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("credentials"), out var __jsonCredentials) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCredentials) : Credentials;}
+            {_etcdProtection = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("etcdProtection"), out var __jsonEtcdProtection) ? Commvault.Powershell.Models.EtcdProtectionItem.FromJson(__jsonEtcdProtection) : EtcdProtection;}
+            {_planEntity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("planEntity"), out var __jsonPlanEntity) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlanEntity) : PlanEntity;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_skipCredentialValidation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("skipCredentialValidation"), out var __jsonSkipCredentialValidation) ? (bool?)__jsonSkipCredentialValidation : SkipCredentialValidation;}
             {_accessNodes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNodes"), out var __jsonAccessNodes) ? If( __jsonAccessNodes as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : AccessNodes;}
@@ -98,6 +100,8 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._credentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._credentials.ToJson(null,serializationMode) : null, "credentials" ,container.Add );
+            AddIf( null != this._etcdProtection ? (Commvault.Powershell.Runtime.Json.JsonNode) this._etcdProtection.ToJson(null,serializationMode) : null, "etcdProtection" ,container.Add );
+            AddIf( null != this._planEntity ? (Commvault.Powershell.Runtime.Json.JsonNode) this._planEntity.ToJson(null,serializationMode) : null, "planEntity" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != this._skipCredentialValidation ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._skipCredentialValidation) : null, "skipCredentialValidation" ,container.Add );
             if (null != this._accessNodes)

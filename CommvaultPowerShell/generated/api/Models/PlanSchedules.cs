@@ -11,6 +11,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IPlanSchedulesInternal
     {
 
+        /// <summary>Backing field for <see cref="OperationType" /> property.</summary>
+        private string _operationType;
+
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string OperationType { get => this._operationType; set => this._operationType = value; }
+
         /// <summary>Backing field for <see cref="Schedules" /> property.</summary>
         private Commvault.Powershell.Models.IPlanSchedule[] _schedules;
 
@@ -27,6 +34,15 @@ namespace Commvault.Powershell.Models
     public partial interface IPlanSchedules :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Operation type for the list",
+        SerializedName = @"operationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string OperationType { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
@@ -40,6 +56,9 @@ namespace Commvault.Powershell.Models
     internal partial interface IPlanSchedulesInternal
 
     {
+        /// <summary>Operation type for the list</summary>
+        string OperationType { get; set; }
+
         Commvault.Powershell.Models.IPlanSchedule[] Schedules { get; set; }
 
     }

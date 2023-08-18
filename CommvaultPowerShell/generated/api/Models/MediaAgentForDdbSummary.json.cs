@@ -77,6 +77,7 @@ namespace Commvault.Powershell.Models
             {_simosId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("SIMOSId"), out var __jsonSimosId) ? (long?)__jsonSimosId : SimosId;}
             {_isDdbSubclientConfigured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDDBSubclientConfigured"), out var __jsonIsDdbSubclientConfigured) ? (bool?)__jsonIsDdbSubclientConfigured : IsDdbSubclientConfigured;}
             {_oSType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("OSType"), out var __jsonOSType) ? (string)__jsonOSType : (string)OSType;}
+            {_isConfigured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isConfigured"), out var __jsonIsConfigured) ? (bool?)__jsonIsConfigured : IsConfigured;}
             AfterFromJson(json);
         }
 
@@ -106,6 +107,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._simosId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._simosId) : null, "SIMOSId" ,container.Add );
             AddIf( null != this._isDdbSubclientConfigured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDdbSubclientConfigured) : null, "isDDBSubclientConfigured" ,container.Add );
             AddIf( null != (((object)this._oSType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oSType.ToString()) : null, "OSType" ,container.Add );
+            AddIf( null != this._isConfigured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isConfigured) : null, "isConfigured" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

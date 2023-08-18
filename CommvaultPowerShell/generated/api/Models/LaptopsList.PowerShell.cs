@@ -93,7 +93,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopsListInternal)this).Laptops = (Commvault.Powershell.Models.ILaptopsAdminConsole[]) content.GetValueForProperty("Laptops",((Commvault.Powershell.Models.ILaptopsListInternal)this).Laptops, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILaptopsAdminConsole>(__y, Commvault.Powershell.Models.LaptopsAdminConsoleTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -111,7 +110,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ILaptopsListInternal)this).Laptops = (Commvault.Powershell.Models.ILaptopsAdminConsole[]) content.GetValueForProperty("Laptops",((Commvault.Powershell.Models.ILaptopsListInternal)this).Laptops, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILaptopsAdminConsole>(__y, Commvault.Powershell.Models.LaptopsAdminConsoleTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 

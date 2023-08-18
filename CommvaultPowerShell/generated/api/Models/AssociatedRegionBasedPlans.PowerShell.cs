@@ -64,6 +64,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).PlansCount = (long?) content.GetValueForProperty("PlansCount",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).PlansCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).Plans = (Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[]) content.GetValueForProperty("Plans",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).Plans, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAssociatedRegionBasedPlansList>(__y, Commvault.Powershell.Models.AssociatedRegionBasedPlansListTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -82,6 +83,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).PlansCount = (long?) content.GetValueForProperty("PlansCount",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).PlansCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).Plans = (Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[]) content.GetValueForProperty("Plans",((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)this).Plans, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAssociatedRegionBasedPlansList>(__y, Commvault.Powershell.Models.AssociatedRegionBasedPlansListTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

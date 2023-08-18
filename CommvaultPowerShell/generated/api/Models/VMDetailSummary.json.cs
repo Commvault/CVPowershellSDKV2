@@ -83,6 +83,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._hypervisor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._hypervisor.ToJson(null,serializationMode) : null, "hypervisor" ,container.Add );
             AddIf( null != this._vMGroup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._vMGroup.ToJson(null,serializationMode) : null, "vmGroup" ,container.Add );
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
+            AddIf( null != this._sla ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sla.ToJson(null,serializationMode) : null, "SLA" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != (((object)this._host)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._host.ToString()) : null, "host" ,container.Add );
             AddIf( null != (((object)this._oS)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oS.ToString()) : null, "os" ,container.Add );
@@ -111,6 +112,7 @@ namespace Commvault.Powershell.Models
             {_hypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("hypervisor"), out var __jsonHypervisor) ? Commvault.Powershell.Models.IdName.FromJson(__jsonHypervisor) : Hypervisor;}
             {_vMGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("vmGroup"), out var __jsonVMGroup) ? Commvault.Powershell.Models.IdName.FromJson(__jsonVMGroup) : VMGroup;}
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
+            {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.VMSla.FromJson(__jsonSla) : Sla;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_host = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("host"), out var __jsonHost) ? (string)__jsonHost : (string)Host;}
             {_oS = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("os"), out var __jsonOS) ? (string)__jsonOS : (string)OS;}

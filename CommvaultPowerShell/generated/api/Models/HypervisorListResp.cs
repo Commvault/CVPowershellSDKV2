@@ -54,6 +54,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Instance</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorListRespInternal.Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set { {_instance = value;} } }
 
+        /// <summary>Internal Acessors for ManageSnapshot</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHypervisorListRespInternal.ManageSnapshot { get => (this._manageSnapshot = this._manageSnapshot ?? new Commvault.Powershell.Models.IdName()); set { {_manageSnapshot = value;} } }
+
         /// <summary>delay time in unix timestamp</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? DelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).DelayTimeTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).DelayTimeTime = value ?? default(long); }
@@ -100,6 +103,18 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="ManageSnapshot" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _manageSnapshot;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName ManageSnapshot { get => (this._manageSnapshot = this._manageSnapshot ?? new Commvault.Powershell.Models.IdName()); set => this._manageSnapshot = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ManageSnapshotId { get => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ManageSnapshotName { get => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ManageSnapshot).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -240,6 +255,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string InstanceName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ManageSnapshotId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ManageSnapshotName { get; set; }
         /// <summary>This give the name of the Hypervisor.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -326,6 +357,12 @@ namespace Commvault.Powershell.Models
         long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
+
+        Commvault.Powershell.Models.IIdName ManageSnapshot { get; set; }
+
+        long? ManageSnapshotId { get; set; }
+
+        string ManageSnapshotName { get; set; }
         /// <summary>This give the name of the Hypervisor.</summary>
         string Name { get; set; }
         /// <summary>RetireClientPhase</summary>

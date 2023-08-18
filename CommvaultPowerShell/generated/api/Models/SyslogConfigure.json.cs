@@ -74,6 +74,7 @@ namespace Commvault.Powershell.Models
             {_forwardToSyslog = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("forwardToSyslog"), out var __jsonForwardToSyslog) ? Commvault.Powershell.Models.SyslogPolicies.FromJson(__jsonForwardToSyslog) : ForwardToSyslog;}
             {_hostname = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hostname"), out var __jsonHostname) ? (string)__jsonHostname : (string)Hostname;}
             {_port = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("port"), out var __jsonPort) ? (long?)__jsonPort : Port;}
+            {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
             {_secureMessaging = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("secureMessaging"), out var __jsonSecureMessaging) ? (bool?)__jsonSecureMessaging : SecureMessaging;}
             {_certificateAuthorityName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("certificateAuthorityName"), out var __jsonCertificateAuthorityName) ? (string)__jsonCertificateAuthorityName : (string)CertificateAuthorityName;}
             {_certificateAuthorityContent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("certificateAuthorityContent"), out var __jsonCertificateAuthorityContent) ? (string)__jsonCertificateAuthorityContent : (string)CertificateAuthorityContent;}
@@ -102,6 +103,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._forwardToSyslog ? (Commvault.Powershell.Runtime.Json.JsonNode) this._forwardToSyslog.ToJson(null,serializationMode) : null, "forwardToSyslog" ,container.Add );
             AddIf( null != (((object)this._hostname)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hostname.ToString()) : null, "hostname" ,container.Add );
             AddIf( null != this._port ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._port) : null, "port" ,container.Add );
+            AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
             AddIf( null != this._secureMessaging ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._secureMessaging) : null, "secureMessaging" ,container.Add );
             AddIf( null != (((object)this._certificateAuthorityName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._certificateAuthorityName.ToString()) : null, "certificateAuthorityName" ,container.Add );
             AddIf( null != (((object)this._certificateAuthorityContent)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._certificateAuthorityContent.ToString()) : null, "certificateAuthorityContent" ,container.Add );

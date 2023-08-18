@@ -11,6 +11,16 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal
     {
 
+        /// <summary>Backing field for <see cref="AdditionalProperties" /> property.</summary>
+        private Commvault.Powershell.Models.IAlertAdditionalProperties _additionalProperties;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAlertAdditionalProperties AdditionalProperties { get => (this._additionalProperties = this._additionalProperties ?? new Commvault.Powershell.Models.AlertAdditionalProperties()); set => this._additionalProperties = value; }
+
+        /// <summary>Tells status of alert. Can be used to find if alert is enabled or not.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? AdditionalPropertyStatus { get => ((Commvault.Powershell.Models.IAlertAdditionalPropertiesInternal)AdditionalProperties).Status; set => ((Commvault.Powershell.Models.IAlertAdditionalPropertiesInternal)AdditionalProperties).Status = value ?? default(long); }
+
         /// <summary>Backing field for <see cref="AlertSummary" /> property.</summary>
         private Commvault.Powershell.Models.IAlertDetailsSummary _alertSummary;
 
@@ -21,9 +31,17 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="AlertTarget" /> property.</summary>
         private Commvault.Powershell.Models.IAlertDefinitionsTarget _alertTarget;
 
-        /// <summary>AlertDefinitionsTarget</summary>
+        /// <summary>
+        /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IAlertDefinitionsTarget AlertTarget { get => (this._alertTarget = this._alertTarget ?? new Commvault.Powershell.Models.AlertDefinitionsTarget()); set => this._alertTarget = value; }
+
+        /// <summary>
+        /// Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AlertTargetRecipientsOperationType { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientsOperationType; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientsOperationType = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] AlertTargetSendAlertTo { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).SendAlertTo; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).SendAlertTo = value ?? null /* arrayOf */; }
@@ -43,6 +61,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CategoryName { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CategoryName; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CategoryName = value ?? null; }
 
+        /// <summary>Internal Acessors for AdditionalProperties</summary>
+        Commvault.Powershell.Models.IAlertAdditionalProperties Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal.AdditionalProperties { get => (this._additionalProperties = this._additionalProperties ?? new Commvault.Powershell.Models.AlertAdditionalProperties()); set { {_additionalProperties = value;} } }
+
         /// <summary>Internal Acessors for AlertSummary</summary>
         Commvault.Powershell.Models.IAlertDetailsSummary Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal.AlertSummary { get => (this._alertSummary = this._alertSummary ?? new Commvault.Powershell.Models.AlertDetailsSummary()); set { {_alertSummary = value;} } }
 
@@ -61,11 +82,11 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for AlertTargetRecipients</summary>
         Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal.AlertTargetRecipients { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).Recipients; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).Recipients = value; }
 
-        /// <summary>Internal Acessors for Template</summary>
-        Commvault.Powershell.Models.IAlertDefinitionsTemplate Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal.Template { get => (this._template = this._template ?? new Commvault.Powershell.Models.AlertDefinitionsTemplate()); set { {_template = value;} } }
-
         /// <summary>Internal Acessors for TemplateLocale</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal.TemplateLocale { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).Locale; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).Locale = value; }
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal.TemplateLocale { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Locale; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Locale = value; }
+
+        /// <summary>Internal Acessors for Templates</summary>
+        Commvault.Powershell.Models.IAlertDefinitionsTemplate Commvault.Powershell.Models.IAlertDefinitionsDetailsInternal.Templates { get => (this._templates = this._templates ?? new Commvault.Powershell.Models.AlertDefinitionsTemplate()); set { {_templates = value;} } }
 
         /// <summary>id of the criteria of detection for the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -75,6 +96,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CriterionName { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionName; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionName = value ?? null; }
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] CriterionParamsList { get => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionParamsList; set => ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)AlertSummary).CriterionParamsList = value ?? null /* arrayOf */; }
+
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
 
@@ -82,16 +106,23 @@ namespace Commvault.Powershell.Models
         public long? Id { get => this._id; set => this._id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? LocaleId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleId = value ?? default(long); }
+        public long? LocaleId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).LocaleId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).LocaleId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string LocaleName { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleName; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).LocaleName = value ?? null; }
+        public string LocaleName { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).LocaleName; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).LocaleName = value ?? null; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
+
+        /// <summary>Backing field for <see cref="ProcessDiscoveredVMS" /> property.</summary>
+        private bool? _processDiscoveredVMS;
+
+        /// <summary>Set to true for all Virtual Machine related alerts.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? ProcessDiscoveredVMS { get => this._processDiscoveredVMS; set => this._processDiscoveredVMS = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IAlertTargetIdNameType1[] RecipientBcc { get => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientBcc; set => ((Commvault.Powershell.Models.IAlertDefinitionsTargetInternal)AlertTarget).RecipientBcc = value ?? null /* arrayOf */; }
@@ -116,30 +147,30 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? SendIndividualNotifications { get => this._sendIndividualNotifications; set => this._sendIndividualNotifications = value; }
 
-        /// <summary>Backing field for <see cref="Template" /> property.</summary>
-        private Commvault.Powershell.Models.IAlertDefinitionsTemplate _template;
-
-        /// <summary>AlertDefinitionsTemplate</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IAlertDefinitionsTemplate Template { get => (this._template = this._template ?? new Commvault.Powershell.Models.AlertDefinitionsTemplate()); set => this._template = value; }
-
         /// <summary>the message template for the console notification</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string TemplateConsoleMessage { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).ConsoleMessage; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).ConsoleMessage = value ?? null; }
+        public string TemplateConsole { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Console; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Console = value ?? null; }
 
         /// <summary>
         /// the message template for the email notification. Contains both email subject as well as body
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string TemplateEmailMessage { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).EmailMessage; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).EmailMessage = value ?? null; }
+        public string TemplateEmail { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Email; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Email = value ?? null; }
 
         /// <summary>the message template for the event viewer notification</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string TemplateEventViewerMessage { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).EventViewerMessage; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).EventViewerMessage = value ?? null; }
+        public string TemplateEventViewer { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).EventViewer; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).EventViewer = value ?? null; }
 
         /// <summary>the message template for the webhook notification</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string TemplateWebhookMessage { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).WebhookMessage; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Template).WebhookMessage = value ?? null; }
+        public string TemplateWebhook { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Webhook; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Webhook = value ?? null; }
+
+        /// <summary>Backing field for <see cref="Templates" /> property.</summary>
+        private Commvault.Powershell.Models.IAlertDefinitionsTemplate _templates;
+
+        /// <summary>AlertDefinitionsTemplate</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAlertDefinitionsTemplate Templates { get => (this._templates = this._templates ?? new Commvault.Powershell.Models.AlertDefinitionsTemplate()); set => this._templates = value; }
 
         /// <summary>id of the alert definition</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -159,6 +190,25 @@ namespace Commvault.Powershell.Models
     public partial interface IAlertDefinitionsDetails :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Tells status of alert. Can be used to find if alert is enabled or not.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells status of alert. Can be used to find if alert is enabled or not.",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(long) })]
+        long? AdditionalPropertyStatus { get; set; }
+        /// <summary>
+        /// Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients",
+        SerializedName = @"recipientsOperationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string AlertTargetRecipientsOperationType { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
@@ -211,6 +261,14 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
+        SerializedName = @"paramsList",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams) })]
+        Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] CriterionParamsList { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? Id { get; set; }
@@ -238,6 +296,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
+        /// <summary>Set to true for all Virtual Machine related alerts.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set to true for all Virtual Machine related alerts.",
+        SerializedName = @"processDiscoveredVMs",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? ProcessDiscoveredVMS { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -286,9 +352,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the console notification",
-        SerializedName = @"consoleMessage",
+        SerializedName = @"console",
         PossibleTypes = new [] { typeof(string) })]
-        string TemplateConsoleMessage { get; set; }
+        string TemplateConsole { get; set; }
         /// <summary>
         /// the message template for the email notification. Contains both email subject as well as body
         /// </summary>
@@ -296,25 +362,25 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the email notification. Contains both email subject as well as body",
-        SerializedName = @"emailMessage",
+        SerializedName = @"email",
         PossibleTypes = new [] { typeof(string) })]
-        string TemplateEmailMessage { get; set; }
+        string TemplateEmail { get; set; }
         /// <summary>the message template for the event viewer notification</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the event viewer notification",
-        SerializedName = @"eventViewerMessage",
+        SerializedName = @"eventViewer",
         PossibleTypes = new [] { typeof(string) })]
-        string TemplateEventViewerMessage { get; set; }
+        string TemplateEventViewer { get; set; }
         /// <summary>the message template for the webhook notification</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"the message template for the webhook notification",
-        SerializedName = @"webhookMessage",
+        SerializedName = @"webhook",
         PossibleTypes = new [] { typeof(string) })]
-        string TemplateWebhookMessage { get; set; }
+        string TemplateWebhook { get; set; }
         /// <summary>id of the alert definition</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -337,6 +403,9 @@ namespace Commvault.Powershell.Models
     internal partial interface IAlertDefinitionsDetailsInternal
 
     {
+        Commvault.Powershell.Models.IAlertAdditionalProperties AdditionalProperties { get; set; }
+        /// <summary>Tells status of alert. Can be used to find if alert is enabled or not.</summary>
+        long? AdditionalPropertyStatus { get; set; }
         /// <summary>AlertDetailsSummary</summary>
         Commvault.Powershell.Models.IAlertDetailsSummary AlertSummary { get; set; }
 
@@ -345,10 +414,16 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IAlertCriteriaIdName1 AlertSummaryCriteria { get; set; }
 
         Commvault.Powershell.Models.IAlertTypeIdName1 AlertSummaryType { get; set; }
-        /// <summary>AlertDefinitionsTarget</summary>
+        /// <summary>
+        /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
+        /// </summary>
         Commvault.Powershell.Models.IAlertDefinitionsTarget AlertTarget { get; set; }
         /// <summary>AlertDefinitionsTargetRecipients</summary>
         Commvault.Powershell.Models.IAlertDefinitionsTargetRecipients AlertTargetRecipients { get; set; }
+        /// <summary>
+        /// Allows adding to, overwriting and deleting existing recipients. default is adding to existing recipients
+        /// </summary>
+        string AlertTargetRecipientsOperationType { get; set; }
 
         string[] AlertTargetSendAlertTo { get; set; }
         /// <summary>AlertDefinitionsAssociations</summary>
@@ -362,6 +437,8 @@ namespace Commvault.Powershell.Models
         /// <summary>criteria of detection for the alert definition</summary>
         string CriterionName { get; set; }
 
+        Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[] CriterionParamsList { get; set; }
+
         long? Id { get; set; }
 
         long? LocaleId { get; set; }
@@ -369,6 +446,8 @@ namespace Commvault.Powershell.Models
         string LocaleName { get; set; }
 
         string Name { get; set; }
+        /// <summary>Set to true for all Virtual Machine related alerts.</summary>
+        bool? ProcessDiscoveredVMS { get; set; }
 
         Commvault.Powershell.Models.IAlertTargetIdNameType1[] RecipientBcc { get; set; }
 
@@ -382,20 +461,20 @@ namespace Commvault.Powershell.Models
         long? RecipientWebHookId { get; set; }
         /// <summary>true if individual notifications are on for the alert definitions</summary>
         bool? SendIndividualNotifications { get; set; }
-        /// <summary>AlertDefinitionsTemplate</summary>
-        Commvault.Powershell.Models.IAlertDefinitionsTemplate Template { get; set; }
         /// <summary>the message template for the console notification</summary>
-        string TemplateConsoleMessage { get; set; }
+        string TemplateConsole { get; set; }
         /// <summary>
         /// the message template for the email notification. Contains both email subject as well as body
         /// </summary>
-        string TemplateEmailMessage { get; set; }
+        string TemplateEmail { get; set; }
         /// <summary>the message template for the event viewer notification</summary>
-        string TemplateEventViewerMessage { get; set; }
+        string TemplateEventViewer { get; set; }
 
         Commvault.Powershell.Models.IIdName TemplateLocale { get; set; }
         /// <summary>the message template for the webhook notification</summary>
-        string TemplateWebhookMessage { get; set; }
+        string TemplateWebhook { get; set; }
+        /// <summary>AlertDefinitionsTemplate</summary>
+        Commvault.Powershell.Models.IAlertDefinitionsTemplate Templates { get; set; }
         /// <summary>id of the alert definition</summary>
         long? TypeId { get; set; }
         /// <summary>type of the alert definitions</summary>

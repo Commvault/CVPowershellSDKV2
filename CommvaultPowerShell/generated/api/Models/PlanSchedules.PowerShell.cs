@@ -94,6 +94,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanSchedulesInternal)this).Schedules = (Commvault.Powershell.Models.IPlanSchedule[]) content.GetValueForProperty("Schedules",((Commvault.Powershell.Models.IPlanSchedulesInternal)this).Schedules, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSchedule>(__y, Commvault.Powershell.Models.PlanScheduleTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.IPlanSchedulesInternal)this).OperationType = (string) content.GetValueForProperty("OperationType",((Commvault.Powershell.Models.IPlanSchedulesInternal)this).OperationType, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -112,6 +113,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanSchedulesInternal)this).Schedules = (Commvault.Powershell.Models.IPlanSchedule[]) content.GetValueForProperty("Schedules",((Commvault.Powershell.Models.IPlanSchedulesInternal)this).Schedules, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSchedule>(__y, Commvault.Powershell.Models.PlanScheduleTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.IPlanSchedulesInternal)this).OperationType = (string) content.GetValueForProperty("OperationType",((Commvault.Powershell.Models.IPlanSchedulesInternal)this).OperationType, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

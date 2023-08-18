@@ -16,89 +16,89 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.ICloudStorageDetails __cloudStorageDetails = new Commvault.Powershell.Models.CloudStorageDetails();
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName[] AssociatedPlans { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).AssociatedPlans; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).AssociatedPlans = value; }
+        public Commvault.Powershell.Models.IIdName[] AssociatedPlans { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).AssociatedPlans; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).AssociatedPlans = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdNameStatus[] Bucket { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).Bucket; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).Bucket = value; }
+        public Commvault.Powershell.Models.IIdNameStatus[] Bucket { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).Bucket; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).Bucket = value; }
 
         /// <summary>Tells if cache configuration is enabled for this storage</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public bool? CacheConfigurationEnable { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).CacheConfigurationEnable; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).CacheConfigurationEnable = value; }
+        public bool? CacheConfigurationEnable { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).CacheConfigurationEnable; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).CacheConfigurationEnable = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IMetadataCache[] CacheConfigurationMetadataCache { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).CacheConfigurationMetadataCache; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).CacheConfigurationMetadataCache = value; }
+        public Commvault.Powershell.Models.IMetadataCache[] CacheConfigurationMetadataCache { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).CacheConfigurationMetadataCache; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).CacheConfigurationMetadataCache = value; }
 
         /// <summary>CacheConfigurations</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.ICacheConfigurations CacheConfigurations { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).CacheConfigurations; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).CacheConfigurations = value; }
+        public Commvault.Powershell.Models.ICacheConfigurations CacheConfigurations { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).CacheConfigurations; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).CacheConfigurations = value; }
 
         /// <summary>Different ways in which data can be encrypted.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IEncryption Encryption { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).Encryption; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).Encryption = value; }
+        public Commvault.Powershell.Models.IEncryption Encryption { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).Encryption; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).Encryption = value; }
 
         /// <summary>
         /// The different types of encryption keys that can be used for encrypting the data. The values are case sensitive
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public string EncryptionCipher { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionCipher; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionCipher = value; }
+        public string EncryptionCipher { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionCipher; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionCipher = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public bool? EncryptionEncrypt { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionEncrypt; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionEncrypt = value; }
+        public bool? EncryptionEncrypt { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionEncrypt; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionEncrypt = value; }
 
         /// <summary>
         /// Different keylengths are present for different kinds of ciphers. Blowfish,Twofish,AES and Serpent all accept both 128
         /// and 256. DES3 accepts only 192. GOST accepts only 256.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public long? EncryptionKeyLength { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionKeyLength; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionKeyLength = value; }
+        public long? EncryptionKeyLength { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionKeyLength; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionKeyLength = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName EncryptionKeyManagementServer { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionKeyManagementServer; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).EncryptionKeyManagementServer = value; }
+        public Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionKeyProvider; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).EncryptionKeyProvider = value; }
 
         /// <summary>CloudStorageGeneralInfo</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.ICloudStorageGeneralInfo General { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).General; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).General = value; }
+        public Commvault.Powershell.Models.ICloudStorageGeneralInfo General { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).General; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).General = value; }
 
         /// <summary>
         /// Specifies the savings in percentage that occurred due to deduplication. Only available for dedupe cloud storage pools
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public string GeneralDeduplicationSavings { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralDeduplicationSavings; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralDeduplicationSavings = value; }
+        public string GeneralDeduplicationSavings { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralDeduplicationSavings; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralDeduplicationSavings = value; }
 
         /// <summary>Free space available on this cloud storage</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public long? GeneralFreeSpace { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralFreeSpace; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralFreeSpace = value; }
+        public long? GeneralFreeSpace { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralFreeSpace; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralFreeSpace = value; }
 
         /// <summary>Amount of space consumed</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public long? GeneralSizeOndisk { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralSizeOndisk; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralSizeOndisk = value; }
+        public long? GeneralSizeOnDisk { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralSizeOnDisk; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralSizeOnDisk = value; }
 
         /// <summary>Total capacity of this cloud storage</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public long? GeneralTotalCapacity { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralTotalCapacity; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralTotalCapacity = value; }
+        public long? GeneralTotalCapacity { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralTotalCapacity; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralTotalCapacity = value; }
 
         /// <summary>Type of the cloud storage server</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public string GeneralType { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralType; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralType = value; }
+        public string GeneralType { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralType; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralType = value; }
 
         /// <summary>Cloud server type</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public string GeneralVendorType { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralVendorType; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).GeneralVendorType = value; }
+        public string GeneralVendorType { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralVendorType; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).GeneralVendorType = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public long? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__cloudStorageDetails).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__cloudStorageDetails).Id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public long? KeyManagementServerId { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).KeyManagementServerId; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).KeyManagementServerId = value; }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).KeyProviderId; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).KeyProviderId = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public string KeyManagementServerName { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).KeyManagementServerName; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).KeyManagementServerName = value; }
+        public string KeyProviderName { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).KeyProviderName; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).KeyProviderName = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string Name { get => ((Commvault.Powershell.Models.IIdNameInternal)__cloudStorageDetails).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)__cloudStorageDetails).Name = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.ISecurityAssoc[] Security { get => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).Security; set => ((Commvault.Powershell.Models.ICloudStorageDetailsObjectInternal)__cloudStorageDetails).Security = value; }
+        public Commvault.Powershell.Models.ISecurityAssoc[] Security { get => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).Security; set => ((Commvault.Powershell.Models.ICloudStorageDetailsInternal)__cloudStorageDetails).Security = value; }
 
         /// <summary>
         /// Creates an new <see cref="PathsXt7ZxhV4StorageCloudCloudstorageidGetResponses200ContentApplicationJsonSchema" /> instance.

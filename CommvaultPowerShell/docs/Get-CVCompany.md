@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-cvcompany
 schema: 2.0.0
 ---
@@ -13,7 +13,7 @@ Get All Companies
 ## SYNTAX
 
 ```
-Get-CVCompany [-PassThru] [<CommonParameters>]
+Get-CVCompany [-IncludeDeletedCompanies] [-PassThru] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -23,10 +23,8 @@ Get All Companies
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -34,16 +32,29 @@ Get All Companies
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -IncludeDeletedCompanies
+If true, companies marked for deletion are included in the response
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -PassThru
 Returns true when the command succeeds
@@ -67,7 +78,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Commvault.Powershell.Models.ICompanySummary
+### Commvault.Powershell.Models.ICompanyListResponse
 
 ## NOTES
 

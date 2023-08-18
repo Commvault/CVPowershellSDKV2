@@ -74,6 +74,8 @@ namespace Commvault.Powershell.Models
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
+            {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
+            {_wormStoragePoolFlag = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("wormStoragePoolFlag"), out var __jsonWormStoragePoolFlag) ? (long?)__jsonWormStoragePoolFlag : WormStoragePoolFlag;}
             AfterFromJson(json);
         }
 
@@ -99,6 +101,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
+            AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
+            AddIf( null != this._wormStoragePoolFlag ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._wormStoragePoolFlag) : null, "wormStoragePoolFlag" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

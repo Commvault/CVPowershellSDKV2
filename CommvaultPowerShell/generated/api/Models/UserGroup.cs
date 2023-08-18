@@ -38,6 +38,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IIdName[] AssociatedLocalGroups { get => this._associatedLocalGroups; set => this._associatedLocalGroups = value; }
 
+        /// <summary>Backing field for <see cref="AzureGuid" /> property.</summary>
+        private string _azureGuid;
+
+        /// <summary>
+        /// Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AzureGuid { get => this._azureGuid; set => this._azureGuid = value; }
+
         /// <summary>Internal Acessors for Company</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUserGroupInternal.Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set { {_company = value;} } }
 
@@ -46,6 +55,9 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUserGroupInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
+
+        /// <summary>Internal Acessors for ShowAzureGuidOption</summary>
+        bool? Commvault.Powershell.Models.IUserGroupInternal.ShowAzureGuidOption { get => this._showAzureGuidOption; set { {_showAzureGuidOption = value;} } }
 
         /// <summary>Backing field for <see cref="Company" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _company;
@@ -83,6 +95,16 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Email { get => this._email; set => this._email = value; }
 
+        /// <summary>Backing field for <see cref="EnableLocalAuthentication" /> property.</summary>
+        private string _enableLocalAuthentication;
+
+        /// <summary>
+        /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
+        /// on user preferences. There will be usergroups that will not have this option.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string EnableLocalAuthentication { get => this._enableLocalAuthentication; set => this._enableLocalAuthentication = value; }
+
         /// <summary>Backing field for <see cref="EnableTwoFactorAuthentication" /> property.</summary>
         private string _enableTwoFactorAuthentication;
 
@@ -99,6 +121,12 @@ namespace Commvault.Powershell.Models
         /// <summary>Returns if the user group is enabled or disabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? Enabled { get => this._enabled; set => this._enabled = value; }
+
+        /// <summary>Backing field for <see cref="EnforceFsQuota" /> property.</summary>
+        private bool? _enforceFsQuota;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnforceFsQuota { get => this._enforceFsQuota; set => this._enforceFsQuota = value; }
 
         /// <summary>Backing field for <see cref="Guid" /> property.</summary>
         private string _guid;
@@ -137,6 +165,18 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
 
+        /// <summary>Backing field for <see cref="QuotaLimitInGb" /> property.</summary>
+        private long? _quotaLimitInGb;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? QuotaLimitInGb { get => this._quotaLimitInGb; set => this._quotaLimitInGb = value; }
+
+        /// <summary>Backing field for <see cref="RestrictedConsoleTypes" /> property.</summary>
+        private Commvault.Powershell.Models.IRestrictedConsoleTypes[] _restrictedConsoleTypes;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IRestrictedConsoleTypes[] RestrictedConsoleTypes { get => this._restrictedConsoleTypes; set => this._restrictedConsoleTypes = value; }
+
         /// <summary>Backing field for <see cref="ServiceType" /> property.</summary>
         private string _serviceType;
 
@@ -146,6 +186,15 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ServiceType { get => this._serviceType; set => this._serviceType = value; }
+
+        /// <summary>Backing field for <see cref="ShowAzureGuidOption" /> property.</summary>
+        private bool? _showAzureGuidOption;
+
+        /// <summary>
+        /// Read only property. Denotes if the group is eligible to have Azure Object ID property
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? ShowAzureGuidOption { get => this._showAzureGuidOption; }
 
         /// <summary>Backing field for <see cref="Users" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _users;
@@ -198,6 +247,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"associatedLocalGroups",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
         Commvault.Powershell.Models.IIdName[] AssociatedLocalGroups { get; set; }
+        /// <summary>
+        /// Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login",
+        SerializedName = @"azureGUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string AzureGuid { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -248,6 +307,17 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based on user preferences. There will be usergroups that will not have this option.",
+        SerializedName = @"enableLocalAuthentication",
+        PossibleTypes = new [] { typeof(string) })]
+        string EnableLocalAuthentication { get; set; }
+        /// <summary>
+        /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
+        /// on user preferences. There will be usergroups that will not have this option.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based on user preferences. There will be usergroups that will not have this option.",
         SerializedName = @"enableTwoFactorAuthentication",
         PossibleTypes = new [] { typeof(string) })]
         string EnableTwoFactorAuthentication { get; set; }
@@ -259,6 +329,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? Enabled { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"enforceFSQuota",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnforceFsQuota { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -307,6 +385,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string PlanName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"quotaLimitInGB",
+        PossibleTypes = new [] { typeof(long) })]
+        long? QuotaLimitInGb { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"restrictedConsoleTypes",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IRestrictedConsoleTypes) })]
+        Commvault.Powershell.Models.IRestrictedConsoleTypes[] RestrictedConsoleTypes { get; set; }
         /// <summary>
         /// The values that are returned by serviceType are- 0(unknown),1(commserver users),2(Active directory users),3(domino directory
         /// service users),4(hosted exchange users),5(company users),12(dummy domain users)
@@ -318,6 +412,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"serviceType",
         PossibleTypes = new [] { typeof(string) })]
         string ServiceType { get; set; }
+        /// <summary>
+        /// Read only property. Denotes if the group is eligible to have Azure Object ID property
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = true,
+        Description = @"Read only property. Denotes if the group is eligible to have Azure Object ID property",
+        SerializedName = @"showAzureGuidOption",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? ShowAzureGuidOption { get;  }
         /// <summary>Returns list of users that are associated with this userGroup</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -342,6 +446,10 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName[] AssociatedExternalGroups { get; set; }
 
         Commvault.Powershell.Models.IIdName[] AssociatedLocalGroups { get; set; }
+        /// <summary>
+        /// Azure Object ID used to link this user group to Azure AD group and manage group membership of the user during SAML login
+        /// </summary>
+        string AzureGuid { get; set; }
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
@@ -360,9 +468,16 @@ namespace Commvault.Powershell.Models
         /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
         /// on user preferences. There will be usergroups that will not have this option.
         /// </summary>
+        string EnableLocalAuthentication { get; set; }
+        /// <summary>
+        /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
+        /// on user preferences. There will be usergroups that will not have this option.
+        /// </summary>
         string EnableTwoFactorAuthentication { get; set; }
         /// <summary>Returns if the user group is enabled or disabled</summary>
         bool? Enabled { get; set; }
+
+        bool? EnforceFsQuota { get; set; }
 
         string Guid { get; set; }
 
@@ -377,11 +492,19 @@ namespace Commvault.Powershell.Models
         long? PlanId { get; set; }
 
         string PlanName { get; set; }
+
+        long? QuotaLimitInGb { get; set; }
+
+        Commvault.Powershell.Models.IRestrictedConsoleTypes[] RestrictedConsoleTypes { get; set; }
         /// <summary>
         /// The values that are returned by serviceType are- 0(unknown),1(commserver users),2(Active directory users),3(domino directory
         /// service users),4(hosted exchange users),5(company users),12(dummy domain users)
         /// </summary>
         string ServiceType { get; set; }
+        /// <summary>
+        /// Read only property. Denotes if the group is eligible to have Azure Object ID property
+        /// </summary>
+        bool? ShowAzureGuidOption { get; set; }
         /// <summary>Returns list of users that are associated with this userGroup</summary>
         Commvault.Powershell.Models.IIdName[] Users { get; set; }
 

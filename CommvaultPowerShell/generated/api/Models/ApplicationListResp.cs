@@ -16,12 +16,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IApplicationSummary[] Applications { get => this._applications; set => this._applications = value; }
 
-        /// <summary>Backing field for <see cref="ApplicationsCount" /> property.</summary>
-        private long? _applicationsCount;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public long? ApplicationsCount { get => this._applicationsCount; set => this._applicationsCount = value; }
-
         /// <summary>Creates an new <see cref="ApplicationListResp" /> instance.</summary>
         public ApplicationListResp()
         {
@@ -39,21 +33,11 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IApplicationSummary) })]
         Commvault.Powershell.Models.IApplicationSummary[] Applications { get; set; }
 
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"applicationsCount",
-        PossibleTypes = new [] { typeof(long) })]
-        long? ApplicationsCount { get; set; }
-
     }
     internal partial interface IApplicationListRespInternal
 
     {
         Commvault.Powershell.Models.IApplicationSummary[] Applications { get; set; }
-
-        long? ApplicationsCount { get; set; }
 
     }
 }

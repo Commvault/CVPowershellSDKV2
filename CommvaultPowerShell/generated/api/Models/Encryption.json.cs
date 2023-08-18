@@ -61,7 +61,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_keyManagementServer = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("keyManagementServer"), out var __jsonKeyManagementServer) ? Commvault.Powershell.Models.IdName.FromJson(__jsonKeyManagementServer) : KeyManagementServer;}
+            {_keyProvider = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("keyProvider"), out var __jsonKeyProvider) ? Commvault.Powershell.Models.IdName.FromJson(__jsonKeyProvider) : KeyProvider;}
             {_encrypt = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("encrypt"), out var __jsonEncrypt) ? (bool?)__jsonEncrypt : Encrypt;}
             {_keyLength = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("keyLength"), out var __jsonKeyLength) ? (long?)__jsonKeyLength : KeyLength;}
             {_cipher = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("cipher"), out var __jsonCipher) ? (string)__jsonCipher : (string)Cipher;}
@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._keyManagementServer ? (Commvault.Powershell.Runtime.Json.JsonNode) this._keyManagementServer.ToJson(null,serializationMode) : null, "keyManagementServer" ,container.Add );
+            AddIf( null != this._keyProvider ? (Commvault.Powershell.Runtime.Json.JsonNode) this._keyProvider.ToJson(null,serializationMode) : null, "keyProvider" ,container.Add );
             AddIf( null != this._encrypt ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._encrypt) : null, "encrypt" ,container.Add );
             AddIf( null != this._keyLength ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._keyLength) : null, "keyLength" ,container.Add );
             AddIf( null != (((object)this._cipher)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._cipher.ToString()) : null, "cipher" ,container.Add );

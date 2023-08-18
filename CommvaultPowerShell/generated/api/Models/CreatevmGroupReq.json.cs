@@ -65,7 +65,9 @@ namespace Commvault.Powershell.Models
             {_content = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("content"), out var __jsonContent) ? Commvault.Powershell.Models.VMContent.FromJson(__jsonContent) : Content;}
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_storage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("storage"), out var __jsonStorage) ? Commvault.Powershell.Models.IdName.FromJson(__jsonStorage) : Storage;}
+            {_meditech = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("Meditech"), out var __jsonMeditech) ? Commvault.Powershell.Models.MeditechPropResp.FromJson(__jsonMeditech) : Meditech;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_enableIntellisnap = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableIntellisnap"), out var __jsonEnableIntellisnap) ? (bool?)__jsonEnableIntellisnap : EnableIntellisnap;}
             AfterFromJson(json);
         }
 
@@ -102,7 +104,9 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._content ? (Commvault.Powershell.Runtime.Json.JsonNode) this._content.ToJson(null,serializationMode) : null, "content" ,container.Add );
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._storage ? (Commvault.Powershell.Runtime.Json.JsonNode) this._storage.ToJson(null,serializationMode) : null, "storage" ,container.Add );
+            AddIf( null != this._meditech ? (Commvault.Powershell.Runtime.Json.JsonNode) this._meditech.ToJson(null,serializationMode) : null, "Meditech" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != this._enableIntellisnap ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableIntellisnap) : null, "enableIntellisnap" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -81,9 +81,17 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._locations ? (Commvault.Powershell.Runtime.Json.JsonNode) this._locations.ToJson(null,serializationMode) : null, "locations" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
             AddIf( null != (((object)this._locationsOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._locationsOperationType.ToString()) : null, "locationsOperationType" ,container.Add );
+            if (null != this._locations)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._locations )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("locations",__w);
+            }
             AfterToJson(ref container);
             return container;
         }
@@ -100,9 +108,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_locations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("locations"), out var __jsonLocations) ? Commvault.Powershell.Models.LocationDetailsWithZone.FromJson(__jsonLocations) : Locations;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_locationsOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("locationsOperationType"), out var __jsonLocationsOperationType) ? (string)__jsonLocationsOperationType : (string)LocationsOperationType;}
+            {_locations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("locations"), out var __jsonLocations) ? If( __jsonLocations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ILocationDetailsWithZone[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ILocationDetailsWithZone) (Commvault.Powershell.Models.LocationDetailsWithZone.FromJson(__u) )) ))() : null : Locations;}
             AfterFromJson(json);
         }
     }

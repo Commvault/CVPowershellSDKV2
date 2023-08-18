@@ -24,6 +24,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? Id { get => this._id; set => this._id = value; }
 
+        /// <summary>Backing field for <see cref="IsConfigured" /> property.</summary>
+        private bool? _isConfigured;
+
+        /// <summary>Used to determine if the Media Agent is configured or not.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsConfigured { get => this._isConfigured; set => this._isConfigured = value; }
+
         /// <summary>Backing field for <see cref="IsDdbSubclientConfigured" /> property.</summary>
         private bool? _isDdbSubclientConfigured;
 
@@ -84,6 +91,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? Id { get; set; }
+        /// <summary>Used to determine if the Media Agent is configured or not.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to determine if the Media Agent is configured or not.",
+        SerializedName = @"isConfigured",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsConfigured { get; set; }
         /// <summary>Used to determine if a DDB subclient has been configured for this media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -133,6 +148,8 @@ namespace Commvault.Powershell.Models
         string DisplayName { get; set; }
         /// <summary>Id of the media agent.</summary>
         long? Id { get; set; }
+        /// <summary>Used to determine if the Media Agent is configured or not.</summary>
+        bool? IsConfigured { get; set; }
         /// <summary>Used to determine if a DDB subclient has been configured for this media agent.</summary>
         bool? IsDdbSubclientConfigured { get; set; }
         /// <summary>Name of the media agent.</summary>

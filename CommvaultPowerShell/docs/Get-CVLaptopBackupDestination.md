@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/get-cvlaptopbackupdestination
 schema: 2.0.0
 ---
@@ -29,10 +29,8 @@ Get Backup Destinations for a Plan
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -40,10 +38,8 @@ Get Backup Destinations for a Plan
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -120,26 +116,44 @@ To create the parameters described below, construct a hash table containing the 
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[AccessPathId <Int64?>]`: Id of the mount path whose access path has to be deleted
   - `[AgentId <Int64?>]`: Id of the agent to be modified
+  - `[AppGuid <String>]`: GUID of the Application to get details
+  - `[AppId <Int64?>]`: Commvault exchange app id
+  - `[ApplicationGroupId <Int64?>]`: applicationGroupId is the ID of the Kubernetes application group
+  - `[ArrayId <Int64?>]`: 
+  - `[AssetId <String>]`: FQDN of the asset
   - `[BackupDestinationId <Int64?>]`: Id of the backupDestination to be modified
+  - `[BackupDestionationId <Int64?>]`: 
   - `[BackupLocationId <Int64?>]`: Id of the backup location whose details have to be fetched
   - `[BlackoutWindowId <Int64?>]`: Id of the Blackout Window whose details have to be fetched
   - `[BucketId <Int64?>]`: Id of Bucket
+  - `[ClientId <Int64?>]`: 
   - `[CloudStorageId <Int64?>]`: Id of cloud Storage
+  - `[ClusterId <Int64?>]`: 
   - `[CompanyId <Int64?>]`: Id of the Company whose details have to be fetched
+  - `[CopyId <Int64?>]`: 
+  - `[CredentialId <String>]`: 
   - `[CredentialName <String>]`: 
   - `[DomainId <Int64?>]`: ID of the AD/LDAP domain
+  - `[DrOperation <String>]`: Name of DR operation. Case insensitive
+  - `[DriveId <Int64?>]`: Id of the Drive of which the drive details has to be displayed
   - `[EntityId <Int64?>]`: Unique id for the entity
-  - `[EntityType <Int64?>]`: Type of the entity
+  - `[EntityType <String>]`: Type of the entity
+  - `[FailoverGroupId <Int64?>]`: Id of the failover group
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int64?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int64?>]`: Id of hyperscale storage
   - `[HypervisorId <Int64?>]`: Id of the HYpervisor to get
   - `[Id <Int64?>]`: 
+  - `[IndexServerClientId <Int64?>]`: Pseudo client id of the index server
   - `[InstanceId <Int64?>]`: Id of the instance to modify
+  - `[InventoryId <Int64?>]`: Inventory id
+  - `[JobId <Int64?>]`: 
   - `[KmsId <Int64?>]`: Id of Key Management Server
+  - `[LibraryId <Int64?>]`: Id of the library to view the data
   - `[MediaAgentId <Int64?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int64?>]`: Id of metadata cache
   - `[Name <String>]`: 
+  - `[NameSpace <String>]`: Name of the namespace to browse for content
   - `[NodeId <Int64?>]`: Id of node
   - `[PairId <Int64?>]`: 
   - `[PlanId <Int64?>]`: Id of the plan to fetch details
@@ -151,17 +165,21 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[RoleId <Int64?>]`: Role Id
   - `[RpsId <String>]`: 
   - `[RuleId <Int64?>]`: Id of the rule to update in Plan
-  - `[ScheduleId <String>]`: 
-  - `[SchedulePolicyId <String>]`: 
+  - `[ScheduleId <Int64?>]`: ID of the DR operation schedule
+  - `[SchedulePolicyId <Int64?>]`: 
   - `[ServerGroupId <Int64?>]`: Id of the serverGroupId whose details have to be fetched
   - `[ServerId <Int64?>]`: Id of the server to modify
-  - `[StoragePoolId <Int64?>]`: Id of the disk storage pool whose details have to be fetched
+  - `[StoragePoolId <Int64?>]`: Id of the storage pool whose associated copies have to be fetched
   - `[SubclientId <Int64?>]`: Id of the subclient to modify
+  - `[TagId <Int64?>]`: Id of the tag to delete
+  - `[TagValue <String>]`: tag value to delete
   - `[TopologyId <String>]`: 
   - `[UserGroupId <Int64?>]`: Id of the user-group whose details have to be fetched
   - `[UserId <Int64?>]`: Id of the User whose details have to be fetched
   - `[VMGroupId <Int64?>]`: Id of the VMgroup to update
+  - `[VMGuid <String>]`: GUID of the Provisioned VM
   - `[VMUuid <String>]`: The vmUUID can be obtained from GET /virtualMachines UUID property
+  - `[VendorId <Int64?>]`: 
 
 ## RELATED LINKS
 

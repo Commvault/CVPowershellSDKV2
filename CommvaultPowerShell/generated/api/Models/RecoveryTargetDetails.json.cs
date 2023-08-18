@@ -71,31 +71,20 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_destinationHypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("destinationHypervisor"), out var __jsonDestinationHypervisor) ? Commvault.Powershell.Models.IdName.FromJson(__jsonDestinationHypervisor) : DestinationHypervisor;}
-            {_accessNode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("accessNode"), out var __jsonAccessNode) ? Commvault.Powershell.Models.IdName.FromJson(__jsonAccessNode) : AccessNode;}
+            {_entity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("entity"), out var __jsonEntity) ? Commvault.Powershell.Models.GetRecoveryTargetListSummary.FromJson(__jsonEntity) : Entity;}
+            {_accessNode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("accessNode"), out var __jsonAccessNode) ? Commvault.Powershell.Models.IdNameType.FromJson(__jsonAccessNode) : AccessNode;}
             {_vMDisplayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("vmDisplayName"), out var __jsonVMDisplayName) ? Commvault.Powershell.Models.VMDisplayName.FromJson(__jsonVMDisplayName) : VMDisplayName;}
-            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
-            {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_applicationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("applicationType"), out var __jsonApplicationType) ? (string)__jsonApplicationType : (string)ApplicationType;}
-            {_users = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("users"), out var __jsonUsers) ? If( __jsonUsers as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdNameGuid[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdNameGuid) (Commvault.Powershell.Models.IdNameGuid.FromJson(__u) )) ))() : null : Users;}
-            {_destinationHost = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("destinationHost"), out var __jsonDestinationHost) ? If( __jsonDestinationHost as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__p) )) ))() : null : DestinationHost;}
-            {_dataStore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("dataStore"), out var __jsonDataStore) ? If( __jsonDataStore as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(string) (__k is Commvault.Powershell.Runtime.Json.JsonString __j ? (string)(__j.ToString()) : null)) ))() : null : DataStore;}
-            {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("region"), out var __jsonRegion) ? (string)__jsonRegion : (string)Region;}
-            {_resourcePoolPath = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("resourcePoolPath"), out var __jsonResourcePoolPath) ? (string)__jsonResourcePoolPath : (string)ResourcePoolPath;}
-            {_destinationNetwork = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("destinationNetwork"), out var __jsonDestinationNetwork) ? If( __jsonDestinationNetwork as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(string) (__f is Commvault.Powershell.Runtime.Json.JsonString __e ? (string)(__e.ToString()) : null)) ))() : null : DestinationNetwork;}
-            {_availabilityZones = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("availabilityZones"), out var __jsonAvailabilityZones) ? If( __jsonAvailabilityZones as Commvault.Powershell.Runtime.Json.JsonArray, out var __b) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__b, (__a)=>(string) (__a is Commvault.Powershell.Runtime.Json.JsonString ___z ? (string)(___z.ToString()) : null)) ))() : null : AvailabilityZones;}
-            {_vMInstanceTypes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("vmInstanceTypes"), out var __jsonVMInstanceTypes) ? If( __jsonVMInstanceTypes as Commvault.Powershell.Runtime.Json.JsonArray, out var ___w) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___w, (___v)=>(string) (___v is Commvault.Powershell.Runtime.Json.JsonString ___u ? (string)(___u.ToString()) : null)) ))() : null : VMInstanceTypes;}
-            {_encryptionKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("encryptionKey"), out var __jsonEncryptionKey) ? (string)__jsonEncryptionKey : (string)EncryptionKey;}
-            {_volumeType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("volumeType"), out var __jsonVolumeType) ? (string)__jsonVolumeType : (string)VolumeType;}
-            {_maximumCpuCores = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maximumCPUCores"), out var __jsonMaximumCpuCores) ? (long?)__jsonMaximumCpuCores : MaximumCpuCores;}
-            {_publicIP = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("publicIP"), out var __jsonPublicIP) ? (bool?)__jsonPublicIP : PublicIP;}
-            {_restoreAsManagedVM = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("restoreAsManagedVM"), out var __jsonRestoreAsManagedVM) ? (bool?)__jsonRestoreAsManagedVM : RestoreAsManagedVM;}
-            {_numberOfVMS = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfVMs"), out var __jsonNumberOfVMS) ? (long?)__jsonNumberOfVMS : NumberOfVMS;}
-            {_expirationTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("expirationTime"), out var __jsonExpirationTime) ? (long?)__jsonExpirationTime : ExpirationTime;}
-            {_maximumMemory = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("maximumMemory"), out var __jsonMaximumMemory) ? (string)__jsonMaximumMemory : (string)MaximumMemory;}
-            {_isoPath = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("isoPath"), out var __jsonIsoPath) ? If( __jsonIsoPath as Commvault.Powershell.Runtime.Json.JsonArray, out var ___r) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___r, (___q)=>(string) (___q is Commvault.Powershell.Runtime.Json.JsonString ___p ? (string)(___p.ToString()) : null)) ))() : null : IsoPath;}
-            {_configureIsolatedNetwork = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("configureIsolatedNetwork"), out var __jsonConfigureIsolatedNetwork) ? (bool?)__jsonConfigureIsolatedNetwork : ConfigureIsolatedNetwork;}
-            {_migrateVM = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("migrateVM"), out var __jsonMigrateVM) ? (bool?)__jsonMigrateVM : MigrateVM;}
+            {_securityOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("securityOptions"), out var __jsonSecurityOptions) ? Commvault.Powershell.Models.SecurityOptions.FromJson(__jsonSecurityOptions) : SecurityOptions;}
+            {_destinationOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("destinationOptions"), out var __jsonDestinationOptions) ? Commvault.Powershell.Models.DestinationOptions.FromJson(__jsonDestinationOptions) : DestinationOptions;}
+            {_networkOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("networkOptions"), out var __jsonNetworkOptions) ? Commvault.Powershell.Models.NetworkOptions.FromJson(__jsonNetworkOptions) : NetworkOptions;}
+            {_provisioningOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("provisioningOptions"), out var __jsonProvisioningOptions) ? Commvault.Powershell.Models.ProvisioningOptions.FromJson(__jsonProvisioningOptions) : ProvisioningOptions;}
+            {_cloudDestinationOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("cloudDestinationOptions"), out var __jsonCloudDestinationOptions) ? Commvault.Powershell.Models.CloudDestinationOptions.FromJson(__jsonCloudDestinationOptions) : CloudDestinationOptions;}
+            {_zone = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("zone"), out var __jsonZone) ? Commvault.Powershell.Models.Zone.FromJson(__jsonZone) : Zone;}
+            {_associatedClientGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("associatedClientGroup"), out var __jsonAssociatedClientGroup) ? Commvault.Powershell.Models.IdName.FromJson(__jsonAssociatedClientGroup) : AssociatedClientGroup;}
+            {_liveMountOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("liveMountOptions"), out var __jsonLiveMountOptions) ? Commvault.Powershell.Models.LiveMountOptions.FromJson(__jsonLiveMountOptions) : LiveMountOptions;}
+            {_virtualLabOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("virtualLabOptions"), out var __jsonVirtualLabOptions) ? Commvault.Powershell.Models.VirtualLabOptions.FromJson(__jsonVirtualLabOptions) : VirtualLabOptions;}
+            {_vMStoragePolicyName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmStoragePolicyName"), out var __jsonVMStoragePolicyName) ? (string)__jsonVMStoragePolicyName : (string)VMStoragePolicyName;}
+            {_isoInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("isoInfo"), out var __jsonIsoInfo) ? If( __jsonIsoInfo as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIsoInfo[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIsoInfo) (Commvault.Powershell.Models.IsoInfo.FromJson(__u) )) ))() : null : IsoInfo;}
             AfterFromJson(json);
         }
 
@@ -118,87 +107,28 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._destinationHypervisor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._destinationHypervisor.ToJson(null,serializationMode) : null, "destinationHypervisor" ,container.Add );
+            AddIf( null != this._entity ? (Commvault.Powershell.Runtime.Json.JsonNode) this._entity.ToJson(null,serializationMode) : null, "entity" ,container.Add );
             AddIf( null != this._accessNode ? (Commvault.Powershell.Runtime.Json.JsonNode) this._accessNode.ToJson(null,serializationMode) : null, "accessNode" ,container.Add );
             AddIf( null != this._vMDisplayName ? (Commvault.Powershell.Runtime.Json.JsonNode) this._vMDisplayName.ToJson(null,serializationMode) : null, "vmDisplayName" ,container.Add );
-            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
-            AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
-            AddIf( null != (((object)this._applicationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._applicationType.ToString()) : null, "applicationType" ,container.Add );
-            if (null != this._users)
+            AddIf( null != this._securityOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._securityOptions.ToJson(null,serializationMode) : null, "securityOptions" ,container.Add );
+            AddIf( null != this._destinationOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._destinationOptions.ToJson(null,serializationMode) : null, "destinationOptions" ,container.Add );
+            AddIf( null != this._networkOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._networkOptions.ToJson(null,serializationMode) : null, "networkOptions" ,container.Add );
+            AddIf( null != this._provisioningOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._provisioningOptions.ToJson(null,serializationMode) : null, "provisioningOptions" ,container.Add );
+            AddIf( null != this._cloudDestinationOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._cloudDestinationOptions.ToJson(null,serializationMode) : null, "cloudDestinationOptions" ,container.Add );
+            AddIf( null != this._zone ? (Commvault.Powershell.Runtime.Json.JsonNode) this._zone.ToJson(null,serializationMode) : null, "zone" ,container.Add );
+            AddIf( null != this._associatedClientGroup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._associatedClientGroup.ToJson(null,serializationMode) : null, "associatedClientGroup" ,container.Add );
+            AddIf( null != this._liveMountOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._liveMountOptions.ToJson(null,serializationMode) : null, "liveMountOptions" ,container.Add );
+            AddIf( null != this._virtualLabOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._virtualLabOptions.ToJson(null,serializationMode) : null, "virtualLabOptions" ,container.Add );
+            AddIf( null != (((object)this._vMStoragePolicyName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMStoragePolicyName.ToString()) : null, "vmStoragePolicyName" ,container.Add );
+            if (null != this._isoInfo)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._users )
+                foreach( var __x in this._isoInfo )
                 {
                     AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
                 }
-                container.Add("users",__w);
+                container.Add("isoInfo",__w);
             }
-            if (null != this._destinationHost)
-            {
-                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __s in this._destinationHost )
-                {
-                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
-                }
-                container.Add("destinationHost",__r);
-            }
-            if (null != this._dataStore)
-            {
-                var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __n in this._dataStore )
-                {
-                    AddIf(null != (((object)__n)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__n.ToString()) : null ,__m.Add);
-                }
-                container.Add("dataStore",__m);
-            }
-            AddIf( null != (((object)this._region)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._region.ToString()) : null, "region" ,container.Add );
-            AddIf( null != (((object)this._resourcePoolPath)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._resourcePoolPath.ToString()) : null, "resourcePoolPath" ,container.Add );
-            if (null != this._destinationNetwork)
-            {
-                var __h = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __i in this._destinationNetwork )
-                {
-                    AddIf(null != (((object)__i)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__i.ToString()) : null ,__h.Add);
-                }
-                container.Add("destinationNetwork",__h);
-            }
-            if (null != this._availabilityZones)
-            {
-                var __c = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __d in this._availabilityZones )
-                {
-                    AddIf(null != (((object)__d)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__d.ToString()) : null ,__c.Add);
-                }
-                container.Add("availabilityZones",__c);
-            }
-            if (null != this._vMInstanceTypes)
-            {
-                var ___x = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var ___y in this._vMInstanceTypes )
-                {
-                    AddIf(null != (((object)___y)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(___y.ToString()) : null ,___x.Add);
-                }
-                container.Add("vmInstanceTypes",___x);
-            }
-            AddIf( null != (((object)this._encryptionKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._encryptionKey.ToString()) : null, "encryptionKey" ,container.Add );
-            AddIf( null != (((object)this._volumeType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._volumeType.ToString()) : null, "volumeType" ,container.Add );
-            AddIf( null != this._maximumCpuCores ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._maximumCpuCores) : null, "maximumCPUCores" ,container.Add );
-            AddIf( null != this._publicIP ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._publicIP) : null, "publicIP" ,container.Add );
-            AddIf( null != this._restoreAsManagedVM ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._restoreAsManagedVM) : null, "restoreAsManagedVM" ,container.Add );
-            AddIf( null != this._numberOfVMS ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._numberOfVMS) : null, "numberOfVMs" ,container.Add );
-            AddIf( null != this._expirationTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._expirationTime) : null, "expirationTime" ,container.Add );
-            AddIf( null != (((object)this._maximumMemory)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._maximumMemory.ToString()) : null, "maximumMemory" ,container.Add );
-            if (null != this._isoPath)
-            {
-                var ___s = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var ___t in this._isoPath )
-                {
-                    AddIf(null != (((object)___t)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(___t.ToString()) : null ,___s.Add);
-                }
-                container.Add("isoPath",___s);
-            }
-            AddIf( null != this._configureIsolatedNetwork ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._configureIsolatedNetwork) : null, "configureIsolatedNetwork" ,container.Add );
-            AddIf( null != this._migrateVM ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._migrateVM) : null, "migrateVM" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

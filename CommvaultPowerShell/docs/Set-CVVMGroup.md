@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-cvvmgroup
 schema: 2.0.0
 ---
@@ -19,27 +19,21 @@ Set-CVVMGroup -VMGroupId <Int64> [-AccessNode <IIdName[]>] [-ActivityControlEnab
  [-BackupActivityControlOptionDelayTime <String>] [-BackupActivityControlOptionEnableAfterDelay]
  [-BackupActivityControlOptionsTimeZoneId <Int64>] [-BackupActivityControlOptionsTimeZoneName <String>]
  [-ContentOverwrite] [-ContentRuleGroups <IRuleGroupContent[]>]
- [-ContentVirtualMachines <IVirtualMachinecontent[]>] [-CredentialsName <String>]
- [-CredentialsPassword <String>] [-CrossAccountCopyDestinationClientId <Int64>]
- [-CrossAccountCopyDestinationClientName <String>] [-DiskFilters <IVMDiskFilter[]>] [-EnableFileIndexing]
- [-FilterOverwrite] [-FilterRuleGroups <IRuleGroupContent[]>]
- [-FilterVirtualMachines <IVirtualMachinecontent[]>] [-NewName <String>] [-PlanId <Int64>]
+ [-ContentVirtualMachines <IVirtualMachinecontent[]>] [-DiskFilterOverwrite]
+ [-DiskFilterRules <IVMDiskFilter[]>] [-EnableFileIndexing] [-FilterOverwrite]
+ [-FilterRuleGroups <IRuleGroupContent[]>] [-FilterVirtualMachines <IVirtualMachinecontent[]>]
+ [-MeditechSystemListenerIP <String>] [-MeditechSystemListenerPort <Int64>]
+ [-MeditechSystemMbFtimeout <Int64>] [-MeditechSystemName <String>] [-NewName <String>] [-PlanId <Int64>]
  [-PlanName <String>] [-RestoreActivityControlOptionDelayTime <String>]
  [-RestoreActivityControlOptionEnableAfterDelay] [-RestoreActivityControlOptionsTimeZoneId <Int64>]
- [-RestoreActivityControlOptionsTimeZoneName <String>] [-SavedCredentialsId <Int64>]
- [-SavedCredentialsName <String>] [-SecurityAssociations <ISecurityAssoc[]>] [-SettingAutoDetectVMOwner]
- [-SettingCollectFileDetailsforGranularRecovery] [-SettingCollectFileDetailsFromSnapshotCopy]
- [-SettingCustomSnapshotResourceGroup <String>] [-SettingDatastoreFreespaceCheck]
- [-SettingDatastoreFreespaceRequired <Int64>] [-SettingIsApplicationAware] [-SettingJobStartTime <Int64>]
- [-SettingNoOfReaders <Int64>] [-SettingTransportMode <String>] [-SettingUseChangedBlockTrackingOnVM]
- [-SettingUseVMCheckpointSetting] [-SettingVMBackupType <String>] [-SnapEngineId <Int64>]
- [-SnapEngineName <String>] [-SnapMountProxyId <Int64>] [-SnapMountProxyName <String>]
- [-SnapshotManagementBackupCopyInterface <String>] [-SnapshotManagementEnableHardwareSnapshot]
- [-SnapshotManagementIsCrossAccountCopyEnabled] [-SnapshotManagementIsCrossAccountEnabled]
- [-SnapshotManagementIsIndependentDisksEnabled] [-SnapshotManagementIsRawDeviceMapsEnabled]
- [-SnapshotManagementSnapMountEsxHost <String>] [-SnapshotManagementUseSeparateProxyForSnapToTape]
- [-SnapshotManagementVMApplicationUserName <String>] [-StorageId <Int64>] [-StorageName <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RestoreActivityControlOptionsTimeZoneName <String>] [-SecurityAssociations <ISecurityAssoc[]>]
+ [-Settings <IVMGroupSettings>] [-SnapEngineId <Int64>] [-SnapEngineName <String>] [-SnapMountProxyId <Int64>]
+ [-SnapMountProxyName <String>] [-SnapshotManagementBackupCopyInterface <String>]
+ [-SnapshotManagementEnableHardwareSnapshot] [-SnapshotManagementIsIndependentDisksEnabled]
+ [-SnapshotManagementIsRawDeviceMapsEnabled] [-SnapshotManagementSnapMountEsxHost <String>]
+ [-SnapshotManagementUseSeparateProxyForSnapToTape] [-SnapshotManagementVMApplicationUserName <String>]
+ [-StorageId <Int64>] [-StorageName <String>] [-UserAccountName <String>] [-UserAccountPassword <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
@@ -49,27 +43,21 @@ Set-CVVMGroup -InputObject <ICommvaultPowerShellIdentity> [-AccessNode <IIdName[
  [-BackupActivityControlOptionDelayTime <String>] [-BackupActivityControlOptionEnableAfterDelay]
  [-BackupActivityControlOptionsTimeZoneId <Int64>] [-BackupActivityControlOptionsTimeZoneName <String>]
  [-ContentOverwrite] [-ContentRuleGroups <IRuleGroupContent[]>]
- [-ContentVirtualMachines <IVirtualMachinecontent[]>] [-CredentialsName <String>]
- [-CredentialsPassword <String>] [-CrossAccountCopyDestinationClientId <Int64>]
- [-CrossAccountCopyDestinationClientName <String>] [-DiskFilters <IVMDiskFilter[]>] [-EnableFileIndexing]
- [-FilterOverwrite] [-FilterRuleGroups <IRuleGroupContent[]>]
- [-FilterVirtualMachines <IVirtualMachinecontent[]>] [-NewName <String>] [-PlanId <Int64>]
+ [-ContentVirtualMachines <IVirtualMachinecontent[]>] [-DiskFilterOverwrite]
+ [-DiskFilterRules <IVMDiskFilter[]>] [-EnableFileIndexing] [-FilterOverwrite]
+ [-FilterRuleGroups <IRuleGroupContent[]>] [-FilterVirtualMachines <IVirtualMachinecontent[]>]
+ [-MeditechSystemListenerIP <String>] [-MeditechSystemListenerPort <Int64>]
+ [-MeditechSystemMbFtimeout <Int64>] [-MeditechSystemName <String>] [-NewName <String>] [-PlanId <Int64>]
  [-PlanName <String>] [-RestoreActivityControlOptionDelayTime <String>]
  [-RestoreActivityControlOptionEnableAfterDelay] [-RestoreActivityControlOptionsTimeZoneId <Int64>]
- [-RestoreActivityControlOptionsTimeZoneName <String>] [-SavedCredentialsId <Int64>]
- [-SavedCredentialsName <String>] [-SecurityAssociations <ISecurityAssoc[]>] [-SettingAutoDetectVMOwner]
- [-SettingCollectFileDetailsforGranularRecovery] [-SettingCollectFileDetailsFromSnapshotCopy]
- [-SettingCustomSnapshotResourceGroup <String>] [-SettingDatastoreFreespaceCheck]
- [-SettingDatastoreFreespaceRequired <Int64>] [-SettingIsApplicationAware] [-SettingJobStartTime <Int64>]
- [-SettingNoOfReaders <Int64>] [-SettingTransportMode <String>] [-SettingUseChangedBlockTrackingOnVM]
- [-SettingUseVMCheckpointSetting] [-SettingVMBackupType <String>] [-SnapEngineId <Int64>]
- [-SnapEngineName <String>] [-SnapMountProxyId <Int64>] [-SnapMountProxyName <String>]
- [-SnapshotManagementBackupCopyInterface <String>] [-SnapshotManagementEnableHardwareSnapshot]
- [-SnapshotManagementIsCrossAccountCopyEnabled] [-SnapshotManagementIsCrossAccountEnabled]
- [-SnapshotManagementIsIndependentDisksEnabled] [-SnapshotManagementIsRawDeviceMapsEnabled]
- [-SnapshotManagementSnapMountEsxHost <String>] [-SnapshotManagementUseSeparateProxyForSnapToTape]
- [-SnapshotManagementVMApplicationUserName <String>] [-StorageId <Int64>] [-StorageName <String>] [-Confirm]
- [-WhatIf] [<CommonParameters>]
+ [-RestoreActivityControlOptionsTimeZoneName <String>] [-SecurityAssociations <ISecurityAssoc[]>]
+ [-Settings <IVMGroupSettings>] [-SnapEngineId <Int64>] [-SnapEngineName <String>] [-SnapMountProxyId <Int64>]
+ [-SnapMountProxyName <String>] [-SnapshotManagementBackupCopyInterface <String>]
+ [-SnapshotManagementEnableHardwareSnapshot] [-SnapshotManagementIsIndependentDisksEnabled]
+ [-SnapshotManagementIsRawDeviceMapsEnabled] [-SnapshotManagementSnapMountEsxHost <String>]
+ [-SnapshotManagementUseSeparateProxyForSnapToTape] [-SnapshotManagementVMApplicationUserName <String>]
+ [-StorageId <Int64>] [-StorageName <String>] [-UserAccountName <String>] [-UserAccountPassword <String>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -79,10 +67,8 @@ Updates the VM Group
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -90,10 +76,8 @@ Updates the VM Group
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -270,11 +254,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CredentialsName
-username to access the network path
+### -DiskFilterOverwrite
+True if content in vmgroup has to be overwritten, by default it will append the content
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -285,54 +269,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CredentialsPassword
-password to access the network path
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CrossAccountCopyDestinationClientId
+### -DiskFilterRules
 .
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CrossAccountCopyDestinationClientName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DiskFilters
-.
-To construct, see NOTES section for DISKFILTERS properties and create a hash table.
+To construct, see NOTES section for DISKFILTERRULES properties and create a hash table.
 
 ```yaml
 Type: Commvault.Powershell.Models.IVMDiskFilter[]
@@ -421,6 +360,66 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -MeditechSystemListenerIP
+Meditech Listener IP of FQDN name
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MeditechSystemListenerPort
+Meditech Listener Port
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MeditechSystemMbFtimeout
+MBF timeout (in seconds)
+
+```yaml
+Type: System.Int64
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -MeditechSystemName
+Meditech system name
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -529,36 +528,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SavedCredentialsId
-.
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SavedCredentialsName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -SecurityAssociations
 .
 To construct, see NOTES section for SECURITYASSOCIATIONS properties and create a hash table.
@@ -575,194 +544,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SettingAutoDetectVMOwner
-True if auto detect VM Owner enabled
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingCollectFileDetailsforGranularRecovery
-True if metadata collection is enabled.
-Only applicable for Indexing v1
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingCollectFileDetailsFromSnapshotCopy
-True if metadata collection is enabled for intellisnap jobs.
-Only applicable for Indexing v1
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingCustomSnapshotResourceGroup
-Custom snapshot resource group GUID for Azure
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingDatastoreFreespaceCheck
-True if Datastore Free space check is enabled
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingDatastoreFreespaceRequired
-precentage of datastore free space check value
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingIsApplicationAware
-Is the VM App Aware
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingJobStartTime
-Start Time for the VM Group Job
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingNoOfReaders
-Number of readers for backup
-
-```yaml
-Type: System.Int64
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingTransportMode
-transport mode based on environment.
-Values are case sensitive
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingUseChangedBlockTrackingOnVM
-True if Changed Block Tracking is enabled
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingUseVMCheckpointSetting
-True if use VM CheckPoint setting is enabled
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SettingVMBackupType
+### -Settings
 .
+To construct, see NOTES section for SETTINGS properties and create a hash table.
 
 ```yaml
-Type: System.String
+Type: Commvault.Powershell.Models.IVMGroupSettings
 Parameter Sets: (All)
 Aliases:
 
@@ -850,36 +637,6 @@ Accept wildcard characters: False
 
 ### -SnapshotManagementEnableHardwareSnapshot
 True if hardware snapshot is enabled
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SnapshotManagementIsCrossAccountCopyEnabled
-True if full copy of amazon snapshot to different amazon account is enabled
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SnapshotManagementIsCrossAccountEnabled
-True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -998,6 +755,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -UserAccountName
+username to access the network path
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserAccountPassword
+password to access the network path
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -VMGroupId
 Id of the VMgroup to update
 
@@ -1071,13 +858,19 @@ ACCESSNODE <IIdName[]>: .
   - `[Name <String>]`: 
 
 APPLICATIONVALIDATION <IVMAppValidation>: vmAppValidation
-  - `[CopyId <Int64?>]`: 
-  - `[CopyName <String>]`: 
+  - `[BackupDestinationId <Int64?>]`: 
+  - `[BackupDestinationName <String>]`: 
+  - `[CopyId <Int64?>]`: Id of the source copy
+  - `[CopyIsActive <Boolean?>]`: Is this an active backup destination?
+  - `[CopyIsSnapCopy <Boolean?>]`: Is this a snap copy?
+  - `[CopyName <String>]`: Name of the source copy
+  - `[CopyPrecedence <Int64?>]`: Order of backup destination copy created in storage policy. Primary copy will be used as default copy.
   - `[CredentialsName <String>]`: username to access the network path
   - `[CredentialsPassword <String>]`: password to access the network path
   - `[KeepValidatedVMSRunning <Boolean?>]`: If true then validated VMs will be available until expiration time set on the recovery target
   - `[MaximumNoOfThreads <Int64?>]`: Number of backup Validation Threads
-  - `[RecoveryTarget <String>]`: Recovery Target for Application Validation
+  - `[RecoveryTargetId <Int64?>]`: 
+  - `[RecoveryTargetName <String>]`: 
   - `[SavedCredentialsId <Int64?>]`: 
   - `[SavedCredentialsName <String>]`: 
   - `[ScheduleDescription <String>]`: Description for validation schedule
@@ -1086,7 +879,7 @@ APPLICATIONVALIDATION <IVMAppValidation>: vmAppValidation
   - `[ScheduleTaskId <Int64?>]`: Job Id for the application validation task. 0 if schedule is disabled
   - `[UnixArguments <String>]`: Arguments for the script
   - `[UnixIsDisabled <Boolean?>]`: Is the script disabled
-  - `[UnixIsUnc <Boolean?>]`: True if the script is a UNC script, False if it is a local script
+  - `[UnixIsLocal <Boolean?>]`: True if the script is local
   - `[UnixPath <String>]`: Path for the validation script
   - `[UnixUncCredentialsName <String>]`: username to access the network path
   - `[UnixUncCredentialsPassword <String>]`: password to access the network path
@@ -1096,7 +889,7 @@ APPLICATIONVALIDATION <IVMAppValidation>: vmAppValidation
   - `[ValidateVMBackups <Boolean?>]`: True if VM Backup validation is enabled
   - `[WindowArguments <String>]`: Arguments for the script
   - `[WindowIsDisabled <Boolean?>]`: Is the script disabled
-  - `[WindowIsUnc <Boolean?>]`: True if the script is a UNC script, False if it is a local script
+  - `[WindowIsLocal <Boolean?>]`: True if the script is local
   - `[WindowPath <String>]`: Path for the validation script
   - `[WindowsUncCredentialsName <String>]`: username to access the network path
   - `[WindowsUncCredentialsPassword <String>]`: password to access the network path
@@ -1114,15 +907,23 @@ CONTENTRULEGROUPS <IRuleGroupContent[]>: .
     - `[Value <String>]`: value for the few type of VM Content like powerstate
 
 CONTENTVIRTUALMACHINES <IVirtualMachinecontent[]>: .
+  - `[ExistingCredentialId <Int64?>]`: 
+  - `[ExistingCredentialName <String>]`: 
+  - `[GuestCredentialAssocId <Int64?>]`: Credential association ID given to link entity with credential id.
+  - `[GuestCredentialsPassword <String>]`: 
+  - `[GuestCredentialsUserName <String>]`: 
   - `[Guid <String>]`: GUID of the VM to be added as content
   - `[Name <String>]`: name of the VM to be added as content
   - `[Type <String>]`: 
 
-DISKFILTERS <IVMDiskFilter[]>: .
+DISKFILTERRULES <IVMDiskFilter[]>: .
   - `[Condition <String>]`: Operation type for VM rules/filters
   - `[FilterType <String>]`: 
   - `[Name <String>]`: The string to be filtered
+  - `[Overwrite <Boolean?>]`: True if disk filter in vmgroup has to be overwritten, by default it will append the content
   - `[VMGuid <String>]`: VM Guid of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type from all Vms added in content will be filtered
+  - `[VMName <String>]`: VM Name of the Virtual Machine whose disk has to be filtered . This is optional. if not given, all disks of name and type from all Vms added in content will be filtered
+  - `[Value <String>]`: The value string to be filtered, in case of disk tag , value of tag to be filtered
 
 FILTERRULEGROUPS <IRuleGroupContent[]>: .
   - `[MatchRule <String>]`: Enum which specifies the whether to match all rules or any of the rules
@@ -1135,6 +936,11 @@ FILTERRULEGROUPS <IRuleGroupContent[]>: .
     - `[Value <String>]`: value for the few type of VM Content like powerstate
 
 FILTERVIRTUALMACHINES <IVirtualMachinecontent[]>: .
+  - `[ExistingCredentialId <Int64?>]`: 
+  - `[ExistingCredentialName <String>]`: 
+  - `[GuestCredentialAssocId <Int64?>]`: Credential association ID given to link entity with credential id.
+  - `[GuestCredentialsPassword <String>]`: 
+  - `[GuestCredentialsUserName <String>]`: 
   - `[Guid <String>]`: GUID of the VM to be added as content
   - `[Name <String>]`: name of the VM to be added as content
   - `[Type <String>]`: 
@@ -1142,26 +948,44 @@ FILTERVIRTUALMACHINES <IVirtualMachinecontent[]>: .
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[AccessPathId <Int64?>]`: Id of the mount path whose access path has to be deleted
   - `[AgentId <Int64?>]`: Id of the agent to be modified
+  - `[AppGuid <String>]`: GUID of the Application to get details
+  - `[AppId <Int64?>]`: Commvault exchange app id
+  - `[ApplicationGroupId <Int64?>]`: applicationGroupId is the ID of the Kubernetes application group
+  - `[ArrayId <Int64?>]`: 
+  - `[AssetId <String>]`: FQDN of the asset
   - `[BackupDestinationId <Int64?>]`: Id of the backupDestination to be modified
+  - `[BackupDestionationId <Int64?>]`: 
   - `[BackupLocationId <Int64?>]`: Id of the backup location whose details have to be fetched
   - `[BlackoutWindowId <Int64?>]`: Id of the Blackout Window whose details have to be fetched
   - `[BucketId <Int64?>]`: Id of Bucket
+  - `[ClientId <Int64?>]`: 
   - `[CloudStorageId <Int64?>]`: Id of cloud Storage
+  - `[ClusterId <Int64?>]`: 
   - `[CompanyId <Int64?>]`: Id of the Company whose details have to be fetched
+  - `[CopyId <Int64?>]`: 
+  - `[CredentialId <String>]`: 
   - `[CredentialName <String>]`: 
   - `[DomainId <Int64?>]`: ID of the AD/LDAP domain
+  - `[DrOperation <String>]`: Name of DR operation. Case insensitive
+  - `[DriveId <Int64?>]`: Id of the Drive of which the drive details has to be displayed
   - `[EntityId <Int64?>]`: Unique id for the entity
-  - `[EntityType <Int64?>]`: Type of the entity
+  - `[EntityType <String>]`: Type of the entity
+  - `[FailoverGroupId <Int64?>]`: Id of the failover group
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int64?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int64?>]`: Id of hyperscale storage
   - `[HypervisorId <Int64?>]`: Id of the HYpervisor to get
   - `[Id <Int64?>]`: 
+  - `[IndexServerClientId <Int64?>]`: Pseudo client id of the index server
   - `[InstanceId <Int64?>]`: Id of the instance to modify
+  - `[InventoryId <Int64?>]`: Inventory id
+  - `[JobId <Int64?>]`: 
   - `[KmsId <Int64?>]`: Id of Key Management Server
+  - `[LibraryId <Int64?>]`: Id of the library to view the data
   - `[MediaAgentId <Int64?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int64?>]`: Id of metadata cache
   - `[Name <String>]`: 
+  - `[NameSpace <String>]`: Name of the namespace to browse for content
   - `[NodeId <Int64?>]`: Id of node
   - `[PairId <Int64?>]`: 
   - `[PlanId <Int64?>]`: Id of the plan to fetch details
@@ -1173,17 +997,21 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[RoleId <Int64?>]`: Role Id
   - `[RpsId <String>]`: 
   - `[RuleId <Int64?>]`: Id of the rule to update in Plan
-  - `[ScheduleId <String>]`: 
-  - `[SchedulePolicyId <String>]`: 
+  - `[ScheduleId <Int64?>]`: ID of the DR operation schedule
+  - `[SchedulePolicyId <Int64?>]`: 
   - `[ServerGroupId <Int64?>]`: Id of the serverGroupId whose details have to be fetched
   - `[ServerId <Int64?>]`: Id of the server to modify
-  - `[StoragePoolId <Int64?>]`: Id of the disk storage pool whose details have to be fetched
+  - `[StoragePoolId <Int64?>]`: Id of the storage pool whose associated copies have to be fetched
   - `[SubclientId <Int64?>]`: Id of the subclient to modify
+  - `[TagId <Int64?>]`: Id of the tag to delete
+  - `[TagValue <String>]`: tag value to delete
   - `[TopologyId <String>]`: 
   - `[UserGroupId <Int64?>]`: Id of the user-group whose details have to be fetched
   - `[UserId <Int64?>]`: Id of the User whose details have to be fetched
   - `[VMGroupId <Int64?>]`: Id of the VMgroup to update
+  - `[VMGuid <String>]`: GUID of the Provisioned VM
   - `[VMUuid <String>]`: The vmUUID can be obtained from GET /virtualMachines UUID property
+  - `[VendorId <Int64?>]`: 
 
 SECURITYASSOCIATIONS <ISecurityAssoc[]>: .
   - `[ExternalUserGroupId <Int64?>]`: User Group Id
@@ -1194,6 +1022,7 @@ SECURITYASSOCIATIONS <ISecurityAssoc[]>: .
   - `[PermissionList <IPermissionResp[]>]`: 
     - `[CategoryId <Int64?>]`: 
     - `[CategoryName <String>]`: 
+    - `[Exclude <Boolean?>]`: Flag to specify if this is included permission or excluded permission.
     - `[PermissionId <Int64?>]`: 
     - `[PermissionName <String>]`: 
     - `[Type <String>]`: Returns the type of association.
@@ -1203,6 +1032,35 @@ SECURITYASSOCIATIONS <ISecurityAssoc[]>: .
   - `[UserGroupName <String>]`: 
   - `[UserId <Int64?>]`: 
   - `[UserName <String>]`: 
+
+SETTINGS <IVMGroupSettings>: .
+  - `[AllowEmptySubclient <Boolean?>]`: True if empty subclient is allowed
+  - `[AutoDetectVMOwner <Boolean?>]`: True if auto detect VM Owner enabled
+  - `[CollectFileDetailsFromSnapshotCopy <Boolean?>]`: True if metadata collection is enabled for intellisnap jobs. Only applicable for Indexing v1
+  - `[CollectFileDetailsforGranularRecovery <Boolean?>]`: True if metadata collection is enabled. Only applicable for Indexing v1
+  - `[CredentialsName <String>]`: username to access the network path
+  - `[CredentialsPassword <String>]`: password to access the network path
+  - `[CrossAccountFullCopy <Boolean?>]`: True if full copy of amazon snapshot to different amazon account is enabled
+  - `[CrossAccountShareOnly <Boolean?>]`: True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled
+  - `[CustomSnapshotResourceGroup <String>]`: Custom snapshot resource group name for Azure
+  - `[CustomSnapshotTags <IResourceTag[]>]`: represents custom tags to be set on snapshots
+    - `[Name <String>]`: represents name of the tag
+    - `[Value <String>]`: represents value of the tag
+  - `[DatastoreFreespaceCheck <Boolean?>]`: True if Datastore Free space check is enabled
+  - `[DatastoreFreespaceRequired <Int64?>]`: precentage of datastore free space check value
+  - `[DestinationAccountId <Int64?>]`: 
+  - `[DestinationAccountName <String>]`: 
+  - `[IsApplicationAware <Boolean?>]`: Is the VM App Aware
+  - `[IsVMGroupDiskFiltersIncluded <Boolean?>]`: Is VM group disk filters included in VM instance disk filters
+  - `[JobStartTime <Int64?>]`: Start Time for the VM Group Job
+  - `[NoOfReaders <Int64?>]`: Number of readers for backup
+  - `[RegionalSnapshot <Boolean?>]`: True when snapshot storage location is regional
+  - `[SavedCredentialsId <Int64?>]`: 
+  - `[SavedCredentialsName <String>]`: 
+  - `[TransportMode <String>]`: transport mode based on environment. Values are case sensitive
+  - `[UseChangedBlockTrackingOnVM <Boolean?>]`: True if Changed Block Tracking is enabled
+  - `[UseVMCheckpointSetting <Boolean?>]`: True if use VM CheckPoint setting is enabled
+  - `[VMBackupType <String>]`: 
 
 ## RELATED LINKS
 

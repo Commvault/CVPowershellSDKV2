@@ -14,7 +14,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="Application" /> property.</summary>
         private string _application;
 
-        /// <summary>Enum to signify the source application of the request</summary>
+        /// <summary>Enum to signify the application under Activate</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Application { get => this._application; set => this._application = value; }
 
@@ -99,11 +99,11 @@ namespace Commvault.Powershell.Models
     public partial interface IRmRequestSummary :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        /// <summary>Enum to signify the source application of the request</summary>
+        /// <summary>Enum to signify the application under Activate</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Enum to signify the source application of the request",
+        Description = @"Enum to signify the application under Activate",
         SerializedName = @"application",
         PossibleTypes = new [] { typeof(string) })]
         string Application { get; set; }
@@ -193,7 +193,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IRmRequestSummaryInternal
 
     {
-        /// <summary>Enum to signify the source application of the request</summary>
+        /// <summary>Enum to signify the application under Activate</summary>
         string Application { get; set; }
         /// <summary>List of the request approvers</summary>
         Commvault.Powershell.Models.IIdName[] Approvers { get; set; }

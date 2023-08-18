@@ -93,9 +93,11 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearch = (Commvault.Powershell.Models.IPlanFileSearch) content.GetValueForProperty("FileSearch",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearch, Commvault.Powershell.Models.PlanFileSearchTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).EnableAdvancedView = (bool?) content.GetValueForProperty("EnableAdvancedView",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).EnableAdvancedView, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchEnabled = (bool?) content.GetValueForProperty("FileSearchEnabled",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchEnabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatus = (string) content.GetValueForProperty("FileSearchStatus",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatus, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatusMessage = (string) content.GetValueForProperty("FileSearchStatusMessage",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatusMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchErrors = (Commvault.Powershell.Models.IPlanFileSearchSetupError[]) content.GetValueForProperty("FileSearchErrors",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchErrors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanFileSearchSetupError>(__y, Commvault.Powershell.Models.PlanFileSearchSetupErrorTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -114,9 +116,11 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearch = (Commvault.Powershell.Models.IPlanFileSearch) content.GetValueForProperty("FileSearch",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearch, Commvault.Powershell.Models.PlanFileSearchTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).EnableAdvancedView = (bool?) content.GetValueForProperty("EnableAdvancedView",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).EnableAdvancedView, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchEnabled = (bool?) content.GetValueForProperty("FileSearchEnabled",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchEnabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatus = (string) content.GetValueForProperty("FileSearchStatus",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatus, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatusMessage = (string) content.GetValueForProperty("FileSearchStatusMessage",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchStatusMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchErrors = (Commvault.Powershell.Models.IPlanFileSearchSetupError[]) content.GetValueForProperty("FileSearchErrors",((Commvault.Powershell.Models.IServerPlanSettingsInternal)this).FileSearchErrors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanFileSearchSetupError>(__y, Commvault.Powershell.Models.PlanFileSearchSetupErrorTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 

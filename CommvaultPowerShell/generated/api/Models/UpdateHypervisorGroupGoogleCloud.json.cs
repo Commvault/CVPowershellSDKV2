@@ -82,6 +82,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._hypervisorType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hypervisorType.ToString()) : null, "hypervisorType" ,container.Add );
             AddIf( null != (((object)this._serviceAccountId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._serviceAccountId.ToString()) : null, "serviceAccountId" ,container.Add );
             AddIf( null != (((object)this._userName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userName.ToString()) : null, "userName" ,container.Add );
+            AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._password.ToString()) : null, "password" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -102,6 +103,7 @@ namespace Commvault.Powershell.Models
             {_hypervisorType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hypervisorType"), out var __jsonHypervisorType) ? (string)__jsonHypervisorType : (string)HypervisorType;}
             {_serviceAccountId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serviceAccountId"), out var __jsonServiceAccountId) ? (string)__jsonServiceAccountId : (string)ServiceAccountId;}
             {_userName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userName"), out var __jsonUserName) ? (string)__jsonUserName : (string)UserName;}
+            {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? (string)__jsonPassword : (string)Password;}
             AfterFromJson(json);
         }
     }

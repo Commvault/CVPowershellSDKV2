@@ -11,6 +11,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IAccessNodeModelInternal
     {
 
+        /// <summary>Backing field for <see cref="DisplayName" /> property.</summary>
+        private string _displayName;
+
+        /// <summary>Display name of the access node</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string DisplayName { get => this._displayName; set => this._displayName = value; }
+
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
 
@@ -40,6 +47,15 @@ namespace Commvault.Powershell.Models
     public partial interface IAccessNodeModel :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Display name of the access node</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Display name of the access node",
+        SerializedName = @"displayName",
+        PossibleTypes = new [] { typeof(string) })]
+        string DisplayName { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
@@ -69,6 +85,9 @@ namespace Commvault.Powershell.Models
     internal partial interface IAccessNodeModelInternal
 
     {
+        /// <summary>Display name of the access node</summary>
+        string DisplayName { get; set; }
+
         long? Id { get; set; }
 
         string Name { get; set; }

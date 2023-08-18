@@ -26,8 +26,8 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Encryption</summary>
         Commvault.Powershell.Models.IEncryption Commvault.Powershell.Models.IHyperScaleStorageDetailsInternal.Encryption { get => (this._encryption = this._encryption ?? new Commvault.Powershell.Models.Encryption()); set { {_encryption = value;} } }
 
-        /// <summary>Internal Acessors for EncryptionKeyManagementServer</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHyperScaleStorageDetailsInternal.EncryptionKeyManagementServer { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServer; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServer = value; }
+        /// <summary>Internal Acessors for EncryptionKeyProvider</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHyperScaleStorageDetailsInternal.EncryptionKeyProvider { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProvider; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProvider = value; }
 
         /// <summary>Internal Acessors for General</summary>
         Commvault.Powershell.Models.IHyperScaleStorageGeneralInfo Commvault.Powershell.Models.IHyperScaleStorageDetailsInternal.General { get => (this._general = this._general ?? new Commvault.Powershell.Models.HyperScaleStorageGeneralInfo()); set { {_general = value;} } }
@@ -100,10 +100,10 @@ namespace Commvault.Powershell.Models
         public long? Id { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? KeyManagementServerId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerId = value ?? default(long); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string KeyManagementServerName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerName = value ?? null; }
+        public string KeyProviderName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string Name { get => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)__idName).Name = value; }
@@ -258,7 +258,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -266,7 +266,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
         /// <summary>List of disks with the Linux MediaAgent</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -308,7 +308,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         long? EncryptionKeyLength { get; set; }
 
-        Commvault.Powershell.Models.IIdName EncryptionKeyManagementServer { get; set; }
+        Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get; set; }
         /// <summary>HyperScaleStorageGeneralInfo</summary>
         Commvault.Powershell.Models.IHyperScaleStorageGeneralInfo General { get; set; }
         /// <summary>Specifies the savings in percentage that occurred due to deduplication.</summary>
@@ -330,9 +330,9 @@ namespace Commvault.Powershell.Models
         /// <summary>The total free space available in the HyperScale storage pool</summary>
         long? GeneralTotalFreeSpace { get; set; }
 
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
         /// <summary>List of disks with the Linux MediaAgent</summary>
         Commvault.Powershell.Models.IIdNameStatus[] Nodes { get; set; }
         /// <summary>

@@ -79,8 +79,13 @@ namespace Commvault.Powershell.Models
             {_hyperScaleStorageId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("hyperScaleStorageId"), out var __jsonHyperScaleStorageId) ? (long?)__jsonHyperScaleStorageId : HyperScaleStorageId;}
             {_nodeId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("nodeId"), out var __jsonNodeId) ? (long?)__jsonNodeId : NodeId;}
             {_roleId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("roleId"), out var __jsonRoleId) ? (long?)__jsonRoleId : RoleId;}
+            {_libraryId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("libraryId"), out var __jsonLibraryId) ? (long?)__jsonLibraryId : LibraryId;}
+            {_driveId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("driveId"), out var __jsonDriveId) ? (long?)__jsonDriveId : DriveId;}
             {_instanceId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("instanceId"), out var __jsonInstanceId) ? (long?)__jsonInstanceId : InstanceId;}
             {_replicationGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("replicationGroupId"), out var __jsonReplicationGroupId) ? (string)__jsonReplicationGroupId : (string)ReplicationGroupId;}
+            {_failoverGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("failoverGroupId"), out var __jsonFailoverGroupId) ? (long?)__jsonFailoverGroupId : FailoverGroupId;}
+            {_scheduleId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("scheduleId"), out var __jsonScheduleId) ? (long?)__jsonScheduleId : ScheduleId;}
+            {_drOperation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("drOperation"), out var __jsonDrOperation) ? (string)__jsonDrOperation : (string)DrOperation;}
             {_vMGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("VmGroupId"), out var __jsonVMGroupId) ? (long?)__jsonVMGroupId : VMGroupId;}
             {_vMUuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmUUID"), out var __jsonVMUuid) ? (string)__jsonVMUuid : (string)VMUuid;}
             {_mediaAgentId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("mediaAgentId"), out var __jsonMediaAgentId) ? (long?)__jsonMediaAgentId : MediaAgentId;}
@@ -88,7 +93,7 @@ namespace Commvault.Powershell.Models
             {_topologyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("topologyId"), out var __jsonTopologyId) ? (string)__jsonTopologyId : (string)TopologyId;}
             {_regionId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("regionId"), out var __jsonRegionId) ? (long?)__jsonRegionId : RegionId;}
             {_ruleId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("ruleId"), out var __jsonRuleId) ? (long?)__jsonRuleId : RuleId;}
-            {_entityType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("entityType"), out var __jsonEntityType) ? (long?)__jsonEntityType : EntityType;}
+            {_entityType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("entityType"), out var __jsonEntityType) ? (string)__jsonEntityType : (string)EntityType;}
             {_entityId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("entityId"), out var __jsonEntityId) ? (long?)__jsonEntityId : EntityId;}
             {_blackoutWindowId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("blackoutWindowId"), out var __jsonBlackoutWindowId) ? (long?)__jsonBlackoutWindowId : BlackoutWindowId;}
             {_hfsShareId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("HFSShareId"), out var __jsonHfsShareId) ? (long?)__jsonHfsShareId : HfsShareId;}
@@ -96,14 +101,31 @@ namespace Commvault.Powershell.Models
             {_rpsId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("rpsId"), out var __jsonRpsId) ? (string)__jsonRpsId : (string)RpsId;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_credentialName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("credentialName"), out var __jsonCredentialName) ? (string)__jsonCredentialName : (string)CredentialName;}
+            {_credentialId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("credentialId"), out var __jsonCredentialId) ? (string)__jsonCredentialId : (string)CredentialId;}
             {_recoveryTargetId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("recoveryTargetId"), out var __jsonRecoveryTargetId) ? (long?)__jsonRecoveryTargetId : RecoveryTargetId;}
+            {_vMGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmGUID"), out var __jsonVMGuid) ? (string)__jsonVMGuid : (string)VMGuid;}
             {_domainId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("domainId"), out var __jsonDomainId) ? (long?)__jsonDomainId : DomainId;}
             {_requestId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("requestId"), out var __jsonRequestId) ? (long?)__jsonRequestId : RequestId;}
             {_kmsId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("kmsId"), out var __jsonKmsId) ? (long?)__jsonKmsId : KmsId;}
             {_pairId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("pairId"), out var __jsonPairId) ? (long?)__jsonPairId : PairId;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
-            {_schedulePolicyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("schedulePolicyId"), out var __jsonSchedulePolicyId) ? (string)__jsonSchedulePolicyId : (string)SchedulePolicyId;}
-            {_scheduleId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("scheduleId"), out var __jsonScheduleId) ? (string)__jsonScheduleId : (string)ScheduleId;}
+            {_schedulePolicyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("schedulePolicyId"), out var __jsonSchedulePolicyId) ? (long?)__jsonSchedulePolicyId : SchedulePolicyId;}
+            {_inventoryId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("inventoryId"), out var __jsonInventoryId) ? (long?)__jsonInventoryId : InventoryId;}
+            {_indexServerClientId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("indexServerClientId"), out var __jsonIndexServerClientId) ? (long?)__jsonIndexServerClientId : IndexServerClientId;}
+            {_assetId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("assetId"), out var __jsonAssetId) ? (string)__jsonAssetId : (string)AssetId;}
+            {_tagId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("tagId"), out var __jsonTagId) ? (long?)__jsonTagId : TagId;}
+            {_arrayId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("arrayId"), out var __jsonArrayId) ? (long?)__jsonArrayId : ArrayId;}
+            {_vendorId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("vendorId"), out var __jsonVendorId) ? (long?)__jsonVendorId : VendorId;}
+            {_backupDestionationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupDestionationId"), out var __jsonBackupDestionationId) ? (long?)__jsonBackupDestionationId : BackupDestionationId;}
+            {_tagValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("tagValue"), out var __jsonTagValue) ? (string)__jsonTagValue : (string)TagValue;}
+            {_clientId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clientId"), out var __jsonClientId) ? (long?)__jsonClientId : ClientId;}
+            {_copyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("copyId"), out var __jsonCopyId) ? (long?)__jsonCopyId : CopyId;}
+            {_jobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobId"), out var __jsonJobId) ? (long?)__jsonJobId : JobId;}
+            {_appId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("appId"), out var __jsonAppId) ? (long?)__jsonAppId : AppId;}
+            {_clusterId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("clusterId"), out var __jsonClusterId) ? (long?)__jsonClusterId : ClusterId;}
+            {_nameSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("nameSpace"), out var __jsonNameSpace) ? (string)__jsonNameSpace : (string)NameSpace;}
+            {_applicationGroupId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationGroupId"), out var __jsonApplicationGroupId) ? (long?)__jsonApplicationGroupId : ApplicationGroupId;}
+            {_appGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("appGUID"), out var __jsonAppGuid) ? (string)__jsonAppGuid : (string)AppGuid;}
             AfterFromJson(json);
         }
 
@@ -155,8 +177,13 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._hyperScaleStorageId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._hyperScaleStorageId) : null, "hyperScaleStorageId" ,container.Add );
             AddIf( null != this._nodeId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._nodeId) : null, "nodeId" ,container.Add );
             AddIf( null != this._roleId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._roleId) : null, "roleId" ,container.Add );
+            AddIf( null != this._libraryId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._libraryId) : null, "libraryId" ,container.Add );
+            AddIf( null != this._driveId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._driveId) : null, "driveId" ,container.Add );
             AddIf( null != this._instanceId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._instanceId) : null, "instanceId" ,container.Add );
             AddIf( null != (((object)this._replicationGroupId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._replicationGroupId.ToString()) : null, "replicationGroupId" ,container.Add );
+            AddIf( null != this._failoverGroupId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._failoverGroupId) : null, "failoverGroupId" ,container.Add );
+            AddIf( null != this._scheduleId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._scheduleId) : null, "scheduleId" ,container.Add );
+            AddIf( null != (((object)this._drOperation)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._drOperation.ToString()) : null, "drOperation" ,container.Add );
             AddIf( null != this._vMGroupId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vMGroupId) : null, "VmGroupId" ,container.Add );
             AddIf( null != (((object)this._vMUuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMUuid.ToString()) : null, "vmUUID" ,container.Add );
             AddIf( null != this._mediaAgentId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._mediaAgentId) : null, "mediaAgentId" ,container.Add );
@@ -164,7 +191,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._topologyId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._topologyId.ToString()) : null, "topologyId" ,container.Add );
             AddIf( null != this._regionId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._regionId) : null, "regionId" ,container.Add );
             AddIf( null != this._ruleId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._ruleId) : null, "ruleId" ,container.Add );
-            AddIf( null != this._entityType ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._entityType) : null, "entityType" ,container.Add );
+            AddIf( null != (((object)this._entityType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._entityType.ToString()) : null, "entityType" ,container.Add );
             AddIf( null != this._entityId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._entityId) : null, "entityId" ,container.Add );
             AddIf( null != this._blackoutWindowId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._blackoutWindowId) : null, "blackoutWindowId" ,container.Add );
             AddIf( null != this._hfsShareId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._hfsShareId) : null, "HFSShareId" ,container.Add );
@@ -172,14 +199,31 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._rpsId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._rpsId.ToString()) : null, "rpsId" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._credentialName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._credentialName.ToString()) : null, "credentialName" ,container.Add );
+            AddIf( null != (((object)this._credentialId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._credentialId.ToString()) : null, "credentialId" ,container.Add );
             AddIf( null != this._recoveryTargetId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._recoveryTargetId) : null, "recoveryTargetId" ,container.Add );
+            AddIf( null != (((object)this._vMGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMGuid.ToString()) : null, "vmGUID" ,container.Add );
             AddIf( null != this._domainId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._domainId) : null, "domainId" ,container.Add );
             AddIf( null != this._requestId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._requestId) : null, "requestId" ,container.Add );
             AddIf( null != this._kmsId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._kmsId) : null, "kmsId" ,container.Add );
             AddIf( null != this._pairId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._pairId) : null, "pairId" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
-            AddIf( null != (((object)this._schedulePolicyId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._schedulePolicyId.ToString()) : null, "schedulePolicyId" ,container.Add );
-            AddIf( null != (((object)this._scheduleId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._scheduleId.ToString()) : null, "scheduleId" ,container.Add );
+            AddIf( null != this._schedulePolicyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._schedulePolicyId) : null, "schedulePolicyId" ,container.Add );
+            AddIf( null != this._inventoryId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._inventoryId) : null, "inventoryId" ,container.Add );
+            AddIf( null != this._indexServerClientId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._indexServerClientId) : null, "indexServerClientId" ,container.Add );
+            AddIf( null != (((object)this._assetId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._assetId.ToString()) : null, "assetId" ,container.Add );
+            AddIf( null != this._tagId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._tagId) : null, "tagId" ,container.Add );
+            AddIf( null != this._arrayId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._arrayId) : null, "arrayId" ,container.Add );
+            AddIf( null != this._vendorId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._vendorId) : null, "vendorId" ,container.Add );
+            AddIf( null != this._backupDestionationId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupDestionationId) : null, "backupDestionationId" ,container.Add );
+            AddIf( null != (((object)this._tagValue)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._tagValue.ToString()) : null, "tagValue" ,container.Add );
+            AddIf( null != this._clientId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._clientId) : null, "clientId" ,container.Add );
+            AddIf( null != this._copyId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._copyId) : null, "copyId" ,container.Add );
+            AddIf( null != this._jobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._jobId) : null, "jobId" ,container.Add );
+            AddIf( null != this._appId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._appId) : null, "appId" ,container.Add );
+            AddIf( null != this._clusterId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._clusterId) : null, "clusterId" ,container.Add );
+            AddIf( null != (((object)this._nameSpace)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._nameSpace.ToString()) : null, "nameSpace" ,container.Add );
+            AddIf( null != this._applicationGroupId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationGroupId) : null, "applicationGroupId" ,container.Add );
+            AddIf( null != (((object)this._appGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._appGuid.ToString()) : null, "appGUID" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

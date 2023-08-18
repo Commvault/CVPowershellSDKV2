@@ -76,6 +76,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryId = (long?) content.GetValueForProperty("PermissionListCategoryId",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryName = (string) content.GetValueForProperty("PermissionListCategoryName",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListType = (string) content.GetValueForProperty("PermissionListType",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListExclude = (bool?) content.GetValueForProperty("PermissionListExclude",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListExclude, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
         }
 
@@ -105,6 +106,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryId = (long?) content.GetValueForProperty("PermissionListCategoryId",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryName = (string) content.GetValueForProperty("PermissionListCategoryName",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListCategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListType = (string) content.GetValueForProperty("PermissionListType",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListExclude = (bool?) content.GetValueForProperty("PermissionListExclude",((Commvault.Powershell.Models.IAssocEntityInternal)this).PermissionListExclude, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);
         }
 

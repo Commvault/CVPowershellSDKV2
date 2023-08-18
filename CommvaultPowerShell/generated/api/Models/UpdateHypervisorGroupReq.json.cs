@@ -81,17 +81,18 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._fbrUnixMediaAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._fbrUnixMediaAgent.ToJson(null,serializationMode) : null, "fbrUnixMediaAgent" ,container.Add );
             AddIf( null != this._activityControl ? (Commvault.Powershell.Runtime.Json.JsonNode) this._activityControl.ToJson(null,serializationMode) : null, "activityControl" ,container.Add );
             AddIf( null != this._security ? (Commvault.Powershell.Runtime.Json.JsonNode) this._security.ToJson(null,serializationMode) : null, "security" ,container.Add );
-            if (null != this._accessNodes)
+            if (null != this._accessNode)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._accessNodes )
+                foreach( var __x in this._accessNode )
                 {
                     AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
                 }
-                container.Add("accessNodes",__w);
+                container.Add("accessNode",__w);
             }
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
             AddIf( null != this._skipCredentialValidation ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._skipCredentialValidation) : null, "skipCredentialValidation" ,container.Add );
+            AddIf( null != this._settings ? (Commvault.Powershell.Runtime.Json.JsonNode) this._settings.ToJson(null,serializationMode) : null, "settings" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -111,9 +112,10 @@ namespace Commvault.Powershell.Models
             {_fbrUnixMediaAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("fbrUnixMediaAgent"), out var __jsonFbrUnixMediaAgent) ? Commvault.Powershell.Models.IdName.FromJson(__jsonFbrUnixMediaAgent) : FbrUnixMediaAgent;}
             {_activityControl = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("activityControl"), out var __jsonActivityControl) ? Commvault.Powershell.Models.ActivityControlOptions.FromJson(__jsonActivityControl) : ActivityControl;}
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("security"), out var __jsonSecurity) ? Commvault.Powershell.Models.VMHypervisorSecurityProp.FromJson(__jsonSecurity) : Security;}
-            {_accessNodes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNodes"), out var __jsonAccessNodes) ? If( __jsonAccessNodes as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : AccessNodes;}
+            {_accessNode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNode"), out var __jsonAccessNode) ? If( __jsonAccessNode as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAccessNodeModel[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAccessNodeModel) (Commvault.Powershell.Models.AccessNodeModel.FromJson(__u) )) ))() : null : AccessNode;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_skipCredentialValidation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("skipCredentialValidation"), out var __jsonSkipCredentialValidation) ? (bool?)__jsonSkipCredentialValidation : SkipCredentialValidation;}
+            {_settings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("settings"), out var __jsonSettings) ? Commvault.Powershell.Models.HypervisorSettings.FromJson(__jsonSettings) : Settings;}
             AfterFromJson(json);
         }
     }

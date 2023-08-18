@@ -78,12 +78,25 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._guestCredentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._guestCredentials.ToJson(null,serializationMode) : null, "guestCredentials" ,container.Add );
+            AddIf( null != this._crossAccount ? (Commvault.Powershell.Runtime.Json.JsonNode) this._crossAccount.ToJson(null,serializationMode) : null, "crossAccount" ,container.Add );
             AddIf( null != this._useChangedBlockTrackingOnVM ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useChangedBlockTrackingOnVM) : null, "useChangedBlockTrackingOnVM" ,container.Add );
             AddIf( null != (((object)this._customSnapshotResourceGroup)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._customSnapshotResourceGroup.ToString()) : null, "customSnapshotResourceGroup" ,container.Add );
+            if (null != this._customSnapshotTags)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._customSnapshotTags )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("customSnapshotTags",__w);
+            }
+            AddIf( null != this._regionalSnapshot ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._regionalSnapshot) : null, "regionalSnapshot" ,container.Add );
             AddIf( null != this._autoDetectVMOwner ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._autoDetectVMOwner) : null, "autoDetectVMOwner" ,container.Add );
+            AddIf( null != this._allowEmptySubclient ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._allowEmptySubclient) : null, "allowEmptySubclient" ,container.Add );
             AddIf( null != this._noOfReaders ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._noOfReaders) : null, "noOfReaders" ,container.Add );
-            AddIf( null != this._isApplicationAware ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isApplicationAware) : null, "isApplicationAware" ,container.Add );
+            AddIf( null != this._isVMGroupDiskFiltersIncluded ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isVMGroupDiskFiltersIncluded) : null, "isVMGroupDiskFiltersIncluded" ,container.Add );
             AddIf( null != (((object)this._vMBackupType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMBackupType.ToString()) : null, "vmBackupType" ,container.Add );
+            AddIf( null != this._isApplicationAware ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isApplicationAware) : null, "isApplicationAware" ,container.Add );
             AddIf( null != this._useVMCheckpointSetting ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useVMCheckpointSetting) : null, "useVMCheckpointSetting" ,container.Add );
             AddIf( null != (((object)this._transportMode)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._transportMode.ToString()) : null, "transportMode" ,container.Add );
             AddIf( null != this._datastoreFreespaceCheck ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._datastoreFreespaceCheck) : null, "datastoreFreespaceCheck" ,container.Add );
@@ -108,12 +121,17 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_guestCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("guestCredentials"), out var __jsonGuestCredentials) ? Commvault.Powershell.Models.GuestCredentialInfo.FromJson(__jsonGuestCredentials) : GuestCredentials;}
+            {_crossAccount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("crossAccount"), out var __jsonCrossAccount) ? Commvault.Powershell.Models.AmazonCrossAccount.FromJson(__jsonCrossAccount) : CrossAccount;}
             {_useChangedBlockTrackingOnVM = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useChangedBlockTrackingOnVM"), out var __jsonUseChangedBlockTrackingOnVM) ? (bool?)__jsonUseChangedBlockTrackingOnVM : UseChangedBlockTrackingOnVM;}
             {_customSnapshotResourceGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("customSnapshotResourceGroup"), out var __jsonCustomSnapshotResourceGroup) ? (string)__jsonCustomSnapshotResourceGroup : (string)CustomSnapshotResourceGroup;}
+            {_customSnapshotTags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("customSnapshotTags"), out var __jsonCustomSnapshotTags) ? If( __jsonCustomSnapshotTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IResourceTag[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IResourceTag) (Commvault.Powershell.Models.ResourceTag.FromJson(__u) )) ))() : null : CustomSnapshotTags;}
+            {_regionalSnapshot = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("regionalSnapshot"), out var __jsonRegionalSnapshot) ? (bool?)__jsonRegionalSnapshot : RegionalSnapshot;}
             {_autoDetectVMOwner = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("autoDetectVMOwner"), out var __jsonAutoDetectVMOwner) ? (bool?)__jsonAutoDetectVMOwner : AutoDetectVMOwner;}
+            {_allowEmptySubclient = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("allowEmptySubclient"), out var __jsonAllowEmptySubclient) ? (bool?)__jsonAllowEmptySubclient : AllowEmptySubclient;}
             {_noOfReaders = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("noOfReaders"), out var __jsonNoOfReaders) ? (long?)__jsonNoOfReaders : NoOfReaders;}
-            {_isApplicationAware = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isApplicationAware"), out var __jsonIsApplicationAware) ? (bool?)__jsonIsApplicationAware : IsApplicationAware;}
+            {_isVMGroupDiskFiltersIncluded = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isVMGroupDiskFiltersIncluded"), out var __jsonIsVMGroupDiskFiltersIncluded) ? (bool?)__jsonIsVMGroupDiskFiltersIncluded : IsVMGroupDiskFiltersIncluded;}
             {_vMBackupType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmBackupType"), out var __jsonVMBackupType) ? (string)__jsonVMBackupType : (string)VMBackupType;}
+            {_isApplicationAware = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isApplicationAware"), out var __jsonIsApplicationAware) ? (bool?)__jsonIsApplicationAware : IsApplicationAware;}
             {_useVMCheckpointSetting = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useVMCheckpointSetting"), out var __jsonUseVMCheckpointSetting) ? (bool?)__jsonUseVMCheckpointSetting : UseVMCheckpointSetting;}
             {_transportMode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("transportMode"), out var __jsonTransportMode) ? (string)__jsonTransportMode : (string)TransportMode;}
             {_datastoreFreespaceCheck = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("datastoreFreespaceCheck"), out var __jsonDatastoreFreespaceCheck) ? (bool?)__jsonDatastoreFreespaceCheck : DatastoreFreespaceCheck;}

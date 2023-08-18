@@ -13,12 +13,29 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for SourceCopy</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateArchivePlanBackupDestinationInternal.SourceCopy { get => (this._sourceCopy = this._sourceCopy ?? new Commvault.Powershell.Models.IdName()); set { {_sourceCopy = value;} } }
 
+        /// <summary>Backing field for <see cref="EnableDataAging" /> property.</summary>
+        private bool? _enableDataAging;
+
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnableDataAging { get => this._enableDataAging; set => this._enableDataAging = value; }
+
         /// <summary>Backing field for <see cref="NewName" /> property.</summary>
         private string _newName;
 
         /// <summary>New name for backup destination</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
+
+        /// <summary>Backing field for <see cref="OverrideRetentionSettings" /> property.</summary>
+        private bool? _overrideRetentionSettings;
+
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? OverrideRetentionSettings { get => this._overrideRetentionSettings; set => this._overrideRetentionSettings = value; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
         private long? _retentionPeriodDays;
@@ -48,6 +65,14 @@ namespace Commvault.Powershell.Models
     public partial interface IUpdateArchivePlanBackupDestination :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells if this copy has data aging enabled",
+        SerializedName = @"enableDataAging",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnableDataAging { get; set; }
         /// <summary>New name for backup destination</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -56,6 +81,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"newName",
         PossibleTypes = new [] { typeof(string) })]
         string NewName { get; set; }
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to use retention defined on this copy.",
+        SerializedName = @"overrideRetentionSettings",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? OverrideRetentionSettings { get; set; }
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -85,8 +121,15 @@ namespace Commvault.Powershell.Models
     internal partial interface IUpdateArchivePlanBackupDestinationInternal
 
     {
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        bool? EnableDataAging { get; set; }
         /// <summary>New name for backup destination</summary>
         string NewName { get; set; }
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        bool? OverrideRetentionSettings { get; set; }
         /// <summary>Retention period in days. -1 can be specified for infinite retention.</summary>
         long? RetentionPeriodDays { get; set; }
 

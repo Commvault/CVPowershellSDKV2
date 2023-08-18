@@ -78,9 +78,12 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._overwrite ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._overwrite) : null, "overwrite" ,container.Add );
             AddIf( null != (((object)this._filterType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._filterType.ToString()) : null, "filterType" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != (((object)this._value)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._value.ToString()) : null, "value" ,container.Add );
             AddIf( null != (((object)this._condition)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._condition.ToString()) : null, "condition" ,container.Add );
+            AddIf( null != (((object)this._vMName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMName.ToString()) : null, "vmName" ,container.Add );
             AddIf( null != (((object)this._vMGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMGuid.ToString()) : null, "vmGuid" ,container.Add );
             AfterToJson(ref container);
             return container;
@@ -98,9 +101,12 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_overwrite = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("overwrite"), out var __jsonOverwrite) ? (bool?)__jsonOverwrite : Overwrite;}
             {_filterType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("filterType"), out var __jsonFilterType) ? (string)__jsonFilterType : (string)FilterType;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_value = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("value"), out var __jsonValue) ? (string)__jsonValue : (string)Value;}
             {_condition = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("condition"), out var __jsonCondition) ? (string)__jsonCondition : (string)Condition;}
+            {_vMName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmName"), out var __jsonVMName) ? (string)__jsonVMName : (string)VMName;}
             {_vMGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmGuid"), out var __jsonVMGuid) ? (string)__jsonVMGuid : (string)VMGuid;}
             AfterFromJson(json);
         }

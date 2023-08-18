@@ -50,8 +50,8 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.ILaptopPlanRetentionFileVersions _fileVersions;
 
         /// <summary>
-        /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-        /// not defined then, 5 versions are considered the default setting.
+        /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+        /// defined then, 5 versions are considered the default setting.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.ILaptopPlanRetentionFileVersions FileVersions { get => (this._fileVersions = this._fileVersions ?? new Commvault.Powershell.Models.LaptopPlanRetentionFileVersions()); set => this._fileVersions = value; }
@@ -143,8 +143,8 @@ namespace Commvault.Powershell.Models
         /// <summary>Custom version rule: Retain weekly versions for this many week(s)</summary>
         long? FileVersionWeeklyVersions { get; set; }
         /// <summary>
-        /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-        /// not defined then, 5 versions are considered the default setting.
+        /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+        /// defined then, 5 versions are considered the default setting.
         /// </summary>
         Commvault.Powershell.Models.ILaptopPlanRetentionFileVersions FileVersions { get; set; }
 

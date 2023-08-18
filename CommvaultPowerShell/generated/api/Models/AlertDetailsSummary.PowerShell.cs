@@ -73,6 +73,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CategoryName = (string) content.GetValueForProperty("CategoryName",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionId = (long?) content.GetValueForProperty("CriterionId",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionName = (string) content.GetValueForProperty("CriterionName",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionParamsList = (Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[]) content.GetValueForProperty("CriterionParamsList",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionParamsList, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams>(__y, Commvault.Powershell.Models.AlertDefinitionsCriteriaParamsTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -99,6 +100,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CategoryName = (string) content.GetValueForProperty("CategoryName",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionId = (long?) content.GetValueForProperty("CriterionId",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionName = (string) content.GetValueForProperty("CriterionName",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionParamsList = (Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams[]) content.GetValueForProperty("CriterionParamsList",((Commvault.Powershell.Models.IAlertDetailsSummaryInternal)this).CriterionParamsList, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAlertDefinitionsCriteriaParams>(__y, Commvault.Powershell.Models.AlertDefinitionsCriteriaParamsTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 

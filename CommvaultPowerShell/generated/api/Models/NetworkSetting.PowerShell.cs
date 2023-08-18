@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using Commvault.Powershell.Runtime.PowerShell;
 
-    /// <summary>NetworkSetting</summary>
+    /// <summary>The schema for mapping source network with destination network</summary>
     [System.ComponentModel.TypeConverter(typeof(NetworkSettingTypeConverter))]
     public partial class NetworkSetting
     {
@@ -94,6 +94,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.INetworkSettingInternal)this).Source = (string) content.GetValueForProperty("Source",((Commvault.Powershell.Models.INetworkSettingInternal)this).Source, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.INetworkSettingInternal)this).SourceId = (string) content.GetValueForProperty("SourceId",((Commvault.Powershell.Models.INetworkSettingInternal)this).SourceId, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.INetworkSettingInternal)this).Destination = (string) content.GetValueForProperty("Destination",((Commvault.Powershell.Models.INetworkSettingInternal)this).Destination, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -113,6 +114,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.INetworkSettingInternal)this).Source = (string) content.GetValueForProperty("Source",((Commvault.Powershell.Models.INetworkSettingInternal)this).Source, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.INetworkSettingInternal)this).SourceId = (string) content.GetValueForProperty("SourceId",((Commvault.Powershell.Models.INetworkSettingInternal)this).SourceId, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.INetworkSettingInternal)this).Destination = (string) content.GetValueForProperty("Destination",((Commvault.Powershell.Models.INetworkSettingInternal)this).Destination, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
@@ -122,7 +124,7 @@ namespace Commvault.Powershell.Models
         /// <returns>a <see cref="System.String" /> containing this model serialized to JSON text.</returns>
         public string ToJsonString() => ToJson(null, Commvault.Powershell.Runtime.SerializationMode.IncludeAll)?.ToString();
     }
-    /// NetworkSetting
+    /// The schema for mapping source network with destination network
     [System.ComponentModel.TypeConverter(typeof(NetworkSettingTypeConverter))]
     public partial interface INetworkSetting
 

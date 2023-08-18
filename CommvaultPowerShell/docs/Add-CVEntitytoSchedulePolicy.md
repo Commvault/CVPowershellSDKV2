@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://documentation.commvault.com/11.24/essential/48824_rest_api_post_schedule_policy_add_entity.html
 schema: 2.0.0
 ---
@@ -34,10 +34,8 @@ Method to add an entity to a schedule policy
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -45,10 +43,8 @@ Method to add an entity to a schedule policy
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 

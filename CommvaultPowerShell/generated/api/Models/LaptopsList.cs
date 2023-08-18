@@ -11,12 +11,6 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ILaptopsListInternal
     {
 
-        /// <summary>Backing field for <see cref="Laptops" /> property.</summary>
-        private Commvault.Powershell.Models.ILaptopsAdminConsole[] _laptops;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.ILaptopsAdminConsole[] Laptops { get => this._laptops; set => this._laptops = value; }
-
         /// <summary>Creates an new <see cref="LaptopsList" /> instance.</summary>
         public LaptopsList()
         {
@@ -27,20 +21,12 @@ namespace Commvault.Powershell.Models
     public partial interface ILaptopsList :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"laptops",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ILaptopsAdminConsole) })]
-        Commvault.Powershell.Models.ILaptopsAdminConsole[] Laptops { get; set; }
 
     }
     /// LaptopsList
     internal partial interface ILaptopsListInternal
 
     {
-        Commvault.Powershell.Models.ILaptopsAdminConsole[] Laptops { get; set; }
 
     }
 }

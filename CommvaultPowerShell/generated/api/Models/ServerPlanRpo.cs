@@ -21,6 +21,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IPlanSchedules BackupFrequency { get => (this._backupFrequency = this._backupFrequency ?? new Commvault.Powershell.Models.PlanSchedules()); set => this._backupFrequency = value; }
 
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupFrequencyOperationType { get => ((Commvault.Powershell.Models.IPlanSchedulesInternal)BackupFrequency).OperationType; set => ((Commvault.Powershell.Models.IPlanSchedulesInternal)BackupFrequency).OperationType = value ?? null; }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get => ((Commvault.Powershell.Models.IPlanSchedulesInternal)BackupFrequency).Schedules; set => ((Commvault.Powershell.Models.IPlanSchedulesInternal)BackupFrequency).Schedules = value ?? null /* arrayOf */; }
 
@@ -93,6 +97,15 @@ namespace Commvault.Powershell.Models
     public partial interface IServerPlanRpo :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Operation type for the list",
+        SerializedName = @"operationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupFrequencyOperationType { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
@@ -181,6 +194,8 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>PlanSchedules</summary>
         Commvault.Powershell.Models.IPlanSchedules BackupFrequency { get; set; }
+        /// <summary>Operation type for the list</summary>
+        string BackupFrequencyOperationType { get; set; }
 
         Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Backup window for incremental backup</summary>

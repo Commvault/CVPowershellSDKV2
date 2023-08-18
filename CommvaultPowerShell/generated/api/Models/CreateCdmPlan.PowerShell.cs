@@ -79,6 +79,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionUseDiskCacheForLogBackups = (bool?) content.GetValueForProperty("DatabaseOptionUseDiskCacheForLogBackups",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionUseDiskCacheForLogBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionCommitFrequencyInHours = (long?) content.GetValueForProperty("DatabaseOptionCommitFrequencyInHours",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionCommitFrequencyInHours, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencySchedules = (Commvault.Powershell.Models.IPlanSchedule[]) content.GetValueForProperty("BackupFrequencySchedules",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencySchedules, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSchedule>(__y, Commvault.Powershell.Models.PlanScheduleTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencyOperationType = (string) content.GetValueForProperty("BackupFrequencyOperationType",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencyOperationType, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -112,6 +113,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionUseDiskCacheForLogBackups = (bool?) content.GetValueForProperty("DatabaseOptionUseDiskCacheForLogBackups",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionUseDiskCacheForLogBackups, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionCommitFrequencyInHours = (long?) content.GetValueForProperty("DatabaseOptionCommitFrequencyInHours",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).DatabaseOptionCommitFrequencyInHours, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencySchedules = (Commvault.Powershell.Models.IPlanSchedule[]) content.GetValueForProperty("BackupFrequencySchedules",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencySchedules, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSchedule>(__y, Commvault.Powershell.Models.PlanScheduleTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencyOperationType = (string) content.GetValueForProperty("BackupFrequencyOperationType",((Commvault.Powershell.Models.ICreateCdmPlanInternal)this).BackupFrequencyOperationType, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

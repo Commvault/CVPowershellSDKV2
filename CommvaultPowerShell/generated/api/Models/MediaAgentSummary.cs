@@ -14,7 +14,7 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IMediaAgentSummaryInternal.Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set { {_company = value;} } }
 
         /// <summary>Internal Acessors for OperatingSystem</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IMediaAgentSummaryInternal.OperatingSystem { get => (this._operatingSystem = this._operatingSystem ?? new Commvault.Powershell.Models.IdName()); set { {_operatingSystem = value;} } }
+        Commvault.Powershell.Models.IIdNameType Commvault.Powershell.Models.IMediaAgentSummaryInternal.OperatingSystem { get => (this._operatingSystem = this._operatingSystem ?? new Commvault.Powershell.Models.IdNameType()); set { {_operatingSystem = value;} } }
 
         /// <summary>Backing field for <see cref="Company" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _company;
@@ -49,6 +49,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? Id { get => this._id; set => this._id = value; }
 
+        /// <summary>Backing field for <see cref="IsUnlicensedMa" /> property.</summary>
+        private bool? _isUnlicensedMa;
+
+        /// <summary>Used to determine if the MA is licensed or not.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsUnlicensedMa { get => this._isUnlicensedMa; set => this._isUnlicensedMa = value; }
+
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
@@ -65,17 +72,34 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string OfflineReason { get => this._offlineReason; set => this._offlineReason = value; }
 
+        /// <summary>Backing field for <see cref="OfflineReasonValue" /> property.</summary>
+        private long? _offlineReasonValue;
+
+        /// <summary>A flag for offline reason. Only given when the media agent is offline.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? OfflineReasonValue { get => this._offlineReasonValue; set => this._offlineReasonValue = value; }
+
         /// <summary>Backing field for <see cref="OperatingSystem" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _operatingSystem;
+        private Commvault.Powershell.Models.IIdNameType _operatingSystem;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName OperatingSystem { get => (this._operatingSystem = this._operatingSystem ?? new Commvault.Powershell.Models.IdName()); set => this._operatingSystem = value; }
+        internal Commvault.Powershell.Models.IIdNameType OperatingSystem { get => (this._operatingSystem = this._operatingSystem ?? new Commvault.Powershell.Models.IdNameType()); set => this._operatingSystem = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? OperatingSystemId { get => ((Commvault.Powershell.Models.IIdNameInternal)OperatingSystem).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)OperatingSystem).Id = value ?? default(long); }
+        public long? OperatingSystemId { get => ((Commvault.Powershell.Models.IIdNameTypeInternal)OperatingSystem).Id; set => ((Commvault.Powershell.Models.IIdNameTypeInternal)OperatingSystem).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string OperatingSystemName { get => ((Commvault.Powershell.Models.IIdNameInternal)OperatingSystem).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)OperatingSystem).Name = value ?? null; }
+        public string OperatingSystemName { get => ((Commvault.Powershell.Models.IIdNameTypeInternal)OperatingSystem).Name; set => ((Commvault.Powershell.Models.IIdNameTypeInternal)OperatingSystem).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string OperatingSystemType { get => ((Commvault.Powershell.Models.IIdNameTypeInternal)OperatingSystem).Type; set => ((Commvault.Powershell.Models.IIdNameTypeInternal)OperatingSystem).Type = value ?? null; }
+
+        /// <summary>Backing field for <see cref="ReleaseId" /> property.</summary>
+        private long? _releaseId;
+
+        /// <summary>Release version of the media agent.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? ReleaseId { get => this._releaseId; set => this._releaseId = value; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -139,6 +163,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? Id { get; set; }
+        /// <summary>Used to determine if the MA is licensed or not.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to determine if the MA is licensed or not.",
+        SerializedName = @"isUnlicensedMA",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsUnlicensedMa { get; set; }
         /// <summary>Name of the media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -157,6 +189,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"offlineReason",
         PossibleTypes = new [] { typeof(string) })]
         string OfflineReason { get; set; }
+        /// <summary>A flag for offline reason. Only given when the media agent is offline.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"A flag for offline reason. Only given when the media agent is offline.",
+        SerializedName = @"offlineReasonValue",
+        PossibleTypes = new [] { typeof(long) })]
+        long? OfflineReasonValue { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -173,6 +213,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string OperatingSystemName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"type",
+        PossibleTypes = new [] { typeof(string) })]
+        string OperatingSystemType { get; set; }
+        /// <summary>Release version of the media agent.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Release version of the media agent.",
+        SerializedName = @"releaseId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ReleaseId { get; set; }
         /// <summary>Current status of the media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -205,18 +261,26 @@ namespace Commvault.Powershell.Models
         string DisplayName { get; set; }
         /// <summary>Id of the media agent.</summary>
         long? Id { get; set; }
+        /// <summary>Used to determine if the MA is licensed or not.</summary>
+        bool? IsUnlicensedMa { get; set; }
         /// <summary>Name of the media agent.</summary>
         string Name { get; set; }
         /// <summary>
         /// Provides a reason for the media agent being offline. Only given when the media agent is offline.
         /// </summary>
         string OfflineReason { get; set; }
+        /// <summary>A flag for offline reason. Only given when the media agent is offline.</summary>
+        long? OfflineReasonValue { get; set; }
 
-        Commvault.Powershell.Models.IIdName OperatingSystem { get; set; }
+        Commvault.Powershell.Models.IIdNameType OperatingSystem { get; set; }
 
         long? OperatingSystemId { get; set; }
 
         string OperatingSystemName { get; set; }
+
+        string OperatingSystemType { get; set; }
+        /// <summary>Release version of the media agent.</summary>
+        long? ReleaseId { get; set; }
         /// <summary>Current status of the media agent.</summary>
         string Status { get; set; }
         /// <summary>The service pack of the media agent.</summary>

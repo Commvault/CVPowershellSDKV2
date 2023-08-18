@@ -24,6 +24,30 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string AuthenticationMethod { get => this._authenticationMethod; set => this._authenticationMethod = value; }
 
+        /// <summary>Backing field for <see cref="AuthenticationMethodServer" /> property.</summary>
+        private Commvault.Powershell.Models.IIdNameCompany _authenticationMethodServer;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdNameCompany AuthenticationMethodServer { get => (this._authenticationMethodServer = this._authenticationMethodServer ?? new Commvault.Powershell.Models.IdNameCompany()); set => this._authenticationMethodServer = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? AuthenticationMethodServerCompanyId { get => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).CompanyId; set => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).CompanyId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AuthenticationMethodServerCompanyName { get => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).CompanyName; set => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).CompanyName = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? AuthenticationMethodServerId { get => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).Id; set => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AuthenticationMethodServerName { get => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).Name; set => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).Name = value ?? null; }
+
+        /// <summary>Internal Acessors for AuthenticationMethodServer</summary>
+        Commvault.Powershell.Models.IIdNameCompany Commvault.Powershell.Models.IUserInternal.AuthenticationMethodServer { get => (this._authenticationMethodServer = this._authenticationMethodServer ?? new Commvault.Powershell.Models.IdNameCompany()); set { {_authenticationMethodServer = value;} } }
+
+        /// <summary>Internal Acessors for AuthenticationMethodServerCompany</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUserInternal.AuthenticationMethodServerCompany { get => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).Company; set => ((Commvault.Powershell.Models.IIdNameCompanyInternal)AuthenticationMethodServer).Company = value; }
+
         /// <summary>Internal Acessors for Company</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUserInternal.Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set { {_company = value;} } }
 
@@ -38,12 +62,6 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IIdName Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set => this._company = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? CompanyId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Description" /> property.</summary>
         private string _description;
@@ -80,6 +98,12 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? Id { get => this._id; set => this._id = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string IdName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? IdNameId { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Id = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="LastLoggedIn" /> property.</summary>
         private long? _lastLoggedIn;
@@ -174,7 +198,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? CompanyId { get; set; }
+        long? AuthenticationMethodServerCompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -182,7 +206,23 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string CompanyName { get; set; }
+        string AuthenticationMethodServerCompanyName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? AuthenticationMethodServerId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string AuthenticationMethodServerName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -231,6 +271,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? Id { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string IdName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? IdNameId { get; set; }
         /// <summary>
         /// Returns the most recent time the user was logged in. It is provided in unix format.
         /// </summary>
@@ -318,11 +374,19 @@ namespace Commvault.Powershell.Models
         /// <summary>Specifies authentication method used by user. Default value is Commcell.</summary>
         string AuthenticationMethod { get; set; }
 
+        Commvault.Powershell.Models.IIdNameCompany AuthenticationMethodServer { get; set; }
+
+        Commvault.Powershell.Models.IIdName AuthenticationMethodServerCompany { get; set; }
+
+        long? AuthenticationMethodServerCompanyId { get; set; }
+
+        string AuthenticationMethodServerCompanyName { get; set; }
+
+        long? AuthenticationMethodServerId { get; set; }
+
+        string AuthenticationMethodServerName { get; set; }
+
         Commvault.Powershell.Models.IIdName Company { get; set; }
-
-        long? CompanyId { get; set; }
-
-        string CompanyName { get; set; }
 
         string Description { get; set; }
 
@@ -335,6 +399,10 @@ namespace Commvault.Powershell.Models
         string Guid { get; set; }
 
         long? Id { get; set; }
+
+        string IdName { get; set; }
+
+        long? IdNameId { get; set; }
         /// <summary>
         /// Returns the most recent time the user was logged in. It is provided in unix format.
         /// </summary>

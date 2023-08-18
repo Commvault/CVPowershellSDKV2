@@ -72,6 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_schedules = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("schedules"), out var __jsonSchedules) ? If( __jsonSchedules as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPlanSchedule[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPlanSchedule) (Commvault.Powershell.Models.PlanSchedule.FromJson(__u) )) ))() : null : Schedules;}
+            {_operationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("operationType"), out var __jsonOperationType) ? (string)__jsonOperationType : (string)OperationType;}
             AfterFromJson(json);
         }
 
@@ -103,6 +104,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("schedules",__w);
             }
+            AddIf( null != (((object)this._operationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._operationType.ToString()) : null, "operationType" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

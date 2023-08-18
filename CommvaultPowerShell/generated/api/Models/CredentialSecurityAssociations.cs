@@ -33,6 +33,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string PermissionCategoryName { get => ((Commvault.Powershell.Models.IPermissionRespInternal)Permissions).CategoryName; set => ((Commvault.Powershell.Models.IPermissionRespInternal)Permissions).CategoryName = value ?? null; }
 
+        /// <summary>Flag to specify if this is included permission or excluded permission.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? PermissionExclude { get => ((Commvault.Powershell.Models.IPermissionRespInternal)Permissions).Exclude; set => ((Commvault.Powershell.Models.IPermissionRespInternal)Permissions).Exclude = value ?? default(bool); }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? PermissionId { get => ((Commvault.Powershell.Models.IPermissionRespInternal)Permissions).PermissionId; set => ((Commvault.Powershell.Models.IPermissionRespInternal)Permissions).PermissionId = value ?? default(long); }
 
@@ -112,6 +116,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"categoryName",
         PossibleTypes = new [] { typeof(string) })]
         string PermissionCategoryName { get; set; }
+        /// <summary>Flag to specify if this is included permission or excluded permission.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Flag to specify if this is included permission or excluded permission.",
+        SerializedName = @"exclude",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? PermissionExclude { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -180,6 +192,8 @@ namespace Commvault.Powershell.Models
         long? PermissionCategoryId { get; set; }
 
         string PermissionCategoryName { get; set; }
+        /// <summary>Flag to specify if this is included permission or excluded permission.</summary>
+        bool? PermissionExclude { get; set; }
 
         long? PermissionId { get; set; }
 

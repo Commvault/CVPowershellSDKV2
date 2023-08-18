@@ -94,6 +94,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DisplayLabel = (string) content.GetValueForProperty("DisplayLabel",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DisplayLabel, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Description, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).AcceptableValues = (string[]) content.GetValueForProperty("AcceptableValues",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).AcceptableValues, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DefaultValue = (string) content.GetValueForProperty("DefaultValue",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DefaultValue, global::System.Convert.ToString);
@@ -123,6 +124,7 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DisplayLabel = (string) content.GetValueForProperty("DisplayLabel",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DisplayLabel, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Description = (string) content.GetValueForProperty("Description",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).Description, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).AcceptableValues = (string[]) content.GetValueForProperty("AcceptableValues",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).AcceptableValues, __y => TypeConverterExtensions.SelectToArray<string>(__y, global::System.Convert.ToString));
             ((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DefaultValue = (string) content.GetValueForProperty("DefaultValue",((Commvault.Powershell.Models.IGlobalSettingsItemInternal)this).DefaultValue, global::System.Convert.ToString);

@@ -16,26 +16,11 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string BackupCopyInterface { get => this._backupCopyInterface; set => this._backupCopyInterface = value; }
 
-        /// <summary>Internal Acessors for CrossAccountCopyDestinationClient</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISnapCopyInfoInternal.CrossAccountCopyDestinationClient { get => (this._crossAccountCopyDestinationClient = this._crossAccountCopyDestinationClient ?? new Commvault.Powershell.Models.IdName()); set { {_crossAccountCopyDestinationClient = value;} } }
-
         /// <summary>Internal Acessors for SnapEngine</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISnapCopyInfoInternal.SnapEngine { get => (this._snapEngine = this._snapEngine ?? new Commvault.Powershell.Models.IdName()); set { {_snapEngine = value;} } }
 
         /// <summary>Internal Acessors for SnapMountProxy</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISnapCopyInfoInternal.SnapMountProxy { get => (this._snapMountProxy = this._snapMountProxy ?? new Commvault.Powershell.Models.IdName()); set { {_snapMountProxy = value;} } }
-
-        /// <summary>Backing field for <see cref="CrossAccountCopyDestinationClient" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _crossAccountCopyDestinationClient;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName CrossAccountCopyDestinationClient { get => (this._crossAccountCopyDestinationClient = this._crossAccountCopyDestinationClient ?? new Commvault.Powershell.Models.IdName()); set => this._crossAccountCopyDestinationClient = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? CrossAccountCopyDestinationClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Id = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CrossAccountCopyDestinationClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)CrossAccountCopyDestinationClient).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="EnableHardwareSnapshot" /> property.</summary>
         private bool? _enableHardwareSnapshot;
@@ -43,23 +28,6 @@ namespace Commvault.Powershell.Models
         /// <summary>True if hardware snapshot is enabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? EnableHardwareSnapshot { get => this._enableHardwareSnapshot; set => this._enableHardwareSnapshot = value; }
-
-        /// <summary>Backing field for <see cref="IsCrossAccountCopyEnabled" /> property.</summary>
-        private bool? _isCrossAccountCopyEnabled;
-
-        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool? IsCrossAccountCopyEnabled { get => this._isCrossAccountCopyEnabled; set => this._isCrossAccountCopyEnabled = value; }
-
-        /// <summary>Backing field for <see cref="IsCrossAccountEnabled" /> property.</summary>
-        private bool? _isCrossAccountEnabled;
-
-        /// <summary>
-        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
-        /// is enabled
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool? IsCrossAccountEnabled { get => this._isCrossAccountEnabled; set => this._isCrossAccountEnabled = value; }
 
         /// <summary>Backing field for <see cref="IsIndependentDisksEnabled" /> property.</summary>
         private bool? _isIndependentDisksEnabled;
@@ -136,22 +104,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"backupCopyInterface",
         PossibleTypes = new [] { typeof(string) })]
         string BackupCopyInterface { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? CrossAccountCopyDestinationClientId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string CrossAccountCopyDestinationClientName { get; set; }
         /// <summary>True if hardware snapshot is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -160,25 +112,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enableHardwareSnapshot",
         PossibleTypes = new [] { typeof(bool) })]
         bool? EnableHardwareSnapshot { get; set; }
-        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if full copy of amazon snapshot to different amazon account is enabled",
-        SerializedName = @"isCrossAccountCopyEnabled",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? IsCrossAccountCopyEnabled { get; set; }
-        /// <summary>
-        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
-        /// is enabled
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled",
-        SerializedName = @"isCrossAccountEnabled",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? IsCrossAccountEnabled { get; set; }
         /// <summary>True if independent disk option is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -257,21 +190,8 @@ namespace Commvault.Powershell.Models
 
     {
         string BackupCopyInterface { get; set; }
-
-        Commvault.Powershell.Models.IIdName CrossAccountCopyDestinationClient { get; set; }
-
-        long? CrossAccountCopyDestinationClientId { get; set; }
-
-        string CrossAccountCopyDestinationClientName { get; set; }
         /// <summary>True if hardware snapshot is enabled</summary>
         bool? EnableHardwareSnapshot { get; set; }
-        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
-        bool? IsCrossAccountCopyEnabled { get; set; }
-        /// <summary>
-        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
-        /// is enabled
-        /// </summary>
-        bool? IsCrossAccountEnabled { get; set; }
         /// <summary>True if independent disk option is enabled</summary>
         bool? IsIndependentDisksEnabled { get; set; }
         /// <summary>True if raw device maps option is enabled</summary>

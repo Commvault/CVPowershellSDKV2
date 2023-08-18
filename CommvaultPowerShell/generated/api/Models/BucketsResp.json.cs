@@ -61,9 +61,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_bucket = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("bucket"), out var __jsonBucket) ? Commvault.Powershell.Models.IdName.FromJson(__jsonBucket) : Bucket;}
             {_configuration = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("configuration"), out var __jsonConfiguration) ? Commvault.Powershell.Models.CloudBucketConfiguration.FromJson(__jsonConfiguration) : Configuration;}
-            {_cloudBucket = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("cloudBucket"), out var __jsonCloudBucket) ? (string)__jsonCloudBucket : (string)CloudBucket;}
+            {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
+            {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_cloudAccessPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("cloudAccessPaths"), out var __jsonCloudAccessPaths) ? If( __jsonCloudAccessPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ICloudAccessPathsResp[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ICloudAccessPathsResp) (Commvault.Powershell.Models.CloudAccessPathsResp.FromJson(__u) )) ))() : null : CloudAccessPaths;}
             AfterFromJson(json);
         }
@@ -97,9 +97,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._bucket ? (Commvault.Powershell.Runtime.Json.JsonNode) this._bucket.ToJson(null,serializationMode) : null, "bucket" ,container.Add );
             AddIf( null != this._configuration ? (Commvault.Powershell.Runtime.Json.JsonNode) this._configuration.ToJson(null,serializationMode) : null, "configuration" ,container.Add );
-            AddIf( null != (((object)this._cloudBucket)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._cloudBucket.ToString()) : null, "cloudBucket" ,container.Add );
+            AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
+            AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             if (null != this._cloudAccessPaths)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

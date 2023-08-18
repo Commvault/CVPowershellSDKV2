@@ -11,6 +11,21 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ILaptopOwnerMappingInternal
     {
 
+        /// <summary>Internal Acessors for Error</summary>
+        Commvault.Powershell.Models.IGenericResp Commvault.Powershell.Models.ILaptopOwnerMappingInternal.Error { get => (this._error = this._error ?? new Commvault.Powershell.Models.GenericResp()); set { {_error = value;} } }
+
+        /// <summary>Backing field for <see cref="Error" /> property.</summary>
+        private Commvault.Powershell.Models.IGenericResp _error;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IGenericResp Error { get => (this._error = this._error ?? new Commvault.Powershell.Models.GenericResp()); set => this._error = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ErrorCode { get => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorCode; set => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorCode = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ErrorMessage { get => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage; set => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage = value ?? null; }
+
         /// <summary>Backing field for <see cref="LaptopOwnerMapping1" /> property.</summary>
         private Commvault.Powershell.Models.ILaptopOwnerInfo[] _laptopOwnerMapping1;
 
@@ -31,6 +46,22 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
+        SerializedName = @"errorCode",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ErrorCode { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"errorMessage",
+        PossibleTypes = new [] { typeof(string) })]
+        string ErrorMessage { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
         SerializedName = @"laptopOwnerMapping",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ILaptopOwnerInfo) })]
         Commvault.Powershell.Models.ILaptopOwnerInfo[] LaptopOwnerMapping1 { get; set; }
@@ -40,6 +71,12 @@ namespace Commvault.Powershell.Models
     internal partial interface ILaptopOwnerMappingInternal
 
     {
+        Commvault.Powershell.Models.IGenericResp Error { get; set; }
+
+        long? ErrorCode { get; set; }
+
+        string ErrorMessage { get; set; }
+
         Commvault.Powershell.Models.ILaptopOwnerInfo[] LaptopOwnerMapping1 { get; set; }
 
     }

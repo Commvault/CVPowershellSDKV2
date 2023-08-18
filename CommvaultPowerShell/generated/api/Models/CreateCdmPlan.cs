@@ -17,6 +17,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.ICreatePlanBackupDestination[] BackupDestinations { get => this._backupDestinations; set => this._backupDestinations = value; }
 
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupFrequencyOperationType { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencyOperationType; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencyOperationType = value ?? null; }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencySchedules; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencySchedules = value ?? null /* arrayOf */; }
 
@@ -122,6 +126,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"backupDestinations",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICreatePlanBackupDestination) })]
         Commvault.Powershell.Models.ICreatePlanBackupDestination[] BackupDestinations { get; set; }
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Operation type for the list",
+        SerializedName = @"operationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupFrequencyOperationType { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -223,6 +235,8 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Copy destinations for the plan. Specify where you want to store your data.</summary>
         Commvault.Powershell.Models.ICreatePlanBackupDestination[] BackupDestinations { get; set; }
+        /// <summary>Operation type for the list</summary>
+        string BackupFrequencyOperationType { get; set; }
 
         Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Commit frequency in hours</summary>

@@ -72,6 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
+            {_client = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("client"), out var __jsonClient) ? Commvault.Powershell.Models.IdName.FromJson(__jsonClient) : Client;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long)__jsonId : Id;}
             {_serialNumber = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("serialNumber"), out var __jsonSerialNumber) ? (string)__jsonSerialNumber : (string)SerialNumber;}
             {_laptopName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("laptopName"), out var __jsonLaptopName) ? (string)__jsonLaptopName : (string)LaptopName;}
@@ -79,6 +80,7 @@ namespace Commvault.Powershell.Models
             {_ownerEmail = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("ownerEmail"), out var __jsonOwnerEmail) ? (string)__jsonOwnerEmail : (string)OwnerEmail;}
             {_ownerUpn = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("ownerUPN"), out var __jsonOwnerUpn) ? (string)__jsonOwnerUpn : (string)OwnerUpn;}
             {_oSType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("osType"), out var __jsonOSType) ? (string)__jsonOSType : (string)OSType;}
+            {_configured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("configured"), out var __jsonConfigured) ? (bool?)__jsonConfigured : Configured;}
             AfterFromJson(json);
         }
 
@@ -102,6 +104,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
+            AddIf( null != this._client ? (Commvault.Powershell.Runtime.Json.JsonNode) this._client.ToJson(null,serializationMode) : null, "client" ,container.Add );
             AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber(this._id), "id" ,container.Add );
             AddIf( null != (((object)this._serialNumber)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._serialNumber.ToString()) : null, "serialNumber" ,container.Add );
             AddIf( null != (((object)this._laptopName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._laptopName.ToString()) : null, "laptopName" ,container.Add );
@@ -109,6 +112,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._ownerEmail)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._ownerEmail.ToString()) : null, "ownerEmail" ,container.Add );
             AddIf( null != (((object)this._ownerUpn)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._ownerUpn.ToString()) : null, "ownerUPN" ,container.Add );
             AddIf( null != (((object)this._oSType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oSType.ToString()) : null, "osType" ,container.Add );
+            AddIf( null != this._configured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._configured) : null, "configured" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

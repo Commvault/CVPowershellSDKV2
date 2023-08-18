@@ -38,6 +38,20 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Addons</summary>
         Commvault.Powershell.Models.IPlanAddons Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal.Addons { get => (this._addons = this._addons ?? new Commvault.Powershell.Models.PlanAddons()); set { {_addons = value;} } }
 
+        /// <summary>Backing field for <see cref="Rpo" /> property.</summary>
+        private long? _rpo;
+
+        /// <summary>The least RPO in minutes for the plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? Rpo { get => this._rpo; set => this._rpo = value; }
+
+        /// <summary>Backing field for <see cref="Status" /> property.</summary>
+        private string _status;
+
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Status { get => this._status; set => this._status = value; }
+
         /// <summary>Creates an new <see cref="PlanAdditionalProperties" /> instance.</summary>
         public PlanAdditionalProperties()
         {
@@ -87,6 +101,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"snapStatus",
         PossibleTypes = new [] { typeof(string) })]
         string AddonSnapStatus { get; set; }
+        /// <summary>The least RPO in minutes for the plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The least RPO in minutes for the plan",
+        SerializedName = @"RPO",
+        PossibleTypes = new [] { typeof(long) })]
+        long? Rpo { get; set; }
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"status if plan backups are enabled or disabled",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string Status { get; set; }
 
     }
     internal partial interface IPlanAdditionalPropertiesInternal
@@ -104,6 +134,10 @@ namespace Commvault.Powershell.Models
         string AddonSnapStatus { get; set; }
 
         Commvault.Powershell.Models.IPlanAddons Addons { get; set; }
+        /// <summary>The least RPO in minutes for the plan</summary>
+        long? Rpo { get; set; }
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        string Status { get; set; }
 
     }
 }

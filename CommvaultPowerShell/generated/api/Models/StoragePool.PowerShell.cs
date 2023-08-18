@@ -96,6 +96,8 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IStoragePoolInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IStoragePoolInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStoragePoolInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IStoragePoolInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IStoragePoolInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IStoragePoolInternal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IStoragePoolInternal)this).RetentionPeriodDays = (long?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.IStoragePoolInternal)this).RetentionPeriodDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IStoragePoolInternal)this).WormStoragePoolFlag = (long?) content.GetValueForProperty("WormStoragePoolFlag",((Commvault.Powershell.Models.IStoragePoolInternal)this).WormStoragePoolFlag, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -116,6 +118,8 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IStoragePoolInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IStoragePoolInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IStoragePoolInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IStoragePoolInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IStoragePoolInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IStoragePoolInternal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IStoragePoolInternal)this).RetentionPeriodDays = (long?) content.GetValueForProperty("RetentionPeriodDays",((Commvault.Powershell.Models.IStoragePoolInternal)this).RetentionPeriodDays, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IStoragePoolInternal)this).WormStoragePoolFlag = (long?) content.GetValueForProperty("WormStoragePoolFlag",((Commvault.Powershell.Models.IStoragePoolInternal)this).WormStoragePoolFlag, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

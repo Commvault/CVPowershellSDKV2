@@ -44,9 +44,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? UnixIsDisabled { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).IsDisabled; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).IsDisabled = value ?? default(bool); }
 
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? UnixIsUnc { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).IsUnc; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).IsUnc = value ?? default(bool); }
+        public bool? UnixIsLocal { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).IsLocal; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Unix).IsLocal = value ?? default(bool); }
 
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -74,9 +74,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? WindowIsDisabled { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).IsDisabled; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).IsDisabled = value ?? default(bool); }
 
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? WindowIsUnc { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).IsUnc; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).IsUnc = value ?? default(bool); }
+        public bool? WindowIsLocal { get => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).IsLocal; set => ((Commvault.Powershell.Models.IValidationScriptInternal)Windows).IsLocal = value ?? default(bool); }
 
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -129,14 +129,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isDisabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? UnixIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"True if the script is a UNC script, False if it is a local script",
-        SerializedName = @"isUNC",
+        Description = @"True if the script is local",
+        SerializedName = @"isLocal",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? UnixIsUnc { get; set; }
+        bool? UnixIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -193,14 +193,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isDisabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? WindowIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"True if the script is a UNC script, False if it is a local script",
-        SerializedName = @"isUNC",
+        Description = @"True if the script is local",
+        SerializedName = @"isLocal",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? WindowIsUnc { get; set; }
+        bool? WindowIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -253,8 +253,8 @@ namespace Commvault.Powershell.Models
         string UnixArguments { get; set; }
         /// <summary>Is the script disabled</summary>
         bool? UnixIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
-        bool? UnixIsUnc { get; set; }
+        /// <summary>True if the script is local</summary>
+        bool? UnixIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         string UnixPath { get; set; }
         /// <summary>username to access the network path</summary>
@@ -273,8 +273,8 @@ namespace Commvault.Powershell.Models
         string WindowArguments { get; set; }
         /// <summary>Is the script disabled</summary>
         bool? WindowIsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
-        bool? WindowIsUnc { get; set; }
+        /// <summary>True if the script is local</summary>
+        bool? WindowIsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         string WindowPath { get; set; }
 

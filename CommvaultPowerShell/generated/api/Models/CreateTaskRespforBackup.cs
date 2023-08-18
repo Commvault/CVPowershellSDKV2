@@ -12,10 +12,11 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="JobIds" /> property.</summary>
-        private Commvault.Powershell.Models.IAny[] _jobIds;
+        private string[] _jobIds;
 
+        /// <summary>JobIds for the immediate run request</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IAny[] JobIds { get => this._jobIds; set => this._jobIds = value; }
+        public string[] JobIds { get => this._jobIds; set => this._jobIds = value; }
 
         /// <summary>Backing field for <see cref="TaskId" /> property.</summary>
         private long? _taskId;
@@ -33,13 +34,14 @@ namespace Commvault.Powershell.Models
     public partial interface ICreateTaskRespforBackup :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>JobIds for the immediate run request</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"JobIds for the immediate run request",
         SerializedName = @"jobIds",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAny) })]
-        Commvault.Powershell.Models.IAny[] JobIds { get; set; }
+        PossibleTypes = new [] { typeof(string) })]
+        string[] JobIds { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -54,7 +56,8 @@ namespace Commvault.Powershell.Models
     internal partial interface ICreateTaskRespforBackupInternal
 
     {
-        Commvault.Powershell.Models.IAny[] JobIds { get; set; }
+        /// <summary>JobIds for the immediate run request</summary>
+        string[] JobIds { get; set; }
 
         long? TaskId { get; set; }
 

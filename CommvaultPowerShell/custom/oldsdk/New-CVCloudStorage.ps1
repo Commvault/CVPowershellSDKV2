@@ -11,6 +11,7 @@ function New-CVCloudStorage{
     [OutputType([PSCustomObject])]
     param(
         [Parameter(Mandatory=$True)]
+        [ValidateNotNullorEmpty()]
         [Hashtable] $Properties
         )
     begin {Write-Debug "$($MyInvocation.MyCommand): begin"

@@ -13,7 +13,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="TapeList" /> property.</summary>
         private Commvault.Powershell.Models.ITapeSummary[] _tapeList;
 
-        /// <summary>Returns list of tapes</summary>
+        /// <summary>List of tapes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.ITapeSummary[] TapeList { get => this._tapeList; set => this._tapeList = value; }
 
@@ -26,11 +26,11 @@ namespace Commvault.Powershell.Models
     public partial interface ITapeListResp :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        /// <summary>Returns list of tapes</summary>
+        /// <summary>List of tapes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Returns list of tapes",
+        Description = @"List of tapes",
         SerializedName = @"tapeList",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ITapeSummary) })]
         Commvault.Powershell.Models.ITapeSummary[] TapeList { get; set; }
@@ -39,7 +39,7 @@ namespace Commvault.Powershell.Models
     internal partial interface ITapeListRespInternal
 
     {
-        /// <summary>Returns list of tapes</summary>
+        /// <summary>List of tapes</summary>
         Commvault.Powershell.Models.ITapeSummary[] TapeList { get; set; }
 
     }

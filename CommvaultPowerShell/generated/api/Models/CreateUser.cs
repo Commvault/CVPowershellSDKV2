@@ -38,6 +38,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Email { get => this._email; set => this._email = value; }
 
+        /// <summary>Backing field for <see cref="ExternalProviderId" /> property.</summary>
+        private long? _externalProviderId;
+
+        /// <summary>
+        /// Please provide this entity only when creating an AD user. Not needed for local and company users.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? ExternalProviderId { get => this._externalProviderId; set => this._externalProviderId = value; }
+
         /// <summary>Backing field for <see cref="FullName" /> property.</summary>
         private string _fullName;
 
@@ -142,6 +151,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"email",
         PossibleTypes = new [] { typeof(string) })]
         string Email { get; set; }
+        /// <summary>
+        /// Please provide this entity only when creating an AD user. Not needed for local and company users.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Please provide this entity only when creating an AD user. Not needed for local and company users.",
+        SerializedName = @"externalProviderId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExternalProviderId { get; set; }
         /// <summary>Used to provide a name to the new user.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -236,6 +255,10 @@ namespace Commvault.Powershell.Models
         /// are compulsory for company and local users and optional for external users.
         /// </summary>
         string Email { get; set; }
+        /// <summary>
+        /// Please provide this entity only when creating an AD user. Not needed for local and company users.
+        /// </summary>
+        long? ExternalProviderId { get; set; }
         /// <summary>Used to provide a name to the new user.</summary>
         string FullName { get; set; }
         /// <summary>

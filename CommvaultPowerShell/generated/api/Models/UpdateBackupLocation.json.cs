@@ -84,8 +84,9 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._mediaAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mediaAgent.ToJson(null,serializationMode) : null, "mediaAgent" ,container.Add );
             AddIf( null != this._credentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._credentials.ToJson(null,serializationMode) : null, "credentials" ,container.Add );
             AddIf( null != this._savedCredentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._savedCredentials.ToJson(null,serializationMode) : null, "savedCredentials" ,container.Add );
+            AddIf( null != this._configuration ? (Commvault.Powershell.Runtime.Json.JsonNode) this._configuration.ToJson(null,serializationMode) : null, "configuration" ,container.Add );
             AddIf( null != (((object)this._access)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._access.ToString()) : null, "access" ,container.Add );
-            AddIf( null != (((object)this._path)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._path.ToString()) : null, "path" ,container.Add );
+            AddIf( null != (((object)this._backupLocation)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._backupLocation.ToString()) : null, "backupLocation" ,container.Add );
             AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
             AfterToJson(ref container);
             return container;
@@ -106,8 +107,9 @@ namespace Commvault.Powershell.Models
             {_mediaAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mediaAgent"), out var __jsonMediaAgent) ? Commvault.Powershell.Models.IdName.FromJson(__jsonMediaAgent) : MediaAgent;}
             {_credentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("credentials"), out var __jsonCredentials) ? Commvault.Powershell.Models.UserNamePassword.FromJson(__jsonCredentials) : Credentials;}
             {_savedCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("savedCredentials"), out var __jsonSavedCredentials) ? Commvault.Powershell.Models.IdName.FromJson(__jsonSavedCredentials) : SavedCredentials;}
+            {_configuration = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("configuration"), out var __jsonConfiguration) ? Commvault.Powershell.Models.DiskStorageConfiguration.FromJson(__jsonConfiguration) : Configuration;}
             {_access = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("access"), out var __jsonAccess) ? (string)__jsonAccess : (string)Access;}
-            {_path = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("path"), out var __jsonPath) ? (string)__jsonPath : (string)Path;}
+            {_backupLocation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("backupLocation"), out var __jsonBackupLocation) ? (string)__jsonBackupLocation : (string)BackupLocation;}
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
             AfterFromJson(json);
         }

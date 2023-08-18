@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>Used to get a list of existing companies</summary>
+    /// <summary>List of existing companies</summary>
     public partial class CompanyListResponse
     {
 
@@ -62,6 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_companies = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("companies"), out var __jsonCompanies) ? If( __jsonCompanies as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ICompanySummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ICompanySummary) (Commvault.Powershell.Models.CompanySummary.FromJson(__u) )) ))() : null : Companies;}
+            {_companyCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("companyCount"), out var __jsonCompanyCount) ? (long?)__jsonCompanyCount : CompanyCount;}
             AfterFromJson(json);
         }
 
@@ -103,6 +104,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("companies",__w);
             }
+            AddIf( null != this._companyCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._companyCount) : null, "companyCount" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

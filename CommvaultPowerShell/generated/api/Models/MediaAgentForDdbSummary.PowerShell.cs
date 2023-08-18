@@ -103,6 +103,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).SimosId = (long?) content.GetValueForProperty("SimosId",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).SimosId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured = (bool?) content.GetValueForProperty("IsDdbSubclientConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType = (string) content.GetValueForProperty("OSType",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured = (bool?) content.GetValueForProperty("IsConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
         }
 
@@ -127,6 +128,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).SimosId = (long?) content.GetValueForProperty("SimosId",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).SimosId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured = (bool?) content.GetValueForProperty("IsDdbSubclientConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType = (string) content.GetValueForProperty("OSType",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured = (bool?) content.GetValueForProperty("IsConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);
         }
 

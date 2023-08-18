@@ -49,6 +49,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Description { get => this._description; set => this._description = value; }
 
+        /// <summary>Backing field for <see cref="DisplayLabel" /> property.</summary>
+        private string _displayLabel;
+
+        /// <summary>Display Label of the setting</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string DisplayLabel { get => this._displayLabel; set => this._displayLabel = value; }
+
         /// <summary>Backing field for <see cref="IsModified" /> property.</summary>
         private bool? _isModified;
 
@@ -159,6 +166,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"description",
         PossibleTypes = new [] { typeof(string) })]
         string Description { get; set; }
+        /// <summary>Display Label of the setting</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Display Label of the setting",
+        SerializedName = @"displayLabel",
+        PossibleTypes = new [] { typeof(string) })]
+        string DisplayLabel { get; set; }
         /// <summary>Specifies if the setting is already modified by the user</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -242,6 +257,8 @@ namespace Commvault.Powershell.Models
         string DefaultValue { get; set; }
         /// <summary>Description of the setting</summary>
         string Description { get; set; }
+        /// <summary>Display Label of the setting</summary>
+        string DisplayLabel { get; set; }
         /// <summary>Specifies if the setting is already modified by the user</summary>
         bool? IsModified { get; set; }
         /// <summary>

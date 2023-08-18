@@ -10,6 +10,69 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IBackupLocationDetailsInternal
     {
 
+        /// <summary>Backing field for <see cref="Access" /> property.</summary>
+        private string _access;
+
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Access { get => this._access; set => this._access = value; }
+
+        /// <summary>Backing field for <see cref="BackupLocation" /> property.</summary>
+        private string _backupLocation;
+
+        /// <summary>backup location path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string BackupLocation { get => this._backupLocation; set => this._backupLocation = value; }
+
+        /// <summary>Internal Acessors for Configuration</summary>
+        Commvault.Powershell.Models.IDiskStorageConfiguration Commvault.Powershell.Models.IBackupLocationDetailsInternal.Configuration { get => (this._configuration = this._configuration ?? new Commvault.Powershell.Models.DiskStorageConfiguration()); set { {_configuration = value;} } }
+
+        /// <summary>Internal Acessors for Credentials</summary>
+        Commvault.Powershell.Models.ICredentialUserName Commvault.Powershell.Models.IBackupLocationDetailsInternal.Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.CredentialUserName()); set { {_credentials = value;} } }
+
+        /// <summary>Internal Acessors for MediaAgent</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IBackupLocationDetailsInternal.MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set { {_mediaAgent = value;} } }
+
+        /// <summary>Internal Acessors for SavedCredentials</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IBackupLocationDetailsInternal.SavedCredentials { get => (this._savedCredentials = this._savedCredentials ?? new Commvault.Powershell.Models.IdName()); set { {_savedCredentials = value;} } }
+
+        /// <summary>Backing field for <see cref="Configuration" /> property.</summary>
+        private Commvault.Powershell.Models.IDiskStorageConfiguration _configuration;
+
+        /// <summary>
+        /// While adding network access path, please add credentials or saved credentials. If both are provided, credentials will
+        /// be selected.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IDiskStorageConfiguration Configuration { get => (this._configuration = this._configuration ?? new Commvault.Powershell.Models.DiskStorageConfiguration()); set => this._configuration = value; }
+
+        /// <summary>
+        /// Used to determine if backup location has to be disabled or enabled for future backups
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? ConfigurationDisableBackupLocationforFutureBackups { get => ((Commvault.Powershell.Models.IDiskStorageConfigurationInternal)Configuration).DisableBackupLocationforFutureBackups; set => ((Commvault.Powershell.Models.IDiskStorageConfigurationInternal)Configuration).DisableBackupLocationforFutureBackups = value ?? default(bool); }
+
+        /// <summary>Used to enable or disable backup location</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? ConfigurationEnableBackupLocation { get => ((Commvault.Powershell.Models.IDiskStorageConfigurationInternal)Configuration).EnableBackupLocation; set => ((Commvault.Powershell.Models.IDiskStorageConfigurationInternal)Configuration).EnableBackupLocation = value ?? default(bool); }
+
+        /// <summary>Used to determine if the backup location has to be prepared for retirement</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? ConfigurationPrepareForRetirement { get => ((Commvault.Powershell.Models.IDiskStorageConfigurationInternal)Configuration).PrepareForRetirement; set => ((Commvault.Powershell.Models.IDiskStorageConfigurationInternal)Configuration).PrepareForRetirement = value ?? default(bool); }
+
+        /// <summary>Backing field for <see cref="Credentials" /> property.</summary>
+        private Commvault.Powershell.Models.ICredentialUserName _credentials;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.ICredentialUserName Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.CredentialUserName()); set => this._credentials = value; }
+
+        /// <summary>Name of the backup location</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string CredentialsName { get => ((Commvault.Powershell.Models.ICredentialUserNameInternal)Credentials).Name; set => ((Commvault.Powershell.Models.ICredentialUserNameInternal)Credentials).Name = value ?? null; }
+
         /// <summary>Backing field for <see cref="DiskAccessPaths" /> property.</summary>
         private Commvault.Powershell.Models.IAccessPathDetails[] _diskAccessPaths;
 
@@ -17,12 +80,56 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IAccessPathDetails[] DiskAccessPaths { get => this._diskAccessPaths; set => this._diskAccessPaths = value; }
 
+        /// <summary>Backing field for <see cref="Enabled" /> property.</summary>
+        private bool? _enabled;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Enabled { get => this._enabled; set => this._enabled = value; }
+
         /// <summary>Backing field for <see cref="FreeSpace" /> property.</summary>
         private long? _freeSpace;
 
         /// <summary>total free space on the backup location</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? FreeSpace { get => this._freeSpace; set => this._freeSpace = value; }
+
+        /// <summary>Backing field for <see cref="Id" /> property.</summary>
+        private long? _id;
+
+        /// <summary>Id of the backup location</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? Id { get => this._id; set => this._id = value; }
+
+        /// <summary>Backing field for <see cref="MediaAgent" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _mediaAgent;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set => this._mediaAgent = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MediaAgentName { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="Name" /> property.</summary>
+        private string _name;
+
+        /// <summary>Name of the backup location</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Name { get => this._name; set => this._name = value; }
+
+        /// <summary>Backing field for <see cref="SavedCredentials" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _savedCredentials;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName SavedCredentials { get => (this._savedCredentials = this._savedCredentials ?? new Commvault.Powershell.Models.IdName()); set => this._savedCredentials = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SavedCredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SavedCredentials).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="TotalCapacity" /> property.</summary>
         private long? _totalCapacity;
@@ -40,6 +147,59 @@ namespace Commvault.Powershell.Models
     public partial interface IBackupLocationDetails :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path allowed).",
+        SerializedName = @"access",
+        PossibleTypes = new [] { typeof(string) })]
+        string Access { get; set; }
+        /// <summary>backup location path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"backup location path",
+        SerializedName = @"backupLocation",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupLocation { get; set; }
+        /// <summary>
+        /// Used to determine if backup location has to be disabled or enabled for future backups
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to determine if backup location has to be disabled or enabled for future backups",
+        SerializedName = @"disableBackupLocationforFutureBackups",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? ConfigurationDisableBackupLocationforFutureBackups { get; set; }
+        /// <summary>Used to enable or disable backup location</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to enable or disable backup location",
+        SerializedName = @"enableBackupLocation",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? ConfigurationEnableBackupLocation { get; set; }
+        /// <summary>Used to determine if the backup location has to be prepared for retirement</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to determine if the backup location has to be prepared for retirement",
+        SerializedName = @"prepareForRetirement",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? ConfigurationPrepareForRetirement { get; set; }
+        /// <summary>Name of the backup location</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the backup location",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string CredentialsName { get; set; }
         /// <summary>access paths available on the backup location</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -48,6 +208,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"diskAccessPaths",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAccessPathDetails) })]
         Commvault.Powershell.Models.IAccessPathDetails[] DiskAccessPaths { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"enabled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Enabled { get; set; }
         /// <summary>total free space on the backup location</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -56,6 +224,54 @@ namespace Commvault.Powershell.Models
         SerializedName = @"freeSpace",
         PossibleTypes = new [] { typeof(long) })]
         long? FreeSpace { get; set; }
+        /// <summary>Id of the backup location</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of the backup location",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MediaAgentId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string MediaAgentName { get; set; }
+        /// <summary>Name of the backup location</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the backup location",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string Name { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SavedCredentialsId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string SavedCredentialsName { get; set; }
         /// <summary>total capacity of the backup location</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -69,10 +285,52 @@ namespace Commvault.Powershell.Models
     internal partial interface IBackupLocationDetailsInternal
 
     {
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
+        /// </summary>
+        string Access { get; set; }
+        /// <summary>backup location path</summary>
+        string BackupLocation { get; set; }
+        /// <summary>
+        /// While adding network access path, please add credentials or saved credentials. If both are provided, credentials will
+        /// be selected.
+        /// </summary>
+        Commvault.Powershell.Models.IDiskStorageConfiguration Configuration { get; set; }
+        /// <summary>
+        /// Used to determine if backup location has to be disabled or enabled for future backups
+        /// </summary>
+        bool? ConfigurationDisableBackupLocationforFutureBackups { get; set; }
+        /// <summary>Used to enable or disable backup location</summary>
+        bool? ConfigurationEnableBackupLocation { get; set; }
+        /// <summary>Used to determine if the backup location has to be prepared for retirement</summary>
+        bool? ConfigurationPrepareForRetirement { get; set; }
+
+        Commvault.Powershell.Models.ICredentialUserName Credentials { get; set; }
+        /// <summary>Name of the backup location</summary>
+        string CredentialsName { get; set; }
         /// <summary>access paths available on the backup location</summary>
         Commvault.Powershell.Models.IAccessPathDetails[] DiskAccessPaths { get; set; }
+
+        bool? Enabled { get; set; }
         /// <summary>total free space on the backup location</summary>
         long? FreeSpace { get; set; }
+        /// <summary>Id of the backup location</summary>
+        long? Id { get; set; }
+
+        Commvault.Powershell.Models.IIdName MediaAgent { get; set; }
+
+        long? MediaAgentId { get; set; }
+
+        string MediaAgentName { get; set; }
+        /// <summary>Name of the backup location</summary>
+        string Name { get; set; }
+
+        Commvault.Powershell.Models.IIdName SavedCredentials { get; set; }
+
+        long? SavedCredentialsId { get; set; }
+
+        string SavedCredentialsName { get; set; }
         /// <summary>total capacity of the backup location</summary>
         long? TotalCapacity { get; set; }
 

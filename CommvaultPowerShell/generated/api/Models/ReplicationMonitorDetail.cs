@@ -106,6 +106,14 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IReplicationMonitorDetailSummary Summary { get => (this._summary = this._summary ?? new Commvault.Powershell.Models.ReplicationMonitorDetailSummary()); set => this._summary = value; }
 
+        /// <summary>additional description of current pair status</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SummaryEventMessage { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).EventMessage; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).EventMessage = value ?? null; }
+
+        /// <summary>Id of replication pair</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SummaryId { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).Id; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).Id = value ?? default(long); }
+
         /// <summary>Gives information about the recovery type of replication group</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SummaryRecoveryType { get => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).RecoveryType; set => ((Commvault.Powershell.Models.IReplicationMonitorDetailSummaryInternal)Summary).RecoveryType = value ?? null; }
@@ -253,6 +261,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"statistics",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IReplicationMonitorDetailStats) })]
         Commvault.Powershell.Models.IReplicationMonitorDetailStats[] Statistics { get; set; }
+        /// <summary>additional description of current pair status</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"additional description of current pair status",
+        SerializedName = @"eventMessage",
+        PossibleTypes = new [] { typeof(string) })]
+        string SummaryEventMessage { get; set; }
+        /// <summary>Id of replication pair</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Id of replication pair",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SummaryId { get; set; }
         /// <summary>Gives information about the recovery type of replication group</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -326,6 +350,10 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IReplicationMonitorDetailSummary Summary { get; set; }
 
         Commvault.Powershell.Models.IIdName SummaryDestination { get; set; }
+        /// <summary>additional description of current pair status</summary>
+        string SummaryEventMessage { get; set; }
+        /// <summary>Id of replication pair</summary>
+        long? SummaryId { get; set; }
         /// <summary>Gives information about the recovery type of replication group</summary>
         string SummaryRecoveryType { get; set; }
         /// <summary>Lag time in seconds</summary>

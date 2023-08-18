@@ -37,11 +37,28 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Endpointurl { get => this._endpointurl; set => this._endpointurl = value; }
 
+        /// <summary>Create an application group etcd (system generated) with pre-defined content</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IEtcdProtectionItem EtcdProtection { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtection; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtection = value; }
+
+        /// <summary>Denote if etcd protection is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? EtcdProtectionEnabled { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionEnabled; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionEnabled = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IIdName EtcdProtectionPlan { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionPlan; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).EtcdProtectionPlan = value; }
+
         /// <summary>Backing field for <see cref="HypervisorType" /> property.</summary>
         private string _hypervisorType= @"KUBERNETES";
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string HypervisorType { get => this._hypervisorType; }
+
+        /// <summary>Backing field for <see cref="K8ServiceType" /> property.</summary>
+        private string _k8ServiceType;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string K8ServiceType { get => this._k8ServiceType; set => this._k8ServiceType = value; }
 
         /// <summary>The name of the hypervisor group being created</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -53,6 +70,21 @@ namespace Commvault.Powershell.Models
         /// <summary>Username to connect in case authentication mode is Username and password</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Password { get => this._password; set => this._password = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IIdName PlanEntity { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntity; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntity = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public long? PlanEntityId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityId = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public string PlanEntityName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanEntityName = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public long? PlanId { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanId; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanId = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public string PlanName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).PlanName = value; }
 
         /// <summary>Backing field for <see cref="SecretKey" /> property.</summary>
         private string _secretKey;
@@ -117,6 +149,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"hypervisorType",
         PossibleTypes = new [] { typeof(string) })]
         string HypervisorType { get;  }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"k8ServiceType",
+        PossibleTypes = new [] { typeof(string) })]
+        string K8ServiceType { get; set; }
         /// <summary>Username to connect in case authentication mode is Username and password</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -158,6 +198,8 @@ namespace Commvault.Powershell.Models
         string Endpointurl { get; set; }
 
         string HypervisorType { get; set; }
+
+        string K8ServiceType { get; set; }
         /// <summary>Username to connect in case authentication mode is Username and password</summary>
         string Password { get; set; }
         /// <summary>SecretKey to connect in case authentication mode is service account</summary>

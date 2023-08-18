@@ -22,8 +22,13 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.ICloudStorageProxy __cloudStorageProxy = new Commvault.Powershell.Models.CloudStorageProxy();
 
         /// <summary>
-        /// The access type for the cloud access path can be either read (writing to path not allowed) or read and write (writing
-        /// to path allowed)
+        /// Backing field for Inherited model <see cref= "Commvault.Powershell.Models.IModifyCloudBucketConfiguration" />
+        /// </summary>
+        private Commvault.Powershell.Models.IModifyCloudBucketConfiguration __modifyCloudBucketConfiguration = new Commvault.Powershell.Models.ModifyCloudBucketConfiguration();
+
+        /// <summary>
+        /// The access type for the access path can be either read (writing to path not allowed) or read and write (writing to path
+        /// allowed).
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string Access { get => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Access; set => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Access = value; }
@@ -48,6 +53,33 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Credentials</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHuaweiBucketContentInternal.Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.IdName()); set { {_credentials = value;} } }
 
+        /// <summary>Internal Acessors for MediaAgent</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IHuaweiBucketContentInternal.MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set { {_mediaAgent = value;} } }
+
+        /// <summary>CloudBucketConfiguration</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.ICloudBucketConfiguration Configuration { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).Configuration; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).Configuration = value; }
+
+        /// <summary>
+        /// When true, prevents new data writes to backup location by changing number of writers to zero
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? ConfigurationDisableBackupLocationForFutureBackups { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationDisableBackupLocationForFutureBackups; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationDisableBackupLocationForFutureBackups = value; }
+
+        /// <summary>When true, means mount path is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? ConfigurationEnable { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationEnable; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationEnable = value; }
+
+        /// <summary>
+        /// When true, the deduplicated blocks in the mount path will not be referenced when there are multiple mount paths in the
+        /// library.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public bool? ConfigurationPrepareForRetirement { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationPrepareForRetirement; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationPrepareForRetirement = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IIdName ConfigurationStorageAcceleratorCredentials { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationStorageAcceleratorCredentials; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).ConfigurationStorageAcceleratorCredentials = value; }
+
         /// <summary>Backing field for <see cref="Credentials" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _credentials;
 
@@ -60,18 +92,21 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name = value ?? null; }
 
-        /// <summary>Backing field for <see cref="DeduplicationDbLocation" /> property.</summary>
-        private string _deduplicationDbLocation;
-
-        /// <summary>
-        /// To enable deduplication on this storage, provide path of the Deduplication database (DDB)
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string DeduplicationDbLocation { get => this._deduplicationDbLocation; set => this._deduplicationDbLocation = value; }
-
         /// <summary>Enable/Disable access of bucket to a media Agent</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public bool? Enable { get => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Enable; set => ((Commvault.Powershell.Models.ICloudStorageAdvancedInternal)__cloudStorageAdvanced).Enable = value; }
+
+        /// <summary>Backing field for <see cref="MediaAgent" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _mediaAgent;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName MediaAgent { get => (this._mediaAgent = this._mediaAgent ?? new Commvault.Powershell.Models.IdName()); set => this._mediaAgent = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MediaAgentId { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MediaAgentName { get => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)MediaAgent).Name = value ?? null; }
 
         /// <summary>Password for proxy configuration (Should be in Base64 format)</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -96,6 +131,12 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ServiceHost { get => this._serviceHost; set => this._serviceHost = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public long? StorageAcceleratorCredentialsId { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsId; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsId = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public string StorageAcceleratorCredentialsName { get => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsName; set => ((Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal)__modifyCloudBucketConfiguration).StorageAcceleratorCredentialsName = value; }
 
         /// <summary>Backing field for <see cref="StorageClass" /> property.</summary>
         private string _storageClass;
@@ -126,13 +167,16 @@ namespace Commvault.Powershell.Models
             await eventListener.AssertObjectIsValid(nameof(__cloudStorageProxy), __cloudStorageProxy);
             await eventListener.AssertNotNull(nameof(__cloudStorageAdvanced), __cloudStorageAdvanced);
             await eventListener.AssertObjectIsValid(nameof(__cloudStorageAdvanced), __cloudStorageAdvanced);
+            await eventListener.AssertNotNull(nameof(__modifyCloudBucketConfiguration), __modifyCloudBucketConfiguration);
+            await eventListener.AssertObjectIsValid(nameof(__modifyCloudBucketConfiguration), __modifyCloudBucketConfiguration);
         }
     }
     /// Huawei Object Storage
     public partial interface IHuaweiBucketContent :
         Commvault.Powershell.Runtime.IJsonSerializable,
         Commvault.Powershell.Models.ICloudStorageProxy,
-        Commvault.Powershell.Models.ICloudStorageAdvanced
+        Commvault.Powershell.Models.ICloudStorageAdvanced,
+        Commvault.Powershell.Models.IModifyCloudBucketConfiguration
     {
         /// <summary>Name of bucket</summary>
         [Commvault.Powershell.Runtime.Info(
@@ -166,16 +210,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CredentialsName { get; set; }
-        /// <summary>
-        /// To enable deduplication on this storage, provide path of the Deduplication database (DDB)
-        /// </summary>
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"To enable deduplication on this storage, provide path of the Deduplication database (DDB)",
-        SerializedName = @"deduplicationDBLocation",
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MediaAgentId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string DeduplicationDbLocation { get; set; }
+        string MediaAgentName { get; set; }
         /// <summary>
         /// IP address or fully qualified domain name or URL for the cloud library based on cloud vendor
         /// </summary>
@@ -199,7 +249,8 @@ namespace Commvault.Powershell.Models
     /// Huawei Object Storage
     internal partial interface IHuaweiBucketContentInternal :
         Commvault.Powershell.Models.ICloudStorageProxyInternal,
-        Commvault.Powershell.Models.ICloudStorageAdvancedInternal
+        Commvault.Powershell.Models.ICloudStorageAdvancedInternal,
+        Commvault.Powershell.Models.IModifyCloudBucketConfigurationInternal
     {
         /// <summary>Name of bucket</summary>
         string Bucket { get; set; }
@@ -211,10 +262,12 @@ namespace Commvault.Powershell.Models
         long? CredentialsId { get; set; }
 
         string CredentialsName { get; set; }
-        /// <summary>
-        /// To enable deduplication on this storage, provide path of the Deduplication database (DDB)
-        /// </summary>
-        string DeduplicationDbLocation { get; set; }
+
+        Commvault.Powershell.Models.IIdName MediaAgent { get; set; }
+
+        long? MediaAgentId { get; set; }
+
+        string MediaAgentName { get; set; }
         /// <summary>
         /// IP address or fully qualified domain name or URL for the cloud library based on cloud vendor
         /// </summary>

@@ -102,9 +102,16 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentials = (Commvault.Powershell.Models.IVMGuestCredentials) content.GetValueForProperty("GuestCredentials",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentials, Commvault.Powershell.Models.VMGuestCredentialsTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredential = (Commvault.Powershell.Models.IVMExistingCredential) content.GetValueForProperty("ExistingCredential",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredential, Commvault.Powershell.Models.VMExistingCredentialTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Guid = (string) content.GetValueForProperty("Guid",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Guid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialAssocId = (long?) content.GetValueForProperty("GuestCredentialAssocId",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialAssocId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsUserName = (string) content.GetValueForProperty("GuestCredentialsUserName",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsUserName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsPassword = (string) content.GetValueForProperty("GuestCredentialsPassword",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsPassword, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialId = (long?) content.GetValueForProperty("ExistingCredentialId",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialName = (string) content.GetValueForProperty("ExistingCredentialName",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -122,9 +129,16 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentials = (Commvault.Powershell.Models.IVMGuestCredentials) content.GetValueForProperty("GuestCredentials",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentials, Commvault.Powershell.Models.VMGuestCredentialsTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredential = (Commvault.Powershell.Models.IVMExistingCredential) content.GetValueForProperty("ExistingCredential",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredential, Commvault.Powershell.Models.VMExistingCredentialTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Guid = (string) content.GetValueForProperty("Guid",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Guid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialAssocId = (long?) content.GetValueForProperty("GuestCredentialAssocId",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialAssocId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsUserName = (string) content.GetValueForProperty("GuestCredentialsUserName",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsUserName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsPassword = (string) content.GetValueForProperty("GuestCredentialsPassword",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).GuestCredentialsPassword, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialId = (long?) content.GetValueForProperty("ExistingCredentialId",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialName = (string) content.GetValueForProperty("ExistingCredentialName",((Commvault.Powershell.Models.IVirtualMachinecontentInternal)this).ExistingCredentialName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
     }

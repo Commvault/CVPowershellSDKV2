@@ -82,38 +82,31 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._storage ? (Commvault.Powershell.Runtime.Json.JsonNode) this._storage.ToJson(null,serializationMode) : null, "storage" ,container.Add );
             AddIf( null != this._filters ? (Commvault.Powershell.Runtime.Json.JsonNode) this._filters.ToJson(null,serializationMode) : null, "filters" ,container.Add );
-            AddIf( null != this._settings ? (Commvault.Powershell.Runtime.Json.JsonNode) this._settings.ToJson(null,serializationMode) : null, "settings" ,container.Add );
+            AddIf( null != this._diskFilters ? (Commvault.Powershell.Runtime.Json.JsonNode) this._diskFilters.ToJson(null,serializationMode) : null, "diskFilters" ,container.Add );
             AddIf( null != this._snapshotManagement ? (Commvault.Powershell.Runtime.Json.JsonNode) this._snapshotManagement.ToJson(null,serializationMode) : null, "snapshotManagement" ,container.Add );
             AddIf( null != this._activityControl ? (Commvault.Powershell.Runtime.Json.JsonNode) this._activityControl.ToJson(null,serializationMode) : null, "activityControl" ,container.Add );
+            AddIf( null != this._meditechSystems ? (Commvault.Powershell.Runtime.Json.JsonNode) this._meditechSystems.ToJson(null,serializationMode) : null, "meditechSystems" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
-            if (null != this._diskFilters)
+            if (null != this._securityAssociations)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._diskFilters )
+                foreach( var __x in this._securityAssociations )
                 {
                     AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
                 }
-                container.Add("diskFilters",__w);
-            }
-            if (null != this._securityAssociations)
-            {
-                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __s in this._securityAssociations )
-                {
-                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
-                }
-                container.Add("securityAssociations",__r);
+                container.Add("securityAssociations",__w);
             }
             AddIf( null != this._enableFileIndexing ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableFileIndexing) : null, "enableFileIndexing" ,container.Add );
             if (null != this._accessNode)
             {
-                var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __n in this._accessNode )
+                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __s in this._accessNode )
                 {
-                    AddIf(__n?.ToJson(null, serializationMode) ,__m.Add);
+                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
                 }
-                container.Add("accessNode",__m);
+                container.Add("accessNode",__r);
             }
+            AddIf( null != this._settings ? (Commvault.Powershell.Runtime.Json.JsonNode) this._settings.ToJson(null,serializationMode) : null, "settings" ,container.Add );
             AddIf( null != this._applicationValidation ? (Commvault.Powershell.Runtime.Json.JsonNode) this._applicationValidation.ToJson(null,serializationMode) : null, "applicationValidation" ,container.Add );
             AfterToJson(ref container);
             return container;
@@ -135,14 +128,15 @@ namespace Commvault.Powershell.Models
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_storage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("storage"), out var __jsonStorage) ? Commvault.Powershell.Models.IdName.FromJson(__jsonStorage) : Storage;}
             {_filters = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("filters"), out var __jsonFilters) ? Commvault.Powershell.Models.VMContent.FromJson(__jsonFilters) : Filters;}
-            {_settings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("settings"), out var __jsonSettings) ? Commvault.Powershell.Models.VMGroupSettings.FromJson(__jsonSettings) : Settings;}
+            {_diskFilters = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("diskFilters"), out var __jsonDiskFilters) ? Commvault.Powershell.Models.VMDiskFilterProp.FromJson(__jsonDiskFilters) : DiskFilters;}
             {_snapshotManagement = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("snapshotManagement"), out var __jsonSnapshotManagement) ? Commvault.Powershell.Models.SnapCopyInfo.FromJson(__jsonSnapshotManagement) : SnapshotManagement;}
             {_activityControl = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("activityControl"), out var __jsonActivityControl) ? Commvault.Powershell.Models.ActivityControlOptions.FromJson(__jsonActivityControl) : ActivityControl;}
+            {_meditechSystems = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("meditechSystems"), out var __jsonMeditechSystems) ? Commvault.Powershell.Models.MeditechPropResp.FromJson(__jsonMeditechSystems) : MeditechSystems;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
-            {_diskFilters = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("diskFilters"), out var __jsonDiskFilters) ? If( __jsonDiskFilters as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IVMDiskFilter[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IVMDiskFilter) (Commvault.Powershell.Models.VMDiskFilter.FromJson(__u) )) ))() : null : DiskFilters;}
-            {_securityAssociations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("securityAssociations"), out var __jsonSecurityAssociations) ? If( __jsonSecurityAssociations as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.ISecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.ISecurityAssoc) (Commvault.Powershell.Models.SecurityAssoc.FromJson(__p) )) ))() : null : SecurityAssociations;}
+            {_securityAssociations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("securityAssociations"), out var __jsonSecurityAssociations) ? If( __jsonSecurityAssociations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ISecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ISecurityAssoc) (Commvault.Powershell.Models.SecurityAssoc.FromJson(__u) )) ))() : null : SecurityAssociations;}
             {_enableFileIndexing = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableFileIndexing"), out var __jsonEnableFileIndexing) ? (bool?)__jsonEnableFileIndexing : EnableFileIndexing;}
-            {_accessNode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNode"), out var __jsonAccessNode) ? If( __jsonAccessNode as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : AccessNode;}
+            {_accessNode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNode"), out var __jsonAccessNode) ? If( __jsonAccessNode as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__p) )) ))() : null : AccessNode;}
+            {_settings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("settings"), out var __jsonSettings) ? Commvault.Powershell.Models.VMGroupSettings.FromJson(__jsonSettings) : Settings;}
             {_applicationValidation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("applicationValidation"), out var __jsonApplicationValidation) ? Commvault.Powershell.Models.VMAppValidation.FromJson(__jsonApplicationValidation) : ApplicationValidation;}
             AfterFromJson(json);
         }

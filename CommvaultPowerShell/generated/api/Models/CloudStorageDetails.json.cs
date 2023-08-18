@@ -62,7 +62,12 @@ namespace Commvault.Powershell.Models
                 return;
             }
             __idName = new Commvault.Powershell.Models.IdName(json);
-            __cloudStorageDetailsObject = new Commvault.Powershell.Models.CloudStorageDetailsObject(json);
+            {_general = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("general"), out var __jsonGeneral) ? Commvault.Powershell.Models.CloudStorageGeneralInfo.FromJson(__jsonGeneral) : General;}
+            {_encryption = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("encryption"), out var __jsonEncryption) ? Commvault.Powershell.Models.Encryption.FromJson(__jsonEncryption) : Encryption;}
+            {_cacheConfigurations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("cacheConfigurations"), out var __jsonCacheConfigurations) ? Commvault.Powershell.Models.CacheConfigurations.FromJson(__jsonCacheConfigurations) : CacheConfigurations;}
+            {_bucket = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("bucket"), out var __jsonBucket) ? If( __jsonBucket as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdNameStatus[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdNameStatus) (Commvault.Powershell.Models.IdNameStatus.FromJson(__u) )) ))() : null : Bucket;}
+            {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("security"), out var __jsonSecurity) ? If( __jsonSecurity as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.ISecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.ISecurityAssoc) (Commvault.Powershell.Models.SecurityAssoc.FromJson(__p) )) ))() : null : Security;}
+            {_associatedPlans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("associatedPlans"), out var __jsonAssociatedPlans) ? If( __jsonAssociatedPlans as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : AssociatedPlans;}
             AfterFromJson(json);
         }
 
@@ -96,7 +101,36 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             __idName?.ToJson(container, serializationMode);
-            __cloudStorageDetailsObject?.ToJson(container, serializationMode);
+            AddIf( null != this._general ? (Commvault.Powershell.Runtime.Json.JsonNode) this._general.ToJson(null,serializationMode) : null, "general" ,container.Add );
+            AddIf( null != this._encryption ? (Commvault.Powershell.Runtime.Json.JsonNode) this._encryption.ToJson(null,serializationMode) : null, "encryption" ,container.Add );
+            AddIf( null != this._cacheConfigurations ? (Commvault.Powershell.Runtime.Json.JsonNode) this._cacheConfigurations.ToJson(null,serializationMode) : null, "cacheConfigurations" ,container.Add );
+            if (null != this._bucket)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._bucket )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("bucket",__w);
+            }
+            if (null != this._security)
+            {
+                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __s in this._security )
+                {
+                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
+                }
+                container.Add("security",__r);
+            }
+            if (null != this._associatedPlans)
+            {
+                var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __n in this._associatedPlans )
+                {
+                    AddIf(__n?.ToJson(null, serializationMode) ,__m.Add);
+                }
+                container.Add("associatedPlans",__m);
+            }
             AfterToJson(ref container);
             return container;
         }

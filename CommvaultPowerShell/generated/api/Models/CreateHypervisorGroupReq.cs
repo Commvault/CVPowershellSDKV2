@@ -20,6 +20,15 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Credentials</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal.Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.IdName()); set { {_credentials = value;} } }
 
+        /// <summary>Internal Acessors for EtcdProtection</summary>
+        Commvault.Powershell.Models.IEtcdProtectionItem Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal.EtcdProtection { get => (this._etcdProtection = this._etcdProtection ?? new Commvault.Powershell.Models.EtcdProtectionItem()); set { {_etcdProtection = value;} } }
+
+        /// <summary>Internal Acessors for EtcdProtectionPlan</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal.EtcdProtectionPlan { get => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).Plan; set => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).Plan = value; }
+
+        /// <summary>Internal Acessors for PlanEntity</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal.PlanEntity { get => (this._planEntity = this._planEntity ?? new Commvault.Powershell.Models.IdName()); set { {_planEntity = value;} } }
+
         /// <summary>Backing field for <see cref="Credentials" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _credentials;
 
@@ -32,12 +41,41 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name = value ?? null; }
 
+        /// <summary>Backing field for <see cref="EtcdProtection" /> property.</summary>
+        private Commvault.Powershell.Models.IEtcdProtectionItem _etcdProtection;
+
+        /// <summary>Create an application group etcd (system generated) with pre-defined content</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IEtcdProtectionItem EtcdProtection { get => (this._etcdProtection = this._etcdProtection ?? new Commvault.Powershell.Models.EtcdProtectionItem()); set => this._etcdProtection = value; }
+
+        /// <summary>Denote if etcd protection is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? EtcdProtectionEnabled { get => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).Enabled; set => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).Enabled = value ?? default(bool); }
+
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
         /// <summary>The name of the hypervisor group being created</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
+
+        /// <summary>Backing field for <see cref="PlanEntity" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _planEntity;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName PlanEntity { get => (this._planEntity = this._planEntity ?? new Commvault.Powershell.Models.IdName()); set => this._planEntity = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? PlanEntityId { get => ((Commvault.Powershell.Models.IIdNameInternal)PlanEntity).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)PlanEntity).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string PlanEntityName { get => ((Commvault.Powershell.Models.IIdNameInternal)PlanEntity).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)PlanEntity).Name = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? PlanId { get => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).PlanId; set => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).PlanId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string PlanName { get => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).PlanName; set => ((Commvault.Powershell.Models.IEtcdProtectionItemInternal)EtcdProtection).PlanName = value ?? null; }
 
         /// <summary>Backing field for <see cref="SkipCredentialValidation" /> property.</summary>
         private bool? _skipCredentialValidation;
@@ -79,6 +117,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CredentialsName { get; set; }
+        /// <summary>Denote if etcd protection is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Denote if etcd protection is enabled",
+        SerializedName = @"enabled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EtcdProtectionEnabled { get; set; }
         /// <summary>The name of the hypervisor group being created</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -87,6 +133,38 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanEntityId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string PlanEntityName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlanId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string PlanName { get; set; }
         /// <summary>if credential validation has to be skipped.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -108,8 +186,24 @@ namespace Commvault.Powershell.Models
         long? CredentialsId { get; set; }
 
         string CredentialsName { get; set; }
+        /// <summary>Create an application group etcd (system generated) with pre-defined content</summary>
+        Commvault.Powershell.Models.IEtcdProtectionItem EtcdProtection { get; set; }
+        /// <summary>Denote if etcd protection is enabled</summary>
+        bool? EtcdProtectionEnabled { get; set; }
+
+        Commvault.Powershell.Models.IIdName EtcdProtectionPlan { get; set; }
         /// <summary>The name of the hypervisor group being created</summary>
         string Name { get; set; }
+
+        Commvault.Powershell.Models.IIdName PlanEntity { get; set; }
+
+        long? PlanEntityId { get; set; }
+
+        string PlanEntityName { get; set; }
+
+        long? PlanId { get; set; }
+
+        string PlanName { get; set; }
         /// <summary>if credential validation has to be skipped.</summary>
         bool? SkipCredentialValidation { get; set; }
 

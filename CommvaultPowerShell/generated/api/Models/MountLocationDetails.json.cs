@@ -71,8 +71,11 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_mountPath = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mountPath"), out var __jsonMountPath) ? Commvault.Powershell.Models.IdName.FromJson(__jsonMountPath) : MountPath;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
-            {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
+            {_dataServerType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("dataServerType"), out var __jsonDataServerType) ? (string)__jsonDataServerType : (string)DataServerType;}
+            {_deviceId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("deviceId"), out var __jsonDeviceId) ? (long?)__jsonDeviceId : DeviceId;}
             AfterFromJson(json);
         }
 
@@ -95,8 +98,11 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._mountPath ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mountPath.ToJson(null,serializationMode) : null, "mountPath" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
-            AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
+            AddIf( null != (((object)this._dataServerType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._dataServerType.ToString()) : null, "dataServerType" ,container.Add );
+            AddIf( null != this._deviceId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._deviceId) : null, "deviceId" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

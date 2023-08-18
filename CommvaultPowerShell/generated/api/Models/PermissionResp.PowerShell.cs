@@ -102,6 +102,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId = (long?) content.GetValueForProperty("CategoryId",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName = (string) content.GetValueForProperty("CategoryName",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPermissionRespInternal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IPermissionRespInternal)this).Exclude = (bool?) content.GetValueForProperty("Exclude",((Commvault.Powershell.Models.IPermissionRespInternal)this).Exclude, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
         }
 
@@ -124,6 +125,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId = (long?) content.GetValueForProperty("CategoryId",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName = (string) content.GetValueForProperty("CategoryName",((Commvault.Powershell.Models.IPermissionRespInternal)this).CategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPermissionRespInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IPermissionRespInternal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IPermissionRespInternal)this).Exclude = (bool?) content.GetValueForProperty("Exclude",((Commvault.Powershell.Models.IPermissionRespInternal)this).Exclude, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);
         }
 

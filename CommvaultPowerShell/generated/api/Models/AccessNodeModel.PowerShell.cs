@@ -66,6 +66,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Type = (long?) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Type, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
@@ -86,6 +87,7 @@ namespace Commvault.Powershell.Models
             // actually deserialize
             ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).DisplayName = (string) content.GetValueForProperty("DisplayName",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).DisplayName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Type = (long?) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAccessNodeModelInternal)this).Type, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }

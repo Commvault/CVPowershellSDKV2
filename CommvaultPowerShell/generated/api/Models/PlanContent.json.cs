@@ -71,15 +71,22 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_windowsNumberOfDataReaders = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("windowsNumberOfDataReaders"), out var __jsonWindowsNumberOfDataReaders) ? Commvault.Powershell.Models.PlanContentDataReaders.FromJson(__jsonWindowsNumberOfDataReaders) : WindowsNumberOfDataReaders;}
+            {_unixNumberOfDataReaders = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("unixNumberOfDataReaders"), out var __jsonUnixNumberOfDataReaders) ? Commvault.Powershell.Models.PlanContentDataReaders.FromJson(__jsonUnixNumberOfDataReaders) : UnixNumberOfDataReaders;}
+            {_macNumberOfDataReaders = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("macNumberOfDataReaders"), out var __jsonMacNumberOfDataReaders) ? Commvault.Powershell.Models.PlanContentDataReaders.FromJson(__jsonMacNumberOfDataReaders) : MacNumberOfDataReaders;}
             {_windowsIncludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("windowsIncludedPaths"), out var __jsonWindowsIncludedPaths) ? If( __jsonWindowsIncludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : WindowsIncludedPaths;}
             {_windowsExcludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("windowsExcludedPaths"), out var __jsonWindowsExcludedPaths) ? If( __jsonWindowsExcludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(string) (__p is Commvault.Powershell.Runtime.Json.JsonString __o ? (string)(__o.ToString()) : null)) ))() : null : WindowsExcludedPaths;}
+            {_windowsFilterToExcludePaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("windowsFilterToExcludePaths"), out var __jsonWindowsFilterToExcludePaths) ? If( __jsonWindowsFilterToExcludePaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(string) (__k is Commvault.Powershell.Runtime.Json.JsonString __j ? (string)(__j.ToString()) : null)) ))() : null : WindowsFilterToExcludePaths;}
             {_backupSystemState = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("backupSystemState"), out var __jsonBackupSystemState) ? (bool?)__jsonBackupSystemState : BackupSystemState;}
             {_backupSystemStateOnlyWithFullBackup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("backupSystemStateOnlyWithFullBackup"), out var __jsonBackupSystemStateOnlyWithFullBackup) ? (bool?)__jsonBackupSystemStateOnlyWithFullBackup : BackupSystemStateOnlyWithFullBackup;}
             {_useVssForSystemState = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useVSSForSystemState"), out var __jsonUseVssForSystemState) ? (bool?)__jsonUseVssForSystemState : UseVssForSystemState;}
-            {_macIncludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("macIncludedPaths"), out var __jsonMacIncludedPaths) ? If( __jsonMacIncludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(string) (__k is Commvault.Powershell.Runtime.Json.JsonString __j ? (string)(__j.ToString()) : null)) ))() : null : MacIncludedPaths;}
-            {_macExcludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("macExcludedPaths"), out var __jsonMacExcludedPaths) ? If( __jsonMacExcludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(string) (__f is Commvault.Powershell.Runtime.Json.JsonString __e ? (string)(__e.ToString()) : null)) ))() : null : MacExcludedPaths;}
-            {_unixIncludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("unixIncludedPaths"), out var __jsonUnixIncludedPaths) ? If( __jsonUnixIncludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __b) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__b, (__a)=>(string) (__a is Commvault.Powershell.Runtime.Json.JsonString ___z ? (string)(___z.ToString()) : null)) ))() : null : UnixIncludedPaths;}
-            {_unixExcludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("unixExcludedPaths"), out var __jsonUnixExcludedPaths) ? If( __jsonUnixExcludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var ___w) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___w, (___v)=>(string) (___v is Commvault.Powershell.Runtime.Json.JsonString ___u ? (string)(___u.ToString()) : null)) ))() : null : UnixExcludedPaths;}
+            {_macIncludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("macIncludedPaths"), out var __jsonMacIncludedPaths) ? If( __jsonMacIncludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(string) (__f is Commvault.Powershell.Runtime.Json.JsonString __e ? (string)(__e.ToString()) : null)) ))() : null : MacIncludedPaths;}
+            {_macExcludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("macExcludedPaths"), out var __jsonMacExcludedPaths) ? If( __jsonMacExcludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var __b) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__b, (__a)=>(string) (__a is Commvault.Powershell.Runtime.Json.JsonString ___z ? (string)(___z.ToString()) : null)) ))() : null : MacExcludedPaths;}
+            {_macFilterToExcludePaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("macFilterToExcludePaths"), out var __jsonMacFilterToExcludePaths) ? If( __jsonMacFilterToExcludePaths as Commvault.Powershell.Runtime.Json.JsonArray, out var ___w) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___w, (___v)=>(string) (___v is Commvault.Powershell.Runtime.Json.JsonString ___u ? (string)(___u.ToString()) : null)) ))() : null : MacFilterToExcludePaths;}
+            {_unixIncludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("unixIncludedPaths"), out var __jsonUnixIncludedPaths) ? If( __jsonUnixIncludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var ___r) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___r, (___q)=>(string) (___q is Commvault.Powershell.Runtime.Json.JsonString ___p ? (string)(___p.ToString()) : null)) ))() : null : UnixIncludedPaths;}
+            {_unixExcludedPaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("unixExcludedPaths"), out var __jsonUnixExcludedPaths) ? If( __jsonUnixExcludedPaths as Commvault.Powershell.Runtime.Json.JsonArray, out var ___m) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___m, (___l)=>(string) (___l is Commvault.Powershell.Runtime.Json.JsonString ___k ? (string)(___k.ToString()) : null)) ))() : null : UnixExcludedPaths;}
+            {_unixFilterToExcludePaths = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("unixFilterToExcludePaths"), out var __jsonUnixFilterToExcludePaths) ? If( __jsonUnixFilterToExcludePaths as Commvault.Powershell.Runtime.Json.JsonArray, out var ___h) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(___h, (___g)=>(string) (___g is Commvault.Powershell.Runtime.Json.JsonString ___f ? (string)(___f.ToString()) : null)) ))() : null : UnixFilterToExcludePaths;}
+            {_forceUpdateProperties = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("forceUpdateProperties"), out var __jsonForceUpdateProperties) ? (bool?)__jsonForceUpdateProperties : ForceUpdateProperties;}
             AfterFromJson(json);
         }
 
@@ -102,6 +109,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._windowsNumberOfDataReaders ? (Commvault.Powershell.Runtime.Json.JsonNode) this._windowsNumberOfDataReaders.ToJson(null,serializationMode) : null, "windowsNumberOfDataReaders" ,container.Add );
+            AddIf( null != this._unixNumberOfDataReaders ? (Commvault.Powershell.Runtime.Json.JsonNode) this._unixNumberOfDataReaders.ToJson(null,serializationMode) : null, "unixNumberOfDataReaders" ,container.Add );
+            AddIf( null != this._macNumberOfDataReaders ? (Commvault.Powershell.Runtime.Json.JsonNode) this._macNumberOfDataReaders.ToJson(null,serializationMode) : null, "macNumberOfDataReaders" ,container.Add );
             if (null != this._windowsIncludedPaths)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -120,45 +130,73 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("windowsExcludedPaths",__r);
             }
+            if (null != this._windowsFilterToExcludePaths)
+            {
+                var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __n in this._windowsFilterToExcludePaths )
+                {
+                    AddIf(null != (((object)__n)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__n.ToString()) : null ,__m.Add);
+                }
+                container.Add("windowsFilterToExcludePaths",__m);
+            }
             AddIf( null != this._backupSystemState ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._backupSystemState) : null, "backupSystemState" ,container.Add );
             AddIf( null != this._backupSystemStateOnlyWithFullBackup ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._backupSystemStateOnlyWithFullBackup) : null, "backupSystemStateOnlyWithFullBackup" ,container.Add );
             AddIf( null != this._useVssForSystemState ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useVssForSystemState) : null, "useVSSForSystemState" ,container.Add );
             if (null != this._macIncludedPaths)
             {
-                var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __n in this._macIncludedPaths )
-                {
-                    AddIf(null != (((object)__n)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__n.ToString()) : null ,__m.Add);
-                }
-                container.Add("macIncludedPaths",__m);
-            }
-            if (null != this._macExcludedPaths)
-            {
                 var __h = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __i in this._macExcludedPaths )
+                foreach( var __i in this._macIncludedPaths )
                 {
                     AddIf(null != (((object)__i)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__i.ToString()) : null ,__h.Add);
                 }
-                container.Add("macExcludedPaths",__h);
+                container.Add("macIncludedPaths",__h);
             }
-            if (null != this._unixIncludedPaths)
+            if (null != this._macExcludedPaths)
             {
                 var __c = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __d in this._unixIncludedPaths )
+                foreach( var __d in this._macExcludedPaths )
                 {
                     AddIf(null != (((object)__d)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__d.ToString()) : null ,__c.Add);
                 }
-                container.Add("unixIncludedPaths",__c);
+                container.Add("macExcludedPaths",__c);
             }
-            if (null != this._unixExcludedPaths)
+            if (null != this._macFilterToExcludePaths)
             {
                 var ___x = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var ___y in this._unixExcludedPaths )
+                foreach( var ___y in this._macFilterToExcludePaths )
                 {
                     AddIf(null != (((object)___y)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(___y.ToString()) : null ,___x.Add);
                 }
-                container.Add("unixExcludedPaths",___x);
+                container.Add("macFilterToExcludePaths",___x);
             }
+            if (null != this._unixIncludedPaths)
+            {
+                var ___s = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var ___t in this._unixIncludedPaths )
+                {
+                    AddIf(null != (((object)___t)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(___t.ToString()) : null ,___s.Add);
+                }
+                container.Add("unixIncludedPaths",___s);
+            }
+            if (null != this._unixExcludedPaths)
+            {
+                var ___n = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var ___o in this._unixExcludedPaths )
+                {
+                    AddIf(null != (((object)___o)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(___o.ToString()) : null ,___n.Add);
+                }
+                container.Add("unixExcludedPaths",___n);
+            }
+            if (null != this._unixFilterToExcludePaths)
+            {
+                var ___i = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var ___j in this._unixFilterToExcludePaths )
+                {
+                    AddIf(null != (((object)___j)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(___j.ToString()) : null ,___i.Add);
+                }
+                container.Add("unixFilterToExcludePaths",___i);
+            }
+            AddIf( null != this._forceUpdateProperties ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._forceUpdateProperties) : null, "forceUpdateProperties" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

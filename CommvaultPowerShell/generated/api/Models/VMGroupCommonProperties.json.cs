@@ -81,6 +81,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._hypervisor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._hypervisor.ToJson(null,serializationMode) : null, "hypervisor" ,container.Add );
             AddIf( null != this._instance ? (Commvault.Powershell.Runtime.Json.JsonNode) this._instance.ToJson(null,serializationMode) : null, "instance" ,container.Add );
             AddIf( null != this._backupset ? (Commvault.Powershell.Runtime.Json.JsonNode) this._backupset.ToJson(null,serializationMode) : null, "backupset" ,container.Add );
+            AddIf( null != this._iDataAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._iDataAgent.ToJson(null,serializationMode) : null, "iDataAgent" ,container.Add );
             AddIf( null != this._dataBackupStoragePolicy ? (Commvault.Powershell.Runtime.Json.JsonNode) this._dataBackupStoragePolicy.ToJson(null,serializationMode) : null, "dataBackupStoragePolicy" ,container.Add );
             AddIf( null != this._isIndexingV2 ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isIndexingV2) : null, "isIndexingV2" ,container.Add );
             AddIf( null != this._isDeletedHypervisor ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDeletedHypervisor) : null, "isDeletedHypervisor" ,container.Add );
@@ -105,9 +106,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_indexingInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("indexingInfo"), out var __jsonIndexingInfo) ? Commvault.Powershell.Models.IndexingInfo.FromJson(__jsonIndexingInfo) : IndexingInfo;}
-            {_hypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("hypervisor"), out var __jsonHypervisor) ? Commvault.Powershell.Models.IdName.FromJson(__jsonHypervisor) : Hypervisor;}
+            {_hypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("hypervisor"), out var __jsonHypervisor) ? Commvault.Powershell.Models.HypervisorvmGroupCommonProp.FromJson(__jsonHypervisor) : Hypervisor;}
             {_instance = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("instance"), out var __jsonInstance) ? Commvault.Powershell.Models.IdName.FromJson(__jsonInstance) : Instance;}
             {_backupset = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("backupset"), out var __jsonBackupset) ? Commvault.Powershell.Models.IdName.FromJson(__jsonBackupset) : Backupset;}
+            {_iDataAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("iDataAgent"), out var __jsonIDataAgent) ? Commvault.Powershell.Models.IdName.FromJson(__jsonIDataAgent) : IDataAgent;}
             {_dataBackupStoragePolicy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("dataBackupStoragePolicy"), out var __jsonDataBackupStoragePolicy) ? Commvault.Powershell.Models.IdName.FromJson(__jsonDataBackupStoragePolicy) : DataBackupStoragePolicy;}
             {_isIndexingV2 = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isIndexingV2"), out var __jsonIsIndexingV2) ? (bool?)__jsonIsIndexingV2 : IsIndexingV2;}
             {_isDeletedHypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDeletedHypervisor"), out var __jsonIsDeletedHypervisor) ? (bool?)__jsonIsDeletedHypervisor : IsDeletedHypervisor;}

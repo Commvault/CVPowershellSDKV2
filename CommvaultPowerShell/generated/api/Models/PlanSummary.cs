@@ -17,8 +17,18 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? AssociatedEntities { get => this._associatedEntities; set => this._associatedEntities = value; }
 
+        /// <summary>Backing field for <see cref="Commcell" /> property.</summary>
+        private string _commcell;
+
+        /// <summary>Tells which commcell this plan belongs to.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Commcell { get => this._commcell; set => this._commcell = value; }
+
         /// <summary>Internal Acessors for Company</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanSummaryInternal.Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set { {_company = value;} } }
+
+        /// <summary>Internal Acessors for ParentPlan</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanSummaryInternal.ParentPlan { get => (this._parentPlan = this._parentPlan ?? new Commvault.Powershell.Models.IdName()); set { {_parentPlan = value;} } }
 
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanSummaryInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
@@ -35,6 +45,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
 
+        /// <summary>Backing field for <see cref="Derivable" /> property.</summary>
+        private bool? _derivable;
+
+        /// <summary>Tells if this plan can be used to derive from and create a new child plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Derivable { get => this._derivable; set => this._derivable = value; }
+
         /// <summary>Backing field for <see cref="MissingEntities" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _missingEntities;
 
@@ -48,6 +65,18 @@ namespace Commvault.Powershell.Models
         /// <summary>Number of copies for the plan</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? NumberOfCopies { get => this._numberOfCopies; set => this._numberOfCopies = value; }
+
+        /// <summary>Backing field for <see cref="ParentPlan" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _parentPlan;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName ParentPlan { get => (this._parentPlan = this._parentPlan ?? new Commvault.Powershell.Models.IdName()); set => this._parentPlan = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ParentPlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ParentPlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)ParentPlan).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Plan" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _plan;
@@ -67,6 +96,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string PlanType { get => this._planType; set => this._planType = value; }
 
+        /// <summary>Backing field for <see cref="ResourcePool" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName[] _resourcePool;
+
+        /// <summary>
+        /// This lists the various resource Pools of different app types associated with storage pools of plan
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IIdName[] ResourcePool { get => this._resourcePool; set => this._resourcePool = value; }
+
         /// <summary>Backing field for <see cref="Rpo" /> property.</summary>
         private long? _rpo;
 
@@ -79,6 +117,20 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Status { get => this._status; set => this._status = value; }
+
+        /// <summary>Backing field for <see cref="Tags" /> property.</summary>
+        private Commvault.Powershell.Models.IIdNameValue[] _tags;
+
+        /// <summary>Tags associated with this plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IIdNameValue[] Tags { get => this._tags; set => this._tags = value; }
+
+        /// <summary>Backing field for <see cref="TargetApp" /> property.</summary>
+        private string[] _targetApp;
+
+        /// <summary>This tells the content indexing target apps for data classification plans</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string[] TargetApp { get => this._targetApp; set => this._targetApp = value; }
 
         /// <summary>Creates an new <see cref="PlanSummary" /> instance.</summary>
         public PlanSummary()
@@ -97,6 +149,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"associatedEntities",
         PossibleTypes = new [] { typeof(long) })]
         long? AssociatedEntities { get; set; }
+        /// <summary>Tells which commcell this plan belongs to.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells which commcell this plan belongs to.",
+        SerializedName = @"commcell",
+        PossibleTypes = new [] { typeof(string) })]
+        string Commcell { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -113,6 +173,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CompanyName { get; set; }
+        /// <summary>Tells if this plan can be used to derive from and create a new child plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells if this plan can be used to derive from and create a new child plan",
+        SerializedName = @"derivable",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Derivable { get; set; }
         /// <summary>For plans in incomplete state contains list of entities missing from the plan</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -129,6 +197,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"numberOfCopies",
         PossibleTypes = new [] { typeof(long) })]
         long? NumberOfCopies { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ParentPlanId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ParentPlanName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -153,6 +237,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"planType",
         PossibleTypes = new [] { typeof(string) })]
         string PlanType { get; set; }
+        /// <summary>
+        /// This lists the various resource Pools of different app types associated with storage pools of plan
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"This lists the various resource Pools of different app types associated with storage pools of plan",
+        SerializedName = @"resourcePool",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
+        Commvault.Powershell.Models.IIdName[] ResourcePool { get; set; }
         /// <summary>RPO in minutes for the plan</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -169,6 +263,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"status",
         PossibleTypes = new [] { typeof(string) })]
         string Status { get; set; }
+        /// <summary>Tags associated with this plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tags associated with this plan",
+        SerializedName = @"tags",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdNameValue) })]
+        Commvault.Powershell.Models.IIdNameValue[] Tags { get; set; }
+        /// <summary>This tells the content indexing target apps for data classification plans</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"This tells the content indexing target apps for data classification plans",
+        SerializedName = @"targetApp",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] TargetApp { get; set; }
 
     }
     internal partial interface IPlanSummaryInternal
@@ -176,16 +286,26 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Count of associated entities for the plan</summary>
         long? AssociatedEntities { get; set; }
+        /// <summary>Tells which commcell this plan belongs to.</summary>
+        string Commcell { get; set; }
 
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
         long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
+        /// <summary>Tells if this plan can be used to derive from and create a new child plan</summary>
+        bool? Derivable { get; set; }
         /// <summary>For plans in incomplete state contains list of entities missing from the plan</summary>
         Commvault.Powershell.Models.IIdName[] MissingEntities { get; set; }
         /// <summary>Number of copies for the plan</summary>
         long? NumberOfCopies { get; set; }
+
+        Commvault.Powershell.Models.IIdName ParentPlan { get; set; }
+
+        long? ParentPlanId { get; set; }
+
+        string ParentPlanName { get; set; }
 
         Commvault.Powershell.Models.IIdName Plan { get; set; }
 
@@ -194,10 +314,18 @@ namespace Commvault.Powershell.Models
         string PlanName { get; set; }
 
         string PlanType { get; set; }
+        /// <summary>
+        /// This lists the various resource Pools of different app types associated with storage pools of plan
+        /// </summary>
+        Commvault.Powershell.Models.IIdName[] ResourcePool { get; set; }
         /// <summary>RPO in minutes for the plan</summary>
         long? Rpo { get; set; }
 
         string Status { get; set; }
+        /// <summary>Tags associated with this plan</summary>
+        Commvault.Powershell.Models.IIdNameValue[] Tags { get; set; }
+        /// <summary>This tells the content indexing target apps for data classification plans</summary>
+        string[] TargetApp { get; set; }
 
     }
 }

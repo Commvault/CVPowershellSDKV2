@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal
     {
 
-        /// <summary>Backing field for <see cref="AccessNodes" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName[] _accessNodes;
+        /// <summary>Backing field for <see cref="AccessNode" /> property.</summary>
+        private Commvault.Powershell.Models.IAccessNodeModel[] _accessNode;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => this._accessNodes; set => this._accessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get => this._accessNode; set => this._accessNode = value; }
 
         /// <summary>Backing field for <see cref="ActivityControl" /> property.</summary>
         private Commvault.Powershell.Models.IActivityControlOptions _activityControl;
@@ -112,6 +112,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SecurityClientOwners { get => ((Commvault.Powershell.Models.IVMHypervisorSecurityPropInternal)Security).ClientOwners; set => ((Commvault.Powershell.Models.IVMHypervisorSecurityPropInternal)Security).ClientOwners = value ?? null; }
 
+        /// <summary>Backing field for <see cref="Settings" /> property.</summary>
+        private Commvault.Powershell.Models.IHypervisorSettings _settings;
+
+        /// <summary>hypervisorSettings</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IHypervisorSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.HypervisorSettings()); set => this._settings = value; }
+
         /// <summary>Backing field for <see cref="SkipCredentialValidation" /> property.</summary>
         private bool? _skipCredentialValidation;
 
@@ -133,9 +140,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"accessNodes",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] AccessNodes { get; set; }
+        SerializedName = @"accessNode",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAccessNodeModel) })]
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get; set; }
         /// <summary>true if Backup is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -256,6 +263,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"clientOwners",
         PossibleTypes = new [] { typeof(string) })]
         string SecurityClientOwners { get; set; }
+        /// <summary>hypervisorSettings</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"hypervisorSettings",
+        SerializedName = @"settings",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IHypervisorSettings) })]
+        Commvault.Powershell.Models.IHypervisorSettings Settings { get; set; }
         /// <summary>if credential validation has to be skipped.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -270,7 +285,7 @@ namespace Commvault.Powershell.Models
     internal partial interface IUpdateHypervisorGroupReqInternal
 
     {
-        Commvault.Powershell.Models.IIdName[] AccessNodes { get; set; }
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get; set; }
 
         Commvault.Powershell.Models.IActivityControlOptions ActivityControl { get; set; }
 
@@ -315,6 +330,8 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName[] SecurityAssociatedUserGroups { get; set; }
         /// <summary>Client owners for the Hypervisor</summary>
         string SecurityClientOwners { get; set; }
+        /// <summary>hypervisorSettings</summary>
+        Commvault.Powershell.Models.IHypervisorSettings Settings { get; set; }
         /// <summary>if credential validation has to be skipped.</summary>
         bool? SkipCredentialValidation { get; set; }
 

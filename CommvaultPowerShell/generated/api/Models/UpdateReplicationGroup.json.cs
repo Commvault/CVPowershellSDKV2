@@ -78,8 +78,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._advancedOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._advancedOptions.ToJson(null,serializationMode) : null, "advancedOptions" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
             AddIf( null != this._enable ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enable) : null, "enable" ,container.Add );
+            AddIf( null != this._disable ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._disable) : null, "disable" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -96,8 +98,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_advancedOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("advancedOptions"), out var __jsonAdvancedOptions) ? Commvault.Powershell.Models.ReplicationGroupAdvancedOptions.FromJson(__jsonAdvancedOptions) : AdvancedOptions;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_enable = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enable"), out var __jsonEnable) ? (bool?)__jsonEnable : Enable;}
+            {_disable = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("disable"), out var __jsonDisable) ? (bool?)__jsonDisable : Disable;}
             AfterFromJson(json);
         }
     }

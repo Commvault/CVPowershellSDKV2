@@ -77,6 +77,7 @@ namespace Commvault.Powershell.Models
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_statusMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("statusMessage"), out var __jsonStatusMessage) ? (string)__jsonStatusMessage : (string)StatusMessage;}
+            {_errors = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("errors"), out var __jsonErrors) ? If( __jsonErrors as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPlanFileSearchSetupError[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPlanFileSearchSetupError) (Commvault.Powershell.Models.PlanFileSearchSetupError.FromJson(__u) )) ))() : null : Errors;}
             AfterFromJson(json);
         }
 
@@ -102,6 +103,15 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != (((object)this._statusMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._statusMessage.ToString()) : null, "statusMessage" ,container.Add );
+            if (null != this._errors)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._errors )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("errors",__w);
+            }
             AfterToJson(ref container);
             return container;
         }

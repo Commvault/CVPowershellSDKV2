@@ -46,6 +46,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Op { get => this._op; set => this._op = value; }
 
+        /// <summary>Backing field for <see cref="Overwrite" /> property.</summary>
+        private bool? _overwrite;
+
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Overwrite { get => this._overwrite; set => this._overwrite = value; }
+
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
 
@@ -102,6 +111,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"op",
         PossibleTypes = new [] { typeof(string) })]
         string Op { get; set; }
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if content in vmgroup has to be overwritten, by default it will append the content",
+        SerializedName = @"overwrite",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Overwrite { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -126,6 +145,10 @@ namespace Commvault.Powershell.Models
         string Name { get; set; }
         /// <summary>Operation type for VM rules/filters</summary>
         string Op { get; set; }
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        bool? Overwrite { get; set; }
 
         string Type { get; set; }
 

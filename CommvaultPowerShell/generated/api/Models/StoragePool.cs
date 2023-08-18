@@ -25,12 +25,29 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
+        /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
+        private long? _retentionPeriodDays;
+
+        /// <summary>Retention period of pool in days</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
+
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
 
         /// <summary>Type of Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Type { get => this._type; set => this._type = value; }
+
+        /// <summary>Backing field for <see cref="WormStoragePoolFlag" /> property.</summary>
+        private long? _wormStoragePoolFlag;
+
+        /// <summary>
+        /// Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage
+        /// lock, 4 means Object worm lock and 8 means bucket worm lock.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? WormStoragePoolFlag { get => this._wormStoragePoolFlag; set => this._wormStoragePoolFlag = value; }
 
         /// <summary>Creates an new <see cref="StoragePool" /> instance.</summary>
         public StoragePool()
@@ -58,6 +75,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
+        /// <summary>Retention period of pool in days</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Retention period of pool in days",
+        SerializedName = @"retentionPeriodDays",
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionPeriodDays { get; set; }
         /// <summary>Type of Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -66,6 +91,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"type",
         PossibleTypes = new [] { typeof(string) })]
         string Type { get; set; }
+        /// <summary>
+        /// Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage
+        /// lock, 4 means Object worm lock and 8 means bucket worm lock.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage lock, 4 means Object worm lock and 8 means bucket worm lock.",
+        SerializedName = @"wormStoragePoolFlag",
+        PossibleTypes = new [] { typeof(long) })]
+        long? WormStoragePoolFlag { get; set; }
 
     }
     /// StoragePool
@@ -76,8 +112,15 @@ namespace Commvault.Powershell.Models
         long? Id { get; set; }
         /// <summary>Name of Storage Pool</summary>
         string Name { get; set; }
+        /// <summary>Retention period of pool in days</summary>
+        long? RetentionPeriodDays { get; set; }
         /// <summary>Type of Storage Pool</summary>
         string Type { get; set; }
+        /// <summary>
+        /// Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage
+        /// lock, 4 means Object worm lock and 8 means bucket worm lock.
+        /// </summary>
+        long? WormStoragePoolFlag { get; set; }
 
     }
 }

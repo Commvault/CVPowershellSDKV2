@@ -71,7 +71,6 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_laptops = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("laptops"), out var __jsonLaptops) ? If( __jsonLaptops as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ILaptopsAdminConsole[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ILaptopsAdminConsole) (Commvault.Powershell.Models.LaptopsAdminConsole.FromJson(__u) )) ))() : null : Laptops;}
             AfterFromJson(json);
         }
 
@@ -93,15 +92,6 @@ namespace Commvault.Powershell.Models
             if (returnNow)
             {
                 return container;
-            }
-            if (null != this._laptops)
-            {
-                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._laptops )
-                {
-                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
-                }
-                container.Add("laptops",__w);
             }
             AfterToJson(ref container);
             return container;

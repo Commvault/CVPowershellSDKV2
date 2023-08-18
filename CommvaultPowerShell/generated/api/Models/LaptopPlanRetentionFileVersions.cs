@@ -6,8 +6,8 @@ namespace Commvault.Powershell.Models
     using static Commvault.Powershell.Runtime.Extensions;
 
     /// <summary>
-    /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-    /// not defined then, 5 versions are considered the default setting.
+    /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+    /// defined then, 5 versions are considered the default setting.
     /// </summary>
     public partial class LaptopPlanRetentionFileVersions :
         Commvault.Powershell.Models.ILaptopPlanRetentionFileVersions,
@@ -59,8 +59,8 @@ namespace Commvault.Powershell.Models
 
         }
     }
-    /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-    /// not defined then, 5 versions are considered the default setting.
+    /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+    /// defined then, 5 versions are considered the default setting.
     public partial interface ILaptopPlanRetentionFileVersions :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
@@ -110,8 +110,8 @@ namespace Commvault.Powershell.Models
         long? WeeklyVersions { get; set; }
 
     }
-    /// Can retain file versions for one of following three cases:<br>days<br>versions<br>custom versions (daily, weekly monthly)<br>If
-    /// not defined then, 5 versions are considered the default setting.
+    /// Can retain file versions for one of following three cases: days versions custom versions (daily, weekly monthly) If not
+    /// defined then, 5 versions are considered the default setting.
     internal partial interface ILaptopPlanRetentionFileVersionsInternal
 
     {

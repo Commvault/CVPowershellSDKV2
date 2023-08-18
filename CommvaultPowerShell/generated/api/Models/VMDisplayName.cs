@@ -15,7 +15,7 @@ namespace Commvault.Powershell.Models
         private string _prefix;
 
         /// <summary>
-        /// A prefix string that will be appended to source instances to create the display name for each destination instance.
+        /// A prefix string that will be appended to the source VM to create a display name for each destination VM
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Prefix { get => this._prefix; set => this._prefix = value; }
@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Models
         private string _suffix;
 
         /// <summary>
-        /// A suffix string that will be appended to source instances to create the display name for each destination instance.
+        /// A suffix string that will be appended to the source VM to create a display name for each destination VM
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Suffix { get => this._suffix; set => this._suffix = value; }
@@ -40,22 +40,22 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Runtime.IJsonSerializable
     {
         /// <summary>
-        /// A prefix string that will be appended to source instances to create the display name for each destination instance.
+        /// A prefix string that will be appended to the source VM to create a display name for each destination VM
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"A prefix string that will be appended to source instances to create the display name for each destination instance.",
+        Description = @"A prefix string that will be appended to the source VM to create a display name for each destination VM",
         SerializedName = @"prefix",
         PossibleTypes = new [] { typeof(string) })]
         string Prefix { get; set; }
         /// <summary>
-        /// A suffix string that will be appended to source instances to create the display name for each destination instance.
+        /// A suffix string that will be appended to the source VM to create a display name for each destination VM
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"A suffix string that will be appended to source instances to create the display name for each destination instance.",
+        Description = @"A suffix string that will be appended to the source VM to create a display name for each destination VM",
         SerializedName = @"suffix",
         PossibleTypes = new [] { typeof(string) })]
         string Suffix { get; set; }
@@ -66,11 +66,11 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>
-        /// A prefix string that will be appended to source instances to create the display name for each destination instance.
+        /// A prefix string that will be appended to the source VM to create a display name for each destination VM
         /// </summary>
         string Prefix { get; set; }
         /// <summary>
-        /// A suffix string that will be appended to source instances to create the display name for each destination instance.
+        /// A suffix string that will be appended to the source VM to create a display name for each destination VM
         /// </summary>
         string Suffix { get; set; }
 

@@ -81,10 +81,13 @@ namespace Commvault.Powershell.Models
             {_configured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("configured"), out var __jsonConfigured) ? (bool?)__jsonConfigured : Configured;}
             {_version = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("version"), out var __jsonVersion) ? (string)__jsonVersion : (string)Version;}
             {_oS = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("OS"), out var __jsonOS) ? (string)__jsonOS : (string)OS;}
-            {_updateStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("updateStatus"), out var __jsonUpdateStatus) ? (string)__jsonUpdateStatus : (string)UpdateStatus;}
+            {_updateState = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("updateState"), out var __jsonUpdateState) ? (string)__jsonUpdateState : (string)UpdateState;}
             {_isInfrastructure = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isInfrastructure"), out var __jsonIsInfrastructure) ? (bool?)__jsonIsInfrastructure : IsInfrastructure;}
+            {_isMaRoleSet = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isMARoleSet"), out var __jsonIsMaRoleSet) ? (bool?)__jsonIsMaRoleSet : IsMaRoleSet;}
+            {_isMaPackageInstalled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isMAPackageInstalled"), out var __jsonIsMaPackageInstalled) ? (bool?)__jsonIsMaPackageInstalled : IsMaPackageInstalled;}
             {_networkReadiness = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("networkReadiness"), out var __jsonNetworkReadiness) ? (string)__jsonNetworkReadiness : (string)NetworkReadiness;}
             {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tags"), out var __jsonTags) ? If( __jsonTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IIdNameValue[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IIdNameValue) (Commvault.Powershell.Models.IdNameValue.FromJson(__p) )) ))() : null : Tags;}
+            {_clientRoles = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("clientRoles"), out var __jsonClientRoles) ? If( __jsonClientRoles as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : ClientRoles;}
             AfterFromJson(json);
         }
 
@@ -125,8 +128,10 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._configured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._configured) : null, "configured" ,container.Add );
             AddIf( null != (((object)this._version)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._version.ToString()) : null, "version" ,container.Add );
             AddIf( null != (((object)this._oS)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oS.ToString()) : null, "OS" ,container.Add );
-            AddIf( null != (((object)this._updateStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._updateStatus.ToString()) : null, "updateStatus" ,container.Add );
+            AddIf( null != (((object)this._updateState)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._updateState.ToString()) : null, "updateState" ,container.Add );
             AddIf( null != this._isInfrastructure ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isInfrastructure) : null, "isInfrastructure" ,container.Add );
+            AddIf( null != this._isMaRoleSet ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isMaRoleSet) : null, "isMARoleSet" ,container.Add );
+            AddIf( null != this._isMaPackageInstalled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isMaPackageInstalled) : null, "isMAPackageInstalled" ,container.Add );
             AddIf( null != (((object)this._networkReadiness)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._networkReadiness.ToString()) : null, "networkReadiness" ,container.Add );
             if (null != this._tags)
             {
@@ -136,6 +141,15 @@ namespace Commvault.Powershell.Models
                     AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
                 }
                 container.Add("tags",__r);
+            }
+            if (null != this._clientRoles)
+            {
+                var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __n in this._clientRoles )
+                {
+                    AddIf(__n?.ToJson(null, serializationMode) ,__m.Add);
+                }
+                container.Add("clientRoles",__m);
             }
             AfterToJson(ref container);
             return container;

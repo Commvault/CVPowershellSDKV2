@@ -79,7 +79,7 @@ namespace Commvault.Powershell.Models
             {_taskId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("taskId"), out var __jsonTaskId) ? (long?)__jsonTaskId : TaskId;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
-            {_replicationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("replicationType"), out var __jsonReplicationType) ? (string)__jsonReplicationType : (string)ReplicationType;}
+            {_replicationGroupType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("replicationGroupType"), out var __jsonReplicationGroupType) ? (string)__jsonReplicationGroupType : (string)ReplicationGroupType;}
             {_state = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("state"), out var __jsonState) ? (string)__jsonState : (string)State;}
             AfterFromJson(json);
         }
@@ -109,7 +109,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._taskId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._taskId) : null, "taskId" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
-            AddIf( null != (((object)this._replicationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._replicationType.ToString()) : null, "replicationType" ,container.Add );
+            AddIf( null != (((object)this._replicationGroupType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._replicationGroupType.ToString()) : null, "replicationGroupType" ,container.Add );
             AddIf( null != (((object)this._state)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._state.ToString()) : null, "state" ,container.Add );
             AfterToJson(ref container);
             return container;

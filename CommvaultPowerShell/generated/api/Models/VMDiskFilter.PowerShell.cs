@@ -98,9 +98,12 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Overwrite = (bool?) content.GetValueForProperty("Overwrite",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Overwrite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).FilterType = (string) content.GetValueForProperty("FilterType",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).FilterType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Value = (string) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Value, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Condition = (string) content.GetValueForProperty("Condition",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Condition, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMName = (string) content.GetValueForProperty("VMName",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMGuid = (string) content.GetValueForProperty("VMGuid",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMGuid, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -119,9 +122,12 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Overwrite = (bool?) content.GetValueForProperty("Overwrite",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Overwrite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).FilterType = (string) content.GetValueForProperty("FilterType",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).FilterType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Value = (string) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Value, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Condition = (string) content.GetValueForProperty("Condition",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).Condition, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMName = (string) content.GetValueForProperty("VMName",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMGuid = (string) content.GetValueForProperty("VMGuid",((Commvault.Powershell.Models.IVMDiskFilterInternal)this).VMGuid, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

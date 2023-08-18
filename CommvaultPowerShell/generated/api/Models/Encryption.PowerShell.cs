@@ -86,12 +86,12 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServer = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("KeyManagementServer",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServer, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProvider = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("KeyProvider",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProvider, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IEncryptionInternal)this).Encrypt = (bool?) content.GetValueForProperty("Encrypt",((Commvault.Powershell.Models.IEncryptionInternal)this).Encrypt, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyLength = (long?) content.GetValueForProperty("KeyLength",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyLength, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IEncryptionInternal)this).Cipher = (string) content.GetValueForProperty("Cipher",((Commvault.Powershell.Models.IEncryptionInternal)this).Cipher, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerId = (long?) content.GetValueForProperty("KeyManagementServerId",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
-            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerName = (string) content.GetValueForProperty("KeyManagementServerName",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderId = (long?) content.GetValueForProperty("KeyProviderId",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderName = (string) content.GetValueForProperty("KeyProviderName",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -109,12 +109,12 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServer = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("KeyManagementServer",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServer, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProvider = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("KeyProvider",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProvider, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IEncryptionInternal)this).Encrypt = (bool?) content.GetValueForProperty("Encrypt",((Commvault.Powershell.Models.IEncryptionInternal)this).Encrypt, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyLength = (long?) content.GetValueForProperty("KeyLength",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyLength, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IEncryptionInternal)this).Cipher = (string) content.GetValueForProperty("Cipher",((Commvault.Powershell.Models.IEncryptionInternal)this).Cipher, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerId = (long?) content.GetValueForProperty("KeyManagementServerId",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
-            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerName = (string) content.GetValueForProperty("KeyManagementServerName",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyManagementServerName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderId = (long?) content.GetValueForProperty("KeyProviderId",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderName = (string) content.GetValueForProperty("KeyProviderName",((Commvault.Powershell.Models.IEncryptionInternal)this).KeyProviderName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

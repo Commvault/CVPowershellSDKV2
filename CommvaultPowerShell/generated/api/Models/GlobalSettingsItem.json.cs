@@ -72,6 +72,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_displayLabel = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayLabel"), out var __jsonDisplayLabel) ? (string)__jsonDisplayLabel : (string)DisplayLabel;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             {_acceptableValues = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("acceptableValues"), out var __jsonAcceptableValues) ? If( __jsonAcceptableValues as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : AcceptableValues;}
             {_defaultValue = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("defaultValue"), out var __jsonDefaultValue) ? (string)__jsonDefaultValue : (string)DefaultValue;}
@@ -106,6 +107,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != (((object)this._displayLabel)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._displayLabel.ToString()) : null, "displayLabel" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             if (null != this._acceptableValues)
             {

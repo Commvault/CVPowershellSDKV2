@@ -281,11 +281,11 @@
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "0.2.13",
+    "version": "0.2.14",
     "restore": {
-      "projectUniqueName": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowerShell.csproj",
-      "projectName": "CommvaultPowerShell.private",
-      "projectPath": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowerShell.csproj",
+      "projectUniqueName": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowershell.csproj",
+      "projectName": "CommvaultPowershell.private",
+      "projectPath": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowershell.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
       "outputPath": "C:\\cvpowers\\CommvaultPowerShell\\obj\\",
       "projectStyle": "PackageReference",

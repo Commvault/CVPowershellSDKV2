@@ -71,6 +71,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_addons = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("addons"), out var __jsonAddons) ? Commvault.Powershell.Models.PlanAddons.FromJson(__jsonAddons) : Addons;}
+            {_rpo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("RPO"), out var __jsonRpo) ? (long?)__jsonRpo : Rpo;}
+            {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             AfterFromJson(json);
         }
 
@@ -94,6 +96,8 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._addons ? (Commvault.Powershell.Runtime.Json.JsonNode) this._addons.ToJson(null,serializationMode) : null, "addons" ,container.Add );
+            AddIf( null != this._rpo ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._rpo) : null, "RPO" ,container.Add );
+            AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

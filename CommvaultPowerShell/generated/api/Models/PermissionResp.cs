@@ -27,6 +27,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string CategoryName { get => this._categoryName; set => this._categoryName = value; }
 
+        /// <summary>Backing field for <see cref="Exclude" /> property.</summary>
+        private bool? _exclude;
+
+        /// <summary>Flag to specify if this is included permission or excluded permission.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Exclude { get => this._exclude; set => this._exclude = value; }
+
         /// <summary>Backing field for <see cref="PermissionId" /> property.</summary>
         private long? _permissionId;
 
@@ -73,6 +80,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"categoryName",
         PossibleTypes = new [] { typeof(string) })]
         string CategoryName { get; set; }
+        /// <summary>Flag to specify if this is included permission or excluded permission.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Flag to specify if this is included permission or excluded permission.",
+        SerializedName = @"exclude",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Exclude { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -108,6 +123,8 @@ namespace Commvault.Powershell.Models
         long? CategoryId { get; set; }
 
         string CategoryName { get; set; }
+        /// <summary>Flag to specify if this is included permission or excluded permission.</summary>
+        bool? Exclude { get; set; }
 
         long? PermissionId { get; set; }
 

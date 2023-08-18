@@ -13,6 +13,15 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for FileSearch</summary>
         Commvault.Powershell.Models.IPlanFileSearch Commvault.Powershell.Models.IServerPlanSettingsInternal.FileSearch { get => (this._fileSearch = this._fileSearch ?? new Commvault.Powershell.Models.PlanFileSearch()); set { {_fileSearch = value;} } }
 
+        /// <summary>Backing field for <see cref="EnableAdvancedView" /> property.</summary>
+        private bool? _enableAdvancedView;
+
+        /// <summary>
+        /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnableAdvancedView { get => this._enableAdvancedView; set => this._enableAdvancedView = value; }
+
         /// <summary>Backing field for <see cref="FileSearch" /> property.</summary>
         private Commvault.Powershell.Models.IPlanFileSearch _fileSearch;
 
@@ -26,6 +35,12 @@ namespace Commvault.Powershell.Models
         /// <summary>Flag for enabling indexing</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? FileSearchEnabled { get => ((Commvault.Powershell.Models.IPlanFileSearchInternal)FileSearch).Enabled; set => ((Commvault.Powershell.Models.IPlanFileSearchInternal)FileSearch).Enabled = value ?? default(bool); }
+
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IPlanFileSearchSetupError[] FileSearchErrors { get => ((Commvault.Powershell.Models.IPlanFileSearchInternal)FileSearch).Errors; set => ((Commvault.Powershell.Models.IPlanFileSearchInternal)FileSearch).Errors = value ?? null /* arrayOf */; }
 
         /// <summary>Type of indexing status.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -46,6 +61,16 @@ namespace Commvault.Powershell.Models
     public partial interface IServerPlanSettings :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.",
+        SerializedName = @"enableAdvancedView",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnableAdvancedView { get; set; }
         /// <summary>Flag for enabling indexing</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -54,6 +79,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? FileSearchEnabled { get; set; }
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"File search was enabled on plan but failed to process some of the storage pool(s) with these errors",
+        SerializedName = @"errors",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanFileSearchSetupError) })]
+        Commvault.Powershell.Models.IPlanFileSearchSetupError[] FileSearchErrors { get; set; }
         /// <summary>Type of indexing status.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -78,12 +113,20 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>
+        /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
+        /// </summary>
+        bool? EnableAdvancedView { get; set; }
+        /// <summary>
         /// This feature applies to file servers and virtualization. Enabling this feature allows you to search for backed-up files
         /// using the global search bar, and creates resource pools with required infrastructure entities.
         /// </summary>
         Commvault.Powershell.Models.IPlanFileSearch FileSearch { get; set; }
         /// <summary>Flag for enabling indexing</summary>
         bool? FileSearchEnabled { get; set; }
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        Commvault.Powershell.Models.IPlanFileSearchSetupError[] FileSearchErrors { get; set; }
         /// <summary>Type of indexing status.</summary>
         string FileSearchStatus { get; set; }
         /// <summary>

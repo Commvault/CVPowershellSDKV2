@@ -11,6 +11,15 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUpdateUserInternal
     {
 
+        /// <summary>Backing field for <see cref="AuthenticationMethod" /> property.</summary>
+        private string _authenticationMethod;
+
+        /// <summary>
+        /// Change the current authentication method of user. SAML user association can be removed using this.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AuthenticationMethod { get => this._authenticationMethod; set => this._authenticationMethod = value; }
+
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateUserInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
 
@@ -114,6 +123,16 @@ namespace Commvault.Powershell.Models
     public partial interface IUpdateUser :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// Change the current authentication method of user. SAML user association can be removed using this.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Change the current authentication method of user. SAML user association can be removed using this.",
+        SerializedName = @"authenticationMethod",
+        PossibleTypes = new [] { typeof(string) })]
+        string AuthenticationMethod { get; set; }
         /// <summary>Change email-id for existing user. This email-id can be used for logging-in.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -223,6 +242,10 @@ namespace Commvault.Powershell.Models
     internal partial interface IUpdateUserInternal
 
     {
+        /// <summary>
+        /// Change the current authentication method of user. SAML user association can be removed using this.
+        /// </summary>
+        string AuthenticationMethod { get; set; }
         /// <summary>Change email-id for existing user. This email-id can be used for logging-in.</summary>
         string Email { get; set; }
         /// <summary>enable or disable the user.</summary>

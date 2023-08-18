@@ -77,6 +77,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryId = (long?) content.GetValueForProperty("PermissionCategoryId",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryName = (string) content.GetValueForProperty("PermissionCategoryName",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionType = (string) content.GetValueForProperty("PermissionType",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionExclude = (bool?) content.GetValueForProperty("PermissionExclude",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionExclude, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializeDictionary(content);
         }
 
@@ -107,6 +108,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryId = (long?) content.GetValueForProperty("PermissionCategoryId",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryName = (string) content.GetValueForProperty("PermissionCategoryName",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionCategoryName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionType = (string) content.GetValueForProperty("PermissionType",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionExclude = (bool?) content.GetValueForProperty("PermissionExclude",((Commvault.Powershell.Models.ICredentialSecurityAssociationsInternal)this).PermissionExclude, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             AfterDeserializePSObject(content);
         }
 

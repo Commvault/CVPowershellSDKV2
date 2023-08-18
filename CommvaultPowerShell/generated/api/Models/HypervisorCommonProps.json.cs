@@ -75,6 +75,8 @@ namespace Commvault.Powershell.Models
             {_isIndexingV2 = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isIndexingV2"), out var __jsonIsIndexingV2) ? (bool?)__jsonIsIndexingV2 : IsIndexingV2;}
             {_isDeconfigured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDeconfigured"), out var __jsonIsDeconfigured) ? (bool?)__jsonIsDeconfigured : IsDeconfigured;}
             {_retirePhase = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("retirePhase"), out var __jsonRetirePhase) ? (string)__jsonRetirePhase : (string)RetirePhase;}
+            {_isSnapBackupEnabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isSnapBackupEnabled"), out var __jsonIsSnapBackupEnabled) ? (bool?)__jsonIsSnapBackupEnabled : IsSnapBackupEnabled;}
+            {_isRegionBasedBackup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isRegionBasedBackup"), out var __jsonIsRegionBasedBackup) ? (bool?)__jsonIsRegionBasedBackup : IsRegionBasedBackup;}
             AfterFromJson(json);
         }
 
@@ -101,6 +103,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._isIndexingV2 ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isIndexingV2) : null, "isIndexingV2" ,container.Add );
             AddIf( null != this._isDeconfigured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDeconfigured) : null, "isDeconfigured" ,container.Add );
             AddIf( null != (((object)this._retirePhase)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._retirePhase.ToString()) : null, "retirePhase" ,container.Add );
+            AddIf( null != this._isSnapBackupEnabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isSnapBackupEnabled) : null, "isSnapBackupEnabled" ,container.Add );
+            AddIf( null != this._isRegionBasedBackup ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isRegionBasedBackup) : null, "isRegionBasedBackup" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

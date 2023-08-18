@@ -45,12 +45,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
-        /// <summary>Backing field for <see cref="ReplicationType" /> property.</summary>
-        private string _replicationType;
+        /// <summary>Backing field for <see cref="ReplicationGroupType" /> property.</summary>
+        private string _replicationGroupType;
 
-        /// <summary>Replication group type. Values are case sensitive</summary>
+        /// <summary>Replication group type</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string ReplicationType { get => this._replicationType; set => this._replicationType = value; }
+        public string ReplicationGroupType { get => this._replicationGroupType; set => this._replicationGroupType = value; }
 
         /// <summary>Backing field for <see cref="Source" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _source;
@@ -67,7 +67,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="State" /> property.</summary>
         private string _state;
 
-        /// <summary>State of replication group. Values are case sensitive</summary>
+        /// <summary>State of replication group</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string State { get => this._state; set => this._state = value; }
 
@@ -81,7 +81,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
 
-        /// <summary>Application type. Virtual Machine, Oracle</summary>
+        /// <summary>The application type of replication group</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Type { get => this._type; set => this._type = value; }
 
@@ -126,14 +126,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
-        /// <summary>Replication group type. Values are case sensitive</summary>
+        /// <summary>Replication group type</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Replication group type. Values are case sensitive",
-        SerializedName = @"replicationType",
+        Description = @"Replication group type",
+        SerializedName = @"replicationGroupType",
         PossibleTypes = new [] { typeof(string) })]
-        string ReplicationType { get; set; }
+        string ReplicationGroupType { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -150,11 +150,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string SourceName { get; set; }
-        /// <summary>State of replication group. Values are case sensitive</summary>
+        /// <summary>State of replication group</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"State of replication group. Values are case sensitive",
+        Description = @"State of replication group",
         SerializedName = @"state",
         PossibleTypes = new [] { typeof(string) })]
         string State { get; set; }
@@ -166,11 +166,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"taskId",
         PossibleTypes = new [] { typeof(long) })]
         long? TaskId { get; set; }
-        /// <summary>Application type. Virtual Machine, Oracle</summary>
+        /// <summary>The application type of replication group</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Application type. Virtual Machine, Oracle",
+        Description = @"The application type of replication group",
         SerializedName = @"type",
         PossibleTypes = new [] { typeof(string) })]
         string Type { get; set; }
@@ -189,19 +189,19 @@ namespace Commvault.Powershell.Models
         long? Id { get; set; }
         /// <summary>Replication group name</summary>
         string Name { get; set; }
-        /// <summary>Replication group type. Values are case sensitive</summary>
-        string ReplicationType { get; set; }
+        /// <summary>Replication group type</summary>
+        string ReplicationGroupType { get; set; }
 
         Commvault.Powershell.Models.IIdName Source { get; set; }
 
         long? SourceId { get; set; }
 
         string SourceName { get; set; }
-        /// <summary>State of replication group. Values are case sensitive</summary>
+        /// <summary>State of replication group</summary>
         string State { get; set; }
         /// <summary>taskid of the replication group. Either taskId or id is available in the list</summary>
         long? TaskId { get; set; }
-        /// <summary>Application type. Virtual Machine, Oracle</summary>
+        /// <summary>The application type of replication group</summary>
         string Type { get; set; }
 
     }

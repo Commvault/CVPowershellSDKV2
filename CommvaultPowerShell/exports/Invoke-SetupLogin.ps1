@@ -120,8 +120,8 @@ begin {
         }
         $parameterSet = $PSCmdlet.ParameterSetName
         $mapping = @{
-            Post = 'CommvaultPowerShell.private\Invoke-SetupLogin_Post';
-            PostExpanded = 'CommvaultPowerShell.private\Invoke-SetupLogin_PostExpanded';
+            Post = 'CommvaultPowershell.private\Invoke-SetupLogin_Post';
+            PostExpanded = 'CommvaultPowershell.private\Invoke-SetupLogin_PostExpanded';
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}

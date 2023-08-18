@@ -67,14 +67,17 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Content</summary>
         Commvault.Powershell.Models.IVMContent Commvault.Powershell.Models.IUpdatevmGroupReqInternal.Content { get => (this._content = this._content ?? new Commvault.Powershell.Models.VMContent()); set { {_content = value;} } }
 
+        /// <summary>Internal Acessors for DiskFilters</summary>
+        Commvault.Powershell.Models.IVMDiskFilterProp Commvault.Powershell.Models.IUpdatevmGroupReqInternal.DiskFilters { get => (this._diskFilters = this._diskFilters ?? new Commvault.Powershell.Models.VMDiskFilterProp()); set { {_diskFilters = value;} } }
+
         /// <summary>Internal Acessors for Filters</summary>
         Commvault.Powershell.Models.IVMContent Commvault.Powershell.Models.IUpdatevmGroupReqInternal.Filters { get => (this._filters = this._filters ?? new Commvault.Powershell.Models.VMContent()); set { {_filters = value;} } }
 
-        /// <summary>Internal Acessors for GuestCredentials</summary>
-        Commvault.Powershell.Models.IUserNamePassword Commvault.Powershell.Models.IUpdatevmGroupReqInternal.GuestCredentials { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).GuestCredentialsCredentials; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).GuestCredentialsCredentials = value; }
+        /// <summary>Internal Acessors for MeditechSystemUserAccount</summary>
+        Commvault.Powershell.Models.IUserNamePassword Commvault.Powershell.Models.IUpdatevmGroupReqInternal.MeditechSystemUserAccount { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).UserAccount; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).UserAccount = value; }
 
-        /// <summary>Internal Acessors for GuestCredentialsSavedCredentials</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatevmGroupReqInternal.GuestCredentialsSavedCredentials { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).GuestCredentialsSavedCredentials; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).GuestCredentialsSavedCredentials = value; }
+        /// <summary>Internal Acessors for MeditechSystems</summary>
+        Commvault.Powershell.Models.IMeditechPropResp Commvault.Powershell.Models.IUpdatevmGroupReqInternal.MeditechSystems { get => (this._meditechSystems = this._meditechSystems ?? new Commvault.Powershell.Models.MeditechPropResp()); set { {_meditechSystems = value;} } }
 
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatevmGroupReqInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
@@ -82,17 +85,8 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for RestoreActivityControlOptionTimeZone</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatevmGroupReqInternal.RestoreActivityControlOptionTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionTimeZone = value; }
 
-        /// <summary>Internal Acessors for SettingGuestCredentials</summary>
-        Commvault.Powershell.Models.IGuestCredentialInfo Commvault.Powershell.Models.IUpdatevmGroupReqInternal.SettingGuestCredentials { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).GuestCredentials; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).GuestCredentials = value; }
-
-        /// <summary>Internal Acessors for Settings</summary>
-        Commvault.Powershell.Models.IVMGroupSettings Commvault.Powershell.Models.IUpdatevmGroupReqInternal.Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.VMGroupSettings()); set { {_settings = value;} } }
-
         /// <summary>Internal Acessors for SnapshotManagement</summary>
         Commvault.Powershell.Models.ISnapCopyInfo Commvault.Powershell.Models.IUpdatevmGroupReqInternal.SnapshotManagement { get => (this._snapshotManagement = this._snapshotManagement ?? new Commvault.Powershell.Models.SnapCopyInfo()); set { {_snapshotManagement = value;} } }
-
-        /// <summary>Internal Acessors for SnapshotManagementCrossAccountCopyDestinationClient</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatevmGroupReqInternal.SnapshotManagementCrossAccountCopyDestinationClient { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClient; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClient = value; }
 
         /// <summary>Internal Acessors for SnapshotManagementSnapEngine</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatevmGroupReqInternal.SnapshotManagementSnapEngine { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngine; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngine = value; }
@@ -122,25 +116,21 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get => ((Commvault.Powershell.Models.IVMContentInternal)Content).VirtualMachines; set => ((Commvault.Powershell.Models.IVMContentInternal)Content).VirtualMachines = value ?? null /* arrayOf */; }
 
-        /// <summary>username to access the network path</summary>
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CredentialsName { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CredentialsName; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CredentialsName = value ?? null; }
-
-        /// <summary>password to access the network path</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CredentialsPassword { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CredentialsPassword; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CredentialsPassword = value ?? null; }
+        public bool? DiskFilterOverwrite { get => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Overwrite; set => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Overwrite = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? CrossAccountCopyDestinationClientId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CrossAccountCopyDestinationClientName { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientName; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).CrossAccountCopyDestinationClientName = value ?? null; }
+        public Commvault.Powershell.Models.IVMDiskFilter[] DiskFilterRules { get => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Rules; set => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Rules = value ?? null /* arrayOf */; }
 
         /// <summary>Backing field for <see cref="DiskFilters" /> property.</summary>
-        private Commvault.Powershell.Models.IVMDiskFilter[] _diskFilters;
+        private Commvault.Powershell.Models.IVMDiskFilterProp _diskFilters;
 
+        /// <summary>vmDiskFilterProp</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IVMDiskFilter[] DiskFilters { get => this._diskFilters; set => this._diskFilters = value; }
+        internal Commvault.Powershell.Models.IVMDiskFilterProp DiskFilters { get => (this._diskFilters = this._diskFilters ?? new Commvault.Powershell.Models.VMDiskFilterProp()); set => this._diskFilters = value; }
 
         /// <summary>Backing field for <see cref="EnableFileIndexing" /> property.</summary>
         private bool? _enableFileIndexing;
@@ -167,6 +157,29 @@ namespace Commvault.Powershell.Models
         /// <summary>RuleContent</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IVMContent Filters { get => (this._filters = this._filters ?? new Commvault.Powershell.Models.VMContent()); set => this._filters = value; }
+
+        /// <summary>Meditech Listener IP of FQDN name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MeditechSystemListenerIP { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).ListenerIP; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).ListenerIP = value ?? null; }
+
+        /// <summary>Meditech Listener Port</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MeditechSystemListenerPort { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).ListenerPort; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).ListenerPort = value ?? default(long); }
+
+        /// <summary>MBF timeout (in seconds)</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MeditechSystemMbFtimeout { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).MbFtimeout; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).MbFtimeout = value ?? default(long); }
+
+        /// <summary>Meditech system name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MeditechSystemName { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).SystemName; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).SystemName = value ?? null; }
+
+        /// <summary>Backing field for <see cref="MeditechSystems" /> property.</summary>
+        private Commvault.Powershell.Models.IMeditechPropResp _meditechSystems;
+
+        /// <summary>meditechPropResp</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IMeditechPropResp MeditechSystems { get => (this._meditechSystems = this._meditechSystems ?? new Commvault.Powershell.Models.MeditechPropResp()); set => this._meditechSystems = value; }
 
         /// <summary>Backing field for <see cref="NewName" /> property.</summary>
         private string _newName;
@@ -201,76 +214,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string RestoreActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName = value ?? null; }
 
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? SavedCredentialsId { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsId; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SavedCredentialsName { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsName; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).SavedCredentialsName = value ?? null; }
-
         /// <summary>Backing field for <see cref="SecurityAssociations" /> property.</summary>
         private Commvault.Powershell.Models.ISecurityAssoc[] _securityAssociations;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.ISecurityAssoc[] SecurityAssociations { get => this._securityAssociations; set => this._securityAssociations = value; }
 
-        /// <summary>True if auto detect VM Owner enabled</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SettingAutoDetectVMOwner { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).AutoDetectVMOwner; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).AutoDetectVMOwner = value ?? default(bool); }
-
-        /// <summary>
-        /// True if metadata collection is enabled for intellisnap jobs. Only applicable for Indexing v1
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SettingCollectFileDetailsFromSnapshotCopy { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CollectFileDetailsFromSnapshotCopy; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CollectFileDetailsFromSnapshotCopy = value ?? default(bool); }
-
-        /// <summary>True if metadata collection is enabled. Only applicable for Indexing v1</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SettingCollectFileDetailsforGranularRecovery { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CollectFileDetailsforGranularRecovery; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CollectFileDetailsforGranularRecovery = value ?? default(bool); }
-
-        /// <summary>Custom snapshot resource group GUID for Azure</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SettingCustomSnapshotResourceGroup { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CustomSnapshotResourceGroup; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).CustomSnapshotResourceGroup = value ?? null; }
-
-        /// <summary>True if Datastore Free space check is enabled</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SettingDatastoreFreespaceCheck { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceCheck; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceCheck = value ?? default(bool); }
-
-        /// <summary>precentage of datastore free space check value</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? SettingDatastoreFreespaceRequired { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceRequired; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).DatastoreFreespaceRequired = value ?? default(long); }
-
-        /// <summary>Is the VM App Aware</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SettingIsApplicationAware { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).IsApplicationAware; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).IsApplicationAware = value ?? default(bool); }
-
-        /// <summary>Start Time for the VM Group Job</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? SettingJobStartTime { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).JobStartTime; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).JobStartTime = value ?? default(long); }
-
-        /// <summary>Number of readers for backup</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? SettingNoOfReaders { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).NoOfReaders; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).NoOfReaders = value ?? default(long); }
-
-        /// <summary>transport mode based on environment. Values are case sensitive</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SettingTransportMode { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).TransportMode; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).TransportMode = value ?? null; }
-
-        /// <summary>True if Changed Block Tracking is enabled</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SettingUseChangedBlockTrackingOnVM { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).UseChangedBlockTrackingOnVM; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).UseChangedBlockTrackingOnVM = value ?? default(bool); }
-
-        /// <summary>True if use VM CheckPoint setting is enabled</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SettingUseVMCheckpointSetting { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).UseVMCheckpointSetting; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).UseVMCheckpointSetting = value ?? default(bool); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SettingVMBackupType { get => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).VMBackupType; set => ((Commvault.Powershell.Models.IVMGroupSettingsInternal)Settings).VMBackupType = value ?? null; }
-
         /// <summary>Backing field for <see cref="Settings" /> property.</summary>
         private Commvault.Powershell.Models.IVMGroupSettings _settings;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IVMGroupSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.VMGroupSettings()); set => this._settings = value; }
+        public Commvault.Powershell.Models.IVMGroupSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.VMGroupSettings()); set => this._settings = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SnapEngineId { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineId; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).SnapEngineId = value ?? default(long); }
@@ -296,17 +250,6 @@ namespace Commvault.Powershell.Models
         /// <summary>True if hardware snapshot is enabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? SnapshotManagementEnableHardwareSnapshot { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).EnableHardwareSnapshot; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).EnableHardwareSnapshot = value ?? default(bool); }
-
-        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SnapshotManagementIsCrossAccountCopyEnabled { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).IsCrossAccountCopyEnabled; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).IsCrossAccountCopyEnabled = value ?? default(bool); }
-
-        /// <summary>
-        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
-        /// is enabled
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SnapshotManagementIsCrossAccountEnabled { get => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).IsCrossAccountEnabled; set => ((Commvault.Powershell.Models.ISnapCopyInfoInternal)SnapshotManagement).IsCrossAccountEnabled = value ?? default(bool); }
 
         /// <summary>True if independent disk option is enabled</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -339,6 +282,14 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StorageName { get => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Storage).Name = value ?? null; }
+
+        /// <summary>username to access the network path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string UserAccountName { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).UserAccountName; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).UserAccountName = value ?? null; }
+
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string UserAccountPassword { get => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).UserAccountPassword; set => ((Commvault.Powershell.Models.IMeditechPropRespInternal)MeditechSystems).UserAccountPassword = value ?? null; }
 
         /// <summary>Creates an new <see cref="UpdatevmGroupReq" /> instance.</summary>
         public UpdatevmGroupReq()
@@ -439,46 +390,24 @@ namespace Commvault.Powershell.Models
         SerializedName = @"virtualMachines",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVirtualMachinecontent) })]
         Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get; set; }
-        /// <summary>username to access the network path</summary>
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"username to access the network path",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string CredentialsName { get; set; }
-        /// <summary>password to access the network path</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"password to access the network path",
-        SerializedName = @"password",
-        PossibleTypes = new [] { typeof(string) })]
-        string CredentialsPassword { get; set; }
+        Description = @"True if content in vmgroup has to be overwritten, by default it will append the content",
+        SerializedName = @"overwrite",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? DiskFilterOverwrite { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? CrossAccountCopyDestinationClientId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string CrossAccountCopyDestinationClientName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"diskFilters",
+        SerializedName = @"rules",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVMDiskFilter) })]
-        Commvault.Powershell.Models.IVMDiskFilter[] DiskFilters { get; set; }
+        Commvault.Powershell.Models.IVMDiskFilter[] DiskFilterRules { get; set; }
         /// <summary>True if file indexing needs to be enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -513,6 +442,38 @@ namespace Commvault.Powershell.Models
         SerializedName = @"virtualMachines",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVirtualMachinecontent) })]
         Commvault.Powershell.Models.IVirtualMachinecontent[] FilterVirtualMachines { get; set; }
+        /// <summary>Meditech Listener IP of FQDN name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Meditech Listener IP of FQDN name",
+        SerializedName = @"listenerIP",
+        PossibleTypes = new [] { typeof(string) })]
+        string MeditechSystemListenerIP { get; set; }
+        /// <summary>Meditech Listener Port</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Meditech Listener Port",
+        SerializedName = @"listenerPort",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MeditechSystemListenerPort { get; set; }
+        /// <summary>MBF timeout (in seconds)</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"MBF timeout (in seconds)",
+        SerializedName = @"MBFtimeout",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MeditechSystemMbFtimeout { get; set; }
+        /// <summary>Meditech system name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Meditech system name",
+        SerializedName = @"systemName",
+        PossibleTypes = new [] { typeof(string) })]
+        string MeditechSystemName { get; set; }
         /// <summary>subclient name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -574,131 +535,17 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SavedCredentialsId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string SavedCredentialsName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
         SerializedName = @"securityAssociations",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ISecurityAssoc) })]
         Commvault.Powershell.Models.ISecurityAssoc[] SecurityAssociations { get; set; }
-        /// <summary>True if auto detect VM Owner enabled</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if auto detect VM Owner enabled",
-        SerializedName = @"autoDetectVMOwner",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SettingAutoDetectVMOwner { get; set; }
-        /// <summary>
-        /// True if metadata collection is enabled for intellisnap jobs. Only applicable for Indexing v1
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if metadata collection is enabled for intellisnap jobs. Only applicable for Indexing v1",
-        SerializedName = @"collectFileDetailsFromSnapshotCopy",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SettingCollectFileDetailsFromSnapshotCopy { get; set; }
-        /// <summary>True if metadata collection is enabled. Only applicable for Indexing v1</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if metadata collection is enabled. Only applicable for Indexing v1",
-        SerializedName = @"collectFileDetailsforGranularRecovery",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SettingCollectFileDetailsforGranularRecovery { get; set; }
-        /// <summary>Custom snapshot resource group GUID for Azure</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Custom snapshot resource group GUID for Azure",
-        SerializedName = @"customSnapshotResourceGroup",
-        PossibleTypes = new [] { typeof(string) })]
-        string SettingCustomSnapshotResourceGroup { get; set; }
-        /// <summary>True if Datastore Free space check is enabled</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if Datastore Free space check is enabled",
-        SerializedName = @"datastoreFreespaceCheck",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SettingDatastoreFreespaceCheck { get; set; }
-        /// <summary>precentage of datastore free space check value</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"precentage of datastore free space check value",
-        SerializedName = @"datastoreFreespaceRequired",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SettingDatastoreFreespaceRequired { get; set; }
-        /// <summary>Is the VM App Aware</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Is the VM App Aware",
-        SerializedName = @"isApplicationAware",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SettingIsApplicationAware { get; set; }
-        /// <summary>Start Time for the VM Group Job</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Start Time for the VM Group Job",
-        SerializedName = @"jobStartTime",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SettingJobStartTime { get; set; }
-        /// <summary>Number of readers for backup</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Number of readers for backup",
-        SerializedName = @"noOfReaders",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SettingNoOfReaders { get; set; }
-        /// <summary>transport mode based on environment. Values are case sensitive</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"transport mode based on environment. Values are case sensitive",
-        SerializedName = @"transportMode",
-        PossibleTypes = new [] { typeof(string) })]
-        string SettingTransportMode { get; set; }
-        /// <summary>True if Changed Block Tracking is enabled</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if Changed Block Tracking is enabled",
-        SerializedName = @"useChangedBlockTrackingOnVM",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SettingUseChangedBlockTrackingOnVM { get; set; }
-        /// <summary>True if use VM CheckPoint setting is enabled</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if use VM CheckPoint setting is enabled",
-        SerializedName = @"useVMCheckpointSetting",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SettingUseVMCheckpointSetting { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"vmBackupType",
-        PossibleTypes = new [] { typeof(string) })]
-        string SettingVMBackupType { get; set; }
+        SerializedName = @"settings",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVMGroupSettings) })]
+        Commvault.Powershell.Models.IVMGroupSettings Settings { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -747,25 +594,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enableHardwareSnapshot",
         PossibleTypes = new [] { typeof(bool) })]
         bool? SnapshotManagementEnableHardwareSnapshot { get; set; }
-        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if full copy of amazon snapshot to different amazon account is enabled",
-        SerializedName = @"isCrossAccountCopyEnabled",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SnapshotManagementIsCrossAccountCopyEnabled { get; set; }
-        /// <summary>
-        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
-        /// is enabled
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location is enabled",
-        SerializedName = @"isCrossAccountEnabled",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SnapshotManagementIsCrossAccountEnabled { get; set; }
         /// <summary>True if independent disk option is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -822,6 +650,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string StorageName { get; set; }
+        /// <summary>username to access the network path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"username to access the network path",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string UserAccountName { get; set; }
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"password to access the network path",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string UserAccountPassword { get; set; }
 
     }
     /// UpdatevmGroupReq
@@ -861,16 +705,14 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IRuleGroupContent[] ContentRuleGroups { get; set; }
 
         Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get; set; }
-        /// <summary>username to access the network path</summary>
-        string CredentialsName { get; set; }
-        /// <summary>password to access the network path</summary>
-        string CredentialsPassword { get; set; }
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        bool? DiskFilterOverwrite { get; set; }
 
-        long? CrossAccountCopyDestinationClientId { get; set; }
-
-        string CrossAccountCopyDestinationClientName { get; set; }
-
-        Commvault.Powershell.Models.IVMDiskFilter[] DiskFilters { get; set; }
+        Commvault.Powershell.Models.IVMDiskFilter[] DiskFilterRules { get; set; }
+        /// <summary>vmDiskFilterProp</summary>
+        Commvault.Powershell.Models.IVMDiskFilterProp DiskFilters { get; set; }
         /// <summary>True if file indexing needs to be enabled</summary>
         bool? EnableFileIndexing { get; set; }
         /// <summary>
@@ -883,10 +725,18 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IVirtualMachinecontent[] FilterVirtualMachines { get; set; }
         /// <summary>RuleContent</summary>
         Commvault.Powershell.Models.IVMContent Filters { get; set; }
+        /// <summary>Meditech Listener IP of FQDN name</summary>
+        string MeditechSystemListenerIP { get; set; }
+        /// <summary>Meditech Listener Port</summary>
+        long? MeditechSystemListenerPort { get; set; }
+        /// <summary>MBF timeout (in seconds)</summary>
+        long? MeditechSystemMbFtimeout { get; set; }
+        /// <summary>Meditech system name</summary>
+        string MeditechSystemName { get; set; }
 
-        Commvault.Powershell.Models.IUserNamePassword GuestCredentials { get; set; }
-
-        Commvault.Powershell.Models.IIdName GuestCredentialsSavedCredentials { get; set; }
+        Commvault.Powershell.Models.IUserNamePassword MeditechSystemUserAccount { get; set; }
+        /// <summary>meditechPropResp</summary>
+        Commvault.Powershell.Models.IMeditechPropResp MeditechSystems { get; set; }
         /// <summary>subclient name</summary>
         string NewName { get; set; }
 
@@ -906,41 +756,7 @@ namespace Commvault.Powershell.Models
 
         string RestoreActivityControlOptionsTimeZoneName { get; set; }
 
-        long? SavedCredentialsId { get; set; }
-
-        string SavedCredentialsName { get; set; }
-
         Commvault.Powershell.Models.ISecurityAssoc[] SecurityAssociations { get; set; }
-        /// <summary>True if auto detect VM Owner enabled</summary>
-        bool? SettingAutoDetectVMOwner { get; set; }
-        /// <summary>
-        /// True if metadata collection is enabled for intellisnap jobs. Only applicable for Indexing v1
-        /// </summary>
-        bool? SettingCollectFileDetailsFromSnapshotCopy { get; set; }
-        /// <summary>True if metadata collection is enabled. Only applicable for Indexing v1</summary>
-        bool? SettingCollectFileDetailsforGranularRecovery { get; set; }
-        /// <summary>Custom snapshot resource group GUID for Azure</summary>
-        string SettingCustomSnapshotResourceGroup { get; set; }
-        /// <summary>True if Datastore Free space check is enabled</summary>
-        bool? SettingDatastoreFreespaceCheck { get; set; }
-        /// <summary>precentage of datastore free space check value</summary>
-        long? SettingDatastoreFreespaceRequired { get; set; }
-        /// <summary>guestCredentialInfo</summary>
-        Commvault.Powershell.Models.IGuestCredentialInfo SettingGuestCredentials { get; set; }
-        /// <summary>Is the VM App Aware</summary>
-        bool? SettingIsApplicationAware { get; set; }
-        /// <summary>Start Time for the VM Group Job</summary>
-        long? SettingJobStartTime { get; set; }
-        /// <summary>Number of readers for backup</summary>
-        long? SettingNoOfReaders { get; set; }
-        /// <summary>transport mode based on environment. Values are case sensitive</summary>
-        string SettingTransportMode { get; set; }
-        /// <summary>True if Changed Block Tracking is enabled</summary>
-        bool? SettingUseChangedBlockTrackingOnVM { get; set; }
-        /// <summary>True if use VM CheckPoint setting is enabled</summary>
-        bool? SettingUseVMCheckpointSetting { get; set; }
-
-        string SettingVMBackupType { get; set; }
 
         Commvault.Powershell.Models.IVMGroupSettings Settings { get; set; }
 
@@ -955,17 +771,8 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ISnapCopyInfo SnapshotManagement { get; set; }
 
         string SnapshotManagementBackupCopyInterface { get; set; }
-
-        Commvault.Powershell.Models.IIdName SnapshotManagementCrossAccountCopyDestinationClient { get; set; }
         /// <summary>True if hardware snapshot is enabled</summary>
         bool? SnapshotManagementEnableHardwareSnapshot { get; set; }
-        /// <summary>True if full copy of amazon snapshot to different amazon account is enabled</summary>
-        bool? SnapshotManagementIsCrossAccountCopyEnabled { get; set; }
-        /// <summary>
-        /// True if replicate and copy or sharing of amazon snapshot to different amazon account in same or different geographic location
-        /// is enabled
-        /// </summary>
-        bool? SnapshotManagementIsCrossAccountEnabled { get; set; }
         /// <summary>True if independent disk option is enabled</summary>
         bool? SnapshotManagementIsIndependentDisksEnabled { get; set; }
         /// <summary>True if raw device maps option is enabled</summary>
@@ -986,6 +793,10 @@ namespace Commvault.Powershell.Models
         long? StorageId { get; set; }
 
         string StorageName { get; set; }
+        /// <summary>username to access the network path</summary>
+        string UserAccountName { get; set; }
+        /// <summary>password to access the network path</summary>
+        string UserAccountPassword { get; set; }
 
     }
 }

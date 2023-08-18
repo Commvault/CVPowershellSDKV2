@@ -61,6 +61,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_plansCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("plansCount"), out var __jsonPlansCount) ? (long?)__jsonPlansCount : PlansCount;}
             {_plans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("plans"), out var __jsonPlans) ? If( __jsonPlans as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAssociatedRegionBasedPlansList) (Commvault.Powershell.Models.AssociatedRegionBasedPlansList.FromJson(__u) )) ))() : null : Plans;}
             AfterFromJson(json);
         }
@@ -94,6 +95,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._plansCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._plansCount) : null, "plansCount" ,container.Add );
             if (null != this._plans)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

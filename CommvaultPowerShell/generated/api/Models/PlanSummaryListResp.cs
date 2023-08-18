@@ -16,6 +16,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IPlanSummary[] Plans { get => this._plans; set => this._plans = value; }
 
+        /// <summary>Backing field for <see cref="PlansCount" /> property.</summary>
+        private long? _plansCount;
+
+        /// <summary>Number of plans returned</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? PlansCount { get => this._plansCount; set => this._plansCount = value; }
+
         /// <summary>Creates an new <see cref="PlanSummaryListResp" /> instance.</summary>
         public PlanSummaryListResp()
         {
@@ -32,12 +39,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"plans",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanSummary) })]
         Commvault.Powershell.Models.IPlanSummary[] Plans { get; set; }
+        /// <summary>Number of plans returned</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of plans returned",
+        SerializedName = @"plansCount",
+        PossibleTypes = new [] { typeof(long) })]
+        long? PlansCount { get; set; }
 
     }
     internal partial interface IPlanSummaryListRespInternal
 
     {
         Commvault.Powershell.Models.IPlanSummary[] Plans { get; set; }
+        /// <summary>Number of plans returned</summary>
+        long? PlansCount { get; set; }
 
     }
 }

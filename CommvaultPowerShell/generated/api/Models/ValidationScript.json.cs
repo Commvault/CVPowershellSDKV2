@@ -83,7 +83,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._path)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._path.ToString()) : null, "path" ,container.Add );
             AddIf( null != (((object)this._arguments)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._arguments.ToString()) : null, "arguments" ,container.Add );
             AddIf( null != this._isDisabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDisabled) : null, "isDisabled" ,container.Add );
-            AddIf( null != this._isUnc ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isUnc) : null, "isUNC" ,container.Add );
+            AddIf( null != this._isLocal ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isLocal) : null, "isLocal" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
             {_path = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("path"), out var __jsonPath) ? (string)__jsonPath : (string)Path;}
             {_arguments = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("arguments"), out var __jsonArguments) ? (string)__jsonArguments : (string)Arguments;}
             {_isDisabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDisabled"), out var __jsonIsDisabled) ? (bool?)__jsonIsDisabled : IsDisabled;}
-            {_isUnc = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isUNC"), out var __jsonIsUnc) ? (bool?)__jsonIsUnc : IsUnc;}
+            {_isLocal = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isLocal"), out var __jsonIsLocal) ? (bool?)__jsonIsLocal : IsLocal;}
             AfterFromJson(json);
         }
     }

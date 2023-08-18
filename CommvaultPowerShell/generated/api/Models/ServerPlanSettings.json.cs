@@ -71,6 +71,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_fileSearch = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("fileSearch"), out var __jsonFileSearch) ? Commvault.Powershell.Models.PlanFileSearch.FromJson(__jsonFileSearch) : FileSearch;}
+            {_enableAdvancedView = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableAdvancedView"), out var __jsonEnableAdvancedView) ? (bool?)__jsonEnableAdvancedView : EnableAdvancedView;}
             AfterFromJson(json);
         }
 
@@ -94,6 +95,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._fileSearch ? (Commvault.Powershell.Runtime.Json.JsonNode) this._fileSearch.ToJson(null,serializationMode) : null, "fileSearch" ,container.Add );
+            AddIf( null != this._enableAdvancedView ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableAdvancedView) : null, "enableAdvancedView" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -67,6 +67,7 @@ namespace Commvault.Powershell.Models
             {_secretKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("secretKey"), out var __jsonSecretKey) ? (string)__jsonSecretKey : (string)SecretKey;}
             {_userName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userName"), out var __jsonUserName) ? (string)__jsonUserName : (string)UserName;}
             {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? (string)__jsonPassword : (string)Password;}
+            {_k8ServiceType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("k8ServiceType"), out var __jsonK8ServiceType) ? (string)__jsonK8ServiceType : (string)K8ServiceType;}
             AfterFromJson(json);
         }
 
@@ -106,6 +107,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._secretKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._secretKey.ToString()) : null, "secretKey" ,container.Add );
             AddIf( null != (((object)this._userName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userName.ToString()) : null, "userName" ,container.Add );
             AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._password.ToString()) : null, "password" ,container.Add );
+            AddIf( null != (((object)this._k8ServiceType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._k8ServiceType.ToString()) : null, "k8ServiceType" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

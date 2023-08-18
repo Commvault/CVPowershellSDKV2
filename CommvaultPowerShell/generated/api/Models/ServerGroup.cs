@@ -58,6 +58,12 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for ServerGroup1</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IServerGroupInternal.ServerGroup1 { get => (this._serverGroup1 = this._serverGroup1 ?? new Commvault.Powershell.Models.IdName()); set { {_serverGroup1 = value;} } }
 
+        /// <summary>Backing field for <see cref="Description" /> property.</summary>
+        private string _description;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Description { get => this._description; set => this._description = value; }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] FileExceptionUnixFilters { get => ((Commvault.Powershell.Models.IFileExceptionsDetailInternal)FileExceptions).UnixFilters; set => ((Commvault.Powershell.Models.IFileExceptionsDetailInternal)FileExceptions).UnixFilters = value ?? null /* arrayOf */; }
 
@@ -181,6 +187,14 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
+        SerializedName = @"description",
+        PossibleTypes = new [] { typeof(string) })]
+        string Description { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
         SerializedName = @"unixFilters",
         PossibleTypes = new [] { typeof(string) })]
         string[] FileExceptionUnixFilters { get; set; }
@@ -291,6 +305,8 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IServerDetails[] AssociatedServers { get; set; }
 
         Commvault.Powershell.Models.IBlackoutWindowDetails[] BlackoutWindow { get; set; }
+
+        string Description { get; set; }
 
         string[] FileExceptionUnixFilters { get; set; }
         /// <summary>To apply the filters to all the subclients in the server group.</summary>

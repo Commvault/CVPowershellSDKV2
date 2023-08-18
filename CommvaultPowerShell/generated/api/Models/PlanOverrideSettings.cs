@@ -5,6 +5,10 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
+    /// <summary>
+    /// To allow the derived plans that use this plan as the base plan to override the settings, property allowPlanOverride must
+    /// be true, and then select one of the options for Storage pool, RPO and backup Content.
+    /// </summary>
     public partial class PlanOverrideSettings :
         Commvault.Powershell.Models.IPlanOverrideSettings,
         Commvault.Powershell.Models.IPlanOverrideSettingsInternal
@@ -34,6 +38,8 @@ namespace Commvault.Powershell.Models
 
         }
     }
+    /// To allow the derived plans that use this plan as the base plan to override the settings, property allowPlanOverride must
+    /// be true, and then select one of the options for Storage pool, RPO and backup Content.
     public partial interface IPlanOverrideSettings :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
@@ -62,6 +68,8 @@ namespace Commvault.Powershell.Models
         string StoragePool { get; set; }
 
     }
+    /// To allow the derived plans that use this plan as the base plan to override the settings, property allowPlanOverride must
+    /// be true, and then select one of the options for Storage pool, RPO and backup Content.
     internal partial interface IPlanOverrideSettingsInternal
 
     {

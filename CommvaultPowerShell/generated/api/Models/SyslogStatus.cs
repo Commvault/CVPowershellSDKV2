@@ -21,6 +21,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for ForwardToSyslog</summary>
         Commvault.Powershell.Models.ISyslogPolicies Commvault.Powershell.Models.ISyslogStatusInternal.ForwardToSyslog { get => (this._forwardToSyslog = this._forwardToSyslog ?? new Commvault.Powershell.Models.SyslogPolicies()); set { {_forwardToSyslog = value;} } }
 
+        /// <summary>Backing field for <see cref="Enabled" /> property.</summary>
+        private bool? _enabled;
+
+        /// <summary>Specifies if the syslog server is enabled or disabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Enabled { get => this._enabled; set => this._enabled = value; }
+
         /// <summary>Backing field for <see cref="ForwardToSyslog" /> property.</summary>
         private Commvault.Powershell.Models.ISyslogPolicies _forwardToSyslog;
 
@@ -82,6 +89,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"certificateAuthorityName",
         PossibleTypes = new [] { typeof(string) })]
         string CertificateAuthorityName { get; set; }
+        /// <summary>Specifies if the syslog server is enabled or disabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Specifies if the syslog server is enabled or disabled",
+        SerializedName = @"enabled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Enabled { get; set; }
         /// <summary>Forward the system log for alerts to the server.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -141,6 +156,8 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>File name of the uploaded certificate authority file</summary>
         string CertificateAuthorityName { get; set; }
+        /// <summary>Specifies if the syslog server is enabled or disabled</summary>
+        bool? Enabled { get; set; }
         /// <summary>Select the log types that you want to forward to the syslog server.</summary>
         Commvault.Powershell.Models.ISyslogPolicies ForwardToSyslog { get; set; }
         /// <summary>Forward the system log for alerts to the server.</summary>

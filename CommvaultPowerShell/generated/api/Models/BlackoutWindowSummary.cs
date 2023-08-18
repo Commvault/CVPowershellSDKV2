@@ -15,6 +15,15 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IBlackoutWindowSummaryInternal
     {
 
+        /// <summary>Backing field for <see cref="AllDays" /> property.</summary>
+        private Commvault.Powershell.Models.IDaysAndTimes[] _allDays;
+
+        /// <summary>
+        /// Days of the week along with the time on which the black out window will be in effect.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IDaysAndTimes[] AllDays { get => this._allDays; set => this._allDays = value; }
+
         /// <summary>the blackout window is no longer in effect from this point on.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? BetweenDateEnd { get => ((Commvault.Powershell.Models.IStartEndInternal)BetweenDates).End; set => ((Commvault.Powershell.Models.IStartEndInternal)BetweenDates).End = value ?? default(long); }
@@ -47,13 +56,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
 
-        /// <summary>Backing field for <see cref="Days" /> property.</summary>
-        private string[] _days;
-
-        /// <summary>Days of the week on which the black out window will be in effect.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string[] Days { get => this._days; set => this._days = value; }
-
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
 
@@ -68,15 +70,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
-        /// <summary>Backing field for <see cref="Time" /> property.</summary>
-        private Commvault.Powershell.Models.IStartEnd[] _time;
-
-        /// <summary>
-        /// Refers to the time between which the blackout window will be in effect. It has to be provided in seconds.
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IStartEnd[] Time { get => this._time; set => this._time = value; }
-
         /// <summary>Creates an new <see cref="BlackoutWindowSummary" /> instance.</summary>
         public BlackoutWindowSummary()
         {
@@ -89,6 +82,16 @@ namespace Commvault.Powershell.Models
     public partial interface IBlackoutWindowSummary :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// Days of the week along with the time on which the black out window will be in effect.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Days of the week along with the time on which the black out window will be in effect.",
+        SerializedName = @"allDays",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IDaysAndTimes) })]
+        Commvault.Powershell.Models.IDaysAndTimes[] AllDays { get; set; }
         /// <summary>the blackout window is no longer in effect from this point on.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -121,14 +124,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CompanyName { get; set; }
-        /// <summary>Days of the week on which the black out window will be in effect.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Days of the week on which the black out window will be in effect.",
-        SerializedName = @"days",
-        PossibleTypes = new [] { typeof(string) })]
-        string[] Days { get; set; }
         /// <summary>blackout window Id</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -145,16 +140,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string Name { get; set; }
-        /// <summary>
-        /// Refers to the time between which the blackout window will be in effect. It has to be provided in seconds.
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Refers to the time between which the blackout window will be in effect. It has to be provided in seconds.",
-        SerializedName = @"time",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IStartEnd) })]
-        Commvault.Powershell.Models.IStartEnd[] Time { get; set; }
 
     }
     /// company refers to company to which the blackout window is associated. dates refers to the dates where the blackout window
@@ -163,6 +148,10 @@ namespace Commvault.Powershell.Models
     internal partial interface IBlackoutWindowSummaryInternal
 
     {
+        /// <summary>
+        /// Days of the week along with the time on which the black out window will be in effect.
+        /// </summary>
+        Commvault.Powershell.Models.IDaysAndTimes[] AllDays { get; set; }
         /// <summary>the blackout window is no longer in effect from this point on.</summary>
         long? BetweenDateEnd { get; set; }
         /// <summary>the blackout window comes into effect at this point.</summary>
@@ -175,16 +164,10 @@ namespace Commvault.Powershell.Models
         long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
-        /// <summary>Days of the week on which the black out window will be in effect.</summary>
-        string[] Days { get; set; }
         /// <summary>blackout window Id</summary>
         long? Id { get; set; }
         /// <summary>blackout window name</summary>
         string Name { get; set; }
-        /// <summary>
-        /// Refers to the time between which the blackout window will be in effect. It has to be provided in seconds.
-        /// </summary>
-        Commvault.Powershell.Models.IStartEnd[] Time { get; set; }
 
     }
 }

@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.2.13</Version>
+    <Version>0.2.14</Version>
     <LangVersion>7.1</LangVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AssemblyName>CommvaultPowerShell.private</AssemblyName>
+    <AssemblyName>CommvaultPowershell.private</AssemblyName>
     <RootNamespace>Commvault.Powershell</RootNamespace>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>./bin</OutputPath>
     <PublishDir>$(OutputPath)</PublishDir>
-    <NuspecFile>CommvaultPowerShell.nuspec</NuspecFile>
+    <NuspecFile>CommvaultPowershell.nuspec</NuspecFile>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <!-- Some methods are marked async and don't have an await in them -->
     <NoWarn>1998</NoWarn>

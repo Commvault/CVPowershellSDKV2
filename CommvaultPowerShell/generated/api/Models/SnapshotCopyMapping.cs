@@ -13,8 +13,14 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Source</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISnapshotCopyMappingInternal.Source { get => (this._source = this._source ?? new Commvault.Powershell.Models.IdName()); set { {_source = value;} } }
 
+        /// <summary>Internal Acessors for SourceVendor</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISnapshotCopyMappingInternal.SourceVendor { get => (this._sourceVendor = this._sourceVendor ?? new Commvault.Powershell.Models.IdName()); set { {_sourceVendor = value;} } }
+
         /// <summary>Internal Acessors for Target</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISnapshotCopyMappingInternal.Target { get => (this._target = this._target ?? new Commvault.Powershell.Models.IdName()); set { {_target = value;} } }
+
+        /// <summary>Internal Acessors for TargetVendor</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ISnapshotCopyMappingInternal.TargetVendor { get => (this._targetVendor = this._targetVendor ?? new Commvault.Powershell.Models.IdName()); set { {_targetVendor = value;} } }
 
         /// <summary>Backing field for <see cref="Source" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _source;
@@ -28,6 +34,18 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SourceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Source).Name = value ?? null; }
 
+        /// <summary>Backing field for <see cref="SourceVendor" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _sourceVendor;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName SourceVendor { get => (this._sourceVendor = this._sourceVendor ?? new Commvault.Powershell.Models.IdName()); set => this._sourceVendor = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SourceVendorId { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceVendor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceVendor).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SourceVendorName { get => ((Commvault.Powershell.Models.IIdNameInternal)SourceVendor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)SourceVendor).Name = value ?? null; }
+
         /// <summary>Backing field for <see cref="Target" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _target;
 
@@ -39,6 +57,18 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TargetName { get => ((Commvault.Powershell.Models.IIdNameInternal)Target).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Target).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="TargetVendor" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _targetVendor;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName TargetVendor { get => (this._targetVendor = this._targetVendor ?? new Commvault.Powershell.Models.IdName()); set => this._targetVendor = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? TargetVendorId { get => ((Commvault.Powershell.Models.IIdNameInternal)TargetVendor).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)TargetVendor).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TargetVendorName { get => ((Commvault.Powershell.Models.IIdNameInternal)TargetVendor).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)TargetVendor).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Vendor" /> property.</summary>
         private string _vendor;
@@ -78,6 +108,22 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
+        long? SourceVendorId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string SourceVendorName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
         long? TargetId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
@@ -87,6 +133,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string TargetName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? TargetVendorId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string TargetVendorName { get; set; }
         /// <summary>Snapshot vendors available for Snap Copy mappings</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -106,11 +168,23 @@ namespace Commvault.Powershell.Models
 
         string SourceName { get; set; }
 
+        Commvault.Powershell.Models.IIdName SourceVendor { get; set; }
+
+        long? SourceVendorId { get; set; }
+
+        string SourceVendorName { get; set; }
+
         Commvault.Powershell.Models.IIdName Target { get; set; }
 
         long? TargetId { get; set; }
 
         string TargetName { get; set; }
+
+        Commvault.Powershell.Models.IIdName TargetVendor { get; set; }
+
+        long? TargetVendorId { get; set; }
+
+        string TargetVendorName { get; set; }
         /// <summary>Snapshot vendors available for Snap Copy mappings</summary>
         string Vendor { get; set; }
 

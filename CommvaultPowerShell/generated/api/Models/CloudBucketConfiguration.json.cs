@@ -63,7 +63,7 @@ namespace Commvault.Powershell.Models
             }
             {_storageAcceleratorCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("storageAcceleratorCredentials"), out var __jsonStorageAcceleratorCredentials) ? Commvault.Powershell.Models.IdName.FromJson(__jsonStorageAcceleratorCredentials) : StorageAcceleratorCredentials;}
             {_enable = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enable"), out var __jsonEnable) ? (bool?)__jsonEnable : Enable;}
-            {_preventNewDataWritesToBackupLocation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("preventNewDataWritesToBackupLocation"), out var __jsonPreventNewDataWritesToBackupLocation) ? (bool?)__jsonPreventNewDataWritesToBackupLocation : PreventNewDataWritesToBackupLocation;}
+            {_disableBackupLocationForFutureBackups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("disableBackupLocationForFutureBackups"), out var __jsonDisableBackupLocationForFutureBackups) ? (bool?)__jsonDisableBackupLocationForFutureBackups : DisableBackupLocationForFutureBackups;}
             {_prepareForRetirement = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("prepareForRetirement"), out var __jsonPrepareForRetirement) ? (bool?)__jsonPrepareForRetirement : PrepareForRetirement;}
             AfterFromJson(json);
         }
@@ -99,7 +99,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._storageAcceleratorCredentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._storageAcceleratorCredentials.ToJson(null,serializationMode) : null, "storageAcceleratorCredentials" ,container.Add );
             AddIf( null != this._enable ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enable) : null, "enable" ,container.Add );
-            AddIf( null != this._preventNewDataWritesToBackupLocation ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._preventNewDataWritesToBackupLocation) : null, "preventNewDataWritesToBackupLocation" ,container.Add );
+            AddIf( null != this._disableBackupLocationForFutureBackups ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._disableBackupLocationForFutureBackups) : null, "disableBackupLocationForFutureBackups" ,container.Add );
             AddIf( null != this._prepareForRetirement ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._prepareForRetirement) : null, "prepareForRetirement" ,container.Add );
             AfterToJson(ref container);
             return container;

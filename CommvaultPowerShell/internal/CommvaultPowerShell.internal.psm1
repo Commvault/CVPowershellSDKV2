@@ -1,6 +1,6 @@
 # region Generated 
   # Load the private module dll
-  $null = Import-Module -PassThru -Name (Join-Path $PSScriptRoot '..\bin\CommvaultPowerShell.private.dll')
+  $null = Import-Module -PassThru -Name (Join-Path $PSScriptRoot '..\bin\CommvaultPowershell.private.dll')
 
   # Get the private module's instance
   $instance = [Commvault.Powershell.Module]::Instance

@@ -11,6 +11,45 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IVirtualMachinecontentInternal
     {
 
+        /// <summary>Internal Acessors for ExistingCredential</summary>
+        Commvault.Powershell.Models.IVMExistingCredential Commvault.Powershell.Models.IVirtualMachinecontentInternal.ExistingCredential { get => (this._existingCredential = this._existingCredential ?? new Commvault.Powershell.Models.VMExistingCredential()); set { {_existingCredential = value;} } }
+
+        /// <summary>Internal Acessors for GuestCredentials</summary>
+        Commvault.Powershell.Models.IVMGuestCredentials Commvault.Powershell.Models.IVirtualMachinecontentInternal.GuestCredentials { get => (this._guestCredentials = this._guestCredentials ?? new Commvault.Powershell.Models.VMGuestCredentials()); set { {_guestCredentials = value;} } }
+
+        /// <summary>Backing field for <see cref="ExistingCredential" /> property.</summary>
+        private Commvault.Powershell.Models.IVMExistingCredential _existingCredential;
+
+        /// <summary>VMExistingCredential</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IVMExistingCredential ExistingCredential { get => (this._existingCredential = this._existingCredential ?? new Commvault.Powershell.Models.VMExistingCredential()); set => this._existingCredential = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ExistingCredentialId { get => ((Commvault.Powershell.Models.IVMExistingCredentialInternal)ExistingCredential).CredentialId; set => ((Commvault.Powershell.Models.IVMExistingCredentialInternal)ExistingCredential).CredentialId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ExistingCredentialName { get => ((Commvault.Powershell.Models.IVMExistingCredentialInternal)ExistingCredential).CredentialName; set => ((Commvault.Powershell.Models.IVMExistingCredentialInternal)ExistingCredential).CredentialName = value ?? null; }
+
+        /// <summary>Backing field for <see cref="GuestCredentialAssocId" /> property.</summary>
+        private long? _guestCredentialAssocId;
+
+        /// <summary>Credential association ID given to link entity with credential id.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? GuestCredentialAssocId { get => this._guestCredentialAssocId; set => this._guestCredentialAssocId = value; }
+
+        /// <summary>Backing field for <see cref="GuestCredentials" /> property.</summary>
+        private Commvault.Powershell.Models.IVMGuestCredentials _guestCredentials;
+
+        /// <summary>VMGuestCredentials</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IVMGuestCredentials GuestCredentials { get => (this._guestCredentials = this._guestCredentials ?? new Commvault.Powershell.Models.VMGuestCredentials()); set => this._guestCredentials = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredentialsPassword { get => ((Commvault.Powershell.Models.IVMGuestCredentialsInternal)GuestCredentials).Password; set => ((Commvault.Powershell.Models.IVMGuestCredentialsInternal)GuestCredentials).Password = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredentialsUserName { get => ((Commvault.Powershell.Models.IVMGuestCredentialsInternal)GuestCredentials).UserName; set => ((Commvault.Powershell.Models.IVMGuestCredentialsInternal)GuestCredentials).UserName = value ?? null; }
+
         /// <summary>Backing field for <see cref="Guid" /> property.</summary>
         private string _guid;
 
@@ -41,6 +80,45 @@ namespace Commvault.Powershell.Models
     public partial interface IVirtualMachinecontent :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"credentialId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ExistingCredentialId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"credentialName",
+        PossibleTypes = new [] { typeof(string) })]
+        string ExistingCredentialName { get; set; }
+        /// <summary>Credential association ID given to link entity with credential id.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Credential association ID given to link entity with credential id.",
+        SerializedName = @"guestCredentialAssocId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? GuestCredentialAssocId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredentialsPassword { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"userName",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredentialsUserName { get; set; }
         /// <summary>GUID of the VM to be added as content</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -71,6 +149,20 @@ namespace Commvault.Powershell.Models
     internal partial interface IVirtualMachinecontentInternal
 
     {
+        /// <summary>VMExistingCredential</summary>
+        Commvault.Powershell.Models.IVMExistingCredential ExistingCredential { get; set; }
+
+        long? ExistingCredentialId { get; set; }
+
+        string ExistingCredentialName { get; set; }
+        /// <summary>Credential association ID given to link entity with credential id.</summary>
+        long? GuestCredentialAssocId { get; set; }
+        /// <summary>VMGuestCredentials</summary>
+        Commvault.Powershell.Models.IVMGuestCredentials GuestCredentials { get; set; }
+
+        string GuestCredentialsPassword { get; set; }
+
+        string GuestCredentialsUserName { get; set; }
         /// <summary>GUID of the VM to be added as content</summary>
         string Guid { get; set; }
         /// <summary>name of the VM to be added as content</summary>

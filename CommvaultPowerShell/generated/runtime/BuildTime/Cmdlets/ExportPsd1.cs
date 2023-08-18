@@ -49,7 +49,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
           throw new ArgumentException($"Custom folder '{CustomFolder}' does not exist");
         }
 
-        string version = Convert.ToString(@"0.2.13");
+        string version = Convert.ToString(@"0.2.14");
         // Validate the module version should be semantic version
         // Following regex is official from https://semver.org/
         Regex rx = new Regex(@"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$", RegexOptions.Compiled);
@@ -69,7 +69,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
         var sb = new StringBuilder();
         sb.AppendLine("@{");
         sb.AppendLine($@"{GuidStart} = '{ModuleGuid}'");
-        sb.AppendLine($@"{Indent}RootModule = '{"./CommvaultPowerShell.psm1"}'");
+        sb.AppendLine($@"{Indent}RootModule = '{"./CommvaultPowershell.psm1"}'");
         sb.AppendLine($@"{Indent}ModuleVersion = '{version}'");
         sb.AppendLine($@"{Indent}CompatiblePSEditions = 'Core', 'Desktop'");
         sb.AppendLine($@"{Indent}Author = '{""}'");
@@ -78,12 +78,12 @@ namespace Commvault.Powershell.Runtime.PowerShell
         sb.AppendLine($@"{Indent}Description = '{""}'");
         sb.AppendLine($@"{Indent}PowerShellVersion = '5.1'");
         sb.AppendLine($@"{Indent}DotNetFrameworkVersion = '4.7.2'");
-        sb.AppendLine($@"{Indent}RequiredAssemblies = '{"./bin/CommvaultPowerShell.private.dll"}'");
+        sb.AppendLine($@"{Indent}RequiredAssemblies = '{"./bin/CommvaultPowershell.private.dll"}'");
 
         var customFormatPs1xmlFiles = Directory.GetFiles(CustomFolder)
             .Where(f => f.EndsWith(".format.ps1xml"))
             .Select(f => $"{CustomFolderRelative}/{Path.GetFileName(f)}");
-        var formatList = customFormatPs1xmlFiles.Prepend("./CommvaultPowerShell.format.ps1xml").ToPsList();
+        var formatList = customFormatPs1xmlFiles.Prepend("./CommvaultPowershell.format.ps1xml").ToPsList();
         sb.AppendLine($@"{Indent}FormatsToProcess = {formatList}");
 
         var functionInfos = GetScriptCmdlets(ExportsFolder).ToArray();

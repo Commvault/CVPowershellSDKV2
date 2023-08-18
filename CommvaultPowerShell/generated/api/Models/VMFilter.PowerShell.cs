@@ -98,6 +98,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IVMFilterInternal)this).Overwrite = (bool?) content.GetValueForProperty("Overwrite",((Commvault.Powershell.Models.IVMFilterInternal)this).Overwrite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IVMFilterInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IVMFilterInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMFilterInternal)this).Op = (string) content.GetValueForProperty("Op",((Commvault.Powershell.Models.IVMFilterInternal)this).Op, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMFilterInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IVMFilterInternal)this).Name, global::System.Convert.ToString);
@@ -121,6 +122,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IVMFilterInternal)this).Overwrite = (bool?) content.GetValueForProperty("Overwrite",((Commvault.Powershell.Models.IVMFilterInternal)this).Overwrite, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IVMFilterInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IVMFilterInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMFilterInternal)this).Op = (string) content.GetValueForProperty("Op",((Commvault.Powershell.Models.IVMFilterInternal)this).Op, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IVMFilterInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IVMFilterInternal)this).Name, global::System.Convert.ToString);

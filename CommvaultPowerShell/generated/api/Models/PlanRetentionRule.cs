@@ -13,21 +13,23 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="IsInfiniteRetention" /> property.</summary>
         private bool? _isInfiniteRetention;
 
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? IsInfiniteRetention { get => this._isInfiniteRetention; set => this._isInfiniteRetention = value; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
         private long? _retentionPeriodDays;
 
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? RetentionPeriodDays { get => this._retentionPeriodDays; set => this._retentionPeriodDays = value; }
 
         /// <summary>Backing field for <see cref="Type" /> property.</summary>
         private string _type;
 
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Type { get => this._type; set => this._type = value; }
 
@@ -40,28 +42,29 @@ namespace Commvault.Powershell.Models
     public partial interface IPlanRetentionRule :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"If this is set as true, no need to specify retentionPeriodDays.",
         SerializedName = @"isInfiniteRetention",
         PossibleTypes = new [] { typeof(bool) })]
         bool? IsInfiniteRetention { get; set; }
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"If this is set, no need to specify isInfiniteRetention as false.",
+        SerializedName = @"retentionPeriodDays",
+        PossibleTypes = new [] { typeof(long) })]
+        long? RetentionPeriodDays { get; set; }
         /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.",
-        SerializedName = @"retentionPeriodDays",
-        PossibleTypes = new [] { typeof(long) })]
-        long? RetentionPeriodDays { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
+        Description = @"All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.",
         SerializedName = @"type",
         PossibleTypes = new [] { typeof(string) })]
         string Type { get; set; }
@@ -70,12 +73,13 @@ namespace Commvault.Powershell.Models
     internal partial interface IPlanRetentionRuleInternal
 
     {
+        /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>
         bool? IsInfiniteRetention { get; set; }
-        /// <summary>
-        /// Default value is 30 days. Infinite retention takes precedence over retentionPeriodDays.
-        /// </summary>
+        /// <summary>If this is set, no need to specify isInfiniteRetention as false.</summary>
         long? RetentionPeriodDays { get; set; }
-
+        /// <summary>
+        /// All_JOBS means SYNCHRONOUS copy type, others are applicable for SELECTIVE copy Type only.
+        /// </summary>
         string Type { get; set; }
 
     }

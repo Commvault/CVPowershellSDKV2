@@ -11,6 +11,21 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ILaptopOwnerInfoInternal
     {
 
+        /// <summary>Backing field for <see cref="Client" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _client;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName Client { get => (this._client = this._client ?? new Commvault.Powershell.Models.IdName()); set => this._client = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ClientId { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ClientName { get => ((Commvault.Powershell.Models.IIdNameInternal)Client).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Client).Name = value ?? null; }
+
+        /// <summary>Internal Acessors for Client</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ILaptopOwnerInfoInternal.Client { get => (this._client = this._client ?? new Commvault.Powershell.Models.IdName()); set { {_client = value;} } }
+
         /// <summary>Internal Acessors for Company</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ILaptopOwnerInfoInternal.Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set { {_company = value;} } }
 
@@ -25,6 +40,13 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CompanyName { get => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Company).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="Configured" /> property.</summary>
+        private bool? _configured;
+
+        /// <summary>This indicates if the laptop has been installed or not</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? Configured { get => this._configured; set => this._configured = value; }
 
         /// <summary>Backing field for <see cref="Host" /> property.</summary>
         private string _host;
@@ -91,6 +113,22 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
+        long? ClientId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string ClientName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
         long? CompanyId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
@@ -100,6 +138,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CompanyName { get; set; }
+        /// <summary>This indicates if the laptop has been installed or not</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"This indicates if the laptop has been installed or not",
+        SerializedName = @"configured",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? Configured { get; set; }
         /// <summary>host name of the laptop</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -162,11 +208,19 @@ namespace Commvault.Powershell.Models
     internal partial interface ILaptopOwnerInfoInternal
 
     {
+        Commvault.Powershell.Models.IIdName Client { get; set; }
+
+        long? ClientId { get; set; }
+
+        string ClientName { get; set; }
+
         Commvault.Powershell.Models.IIdName Company { get; set; }
 
         long? CompanyId { get; set; }
 
         string CompanyName { get; set; }
+        /// <summary>This indicates if the laptop has been installed or not</summary>
+        bool? Configured { get; set; }
         /// <summary>host name of the laptop</summary>
         string Host { get; set; }
         /// <summary>Unique Id</summary>

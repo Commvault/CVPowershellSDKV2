@@ -11,6 +11,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ISamlInternal
     {
 
+        /// <summary>Backing field for <see cref="AppKey" /> property.</summary>
+        private string _appKey;
+
+        /// <summary>Unique key for the SAML app</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AppKey { get => this._appKey; set => this._appKey = value; }
+
         /// <summary>Companies associated with SAML</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IIdName[] AssociationCompanies { get => ((Commvault.Powershell.Models.ISamlAssociationsInternal)Associations).Companies; set => ((Commvault.Powershell.Models.ISamlAssociationsInternal)Associations).Companies = value ?? null /* arrayOf */; }
@@ -175,6 +182,14 @@ namespace Commvault.Powershell.Models
     public partial interface ISaml :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Unique key for the SAML app</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Unique key for the SAML app",
+        SerializedName = @"appKey",
+        PossibleTypes = new [] { typeof(string) })]
+        string AppKey { get; set; }
         /// <summary>Companies associated with SAML</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -354,6 +369,8 @@ namespace Commvault.Powershell.Models
     internal partial interface ISamlInternal
 
     {
+        /// <summary>Unique key for the SAML app</summary>
+        string AppKey { get; set; }
         /// <summary>Companies associated with SAML</summary>
         Commvault.Powershell.Models.IIdName[] AssociationCompanies { get; set; }
         /// <summary>Domains associated with SAML</summary>

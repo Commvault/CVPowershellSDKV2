@@ -99,6 +99,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).StatusMessage = (string) content.GetValueForProperty("StatusMessage",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).StatusMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Errors = (Commvault.Powershell.Models.IPlanFileSearchSetupError[]) content.GetValueForProperty("Errors",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Errors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanFileSearchSetupError>(__y, Commvault.Powershell.Models.PlanFileSearchSetupErrorTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -119,6 +120,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).StatusMessage = (string) content.GetValueForProperty("StatusMessage",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).StatusMessage, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Errors = (Commvault.Powershell.Models.IPlanFileSearchSetupError[]) content.GetValueForProperty("Errors",((Commvault.Powershell.Models.IPlanFileSearchInternal)this).Errors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanFileSearchSetupError>(__y, Commvault.Powershell.Models.PlanFileSearchSetupErrorTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 

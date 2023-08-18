@@ -10,6 +10,39 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ICreateServerPlanInternal
     {
 
+        /// <summary>Backing field for <see cref="AdditionalProperties" /> property.</summary>
+        private Commvault.Powershell.Models.IPlanAdditionalProperties _additionalProperties;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IPlanAdditionalProperties AdditionalProperties { get => (this._additionalProperties = this._additionalProperties ?? new Commvault.Powershell.Models.PlanAdditionalProperties()); set => this._additionalProperties = value; }
+
+        /// <summary>The least RPO in minutes for the plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? AdditionalPropertyRpo { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Rpo; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Rpo = value ?? default(long); }
+
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AdditionalPropertyStatus { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Status; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Status = value ?? null; }
+
+        /// <summary>Database options should be shown with this plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? AddonDatabase { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonDatabase; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonDatabase = value ?? default(bool); }
+
+        /// <summary>File system options should be shown with this plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? AddonFileSystem { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonFileSystem; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonFileSystem = value ?? default(bool); }
+
+        /// <summary>Index copy options should be shown with this plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? AddonIndexCopy { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonIndexCopy; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonIndexCopy = value ?? default(bool); }
+
+        /// <summary>Snap options should be shown with this plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? AddonSnap { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonSnap; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonSnap = value ?? default(bool); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string AddonSnapStatus { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonSnapStatus; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).AddonSnapStatus = value ?? null; }
+
         /// <summary>Backing field for <see cref="AllowPlanOverride" /> property.</summary>
         private bool? _allowPlanOverride;
 
@@ -34,9 +67,19 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? BackupContentBackupSystemStateOnlyWithFullBackup { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).BackupSystemStateOnlyWithFullBackup; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).BackupSystemStateOnlyWithFullBackup = value ?? default(bool); }
 
+        /// <summary>
+        /// Do you want to sync properties on associated subclients even if properties are overriden at subclient level?
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? BackupContentForceUpdateProperties { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).ForceUpdateProperties; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).ForceUpdateProperties = value ?? default(bool); }
+
         /// <summary>Paths to exclude for Mac</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentMacExcludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacExcludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacExcludedPaths = value ?? null /* arrayOf */; }
+
+        /// <summary>Paths that are exception to excluded paths for Mac</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] BackupContentMacFilterToExcludePaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacFilterToExcludePaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacFilterToExcludePaths = value ?? null /* arrayOf */; }
 
         /// <summary>Paths to include for Mac</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -45,6 +88,10 @@ namespace Commvault.Powershell.Models
         /// <summary>Paths to exclude for UNIX</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentUnixExcludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixExcludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixExcludedPaths = value ?? null /* arrayOf */; }
+
+        /// <summary>Paths that are exception to excluded paths for Unix</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] BackupContentUnixFilterToExcludePaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixFilterToExcludePaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixFilterToExcludePaths = value ?? null /* arrayOf */; }
 
         /// <summary>Paths to include for UNIX</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -60,9 +107,23 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentWindowsExcludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsExcludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsExcludedPaths = value ?? null /* arrayOf */; }
 
+        /// <summary>Paths that are exception to excluded paths for Windows</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] BackupContentWindowsFilterToExcludePaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsFilterToExcludePaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsFilterToExcludePaths = value ?? null /* arrayOf */; }
+
         /// <summary>Paths to include for Windows</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentWindowsIncludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsIncludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsIncludedPaths = value ?? null /* arrayOf */; }
+
+        /// <summary>Backing field for <see cref="BackupDestinationIds" /> property.</summary>
+        private long[] _backupDestinationIds;
+
+        /// <summary>
+        /// Primary Backup Destination Ids (which were created before plan creation). This is only considered when backupDestinations
+        /// array object is not defined.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long[] BackupDestinationIds { get => this._backupDestinationIds; set => this._backupDestinationIds = value; }
 
         /// <summary>Backing field for <see cref="BackupDestinations" /> property.</summary>
         private Commvault.Powershell.Models.ICreatePlanBackupDestination[] _backupDestinations;
@@ -73,11 +134,30 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.ICreatePlanBackupDestination[] BackupDestinations { get => this._backupDestinations; set => this._backupDestinations = value; }
 
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupFrequencyOperationType { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencyOperationType; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencyOperationType = value ?? null; }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencySchedules; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencySchedules = value ?? null /* arrayOf */; }
 
+        /// <summary>Internal Acessors for AdditionalProperties</summary>
+        Commvault.Powershell.Models.IPlanAdditionalProperties Commvault.Powershell.Models.ICreateServerPlanInternal.AdditionalProperties { get => (this._additionalProperties = this._additionalProperties ?? new Commvault.Powershell.Models.PlanAdditionalProperties()); set { {_additionalProperties = value;} } }
+
+        /// <summary>Internal Acessors for AdditionalPropertyAddons</summary>
+        Commvault.Powershell.Models.IPlanAddons Commvault.Powershell.Models.ICreateServerPlanInternal.AdditionalPropertyAddons { get => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Addons; set => ((Commvault.Powershell.Models.IPlanAdditionalPropertiesInternal)AdditionalProperties).Addons = value; }
+
         /// <summary>Internal Acessors for BackupContent</summary>
         Commvault.Powershell.Models.IPlanContent Commvault.Powershell.Models.ICreateServerPlanInternal.BackupContent { get => (this._backupContent = this._backupContent ?? new Commvault.Powershell.Models.PlanContent()); set { {_backupContent = value;} } }
+
+        /// <summary>Internal Acessors for BackupContentMacNumberOfDataReaders</summary>
+        Commvault.Powershell.Models.IPlanContentDataReaders Commvault.Powershell.Models.ICreateServerPlanInternal.BackupContentMacNumberOfDataReaders { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaders; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaders = value; }
+
+        /// <summary>Internal Acessors for BackupContentUnixNumberOfDataReaders</summary>
+        Commvault.Powershell.Models.IPlanContentDataReaders Commvault.Powershell.Models.ICreateServerPlanInternal.BackupContentUnixNumberOfDataReaders { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaders; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaders = value; }
+
+        /// <summary>Internal Acessors for BackupContentWindowsNumberOfDataReaders</summary>
+        Commvault.Powershell.Models.IPlanContentDataReaders Commvault.Powershell.Models.ICreateServerPlanInternal.BackupContentWindowsNumberOfDataReaders { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsNumberOfDataReaders; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsNumberOfDataReaders = value; }
 
         /// <summary>Internal Acessors for DatabaseOptions</summary>
         Commvault.Powershell.Models.IServerPlanDatabaseOptions Commvault.Powershell.Models.ICreateServerPlanInternal.DatabaseOptions { get => (this._databaseOptions = this._databaseOptions ?? new Commvault.Powershell.Models.ServerPlanDatabaseOptions()); set { {_databaseOptions = value;} } }
@@ -94,8 +174,17 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for RpoBackupFrequency</summary>
         Commvault.Powershell.Models.IPlanSchedules Commvault.Powershell.Models.ICreateServerPlanInternal.RpoBackupFrequency { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequency; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequency = value; }
 
+        /// <summary>Internal Acessors for SettingFileSearch</summary>
+        Commvault.Powershell.Models.IPlanFileSearch Commvault.Powershell.Models.ICreateServerPlanInternal.SettingFileSearch { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearch; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearch = value; }
+
+        /// <summary>Internal Acessors for Settings</summary>
+        Commvault.Powershell.Models.IServerPlanSettings Commvault.Powershell.Models.ICreateServerPlanInternal.Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.ServerPlanSettings()); set { {_settings = value;} } }
+
         /// <summary>Internal Acessors for SnapshotOptions</summary>
         Commvault.Powershell.Models.ICreatePlanSnapshotOptions Commvault.Powershell.Models.ICreateServerPlanInternal.SnapshotOptions { get => (this._snapshotOptions = this._snapshotOptions ?? new Commvault.Powershell.Models.CreatePlanSnapshotOptions()); set { {_snapshotOptions = value;} } }
+
+        /// <summary>Internal Acessors for Workload</summary>
+        Commvault.Powershell.Models.IPlanWorkloads Commvault.Powershell.Models.ICreateServerPlanInternal.Workload { get => (this._workload = this._workload ?? new Commvault.Powershell.Models.PlanWorkloads()); set { {_workload = value;} } }
 
         /// <summary>Commit frequency in hours</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -116,6 +205,43 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IServerPlanDatabaseOptions DatabaseOptions { get => (this._databaseOptions = this._databaseOptions ?? new Commvault.Powershell.Models.ServerPlanDatabaseOptions()); set => this._databaseOptions = value; }
 
+        /// <summary>Flag for enabling indexing</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? FileSearchEnabled { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchEnabled; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchEnabled = value ?? default(bool); }
+
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IPlanFileSearchSetupError[] FileSearchErrors { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchErrors; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchErrors = value ?? null /* arrayOf */; }
+
+        /// <summary>Type of indexing status.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string FileSearchStatus { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchStatus; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchStatus = value ?? null; }
+
+        /// <summary>
+        /// Tells what is happening behind the scene, so that user can knows why indexing is not enabled or if its in progress
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string FileSearchStatusMessage { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchStatusMessage; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchStatusMessage = value ?? null; }
+
+        /// <summary>Backing field for <see cref="FilesystemAddon" /> property.</summary>
+        private bool? _filesystemAddon;
+
+        /// <summary>flag to enable backup content association for applicable file system workload.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? FilesystemAddon { get => this._filesystemAddon; set => this._filesystemAddon = value; }
+
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MacNumberOfDataReaderCount { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderCount; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderCount = value ?? default(long); }
+
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? MacNumberOfDataReaderUseOptimal { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderUseOptimal; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderUseOptimal = value ?? default(bool); }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string OverrideRestrictionBackupContent { get => ((Commvault.Powershell.Models.IPlanOverrideSettingsInternal)OverrideRestrictions).BackupContent; set => ((Commvault.Powershell.Models.IPlanOverrideSettingsInternal)OverrideRestrictions).BackupContent = value ?? null; }
 
@@ -128,6 +254,10 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="OverrideRestrictions" /> property.</summary>
         private Commvault.Powershell.Models.IPlanOverrideSettings _overrideRestrictions;
 
+        /// <summary>
+        /// To allow the derived plans that use this plan as the base plan to override the settings, property allowPlanOverride must
+        /// be true, and then select one of the options for Storage pool, RPO and backup Content.
+        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IPlanOverrideSettings OverrideRestrictions { get => (this._overrideRestrictions = this._overrideRestrictions ?? new Commvault.Powershell.Models.PlanOverrideSettings()); set => this._overrideRestrictions = value; }
 
@@ -168,6 +298,18 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IDayAndTime[] RpoFullBackupWindow { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).FullBackupWindow; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).FullBackupWindow = value ?? null /* arrayOf */; }
 
+        /// <summary>
+        /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? SettingEnableAdvancedView { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).EnableAdvancedView; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).EnableAdvancedView = value ?? default(bool); }
+
+        /// <summary>Backing field for <see cref="Settings" /> property.</summary>
+        private Commvault.Powershell.Models.IServerPlanSettings _settings;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IServerPlanSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.ServerPlanSettings()); set => this._settings = value; }
+
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SnapshotOptionBackupCopyRpoMins { get => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins; set => ((Commvault.Powershell.Models.ICreatePlanSnapshotOptionsInternal)SnapshotOptions).BackupCopyRpoMins = value ?? default(long); }
@@ -197,6 +339,42 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.ICreatePlanSnapshotOptions SnapshotOptions { get => (this._snapshotOptions = this._snapshotOptions ?? new Commvault.Powershell.Models.CreatePlanSnapshotOptions()); set => this._snapshotOptions = value; }
 
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? UnixNumberOfDataReaderCount { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderCount; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderCount = value ?? default(long); }
+
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? UnixNumberOfDataReaderUseOptimal { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderUseOptimal; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderUseOptimal = value ?? default(bool); }
+
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? WindowNumberOfDataReaderCount { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderCount; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderCount = value ?? default(long); }
+
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? WindowNumberOfDataReaderUseOptimal { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderUseOptimal; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderUseOptimal = value ?? default(bool); }
+
+        /// <summary>Backing field for <see cref="Workload" /> property.</summary>
+        private Commvault.Powershell.Models.IPlanWorkloads _workload;
+
+        /// <summary>PlanWorkloads</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IPlanWorkloads Workload { get => (this._workload = this._workload ?? new Commvault.Powershell.Models.PlanWorkloads()); set => this._workload = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] WorkloadGroupTypes { get => ((Commvault.Powershell.Models.IPlanWorkloadsInternal)Workload).WorkloadGroupTypes; set => ((Commvault.Powershell.Models.IPlanWorkloadsInternal)Workload).WorkloadGroupTypes = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IIdName[] WorkloadSolutions { get => ((Commvault.Powershell.Models.IPlanWorkloadsInternal)Workload).Solutions; set => ((Commvault.Powershell.Models.IPlanWorkloadsInternal)Workload).Solutions = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IIdName[] WorkloadTypes { get => ((Commvault.Powershell.Models.IPlanWorkloadsInternal)Workload).WorkloadTypes; set => ((Commvault.Powershell.Models.IPlanWorkloadsInternal)Workload).WorkloadTypes = value ?? null /* arrayOf */; }
+
         /// <summary>Creates an new <see cref="CreateServerPlan" /> instance.</summary>
         public CreateServerPlan()
         {
@@ -206,6 +384,62 @@ namespace Commvault.Powershell.Models
     public partial interface ICreateServerPlan :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>The least RPO in minutes for the plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The least RPO in minutes for the plan",
+        SerializedName = @"RPO",
+        PossibleTypes = new [] { typeof(long) })]
+        long? AdditionalPropertyRpo { get; set; }
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"status if plan backups are enabled or disabled",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string AdditionalPropertyStatus { get; set; }
+        /// <summary>Database options should be shown with this plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Database options should be shown with this plan",
+        SerializedName = @"database",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? AddonDatabase { get; set; }
+        /// <summary>File system options should be shown with this plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"File system options should be shown with this plan",
+        SerializedName = @"fileSystem",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? AddonFileSystem { get; set; }
+        /// <summary>Index copy options should be shown with this plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Index copy options should be shown with this plan",
+        SerializedName = @"indexCopy",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? AddonIndexCopy { get; set; }
+        /// <summary>Snap options should be shown with this plan</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Snap options should be shown with this plan",
+        SerializedName = @"snap",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? AddonSnap { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"snapStatus",
+        PossibleTypes = new [] { typeof(string) })]
+        string AddonSnapStatus { get; set; }
         /// <summary>Flag to enable overriding of plan. Plan cannot be overriden by default.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -232,6 +466,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"backupSystemStateOnlyWithFullBackup",
         PossibleTypes = new [] { typeof(bool) })]
         bool? BackupContentBackupSystemStateOnlyWithFullBackup { get; set; }
+        /// <summary>
+        /// Do you want to sync properties on associated subclients even if properties are overriden at subclient level?
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Do you want to sync properties on associated subclients even if properties are overriden at subclient level?",
+        SerializedName = @"forceUpdateProperties",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? BackupContentForceUpdateProperties { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -240,6 +484,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"macExcludedPaths",
         PossibleTypes = new [] { typeof(string) })]
         string[] BackupContentMacExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Mac</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Paths that are exception to excluded paths for Mac",
+        SerializedName = @"macFilterToExcludePaths",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] BackupContentMacFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Mac</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -256,6 +508,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"unixExcludedPaths",
         PossibleTypes = new [] { typeof(string) })]
         string[] BackupContentUnixExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Unix</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Paths that are exception to excluded paths for Unix",
+        SerializedName = @"unixFilterToExcludePaths",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] BackupContentUnixFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for UNIX</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -282,6 +542,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"windowsExcludedPaths",
         PossibleTypes = new [] { typeof(string) })]
         string[] BackupContentWindowsExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Windows</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Paths that are exception to excluded paths for Windows",
+        SerializedName = @"windowsFilterToExcludePaths",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] BackupContentWindowsFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Windows</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -291,15 +559,34 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string[] BackupContentWindowsIncludedPaths { get; set; }
         /// <summary>
+        /// Primary Backup Destination Ids (which were created before plan creation). This is only considered when backupDestinations
+        /// array object is not defined.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Primary Backup Destination Ids (which were created before plan creation). This is only considered when backupDestinations array object is not defined.",
+        SerializedName = @"backupDestinationIds",
+        PossibleTypes = new [] { typeof(long) })]
+        long[] BackupDestinationIds { get; set; }
+        /// <summary>
         /// Backup destinations for the plan. Specify where you want to store your backup data.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"Backup destinations for the plan. Specify where you want to store your backup data.",
         SerializedName = @"backupDestinations",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICreatePlanBackupDestination) })]
         Commvault.Powershell.Models.ICreatePlanBackupDestination[] BackupDestinations { get; set; }
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Operation type for the list",
+        SerializedName = @"operationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupFrequencyOperationType { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -332,6 +619,68 @@ namespace Commvault.Powershell.Models
         SerializedName = @"useDiskCacheForLogBackups",
         PossibleTypes = new [] { typeof(bool) })]
         bool? DatabaseOptionUseDiskCacheForLogBackups { get; set; }
+        /// <summary>Flag for enabling indexing</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Flag for enabling indexing",
+        SerializedName = @"enabled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? FileSearchEnabled { get; set; }
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"File search was enabled on plan but failed to process some of the storage pool(s) with these errors",
+        SerializedName = @"errors",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanFileSearchSetupError) })]
+        Commvault.Powershell.Models.IPlanFileSearchSetupError[] FileSearchErrors { get; set; }
+        /// <summary>Type of indexing status.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Type of indexing status.",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string FileSearchStatus { get; set; }
+        /// <summary>
+        /// Tells what is happening behind the scene, so that user can knows why indexing is not enabled or if its in progress
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells what is happening behind the scene, so that user can knows why indexing is not enabled or if its in progress",
+        SerializedName = @"statusMessage",
+        PossibleTypes = new [] { typeof(string) })]
+        string FileSearchStatusMessage { get; set; }
+        /// <summary>flag to enable backup content association for applicable file system workload.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"flag to enable backup content association for applicable file system workload.",
+        SerializedName = @"filesystemAddon",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? FilesystemAddon { get; set; }
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of data readers.",
+        SerializedName = @"count",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MacNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set optimal number of data readers. if it is set to true, count will be ignored.",
+        SerializedName = @"useOptimal",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? MacNumberOfDataReaderUseOptimal { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -396,6 +745,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"fullBackupWindow",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IDayAndTime) })]
         Commvault.Powershell.Models.IDayAndTime[] RpoFullBackupWindow { get; set; }
+        /// <summary>
+        /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.",
+        SerializedName = @"enableAdvancedView",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? SettingEnableAdvancedView { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -434,11 +793,88 @@ namespace Commvault.Powershell.Models
         SerializedName = @"snapRecoveryPoints",
         PossibleTypes = new [] { typeof(long) })]
         long? SnapshotOptionSnapRecoveryPoints { get; set; }
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of data readers.",
+        SerializedName = @"count",
+        PossibleTypes = new [] { typeof(long) })]
+        long? UnixNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set optimal number of data readers. if it is set to true, count will be ignored.",
+        SerializedName = @"useOptimal",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? UnixNumberOfDataReaderUseOptimal { get; set; }
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of data readers.",
+        SerializedName = @"count",
+        PossibleTypes = new [] { typeof(long) })]
+        long? WindowNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set optimal number of data readers. if it is set to true, count will be ignored.",
+        SerializedName = @"useOptimal",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? WindowNumberOfDataReaderUseOptimal { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"workloadGroupTypes",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] WorkloadGroupTypes { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"solutions",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
+        Commvault.Powershell.Models.IIdName[] WorkloadSolutions { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"workloadTypes",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
+        Commvault.Powershell.Models.IIdName[] WorkloadTypes { get; set; }
 
     }
     internal partial interface ICreateServerPlanInternal
 
     {
+        Commvault.Powershell.Models.IPlanAdditionalProperties AdditionalProperties { get; set; }
+
+        Commvault.Powershell.Models.IPlanAddons AdditionalPropertyAddons { get; set; }
+        /// <summary>The least RPO in minutes for the plan</summary>
+        long? AdditionalPropertyRpo { get; set; }
+        /// <summary>status if plan backups are enabled or disabled</summary>
+        string AdditionalPropertyStatus { get; set; }
+        /// <summary>Database options should be shown with this plan</summary>
+        bool? AddonDatabase { get; set; }
+        /// <summary>File system options should be shown with this plan</summary>
+        bool? AddonFileSystem { get; set; }
+        /// <summary>Index copy options should be shown with this plan</summary>
+        bool? AddonIndexCopy { get; set; }
+        /// <summary>Snap options should be shown with this plan</summary>
+        bool? AddonSnap { get; set; }
+
+        string AddonSnapStatus { get; set; }
         /// <summary>Flag to enable overriding of plan. Plan cannot be overriden by default.</summary>
         bool? AllowPlanOverride { get; set; }
         /// <summary>This feature applies only to file system agents</summary>
@@ -449,26 +885,49 @@ namespace Commvault.Powershell.Models
         /// Do you want to back up system state only with full backup? Applicable only if the value of backupSystemState is true
         /// </summary>
         bool? BackupContentBackupSystemStateOnlyWithFullBackup { get; set; }
+        /// <summary>
+        /// Do you want to sync properties on associated subclients even if properties are overriden at subclient level?
+        /// </summary>
+        bool? BackupContentForceUpdateProperties { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         string[] BackupContentMacExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Mac</summary>
+        string[] BackupContentMacFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Mac</summary>
         string[] BackupContentMacIncludedPaths { get; set; }
+
+        Commvault.Powershell.Models.IPlanContentDataReaders BackupContentMacNumberOfDataReaders { get; set; }
         /// <summary>Paths to exclude for UNIX</summary>
         string[] BackupContentUnixExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Unix</summary>
+        string[] BackupContentUnixFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for UNIX</summary>
         string[] BackupContentUnixIncludedPaths { get; set; }
+
+        Commvault.Powershell.Models.IPlanContentDataReaders BackupContentUnixNumberOfDataReaders { get; set; }
         /// <summary>
         /// Do you want to back up system state with VSS? Applicable only if the value of backupSystemState is true
         /// </summary>
         bool? BackupContentUseVssForSystemState { get; set; }
         /// <summary>Paths to exclude for Windows</summary>
         string[] BackupContentWindowsExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Windows</summary>
+        string[] BackupContentWindowsFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Windows</summary>
         string[] BackupContentWindowsIncludedPaths { get; set; }
+
+        Commvault.Powershell.Models.IPlanContentDataReaders BackupContentWindowsNumberOfDataReaders { get; set; }
+        /// <summary>
+        /// Primary Backup Destination Ids (which were created before plan creation). This is only considered when backupDestinations
+        /// array object is not defined.
+        /// </summary>
+        long[] BackupDestinationIds { get; set; }
         /// <summary>
         /// Backup destinations for the plan. Specify where you want to store your backup data.
         /// </summary>
         Commvault.Powershell.Models.ICreatePlanBackupDestination[] BackupDestinations { get; set; }
+        /// <summary>Operation type for the list</summary>
+        string BackupFrequencyOperationType { get; set; }
 
         Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Commit frequency in hours</summary>
@@ -479,13 +938,36 @@ namespace Commvault.Powershell.Models
         bool? DatabaseOptionUseDiskCacheForLogBackups { get; set; }
         /// <summary>This feature applies only to database agents</summary>
         Commvault.Powershell.Models.IServerPlanDatabaseOptions DatabaseOptions { get; set; }
+        /// <summary>Flag for enabling indexing</summary>
+        bool? FileSearchEnabled { get; set; }
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        Commvault.Powershell.Models.IPlanFileSearchSetupError[] FileSearchErrors { get; set; }
+        /// <summary>Type of indexing status.</summary>
+        string FileSearchStatus { get; set; }
+        /// <summary>
+        /// Tells what is happening behind the scene, so that user can knows why indexing is not enabled or if its in progress
+        /// </summary>
+        string FileSearchStatusMessage { get; set; }
+        /// <summary>flag to enable backup content association for applicable file system workload.</summary>
+        bool? FilesystemAddon { get; set; }
+        /// <summary>Number of data readers.</summary>
+        long? MacNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        bool? MacNumberOfDataReaderUseOptimal { get; set; }
 
         string OverrideRestrictionBackupContent { get; set; }
 
         string OverrideRestrictionRpo { get; set; }
 
         string OverrideRestrictionStoragePool { get; set; }
-
+        /// <summary>
+        /// To allow the derived plans that use this plan as the base plan to override the settings, property allowPlanOverride must
+        /// be true, and then select one of the options for Storage pool, RPO and backup Content.
+        /// </summary>
         Commvault.Powershell.Models.IPlanOverrideSettings OverrideRestrictions { get; set; }
 
         Commvault.Powershell.Models.IIdName ParentPlan { get; set; }
@@ -506,6 +988,17 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IDayAndTime[] RpoBackupWindow { get; set; }
         /// <summary>Backup window for full backup</summary>
         Commvault.Powershell.Models.IDayAndTime[] RpoFullBackupWindow { get; set; }
+        /// <summary>
+        /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
+        /// </summary>
+        bool? SettingEnableAdvancedView { get; set; }
+        /// <summary>
+        /// This feature applies to file servers and virtualization. Enabling this feature allows you to search for backed-up files
+        /// using the global search bar, and creates resource pools with required infrastructure entities.
+        /// </summary>
+        Commvault.Powershell.Models.IPlanFileSearch SettingFileSearch { get; set; }
+
+        Commvault.Powershell.Models.IServerPlanSettings Settings { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>
         long? SnapshotOptionBackupCopyRpoMins { get; set; }
         /// <summary>Flag to enable backup copy</summary>
@@ -522,6 +1015,26 @@ namespace Commvault.Powershell.Models
         long? SnapshotOptionSnapRecoveryPoints { get; set; }
         /// <summary>This feature applies only to File System Agents</summary>
         Commvault.Powershell.Models.ICreatePlanSnapshotOptions SnapshotOptions { get; set; }
+        /// <summary>Number of data readers.</summary>
+        long? UnixNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        bool? UnixNumberOfDataReaderUseOptimal { get; set; }
+        /// <summary>Number of data readers.</summary>
+        long? WindowNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        bool? WindowNumberOfDataReaderUseOptimal { get; set; }
+        /// <summary>PlanWorkloads</summary>
+        Commvault.Powershell.Models.IPlanWorkloads Workload { get; set; }
+
+        string[] WorkloadGroupTypes { get; set; }
+
+        Commvault.Powershell.Models.IIdName[] WorkloadSolutions { get; set; }
+
+        Commvault.Powershell.Models.IIdName[] WorkloadTypes { get; set; }
 
     }
 }

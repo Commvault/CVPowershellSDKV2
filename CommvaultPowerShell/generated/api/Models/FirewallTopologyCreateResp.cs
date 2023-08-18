@@ -27,10 +27,10 @@ namespace Commvault.Powershell.Models
         public string ErrorMessage { get => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage; set => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage = value ?? null; }
 
         /// <summary>Backing field for <see cref="TopologyId" /> property.</summary>
-        private int? _topologyId;
+        private long? _topologyId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public int? TopologyId { get => this._topologyId; set => this._topologyId = value; }
+        public long? TopologyId { get => this._topologyId; set => this._topologyId = value; }
 
         /// <summary>Creates an new <see cref="FirewallTopologyCreateResp" /> instance.</summary>
         public FirewallTopologyCreateResp()
@@ -63,8 +63,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"topologyId",
-        PossibleTypes = new [] { typeof(int) })]
-        int? TopologyId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? TopologyId { get; set; }
 
     }
     /// FirewallTopologyCreateResp
@@ -77,7 +77,7 @@ namespace Commvault.Powershell.Models
 
         string ErrorMessage { get; set; }
 
-        int? TopologyId { get; set; }
+        long? TopologyId { get; set; }
 
     }
 }

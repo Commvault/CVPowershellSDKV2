@@ -5,7 +5,10 @@ namespace Commvault.Powershell.Models
 {
     using Commvault.Powershell.Runtime.PowerShell;
 
-    /// <summary>AlertAssociationIdNameType</summary>
+    /// <summary>
+    /// Hierarchy starts at the top at client level(parentEntity1) and ends at backupset level(parentEntity4) when defining parents
+    /// for the associated entity. Parent entities must be defined application and lower entities.
+    /// </summary>
     [System.ComponentModel.TypeConverter(typeof(AlertAssociationIdNameType1TypeConverter))]
     public partial class AlertAssociationIdNameType1
     {
@@ -64,9 +67,25 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity1",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity2",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity3",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity4",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Id = (long?) content.GetValueForProperty("ParentEntity1Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Name = (string) content.GetValueForProperty("ParentEntity1Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Type = (string) content.GetValueForProperty("ParentEntity1Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Id = (long?) content.GetValueForProperty("ParentEntity2Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Name = (string) content.GetValueForProperty("ParentEntity2Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Type = (string) content.GetValueForProperty("ParentEntity2Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Id = (long?) content.GetValueForProperty("ParentEntity3Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Name = (string) content.GetValueForProperty("ParentEntity3Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Type = (string) content.GetValueForProperty("ParentEntity3Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Id = (long?) content.GetValueForProperty("ParentEntity4Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Name = (string) content.GetValueForProperty("ParentEntity4Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Type = (string) content.GetValueForProperty("ParentEntity4Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Type, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -84,9 +103,25 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity1",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity2",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity3",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4 = (Commvault.Powershell.Models.IAlertAssocParentEntity) content.GetValueForProperty("ParentEntity4",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4, Commvault.Powershell.Models.AlertAssocParentEntityTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Id = (long?) content.GetValueForProperty("ParentEntity1Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Name = (string) content.GetValueForProperty("ParentEntity1Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Type = (string) content.GetValueForProperty("ParentEntity1Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity1Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Id = (long?) content.GetValueForProperty("ParentEntity2Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Name = (string) content.GetValueForProperty("ParentEntity2Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Type = (string) content.GetValueForProperty("ParentEntity2Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity2Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Id = (long?) content.GetValueForProperty("ParentEntity3Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Name = (string) content.GetValueForProperty("ParentEntity3Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Type = (string) content.GetValueForProperty("ParentEntity3Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity3Type, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Id = (long?) content.GetValueForProperty("ParentEntity4Id",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Name = (string) content.GetValueForProperty("ParentEntity4Name",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Type = (string) content.GetValueForProperty("ParentEntity4Type",((Commvault.Powershell.Models.IAlertAssociationIdNameType1Internal)this).ParentEntity4Type, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 
@@ -128,7 +163,8 @@ namespace Commvault.Powershell.Models
         /// <returns>a <see cref="System.String" /> containing this model serialized to JSON text.</returns>
         public string ToJsonString() => ToJson(null, Commvault.Powershell.Runtime.SerializationMode.IncludeAll)?.ToString();
     }
-    /// AlertAssociationIdNameType
+    /// Hierarchy starts at the top at client level(parentEntity1) and ends at backupset level(parentEntity4) when defining parents
+    /// for the associated entity. Parent entities must be defined application and lower entities.
     [System.ComponentModel.TypeConverter(typeof(AlertAssociationIdNameType1TypeConverter))]
     public partial interface IAlertAssociationIdNameType1
 

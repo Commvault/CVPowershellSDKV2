@@ -20,8 +20,8 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Cipher { get => this._cipher; set => this._cipher = value; }
 
-        /// <summary>Internal Acessors for KeyManagementServer</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IEncryptionInternal.KeyManagementServer { get => (this._keyManagementServer = this._keyManagementServer ?? new Commvault.Powershell.Models.IdName()); set { {_keyManagementServer = value;} } }
+        /// <summary>Internal Acessors for KeyProvider</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IEncryptionInternal.KeyProvider { get => (this._keyProvider = this._keyProvider ?? new Commvault.Powershell.Models.IdName()); set { {_keyProvider = value;} } }
 
         /// <summary>Backing field for <see cref="Encrypt" /> property.</summary>
         private bool? _encrypt;
@@ -39,17 +39,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? KeyLength { get => this._keyLength; set => this._keyLength = value; }
 
-        /// <summary>Backing field for <see cref="KeyManagementServer" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _keyManagementServer;
+        /// <summary>Backing field for <see cref="KeyProvider" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _keyProvider;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName KeyManagementServer { get => (this._keyManagementServer = this._keyManagementServer ?? new Commvault.Powershell.Models.IdName()); set => this._keyManagementServer = value; }
+        internal Commvault.Powershell.Models.IIdName KeyProvider { get => (this._keyProvider = this._keyProvider ?? new Commvault.Powershell.Models.IdName()); set => this._keyProvider = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? KeyManagementServerId { get => ((Commvault.Powershell.Models.IIdNameInternal)KeyManagementServer).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)KeyManagementServer).Id = value ?? default(long); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Id = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string KeyManagementServerName { get => ((Commvault.Powershell.Models.IIdNameInternal)KeyManagementServer).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)KeyManagementServer).Name = value ?? null; }
+        public string KeyProviderName { get => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)KeyProvider).Name = value ?? null; }
 
         /// <summary>Creates an new <see cref="Encryption" /> instance.</summary>
         public Encryption()
@@ -97,7 +97,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -105,7 +105,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
 
     }
     /// Different ways in which data can be encrypted.
@@ -124,11 +124,11 @@ namespace Commvault.Powershell.Models
         /// </summary>
         long? KeyLength { get; set; }
 
-        Commvault.Powershell.Models.IIdName KeyManagementServer { get; set; }
+        Commvault.Powershell.Models.IIdName KeyProvider { get; set; }
 
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
 
     }
 }

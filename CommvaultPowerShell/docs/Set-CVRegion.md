@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-cvregion
 schema: 2.0.0
 ---
@@ -14,21 +14,19 @@ Api to set region for an entity.
 
 ### UpdateExpanded (Default)
 ```
-Set-CVRegion -RegionId <Int64> [-LocationCity <String>] [-LocationContinent <String>]
- [-LocationCountry <String>] [-LocationLatitude <Double>] [-LocationLongitude <Double>]
- [-LocationsOperationType <String>] [-LocationState <String>] [-NewName <String>] [-ZoneId <Int64>]
- [-ZoneName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-CVRegion -RegionId <Int64> [-Locations <ILocationDetailsWithZone[]>] [-LocationsOperationType <String>]
+ [-NewName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Set
 ```
-Set-CVRegion -EntityId <Int64> -EntityType <Int64> -Body <IEntityRegionInfo> [-Confirm] [-WhatIf]
+Set-CVRegion -EntityId <Int64> -EntityType <String> -Body <IEntityRegionInfo> [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
 ### SetExpanded
 ```
-Set-CVRegion -EntityId <Int64> -EntityType <Int64> [-RegionId <Int64>] [-EntityRegionType <String>]
+Set-CVRegion -EntityId <Int64> -EntityType <String> [-RegionId <Int64>] [-EntityRegionType <String>]
  [-RegionName <String>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
@@ -46,11 +44,8 @@ Set-CVRegion -InputObject <ICommvaultPowerShellIdentity> [-RegionId <Int64>] [-E
 
 ### UpdateViaIdentityExpanded
 ```
-Set-CVRegion -InputObject <ICommvaultPowerShellIdentity> [-LocationCity <String>]
- [-LocationContinent <String>] [-LocationCountry <String>] [-LocationLatitude <Double>]
- [-LocationLongitude <Double>] [-LocationsOperationType <String>] [-LocationState <String>]
- [-NewName <String>] [-ZoneId <Int64>] [-ZoneName <String>] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Set-CVRegion -InputObject <ICommvaultPowerShellIdentity> [-Locations <ILocationDetailsWithZone[]>]
+ [-LocationsOperationType <String>] [-NewName <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -60,10 +55,8 @@ Api to set region for an entity.
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -71,10 +64,8 @@ Api to set region for an entity.
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -132,7 +123,7 @@ Accept wildcard characters: False
 Type of the entity
 
 ```yaml
-Type: System.Int64
+Type: System.String
 Parameter Sets: Set, SetExpanded
 Aliases:
 
@@ -159,71 +150,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -LocationCity
-Name of city for the location
+### -Locations
+.
+To construct, see NOTES section for LOCATIONS properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LocationContinent
-Name of continent for the location
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LocationCountry
-Name of country for the location
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LocationLatitude
-Latitude for the location
-
-```yaml
-Type: System.Double
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LocationLongitude
-Longitude for the location
-
-```yaml
-Type: System.Double
+Type: Commvault.Powershell.Models.ILocationDetailsWithZone[]
 Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
 Aliases:
 
@@ -236,21 +168,6 @@ Accept wildcard characters: False
 
 ### -LocationsOperationType
 Type of operation to be performed for locations
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -LocationState
-Name of state for the location
 
 ```yaml
 Type: System.String
@@ -324,36 +241,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ZoneId
-.
-
-```yaml
-Type: System.Int64
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -ZoneName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -415,26 +302,44 @@ BODY <IEntityRegionInfo>: .
 INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[AccessPathId <Int64?>]`: Id of the mount path whose access path has to be deleted
   - `[AgentId <Int64?>]`: Id of the agent to be modified
+  - `[AppGuid <String>]`: GUID of the Application to get details
+  - `[AppId <Int64?>]`: Commvault exchange app id
+  - `[ApplicationGroupId <Int64?>]`: applicationGroupId is the ID of the Kubernetes application group
+  - `[ArrayId <Int64?>]`: 
+  - `[AssetId <String>]`: FQDN of the asset
   - `[BackupDestinationId <Int64?>]`: Id of the backupDestination to be modified
+  - `[BackupDestionationId <Int64?>]`: 
   - `[BackupLocationId <Int64?>]`: Id of the backup location whose details have to be fetched
   - `[BlackoutWindowId <Int64?>]`: Id of the Blackout Window whose details have to be fetched
   - `[BucketId <Int64?>]`: Id of Bucket
+  - `[ClientId <Int64?>]`: 
   - `[CloudStorageId <Int64?>]`: Id of cloud Storage
+  - `[ClusterId <Int64?>]`: 
   - `[CompanyId <Int64?>]`: Id of the Company whose details have to be fetched
+  - `[CopyId <Int64?>]`: 
+  - `[CredentialId <String>]`: 
   - `[CredentialName <String>]`: 
   - `[DomainId <Int64?>]`: ID of the AD/LDAP domain
+  - `[DrOperation <String>]`: Name of DR operation. Case insensitive
+  - `[DriveId <Int64?>]`: Id of the Drive of which the drive details has to be displayed
   - `[EntityId <Int64?>]`: Unique id for the entity
-  - `[EntityType <Int64?>]`: Type of the entity
+  - `[EntityType <String>]`: Type of the entity
+  - `[FailoverGroupId <Int64?>]`: Id of the failover group
   - `[GlobalSearchEntity <String>]`: name of global search entity
   - `[HfsShareId <Int64?>]`: Id of the HFS Share to fetch its status
   - `[HyperScaleStorageId <Int64?>]`: Id of hyperscale storage
   - `[HypervisorId <Int64?>]`: Id of the HYpervisor to get
   - `[Id <Int64?>]`: 
+  - `[IndexServerClientId <Int64?>]`: Pseudo client id of the index server
   - `[InstanceId <Int64?>]`: Id of the instance to modify
+  - `[InventoryId <Int64?>]`: Inventory id
+  - `[JobId <Int64?>]`: 
   - `[KmsId <Int64?>]`: Id of Key Management Server
+  - `[LibraryId <Int64?>]`: Id of the library to view the data
   - `[MediaAgentId <Int64?>]`: Id of the Media Agent whose details have to be fetched
   - `[MetadataCacheId <Int64?>]`: Id of metadata cache
   - `[Name <String>]`: 
+  - `[NameSpace <String>]`: Name of the namespace to browse for content
   - `[NodeId <Int64?>]`: Id of node
   - `[PairId <Int64?>]`: 
   - `[PlanId <Int64?>]`: Id of the plan to fetch details
@@ -446,17 +351,31 @@ INPUTOBJECT <ICommvaultPowerShellIdentity>: Identity Parameter
   - `[RoleId <Int64?>]`: Role Id
   - `[RpsId <String>]`: 
   - `[RuleId <Int64?>]`: Id of the rule to update in Plan
-  - `[ScheduleId <String>]`: 
-  - `[SchedulePolicyId <String>]`: 
+  - `[ScheduleId <Int64?>]`: ID of the DR operation schedule
+  - `[SchedulePolicyId <Int64?>]`: 
   - `[ServerGroupId <Int64?>]`: Id of the serverGroupId whose details have to be fetched
   - `[ServerId <Int64?>]`: Id of the server to modify
-  - `[StoragePoolId <Int64?>]`: Id of the disk storage pool whose details have to be fetched
+  - `[StoragePoolId <Int64?>]`: Id of the storage pool whose associated copies have to be fetched
   - `[SubclientId <Int64?>]`: Id of the subclient to modify
+  - `[TagId <Int64?>]`: Id of the tag to delete
+  - `[TagValue <String>]`: tag value to delete
   - `[TopologyId <String>]`: 
   - `[UserGroupId <Int64?>]`: Id of the user-group whose details have to be fetched
   - `[UserId <Int64?>]`: Id of the User whose details have to be fetched
   - `[VMGroupId <Int64?>]`: Id of the VMgroup to update
+  - `[VMGuid <String>]`: GUID of the Provisioned VM
   - `[VMUuid <String>]`: The vmUUID can be obtained from GET /virtualMachines UUID property
+  - `[VendorId <Int64?>]`: 
+
+LOCATIONS <ILocationDetailsWithZone[]>: .
+  - `Country <String>`: Name of country for the location
+  - `Latitude <Double>`: Latitude for the location
+  - `Longitude <Double>`: Longitude for the location
+  - `[City <String>]`: Name of city for the location
+  - `[Continent <String>]`: Name of continent for the location
+  - `[State <String>]`: Name of state for the location
+  - `[ZoneId <Int64?>]`: 
+  - `[ZoneName <String>]`: 
 
 ## RELATED LINKS
 

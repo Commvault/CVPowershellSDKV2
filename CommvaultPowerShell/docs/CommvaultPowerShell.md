@@ -1,27 +1,42 @@
 ---
-Module Name: CommvaultPowerShell
-Module Guid: 2ccdf246-027b-4942-a96e-fd3f8831492a
+Module Name: CommvaultPowershell
+Module Guid: f42f74ee-c249-4b89-bdcf-356469fc0700
 Download Help Link: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell
 Help Version: 1.0.0.0
 Locale: en-US
 ---
 
-# CommvaultPowerShell Module
+# CommvaultPowershell Module
 ## Description
 
 
-## CommvaultPowerShell Cmdlets
+## CommvaultPowershell Cmdlets
 ### [Add-CVBlackoutWindow](Add-CVBlackoutWindow.md)
 Method to add/create an blackout window rule.
+
+### [Add-CVD365Content](Add-CVD365Content.md)
+Add content to Dynamics 365 app
 
 ### [Add-CVEntitytoSchedulePolicy](Add-CVEntitytoSchedulePolicy.md)
 Method to add an entity to a schedule policy
 
-### [Add-CVLaptop](Add-CVLaptop.md)
-Simplified API to create a laptop
+### [Add-CVExchangeContent](Add-CVExchangeContent.md)
+Add Content to Office 365 Exchange Online app
 
 ### [Add-CVMediaAgent](Add-CVMediaAgent.md)
 Used to add a media agent to a disk access path
+
+### [Add-CVMediaAgentRole](Add-CVMediaAgentRole.md)
+Put call to consume ma license for a client
+
+### [Add-CVOnedriveContent](Add-CVOnedriveContent.md)
+Add content to Office 365 OneDrive for Business app
+
+### [Add-CVSharepointContent](Add-CVSharepointContent.md)
+Add content to Office 365 SharePoint Online app
+
+### [Add-CVTeamContent](Add-CVTeamContent.md)
+Add content to Office 365 Teams app
 
 ### [Add-CVVirtualMachine](Add-CVVirtualMachine.md)
 Method to add virtual server subclient content.
@@ -34,6 +49,9 @@ Create backup task for specific or default subclient of client file system.
 
 ### [Backup-CVDisasterRecovery](Backup-CVDisasterRecovery.md)
 Initiates the CommServe disaster recovery (DR) backup.
+
+### [Backup-CVServerPlan](Backup-CVServerPlan.md)
+API to run backups on server plan associated entities
 
 ### [Backup-CVSQLDatabase](Backup-CVSQLDatabase.md)
 Method to submit backup job for specific SQL database.
@@ -50,8 +68,11 @@ Create backup task for specific subclient.
 ### [Backup-CVVirtualMachine](Backup-CVVirtualMachine.md)
 Method to initiate backup of specified virtual machine.
 
-### [Backup-CVVMGroup](Backup-CVVMGroup.md)
-To Backup the virtual machines in vmgroup
+### [Compare-CVXml](Compare-CVXml.md)
+Compare old and new XMl or objects
+
+### [Copy-CV](Copy-CV.md)
+API for snap instant clone delete operation
 
 ### [Disable-CVAlertDefinition](Disable-CVAlertDefinition.md)
 Disable Alert Definition
@@ -68,6 +89,12 @@ Used to disable backup property for commcell
 ### [Disable-CVBackupInstance](Disable-CVBackupInstance.md)
 Used to disable backup property for an instance
 
+### [Disable-CVBackupOnPlan](Disable-CVBackupOnPlan.md)
+API to Disable backup schedule policies on server plan
+
+### [Disable-CVBackupServer](Disable-CVBackupServer.md)
+Used to disable backup property for server
+
 ### [Disable-CVBackupServerGroup](Disable-CVBackupServerGroup.md)
 Used to disable backup property for a server group
 
@@ -83,6 +110,9 @@ Used to disable content indexing property for commcell
 ### [Disable-CVDataAgingCommcell](Disable-CVDataAgingCommcell.md)
 Used to disable data aging property for commcell
 
+### [Disable-CVDataAgingServer](Disable-CVDataAgingServer.md)
+Used to disable Data Aging property for server
+
 ### [Disable-CVDataAgingServerGroup](Disable-CVDataAgingServerGroup.md)
 Used to disable data aging property for a server group
 
@@ -95,6 +125,9 @@ Used to disable DDB property for commcell
 ### [Disable-CVJobActivityCommcell](Disable-CVJobActivityCommcell.md)
 Used to disable all job activity property for commcell
 
+### [Disable-CVLocalAuthentication](Disable-CVLocalAuthentication.md)
+Disable local authentication for the company
+
 ### [Disable-CVLogScrubbing](Disable-CVLogScrubbing.md)
 Used to disable log scrubbing
 
@@ -106,6 +139,9 @@ Used to disable restore property for commcell
 
 ### [Disable-CVRestoreInstance](Disable-CVRestoreInstance.md)
 Used to disable restore property for an instance
+
+### [Disable-CVRestoreServer](Disable-CVRestoreServer.md)
+Used to disable restore property for server
 
 ### [Disable-CVRestoreServerGroup](Disable-CVRestoreServerGroup.md)
 Used to disable restore property for a server group
@@ -122,6 +158,21 @@ Method to initiate dismount of live mounted virtual machine.
 ### [Edit-CVAlertDefinition](Edit-CVAlertDefinition.md)
 Edit Alert Definition details
 
+### [Edit-CVArray](Edit-CVArray.md)
+Editing Array details
+
+### [Edit-CVClientSnapConfig](Edit-CVClientSnapConfig.md)
+API to edit Snap Configurations at Client Level
+
+### [Edit-CVCopySnapConfig](Edit-CVCopySnapConfig.md)
+API to edit snap configurations for storage array at copy level
+
+### [Edit-CVSnapConfig](Edit-CVSnapConfig.md)
+API to edit Snap configs at a Array level
+
+### [Edit-CVSubclientSnapConfig](Edit-CVSubclientSnapConfig.md)
+API to edit Snap Configurations at Subclient level
+
 ### [Enable-CVAlertDefinition](Enable-CVAlertDefinition.md)
 Enable Alert Definitions
 
@@ -136,6 +187,12 @@ Used to enable backup property for commcell
 
 ### [Enable-CVBackupInstance](Enable-CVBackupInstance.md)
 Used to enable backup property for an instance
+
+### [Enable-CVBackupOnPlan](Enable-CVBackupOnPlan.md)
+API to Enable backup schedule policies on server plan
+
+### [Enable-CVBackupServer](Enable-CVBackupServer.md)
+Used to enable backup property for Server
 
 ### [Enable-CVBackupServerGroup](Enable-CVBackupServerGroup.md)
 Used to enable backup property for a server group
@@ -152,6 +209,9 @@ Used to enable content indexing property for commcell
 ### [Enable-CVDataAgingCommcell](Enable-CVDataAgingCommcell.md)
 Used to enable data aging property for commcell
 
+### [Enable-CVDataAgingServer](Enable-CVDataAgingServer.md)
+Used to enable Data Aging property for Server
+
 ### [Enable-CVDataAgingServerGroup](Enable-CVDataAgingServerGroup.md)
 Used to enable data aging property for a server group
 
@@ -164,6 +224,9 @@ Used to enable DDB property for commcell
 ### [Enable-CVJobActivity](Enable-CVJobActivity.md)
 Used to enable all job activity property for commcell
 
+### [Enable-CVLocalAuthentication](Enable-CVLocalAuthentication.md)
+Enable local authentication for the company
+
 ### [Enable-CVLogScrubbing](Enable-CVLogScrubbing.md)
 Used to enable log scrubbing
 
@@ -175,6 +238,9 @@ Used to enable restore property for commcell
 
 ### [Enable-CVRestoreInstance](Enable-CVRestoreInstance.md)
 Used to enable restore property for an instance
+
+### [Enable-CVRestoreServer](Enable-CVRestoreServer.md)
+Used to enable restore property for Server
 
 ### [Enable-CVRestoreServerGroup](Enable-CVRestoreServerGroup.md)
 Used to enable restore property for a server group
@@ -194,11 +260,11 @@ Gets owner permissions and laptop ownership details
 ### [Get-CVAccessNode](Get-CVAccessNode.md)
 Endpoint to get the list of access nodes
 
-### [Get-CVActivateEntityAuditList](Get-CVActivateEntityAuditList.md)
-Retrieve the audit details for activate entities like clients, data sources, requests.\nAvailable entity types:\n3 - Client\n132 - Data source\n9515 - Request
-
 ### [Get-CVAdldapDetail](Get-CVAdldapDetail.md)
 Get detail of the AD/LDAP domain
+
+### [Get-CVAggregateOnEntity](Get-CVAggregateOnEntity.md)
+Get aggregate count of entity
 
 ### [Get-CVAlert](Get-CVAlert.md)
 Method to retrieve the list of alerts from the CommServe.
@@ -216,8 +282,11 @@ Get List Of Alerts Triggered
 ### [Get-CVAnomalouCondition](Get-CVAnomalouCondition.md)
 Get various anomalous conditions like events, jobs, offline clients, high CPU and memory loaded clients
 
-### [Get-CVApplicationGroup](Get-CVApplicationGroup.md)
+### [Get-CVAPllicationGroup](Get-CVAPllicationGroup.md)
 Get the details of all applicationGroups
+
+### [Get-CVApplicationGroupDetail](Get-CVApplicationGroupDetail.md)
+API to get details of a Kubernetes application group with applicationGroupId
 
 ### [Get-CVArchiveBackupDestination](Get-CVArchiveBackupDestination.md)
 Get Backup Destinations for a Plan
@@ -228,11 +297,26 @@ This endpoint is used to return the list of Archive file servers.
 ### [Get-CVArchivePlan](Get-CVArchivePlan.md)
 Get Archive Plan details
 
+### [Get-CVArray](Get-CVArray.md)
+Get all storage arrays.
+
+### [Get-CVArrayDetail](Get-CVArrayDetail.md)
+Getting Array Details
+
+### [Get-CVArrayReplicationMonitor](Get-CVArrayReplicationMonitor.md)
+Get Array Replication Pair information
+
 ### [Get-CVAssociation](Get-CVAssociation.md)
 API to get list of association for a company
 
 ### [Get-CVBackupDestination](Get-CVBackupDestination.md)
 Get Backup Destinations for a Plan
+
+### [Get-CVBackupDestinationDetail](Get-CVBackupDestinationDetail.md)
+Get specific backup destination details for a server plan
+
+### [Get-CVBackupDestinationDetailWithoutPlanInfo](Get-CVBackupDestinationDetailWithoutPlanInfo.md)
+Fetch details of a backup destination.\n
 
 ### [Get-CVBackupLocationDetail](Get-CVBackupLocationDetail.md)
 Used to fetch mount path details of the disk storage pool
@@ -246,15 +330,17 @@ Get All Blackout Windows
 ### [Get-CVBlackoutWindowDetail](Get-CVBlackoutWindowDetail.md)
 Get details of a blackout window based on id
 
-### [Get-CVBucketDetail](Get-CVBucketDetail.md)
-Get details of a specific bucket of a cloud storage
-
 ### [Get-CVClient](Get-CVClient.md)
-If the Name parameter is not provided, this method will output a list of clients from the CommServe.
-If the Name parameter is provided, a default subset of client properties will be output for the specified client.
+Get the list of clients associated with the BackupDestination.
 
 ### [Get-CVClientGroup](Get-CVClientGroup.md)
 Method to retrieve client groups or a single specified group from the CommServe.
+
+### [Get-CVClientLvlArray](Get-CVClientLvlArray.md)
+API to get all arrays at client level
+
+### [Get-CVClientSnapConfig](Get-CVClientSnapConfig.md)
+API to fetch Snap configs for Storage Arrays at client level
 
 ### [Get-CVCloudStorage](Get-CVCloudStorage.md)
 Get Cloud Storage Details
@@ -271,6 +357,21 @@ Get All Companies
 ### [Get-CVCompanyDetail](Get-CVCompanyDetail.md)
 Get details of a company based on id
 
+### [Get-CVCompanyLaptopAdmin](Get-CVCompanyLaptopAdmin.md)
+Get a company's laptop admins.
+
+### [Get-CVConfiguredAgent](Get-CVConfiguredAgent.md)
+To get a list of all the agents configured for a user
+
+### [Get-CVCopyConfig](Get-CVCopyConfig.md)
+API to fetch snap configs for storage arrays at copy level
+
+### [Get-CVCopytLvlArray](Get-CVCopytLvlArray.md)
+API to get arrays list at copy level
+
+### [Get-CVCrdCloudAccount](Get-CVCrdCloudAccount.md)
+This endpoint is used to return the list of cloud accounts for Cloud Resource Discovery operation.
+
 ### [Get-CVCredentialDetail](Get-CVCredentialDetail.md)
 Get details of the credential whose credential name is provided
 
@@ -279,6 +380,9 @@ List of Credentials
 
 ### [Get-CVDatabase](Get-CVDatabase.md)
 Get all databases
+
+### [Get-CVDefaultInventory](Get-CVDefaultInventory.md)
+Fetch the default inventory associated to the index server
 
 ### [Get-CVDiskSpace](Get-CVDiskSpace.md)
 Method to retrieve the available disk space of the library.
@@ -296,6 +400,9 @@ Get the list of distributed storages
 ### [Get-CVDistributedSystem](Get-CVDistributedSystem.md)
 This endpoint is used to return the list of distributed systems.
 
+### [Get-CVEligibleMachineFailoverGroup](Get-CVEligibleMachineFailoverGroup.md)
+API to get list of machines eligible to be added to failover group
+
 ### [Get-CVEmailServer](Get-CVEmailServer.md)
 Retrieves SMTP server details
 
@@ -307,6 +414,9 @@ This endpoint is used to return the list of epic servers.
 
 ### [Get-CVFailoverGroup](Get-CVFailoverGroup.md)
 This end point return the list of failover groups
+
+### [Get-CVFailoverGroupDetail](Get-CVFailoverGroupDetail.md)
+API to fetch failover group information
 
 ### [Get-CVFileServer](Get-CVFileServer.md)
 This endpoint is used to return the list of file servers.
@@ -353,6 +463,9 @@ Method to retrieve the Id for a given Entity from the CommServe.
 ### [Get-CVIdentityServer](Get-CVIdentityServer.md)
 Get identity servers list
 
+### [Get-CVIdentityServerAssetJobHistory](Get-CVIdentityServerAssetJobHistory.md)
+Retrieve job history for identity server asset
+
 ### [Get-CVIndexServer](Get-CVIndexServer.md)
 Get list of index servers
 
@@ -362,17 +475,44 @@ This endpoint is used to return the list of instances.
 ### [Get-CVInstantClone](Get-CVInstantClone.md)
 Get all instant clones
 
-### [Get-CVJob](Get-CVJob.md)
-Get job
+### [Get-CVInventoryAssetDetail](Get-CVInventoryAssetDetail.md)
+Get the details of inventory asset
+
+### [Get-CVInventoryAssetList](Get-CVInventoryAssetList.md)
+Get the list of assets associated to the inventory
+
+### [Get-CVInventoryDetail](Get-CVInventoryDetail.md)
+Get inventory details
+
+### [Get-CVInventoryList](Get-CVInventoryList.md)
+Retrieve the list of inventories
+
+### [Get-CVJobOnBackupDestination](Get-CVJobOnBackupDestination.md)
+Get the list of Jobs for selected backupDestinationId.
 
 ### [Get-CVKeyManagementServer](Get-CVKeyManagementServer.md)
 Get key management servers
+
+### [Get-CVKuberneteApp](Get-CVKuberneteApp.md)
+API to get all Kubernetes applications
+
+### [Get-CVKuberneteAppDetail](Get-CVKuberneteAppDetail.md)
+API to get details of a Kubernetes application
+
+### [Get-CVKuberneteAppGroup](Get-CVKuberneteAppGroup.md)
+API to get all Kubernetes application groups
 
 ### [Get-CVKuberneteApplication](Get-CVKuberneteApplication.md)
 Get all application in Kubenetes cluster
 
 ### [Get-CVKuberneteCluster](Get-CVKuberneteCluster.md)
 Get the details of all cluster
+
+### [Get-CVKuberneteClusterDetail](Get-CVKuberneteClusterDetail.md)
+API to get details of a Kubernetes clusters with clusterId
+
+### [Get-CVKuberneteClusterOp](Get-CVKuberneteClusterOp.md)
+API to get all Kubernetes clusters
 
 ### [Get-CVLaptopBackupDestination](Get-CVLaptopBackupDestination.md)
 Get Backup Destinations for a Plan
@@ -393,19 +533,34 @@ Output can be filtered by both library Name and associated MediaAgentName.
 ### [Get-CVLicenseInfo](Get-CVLicenseInfo.md)
 This endpoint returns license information
 
+### [Get-CVList](Get-CVList.md)
+Get a list of all the roles
+
 ### [Get-CVMediaAgent](Get-CVMediaAgent.md)
 Get All Media Agents
 
 ### [Get-CVMediaAgentDetail](Get-CVMediaAgentDetail.md)
 Get details of a media agent based on id
 
+### [Get-CVMountPathContent](Get-CVMountPathContent.md)
+API to get mountpath content
+
+### [Get-CVNode](Get-CVNode.md)
+API to deploy Access Node
+
 ### [Get-CVNodeDetail](Get-CVNodeDetail.md)
 Get details of a specific node of a hyperscale storage
+
+### [Get-CVOffice365PlanDashboard](Get-CVOffice365PlanDashboard.md)
+Returns all Office365 active plans with number of entities associated to the plan per workload
 
 ### [Get-CVPermissionResponse](Get-CVPermissionResponse.md)
 Get a list of categories and permissions in each category
 
 ### [Get-CVPlan](Get-CVPlan.md)
+Get Plan details
+
+### [Get-CVPlanId](Get-CVPlanId.md)
 Get All Plans as Name Id Pairs
 
 ### [Get-CVPlanRule](Get-CVPlanRule.md)
@@ -423,17 +578,20 @@ API to get excluded workloads from plan rule evaluation framework
 ### [Get-CVPlanRuleSetting](Get-CVPlanRuleSetting.md)
 API to fetch plan rule execution settings
 
-### [Get-CVPlanSummaryDetail](Get-CVPlanSummaryDetail.md)
-Api to fetch summary of a plan.
-
-### [Get-CVPlanSummaryList](Get-CVPlanSummaryList.md)
+### [Get-CVPlanSummary](Get-CVPlanSummary.md)
 Get Plan Summary
+
+### [Get-CVPlatformUpgradeOption](Get-CVPlatformUpgradeOption.md)
+API to get eligibility for install job option at different entity level
 
 ### [Get-CVProject](Get-CVProject.md)
 Retrieve list of projects for the request
 
 ### [Get-CVRecoveryPointStore](Get-CVRecoveryPointStore.md)
 Fetch details about recovery point stores or library details
+
+### [Get-CVRecoveryPointStoreList](Get-CVRecoveryPointStoreList.md)
+Get the list of recovery point stores.
 
 ### [Get-CVRecoveryTarget](Get-CVRecoveryTarget.md)
 Get the list of recovery targets
@@ -462,9 +620,6 @@ Get All Resource Pools
 ### [Get-CVRESTHeader](Get-CVRESTHeader.md)
 
 
-### [Get-CVRole](Get-CVRole.md)
-Get a list of all the roles
-
 ### [Get-CVRoleDetail](Get-CVRoleDetail.md)
 Get a details of the role whose role id has been provided
 
@@ -481,7 +636,10 @@ This end point returns the list of servers
 ### [Get-CVServerGroup](Get-CVServerGroup.md)
 Get All Server Groups
 
-### [Get-CVServerGroupDetail](Get-CVServerGroupDetail.md)
+### [Get-CVServerGroupDcPlan](Get-CVServerGroupDcPlan.md)
+API to fetch DC plan associated to server group
+
+### [Get-CVServerGroupIdDetail](Get-CVServerGroupIdDetail.md)
 Get details of a serverGroup based on id
 
 ### [Get-CVServerPlanRpo](Get-CVServerPlanRpo.md)
@@ -493,11 +651,32 @@ Returns a list of Service Commcells
 ### [Get-CVSessionDetail](Get-CVSessionDetail.md)
 
 
+### [Get-CVSinglePlanSummary](Get-CVSinglePlanSummary.md)
+Api to fetch summary of a plan.
+
 ### [Get-CVSLAReport](Get-CVSLAReport.md)
 Gets SLA report for specific client or entire CommCell.
 
+### [Get-CVSnapClient](Get-CVSnapClient.md)
+API to get all IntelliSnap enabled Clients
+
+### [Get-CVSnapConfig](Get-CVSnapConfig.md)
+get snap config for vendor.
+
+### [Get-CVSnapshot](Get-CVSnapshot.md)
+Listing Snapshot of a particular array
+
+### [Get-CVSnapSubclient](Get-CVSnapSubclient.md)
+API to get all IntelliSnap enabled subclients for particular client
+
+### [Get-CVSnmPhost](Get-CVSnmPhost.md)
+Get list of SNMP hosts for alert notification
+
 ### [Get-CVSolutionId](Get-CVSolutionId.md)
 API to fetch applicable workload solutions for the user like File Server, Virtualization or Database
+
+### [Get-CVSourceCopy](Get-CVSourceCopy.md)
+Gives a list of eligible source copies for given region id
 
 ### [Get-CVSQLClientDetail](Get-CVSQLClientDetail.md)
 Method to retrieve protected SQL client details.
@@ -530,6 +709,9 @@ Method to retrieve backup history data for specific SQL instance.
 ### [Get-CVSQLInstanceDetail](Get-CVSQLInstanceDetail.md)
 Method to retrieve SQL instance details specified by instance name or pipeline input of an SQL instance object.
 
+### [Get-CVStorageAssociatedCopy](Get-CVStorageAssociatedCopy.md)
+Get associated copies and plan which are utilizing this storage.
+
 ### [Get-CVStoragePolicy](Get-CVStoragePolicy.md)
 Method to retrieve storage policies from the CommServe.
 Output can be filtered by media agent and policy Name.
@@ -538,17 +720,35 @@ Note: detail information is
 ### [Get-CVSubclient](Get-CVSubclient.md)
 Method to retrieve the list of subclients or a named subclient for a given client from the CommServe.
 
+### [Get-CVSubclientLvlArray](Get-CVSubclientLvlArray.md)
+API to get all arrays at Subclient Level
+
 ### [Get-CVSubclientMediaAgent](Get-CVSubclientMediaAgent.md)
 Method to retrieve subclient media agent instances from the CommServe.
 
+### [Get-CVSubclientSnapConfig](Get-CVSubclientSnapConfig.md)
+API to fetch Snap configs for Storage Arrays at subclient level
+
 ### [Get-CVSyslogStatus](Get-CVSyslogStatus.md)
 This endpoint returns the details of a syslog server.
+
+### [Get-CVTagAssociatedEntity](Get-CVTagAssociatedEntity.md)
+Returns list of tags for the logged in user's default entity tag set along with count of associated entities
+
+### [Get-CVTagValue](Get-CVTagValue.md)
+Gives list of values for given tagId
+
+### [Get-CVTestFailoverMachineFailoverGroup](Get-CVTestFailoverMachineFailoverGroup.md)
+API to get test failover machines for failover group
 
 ### [Get-CVTriggeredAlertDetail](Get-CVTriggeredAlertDetail.md)
 Get details of triggered alert
 
 ### [Get-CVUser](Get-CVUser.md)
 Get All Users
+
+### [Get-CVUserauthenticationMethod](Get-CVUserauthenticationMethod.md)
+Used to fetch authentication methods of an existing user
 
 ### [Get-CVUserDetail](Get-CVUserDetail.md)
 Get details of a User based on id
@@ -559,6 +759,18 @@ Get a list of existing user groups.
 ### [Get-CVUserGroupDetail](Get-CVUserGroupDetail.md)
 Get details of a user-group based on id
 
+### [Get-CVV4BlackoutWindow](Get-CVV4BlackoutWindow.md)
+Get All Blackout Windows
+
+### [Get-CVV4BlackoutWindowDetail](Get-CVV4BlackoutWindowDetail.md)
+Get details of a blackout window based on id
+
+### [Get-CVV4LaptopOwnerMappingPreview](Get-CVV4LaptopOwnerMappingPreview.md)
+Gives list of valid laptop owner mapping in the response
+
+### [Get-CVVendor](Get-CVVendor.md)
+Get all snap vendors
+
 ### [Get-CVVersionInfo](Get-CVVersionInfo.md)
 Method to retrieve the current version, service pack level, and time zone settings on the CommServe.
 
@@ -568,11 +780,11 @@ Get all virtual machines
 ### [Get-CVVirtualMachineBackupTime](Get-CVVirtualMachineBackupTime.md)
 Method to retrieve the last backup details of virtual machines in the CommCell.
 
-### [Get-CVVirtualMachineDetail](Get-CVVirtualMachineDetail.md)
-Get details for virtual machine
-
 ### [Get-CVVirtualMachineLiveMount](Get-CVVirtualMachineLiveMount.md)
 Method to retrieve list of active mounts for specified source virtual machine.
+
+### [Get-CVVMDetail](Get-CVVMDetail.md)
+Get details for virtual machine
 
 ### [Get-CVVMGroup](Get-CVVMGroup.md)
 Get the details of all vmGroup
@@ -581,14 +793,77 @@ Get the details of all vmGroup
 Method to retrieve workflows from the CommServe.
 Output can be filtered by workflow Name or Id.
 
+### [Group-CV](Group-CV.md)
+To Backup the virtual machines in vmgroup
+
+### [Group-CVPlannedFailover](Group-CVPlannedFailover.md)
+API to perform planned failover for failover group
+
 ### [Install-CVMediaAgent](Install-CVMediaAgent.md)
 To install MediaAgent package on a server
 
 ### [Invoke-CVBrowseHypervisorInventory](Invoke-CVBrowseHypervisorInventory.md)
 Browse the Inventory of your hypervisor : URL /V4/Hypervisor/{hypervisorId}/{InventoryEntityName}/Browse
 
-### [Invoke-CVInvokeRefreshNode](Invoke-CVInvokeRefreshNode.md)
-Refresh a specific node of HyperScale
+### [Invoke-CVBrowseKuberneteNamespace](Invoke-CVBrowseKuberneteNamespace.md)
+API to get all namespaces of a Kubernetes cluster with clusterId
+
+### [Invoke-CVBrowseKuberneteStorageClass](Invoke-CVBrowseKuberneteStorageClass.md)
+API to get all StorageClasses of a Kubernetes cluster with clusterId
+
+### [Invoke-CVBrowseNamespaceApplication](Invoke-CVBrowseNamespaceApplication.md)
+API to browse applications in a namespace
+
+### [Invoke-CVBrowseNamespaceLabel](Invoke-CVBrowseNamespaceLabel.md)
+API to browse labels in a namespace
+
+### [Invoke-CVBrowseNamespaceVolume](Invoke-CVBrowseNamespaceVolume.md)
+API to browse volumes in a namespace
+
+### [Invoke-CVCloudGetEligibleMediaAgent](Invoke-CVCloudGetEligibleMediaAgent.md)
+Used to fetch available media agents which can be added as access paths for cloud storage
+
+### [Invoke-CVClusterReconfigureKubernete](Invoke-CVClusterReconfigureKubernete.md)
+API to reconfigure a Kubernetes cluster with clusterId
+
+### [Invoke-CVCreatelockConfiguration](Invoke-CVCreatelockConfiguration.md)
+To lock a configuration
+
+### [Invoke-CVCreatelunlockConfiguration](Invoke-CVCreatelunlockConfiguration.md)
+To unlock a configuration
+
+### [Invoke-CVDiskGetEligibleMediaAgent](Invoke-CVDiskGetEligibleMediaAgent.md)
+Used to fetch available media agents which can be added as access paths for disk storage
+
+### [Invoke-CVExcludeSlaInstance](Invoke-CVExcludeSlaInstance.md)
+Used to exclude instance from SLA.
+Applicable for Salesforce & Office365
+
+### [Invoke-CVFetchLocalAuthenticationDetil](Invoke-CVFetchLocalAuthenticationDetil.md)
+Fetch local authentication details of the company
+
+### [Invoke-CVFetchTapeDetail](Invoke-CVFetchTapeDetail.md)
+Fetches tape details based on the tape library Id provided
+
+### [Invoke-CVFetchTapeMediaDetail](Invoke-CVFetchTapeMediaDetail.md)
+Fetch tape media details based on the tape library Id
+
+### [Invoke-CVFirewallTopology](Invoke-CVFirewallTopology.md)
+This endpoint is used to create network topology.
+
+### [Invoke-CVForce](Invoke-CVForce.md)
+API for snap multi node force unmount operation.
+Please be aware, triggering this API will not physically unmount the clones from the storage array or MA, so ensure that you unmapped the clones on the array and cleanup the mount host and LVM before using this operation.
+
+### [Invoke-CVIncludeSlaInstance](Invoke-CVIncludeSlaInstance.md)
+Used to include instance in SLA.
+Applicable for Salesforce
+
+### [Invoke-CVInventoryCrawl](Invoke-CVInventoryCrawl.md)
+To start the data collection job on inventory
+
+### [Invoke-CVLaptop](Invoke-CVLaptop.md)
+Simplified API to create a laptop
 
 ### [Invoke-CVLaptopOwnerMapping](Invoke-CVLaptopOwnerMapping.md)
 API to create laptop owner mappings
@@ -596,23 +871,167 @@ API to create laptop owner mappings
 ### [Invoke-CVMachine](Invoke-CVMachine.md)
 To Backup the virtual machines in vmgroup
 
+### [Invoke-CVModifyAccessPath](Invoke-CVModifyAccessPath.md)
+Modify access path details of specific bucket of a specific cloud storage
+
+### [Invoke-CVModifyArchiveBackupDestination](Invoke-CVModifyArchiveBackupDestination.md)
+Modify Backup Destination for a Plan
+
+### [Invoke-CVModifyArchivePlan](Invoke-CVModifyArchivePlan.md)
+Modify existing archive plan details
+
+### [Invoke-CVModifyBackupDestination](Invoke-CVModifyBackupDestination.md)
+Modify Backup Destination for a Plan
+
+### [Invoke-CVModifyBackupDestinationDetail](Invoke-CVModifyBackupDestinationDetail.md)
+Modify Backup Destination details for a Plan
+
+### [Invoke-CVModifyBackupDestinationWithoutPlanInfo](Invoke-CVModifyBackupDestinationWithoutPlanInfo.md)
+Modify Backup Destination.
+Only primary backup destination will be considered for region updation.\nIf the primary backup destination is not associated with a plan, only then the region associaion can be modified.
+
+### [Invoke-CVModifyBackupLocation](Invoke-CVModifyBackupLocation.md)
+Modify the properties of an existing mount path
+
+### [Invoke-CVModifyBlackoutWindow](Invoke-CVModifyBlackoutWindow.md)
+Modify the properties of an existing Blackout Window
+
+### [Invoke-CVModifyCloudStorage](Invoke-CVModifyCloudStorage.md)
+Modify details like name, encryption, security of a specific cloud storage
+
+### [Invoke-CVModifyCloudStorageMetaDataCache](Invoke-CVModifyCloudStorageMetaDataCache.md)
+Modify details like credentials and path for metadata Cache of a cloud storage based on Id
+
+### [Invoke-CVModifyCompany](Invoke-CVModifyCompany.md)
+Modify the properties of an existing company
+
+### [Invoke-CVModifyDiskAccessPath](Invoke-CVModifyDiskAccessPath.md)
+Used to modify a disk access path
+
+### [Invoke-CVModifyDiskStorage](Invoke-CVModifyDiskStorage.md)
+Modify the properties of an existing disk storage pool
+
+### [Invoke-CVModifyEntitySetting](Invoke-CVModifyEntitySetting.md)
+Modify entity settings used to change default behaviour for linked entity like servers or server groups
+
+### [Invoke-CVModifyFailoverGroup](Invoke-CVModifyFailoverGroup.md)
+API to modify failover group
+
+### [Invoke-CVModifyFailoverGroupSchedule](Invoke-CVModifyFailoverGroupSchedule.md)
+API to create failover group DR operation schedule
+
+### [Invoke-CVModifyGlobalSetting](Invoke-CVModifyGlobalSetting.md)
+Modify global settings used to override system default behaviour
+
+### [Invoke-CVModifyHyperScaleStorage](Invoke-CVModifyHyperScaleStorage.md)
+Modify details like name, encryption, security of a specific hyperscale storage
+
+### [Invoke-CVModifyLaptopBackupDestination](Invoke-CVModifyLaptopBackupDestination.md)
+Modify Backup Destination for a Plan
+
+### [Invoke-CVModifyLaptopPlan](Invoke-CVModifyLaptopPlan.md)
+Modify existing laptop plan details
+
+### [Invoke-CVModifyMediaAgent](Invoke-CVModifyMediaAgent.md)
+Modify the properties of an existing media agent
+
+### [Invoke-CVModifyPlan](Invoke-CVModifyPlan.md)
+Used to modify an exsiting server plan
+
+### [Invoke-CVModifyReplicationGroup](Invoke-CVModifyReplicationGroup.md)
+Modify the properties of an existing replication group
+
+### [Invoke-CVModifyRole](Invoke-CVModifyRole.md)
+Modify the properties of an existing role
+
+### [Invoke-CVModifySchedulePattern](Invoke-CVModifySchedulePattern.md)
+API to update pattern for schedule in schedule policy
+
+### [Invoke-CVModifyTriggeredAlertNote](Invoke-CVModifyTriggeredAlertNote.md)
+Add, Modify and Delete notes for triggered alerts
+
+### [Invoke-CVModifyUser](Invoke-CVModifyUser.md)
+Used to modify an existing user
+
+### [Invoke-CVModifyUserGroup](Invoke-CVModifyUserGroup.md)
+Modify the properties of an existing user-group
+
+### [Invoke-CVModifyV4BlackoutWindow](Invoke-CVModifyV4BlackoutWindow.md)
+Modify the properties of an existing Blackout Window
+
+### [Invoke-CVModifyVirtualMachine](Invoke-CVModifyVirtualMachine.md)
+Modify the properties of an existing virtual machine
+
+### [Invoke-CVMultiNodeUnmount](Invoke-CVMultiNodeUnmount.md)
+API for snap multi node unmount operation
+
 ### [Invoke-CVPinTriggeredAlert](Invoke-CVPinTriggeredAlert.md)
 Pin triggered alerts
 
-### [Invoke-CVPreviewVMGroup](Invoke-CVPreviewVMGroup.md)
-Preview of the vm to be protected in VMGroup
+### [Invoke-CVPreviewApplicationGroup](Invoke-CVPreviewApplicationGroup.md)
+API to preview application content
+
+### [Invoke-CVPreviewServerGroupCreation](Invoke-CVPreviewServerGroupCreation.md)
+Get a preview of servers affected with create server group operation
 
 ### [Invoke-CVReConfigureHypervisor](Invoke-CVReConfigureHypervisor.md)
 REconfigures and Renew License for  the hypervisor client
 
+### [Invoke-CVRetireClientPackage](Invoke-CVRetireClientPackage.md)
+Selectively uninstall packages from given client
+
+### [Invoke-CVRetireKuberneteCluster](Invoke-CVRetireKuberneteCluster.md)
+API to retire a Kubernetes cluster with clusterId
+
+### [Invoke-CVReturnDrivePoolDetail](Invoke-CVReturnDrivePoolDetail.md)
+This endpoint is used to return the details of Drive Pool.
+
 ### [Invoke-CVReturnList](Invoke-CVReturnList.md)
 This endpoint is used to return the list of tape storages.
 
-### [Invoke-CVSnmp](Invoke-CVSnmp.md)
-Get list of SNMP hosts for alert notification
+### [Invoke-CVSnap](Invoke-CVSnap.md)
+API to list snaps for a particular Job Id
+
+### [Invoke-CVSnapDelete](Invoke-CVSnapDelete.md)
+Deleting an unmounted or created snapshot from Storage Arrays
+
+### [Invoke-CVSnapForceDelete](Invoke-CVSnapForceDelete.md)
+Force deleting an unmounted or created snapshot from Storage Arrays.
+Please be aware, triggering this API will not delete the snapshots from the storage array, so ensure that you delete snapshots on the array before using this operation.
+
+### [Invoke-CVSnapForceUnmount](Invoke-CVSnapForceUnmount.md)
+Force unmounting a mounted Snapshot from Storage Array.
+Please be aware, triggering this API will not physically unmount the snapshots from the storage array or MA, so ensure that you unmapped the snapshots on the array and cleanup the mount host and LVM before using this operation.
+
+### [Invoke-CVSnapMount](Invoke-CVSnapMount.md)
+Mounting a snapshot from the Storage Array
+
+### [Invoke-CVSnapReconWorkflow](Invoke-CVSnapReconWorkflow.md)
+Starts a workflow snap reconcile for array
+
+### [Invoke-CVSnapRevert](Invoke-CVSnapRevert.md)
+Reverting a created or unmounted snapshot from the storage array
+
+### [Invoke-CVSnapUnmount](Invoke-CVSnapUnmount.md)
+Unmounting a mounted Snapshot from Storage Array
 
 ### [Invoke-CVUnpinTriggeredAlert](Invoke-CVUnpinTriggeredAlert.md)
 Unpin triggered alerts
+
+### [Invoke-CVUnreadTriggeredAlert](Invoke-CVUnreadTriggeredAlert.md)
+Mark a triggered alert as unread
+
+### [Invoke-CVValueDeletag](Invoke-CVValueDeletag.md)
+Delete given tagValue for tagId
+
+### [Invoke-CVVMActionDelete](Invoke-CVVMActionDelete.md)
+Deletes the VM.
+
+### [Invoke-CVVMActionRefresh](Invoke-CVVMActionRefresh.md)
+Refreshes the VM.
+
+### [Invoke-CVVMActionRenew](Invoke-CVVMActionRenew.md)
+Renew the VM with the provided timestamp.
 
 ### [Invoke-SetupLogin](Invoke-SetupLogin.md)
 Add your QSDK Authenticated token to your Postman Environment by providing the details in the pre-request script.\n\nYou only need to run this one time because these values are stored in your Postman Environment.
@@ -623,14 +1042,14 @@ Method to submit SQL database mount job.
 ### [Mount-CVVirtualMachine](Mount-CVVirtualMachine.md)
 Method to initiate live mount of specified virtual machine from specified media.
 
+### [New-CV](New-CV.md)
+Creating a request for request manager
+
 ### [New-CVAccessPath](New-CVAccessPath.md)
 Add a new Access path (mediaAgent) to a specific bucket of a specific cloud storage
 
 ### [New-CVAlertDefinition](New-CVAlertDefinition.md)
 Create Alert Definitions
-
-### [New-CVApplicationGroup](New-CVApplicationGroup.md)
-Create a Kubernetes application group
 
 ### [New-CVArchiveBackupDestination](New-CVArchiveBackupDestination.md)
 Create a Backup Destination for a Plan
@@ -638,8 +1057,17 @@ Create a Backup Destination for a Plan
 ### [New-CVArchivePlan](New-CVArchivePlan.md)
 Create Archive Plan
 
+### [New-CVArray](New-CVArray.md)
+Creating a Storage Array
+
+### [New-CVAzureAdClient](New-CVAzureAdClient.md)
+Create Azure Active Directory app
+
 ### [New-CVBackupDestination](New-CVBackupDestination.md)
 Create a Backup Destination for a Plan
+
+### [New-CVBackupDestinationWithoutPlanInfo](New-CVBackupDestinationWithoutPlanInfo.md)
+Create backup destination(s) for a plan before creating the plan.\nThe primary backup destination can be then associated with the plan to associate all secondary copies also.\n
 
 ### [New-CVBackupLocation](New-CVBackupLocation.md)
 Create a new backup location
@@ -665,17 +1093,32 @@ Create a Company
 ### [New-CVCredentials](New-CVCredentials.md)
 Create new credential
 
+### [New-CVD365Client](New-CVD365Client.md)
+Create Dynamics 365 app
+
 ### [New-CVDiskStorage](New-CVDiskStorage.md)
 Create a new disk storage pool
 
-### [New-CVFirewallTopology](New-CVFirewallTopology.md)
-This endpoint is used to create network topology.
+### [New-CVExchangeClient](New-CVExchangeClient.md)
+Create Office 365 Exchange Online app
+
+### [New-CVFailoverGroupSchedule](New-CVFailoverGroupSchedule.md)
+API to create failover group DR operation schedule
 
 ### [New-CVHyperScaleStorage](New-CVHyperScaleStorage.md)
 Create a HyperScale Storage
 
 ### [New-CVHypervisor](New-CVHypervisor.md)
 Create a New Hypervisor
+
+### [New-CVInventory](New-CVInventory.md)
+Creating a new inventory
+
+### [New-CVKuberneteApplicationGroup](New-CVKuberneteApplicationGroup.md)
+API to create new Kubernetes application group
+
+### [New-CVKuberneteClusterOp](New-CVKuberneteClusterOp.md)
+API to create new Kubernetes cluster client
 
 ### [New-CVKubernetescluster](New-CVKubernetescluster.md)
 Create Kubernetes cluster
@@ -689,8 +1132,14 @@ Create Laptop Plan
 ### [New-CVLdap](New-CVLdap.md)
 Create LDAP/Active directory for user authentication
 
+### [New-CVNewRole](New-CVNewRole.md)
+Create a new role
+
 ### [New-CVNodeforHyperScaleStorage](New-CVNodeforHyperScaleStorage.md)
 Add nodes for a specific hyperscale storage
+
+### [New-CVOnedriveClient](New-CVOnedriveClient.md)
+Create Office 365 Onedrive for Business app
 
 ### [New-CVPlanRule](New-CVPlanRule.md)
 Api to create plan rules.
@@ -702,14 +1151,11 @@ Create a region
 ### [New-CVReplicationGroup](New-CVReplicationGroup.md)
 Create a replication group
 
-### [New-CVRequestResourceManager](New-CVRequestResourceManager.md)
-Creating a request for request manager
-
-### [New-CVRole](New-CVRole.md)
-Create a new role
-
 ### [New-CVSamlApp](New-CVSamlApp.md)
 Creates SAML app
+
+### [New-CVServerGroup](New-CVServerGroup.md)
+Create Server group
 
 ### [New-CVServerPlan](New-CVServerPlan.md)
 Create a Server Plan
@@ -720,11 +1166,20 @@ API to create backup content on server plan
 ### [New-CVServerPlanRpo](New-CVServerPlanRpo.md)
 API to create RPO schedules on server plan
 
+### [New-CVSharepointClient](New-CVSharepointClient.md)
+Create Office 365 SharePoint Online app
+
+### [New-CVTeamClient](New-CVTeamClient.md)
+Create Office 365 Teams app
+
 ### [New-CVUser](New-CVUser.md)
 Create a User
 
 ### [New-CVUserGroup](New-CVUserGroup.md)
 Create a new user-group
+
+### [New-CVV4BlackoutWindow](New-CVV4BlackoutWindow.md)
+Create a Blackout Window
 
 ### [New-CVVMGroup](New-CVVMGroup.md)
 Create a VM Group
@@ -732,8 +1187,17 @@ Create a VM Group
 ### [ProcessBlackoutWindowIgnoreHigherLevelRules](ProcessBlackoutWindowIgnoreHigherLevelRules.md)
 
 
+### [Read-CVTriggeredAlert](Read-CVTriggeredAlert.md)
+Mark a triggered alert as read
+
+### [Remove-CVAccessPath](Remove-CVAccessPath.md)
+Disassociate a MediaAgent (cloud Access Path) from a bucket of a cloud storage
+
 ### [Remove-CVAdldap](Remove-CVAdldap.md)
 Delete an AD/LDAP domain
+
+### [Remove-CVAgent](Remove-CVAgent.md)
+Used to delete an agent from a server\nIt is expected that the agent has been deconfigured before performing delete operation.\nBut internally if the agent is not deconfigured, then we force deconfigure it to proceed with delete operation\nExamples of supported agentIds are:\n33-File System,\n106-Virtual Server
 
 ### [Remove-CVAlertDefinition](Remove-CVAlertDefinition.md)
 Delete alert definitions
@@ -744,8 +1208,15 @@ Delete Backup Destination for a Plan
 ### [Remove-CVArchivePlan](Remove-CVArchivePlan.md)
 Delete existing archive plan
 
+### [Remove-CVArray](Remove-CVArray.md)
+Deleting a Storage Array
+
 ### [Remove-CVBackupDestination](Remove-CVBackupDestination.md)
 Delete Backup Destination for a Plan
+
+### [Remove-CVBackupDestinationWithoutPlanInfo](Remove-CVBackupDestinationWithoutPlanInfo.md)
+Delete Backup Destination.
+If trying to delete primary backup destination which is not associated with any plan, it will delete all secondary copies also.
 
 ### [Remove-CVBackupLocation](Remove-CVBackupLocation.md)
 Modify the properties of an existing mount path
@@ -771,11 +1242,23 @@ Used to delete a company which has been deactivated
 ### [Remove-CVCredential](Remove-CVCredential.md)
 Delete Credential whose name has been provided
 
+### [Remove-CVDeconfiguredKuberneteCluster](Remove-CVDeconfiguredKuberneteCluster.md)
+API to delete a deconfigured Kubernetes cluster with clusterId
+
 ### [Remove-CVDiskAccessPath](Remove-CVDiskAccessPath.md)
 Used to delete a media agent to a disk access path
 
 ### [Remove-CVDiskStorage](Remove-CVDiskStorage.md)
 Used to delete a disk storage pool
+
+### [Remove-CVEntityTag](Remove-CVEntityTag.md)
+Used to delete tag from the entity tag list
+
+### [Remove-CVFailoverGroup](Remove-CVFailoverGroup.md)
+API to delete failover group
+
+### [Remove-CVFailoverGroupSchedule](Remove-CVFailoverGroupSchedule.md)
+API to delete failover group DR operation schedule
 
 ### [Remove-CVFirewallTopology](Remove-CVFirewallTopology.md)
 This endpoint is used to delete network topology.
@@ -786,8 +1269,17 @@ Delete existing hyperscale storage
 ### [Remove-CVHypervisor](Remove-CVHypervisor.md)
 delete an existing vm group
 
+### [Remove-CVInventory](Remove-CVInventory.md)
+Deleting an inventory
+
+### [Remove-CVInventoryAsset](Remove-CVInventoryAsset.md)
+Delete the inventory asset
+
 ### [Remove-CVKeyManagementServer](Remove-CVKeyManagementServer.md)
 Delete key management server based on Id
+
+### [Remove-CVKuberneteAppGroup](Remove-CVKuberneteAppGroup.md)
+API to delete a Kubernetes application group with applicationGroupId
 
 ### [Remove-CVLaptopBackupDestination](Remove-CVLaptopBackupDestination.md)
 Delete Backup Destination for a Plan
@@ -822,9 +1314,6 @@ To delete an exisitng recovery target
 ### [Remove-CVRegion](Remove-CVRegion.md)
 Delete the region
 
-### [Remove-CVReplicationGroup](Remove-CVReplicationGroup.md)
-Used to delete a replication group
-
 ### [Remove-CVRequestManagerRequest](Remove-CVRequestManagerRequest.md)
 Deleting an existing request
 
@@ -833,6 +1322,9 @@ Used to delete a role
 
 ### [Remove-CVServerGroup](Remove-CVServerGroup.md)
 Used to delete a serverGroup
+
+### [Remove-CVServerGroupDcPlan](Remove-CVServerGroupDcPlan.md)
+Api to remove associated DC plan from server group
 
 ### [Remove-CVSQLClone](Remove-CVSQLClone.md)
 
@@ -877,9 +1369,6 @@ If the job cannot be resumed, this command has no effect.
 ### [Search-CVClientFileSystem](Search-CVClientFileSystem.md)
 Method to create a client file system browse query.
 
-### [Search-CVGlobal](Search-CVGlobal.md)
-
-
 ### [Select-CVClientFileSystem](Select-CVClientFileSystem.md)
 Retrieve list of protected files in client file system by search pattern.
 
@@ -889,29 +1378,14 @@ Create Send Log Files task for client or specific job.
 ### [Send-CVTestMailReq](Send-CVTestMailReq.md)
 To test Email settings
 
+### [Set-CV](Set-CV.md)
+Configure a created request
+
 ### [Set-CVAccessControl](Set-CVAccessControl.md)
 Updates owner permissions and/or automatic laptop ownership assignment
 
 ### [Set-CVAdldap](Set-CVAdldap.md)
 Update an AD/LDAP domain
-
-### [Set-CVArchiveBackupDestination](Set-CVArchiveBackupDestination.md)
-Modify Backup Destination for a Plan
-
-### [Set-CVArchivePlan](Set-CVArchivePlan.md)
-Modify existing archive plan details
-
-### [Set-CVBackupDestination](Set-CVBackupDestination.md)
-Modify Backup Destination for a Plan
-
-### [Set-CVBackupLocation](Set-CVBackupLocation.md)
-Modify the properties of an existing mount path
-
-### [Set-CVBlackoutWindow](Set-CVBlackoutWindow.md)
-Modify the properties of an existing Blackout Window
-
-### [Set-CVBucket](Set-CVBucket.md)
-Modify configuration of a specific bucket of a specific cloud storage
 
 ### [Set-CVClient](Set-CVClient.md)
 Method to set client properties.
@@ -919,14 +1393,8 @@ Method to set client properties.
 ### [Set-CVClientGroup](Set-CVClientGroup.md)
 Method to set client group properties.
 
-### [Set-CVCloudStorage](Set-CVCloudStorage.md)
-Modify details like name, encryption, security of a specific cloud storage
-
-### [Set-CVCloudStorageMetaDataCache](Set-CVCloudStorageMetaDataCache.md)
-Modify details like credentials and path for metadata Cache of a cloud storage based on Id
-
-### [Set-CVCompany](Set-CVCompany.md)
-Modify the properties of an existing company
+### [Set-CVCompanyLaptopAdmin](Set-CVCompanyLaptopAdmin.md)
+Update a company's laptop admins.
 
 ### [Set-CVCompanyTimezone](Set-CVCompanyTimezone.md)
 Assigns company's timezone as the timezone for servers with no packages installed
@@ -934,23 +1402,11 @@ Assigns company's timezone as the timezone for servers with no packages installe
 ### [Set-CVCredential](Set-CVCredential.md)
 Edit credential whose name has been provided by credential owner
 
-### [Set-CVDiskStorage](Set-CVDiskStorage.md)
-Modify the properties of an existing disk storage pool
-
 ### [Set-CVEmailServer](Set-CVEmailServer.md)
 Configure SMTP server settings.
 
-### [Set-CVEntitySetting](Set-CVEntitySetting.md)
-Modify entity settings used to change default behaviour for linked entity like servers or server groups
-
 ### [Set-CVFirewallTopology](Set-CVFirewallTopology.md)
 This endpoint is used to edit network topology.
-
-### [Set-CVGlobalSetting](Set-CVGlobalSetting.md)
-Modify global settings used to override system default behaviour
-
-### [Set-CVHyperScaleStorage](Set-CVHyperScaleStorage.md)
-Modify details like name, encryption, security of a specific hyperscale storage
 
 ### [Set-CVHypervisor](Set-CVHypervisor.md)
 Update the hypervisor
@@ -961,20 +1417,20 @@ Endpoint to Change the Access Node
 ### [Set-CVHypervisorFbr](Set-CVHypervisorFbr.md)
 Endpoint to set FBR
 
-### [Set-CVLaptopBackupDestination](Set-CVLaptopBackupDestination.md)
-Modify Backup Destination for a Plan
+### [Set-CVKuberneteAppGroupOp](Set-CVKuberneteAppGroupOp.md)
+API to update properties of a Kubernetes application group
+
+### [Set-CVKuberneteProperty](Set-CVKuberneteProperty.md)
+API to update the properties of a Kubernetes cluster with clusterId
 
 ### [Set-CVLaptopOwnerMapping](Set-CVLaptopOwnerMapping.md)
 API to update existing laptop owner mapping
 
-### [Set-CVLaptopPlan](Set-CVLaptopPlan.md)
-Modify existing laptop plan details
+### [Set-CVLaptopOwnerMappingActionAssign](Set-CVLaptopOwnerMappingActionAssign.md)
+API to assign users specified in device owner mapping as owners of laptops presented in the request body.
 
-### [Set-CVMediaAgent](Set-CVMediaAgent.md)
-Modify the properties of an existing media agent
-
-### [Set-CVPlan](Set-CVPlan.md)
-Used to modify an exsiting server plan
+### [Set-CVNode](Set-CVNode.md)
+Refresh a specific node of HyperScale
 
 ### [Set-CVPlanRule](Set-CVPlanRule.md)
 Api to update existing plan rules.
@@ -1001,20 +1457,14 @@ API to set plan rule execution settings
 ### [Set-CVRegion](Set-CVRegion.md)
 Api to set region for an entity.
 
-### [Set-CVReplicationGroup](Set-CVReplicationGroup.md)
-Modify the properties of an existing replication group
-
-### [Set-CVRequestManagerConfigureRequest](Set-CVRequestManagerConfigureRequest.md)
-Configure a created request
-
-### [Set-CVRole](Set-CVRole.md)
-Modify the properties of an existing role
-
 ### [Set-CVSamlApp](Set-CVSamlApp.md)
 Updates details of existing SAML app
 
-### [Set-CVSchedulePattern](Set-CVSchedulePattern.md)
-API to update pattern for schedule in schedule policy
+### [Set-CVServerGroupAssociation](Set-CVServerGroupAssociation.md)
+Used to update server associations for a server group
+
+### [Set-CVServerGroupDcPlan](Set-CVServerGroupDcPlan.md)
+API to associate specific plan to servergroup
 
 ### [Set-CVServerPlanRpo](Set-CVServerPlanRpo.md)
 API to modify RPO schedules on server plan
@@ -1025,20 +1475,23 @@ Method to create a new subclient.
 ### [Set-CVSyslogStatus](Set-CVSyslogStatus.md)
 This endpoint configures a syslog server.
 
-### [Set-CVTriggeredAlertNote](Set-CVTriggeredAlertNote.md)
-Add, Modify and Delete notes for triggered alerts
-
-### [Set-CVUser](Set-CVUser.md)
-Used to modify an existing user
-
-### [Set-CVUserGroup](Set-CVUserGroup.md)
-Modify the properties of an existing user-group
-
-### [Set-CVVirtualMachine](Set-CVVirtualMachine.md)
-Modify the properties of an existing virtual machine
+### [Set-CVValue](Set-CVValue.md)
+Modify values for give tagId
 
 ### [Set-CVVMGroup](Set-CVVMGroup.md)
 Updates the VM Group
+
+### [Start-CVApplicationBackup](Start-CVApplicationBackup.md)
+API to run backup for an application
+
+### [Start-CVApplicationGroupBackup](Start-CVApplicationGroupBackup.md)
+API to run backup for an application group
+
+### [Start-CVBackupCopy](Start-CVBackupCopy.md)
+Run Backup copy job for a backupdestination
+
+### [Start-CVJobOperationOnPlanBackupDestination](Start-CVJobOperationOnPlanBackupDestination.md)
+Run different job operations for a plan backup destination
 
 ### [Start-CVWorkflow](Start-CVWorkflow.md)
 Method to start/execute a workflow on the CommServe.

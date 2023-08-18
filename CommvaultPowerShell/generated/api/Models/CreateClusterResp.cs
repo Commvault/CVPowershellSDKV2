@@ -36,6 +36,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ErrorMessage { get => this._errorMessage; set => this._errorMessage = value; }
 
+        /// <summary>Backing field for <see cref="EtcdSubclientResponse" /> property.</summary>
+        private Commvault.Powershell.Models.ICreateEtcdSubclientResp[] _etcdSubclientResponse;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.ICreateEtcdSubclientResp[] EtcdSubclientResponse { get => this._etcdSubclientResponse; set => this._etcdSubclientResponse = value; }
+
         /// <summary>Backing field for <see cref="WarningCode" /> property.</summary>
         private long? _warningCode;
 
@@ -94,6 +100,14 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
+        SerializedName = @"etcdSubclientResponse",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICreateEtcdSubclientResp) })]
+        Commvault.Powershell.Models.ICreateEtcdSubclientResp[] EtcdSubclientResponse { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
         SerializedName = @"warningCode",
         PossibleTypes = new [] { typeof(long) })]
         long? WarningCode { get; set; }
@@ -117,6 +131,8 @@ namespace Commvault.Powershell.Models
         long? ErrorCode { get; set; }
         /// <summary>Response message</summary>
         string ErrorMessage { get; set; }
+
+        Commvault.Powershell.Models.ICreateEtcdSubclientResp[] EtcdSubclientResponse { get; set; }
 
         long? WarningCode { get; set; }
         /// <summary>Response message</summary>

@@ -18,6 +18,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IIdName[] Agents { get => this._agents; set => this._agents = value; }
 
+        /// <summary>Backing field for <see cref="ClientRoles" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName[] _clientRoles;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IIdName[] ClientRoles { get => this._clientRoles; set => this._clientRoles = value; }
+
         /// <summary>Backing field for <see cref="Commcell" /> property.</summary>
         private Commvault.Powershell.Models.ICommcellInfo _commcell;
 
@@ -85,6 +91,20 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? IsInfrastructure { get => this._isInfrastructure; set => this._isInfrastructure = value; }
 
+        /// <summary>Backing field for <see cref="IsMaPackageInstalled" /> property.</summary>
+        private bool? _isMaPackageInstalled;
+
+        /// <summary>Used to determine if MA package is instlaled on the client</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsMaPackageInstalled { get => this._isMaPackageInstalled; set => this._isMaPackageInstalled = value; }
+
+        /// <summary>Backing field for <see cref="IsMaRoleSet" /> property.</summary>
+        private bool? _isMaRoleSet;
+
+        /// <summary>Used to determine if MA role is set on the client</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsMaRoleSet { get => this._isMaRoleSet; set => this._isMaRoleSet = value; }
+
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
@@ -112,12 +132,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IIdNameValue[] Tags { get => this._tags; set => this._tags = value; }
 
-        /// <summary>Backing field for <see cref="UpdateStatus" /> property.</summary>
-        private string _updateStatus;
+        /// <summary>Backing field for <see cref="UpdateState" /> property.</summary>
+        private string _updateState;
 
         /// <summary>Enum which specifies the status of update on a server</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string UpdateStatus { get => this._updateStatus; set => this._updateStatus = value; }
+        public string UpdateState { get => this._updateState; set => this._updateState = value; }
 
         /// <summary>Backing field for <see cref="Version" /> property.</summary>
         private string _version;
@@ -146,6 +166,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"agents",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
         Commvault.Powershell.Models.IIdName[] Agents { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"clientRoles",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
+        Commvault.Powershell.Models.IIdName[] ClientRoles { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -213,6 +241,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isInfrastructure",
         PossibleTypes = new [] { typeof(bool) })]
         bool? IsInfrastructure { get; set; }
+        /// <summary>Used to determine if MA package is instlaled on the client</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to determine if MA package is instlaled on the client",
+        SerializedName = @"isMAPackageInstalled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsMaPackageInstalled { get; set; }
+        /// <summary>Used to determine if MA role is set on the client</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used to determine if MA role is set on the client",
+        SerializedName = @"isMARoleSet",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsMaRoleSet { get; set; }
         /// <summary>Name of the client</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -250,9 +294,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"Enum which specifies the status of update on a server",
-        SerializedName = @"updateStatus",
+        SerializedName = @"updateState",
         PossibleTypes = new [] { typeof(string) })]
-        string UpdateStatus { get; set; }
+        string UpdateState { get; set; }
         /// <summary>
         /// Version of Commvault software server is running. Version is in the format: Release.SPversion.Hotfixpack. eg: 11.22.5
         /// </summary>
@@ -271,6 +315,8 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>List of agents the server has installed</summary>
         Commvault.Powershell.Models.IIdName[] Agents { get; set; }
+
+        Commvault.Powershell.Models.IIdName[] ClientRoles { get; set; }
         /// <summary>CommcellInfo</summary>
         Commvault.Powershell.Models.ICommcellInfo Commcell { get; set; }
         /// <summary>Name of the commcell the entity belongs to.</summary>
@@ -294,6 +340,10 @@ namespace Commvault.Powershell.Models
         /// Store, Web Server, Content Extractor, Virtual Server Agent (VSA), Web Console, Content Analyzer, Exchange, Cloud Apps
         /// </summary>
         bool? IsInfrastructure { get; set; }
+        /// <summary>Used to determine if MA package is instlaled on the client</summary>
+        bool? IsMaPackageInstalled { get; set; }
+        /// <summary>Used to determine if MA role is set on the client</summary>
+        bool? IsMaRoleSet { get; set; }
         /// <summary>Name of the client</summary>
         string Name { get; set; }
         /// <summary>Gives the status of the file server.</summary>
@@ -303,7 +353,7 @@ namespace Commvault.Powershell.Models
 
         Commvault.Powershell.Models.IIdNameValue[] Tags { get; set; }
         /// <summary>Enum which specifies the status of update on a server</summary>
-        string UpdateStatus { get; set; }
+        string UpdateState { get; set; }
         /// <summary>
         /// Version of Commvault software server is running. Version is in the format: Release.SPversion.Hotfixpack. eg: 11.22.5
         /// </summary>

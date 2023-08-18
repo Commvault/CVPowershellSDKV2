@@ -14,6 +14,12 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Content</summary>
         Commvault.Powershell.Models.IVMContent Commvault.Powershell.Models.IVMGroupPreviewReqInternal.Content { get => (this._content = this._content ?? new Commvault.Powershell.Models.VMContent()); set { {_content = value;} } }
 
+        /// <summary>Internal Acessors for DiskFilters</summary>
+        Commvault.Powershell.Models.IVMDiskFilterProp Commvault.Powershell.Models.IVMGroupPreviewReqInternal.DiskFilters { get => (this._diskFilters = this._diskFilters ?? new Commvault.Powershell.Models.VMDiskFilterProp()); set { {_diskFilters = value;} } }
+
+        /// <summary>Internal Acessors for Filters</summary>
+        Commvault.Powershell.Models.IVMContent Commvault.Powershell.Models.IVMGroupPreviewReqInternal.Filters { get => (this._filters = this._filters ?? new Commvault.Powershell.Models.VMContent()); set { {_filters = value;} } }
+
         /// <summary>Backing field for <see cref="Content" /> property.</summary>
         private Commvault.Powershell.Models.IVMContent _content;
 
@@ -32,6 +38,41 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get => ((Commvault.Powershell.Models.IVMContentInternal)Content).VirtualMachines; set => ((Commvault.Powershell.Models.IVMContentInternal)Content).VirtualMachines = value ?? null /* arrayOf */; }
+
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? DiskFilterOverwrite { get => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Overwrite; set => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Overwrite = value ?? default(bool); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IVMDiskFilter[] DiskFilterRules { get => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Rules; set => ((Commvault.Powershell.Models.IVMDiskFilterPropInternal)DiskFilters).Rules = value ?? null /* arrayOf */; }
+
+        /// <summary>Backing field for <see cref="DiskFilters" /> property.</summary>
+        private Commvault.Powershell.Models.IVMDiskFilterProp _diskFilters;
+
+        /// <summary>vmDiskFilterProp</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IVMDiskFilterProp DiskFilters { get => (this._diskFilters = this._diskFilters ?? new Commvault.Powershell.Models.VMDiskFilterProp()); set => this._diskFilters = value; }
+
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? FilterOverwrite { get => ((Commvault.Powershell.Models.IVMContentInternal)Filters).Overwrite; set => ((Commvault.Powershell.Models.IVMContentInternal)Filters).Overwrite = value ?? default(bool); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IRuleGroupContent[] FilterRuleGroups { get => ((Commvault.Powershell.Models.IVMContentInternal)Filters).RuleGroups; set => ((Commvault.Powershell.Models.IVMContentInternal)Filters).RuleGroups = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IVirtualMachinecontent[] FilterVirtualMachines { get => ((Commvault.Powershell.Models.IVMContentInternal)Filters).VirtualMachines; set => ((Commvault.Powershell.Models.IVMContentInternal)Filters).VirtualMachines = value ?? null /* arrayOf */; }
+
+        /// <summary>Backing field for <see cref="Filters" /> property.</summary>
+        private Commvault.Powershell.Models.IVMContent _filters;
+
+        /// <summary>RuleContent</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IVMContent Filters { get => (this._filters = this._filters ?? new Commvault.Powershell.Models.VMContent()); set => this._filters = value; }
 
         /// <summary>Creates an new <see cref="VMGroupPreviewReq" /> instance.</summary>
         public VMGroupPreviewReq()
@@ -69,6 +110,50 @@ namespace Commvault.Powershell.Models
         SerializedName = @"virtualMachines",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVirtualMachinecontent) })]
         Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get; set; }
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if content in vmgroup has to be overwritten, by default it will append the content",
+        SerializedName = @"overwrite",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? DiskFilterOverwrite { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"rules",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVMDiskFilter) })]
+        Commvault.Powershell.Models.IVMDiskFilter[] DiskFilterRules { get; set; }
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if content in vmgroup has to be overwritten, by default it will append the content",
+        SerializedName = @"overwrite",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? FilterOverwrite { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"ruleGroups",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IRuleGroupContent) })]
+        Commvault.Powershell.Models.IRuleGroupContent[] FilterRuleGroups { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"virtualMachines",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IVirtualMachinecontent) })]
+        Commvault.Powershell.Models.IVirtualMachinecontent[] FilterVirtualMachines { get; set; }
 
     }
     /// vmGroupPreviewReq
@@ -85,6 +170,24 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IRuleGroupContent[] ContentRuleGroups { get; set; }
 
         Commvault.Powershell.Models.IVirtualMachinecontent[] ContentVirtualMachines { get; set; }
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        bool? DiskFilterOverwrite { get; set; }
+
+        Commvault.Powershell.Models.IVMDiskFilter[] DiskFilterRules { get; set; }
+        /// <summary>vmDiskFilterProp</summary>
+        Commvault.Powershell.Models.IVMDiskFilterProp DiskFilters { get; set; }
+        /// <summary>
+        /// True if content in vmgroup has to be overwritten, by default it will append the content
+        /// </summary>
+        bool? FilterOverwrite { get; set; }
+
+        Commvault.Powershell.Models.IRuleGroupContent[] FilterRuleGroups { get; set; }
+
+        Commvault.Powershell.Models.IVirtualMachinecontent[] FilterVirtualMachines { get; set; }
+        /// <summary>RuleContent</summary>
+        Commvault.Powershell.Models.IVMContent Filters { get; set; }
 
     }
 }

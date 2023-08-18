@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/set-cvlaptopownermapping
 schema: 2.0.0
 ---
@@ -14,7 +14,8 @@ API to update existing laptop owner mapping
 
 ### PutExpanded (Default)
 ```
-Set-CVLaptopOwnerMapping [-LaptopOwnerMapping <ILaptopOwnerInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
+Set-CVLaptopOwnerMapping [-ErrorCode <Int64>] [-ErrorMessage <String>]
+ [-LaptopOwnerMapping <ILaptopOwnerInfo[]>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ### Put
@@ -29,10 +30,8 @@ API to update existing laptop owner mapping
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -40,10 +39,8 @@ API to update existing laptop owner mapping
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -64,6 +61,36 @@ Required: True
 Position: Named
 Default value: None
 Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ErrorCode
+.
+
+```yaml
+Type: System.Int64
+Parameter Sets: PutExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ErrorMessage
+.
+
+```yaml
+Type: System.String
+Parameter Sets: PutExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -135,10 +162,15 @@ To create the parameters described below, construct a hash table containing the 
 
 
 BODY <ILaptopOwnerMapping>: List of laptop owner info
+  - `[ErrorCode <Int64?>]`: 
+  - `[ErrorMessage <String>]`: 
   - `[LaptopOwnerMapping1 <ILaptopOwnerInfo[]>]`: 
     - `Id <Int64>`: Unique Id
+    - `[ClientId <Int64?>]`: 
+    - `[ClientName <String>]`: 
     - `[CompanyId <Int64?>]`: 
     - `[CompanyName <String>]`: 
+    - `[Configured <Boolean?>]`: This indicates if the laptop has been installed or not
     - `[Host <String>]`: host name of the laptop
     - `[LaptopName <String>]`: name of the laptop
     - `[OSType <String>]`: OS type of the laptop. Can be LINUX or MAC
@@ -148,8 +180,11 @@ BODY <ILaptopOwnerMapping>: List of laptop owner info
 
 LAPTOPOWNERMAPPING <ILaptopOwnerInfo[]>: .
   - `Id <Int64>`: Unique Id
+  - `[ClientId <Int64?>]`: 
+  - `[ClientName <String>]`: 
   - `[CompanyId <Int64?>]`: 
   - `[CompanyName <String>]`: 
+  - `[Configured <Boolean?>]`: This indicates if the laptop has been installed or not
   - `[Host <String>]`: host name of the laptop
   - `[LaptopName <String>]`: name of the laptop
   - `[OSType <String>]`: OS type of the laptop. Can be LINUX or MAC

@@ -68,9 +68,8 @@ namespace Commvault.Powershell.Models
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_backupOperations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("backupOperations"), out var __jsonBackupOperations) ? If( __jsonBackupOperations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : BackupOperations;}
-            {_days = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("days"), out var __jsonDays) ? If( __jsonDays as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(string) (__p is Commvault.Powershell.Runtime.Json.JsonString __o ? (string)(__o.ToString()) : null)) ))() : null : Days;}
+            {_allDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("allDays"), out var __jsonAllDays) ? If( __jsonAllDays as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IDaysAndTimes[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IDaysAndTimes) (Commvault.Powershell.Models.DaysAndTimes.FromJson(__p) )) ))() : null : AllDays;}
             {_weeks = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("weeks"), out var __jsonWeeks) ? If( __jsonWeeks as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(string) (__k is Commvault.Powershell.Runtime.Json.JsonString __j ? (string)(__j.ToString()) : null)) ))() : null : Weeks;}
-            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("time"), out var __jsonTime) ? If( __jsonTime as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<Commvault.Powershell.Models.IStartEnd[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(Commvault.Powershell.Models.IStartEnd) (Commvault.Powershell.Models.StartEnd.FromJson(__f) )) ))() : null : Time;}
             {_doNotSubmitJob = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("doNotSubmitJob"), out var __jsonDoNotSubmitJob) ? (bool?)__jsonDoNotSubmitJob : DoNotSubmitJob;}
             AfterFromJson(json);
         }
@@ -117,14 +116,14 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("backupOperations",__w);
             }
-            if (null != this._days)
+            if (null != this._allDays)
             {
                 var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __s in this._days )
+                foreach( var __s in this._allDays )
                 {
-                    AddIf(null != (((object)__s)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__s.ToString()) : null ,__r.Add);
+                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
                 }
-                container.Add("days",__r);
+                container.Add("allDays",__r);
             }
             if (null != this._weeks)
             {
@@ -134,15 +133,6 @@ namespace Commvault.Powershell.Models
                     AddIf(null != (((object)__n)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__n.ToString()) : null ,__m.Add);
                 }
                 container.Add("weeks",__m);
-            }
-            if (null != this._time)
-            {
-                var __h = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __i in this._time )
-                {
-                    AddIf(__i?.ToJson(null, serializationMode) ,__h.Add);
-                }
-                container.Add("time",__h);
             }
             AddIf( null != this._doNotSubmitJob ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._doNotSubmitJob) : null, "doNotSubmitJob" ,container.Add );
             AfterToJson(ref container);

@@ -27,8 +27,8 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Encryption</summary>
         Commvault.Powershell.Models.IEncryption Commvault.Powershell.Models.IDiskStorageInternal.Encryption { get => (this._encryption = this._encryption ?? new Commvault.Powershell.Models.Encryption()); set { {_encryption = value;} } }
 
-        /// <summary>Internal Acessors for EncryptionKeyManagementServer</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IDiskStorageInternal.EncryptionKeyManagementServer { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServer; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServer = value; }
+        /// <summary>Internal Acessors for EncryptionKeyProvider</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IDiskStorageInternal.EncryptionKeyProvider { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProvider; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProvider = value; }
 
         /// <summary>Internal Acessors for General</summary>
         Commvault.Powershell.Models.IDiskStorageGeneralInfo Commvault.Powershell.Models.IDiskStorageInternal.General { get => (this._general = this._general ?? new Commvault.Powershell.Models.DiskStorageGeneralInfo()); set { {_general = value;} } }
@@ -121,10 +121,10 @@ namespace Commvault.Powershell.Models
         public long? Id { get => this._id; set => this._id = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? KeyManagementServerId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerId = value ?? default(long); }
+        public long? KeyProviderId { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string KeyManagementServerName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyManagementServerName = value ?? null; }
+        public string KeyProviderName { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyProviderName = value ?? null; }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -304,7 +304,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -312,7 +312,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
         /// <summary>Name of the Disk Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -408,7 +408,7 @@ namespace Commvault.Powershell.Models
         /// </summary>
         long? EncryptionKeyLength { get; set; }
 
-        Commvault.Powershell.Models.IIdName EncryptionKeyManagementServer { get; set; }
+        Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get; set; }
         /// <summary>User Group Id</summary>
         long? ExternalUserGroupId { get; set; }
         /// <summary>External Group Name</summary>
@@ -434,9 +434,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Id of the Disk Storage Pool</summary>
         long? Id { get; set; }
 
-        long? KeyManagementServerId { get; set; }
+        long? KeyProviderId { get; set; }
 
-        string KeyManagementServerName { get; set; }
+        string KeyProviderName { get; set; }
         /// <summary>Name of the Disk Storage Pool</summary>
         string Name { get; set; }
 

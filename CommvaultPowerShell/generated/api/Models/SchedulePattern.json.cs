@@ -87,6 +87,7 @@ namespace Commvault.Powershell.Models
             {_noOfTimes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("noOfTimes"), out var __jsonNoOfTimes) ? (long?)__jsonNoOfTimes : NoOfTimes;}
             {_exceptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("exceptions"), out var __jsonExceptions) ? If( __jsonExceptions as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IScheduleRunException[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IScheduleRunException) (Commvault.Powershell.Models.ScheduleRunException.FromJson(__p) )) ))() : null : Exceptions;}
             {_daysBetweenSyntheticFulls = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("daysBetweenSyntheticFulls"), out var __jsonDaysBetweenSyntheticFulls) ? (long?)__jsonDaysBetweenSyntheticFulls : DaysBetweenSyntheticFulls;}
+            {_maxBackupIntervalInMins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("maxBackupIntervalInMins"), out var __jsonMaxBackupIntervalInMins) ? (long?)__jsonMaxBackupIntervalInMins : MaxBackupIntervalInMins;}
             AfterFromJson(json);
         }
 
@@ -141,6 +142,7 @@ namespace Commvault.Powershell.Models
                 container.Add("exceptions",__r);
             }
             AddIf( null != this._daysBetweenSyntheticFulls ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._daysBetweenSyntheticFulls) : null, "daysBetweenSyntheticFulls" ,container.Add );
+            AddIf( null != this._maxBackupIntervalInMins ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._maxBackupIntervalInMins) : null, "maxBackupIntervalInMins" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

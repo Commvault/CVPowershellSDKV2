@@ -93,6 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IListHypervisorsInternal)this).HypervisorCount = (long?) content.GetValueForProperty("HypervisorCount",((Commvault.Powershell.Models.IListHypervisorsInternal)this).HypervisorCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IListHypervisorsInternal)this).Hypervisors = (Commvault.Powershell.Models.IHypervisorListResp[]) content.GetValueForProperty("Hypervisors",((Commvault.Powershell.Models.IListHypervisorsInternal)this).Hypervisors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IHypervisorListResp>(__y, Commvault.Powershell.Models.HypervisorListRespTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -111,6 +112,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IListHypervisorsInternal)this).HypervisorCount = (long?) content.GetValueForProperty("HypervisorCount",((Commvault.Powershell.Models.IListHypervisorsInternal)this).HypervisorCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IListHypervisorsInternal)this).Hypervisors = (Commvault.Powershell.Models.IHypervisorListResp[]) content.GetValueForProperty("Hypervisors",((Commvault.Powershell.Models.IListHypervisorsInternal)this).Hypervisors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IHypervisorListResp>(__y, Commvault.Powershell.Models.HypervisorListRespTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

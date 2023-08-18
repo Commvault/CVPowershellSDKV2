@@ -5,7 +5,9 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>AlertDefinitionsTarget</summary>
+    /// <summary>
+    /// Please note CONTENT_INDEX will be returned at all times as it is enabled at all times.
+    /// </summary>
     public partial class AlertDefinitionsTarget
     {
 
@@ -63,6 +65,7 @@ namespace Commvault.Powershell.Models
             }
             {_recipients = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("recipients"), out var __jsonRecipients) ? Commvault.Powershell.Models.AlertDefinitionsTargetRecipients.FromJson(__jsonRecipients) : Recipients;}
             {_sendAlertTo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("sendAlertTo"), out var __jsonSendAlertTo) ? If( __jsonSendAlertTo as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : SendAlertTo;}
+            {_recipientsOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("recipientsOperationType"), out var __jsonRecipientsOperationType) ? (string)__jsonRecipientsOperationType : (string)RecipientsOperationType;}
             AfterFromJson(json);
         }
 
@@ -105,6 +108,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("sendAlertTo",__w);
             }
+            AddIf( null != (((object)this._recipientsOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._recipientsOperationType.ToString()) : null, "recipientsOperationType" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

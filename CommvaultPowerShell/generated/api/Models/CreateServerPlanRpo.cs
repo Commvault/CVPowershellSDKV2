@@ -10,6 +10,10 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ICreateServerPlanRpoInternal
     {
 
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupFrequencyOperationType { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencyOperationType; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencyOperationType = value ?? null; }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencySchedules; set => ((Commvault.Powershell.Models.IServerBackupPlanRpoInternal)Rpo).BackupFrequencySchedules = value ?? null /* arrayOf */; }
 
@@ -68,6 +72,15 @@ namespace Commvault.Powershell.Models
     public partial interface ICreateServerPlanRpo :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Operation type for the list</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Operation type for the list",
+        SerializedName = @"operationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupFrequencyOperationType { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
@@ -120,6 +133,9 @@ namespace Commvault.Powershell.Models
     internal partial interface ICreateServerPlanRpoInternal
 
     {
+        /// <summary>Operation type for the list</summary>
+        string BackupFrequencyOperationType { get; set; }
+
         Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Commit frequency in hours</summary>
         long? DatabaseOptionCommitFrequencyInHours { get; set; }

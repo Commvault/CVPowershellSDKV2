@@ -1,13 +1,13 @@
 # region Generated 
   # Load the private module dll
-  $null = Import-Module -Name (Join-Path $PSScriptRoot './bin/CommvaultPowerShell.private.dll')
+  $null = Import-Module -Name (Join-Path $PSScriptRoot './bin/CommvaultPowershell.private.dll')
 
   # Get the private module's instance
   $instance = [Commvault.Powershell.Module]::Instance
 
  
   # Load the custom module
-  $customModulePath = Join-Path $PSScriptRoot './custom/CommvaultPowerShell.custom.psm1'
+  $customModulePath = Join-Path $PSScriptRoot './custom/CommvaultPowershell.custom.psm1'
   if(Test-Path $customModulePath) {
     $null = Import-Module -Name $customModulePath
   }

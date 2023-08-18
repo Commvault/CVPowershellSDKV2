@@ -69,8 +69,7 @@ namespace Commvault.Powershell.Models
             {_betweenDates = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("betweenDates"), out var __jsonBetweenDates) ? Commvault.Powershell.Models.StartEnd.FromJson(__jsonBetweenDates) : BetweenDates;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_days = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("days"), out var __jsonDays) ? If( __jsonDays as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : Days;}
-            {_time = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("time"), out var __jsonTime) ? If( __jsonTime as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IStartEnd[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IStartEnd) (Commvault.Powershell.Models.StartEnd.FromJson(__p) )) ))() : null : Time;}
+            {_allDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("allDays"), out var __jsonAllDays) ? If( __jsonAllDays as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IDaysAndTimes[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IDaysAndTimes) (Commvault.Powershell.Models.DaysAndTimes.FromJson(__u) )) ))() : null : AllDays;}
             AfterFromJson(json);
         }
 
@@ -107,23 +106,14 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._betweenDates ? (Commvault.Powershell.Runtime.Json.JsonNode) this._betweenDates.ToJson(null,serializationMode) : null, "betweenDates" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
-            if (null != this._days)
+            if (null != this._allDays)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._days )
+                foreach( var __x in this._allDays )
                 {
-                    AddIf(null != (((object)__x)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(__x.ToString()) : null ,__w.Add);
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
                 }
-                container.Add("days",__w);
-            }
-            if (null != this._time)
-            {
-                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __s in this._time )
-                {
-                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
-                }
-                container.Add("time",__r);
+                container.Add("allDays",__w);
             }
             AfterToJson(ref container);
             return container;

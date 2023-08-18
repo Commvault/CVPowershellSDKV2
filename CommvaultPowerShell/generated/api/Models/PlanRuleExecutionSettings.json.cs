@@ -73,6 +73,7 @@ namespace Commvault.Powershell.Models
             }
             {_executionMode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("executionMode"), out var __jsonExecutionMode) ? (string)__jsonExecutionMode : (string)ExecutionMode;}
             {_executionInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("executionInterval"), out var __jsonExecutionInterval) ? (long?)__jsonExecutionInterval : ExecutionInterval;}
+            {_enableAlertNotification = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableAlertNotification"), out var __jsonEnableAlertNotification) ? (bool?)__jsonEnableAlertNotification : EnableAlertNotification;}
             AfterFromJson(json);
         }
 
@@ -97,6 +98,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != (((object)this._executionMode)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._executionMode.ToString()) : null, "executionMode" ,container.Add );
             AddIf( null != this._executionInterval ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._executionInterval) : null, "executionInterval" ,container.Add );
+            AddIf( null != this._enableAlertNotification ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableAlertNotification) : null, "enableAlertNotification" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

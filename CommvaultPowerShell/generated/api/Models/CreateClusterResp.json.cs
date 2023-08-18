@@ -66,6 +66,7 @@ namespace Commvault.Powershell.Models
             {_clusterName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("clusterName"), out var __jsonClusterName) ? (string)__jsonClusterName : (string)ClusterName;}
             {_errorMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("errorMessage"), out var __jsonErrorMessage) ? (string)__jsonErrorMessage : (string)ErrorMessage;}
             {_warningMessage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("warningMessage"), out var __jsonWarningMessage) ? (string)__jsonWarningMessage : (string)WarningMessage;}
+            {_etcdSubclientResponse = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("etcdSubclientResponse"), out var __jsonEtcdSubclientResponse) ? If( __jsonEtcdSubclientResponse as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ICreateEtcdSubclientResp[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ICreateEtcdSubclientResp) (Commvault.Powershell.Models.CreateEtcdSubclientResp.FromJson(__u) )) ))() : null : EtcdSubclientResponse;}
             AfterFromJson(json);
         }
 
@@ -104,6 +105,15 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._clusterName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._clusterName.ToString()) : null, "clusterName" ,container.Add );
             AddIf( null != (((object)this._errorMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._errorMessage.ToString()) : null, "errorMessage" ,container.Add );
             AddIf( null != (((object)this._warningMessage)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._warningMessage.ToString()) : null, "warningMessage" ,container.Add );
+            if (null != this._etcdSubclientResponse)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._etcdSubclientResponse )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("etcdSubclientResponse",__w);
+            }
             AfterToJson(ref container);
             return container;
         }

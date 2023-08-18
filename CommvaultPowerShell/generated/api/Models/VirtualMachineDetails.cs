@@ -64,6 +64,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for SummaryPlan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVirtualMachineDetailsInternal.SummaryPlan { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).Plan; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).Plan = value; }
 
+        /// <summary>Internal Acessors for SummarySla</summary>
+        Commvault.Powershell.Models.IVMSla Commvault.Powershell.Models.IVirtualMachineDetailsInternal.SummarySla { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).Sla; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).Sla = value; }
+
         /// <summary>Internal Acessors for SummaryVMGroup</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IVirtualMachineDetailsInternal.SummaryVMGroup { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroup; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).VMGroup = value; }
 
@@ -133,6 +136,14 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IPermissionResp[] SecurityPermissions { get => ((Commvault.Powershell.Models.IVMSecurityInternal)Security).Permissions; set => ((Commvault.Powershell.Models.IVMSecurityInternal)Security).Permissions = value ?? null /* arrayOf */; }
+
+        /// <summary>The reason for the current SLA status of the VM client</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SlaReason { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).SlaReason; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).SlaReason = value ?? null; }
+
+        /// <summary>Provides the SLA status.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SlaStatus { get => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).SlaStatus; set => ((Commvault.Powershell.Models.IVMDetailSummaryInternal)Summary).SlaStatus = value ?? null; }
 
         /// <summary>Backing field for <see cref="Summary" /> property.</summary>
         private Commvault.Powershell.Models.IVMDetailSummary _summary;
@@ -360,6 +371,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"permissions",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPermissionResp) })]
         Commvault.Powershell.Models.IPermissionResp[] SecurityPermissions { get; set; }
+        /// <summary>The reason for the current SLA status of the VM client</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The reason for the current SLA status of the VM client",
+        SerializedName = @"reason",
+        PossibleTypes = new [] { typeof(string) })]
+        string SlaReason { get; set; }
+        /// <summary>Provides the SLA status.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Provides the SLA status.",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string SlaStatus { get; set; }
         /// <summary>The amount of data being protected for the VM client(in bytes)</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -504,6 +531,10 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ISecurityOwnersAssoc[] SecurityOwners { get; set; }
 
         Commvault.Powershell.Models.IPermissionResp[] SecurityPermissions { get; set; }
+        /// <summary>The reason for the current SLA status of the VM client</summary>
+        string SlaReason { get; set; }
+        /// <summary>Provides the SLA status.</summary>
+        string SlaStatus { get; set; }
         /// <summary>
         /// The Virtual Machine detail summary. Hypervisor is the software that creates and runs virtual machines(VMs).
         /// </summary>
@@ -526,6 +557,8 @@ namespace Commvault.Powershell.Models
         long? SummaryOldestRecoveryPoint { get; set; }
 
         Commvault.Powershell.Models.IIdName SummaryPlan { get; set; }
+        /// <summary>VMSLA</summary>
+        Commvault.Powershell.Models.IVMSla SummarySla { get; set; }
         /// <summary>The status of the backup for the VM, instance, or container.</summary>
         string SummaryStatus { get; set; }
 

@@ -72,6 +72,8 @@ namespace Commvault.Powershell.Models
                 return;
             }
             __cloudStorageAdvanced = new Commvault.Powershell.Models.CloudStorageAdvanced(json);
+            __modifyCloudBucketConfiguration = new Commvault.Powershell.Models.ModifyCloudBucketConfiguration(json);
+            {_mediaAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mediaAgent"), out var __jsonMediaAgent) ? Commvault.Powershell.Models.IdName.FromJson(__jsonMediaAgent) : MediaAgent;}
             {_cloudType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("cloudType"), out var __jsonCloudType) ? (string)__jsonCloudType : (string)CloudType;}
             {_storeOnceHost = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("storeOnceHost"), out var __jsonStoreOnceHost) ? (string)__jsonStoreOnceHost : (string)StoreOnceHost;}
             {_store = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("store"), out var __jsonStore) ? (string)__jsonStore : (string)Store;}
@@ -100,6 +102,8 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             __cloudStorageAdvanced?.ToJson(container, serializationMode);
+            __modifyCloudBucketConfiguration?.ToJson(container, serializationMode);
+            AddIf( null != this._mediaAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mediaAgent.ToJson(null,serializationMode) : null, "mediaAgent" ,container.Add );
             AddIf( null != (((object)this._cloudType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._cloudType.ToString()) : null, "cloudType" ,container.Add );
             AddIf( null != (((object)this._storeOnceHost)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._storeOnceHost.ToString()) : null, "storeOnceHost" ,container.Add );
             AddIf( null != (((object)this._store)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._store.ToString()) : null, "store" ,container.Add );

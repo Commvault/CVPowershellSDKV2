@@ -21,6 +21,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? Enabled { get => this._enabled; set => this._enabled = value; }
 
+        /// <summary>Backing field for <see cref="Errors" /> property.</summary>
+        private Commvault.Powershell.Models.IPlanFileSearchSetupError[] _errors;
+
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IPlanFileSearchSetupError[] Errors { get => this._errors; set => this._errors = value; }
+
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
 
@@ -56,6 +65,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? Enabled { get; set; }
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"File search was enabled on plan but failed to process some of the storage pool(s) with these errors",
+        SerializedName = @"errors",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanFileSearchSetupError) })]
+        Commvault.Powershell.Models.IPlanFileSearchSetupError[] Errors { get; set; }
         /// <summary>Type of indexing status.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -83,6 +102,10 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Flag for enabling indexing</summary>
         bool? Enabled { get; set; }
+        /// <summary>
+        /// File search was enabled on plan but failed to process some of the storage pool(s) with these errors
+        /// </summary>
+        Commvault.Powershell.Models.IPlanFileSearchSetupError[] Errors { get; set; }
         /// <summary>Type of indexing status.</summary>
         string Status { get; set; }
         /// <summary>

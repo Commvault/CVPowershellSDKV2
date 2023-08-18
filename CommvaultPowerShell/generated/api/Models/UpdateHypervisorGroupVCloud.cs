@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.IUpdateHypervisorGroupReq __updateHypervisorGroupReq = new Commvault.Powershell.Models.UpdateHypervisorGroupReq();
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNode; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).AccessNode = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public Commvault.Powershell.Models.IActivityControlOptions ActivityControl { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).ActivityControl; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).ActivityControl = value; }
@@ -72,6 +72,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string FbrUnixMediaAgentName { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).FbrUnixMediaAgentName; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).FbrUnixMediaAgentName = value; }
 
+        /// <summary>Backing field for <see cref="HostName" /> property.</summary>
+        private string _hostName;
+
+        /// <summary>VCloud Director Name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string HostName { get => this._hostName; set => this._hostName = value; }
+
         /// <summary>Backing field for <see cref="HypervisorType" /> property.</summary>
         private string _hypervisorType= @"VCLOUD";
 
@@ -85,7 +92,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="Password" /> property.</summary>
         private string _password;
 
-        /// <summary>Vcenter password</summary>
+        /// <summary>VCloud base 64 encoded password</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Password { get => this._password; set => this._password = value; }
 
@@ -116,6 +123,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string SecurityClientOwners { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).SecurityClientOwners; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).SecurityClientOwners = value; }
 
+        /// <summary>hypervisorSettings</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
+        public Commvault.Powershell.Models.IHypervisorSettings Settings { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).Settings; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).Settings = value; }
+
         /// <summary>if credential validation has to be skipped.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public bool? SkipCredentialValidation { get => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).SkipCredentialValidation; set => ((Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal)__updateHypervisorGroupReq).SkipCredentialValidation = value; }
@@ -123,16 +134,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="UserName" /> property.</summary>
         private string _userName;
 
-        /// <summary>Vcenter username</summary>
+        /// <summary>vCloud username</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string UserName { get => this._userName; set => this._userName = value; }
-
-        /// <summary>Backing field for <see cref="VCloudDirector" /> property.</summary>
-        private string _vCloudDirector;
-
-        /// <summary>VCloud Director Name</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string VCloudDirector { get => this._vCloudDirector; set => this._vCloudDirector = value; }
 
         /// <summary>Backing field for <see cref="VOrganizationGuid" /> property.</summary>
         private string _vOrganizationGuid;
@@ -154,6 +158,20 @@ namespace Commvault.Powershell.Models
         /// <summary>Vcenter hostname</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string VcenterHostName { get => this._vcenterHostName; set => this._vcenterHostName = value; }
+
+        /// <summary>Backing field for <see cref="VcenterPassword" /> property.</summary>
+        private string _vcenterPassword;
+
+        /// <summary>Vcenter password</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string VcenterPassword { get => this._vcenterPassword; set => this._vcenterPassword = value; }
+
+        /// <summary>Backing field for <see cref="VcenterUserName" /> property.</summary>
+        private string _vcenterUserName;
+
+        /// <summary>Vcenter username</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string VcenterUserName { get => this._vcenterUserName; set => this._vcenterUserName = value; }
 
         /// <summary>Creates an new <see cref="UpdateHypervisorGroupVCloud" /> instance.</summary>
         public UpdateHypervisorGroupVCloud()
@@ -186,6 +204,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"createOrgAccount",
         PossibleTypes = new [] { typeof(bool) })]
         bool? CreateOrgAccount { get; set; }
+        /// <summary>VCloud Director Name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"VCloud Director Name",
+        SerializedName = @"hostName",
+        PossibleTypes = new [] { typeof(string) })]
+        string HostName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -194,30 +220,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"hypervisorType",
         PossibleTypes = new [] { typeof(string) })]
         string HypervisorType { get;  }
-        /// <summary>Vcenter password</summary>
+        /// <summary>VCloud base 64 encoded password</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Vcenter password",
+        Description = @"VCloud base 64 encoded password",
         SerializedName = @"password",
         PossibleTypes = new [] { typeof(string) })]
         string Password { get; set; }
-        /// <summary>Vcenter username</summary>
+        /// <summary>vCloud username</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Vcenter username",
+        Description = @"vCloud username",
         SerializedName = @"userName",
         PossibleTypes = new [] { typeof(string) })]
         string UserName { get; set; }
-        /// <summary>VCloud Director Name</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"VCloud Director Name",
-        SerializedName = @"vCloudDirector",
-        PossibleTypes = new [] { typeof(string) })]
-        string VCloudDirector { get; set; }
         /// <summary>Organization Guid of VCloud Director</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -238,10 +256,26 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Vcenter hostname ",
+        Description = @"Vcenter hostname",
         SerializedName = @"vcenterHostName",
         PossibleTypes = new [] { typeof(string) })]
         string VcenterHostName { get; set; }
+        /// <summary>Vcenter password</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Vcenter password",
+        SerializedName = @"vcenterPassword",
+        PossibleTypes = new [] { typeof(string) })]
+        string VcenterPassword { get; set; }
+        /// <summary>Vcenter username</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Vcenter username",
+        SerializedName = @"vcenterUserName",
+        PossibleTypes = new [] { typeof(string) })]
+        string VcenterUserName { get; set; }
 
     }
     /// Update a hypervisor group with VMware Cloud Director as the destination vendor
@@ -250,20 +284,24 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>True if organization account to be used</summary>
         bool? CreateOrgAccount { get; set; }
+        /// <summary>VCloud Director Name</summary>
+        string HostName { get; set; }
 
         string HypervisorType { get; set; }
-        /// <summary>Vcenter password</summary>
+        /// <summary>VCloud base 64 encoded password</summary>
         string Password { get; set; }
-        /// <summary>Vcenter username</summary>
+        /// <summary>vCloud username</summary>
         string UserName { get; set; }
-        /// <summary>VCloud Director Name</summary>
-        string VCloudDirector { get; set; }
         /// <summary>Organization Guid of VCloud Director</summary>
         string VOrganizationGuid { get; set; }
         /// <summary>Organization name of VCloud Director</summary>
         string VOrganizationName { get; set; }
         /// <summary>Vcenter hostname</summary>
         string VcenterHostName { get; set; }
+        /// <summary>Vcenter password</summary>
+        string VcenterPassword { get; set; }
+        /// <summary>Vcenter username</summary>
+        string VcenterUserName { get; set; }
 
     }
 }

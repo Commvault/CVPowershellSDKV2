@@ -14,6 +14,9 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[] AssociatedRegionBasedPlanPlans { get => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).Plans; set => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).Plans = value ?? null /* arrayOf */; }
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? AssociatedRegionBasedPlanPlansCount { get => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).PlansCount; set => ((Commvault.Powershell.Models.IAssociatedRegionBasedPlansInternal)AssociatedRegionBasedPlans).PlansCount = value ?? default(long); }
+
         /// <summary>Backing field for <see cref="AssociatedRegionBasedPlans" /> property.</summary>
         private Commvault.Powershell.Models.IAssociatedRegionBasedPlans _associatedRegionBasedPlans;
 
@@ -97,6 +100,14 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
+        SerializedName = @"plansCount",
+        PossibleTypes = new [] { typeof(long) })]
+        long? AssociatedRegionBasedPlanPlansCount { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
         SerializedName = @"servers",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IRegionAssociatedServersList) })]
         Commvault.Powershell.Models.IRegionAssociatedServersList[] AssociatedServerServers { get; set; }
@@ -155,6 +166,8 @@ namespace Commvault.Powershell.Models
 
     {
         Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[] AssociatedRegionBasedPlanPlans { get; set; }
+
+        long? AssociatedRegionBasedPlanPlansCount { get; set; }
         /// <summary>Details of plans associated to the region</summary>
         Commvault.Powershell.Models.IAssociatedRegionBasedPlans AssociatedRegionBasedPlans { get; set; }
 

@@ -31,12 +31,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? IsDisabled { get => this._isDisabled; set => this._isDisabled = value; }
 
-        /// <summary>Backing field for <see cref="IsUnc" /> property.</summary>
-        private bool? _isUnc;
+        /// <summary>Backing field for <see cref="IsLocal" /> property.</summary>
+        private bool? _isLocal;
 
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool? IsUnc { get => this._isUnc; set => this._isUnc = value; }
+        public bool? IsLocal { get => this._isLocal; set => this._isLocal = value; }
 
         /// <summary>Backing field for <see cref="Path" /> property.</summary>
         private string _path;
@@ -97,14 +97,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isDisabled",
         PossibleTypes = new [] { typeof(bool) })]
         bool? IsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
+        /// <summary>True if the script is local</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"True if the script is a UNC script, False if it is a local script",
-        SerializedName = @"isUNC",
+        Description = @"True if the script is local",
+        SerializedName = @"isLocal",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? IsUnc { get; set; }
+        bool? IsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -155,8 +155,8 @@ namespace Commvault.Powershell.Models
         string Arguments { get; set; }
         /// <summary>Is the script disabled</summary>
         bool? IsDisabled { get; set; }
-        /// <summary>True if the script is a UNC script, False if it is a local script</summary>
-        bool? IsUnc { get; set; }
+        /// <summary>True if the script is local</summary>
+        bool? IsLocal { get; set; }
         /// <summary>Path for the validation script</summary>
         string Path { get; set; }
 

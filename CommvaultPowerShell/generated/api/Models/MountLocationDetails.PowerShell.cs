@@ -97,8 +97,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPath = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("MountPath",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPath, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Status, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DataServerType = (string) content.GetValueForProperty("DataServerType",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DataServerType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DeviceId = (long?) content.GetValueForProperty("DeviceId",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DeviceId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathId = (long?) content.GetValueForProperty("MountPathId",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathName = (string) content.GetValueForProperty("MountPathName",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -116,8 +121,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPath = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("MountPath",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPath, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Status, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Name, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Enabled = (bool?) content.GetValueForProperty("Enabled",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).Enabled, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DataServerType = (string) content.GetValueForProperty("DataServerType",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DataServerType, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DeviceId = (long?) content.GetValueForProperty("DeviceId",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).DeviceId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathId = (long?) content.GetValueForProperty("MountPathId",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathName = (string) content.GetValueForProperty("MountPathName",((Commvault.Powershell.Models.IMountLocationDetailsInternal)this).MountPathName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

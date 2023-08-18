@@ -60,11 +60,17 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("tags"), out var __jsonTags) ? Commvault.Powershell.Models.IdNameValue.FromJson(__jsonTags) : Tags;}
+            {_commcell = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("commcell"), out var __jsonCommcell) ? Commvault.Powershell.Models.CommcellNameDisplayNameInfo.FromJson(__jsonCommcell) : Commcell;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
+            {_guid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("GUID"), out var __jsonGuid) ? (string)__jsonGuid : (string)Guid;}
+            {_alias = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("alias"), out var __jsonAlias) ? (string)__jsonAlias : (string)Alias;}
+            {_isReseller = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isReseller"), out var __jsonIsReseller) ? (bool?)__jsonIsReseller : IsReseller;}
             {_primaryContacts = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("primaryContacts"), out var __jsonPrimaryContacts) ? If( __jsonPrimaryContacts as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : PrimaryContacts;}
-            {_deactivated = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("deactivated"), out var __jsonDeactivated) ? (bool?)__jsonDeactivated : Deactivated;}
             {_associatedEntitiesCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedEntitiesCount"), out var __jsonAssociatedEntitiesCount) ? (long?)__jsonAssociatedEntitiesCount : AssociatedEntitiesCount;}
+            {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
+            {_operators = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("operators"), out var __jsonOperators) ? If( __jsonOperators as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.ICompanyOperator[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.ICompanyOperator) (Commvault.Powershell.Models.CompanyOperator.FromJson(__p) )) ))() : null : Operators;}
             AfterFromJson(json);
         }
 
@@ -97,8 +103,13 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._tags ? (Commvault.Powershell.Runtime.Json.JsonNode) this._tags.ToJson(null,serializationMode) : null, "tags" ,container.Add );
+            AddIf( null != this._commcell ? (Commvault.Powershell.Runtime.Json.JsonNode) this._commcell.ToJson(null,serializationMode) : null, "commcell" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
+            AddIf( null != (((object)this._guid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._guid.ToString()) : null, "GUID" ,container.Add );
+            AddIf( null != (((object)this._alias)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._alias.ToString()) : null, "alias" ,container.Add );
+            AddIf( null != this._isReseller ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isReseller) : null, "isReseller" ,container.Add );
             if (null != this._primaryContacts)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -108,8 +119,17 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("primaryContacts",__w);
             }
-            AddIf( null != this._deactivated ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._deactivated) : null, "deactivated" ,container.Add );
             AddIf( null != this._associatedEntitiesCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._associatedEntitiesCount) : null, "associatedEntitiesCount" ,container.Add );
+            AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
+            if (null != this._operators)
+            {
+                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __s in this._operators )
+                {
+                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
+                }
+                container.Add("operators",__r);
+            }
             AfterToJson(ref container);
             return container;
         }

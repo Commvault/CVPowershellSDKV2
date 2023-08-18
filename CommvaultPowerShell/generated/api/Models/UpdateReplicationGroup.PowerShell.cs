@@ -102,8 +102,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptions = (Commvault.Powershell.Models.IReplicationGroupAdvancedOptions) content.GetValueForProperty("AdvancedOptions",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptions, Commvault.Powershell.Models.ReplicationGroupAdvancedOptionsTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).NewName = (string) content.GetValueForProperty("NewName",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).NewName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Enable = (bool?) content.GetValueForProperty("Enable",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Enable, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Disable = (bool?) content.GetValueForProperty("Disable",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Disable, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionDelayBetweenPriorityMachines = (long?) content.GetValueForProperty("AdvancedOptionDelayBetweenPriorityMachines",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionDelayBetweenPriorityMachines, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionContinueOnFailure = (bool?) content.GetValueForProperty("AdvancedOptionContinueOnFailure",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionContinueOnFailure, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionScript = (Commvault.Powershell.Models.IReplicationGroupScript) content.GetValueForProperty("AdvancedOptionScript",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionScript, Commvault.Powershell.Models.ReplicationGroupScriptTypeConverter.ConvertFrom);
             AfterDeserializeDictionary(content);
         }
 
@@ -121,8 +126,13 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptions = (Commvault.Powershell.Models.IReplicationGroupAdvancedOptions) content.GetValueForProperty("AdvancedOptions",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptions, Commvault.Powershell.Models.ReplicationGroupAdvancedOptionsTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).NewName = (string) content.GetValueForProperty("NewName",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).NewName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Enable = (bool?) content.GetValueForProperty("Enable",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Enable, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Disable = (bool?) content.GetValueForProperty("Disable",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).Disable, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionDelayBetweenPriorityMachines = (long?) content.GetValueForProperty("AdvancedOptionDelayBetweenPriorityMachines",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionDelayBetweenPriorityMachines, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionContinueOnFailure = (bool?) content.GetValueForProperty("AdvancedOptionContinueOnFailure",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionContinueOnFailure, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionScript = (Commvault.Powershell.Models.IReplicationGroupScript) content.GetValueForProperty("AdvancedOptionScript",((Commvault.Powershell.Models.IUpdateReplicationGroupInternal)this).AdvancedOptionScript, Commvault.Powershell.Models.ReplicationGroupScriptTypeConverter.ConvertFrom);
             AfterDeserializePSObject(content);
         }
     }

@@ -1,6 +1,6 @@
 ---
 external help file:
-Module Name: CommvaultPowerShell
+Module Name: CommvaultPowershell
 online version: https://docs.microsoft.com/en-us/powershell/module/commvaultpowershell/new-cvalertdefinition
 schema: 2.0.0
 ---
@@ -13,13 +13,14 @@ Create Alert Definitions
 ## SYNTAX
 
 ```
-New-CVAlertDefinition [-AlertTargetSendAlertTo <String[]>] [-AlertTypeCategory <String>]
- [-AlertTypeCriteria <String>] [-AlertTypeParamsList <IAlertDefinitionsCriteriaParams[]>]
- [-Associations <IAlertAssociationIdNameType1[]>] [-LocaleId <Int64>] [-LocaleName <String>] [-Name <String>]
- [-RecipientBcc <IAlertTargetIdNameType1[]>] [-RecipientCc <IAlertTargetIdNameType1[]>]
- [-RecipientTo <IAlertTargetIdNameType1[]>] [-RecipientWebHookId <Int64>] [-SendIndividualNotifications]
- [-TemplateConsoleMessage <String>] [-TemplateEmailMessage <String>] [-TemplateEventViewerMessage <String>]
- [-TemplateWebhookMessage <String>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-CVAlertDefinition [-AlertTargetRecipientsOperationType <String>] [-AlertTargetSendAlertTo <String[]>]
+ [-AlertTypeCategory <String>] [-AlertTypeCriteria <String>]
+ [-AlertTypeParamsList <IAlertDefinitionsCriteriaParams[]>] [-Associations <IAlertAssociationIdNameType1[]>]
+ [-LocaleId <Int64>] [-LocaleName <String>] [-Name <String>] [-RecipientBcc <IAlertTargetIdNameType1[]>]
+ [-RecipientCc <IAlertTargetIdNameType1[]>] [-RecipientTo <IAlertTargetIdNameType1[]>]
+ [-RecipientWebHookId <Int64>] [-SendIndividualNotifications] [-TemplateConsole <String>]
+ [-TemplateEmail <String>] [-TemplateEventViewer <String>] [-TemplateWebhook <String>] [-PassThru] [-Confirm]
+ [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -29,10 +30,8 @@ Create Alert Definitions
 
 ### Example 1: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
@@ -40,16 +39,30 @@ Create Alert Definitions
 
 ### Example 2: {{ Add title here }}
 ```powershell
-{{ Add code here }}
-```
+PS C:\> {{ Add code here }}
 
-```output
 {{ Add output here }}
 ```
 
 {{ Add description here }}
 
 ## PARAMETERS
+
+### -AlertTargetRecipientsOperationType
+Allows adding to, overwriting and deleting existing recipients.
+default is adding to existing recipients
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -AlertTargetSendAlertTo
 .
@@ -268,7 +281,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TemplateConsoleMessage
+### -TemplateConsole
 the message template for the console notification
 
 ```yaml
@@ -283,7 +296,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TemplateEmailMessage
+### -TemplateEmail
 the message template for the email notification.
 Contains both email subject as well as body
 
@@ -299,7 +312,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TemplateEventViewerMessage
+### -TemplateEventViewer
 the message template for the event viewer notification
 
 ```yaml
@@ -314,7 +327,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -TemplateWebhookMessage
+### -TemplateWebhook
 the message template for the webhook notification
 
 ```yaml
@@ -387,6 +400,18 @@ ALERTTYPEPARAMSLIST <IAlertDefinitionsCriteriaParams[]>: .
 ASSOCIATIONS <IAlertAssociationIdNameType1[]>: AlertDefinitionsAssociations
   - `[Id <Int64?>]`: id of the associated entity
   - `[Name <String>]`: name of the associated entity
+  - `[ParentEntity1Id <Int64?>]`: id of the associated entity
+  - `[ParentEntity1Name <String>]`: name of the associated entity
+  - `[ParentEntity1Type <String>]`: 
+  - `[ParentEntity2Id <Int64?>]`: id of the associated entity
+  - `[ParentEntity2Name <String>]`: name of the associated entity
+  - `[ParentEntity2Type <String>]`: 
+  - `[ParentEntity3Id <Int64?>]`: id of the associated entity
+  - `[ParentEntity3Name <String>]`: name of the associated entity
+  - `[ParentEntity3Type <String>]`: 
+  - `[ParentEntity4Id <Int64?>]`: id of the associated entity
+  - `[ParentEntity4Name <String>]`: name of the associated entity
+  - `[ParentEntity4Type <String>]`: 
   - `[Type <String>]`: 
 
 RECIPIENTBCC <IAlertTargetIdNameType1[]>: .

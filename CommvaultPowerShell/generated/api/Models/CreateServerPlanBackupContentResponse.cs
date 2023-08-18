@@ -27,9 +27,19 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? BackupContentBackupSystemStateOnlyWithFullBackup { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).BackupSystemStateOnlyWithFullBackup; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).BackupSystemStateOnlyWithFullBackup = value ?? default(bool); }
 
+        /// <summary>
+        /// Do you want to sync properties on associated subclients even if properties are overriden at subclient level?
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? BackupContentForceUpdateProperties { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).ForceUpdateProperties; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).ForceUpdateProperties = value ?? default(bool); }
+
         /// <summary>Paths to exclude for Mac</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentMacExcludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacExcludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacExcludedPaths = value ?? null /* arrayOf */; }
+
+        /// <summary>Paths that are exception to excluded paths for Mac</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] BackupContentMacFilterToExcludePaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacFilterToExcludePaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacFilterToExcludePaths = value ?? null /* arrayOf */; }
 
         /// <summary>Paths to include for Mac</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -38,6 +48,10 @@ namespace Commvault.Powershell.Models
         /// <summary>Paths to exclude for UNIX</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentUnixExcludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixExcludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixExcludedPaths = value ?? null /* arrayOf */; }
+
+        /// <summary>Paths that are exception to excluded paths for Unix</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] BackupContentUnixFilterToExcludePaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixFilterToExcludePaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixFilterToExcludePaths = value ?? null /* arrayOf */; }
 
         /// <summary>Paths to include for UNIX</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -53,12 +67,25 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentWindowsExcludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsExcludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsExcludedPaths = value ?? null /* arrayOf */; }
 
+        /// <summary>Paths that are exception to excluded paths for Windows</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string[] BackupContentWindowsFilterToExcludePaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsFilterToExcludePaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsFilterToExcludePaths = value ?? null /* arrayOf */; }
+
         /// <summary>Paths to include for Windows</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] BackupContentWindowsIncludedPaths { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsIncludedPaths; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsIncludedPaths = value ?? null /* arrayOf */; }
 
         /// <summary>Internal Acessors for BackupContent</summary>
         Commvault.Powershell.Models.IPlanContent Commvault.Powershell.Models.ICreateServerPlanBackupContentResponseInternal.BackupContent { get => (this._backupContent = this._backupContent ?? new Commvault.Powershell.Models.PlanContent()); set { {_backupContent = value;} } }
+
+        /// <summary>Internal Acessors for BackupContentMacNumberOfDataReaders</summary>
+        Commvault.Powershell.Models.IPlanContentDataReaders Commvault.Powershell.Models.ICreateServerPlanBackupContentResponseInternal.BackupContentMacNumberOfDataReaders { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaders; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaders = value; }
+
+        /// <summary>Internal Acessors for BackupContentUnixNumberOfDataReaders</summary>
+        Commvault.Powershell.Models.IPlanContentDataReaders Commvault.Powershell.Models.ICreateServerPlanBackupContentResponseInternal.BackupContentUnixNumberOfDataReaders { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaders; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaders = value; }
+
+        /// <summary>Internal Acessors for BackupContentWindowsNumberOfDataReaders</summary>
+        Commvault.Powershell.Models.IPlanContentDataReaders Commvault.Powershell.Models.ICreateServerPlanBackupContentResponseInternal.BackupContentWindowsNumberOfDataReaders { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsNumberOfDataReaders; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowsNumberOfDataReaders = value; }
 
         /// <summary>Internal Acessors for Error</summary>
         Commvault.Powershell.Models.IGenericResp Commvault.Powershell.Models.ICreateServerPlanBackupContentResponseInternal.Error { get => (this._error = this._error ?? new Commvault.Powershell.Models.GenericResp()); set { {_error = value;} } }
@@ -74,6 +101,36 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string ErrorMessage { get => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage; set => ((Commvault.Powershell.Models.IGenericRespInternal)Error).ErrorMessage = value ?? null; }
+
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MacNumberOfDataReaderCount { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderCount; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderCount = value ?? default(long); }
+
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? MacNumberOfDataReaderUseOptimal { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderUseOptimal; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).MacNumberOfDataReaderUseOptimal = value ?? default(bool); }
+
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? UnixNumberOfDataReaderCount { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderCount; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderCount = value ?? default(long); }
+
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? UnixNumberOfDataReaderUseOptimal { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderUseOptimal; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).UnixNumberOfDataReaderUseOptimal = value ?? default(bool); }
+
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? WindowNumberOfDataReaderCount { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderCount; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderCount = value ?? default(long); }
+
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? WindowNumberOfDataReaderUseOptimal { get => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderUseOptimal; set => ((Commvault.Powershell.Models.IPlanContentInternal)BackupContent).WindowNumberOfDataReaderUseOptimal = value ?? default(bool); }
 
         /// <summary>Creates an new <see cref="CreateServerPlanBackupContentResponse" /> instance.</summary>
         public CreateServerPlanBackupContentResponse()
@@ -102,6 +159,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"backupSystemStateOnlyWithFullBackup",
         PossibleTypes = new [] { typeof(bool) })]
         bool? BackupContentBackupSystemStateOnlyWithFullBackup { get; set; }
+        /// <summary>
+        /// Do you want to sync properties on associated subclients even if properties are overriden at subclient level?
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Do you want to sync properties on associated subclients even if properties are overriden at subclient level?",
+        SerializedName = @"forceUpdateProperties",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? BackupContentForceUpdateProperties { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -110,6 +177,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"macExcludedPaths",
         PossibleTypes = new [] { typeof(string) })]
         string[] BackupContentMacExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Mac</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Paths that are exception to excluded paths for Mac",
+        SerializedName = @"macFilterToExcludePaths",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] BackupContentMacFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Mac</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -126,6 +201,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"unixExcludedPaths",
         PossibleTypes = new [] { typeof(string) })]
         string[] BackupContentUnixExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Unix</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Paths that are exception to excluded paths for Unix",
+        SerializedName = @"unixFilterToExcludePaths",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] BackupContentUnixFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for UNIX</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -152,6 +235,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"windowsExcludedPaths",
         PossibleTypes = new [] { typeof(string) })]
         string[] BackupContentWindowsExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Windows</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Paths that are exception to excluded paths for Windows",
+        SerializedName = @"windowsFilterToExcludePaths",
+        PossibleTypes = new [] { typeof(string) })]
+        string[] BackupContentWindowsFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Windows</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -176,6 +267,60 @@ namespace Commvault.Powershell.Models
         SerializedName = @"errorMessage",
         PossibleTypes = new [] { typeof(string) })]
         string ErrorMessage { get; set; }
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of data readers.",
+        SerializedName = @"count",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MacNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set optimal number of data readers. if it is set to true, count will be ignored.",
+        SerializedName = @"useOptimal",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? MacNumberOfDataReaderUseOptimal { get; set; }
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of data readers.",
+        SerializedName = @"count",
+        PossibleTypes = new [] { typeof(long) })]
+        long? UnixNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set optimal number of data readers. if it is set to true, count will be ignored.",
+        SerializedName = @"useOptimal",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? UnixNumberOfDataReaderUseOptimal { get; set; }
+        /// <summary>Number of data readers.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Number of data readers.",
+        SerializedName = @"count",
+        PossibleTypes = new [] { typeof(long) })]
+        long? WindowNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Set optimal number of data readers. if it is set to true, count will be ignored.",
+        SerializedName = @"useOptimal",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? WindowNumberOfDataReaderUseOptimal { get; set; }
 
     }
     internal partial interface ICreateServerPlanBackupContentResponseInternal
@@ -189,28 +334,62 @@ namespace Commvault.Powershell.Models
         /// Do you want to back up system state only with full backup? Applicable only if the value of backupSystemState is true
         /// </summary>
         bool? BackupContentBackupSystemStateOnlyWithFullBackup { get; set; }
+        /// <summary>
+        /// Do you want to sync properties on associated subclients even if properties are overriden at subclient level?
+        /// </summary>
+        bool? BackupContentForceUpdateProperties { get; set; }
         /// <summary>Paths to exclude for Mac</summary>
         string[] BackupContentMacExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Mac</summary>
+        string[] BackupContentMacFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Mac</summary>
         string[] BackupContentMacIncludedPaths { get; set; }
+
+        Commvault.Powershell.Models.IPlanContentDataReaders BackupContentMacNumberOfDataReaders { get; set; }
         /// <summary>Paths to exclude for UNIX</summary>
         string[] BackupContentUnixExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Unix</summary>
+        string[] BackupContentUnixFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for UNIX</summary>
         string[] BackupContentUnixIncludedPaths { get; set; }
+
+        Commvault.Powershell.Models.IPlanContentDataReaders BackupContentUnixNumberOfDataReaders { get; set; }
         /// <summary>
         /// Do you want to back up system state with VSS? Applicable only if the value of backupSystemState is true
         /// </summary>
         bool? BackupContentUseVssForSystemState { get; set; }
         /// <summary>Paths to exclude for Windows</summary>
         string[] BackupContentWindowsExcludedPaths { get; set; }
+        /// <summary>Paths that are exception to excluded paths for Windows</summary>
+        string[] BackupContentWindowsFilterToExcludePaths { get; set; }
         /// <summary>Paths to include for Windows</summary>
         string[] BackupContentWindowsIncludedPaths { get; set; }
+
+        Commvault.Powershell.Models.IPlanContentDataReaders BackupContentWindowsNumberOfDataReaders { get; set; }
 
         Commvault.Powershell.Models.IGenericResp Error { get; set; }
 
         long? ErrorCode { get; set; }
 
         string ErrorMessage { get; set; }
+        /// <summary>Number of data readers.</summary>
+        long? MacNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        bool? MacNumberOfDataReaderUseOptimal { get; set; }
+        /// <summary>Number of data readers.</summary>
+        long? UnixNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        bool? UnixNumberOfDataReaderUseOptimal { get; set; }
+        /// <summary>Number of data readers.</summary>
+        long? WindowNumberOfDataReaderCount { get; set; }
+        /// <summary>
+        /// Set optimal number of data readers. if it is set to true, count will be ignored.
+        /// </summary>
+        bool? WindowNumberOfDataReaderUseOptimal { get; set; }
 
     }
 }

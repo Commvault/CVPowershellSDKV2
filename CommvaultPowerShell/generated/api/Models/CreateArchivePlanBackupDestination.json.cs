@@ -64,8 +64,8 @@ namespace Commvault.Powershell.Models
             {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.IdName.FromJson(__jsonRegion) : Region;}
             {_sourceCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("sourceCopy"), out var __jsonSourceCopy) ? Commvault.Powershell.Models.IdName.FromJson(__jsonSourceCopy) : SourceCopy;}
             {_backupDestinationName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("backupDestinationName"), out var __jsonBackupDestinationName) ? (string)__jsonBackupDestinationName : (string)BackupDestinationName;}
-            {_backupStartTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("backupStartTime"), out var __jsonBackupStartTime) ? (long?)__jsonBackupStartTime : BackupStartTime;}
             {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
+            {_overrideRetentionSettings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("overrideRetentionSettings"), out var __jsonOverrideRetentionSettings) ? (bool?)__jsonOverrideRetentionSettings : OverrideRetentionSettings;}
             AfterFromJson(json);
         }
 
@@ -103,8 +103,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._region ? (Commvault.Powershell.Runtime.Json.JsonNode) this._region.ToJson(null,serializationMode) : null, "region" ,container.Add );
             AddIf( null != this._sourceCopy ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sourceCopy.ToJson(null,serializationMode) : null, "sourceCopy" ,container.Add );
             AddIf( null != (((object)this._backupDestinationName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._backupDestinationName.ToString()) : null, "backupDestinationName" ,container.Add );
-            AddIf( null != this._backupStartTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._backupStartTime) : null, "backupStartTime" ,container.Add );
             AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
+            AddIf( null != this._overrideRetentionSettings ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._overrideRetentionSettings) : null, "overrideRetentionSettings" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

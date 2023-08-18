@@ -22,6 +22,13 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for StoragePool</summary>
         Commvault.Powershell.Models.IStoragePool Commvault.Powershell.Models.IArchivePlanBackupDestinationInternal.StoragePool { get => (this._storagePool = this._storagePool ?? new Commvault.Powershell.Models.StoragePool()); set { {_storagePool = value;} } }
 
+        /// <summary>Backing field for <see cref="CopyPrecedence" /> property.</summary>
+        private long? _copyPrecedence;
+
+        /// <summary>Order of copy created in storage policy</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? CopyPrecedence { get => this._copyPrecedence; set => this._copyPrecedence = value; }
+
         /// <summary>Backing field for <see cref="CopyType" /> property.</summary>
         private string _copyType;
 
@@ -34,12 +41,29 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string CopyTypeName { get => this._copyTypeName; set => this._copyTypeName = value; }
 
+        /// <summary>Backing field for <see cref="EnableDataAging" /> property.</summary>
+        private bool? _enableDataAging;
+
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnableDataAging { get => this._enableDataAging; set => this._enableDataAging = value; }
+
         /// <summary>Backing field for <see cref="IsDefault" /> property.</summary>
         private bool? _isDefault;
 
         /// <summary>Is this a default backup destination?</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? IsDefault { get => this._isDefault; set => this._isDefault = value; }
+
+        /// <summary>Backing field for <see cref="OverrideRetentionSettings" /> property.</summary>
+        private bool? _overrideRetentionSettings;
+
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? OverrideRetentionSettings { get => this._overrideRetentionSettings; set => this._overrideRetentionSettings = value; }
 
         /// <summary>Backing field for <see cref="PlanBackupDestination" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _planBackupDestination;
@@ -102,9 +126,20 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StoragePoolName { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Name; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Name = value ?? null; }
 
+        /// <summary>Retention period of pool in days</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? StoragePoolRetentionPeriodDays { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RetentionPeriodDays = value ?? default(long); }
+
         /// <summary>Type of Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StoragePoolType { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Type; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Type = value ?? null; }
+
+        /// <summary>
+        /// Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage
+        /// lock, 4 means Object worm lock and 8 means bucket worm lock.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? StoragePoolWormStoragePoolFlag { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).WormStoragePoolFlag; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).WormStoragePoolFlag = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="StorageType" /> property.</summary>
         private string _storageType;
@@ -122,6 +157,15 @@ namespace Commvault.Powershell.Models
     public partial interface IArchivePlanBackupDestination :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Order of copy created in storage policy</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Order of copy created in storage policy",
+        SerializedName = @"copyPrecedence",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CopyPrecedence { get; set; }
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
@@ -137,6 +181,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"copyTypeName",
         PossibleTypes = new [] { typeof(string) })]
         string CopyTypeName { get; set; }
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells if this copy has data aging enabled",
+        SerializedName = @"enableDataAging",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnableDataAging { get; set; }
         /// <summary>Is this a default backup destination?</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -145,6 +197,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isDefault",
         PossibleTypes = new [] { typeof(bool) })]
         bool? IsDefault { get; set; }
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to use retention defined on this copy.",
+        SerializedName = @"overrideRetentionSettings",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? OverrideRetentionSettings { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -225,6 +288,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string StoragePoolName { get; set; }
+        /// <summary>Retention period of pool in days</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Retention period of pool in days",
+        SerializedName = @"retentionPeriodDays",
+        PossibleTypes = new [] { typeof(long) })]
+        long? StoragePoolRetentionPeriodDays { get; set; }
         /// <summary>Type of Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -233,6 +304,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"type",
         PossibleTypes = new [] { typeof(string) })]
         string StoragePoolType { get; set; }
+        /// <summary>
+        /// Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage
+        /// lock, 4 means Object worm lock and 8 means bucket worm lock.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage lock, 4 means Object worm lock and 8 means bucket worm lock.",
+        SerializedName = @"wormStoragePoolFlag",
+        PossibleTypes = new [] { typeof(long) })]
+        long? StoragePoolWormStoragePoolFlag { get; set; }
         /// <summary>StorageType</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -246,11 +328,21 @@ namespace Commvault.Powershell.Models
     internal partial interface IArchivePlanBackupDestinationInternal
 
     {
+        /// <summary>Order of copy created in storage policy</summary>
+        long? CopyPrecedence { get; set; }
+
         string CopyType { get; set; }
 
         string CopyTypeName { get; set; }
+        /// <summary>Tells if this copy has data aging enabled</summary>
+        bool? EnableDataAging { get; set; }
         /// <summary>Is this a default backup destination?</summary>
         bool? IsDefault { get; set; }
+        /// <summary>
+        /// Tells if this copy should use storage pool retention period days or the retention defined for this copy. Set as true to
+        /// use retention defined on this copy.
+        /// </summary>
+        bool? OverrideRetentionSettings { get; set; }
 
         Commvault.Powershell.Models.IIdName PlanBackupDestination { get; set; }
 
@@ -279,8 +371,15 @@ namespace Commvault.Powershell.Models
         long? StoragePoolId { get; set; }
         /// <summary>Name of Storage Pool</summary>
         string StoragePoolName { get; set; }
+        /// <summary>Retention period of pool in days</summary>
+        long? StoragePoolRetentionPeriodDays { get; set; }
         /// <summary>Type of Storage Pool</summary>
         string StoragePoolType { get; set; }
+        /// <summary>
+        /// Bit flag indicating WORM configuration of storage pool. 0 means no lock, 1 means compliance lock, 2 means worm storage
+        /// lock, 4 means Object worm lock and 8 means bucket worm lock.
+        /// </summary>
+        long? StoragePoolWormStoragePoolFlag { get; set; }
         /// <summary>StorageType</summary>
         string StorageType { get; set; }
 
