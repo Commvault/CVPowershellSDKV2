@@ -72,7 +72,6 @@ namespace Commvault.Powershell.Models
             }
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_backupContent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("backupContent"), out var __jsonBackupContent) ? Commvault.Powershell.Models.PlanContent.FromJson(__jsonBackupContent) : BackupContent;}
-            {_rpo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("rpo"), out var __jsonRpo) ? Commvault.Powershell.Models.ServerPlanRpo.FromJson(__jsonRpo) : Rpo;}
             {_databaseOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("databaseOptions"), out var __jsonDatabaseOptions) ? Commvault.Powershell.Models.ServerPlanDatabaseOptionsInfo.FromJson(__jsonDatabaseOptions) : DatabaseOptions;}
             {_snapshotOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("snapshotOptions"), out var __jsonSnapshotOptions) ? Commvault.Powershell.Models.PlanSnapshotOptions.FromJson(__jsonSnapshotOptions) : SnapshotOptions;}
             {_settings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("settings"), out var __jsonSettings) ? Commvault.Powershell.Models.ServerPlanSettings.FromJson(__jsonSettings) : Settings;}
@@ -81,12 +80,14 @@ namespace Commvault.Powershell.Models
             {_parentInheritSettings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("parentInheritSettings"), out var __jsonParentInheritSettings) ? Commvault.Powershell.Models.ServerPlanInheritSettings.FromJson(__jsonParentInheritSettings) : ParentInheritSettings;}
             {_additionalProperties = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("additionalProperties"), out var __jsonAdditionalProperties) ? Commvault.Powershell.Models.PlanAdditionalProperties.FromJson(__jsonAdditionalProperties) : AdditionalProperties;}
             {_workload = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("workload"), out var __jsonWorkload) ? Commvault.Powershell.Models.PlanWorkloads.FromJson(__jsonWorkload) : Workload;}
+            {_globalConfigInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("globalConfigInfo"), out var __jsonGlobalConfigInfo) ? Commvault.Powershell.Models.GlobalConfigInfo.FromJson(__jsonGlobalConfigInfo) : GlobalConfigInfo;}
             {_regionsConfigured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("regionsConfigured"), out var __jsonRegionsConfigured) ? (bool?)__jsonRegionsConfigured : RegionsConfigured;}
             {_backupDestinations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("backupDestinations"), out var __jsonBackupDestinations) ? If( __jsonBackupDestinations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPlanBackupDestination[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPlanBackupDestination) (Commvault.Powershell.Models.PlanBackupDestination.FromJson(__u) )) ))() : null : BackupDestinations;}
             {_backupDestinationIds = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("backupDestinationIds"), out var __jsonBackupDestinationIds) ? If( __jsonBackupDestinationIds as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<long[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(long) (__p is Commvault.Powershell.Runtime.Json.JsonNumber __o ? (long)__o : default(long))) ))() : null : BackupDestinationIds;}
             {_associatedEntities = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("associatedEntities"), out var __jsonAssociatedEntities) ? If( __jsonAssociatedEntities as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdNameCount[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdNameCount) (Commvault.Powershell.Models.IdNameCount.FromJson(__k) )) ))() : null : AssociatedEntities;}
             {_allowPlanOverride = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("allowPlanOverride"), out var __jsonAllowPlanOverride) ? (bool?)__jsonAllowPlanOverride : AllowPlanOverride;}
             {_permissions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("permissions"), out var __jsonPermissions) ? If( __jsonPermissions as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__f) )) ))() : null : Permissions;}
+            {_rpo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("rpo"), out var __jsonRpo) ? Commvault.Powershell.Models.ServerPlanRpo.FromJson(__jsonRpo) : Rpo;}
             AfterFromJson(json);
         }
 
@@ -111,7 +112,6 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._backupContent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._backupContent.ToJson(null,serializationMode) : null, "backupContent" ,container.Add );
-            AddIf( null != this._rpo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._rpo.ToJson(null,serializationMode) : null, "rpo" ,container.Add );
             AddIf( null != this._databaseOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._databaseOptions.ToJson(null,serializationMode) : null, "databaseOptions" ,container.Add );
             AddIf( null != this._snapshotOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._snapshotOptions.ToJson(null,serializationMode) : null, "snapshotOptions" ,container.Add );
             AddIf( null != this._settings ? (Commvault.Powershell.Runtime.Json.JsonNode) this._settings.ToJson(null,serializationMode) : null, "settings" ,container.Add );
@@ -120,6 +120,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._parentInheritSettings ? (Commvault.Powershell.Runtime.Json.JsonNode) this._parentInheritSettings.ToJson(null,serializationMode) : null, "parentInheritSettings" ,container.Add );
             AddIf( null != this._additionalProperties ? (Commvault.Powershell.Runtime.Json.JsonNode) this._additionalProperties.ToJson(null,serializationMode) : null, "additionalProperties" ,container.Add );
             AddIf( null != this._workload ? (Commvault.Powershell.Runtime.Json.JsonNode) this._workload.ToJson(null,serializationMode) : null, "workload" ,container.Add );
+            AddIf( null != this._globalConfigInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._globalConfigInfo.ToJson(null,serializationMode) : null, "globalConfigInfo" ,container.Add );
             AddIf( null != this._regionsConfigured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._regionsConfigured) : null, "regionsConfigured" ,container.Add );
             if (null != this._backupDestinations)
             {
@@ -158,6 +159,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("permissions",__h);
             }
+            AddIf( null != this._rpo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._rpo.ToJson(null,serializationMode) : null, "rpo" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

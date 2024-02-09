@@ -53,12 +53,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
 
-        /// <summary>Backing field for <see cref="NewSecretAccessKey" /> property.</summary>
-        private string _newSecretAccessKey;
+        /// <summary>Backing field for <see cref="SecretAccessKey" /> property.</summary>
+        private string _secretAccessKey;
 
         /// <summary>Secret Access Key of Credential and must be in base64 encoded format.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string NewSecretAccessKey { get => this._newSecretAccessKey; set => this._newSecretAccessKey = value; }
+        public string SecretAccessKey { get => this._secretAccessKey; set => this._secretAccessKey = value; }
 
         /// <summary>Backing field for <see cref="Security" /> property.</summary>
         private Commvault.Powershell.Models.IUpdateCredentialSecurity _security;
@@ -101,7 +101,7 @@ namespace Commvault.Powershell.Models
         /// Access Key ID of Credential. If updated the updated Access Key ID is considered else the existing Access Key ID is considered.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Access Key ID of Credential. If updated the updated Access Key ID is considered else the existing Access Key ID is considered.",
         SerializedName = @"accessKeyId",
@@ -125,12 +125,12 @@ namespace Commvault.Powershell.Models
         string NewName { get; set; }
         /// <summary>Secret Access Key of Credential and must be in base64 encoded format.</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Secret Access Key of Credential and must be in base64 encoded format.",
-        SerializedName = @"newSecretAccessKey",
+        SerializedName = @"secretAccessKey",
         PossibleTypes = new [] { typeof(string) })]
-        string NewSecretAccessKey { get; set; }
+        string SecretAccessKey { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -190,12 +190,12 @@ namespace Commvault.Powershell.Models
         string Description { get; set; }
         /// <summary>Updated name of credential</summary>
         string NewName { get; set; }
-        /// <summary>Secret Access Key of Credential and must be in base64 encoded format.</summary>
-        string NewSecretAccessKey { get; set; }
 
         Commvault.Powershell.Models.IIdName OwnerUser { get; set; }
 
         Commvault.Powershell.Models.IIdName OwnerUserGroup { get; set; }
+        /// <summary>Secret Access Key of Credential and must be in base64 encoded format.</summary>
+        string SecretAccessKey { get; set; }
         /// <summary>Update Security association of a list of users and user groups</summary>
         Commvault.Powershell.Models.IUpdateCredentialSecurity Security { get; set; }
 

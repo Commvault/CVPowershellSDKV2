@@ -78,6 +78,7 @@ namespace Commvault.Powershell.Models
             {_displayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("displayName"), out var __jsonDisplayName) ? (string)__jsonDisplayName : (string)DisplayName;}
             {_hostName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hostName"), out var __jsonHostName) ? (string)__jsonHostName : (string)HostName;}
             {_agents = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("agents"), out var __jsonAgents) ? If( __jsonAgents as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : Agents;}
+            {_serverGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("serverGroups"), out var __jsonServerGroups) ? If( __jsonServerGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__p) )) ))() : null : ServerGroups;}
             {_configured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("configured"), out var __jsonConfigured) ? (bool?)__jsonConfigured : Configured;}
             {_version = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("version"), out var __jsonVersion) ? (string)__jsonVersion : (string)Version;}
             {_oS = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("OS"), out var __jsonOS) ? (string)__jsonOS : (string)OS;}
@@ -86,8 +87,8 @@ namespace Commvault.Powershell.Models
             {_isMaRoleSet = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isMARoleSet"), out var __jsonIsMaRoleSet) ? (bool?)__jsonIsMaRoleSet : IsMaRoleSet;}
             {_isMaPackageInstalled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isMAPackageInstalled"), out var __jsonIsMaPackageInstalled) ? (bool?)__jsonIsMaPackageInstalled : IsMaPackageInstalled;}
             {_networkReadiness = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("networkReadiness"), out var __jsonNetworkReadiness) ? (string)__jsonNetworkReadiness : (string)NetworkReadiness;}
-            {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tags"), out var __jsonTags) ? If( __jsonTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IIdNameValue[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IIdNameValue) (Commvault.Powershell.Models.IdNameValue.FromJson(__p) )) ))() : null : Tags;}
-            {_clientRoles = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("clientRoles"), out var __jsonClientRoles) ? If( __jsonClientRoles as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : ClientRoles;}
+            {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tags"), out var __jsonTags) ? If( __jsonTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdNameValue[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdNameValue) (Commvault.Powershell.Models.IdNameValue.FromJson(__k) )) ))() : null : Tags;}
+            {_clientRoles = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("clientRoles"), out var __jsonClientRoles) ? If( __jsonClientRoles as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__f) )) ))() : null : ClientRoles;}
             AfterFromJson(json);
         }
 
@@ -125,6 +126,15 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("agents",__w);
             }
+            if (null != this._serverGroups)
+            {
+                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __s in this._serverGroups )
+                {
+                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
+                }
+                container.Add("serverGroups",__r);
+            }
             AddIf( null != this._configured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._configured) : null, "configured" ,container.Add );
             AddIf( null != (((object)this._version)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._version.ToString()) : null, "version" ,container.Add );
             AddIf( null != (((object)this._oS)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oS.ToString()) : null, "OS" ,container.Add );
@@ -135,21 +145,21 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._networkReadiness)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._networkReadiness.ToString()) : null, "networkReadiness" ,container.Add );
             if (null != this._tags)
             {
-                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __s in this._tags )
-                {
-                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
-                }
-                container.Add("tags",__r);
-            }
-            if (null != this._clientRoles)
-            {
                 var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __n in this._clientRoles )
+                foreach( var __n in this._tags )
                 {
                     AddIf(__n?.ToJson(null, serializationMode) ,__m.Add);
                 }
-                container.Add("clientRoles",__m);
+                container.Add("tags",__m);
+            }
+            if (null != this._clientRoles)
+            {
+                var __h = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __i in this._clientRoles )
+                {
+                    AddIf(__i?.ToJson(null, serializationMode) ,__h.Add);
+                }
+                container.Add("clientRoles",__h);
             }
             AfterToJson(ref container);
             return container;

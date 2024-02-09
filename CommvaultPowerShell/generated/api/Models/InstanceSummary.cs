@@ -56,9 +56,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IInstanceSummaryInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
 
-        /// <summary>Internal Acessors for Sla</summary>
-        Commvault.Powershell.Models.ISlaDetails Commvault.Powershell.Models.IInstanceSummaryInternal.Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaDetails()); set { {_sla = value;} } }
-
         /// <summary>Backing field for <see cref="Company" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _company;
 
@@ -147,19 +144,11 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Server { get => this._server; set => this._server = value; }
 
-        /// <summary>Backing field for <see cref="Sla" /> property.</summary>
-        private Commvault.Powershell.Models.ISlaDetails _sla;
+        /// <summary>Backing field for <see cref="SlaStatus" /> property.</summary>
+        private string _slaStatus;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.ISlaDetails Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaDetails()); set => this._sla = value; }
-
-        /// <summary>Provides a reason on why the SLA might not be met.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IReasonDetails[] SlaReasonList { get => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).ReasonList; set => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).ReasonList = value ?? null /* arrayOf */; }
-
-        /// <summary>Provides the SLA status.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SlaStatus { get => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).Status; set => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).Status = value ?? null; }
+        public string SlaStatus { get => this._slaStatus; set => this._slaStatus = value; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -330,20 +319,12 @@ namespace Commvault.Powershell.Models
         SerializedName = @"server",
         PossibleTypes = new [] { typeof(string) })]
         string Server { get; set; }
-        /// <summary>Provides a reason on why the SLA might not be met.</summary>
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Provides a reason on why the SLA might not be met.",
-        SerializedName = @"reasonList",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IReasonDetails) })]
-        Commvault.Powershell.Models.IReasonDetails[] SlaReasonList { get; set; }
-        /// <summary>Provides the SLA status.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Provides the SLA status.",
-        SerializedName = @"status",
+        Description = @"",
+        SerializedName = @"SLAStatus",
         PossibleTypes = new [] { typeof(string) })]
         string SlaStatus { get; set; }
         /// <summary>
@@ -422,10 +403,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Gives the server to which the instance belongs to.</summary>
         string Server { get; set; }
 
-        Commvault.Powershell.Models.ISlaDetails Sla { get; set; }
-        /// <summary>Provides a reason on why the SLA might not be met.</summary>
-        Commvault.Powershell.Models.IReasonDetails[] SlaReasonList { get; set; }
-        /// <summary>Provides the SLA status.</summary>
         string SlaStatus { get; set; }
         /// <summary>
         /// The status of the instance. If the instance isn't ready, the reason is also provided.

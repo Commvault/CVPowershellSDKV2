@@ -11,6 +11,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IPlanEntityRuleTagInternal
     {
 
+        /// <summary>Backing field for <see cref="Guid" /> property.</summary>
+        private string _guid;
+
+        /// <summary>GUID for the tag</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Guid { get => this._guid; set => this._guid = value; }
+
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
 
@@ -46,6 +53,14 @@ namespace Commvault.Powershell.Models
     public partial interface IPlanEntityRuleTag :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>GUID for the tag</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"GUID for the tag",
+        SerializedName = @"GUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string Guid { get; set; }
         /// <summary>Id for the tag</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -80,6 +95,8 @@ namespace Commvault.Powershell.Models
     internal partial interface IPlanEntityRuleTagInternal
 
     {
+        /// <summary>GUID for the tag</summary>
+        string Guid { get; set; }
         /// <summary>Id for the tag</summary>
         long? Id { get; set; }
         /// <summary>

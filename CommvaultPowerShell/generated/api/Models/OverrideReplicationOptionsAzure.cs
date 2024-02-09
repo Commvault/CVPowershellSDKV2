@@ -11,12 +11,146 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal
     {
 
-        /// <summary>Backing field for <see cref="VMDisplayName" /> property.</summary>
-        private string _vMDisplayName;
+        /// <summary>Backing field for <see cref="AvailabilityZone" /> property.</summary>
+        private string _availabilityZone;
 
-        /// <summary>Display name of destination VM</summary>
+        /// <summary>VM availability zone</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string VMDisplayName { get => this._vMDisplayName; set => this._vMDisplayName = value; }
+        public string AvailabilityZone { get => this._availabilityZone; set => this._availabilityZone = value; }
+
+        /// <summary>Internal Acessors for SecurityGroup</summary>
+        Commvault.Powershell.Models.ISecurityGroup Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal.SecurityGroup { get => (this._securityGroup = this._securityGroup ?? new Commvault.Powershell.Models.SecurityGroup()); set { {_securityGroup = value;} } }
+
+        /// <summary>Internal Acessors for TestFailoverVirtualNetwork</summary>
+        Commvault.Powershell.Models.IAzureNetwork Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal.TestFailoverVirtualNetwork { get => (this._testFailoverVirtualNetwork = this._testFailoverVirtualNetwork ?? new Commvault.Powershell.Models.AzureNetwork()); set { {_testFailoverVirtualNetwork = value;} } }
+
+        /// <summary>Internal Acessors for TestFailoverVirtualNetworkAddressDetails</summary>
+        Commvault.Powershell.Models.IAzureDestinationInfoNic Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal.TestFailoverVirtualNetworkAddressDetails { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetails; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetails = value; }
+
+        /// <summary>Internal Acessors for VirtualNetwork</summary>
+        Commvault.Powershell.Models.IAzureNetwork Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal.VirtualNetwork { get => (this._virtualNetwork = this._virtualNetwork ?? new Commvault.Powershell.Models.AzureNetwork()); set { {_virtualNetwork = value;} } }
+
+        /// <summary>Internal Acessors for VirtualNetworkAddressDetails</summary>
+        Commvault.Powershell.Models.IAzureDestinationInfoNic Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal.VirtualNetworkAddressDetails { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetails; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetails = value; }
+
+        /// <summary>Backing field for <see cref="SecurityGroup" /> property.</summary>
+        private Commvault.Powershell.Models.ISecurityGroup _securityGroup;
+
+        /// <summary>The id and the name of the security group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.ISecurityGroup SecurityGroup { get => (this._securityGroup = this._securityGroup ?? new Commvault.Powershell.Models.SecurityGroup()); set => this._securityGroup = value; }
+
+        /// <summary>Security group id</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SecurityGroupId { get => ((Commvault.Powershell.Models.ISecurityGroupInternal)SecurityGroup).Id; set => ((Commvault.Powershell.Models.ISecurityGroupInternal)SecurityGroup).Id = value ?? null; }
+
+        /// <summary>security group name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SecurityGroupName { get => ((Commvault.Powershell.Models.ISecurityGroupInternal)SecurityGroup).Name; set => ((Commvault.Powershell.Models.ISecurityGroupInternal)SecurityGroup).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="TestFailoverVirtualNetwork" /> property.</summary>
+        private Commvault.Powershell.Models.IAzureNetwork _testFailoverVirtualNetwork;
+
+        /// <summary>Network interface for the destination instances</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAzureNetwork TestFailoverVirtualNetwork { get => (this._testFailoverVirtualNetwork = this._testFailoverVirtualNetwork ?? new Commvault.Powershell.Models.AzureNetwork()); set => this._testFailoverVirtualNetwork = value; }
+
+        /// <summary>Display Name of network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkDisplayName { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkDisplayName; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkDisplayName = value ?? null; }
+
+        /// <summary>Network unique identifier</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkId = value ?? null; }
+
+        /// <summary>Name of the network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkName { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkName; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkName = value ?? null; }
+
+        /// <summary>
+        /// Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkNetworkAddressDetailsNetworkId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailNetworkId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailNetworkId = value ?? null; }
+
+        /// <summary>Azure private IP address.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkNetworkAddressDetailsPrivateIPAddress { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailPrivateIPAddress; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailPrivateIPAddress = value ?? null; }
+
+        /// <summary>Azure publice IP address.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkNetworkAddressDetailsPublicIPAddress { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailPublicIPAddress; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailPublicIPAddress = value ?? null; }
+
+        /// <summary>
+        /// Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public
+        /// IP Address Name}.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkNetworkAddressDetailsPublicIPAddressId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailPublicIPAddressId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailPublicIPAddressId = value ?? null; }
+
+        /// <summary>
+        /// Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}/subnets/{Subnet Name}.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkNetworkAddressDetailsSubnetId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailSubnetId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).NetworkAddressDetailSubnetId = value ?? null; }
+
+        /// <summary>subnet id of network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverVirtualNetworkSubnetId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).SubnetId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)TestFailoverVirtualNetwork).SubnetId = value ?? null; }
+
+        /// <summary>Backing field for <see cref="VirtualNetwork" /> property.</summary>
+        private Commvault.Powershell.Models.IAzureNetwork _virtualNetwork;
+
+        /// <summary>Network interface for the destination instances</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IAzureNetwork VirtualNetwork { get => (this._virtualNetwork = this._virtualNetwork ?? new Commvault.Powershell.Models.AzureNetwork()); set => this._virtualNetwork = value; }
+
+        /// <summary>Display Name of network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkDisplayName { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkDisplayName; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkDisplayName = value ?? null; }
+
+        /// <summary>Network unique identifier</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkId = value ?? null; }
+
+        /// <summary>Name of the network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkName { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkName; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkName = value ?? null; }
+
+        /// <summary>
+        /// Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkNetworkAddressDetailsNetworkId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailNetworkId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailNetworkId = value ?? null; }
+
+        /// <summary>Azure private IP address.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkNetworkAddressDetailsPrivateIPAddress { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailPrivateIPAddress; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailPrivateIPAddress = value ?? null; }
+
+        /// <summary>Azure publice IP address.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkNetworkAddressDetailsPublicIPAddress { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailPublicIPAddress; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailPublicIPAddress = value ?? null; }
+
+        /// <summary>
+        /// Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public
+        /// IP Address Name}.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkNetworkAddressDetailsPublicIPAddressId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailPublicIPAddressId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailPublicIPAddressId = value ?? null; }
+
+        /// <summary>
+        /// Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}/subnets/{Subnet Name}.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkNetworkAddressDetailsSubnetId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailSubnetId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).NetworkAddressDetailSubnetId = value ?? null; }
+
+        /// <summary>subnet id of network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string VirtualNetworkSubnetId { get => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).SubnetId; set => ((Commvault.Powershell.Models.IAzureNetworkInternal)VirtualNetwork).SubnetId = value ?? null; }
 
         /// <summary>Creates an new <see cref="OverrideReplicationOptionsAzure" /> instance.</summary>
         public OverrideReplicationOptionsAzure()
@@ -28,22 +162,268 @@ namespace Commvault.Powershell.Models
     public partial interface IOverrideReplicationOptionsAzure :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        /// <summary>Display name of destination VM</summary>
+        /// <summary>VM availability zone</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Display name of destination VM",
-        SerializedName = @"vmDisplayName",
+        Description = @"VM availability zone",
+        SerializedName = @"availabilityZone",
         PossibleTypes = new [] { typeof(string) })]
-        string VMDisplayName { get; set; }
+        string AvailabilityZone { get; set; }
+        /// <summary>Security group id</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Security group id",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(string) })]
+        string SecurityGroupId { get; set; }
+        /// <summary>security group name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"security group name",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string SecurityGroupName { get; set; }
+        /// <summary>Display Name of network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Display Name of network",
+        SerializedName = @"networkDisplayName",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkDisplayName { get; set; }
+        /// <summary>Network unique identifier</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Network unique identifier",
+        SerializedName = @"networkId",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkId { get; set; }
+        /// <summary>Name of the network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the network",
+        SerializedName = @"networkName",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkName { get; set; }
+        /// <summary>
+        /// Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network Name}.",
+        SerializedName = @"networkId",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkNetworkAddressDetailsNetworkId { get; set; }
+        /// <summary>Azure private IP address.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure private IP address.",
+        SerializedName = @"privateIpAddress",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkNetworkAddressDetailsPrivateIPAddress { get; set; }
+        /// <summary>Azure publice IP address.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure publice IP address.",
+        SerializedName = @"publicIpAddress",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkNetworkAddressDetailsPublicIPAddress { get; set; }
+        /// <summary>
+        /// Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public
+        /// IP Address Name}.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public IP Address Name}.",
+        SerializedName = @"publicIpAddressId",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkNetworkAddressDetailsPublicIPAddressId { get; set; }
+        /// <summary>
+        /// Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}/subnets/{Subnet Name}.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network Name}/subnets/{Subnet Name}.",
+        SerializedName = @"subnetId",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkNetworkAddressDetailsSubnetId { get; set; }
+        /// <summary>subnet id of network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"subnet id of network",
+        SerializedName = @"subnetId",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVirtualNetworkSubnetId { get; set; }
+        /// <summary>Display Name of network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Display Name of network",
+        SerializedName = @"networkDisplayName",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkDisplayName { get; set; }
+        /// <summary>Network unique identifier</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Network unique identifier",
+        SerializedName = @"networkId",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkId { get; set; }
+        /// <summary>Name of the network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the network",
+        SerializedName = @"networkName",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkName { get; set; }
+        /// <summary>
+        /// Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network Name}.",
+        SerializedName = @"networkId",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkNetworkAddressDetailsNetworkId { get; set; }
+        /// <summary>Azure private IP address.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure private IP address.",
+        SerializedName = @"privateIpAddress",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkNetworkAddressDetailsPrivateIPAddress { get; set; }
+        /// <summary>Azure publice IP address.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure publice IP address.",
+        SerializedName = @"publicIpAddress",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkNetworkAddressDetailsPublicIPAddress { get; set; }
+        /// <summary>
+        /// Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public
+        /// IP Address Name}.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public IP Address Name}.",
+        SerializedName = @"publicIpAddressId",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkNetworkAddressDetailsPublicIPAddressId { get; set; }
+        /// <summary>
+        /// Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}/subnets/{Subnet Name}.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network Name}/subnets/{Subnet Name}.",
+        SerializedName = @"subnetId",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkNetworkAddressDetailsSubnetId { get; set; }
+        /// <summary>subnet id of network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"subnet id of network",
+        SerializedName = @"subnetId",
+        PossibleTypes = new [] { typeof(string) })]
+        string VirtualNetworkSubnetId { get; set; }
 
     }
     /// Replication options for Azure
     internal partial interface IOverrideReplicationOptionsAzureInternal
 
     {
-        /// <summary>Display name of destination VM</summary>
-        string VMDisplayName { get; set; }
+        /// <summary>VM availability zone</summary>
+        string AvailabilityZone { get; set; }
+        /// <summary>The id and the name of the security group</summary>
+        Commvault.Powershell.Models.ISecurityGroup SecurityGroup { get; set; }
+        /// <summary>Security group id</summary>
+        string SecurityGroupId { get; set; }
+        /// <summary>security group name</summary>
+        string SecurityGroupName { get; set; }
+        /// <summary>Network interface for the destination instances</summary>
+        Commvault.Powershell.Models.IAzureNetwork TestFailoverVirtualNetwork { get; set; }
+        /// <summary>Azure nic info for restore</summary>
+        Commvault.Powershell.Models.IAzureDestinationInfoNic TestFailoverVirtualNetworkAddressDetails { get; set; }
+        /// <summary>Display Name of network</summary>
+        string TestFailoverVirtualNetworkDisplayName { get; set; }
+        /// <summary>Network unique identifier</summary>
+        string TestFailoverVirtualNetworkId { get; set; }
+        /// <summary>Name of the network</summary>
+        string TestFailoverVirtualNetworkName { get; set; }
+        /// <summary>
+        /// Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}.
+        /// </summary>
+        string TestFailoverVirtualNetworkNetworkAddressDetailsNetworkId { get; set; }
+        /// <summary>Azure private IP address.</summary>
+        string TestFailoverVirtualNetworkNetworkAddressDetailsPrivateIPAddress { get; set; }
+        /// <summary>Azure publice IP address.</summary>
+        string TestFailoverVirtualNetworkNetworkAddressDetailsPublicIPAddress { get; set; }
+        /// <summary>
+        /// Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public
+        /// IP Address Name}.
+        /// </summary>
+        string TestFailoverVirtualNetworkNetworkAddressDetailsPublicIPAddressId { get; set; }
+        /// <summary>
+        /// Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}/subnets/{Subnet Name}.
+        /// </summary>
+        string TestFailoverVirtualNetworkNetworkAddressDetailsSubnetId { get; set; }
+        /// <summary>subnet id of network</summary>
+        string TestFailoverVirtualNetworkSubnetId { get; set; }
+        /// <summary>Network interface for the destination instances</summary>
+        Commvault.Powershell.Models.IAzureNetwork VirtualNetwork { get; set; }
+        /// <summary>Azure nic info for restore</summary>
+        Commvault.Powershell.Models.IAzureDestinationInfoNic VirtualNetworkAddressDetails { get; set; }
+        /// <summary>Display Name of network</summary>
+        string VirtualNetworkDisplayName { get; set; }
+        /// <summary>Network unique identifier</summary>
+        string VirtualNetworkId { get; set; }
+        /// <summary>Name of the network</summary>
+        string VirtualNetworkName { get; set; }
+        /// <summary>
+        /// Azure network ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}.
+        /// </summary>
+        string VirtualNetworkNetworkAddressDetailsNetworkId { get; set; }
+        /// <summary>Azure private IP address.</summary>
+        string VirtualNetworkNetworkAddressDetailsPrivateIPAddress { get; set; }
+        /// <summary>Azure publice IP address.</summary>
+        string VirtualNetworkNetworkAddressDetailsPublicIPAddress { get; set; }
+        /// <summary>
+        /// Azure public IP address ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/publicIPAddresses/{Public
+        /// IP Address Name}.
+        /// </summary>
+        string VirtualNetworkNetworkAddressDetailsPublicIPAddressId { get; set; }
+        /// <summary>
+        /// Azure subnet ID. Format: /subscriptions/{Subscription ID}/resourceGroups/{Resource Group Name}/providers/Microsoft.Network/virtualNetworks/{Network
+        /// Name}/subnets/{Subnet Name}.
+        /// </summary>
+        string VirtualNetworkNetworkAddressDetailsSubnetId { get; set; }
+        /// <summary>subnet id of network</summary>
+        string VirtualNetworkSubnetId { get; set; }
 
     }
 }

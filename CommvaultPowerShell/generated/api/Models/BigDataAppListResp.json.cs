@@ -61,7 +61,6 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_bigDataAppCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("bigDataAppCount"), out var __jsonBigDataAppCount) ? (long?)__jsonBigDataAppCount : BigDataAppCount;}
             {_bigDataApps = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("bigDataApps"), out var __jsonBigDataApps) ? If( __jsonBigDataApps as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IBigDataAppSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IBigDataAppSummary) (Commvault.Powershell.Models.BigDataAppSummary.FromJson(__u) )) ))() : null : BigDataApps;}
             AfterFromJson(json);
         }
@@ -95,7 +94,6 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._bigDataAppCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._bigDataAppCount) : null, "bigDataAppCount" ,container.Add );
             if (null != this._bigDataApps)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

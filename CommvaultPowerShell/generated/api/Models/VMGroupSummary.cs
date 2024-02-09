@@ -198,13 +198,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string VMGroupName { get => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)VMGroup).Name = value ?? null; }
 
-        /// <summary>Backing field for <see cref="VMLevelFileIndexingStatus" /> property.</summary>
-        private string _vMLevelFileIndexingStatus;
-
-        /// <summary>Type of vm level file indexing status.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string VMLevelFileIndexingStatus { get => this._vMLevelFileIndexingStatus; set => this._vMLevelFileIndexingStatus = value; }
-
         /// <summary>Creates an new <see cref="VMGroupSummary" /> instance.</summary>
         public VMGroupSummary()
         {
@@ -440,14 +433,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string VMGroupName { get; set; }
-        /// <summary>Type of vm level file indexing status.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Type of vm level file indexing status.",
-        SerializedName = @"vmLevelFileIndexingStatus",
-        PossibleTypes = new [] { typeof(string) })]
-        string VMLevelFileIndexingStatus { get; set; }
 
     }
     internal partial interface IVMGroupSummaryInternal
@@ -525,8 +510,6 @@ namespace Commvault.Powershell.Models
         long? VMGroupId { get; set; }
 
         string VMGroupName { get; set; }
-        /// <summary>Type of vm level file indexing status.</summary>
-        string VMLevelFileIndexingStatus { get; set; }
 
     }
 }

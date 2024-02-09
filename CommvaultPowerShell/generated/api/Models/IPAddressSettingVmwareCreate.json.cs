@@ -79,12 +79,11 @@ namespace Commvault.Powershell.Models
             {_useDhcp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useDhcp"), out var __jsonUseDhcp) ? (bool?)__jsonUseDhcp : UseDhcp;}
             {_destinationIP = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationIP"), out var __jsonDestinationIP) ? (string)__jsonDestinationIP : (string)DestinationIP;}
             {_destinationSubnetMask = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationSubnetMask"), out var __jsonDestinationSubnetMask) ? (string)__jsonDestinationSubnetMask : (string)DestinationSubnetMask;}
-            {_destinationdefaultGateway = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationdefaultGateway"), out var __jsonDestinationdefaultGateway) ? (string)__jsonDestinationdefaultGateway : (string)DestinationdefaultGateway;}
+            {_destinationDefaultGateway = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationDefaultGateway"), out var __jsonDestinationDefaultGateway) ? (string)__jsonDestinationDefaultGateway : (string)DestinationDefaultGateway;}
             {_destinationPreferredDns = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationPreferredDNS"), out var __jsonDestinationPreferredDns) ? (string)__jsonDestinationPreferredDns : (string)DestinationPreferredDns;}
             {_destinationAlternateDns = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationAlternateDNS"), out var __jsonDestinationAlternateDns) ? (string)__jsonDestinationAlternateDns : (string)DestinationAlternateDns;}
             {_destinationPreferredWins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationPreferredWINS"), out var __jsonDestinationPreferredWins) ? (string)__jsonDestinationPreferredWins : (string)DestinationPreferredWins;}
             {_destinationAlternateWins = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationAlternateWINS"), out var __jsonDestinationAlternateWins) ? (string)__jsonDestinationAlternateWins : (string)DestinationAlternateWins;}
-            {_hostname = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hostname"), out var __jsonHostname) ? (string)__jsonHostname : (string)Hostname;}
             AfterFromJson(json);
         }
 
@@ -113,12 +112,11 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._useDhcp ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useDhcp) : null, "useDhcp" ,container.Add );
             AddIf( null != (((object)this._destinationIP)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationIP.ToString()) : null, "destinationIP" ,container.Add );
             AddIf( null != (((object)this._destinationSubnetMask)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationSubnetMask.ToString()) : null, "destinationSubnetMask" ,container.Add );
-            AddIf( null != (((object)this._destinationdefaultGateway)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationdefaultGateway.ToString()) : null, "destinationdefaultGateway" ,container.Add );
+            AddIf( null != (((object)this._destinationDefaultGateway)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationDefaultGateway.ToString()) : null, "destinationDefaultGateway" ,container.Add );
             AddIf( null != (((object)this._destinationPreferredDns)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationPreferredDns.ToString()) : null, "destinationPreferredDNS" ,container.Add );
             AddIf( null != (((object)this._destinationAlternateDns)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationAlternateDns.ToString()) : null, "destinationAlternateDNS" ,container.Add );
             AddIf( null != (((object)this._destinationPreferredWins)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationPreferredWins.ToString()) : null, "destinationPreferredWINS" ,container.Add );
             AddIf( null != (((object)this._destinationAlternateWins)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationAlternateWins.ToString()) : null, "destinationAlternateWINS" ,container.Add );
-            AddIf( null != (((object)this._hostname)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hostname.ToString()) : null, "hostname" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

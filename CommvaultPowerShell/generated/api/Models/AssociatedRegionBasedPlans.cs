@@ -17,12 +17,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[] Plans { get => this._plans; set => this._plans = value; }
 
-        /// <summary>Backing field for <see cref="PlansCount" /> property.</summary>
-        private long? _plansCount;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public long? PlansCount { get => this._plansCount; set => this._plansCount = value; }
-
         /// <summary>Creates an new <see cref="AssociatedRegionBasedPlans" /> instance.</summary>
         public AssociatedRegionBasedPlans()
         {
@@ -41,22 +35,12 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAssociatedRegionBasedPlansList) })]
         Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[] Plans { get; set; }
 
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"plansCount",
-        PossibleTypes = new [] { typeof(long) })]
-        long? PlansCount { get; set; }
-
     }
     /// Details of plans associated to the region
     internal partial interface IAssociatedRegionBasedPlansInternal
 
     {
         Commvault.Powershell.Models.IAssociatedRegionBasedPlansList[] Plans { get; set; }
-
-        long? PlansCount { get; set; }
 
     }
 }

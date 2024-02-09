@@ -67,8 +67,10 @@ namespace Commvault.Powershell.Models
             {_roleArn = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("RoleARN"), out var __jsonRoleArn) ? (string)__jsonRoleArn : (string)RoleArn;}
             {_secretKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("secretKey"), out var __jsonSecretKey) ? (string)__jsonSecretKey : (string)SecretKey;}
             {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("Region"), out var __jsonRegion) ? (string)__jsonRegion : (string)Region;}
-            {_useIamRole = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useIamRole"), out var __jsonUseIamRole) ? (bool)__jsonUseIamRole : UseIamRole;}
+            {_useIamRole = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useIamRole"), out var __jsonUseIamRole) ? (bool?)__jsonUseIamRole : UseIamRole;}
+            {_enableAwsAdminAccount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableAWSAdminAccount"), out var __jsonEnableAwsAdminAccount) ? (bool?)__jsonEnableAwsAdminAccount : EnableAwsAdminAccount;}
             {_useServiceAccount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("useServiceAccount"), out var __jsonUseServiceAccount) ? (string)__jsonUseServiceAccount : (string)UseServiceAccount;}
+            {_useHostedInfrastructure = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useHostedInfrastructure"), out var __jsonUseHostedInfrastructure) ? (bool?)__jsonUseHostedInfrastructure : UseHostedInfrastructure;}
             AfterFromJson(json);
         }
 
@@ -107,8 +109,10 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._roleArn)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._roleArn.ToString()) : null, "RoleARN" ,container.Add );
             AddIf( null != (((object)this._secretKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._secretKey.ToString()) : null, "secretKey" ,container.Add );
             AddIf( null != (((object)this._region)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._region.ToString()) : null, "Region" ,container.Add );
-            AddIf( (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean(this._useIamRole), "useIamRole" ,container.Add );
+            AddIf( null != this._useIamRole ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useIamRole) : null, "useIamRole" ,container.Add );
+            AddIf( null != this._enableAwsAdminAccount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enableAwsAdminAccount) : null, "enableAWSAdminAccount" ,container.Add );
             AddIf( null != (((object)this._useServiceAccount)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._useServiceAccount.ToString()) : null, "useServiceAccount" ,container.Add );
+            AddIf( null != this._useHostedInfrastructure ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useHostedInfrastructure) : null, "useHostedInfrastructure" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

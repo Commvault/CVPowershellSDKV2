@@ -49,6 +49,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? InheritedSlaPeriod { get => this._inheritedSlaPeriod; set => this._inheritedSlaPeriod = value; }
 
+        /// <summary>Backing field for <see cref="LogSlaMinutes" /> property.</summary>
+        private long? _logSlaMinutes;
+
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? LogSlaMinutes { get => this._logSlaMinutes; set => this._logSlaMinutes = value; }
+
         /// <summary>Backing field for <see cref="SlaPeriod" /> property.</summary>
         private long? _slaPeriod;
 
@@ -114,6 +121,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"inheritedSLAPeriod",
         PossibleTypes = new [] { typeof(long) })]
         long? InheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Database log SLA period in Minutes",
+        SerializedName = @"logSLAMinutes",
+        PossibleTypes = new [] { typeof(long) })]
+        long? LogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -147,6 +162,8 @@ namespace Commvault.Powershell.Models
         string InheritedFrom { get; set; }
         /// <summary>Inherited SLA Period in Days</summary>
         long? InheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        long? LogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>

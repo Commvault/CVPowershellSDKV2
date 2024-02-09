@@ -111,7 +111,7 @@ namespace Commvault.Powershell.Models
         /// Updated password of credential. The password has to be provided in Base64 format.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Updated password of credential. The password has to be provided in Base64 format.",
         SerializedName = @"newPassword",
@@ -129,7 +129,7 @@ namespace Commvault.Powershell.Models
         /// User account of Credential. If updated the updated user account is considered else the existing user account is considered.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"User account of Credential. If updated the updated user account is considered else the existing user account is considered.",
         SerializedName = @"userAccount",

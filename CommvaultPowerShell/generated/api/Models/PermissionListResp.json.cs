@@ -70,9 +70,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_category = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("category"), out var __jsonCategory) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCategory) : Category;}
-            {_permissions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("permissions"), out var __jsonPermissions) ? If( __jsonPermissions as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : Permissions;}
-            {_categoryList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("categoryList"), out var __jsonCategoryList) ? If( __jsonCategoryList as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.ICategoryList[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.ICategoryList) (Commvault.Powershell.Models.CategoryList.FromJson(__p) )) ))() : null : CategoryList;}
+            {_permissions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("permissions"), out var __jsonPermissions) ? If( __jsonPermissions as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ICategoryListResp[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ICategoryListResp) (Commvault.Powershell.Models.CategoryListResp.FromJson(__u) )) ))() : null : Permissions;}
             AfterFromJson(json);
         }
 
@@ -95,7 +93,6 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._category ? (Commvault.Powershell.Runtime.Json.JsonNode) this._category.ToJson(null,serializationMode) : null, "category" ,container.Add );
             if (null != this._permissions)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -104,15 +101,6 @@ namespace Commvault.Powershell.Models
                     AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
                 }
                 container.Add("permissions",__w);
-            }
-            if (null != this._categoryList)
-            {
-                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __s in this._categoryList )
-                {
-                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
-                }
-                container.Add("categoryList",__r);
             }
             AfterToJson(ref container);
             return container;

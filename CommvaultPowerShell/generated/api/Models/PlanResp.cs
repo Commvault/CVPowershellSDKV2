@@ -11,7 +11,7 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Internal Acessors for Plan</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanRespInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
+        Commvault.Powershell.Models.IIdNameGuid Commvault.Powershell.Models.IPlanRespInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdNameGuid()); set { {_plan = value;} } }
 
         /// <summary>Backing field for <see cref="Errors" /> property.</summary>
         private Commvault.Powershell.Models.IPlanComponentError[] _errors;
@@ -20,16 +20,19 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.IPlanComponentError[] Errors { get => this._errors; set => this._errors = value; }
 
         /// <summary>Backing field for <see cref="Plan" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _plan;
+        private Commvault.Powershell.Models.IIdNameGuid _plan;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
+        internal Commvault.Powershell.Models.IIdNameGuid Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdNameGuid()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
+        public string PlanGuid { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Guid; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Guid = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string PlanName { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Name = value ?? null; }
 
         /// <summary>Creates an new <see cref="PlanResp" /> instance.</summary>
         public PlanResp()
@@ -47,6 +50,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"errors",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanComponentError) })]
         Commvault.Powershell.Models.IPlanComponentError[] Errors { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"GUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string PlanGuid { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -70,7 +81,9 @@ namespace Commvault.Powershell.Models
     {
         Commvault.Powershell.Models.IPlanComponentError[] Errors { get; set; }
 
-        Commvault.Powershell.Models.IIdName Plan { get; set; }
+        Commvault.Powershell.Models.IIdNameGuid Plan { get; set; }
+
+        string PlanGuid { get; set; }
 
         long? PlanId { get; set; }
 

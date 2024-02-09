@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>Create a hypervisor group with VMWare as the destination vendor</summary>
+    /// <summary>Create a hypervisor group with HyperV as the destination vendor</summary>
     public partial class CreateHypervisorGroupHyperV :
         Commvault.Powershell.Models.ICreateHypervisorGroupHyperV,
         Commvault.Powershell.Models.ICreateHypervisorGroupHyperVInternal,
@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.ICreateHypervisorGroupReq __createHypervisorGroupReq = new Commvault.Powershell.Models.CreateHypervisorGroupReq();
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
 
         /// <summary>Internal Acessors for HypervisorType</summary>
         string Commvault.Powershell.Models.ICreateHypervisorGroupHyperVInternal.HypervisorType { get => this._hypervisorType; set { {_hypervisorType = value;} } }
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Models
             await eventListener.AssertObjectIsValid(nameof(__createHypervisorGroupReq), __createHypervisorGroupReq);
         }
     }
-    /// Create a hypervisor group with VMWare as the destination vendor
+    /// Create a hypervisor group with HyperV as the destination vendor
     public partial interface ICreateHypervisorGroupHyperV :
         Commvault.Powershell.Runtime.IJsonSerializable,
         Commvault.Powershell.Models.ICreateHypervisorGroupReq
@@ -148,7 +148,7 @@ namespace Commvault.Powershell.Models
         string UserName { get; set; }
 
     }
-    /// Create a hypervisor group with VMWare as the destination vendor
+    /// Create a hypervisor group with HyperV as the destination vendor
     internal partial interface ICreateHypervisorGroupHyperVInternal :
         Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal
     {

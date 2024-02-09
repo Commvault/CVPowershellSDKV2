@@ -70,7 +70,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_tapeList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tapeList"), out var __jsonTapeList) ? If( __jsonTapeList as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ITapeSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ITapeSummary) (Commvault.Powershell.Models.TapeSummary.FromJson(__u) )) ))() : null : TapeList;}
+            {_tapeStorage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tapeStorage"), out var __jsonTapeStorage) ? If( __jsonTapeStorage as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ITapeSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ITapeSummary) (Commvault.Powershell.Models.TapeSummary.FromJson(__u) )) ))() : null : TapeStorage;}
             AfterFromJson(json);
         }
 
@@ -93,14 +93,14 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            if (null != this._tapeList)
+            if (null != this._tapeStorage)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._tapeList )
+                foreach( var __x in this._tapeStorage )
                 {
                     AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
                 }
-                container.Add("tapeList",__w);
+                container.Add("tapeStorage",__w);
             }
             AfterToJson(ref container);
             return container;

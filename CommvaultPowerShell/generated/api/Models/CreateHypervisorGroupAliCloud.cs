@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Models
         public string AccessKey { get => this._accessKey; set => this._accessKey = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
 
         /// <summary>Internal Acessors for HypervisorType</summary>
         string Commvault.Powershell.Models.ICreateHypervisorGroupAliCloudInternal.HypervisorType { get => this._hypervisorType; set { {_hypervisorType = value;} } }

@@ -49,7 +49,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
           throw new ArgumentException($"Custom folder '{CustomFolder}' does not exist");
         }
 
-        string version = Convert.ToString(@"0.2.14");
+        string version = Convert.ToString(@"0.2.15");
         // Validate the module version should be semantic version
         // Following regex is official from https://semver.org/
         Regex rx = new Regex(@"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$", RegexOptions.Compiled);

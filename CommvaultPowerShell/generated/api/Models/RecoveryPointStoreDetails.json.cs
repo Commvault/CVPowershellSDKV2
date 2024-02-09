@@ -76,6 +76,7 @@ namespace Commvault.Powershell.Models
             {_totalCapacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("totalCapacity"), out var __jsonTotalCapacity) ? (string)__jsonTotalCapacity : (string)TotalCapacity;}
             {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("freeSpace"), out var __jsonFreeSpace) ? (string)__jsonFreeSpace : (string)FreeSpace;}
             {_maximumSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("maximumSize"), out var __jsonMaximumSize) ? (string)__jsonMaximumSize : (string)MaximumSize;}
+            {_maxPairs = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("maxPairs"), out var __jsonMaxPairs) ? (string)__jsonMaxPairs : (string)MaxPairs;}
             {_peakInterval = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("peakInterval"), out var __jsonPeakInterval) ? If( __jsonPeakInterval as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IDayAndTime[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IDayAndTime) (Commvault.Powershell.Models.DayAndTime.FromJson(__u) )) ))() : null : PeakInterval;}
             {_locations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("locations"), out var __jsonLocations) ? If( __jsonLocations as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IMountLocationDetails[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IMountLocationDetails) (Commvault.Powershell.Models.MountLocationDetails.FromJson(__p) )) ))() : null : Locations;}
             AfterFromJson(json);
@@ -105,6 +106,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._totalCapacity)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._totalCapacity.ToString()) : null, "totalCapacity" ,container.Add );
             AddIf( null != (((object)this._freeSpace)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._freeSpace.ToString()) : null, "freeSpace" ,container.Add );
             AddIf( null != (((object)this._maximumSize)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._maximumSize.ToString()) : null, "maximumSize" ,container.Add );
+            AddIf( null != (((object)this._maxPairs)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._maxPairs.ToString()) : null, "maxPairs" ,container.Add );
             if (null != this._peakInterval)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

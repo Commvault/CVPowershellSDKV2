@@ -71,7 +71,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_network = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("network"), out var __jsonNetwork) ? Commvault.Powershell.Models.Network.FromJson(__jsonNetwork) : Network;}
+            {_guestCreds = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("guestCreds"), out var __jsonGuestCreds) ? Commvault.Powershell.Models.GuestCredentialsCreate.FromJson(__jsonGuestCreds) : GuestCreds;}
+            {_network = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("network"), out var __jsonNetwork) ? Commvault.Powershell.Models.AmazonNetwork.FromJson(__jsonNetwork) : Network;}
+            {_testFailoverNetwork = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("testFailoverNetwork"), out var __jsonTestFailoverNetwork) ? Commvault.Powershell.Models.AmazonNetwork.FromJson(__jsonTestFailoverNetwork) : TestFailoverNetwork;}
             {_instanceName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("instanceName"), out var __jsonInstanceName) ? (string)__jsonInstanceName : (string)InstanceName;}
             {_availabilityZone = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("availabilityZone"), out var __jsonAvailabilityZone) ? (string)__jsonAvailabilityZone : (string)AvailabilityZone;}
             {_volumeType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("volumeType"), out var __jsonVolumeType) ? (string)__jsonVolumeType : (string)VolumeType;}
@@ -102,7 +104,9 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._guestCreds ? (Commvault.Powershell.Runtime.Json.JsonNode) this._guestCreds.ToJson(null,serializationMode) : null, "guestCreds" ,container.Add );
             AddIf( null != this._network ? (Commvault.Powershell.Runtime.Json.JsonNode) this._network.ToJson(null,serializationMode) : null, "network" ,container.Add );
+            AddIf( null != this._testFailoverNetwork ? (Commvault.Powershell.Runtime.Json.JsonNode) this._testFailoverNetwork.ToJson(null,serializationMode) : null, "testFailoverNetwork" ,container.Add );
             AddIf( null != (((object)this._instanceName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._instanceName.ToString()) : null, "instanceName" ,container.Add );
             AddIf( null != (((object)this._availabilityZone)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._availabilityZone.ToString()) : null, "availabilityZone" ,container.Add );
             AddIf( null != (((object)this._volumeType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._volumeType.ToString()) : null, "volumeType" ,container.Add );

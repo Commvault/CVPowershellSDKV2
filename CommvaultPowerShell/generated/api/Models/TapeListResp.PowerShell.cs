@@ -92,7 +92,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeList = (Commvault.Powershell.Models.ITapeSummary[]) content.GetValueForProperty("TapeList",((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeList, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ITapeSummary>(__y, Commvault.Powershell.Models.TapeSummaryTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeStorage = (Commvault.Powershell.Models.ITapeSummary[]) content.GetValueForProperty("TapeStorage",((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeStorage, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ITapeSummary>(__y, Commvault.Powershell.Models.TapeSummaryTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -110,7 +110,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeList = (Commvault.Powershell.Models.ITapeSummary[]) content.GetValueForProperty("TapeList",((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeList, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ITapeSummary>(__y, Commvault.Powershell.Models.TapeSummaryTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeStorage = (Commvault.Powershell.Models.ITapeSummary[]) content.GetValueForProperty("TapeStorage",((Commvault.Powershell.Models.ITapeListRespInternal)this).TapeStorage, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ITapeSummary>(__y, Commvault.Powershell.Models.TapeSummaryTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 

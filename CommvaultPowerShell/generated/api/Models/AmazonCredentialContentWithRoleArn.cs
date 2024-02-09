@@ -40,6 +40,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
 
+        /// <summary>Backing field for <see cref="Password" /> property.</summary>
+        private string _password;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Password { get => this._password; set => this._password = value; }
+
         /// <summary>Backing field for <see cref="RoleArn" /> property.</summary>
         private string _roleArn;
 
@@ -96,9 +102,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"newName",
         PossibleTypes = new [] { typeof(string) })]
         string NewName { get; set; }
-        /// <summary>Role ARN of credential. If updated the updated role ARN is considered.</summary>
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string Password { get; set; }
+        /// <summary>Role ARN of credential. If updated the updated role ARN is considered.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = true,
         ReadOnly = false,
         Description = @"Role ARN of credential. If updated the updated role ARN is considered.",
         SerializedName = @"roleArn",
@@ -159,6 +173,8 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName OwnerUser { get; set; }
 
         Commvault.Powershell.Models.IIdName OwnerUserGroup { get; set; }
+
+        string Password { get; set; }
         /// <summary>Role ARN of credential. If updated the updated role ARN is considered.</summary>
         string RoleArn { get; set; }
         /// <summary>Update Security association of a list of users and user groups</summary>

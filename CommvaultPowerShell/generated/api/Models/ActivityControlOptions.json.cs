@@ -60,8 +60,8 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_backupActivityControlOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("backupActivityControlOptions"), out var __jsonBackupActivityControlOptions) ? Commvault.Powershell.Models.BackupActivityControlOptionsProp.FromJson(__jsonBackupActivityControlOptions) : BackupActivityControlOptions;}
-            {_restoreActivityControlOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("restoreActivityControlOptions"), out var __jsonRestoreActivityControlOptions) ? Commvault.Powershell.Models.BackupActivityControlOptionsProp.FromJson(__jsonRestoreActivityControlOptions) : RestoreActivityControlOptions;}
+            {_backupActivityControlOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("backupActivityControlOptions"), out var __jsonBackupActivityControlOptions) ? Commvault.Powershell.Models.ActivityControlOptionsProp.FromJson(__jsonBackupActivityControlOptions) : BackupActivityControlOptions;}
+            {_restoreActivityControlOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("restoreActivityControlOptions"), out var __jsonRestoreActivityControlOptions) ? Commvault.Powershell.Models.ActivityControlOptionsProp.FromJson(__jsonRestoreActivityControlOptions) : RestoreActivityControlOptions;}
             {_enableBackup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableBackup"), out var __jsonEnableBackup) ? (bool?)__jsonEnableBackup : EnableBackup;}
             {_enableRestore = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enableRestore"), out var __jsonEnableRestore) ? (bool?)__jsonEnableRestore : EnableRestore;}
             AfterFromJson(json);

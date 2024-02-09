@@ -61,12 +61,14 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_storagePool = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("storagePool"), out var __jsonStoragePool) ? Commvault.Powershell.Models.IdName.FromJson(__jsonStoragePool) : StoragePool;}
-            {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.IdName.FromJson(__jsonRegion) : Region;}
+            {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.IdNameGuid.FromJson(__jsonRegion) : Region;}
             {_sourceCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("sourceCopy"), out var __jsonSourceCopy) ? Commvault.Powershell.Models.IdName.FromJson(__jsonSourceCopy) : SourceCopy;}
             {_extendedRetentionRules = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("extendedRetentionRules"), out var __jsonExtendedRetentionRules) ? Commvault.Powershell.Models.ExtendedRetentionRules.FromJson(__jsonExtendedRetentionRules) : ExtendedRetentionRules;}
             {_backupDestinationName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("backupDestinationName"), out var __jsonBackupDestinationName) ? (string)__jsonBackupDestinationName : (string)BackupDestinationName;}
+            {_storageTemplateTags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("storageTemplateTags"), out var __jsonStorageTemplateTags) ? If( __jsonStorageTemplateTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdNameValue[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdNameValue) (Commvault.Powershell.Models.IdNameValue.FromJson(__u) )) ))() : null : StorageTemplateTags;}
             {_storageType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("storageType"), out var __jsonStorageType) ? (string)__jsonStorageType : (string)StorageType;}
             {_netAppCloudTarget = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("netAppCloudTarget"), out var __jsonNetAppCloudTarget) ? (bool?)__jsonNetAppCloudTarget : NetAppCloudTarget;}
+            {_isConfiguredForReplication = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isConfiguredForReplication"), out var __jsonIsConfiguredForReplication) ? (bool?)__jsonIsConfiguredForReplication : IsConfiguredForReplication;}
             {_isSnapCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isSnapCopy"), out var __jsonIsSnapCopy) ? (bool?)__jsonIsSnapCopy : IsSnapCopy;}
             {_isMirrorCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isMirrorCopy"), out var __jsonIsMirrorCopy) ? (bool?)__jsonIsMirrorCopy : IsMirrorCopy;}
             {_backupsToCopy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("backupsToCopy"), out var __jsonBackupsToCopy) ? (string)__jsonBackupsToCopy : (string)BackupsToCopy;}
@@ -78,7 +80,7 @@ namespace Commvault.Powershell.Models
             {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
             {_snapRecoveryPoints = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("snapRecoveryPoints"), out var __jsonSnapRecoveryPoints) ? (long?)__jsonSnapRecoveryPoints : SnapRecoveryPoints;}
             {_useExtendedRetentionRules = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useExtendedRetentionRules"), out var __jsonUseExtendedRetentionRules) ? (bool?)__jsonUseExtendedRetentionRules : UseExtendedRetentionRules;}
-            {_mappings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("mappings"), out var __jsonMappings) ? If( __jsonMappings as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ISnapshotCopyMapping[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ISnapshotCopyMapping) (Commvault.Powershell.Models.SnapshotCopyMapping.FromJson(__u) )) ))() : null : Mappings;}
+            {_mappings = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("mappings"), out var __jsonMappings) ? If( __jsonMappings as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.ISnapshotCopyMapping[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.ISnapshotCopyMapping) (Commvault.Powershell.Models.SnapshotCopyMapping.FromJson(__p) )) ))() : null : Mappings;}
             AfterFromJson(json);
         }
 
@@ -116,8 +118,18 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._sourceCopy ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sourceCopy.ToJson(null,serializationMode) : null, "sourceCopy" ,container.Add );
             AddIf( null != this._extendedRetentionRules ? (Commvault.Powershell.Runtime.Json.JsonNode) this._extendedRetentionRules.ToJson(null,serializationMode) : null, "extendedRetentionRules" ,container.Add );
             AddIf( null != (((object)this._backupDestinationName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._backupDestinationName.ToString()) : null, "backupDestinationName" ,container.Add );
+            if (null != this._storageTemplateTags)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._storageTemplateTags )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("storageTemplateTags",__w);
+            }
             AddIf( null != (((object)this._storageType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._storageType.ToString()) : null, "storageType" ,container.Add );
             AddIf( null != this._netAppCloudTarget ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._netAppCloudTarget) : null, "netAppCloudTarget" ,container.Add );
+            AddIf( null != this._isConfiguredForReplication ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isConfiguredForReplication) : null, "isConfiguredForReplication" ,container.Add );
             AddIf( null != this._isSnapCopy ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isSnapCopy) : null, "isSnapCopy" ,container.Add );
             AddIf( null != this._isMirrorCopy ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isMirrorCopy) : null, "isMirrorCopy" ,container.Add );
             AddIf( null != (((object)this._backupsToCopy)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._backupsToCopy.ToString()) : null, "backupsToCopy" ,container.Add );
@@ -131,12 +143,12 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._useExtendedRetentionRules ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useExtendedRetentionRules) : null, "useExtendedRetentionRules" ,container.Add );
             if (null != this._mappings)
             {
-                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __x in this._mappings )
+                var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __s in this._mappings )
                 {
-                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                    AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
                 }
-                container.Add("mappings",__w);
+                container.Add("mappings",__r);
             }
             AfterToJson(ref container);
             return container;

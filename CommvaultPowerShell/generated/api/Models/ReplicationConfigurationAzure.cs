@@ -11,9 +11,6 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IReplicationConfigurationAzureInternal
     {
 
-        /// <summary>Internal Acessors for OverrideReplicationOptions</summary>
-        Commvault.Powershell.Models.IOverrideReplicationOptionsAzure Commvault.Powershell.Models.IReplicationConfigurationAzureInternal.OverrideReplicationOptions { get => (this._overrideReplicationOptions = this._overrideReplicationOptions ?? new Commvault.Powershell.Models.OverrideReplicationOptionsAzure()); set { {_overrideReplicationOptions = value;} } }
-
         /// <summary>Backing field for <see cref="CreatePublicIP" /> property.</summary>
         private bool? _createPublicIP;
 
@@ -28,16 +25,26 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string DestinationVM { get => this._destinationVM; set => this._destinationVM = value; }
 
-        /// <summary>Display name of destination VM</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string OverrideReplicationOptionVMDisplayName { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal)OverrideReplicationOptions).VMDisplayName; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAzureInternal)OverrideReplicationOptions).VMDisplayName = value ?? null; }
+        /// <summary>Backing field for <see cref="DiskType" /> property.</summary>
+        private string _diskType;
+
+        /// <summary>Type of the disk</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string DiskType { get => this._diskType; set => this._diskType = value; }
 
         /// <summary>Backing field for <see cref="OverrideReplicationOptions" /> property.</summary>
         private Commvault.Powershell.Models.IOverrideReplicationOptionsAzure _overrideReplicationOptions;
 
         /// <summary>Replication options for Azure</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IOverrideReplicationOptionsAzure OverrideReplicationOptions { get => (this._overrideReplicationOptions = this._overrideReplicationOptions ?? new Commvault.Powershell.Models.OverrideReplicationOptionsAzure()); set => this._overrideReplicationOptions = value; }
+        public Commvault.Powershell.Models.IOverrideReplicationOptionsAzure OverrideReplicationOptions { get => (this._overrideReplicationOptions = this._overrideReplicationOptions ?? new Commvault.Powershell.Models.OverrideReplicationOptionsAzure()); set => this._overrideReplicationOptions = value; }
+
+        /// <summary>Backing field for <see cref="Region" /> property.</summary>
+        private string _region;
+
+        /// <summary>region of the VM</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Region { get => this._region; set => this._region = value; }
 
         /// <summary>Backing field for <see cref="ResourceGroup" /> property.</summary>
         private string _resourceGroup;
@@ -60,12 +67,26 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string SourceVM { get => this._sourceVM; set => this._sourceVM = value; }
 
+        /// <summary>Backing field for <see cref="SourceVMGuid" /> property.</summary>
+        private string _sourceVMGuid;
+
+        /// <summary>GUID of the source VM</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string SourceVMGuid { get => this._sourceVMGuid; set => this._sourceVMGuid = value; }
+
         /// <summary>Backing field for <see cref="StorageAccount" /> property.</summary>
         private string _storageAccount;
 
         /// <summary>Azure Standard or Premium general-purpose storage account.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string StorageAccount { get => this._storageAccount; set => this._storageAccount = value; }
+
+        /// <summary>Backing field for <see cref="TestFailoverVMSize" /> property.</summary>
+        private string _testFailoverVMSize;
+
+        /// <summary>Vm size to be used during the test failover operation</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string TestFailoverVMSize { get => this._testFailoverVMSize; set => this._testFailoverVMSize = value; }
 
         /// <summary>Backing field for <see cref="VMSize" /> property.</summary>
         private string _vMSize;
@@ -100,14 +121,30 @@ namespace Commvault.Powershell.Models
         SerializedName = @"destinationVM",
         PossibleTypes = new [] { typeof(string) })]
         string DestinationVM { get; set; }
-        /// <summary>Display name of destination VM</summary>
+        /// <summary>Type of the disk</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Display name of destination VM",
-        SerializedName = @"vmDisplayName",
+        Description = @"Type of the disk",
+        SerializedName = @"diskType",
         PossibleTypes = new [] { typeof(string) })]
-        string OverrideReplicationOptionVMDisplayName { get; set; }
+        string DiskType { get; set; }
+        /// <summary>Replication options for Azure</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Replication options for Azure",
+        SerializedName = @"overrideReplicationOptions",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IOverrideReplicationOptionsAzure) })]
+        Commvault.Powershell.Models.IOverrideReplicationOptionsAzure OverrideReplicationOptions { get; set; }
+        /// <summary>region of the VM</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"region of the VM",
+        SerializedName = @"region",
+        PossibleTypes = new [] { typeof(string) })]
+        string Region { get; set; }
         /// <summary>Resource group in which the converted virtual machine should be created.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -132,6 +169,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"sourceVM",
         PossibleTypes = new [] { typeof(string) })]
         string SourceVM { get; set; }
+        /// <summary>GUID of the source VM</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"GUID of the source VM",
+        SerializedName = @"sourceVMGuid",
+        PossibleTypes = new [] { typeof(string) })]
+        string SourceVMGuid { get; set; }
         /// <summary>Azure Standard or Premium general-purpose storage account.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -140,6 +185,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"storageAccount",
         PossibleTypes = new [] { typeof(string) })]
         string StorageAccount { get; set; }
+        /// <summary>Vm size to be used during the test failover operation</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Vm size to be used during the test failover operation",
+        SerializedName = @"testFailoverVmSize",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverVMSize { get; set; }
         /// <summary>VM size</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -158,18 +211,24 @@ namespace Commvault.Powershell.Models
         bool? CreatePublicIP { get; set; }
         /// <summary>Destination VM</summary>
         string DestinationVM { get; set; }
-        /// <summary>Display name of destination VM</summary>
-        string OverrideReplicationOptionVMDisplayName { get; set; }
+        /// <summary>Type of the disk</summary>
+        string DiskType { get; set; }
         /// <summary>Replication options for Azure</summary>
         Commvault.Powershell.Models.IOverrideReplicationOptionsAzure OverrideReplicationOptions { get; set; }
+        /// <summary>region of the VM</summary>
+        string Region { get; set; }
         /// <summary>Resource group in which the converted virtual machine should be created.</summary>
         string ResourceGroup { get; set; }
         /// <summary>Restore the VM as a managed disk for the destination VMs.</summary>
         bool? RestoreAsManagedVM { get; set; }
         /// <summary>Source VM</summary>
         string SourceVM { get; set; }
+        /// <summary>GUID of the source VM</summary>
+        string SourceVMGuid { get; set; }
         /// <summary>Azure Standard or Premium general-purpose storage account.</summary>
         string StorageAccount { get; set; }
+        /// <summary>Vm size to be used during the test failover operation</summary>
+        string TestFailoverVMSize { get; set; }
         /// <summary>VM size</summary>
         string VMSize { get; set; }
 

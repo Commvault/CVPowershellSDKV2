@@ -57,6 +57,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Templates</summary>
         Commvault.Powershell.Models.IAlertDefinitionsTemplate Commvault.Powershell.Models.IAlertDefinitionsEditInternal.Templates { get => (this._templates = this._templates ?? new Commvault.Powershell.Models.AlertDefinitionsTemplate()); set { {_templates = value;} } }
 
+        /// <summary>Internal Acessors for Tokens</summary>
+        Commvault.Powershell.Models.ITokenRuleGroups Commvault.Powershell.Models.IAlertDefinitionsEditInternal.Tokens { get => (this._tokens = this._tokens ?? new Commvault.Powershell.Models.TokenRuleGroups()); set { {_tokens = value;} } }
+
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? LocaleId { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).LocaleId; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).LocaleId = value ?? default(long); }
 
@@ -92,6 +95,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? SendIndividualNotifications { get => this._sendIndividualNotifications; set => this._sendIndividualNotifications = value; }
 
+        /// <summary>Backing field for <see cref="SubscriptionBasedAlert" /> property.</summary>
+        private bool? _subscriptionBasedAlert;
+
+        /// <summary>Flag to indicate whether its a subscription based alert.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? SubscriptionBasedAlert { get => this._subscriptionBasedAlert; set => this._subscriptionBasedAlert = value; }
+
         /// <summary>the message template for the console notification</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TemplateConsole { get => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Console; set => ((Commvault.Powershell.Models.IAlertDefinitionsTemplateInternal)Templates).Console = value ?? null; }
@@ -116,6 +126,19 @@ namespace Commvault.Powershell.Models
         /// <summary>AlertDefinitionsTemplate</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IAlertDefinitionsTemplate Templates { get => (this._templates = this._templates ?? new Commvault.Powershell.Models.AlertDefinitionsTemplate()); set => this._templates = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TokenMatch { get => ((Commvault.Powershell.Models.ITokenRuleGroupsInternal)Tokens).Match; set => ((Commvault.Powershell.Models.ITokenRuleGroupsInternal)Tokens).Match = value ?? null; }
+
+        /// <summary>List of rule groups</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.ITokenRuleGroup[] TokenRuleGroups { get => ((Commvault.Powershell.Models.ITokenRuleGroupsInternal)Tokens).RuleGroups; set => ((Commvault.Powershell.Models.ITokenRuleGroupsInternal)Tokens).RuleGroups = value ?? null /* arrayOf */; }
+
+        /// <summary>Backing field for <see cref="Tokens" /> property.</summary>
+        private Commvault.Powershell.Models.ITokenRuleGroups _tokens;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.ITokenRuleGroups Tokens { get => (this._tokens = this._tokens ?? new Commvault.Powershell.Models.TokenRuleGroups()); set => this._tokens = value; }
 
         /// <summary>Creates an new <see cref="AlertDefinitionsEdit" /> instance.</summary>
         public AlertDefinitionsEdit()
@@ -230,6 +253,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"sendIndividualNotifications",
         PossibleTypes = new [] { typeof(bool) })]
         bool? SendIndividualNotifications { get; set; }
+        /// <summary>Flag to indicate whether its a subscription based alert.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Flag to indicate whether its a subscription based alert.",
+        SerializedName = @"subscriptionBasedAlert",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? SubscriptionBasedAlert { get; set; }
         /// <summary>the message template for the console notification</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -264,6 +295,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"webhook",
         PossibleTypes = new [] { typeof(string) })]
         string TemplateWebhook { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"match",
+        PossibleTypes = new [] { typeof(string) })]
+        string TokenMatch { get; set; }
+        /// <summary>List of rule groups</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of rule groups",
+        SerializedName = @"ruleGroups",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ITokenRuleGroup) })]
+        Commvault.Powershell.Models.ITokenRuleGroup[] TokenRuleGroups { get; set; }
 
     }
     /// AlertDefinitionsEdit
@@ -307,6 +354,8 @@ namespace Commvault.Powershell.Models
         long? RecipientWebHookId { get; set; }
 
         bool? SendIndividualNotifications { get; set; }
+        /// <summary>Flag to indicate whether its a subscription based alert.</summary>
+        bool? SubscriptionBasedAlert { get; set; }
         /// <summary>the message template for the console notification</summary>
         string TemplateConsole { get; set; }
         /// <summary>
@@ -321,6 +370,12 @@ namespace Commvault.Powershell.Models
         string TemplateWebhook { get; set; }
         /// <summary>AlertDefinitionsTemplate</summary>
         Commvault.Powershell.Models.IAlertDefinitionsTemplate Templates { get; set; }
+
+        string TokenMatch { get; set; }
+        /// <summary>List of rule groups</summary>
+        Commvault.Powershell.Models.ITokenRuleGroup[] TokenRuleGroups { get; set; }
+
+        Commvault.Powershell.Models.ITokenRuleGroups Tokens { get; set; }
 
     }
 }

@@ -92,9 +92,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IPlanRespInternal)this).Plan = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Plan",((Commvault.Powershell.Models.IPlanRespInternal)this).Plan, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IPlanRespInternal)this).Plan = (Commvault.Powershell.Models.IIdNameGuid) content.GetValueForProperty("Plan",((Commvault.Powershell.Models.IPlanRespInternal)this).Plan, Commvault.Powershell.Models.IdNameGuidTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IPlanRespInternal)this).Errors = (Commvault.Powershell.Models.IPlanComponentError[]) content.GetValueForProperty("Errors",((Commvault.Powershell.Models.IPlanRespInternal)this).Errors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanComponentError>(__y, Commvault.Powershell.Models.PlanComponentErrorTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IPlanRespInternal)this).PlanId = (long?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IPlanRespInternal)this).PlanId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IPlanRespInternal)this).PlanGuid = (string) content.GetValueForProperty("PlanGuid",((Commvault.Powershell.Models.IPlanRespInternal)this).PlanGuid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanRespInternal)this).PlanName = (string) content.GetValueForProperty("PlanName",((Commvault.Powershell.Models.IPlanRespInternal)this).PlanName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -113,9 +114,10 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IPlanRespInternal)this).Plan = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("Plan",((Commvault.Powershell.Models.IPlanRespInternal)this).Plan, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
+            ((Commvault.Powershell.Models.IPlanRespInternal)this).Plan = (Commvault.Powershell.Models.IIdNameGuid) content.GetValueForProperty("Plan",((Commvault.Powershell.Models.IPlanRespInternal)this).Plan, Commvault.Powershell.Models.IdNameGuidTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.IPlanRespInternal)this).Errors = (Commvault.Powershell.Models.IPlanComponentError[]) content.GetValueForProperty("Errors",((Commvault.Powershell.Models.IPlanRespInternal)this).Errors, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanComponentError>(__y, Commvault.Powershell.Models.PlanComponentErrorTypeConverter.ConvertFrom));
             ((Commvault.Powershell.Models.IPlanRespInternal)this).PlanId = (long?) content.GetValueForProperty("PlanId",((Commvault.Powershell.Models.IPlanRespInternal)this).PlanId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
+            ((Commvault.Powershell.Models.IPlanRespInternal)this).PlanGuid = (string) content.GetValueForProperty("PlanGuid",((Commvault.Powershell.Models.IPlanRespInternal)this).PlanGuid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanRespInternal)this).PlanName = (string) content.GetValueForProperty("PlanName",((Commvault.Powershell.Models.IPlanRespInternal)this).PlanName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

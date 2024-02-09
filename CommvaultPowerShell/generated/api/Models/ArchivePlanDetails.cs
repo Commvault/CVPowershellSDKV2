@@ -54,6 +54,21 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IArchivePlanArchivingRules ArchivingRules { get => (this._archivingRules = this._archivingRules ?? new Commvault.Powershell.Models.ArchivePlanArchivingRules()); set => this._archivingRules = value; }
 
+        /// <summary>Backing field for <see cref="ArchivingServicePolicy" /> property.</summary>
+        private Commvault.Powershell.Models.IArchivingServicePolicy _archivingServicePolicy;
+
+        /// <summary>Create Archiving Service Policy Model for Archive Plan</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IArchivingServicePolicy ArchivingServicePolicy { get => (this._archivingServicePolicy = this._archivingServicePolicy ?? new Commvault.Powershell.Models.ArchivingServicePolicy()); set => this._archivingServicePolicy = value; }
+
+        /// <summary>Archiving service policy id</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ArchivingServicePolicyId { get => ((Commvault.Powershell.Models.IArchivingServicePolicyInternal)ArchivingServicePolicy).PolicyId; set => ((Commvault.Powershell.Models.IArchivingServicePolicyInternal)ArchivingServicePolicy).PolicyId = value ?? null; }
+
+        /// <summary>Tag ids</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ArchivingServicePolicyTags { get => ((Commvault.Powershell.Models.IArchivingServicePolicyInternal)ArchivingServicePolicy).Tags; set => ((Commvault.Powershell.Models.IArchivingServicePolicyInternal)ArchivingServicePolicy).Tags = value ?? null; }
+
         /// <summary>Backing field for <see cref="AssociatedEntities" /> property.</summary>
         private Commvault.Powershell.Models.IIdNameCount[] _associatedEntities;
 
@@ -107,6 +122,9 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Internal Acessors for ArchivingRules</summary>
         Commvault.Powershell.Models.IArchivePlanArchivingRules Commvault.Powershell.Models.IArchivePlanDetailsInternal.ArchivingRules { get => (this._archivingRules = this._archivingRules ?? new Commvault.Powershell.Models.ArchivePlanArchivingRules()); set { {_archivingRules = value;} } }
+
+        /// <summary>Internal Acessors for ArchivingServicePolicy</summary>
+        Commvault.Powershell.Models.IArchivingServicePolicy Commvault.Powershell.Models.IArchivePlanDetailsInternal.ArchivingServicePolicy { get => (this._archivingServicePolicy = this._archivingServicePolicy ?? new Commvault.Powershell.Models.ArchivingServicePolicy()); set { {_archivingServicePolicy = value;} } }
 
         /// <summary>Internal Acessors for InheritSettingArchivingRules</summary>
         Commvault.Powershell.Models.IPlanOverridenOptions Commvault.Powershell.Models.IArchivePlanDetailsInternal.InheritSettingArchivingRules { get => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).ArchivingRules; set => ((Commvault.Powershell.Models.IArchivePlanInheritSettingsInternal)InheritSettings).ArchivingRules = value; }
@@ -230,6 +248,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaInheritedSlaPeriod; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaInheritedSlaPeriod = value ?? default(long); }
 
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SlaLogSlaMinutes { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaLogSlaMinutes; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaLogSlaMinutes = value ?? default(long); }
+
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SlaPeriod { get => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.IArchivePlanRpoDetailsInternal)Rpo).SlaPeriod = value ?? default(long); }
@@ -318,6 +340,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"overrideBase",
         PossibleTypes = new [] { typeof(string) })]
         string ArchivingRuleOverrideBase { get; set; }
+        /// <summary>Archiving service policy id</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Archiving service policy id",
+        SerializedName = @"policyId",
+        PossibleTypes = new [] { typeof(string) })]
+        string ArchivingServicePolicyId { get; set; }
+        /// <summary>Tag ids</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tag ids",
+        SerializedName = @"tags",
+        PossibleTypes = new [] { typeof(string) })]
+        string ArchivingServicePolicyTags { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -537,6 +575,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"inheritedSLAPeriod",
         PossibleTypes = new [] { typeof(long) })]
         long? SlaInheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Database log SLA period in Minutes",
+        SerializedName = @"logSLAMinutes",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -598,6 +644,12 @@ namespace Commvault.Powershell.Models
         string ArchivingRuleOverrideBase { get; set; }
         /// <summary>Files which meet both time stamp and file size rules will be archived</summary>
         Commvault.Powershell.Models.IArchivePlanArchivingRules ArchivingRules { get; set; }
+        /// <summary>Create Archiving Service Policy Model for Archive Plan</summary>
+        Commvault.Powershell.Models.IArchivingServicePolicy ArchivingServicePolicy { get; set; }
+        /// <summary>Archiving service policy id</summary>
+        string ArchivingServicePolicyId { get; set; }
+        /// <summary>Tag ids</summary>
+        string ArchivingServicePolicyTags { get; set; }
 
         Commvault.Powershell.Models.IIdNameCount[] AssociatedEntities { get; set; }
 
@@ -684,6 +736,8 @@ namespace Commvault.Powershell.Models
         string SlaInheritedFrom { get; set; }
         /// <summary>Inherited SLA Period in Days</summary>
         long? SlaInheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>

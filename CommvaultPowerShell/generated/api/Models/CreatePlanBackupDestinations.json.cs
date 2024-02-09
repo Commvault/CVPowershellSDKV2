@@ -61,7 +61,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_snapshotOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("snapshotOptions"), out var __jsonSnapshotOptions) ? Commvault.Powershell.Models.CreatePlanSnapshotOptions.FromJson(__jsonSnapshotOptions) : SnapshotOptions;}
-            {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.IdName.FromJson(__jsonRegion) : Region;}
+            {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.IdNameGuid.FromJson(__jsonRegion) : Region;}
             {_destinations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("destinations"), out var __jsonDestinations) ? If( __jsonDestinations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ICreatePlanBackupDestination[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ICreatePlanBackupDestination) (Commvault.Powershell.Models.CreatePlanBackupDestination.FromJson(__u) )) ))() : null : Destinations;}
             AfterFromJson(json);
         }

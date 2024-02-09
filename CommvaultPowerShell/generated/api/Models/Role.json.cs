@@ -71,9 +71,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_globalConfigInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("globalConfigInfo"), out var __jsonGlobalConfigInfo) ? Commvault.Powershell.Models.GlobalConfigInfo.FromJson(__jsonGlobalConfigInfo) : GlobalConfigInfo;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
-            {_permissions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("permissions"), out var __jsonPermissions) ? If( __jsonPermissions as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPermissions[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPermissions) (Commvault.Powershell.Models.Permissions.FromJson(__u) )) ))() : null : Permissions;}
+            {_permissions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("permissions"), out var __jsonPermissions) ? If( __jsonPermissions as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPermissionCategoryType[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPermissionCategoryType) (Commvault.Powershell.Models.PermissionCategoryType.FromJson(__u) )) ))() : null : Permissions;}
             {_visibleToAll = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("visibleToAll"), out var __jsonVisibleToAll) ? (bool?)__jsonVisibleToAll : VisibleToAll;}
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("security"), out var __jsonSecurity) ? If( __jsonSecurity as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.ISecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.ISecurityAssoc) (Commvault.Powershell.Models.SecurityAssoc.FromJson(__p) )) ))() : null : Security;}
@@ -99,6 +100,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._globalConfigInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._globalConfigInfo.ToJson(null,serializationMode) : null, "globalConfigInfo" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             if (null != this._permissions)

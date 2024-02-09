@@ -61,6 +61,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_globalConfigInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("globalConfigInfo"), out var __jsonGlobalConfigInfo) ? Commvault.Powershell.Models.CreateGlobalConfigInfo.FromJson(__jsonGlobalConfigInfo) : GlobalConfigInfo;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_permissionList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("permissionList"), out var __jsonPermissionList) ? If( __jsonPermissionList as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPermissions[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPermissions) (Commvault.Powershell.Models.Permissions.FromJson(__u) )) ))() : null : PermissionList;}
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
@@ -97,6 +98,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._globalConfigInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._globalConfigInfo.ToJson(null,serializationMode) : null, "globalConfigInfo" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             if (null != this._permissionList)
             {

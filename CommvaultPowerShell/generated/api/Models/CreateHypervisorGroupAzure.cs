@@ -17,7 +17,7 @@ namespace Commvault.Powershell.Models
         private Commvault.Powershell.Models.ICreateHypervisorGroupReq __createHypervisorGroupReq = new Commvault.Powershell.Models.CreateHypervisorGroupReq();
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
 
         /// <summary>Backing field for <see cref="ApplicationId" /> property.</summary>
         private string _applicationId;
@@ -102,6 +102,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string TenantId { get => this._tenantId; set => this._tenantId = value; }
 
+        /// <summary>Backing field for <see cref="UseManagedIdentity" /> property.</summary>
+        private bool? _useManagedIdentity;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? UseManagedIdentity { get => this._useManagedIdentity; set => this._useManagedIdentity = value; }
+
         /// <summary>Backing field for <see cref="WorkloadRegion" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _workloadRegion;
 
@@ -171,12 +177,20 @@ namespace Commvault.Powershell.Models
         string SubscriptionId { get; set; }
         /// <summary>Tenant id of Azure login Application</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"Tenant id of Azure login Application",
         SerializedName = @"tenantId",
         PossibleTypes = new [] { typeof(string) })]
         string TenantId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"useManagedIdentity",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? UseManagedIdentity { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -209,6 +223,8 @@ namespace Commvault.Powershell.Models
         string SubscriptionId { get; set; }
         /// <summary>Tenant id of Azure login Application</summary>
         string TenantId { get; set; }
+
+        bool? UseManagedIdentity { get; set; }
 
         Commvault.Powershell.Models.IIdName WorkloadRegion { get; set; }
 

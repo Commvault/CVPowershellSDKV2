@@ -93,7 +93,6 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).Plans = (Commvault.Powershell.Models.IPlanSummary[]) content.GetValueForProperty("Plans",((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).Plans, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSummary>(__y, Commvault.Powershell.Models.PlanSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).PlansCount = (long?) content.GetValueForProperty("PlansCount",((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).PlansCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -112,7 +111,6 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).Plans = (Commvault.Powershell.Models.IPlanSummary[]) content.GetValueForProperty("Plans",((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).Plans, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IPlanSummary>(__y, Commvault.Powershell.Models.PlanSummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).PlansCount = (long?) content.GetValueForProperty("PlansCount",((Commvault.Powershell.Models.IPlanSummaryListRespInternal)this).PlansCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

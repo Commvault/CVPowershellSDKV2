@@ -17,13 +17,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.ICompanySummary[] Companies { get => this._companies; set => this._companies = value; }
 
-        /// <summary>Backing field for <see cref="CompanyCount" /> property.</summary>
-        private long? _companyCount;
-
-        /// <summary>Total number of companies</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public long? CompanyCount { get => this._companyCount; set => this._companyCount = value; }
-
         /// <summary>Creates an new <see cref="CompanyListResponse" /> instance.</summary>
         public CompanyListResponse()
         {
@@ -41,14 +34,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"companies",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICompanySummary) })]
         Commvault.Powershell.Models.ICompanySummary[] Companies { get; set; }
-        /// <summary>Total number of companies</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Total number of companies",
-        SerializedName = @"companyCount",
-        PossibleTypes = new [] { typeof(long) })]
-        long? CompanyCount { get; set; }
 
     }
     /// List of existing companies
@@ -56,8 +41,6 @@ namespace Commvault.Powershell.Models
 
     {
         Commvault.Powershell.Models.ICompanySummary[] Companies { get; set; }
-        /// <summary>Total number of companies</summary>
-        long? CompanyCount { get; set; }
 
     }
 }

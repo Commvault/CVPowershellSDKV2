@@ -19,7 +19,7 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? AdvancedOptionDelayBetweenPriorityMachines { get => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).DelayBetweenPriorityMachines; set => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).DelayBetweenPriorityMachines = value ?? default(long); }
 
-        /// <summary>All the scripts of replication group</summary>
+        /// <summary>Pre/post failover and failback scripts at group level</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.IReplicationGroupScript AdvancedOptionScript { get => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).Script; set => ((Commvault.Powershell.Models.IReplicationGroupAdvancedOptionsInternal)AdvancedOptions).Script = value ?? null /* model class */; }
 
@@ -80,11 +80,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"delayBetweenPriorityMachines",
         PossibleTypes = new [] { typeof(long) })]
         long? AdvancedOptionDelayBetweenPriorityMachines { get; set; }
-        /// <summary>All the scripts of replication group</summary>
+        /// <summary>Pre/post failover and failback scripts at group level</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"All the scripts of replication group",
+        Description = @"Pre/post failover and failback scripts at group level",
         SerializedName = @"script",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IReplicationGroupScript) })]
         Commvault.Powershell.Models.IReplicationGroupScript AdvancedOptionScript { get; set; }
@@ -122,7 +122,7 @@ namespace Commvault.Powershell.Models
         bool? AdvancedOptionContinueOnFailure { get; set; }
         /// <summary>The delay between machines in different priorities. Mention in minutes</summary>
         long? AdvancedOptionDelayBetweenPriorityMachines { get; set; }
-        /// <summary>All the scripts of replication group</summary>
+        /// <summary>Pre/post failover and failback scripts at group level</summary>
         Commvault.Powershell.Models.IReplicationGroupScript AdvancedOptionScript { get; set; }
         /// <summary>The advanced option for replication group</summary>
         Commvault.Powershell.Models.IReplicationGroupAdvancedOptions AdvancedOptions { get; set; }

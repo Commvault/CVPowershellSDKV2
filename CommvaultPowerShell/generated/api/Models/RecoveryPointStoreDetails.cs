@@ -32,6 +32,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IMountLocationDetails[] Locations { get => this._locations; set => this._locations = value; }
 
+        /// <summary>Backing field for <see cref="MaxPairs" /> property.</summary>
+        private string _maxPairs;
+
+        /// <summary>Maximum allowed pairs per RPStore</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string MaxPairs { get => this._maxPairs; set => this._maxPairs = value; }
+
         /// <summary>Backing field for <see cref="MaximumSize" /> property.</summary>
         private string _maximumSize;
 
@@ -94,6 +101,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"locations",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IMountLocationDetails) })]
         Commvault.Powershell.Models.IMountLocationDetails[] Locations { get; set; }
+        /// <summary>Maximum allowed pairs per RPStore</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Maximum allowed pairs per RPStore",
+        SerializedName = @"maxPairs",
+        PossibleTypes = new [] { typeof(string) })]
+        string MaxPairs { get; set; }
         /// <summary>Magnetic library capacity size</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -138,6 +153,8 @@ namespace Commvault.Powershell.Models
         string FreeSpace { get; set; }
         /// <summary>Mount Path locations details</summary>
         Commvault.Powershell.Models.IMountLocationDetails[] Locations { get; set; }
+        /// <summary>Maximum allowed pairs per RPStore</summary>
+        string MaxPairs { get; set; }
         /// <summary>Magnetic library capacity size</summary>
         string MaximumSize { get; set; }
         /// <summary>Interval window containing day and time details</summary>

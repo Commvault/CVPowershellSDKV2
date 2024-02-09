@@ -119,6 +119,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != (((object)this._userOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userOperationType.ToString()) : null, "userOperationType" ,container.Add );
             AddIf( null != this._allowMultipleCompanyMembers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._allowMultipleCompanyMembers) : null, "allowMultipleCompanyMembers" ,container.Add );
+            AddIf( null != this._doNotInheritRestrictConsoleTypes ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._doNotInheritRestrictConsoleTypes) : null, "doNotInheritRestrictConsoleTypes" ,container.Add );
             AddIf( null != (((object)this._consoleTypeOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._consoleTypeOperationType.ToString()) : null, "consoleTypeOperationType" ,container.Add );
             AddIf( null != (((object)this._azureGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._azureGuid.ToString()) : null, "azureGUID" ,container.Add );
             AfterToJson(ref container);
@@ -155,6 +156,7 @@ namespace Commvault.Powershell.Models
             {_users = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("users"), out var __jsonUsers) ? If( __jsonUsers as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : Users;}
             {_userOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userOperationType"), out var __jsonUserOperationType) ? (string)__jsonUserOperationType : (string)UserOperationType;}
             {_allowMultipleCompanyMembers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("allowMultipleCompanyMembers"), out var __jsonAllowMultipleCompanyMembers) ? (bool?)__jsonAllowMultipleCompanyMembers : AllowMultipleCompanyMembers;}
+            {_doNotInheritRestrictConsoleTypes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("doNotInheritRestrictConsoleTypes"), out var __jsonDoNotInheritRestrictConsoleTypes) ? (bool?)__jsonDoNotInheritRestrictConsoleTypes : DoNotInheritRestrictConsoleTypes;}
             {_consoleTypeOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("consoleTypeOperationType"), out var __jsonConsoleTypeOperationType) ? (string)__jsonConsoleTypeOperationType : (string)ConsoleTypeOperationType;}
             {_azureGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("azureGUID"), out var __jsonAzureGuid) ? (string)__jsonAzureGuid : (string)AzureGuid;}
             AfterFromJson(json);

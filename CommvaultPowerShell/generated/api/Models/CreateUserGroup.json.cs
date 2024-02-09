@@ -60,6 +60,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_globalConfigInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("globalConfigInfo"), out var __jsonGlobalConfigInfo) ? Commvault.Powershell.Models.CreateGlobalConfigInfo.FromJson(__jsonGlobalConfigInfo) : GlobalConfigInfo;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             {_enforceFsQuota = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enforceFSQuota"), out var __jsonEnforceFsQuota) ? (bool?)__jsonEnforceFsQuota : EnforceFsQuota;}
@@ -97,6 +98,7 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._globalConfigInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._globalConfigInfo.ToJson(null,serializationMode) : null, "globalConfigInfo" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AddIf( null != this._enforceFsQuota ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enforceFsQuota) : null, "enforceFSQuota" ,container.Add );

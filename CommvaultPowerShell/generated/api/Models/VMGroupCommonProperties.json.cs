@@ -78,7 +78,6 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             AddIf( null != this._indexingInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._indexingInfo.ToJson(null,serializationMode) : null, "indexingInfo" ,container.Add );
-            AddIf( null != this._hypervisor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._hypervisor.ToJson(null,serializationMode) : null, "hypervisor" ,container.Add );
             AddIf( null != this._instance ? (Commvault.Powershell.Runtime.Json.JsonNode) this._instance.ToJson(null,serializationMode) : null, "instance" ,container.Add );
             AddIf( null != this._backupset ? (Commvault.Powershell.Runtime.Json.JsonNode) this._backupset.ToJson(null,serializationMode) : null, "backupset" ,container.Add );
             AddIf( null != this._iDataAgent ? (Commvault.Powershell.Runtime.Json.JsonNode) this._iDataAgent.ToJson(null,serializationMode) : null, "iDataAgent" ,container.Add );
@@ -89,6 +88,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._showFullBackupLevel ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._showFullBackupLevel) : null, "showFullBackupLevel" ,container.Add );
             AddIf( null != this._isHypervisorDeconfigured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isHypervisorDeconfigured) : null, "isHypervisorDeconfigured" ,container.Add );
             AddIf( null != (((object)this._hypervisorType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._hypervisorType.ToString()) : null, "hypervisorType" ,container.Add );
+            AddIf( null != this._hypervisor ? (Commvault.Powershell.Runtime.Json.JsonNode) this._hypervisor.ToJson(null,serializationMode) : null, "hypervisor" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -106,7 +106,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_indexingInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("indexingInfo"), out var __jsonIndexingInfo) ? Commvault.Powershell.Models.IndexingInfo.FromJson(__jsonIndexingInfo) : IndexingInfo;}
-            {_hypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("hypervisor"), out var __jsonHypervisor) ? Commvault.Powershell.Models.HypervisorvmGroupCommonProp.FromJson(__jsonHypervisor) : Hypervisor;}
             {_instance = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("instance"), out var __jsonInstance) ? Commvault.Powershell.Models.IdName.FromJson(__jsonInstance) : Instance;}
             {_backupset = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("backupset"), out var __jsonBackupset) ? Commvault.Powershell.Models.IdName.FromJson(__jsonBackupset) : Backupset;}
             {_iDataAgent = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("iDataAgent"), out var __jsonIDataAgent) ? Commvault.Powershell.Models.IdName.FromJson(__jsonIDataAgent) : IDataAgent;}
@@ -117,6 +116,7 @@ namespace Commvault.Powershell.Models
             {_showFullBackupLevel = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("showFullBackupLevel"), out var __jsonShowFullBackupLevel) ? (bool?)__jsonShowFullBackupLevel : ShowFullBackupLevel;}
             {_isHypervisorDeconfigured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isHypervisorDeconfigured"), out var __jsonIsHypervisorDeconfigured) ? (bool?)__jsonIsHypervisorDeconfigured : IsHypervisorDeconfigured;}
             {_hypervisorType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("hypervisorType"), out var __jsonHypervisorType) ? (string)__jsonHypervisorType : (string)HypervisorType;}
+            {_hypervisor = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("hypervisor"), out var __jsonHypervisor) ? Commvault.Powershell.Models.HypervisorvmGroupCommonProp.FromJson(__jsonHypervisor) : Hypervisor;}
             AfterFromJson(json);
         }
     }

@@ -46,6 +46,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string SamlProtocolVersion { get => this._samlProtocolVersion; set => this._samlProtocolVersion = value; }
 
+        /// <summary>Backing field for <see cref="SecondaryCertificateData" /> property.</summary>
+        private string _secondaryCertificateData;
+
+        /// <summary>IDP's secondary certificate</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string SecondaryCertificateData { get => this._secondaryCertificateData; set => this._secondaryCertificateData = value; }
+
         /// <summary>Creates an new <see cref="SamlidpMetaDataReq" /> instance.</summary>
         public SamlidpMetaDataReq()
         {
@@ -96,6 +103,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"SAMLProtocolVersion",
         PossibleTypes = new [] { typeof(string) })]
         string SamlProtocolVersion { get; set; }
+        /// <summary>IDP's secondary certificate</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"IDP's secondary certificate",
+        SerializedName = @"secondaryCertificateData",
+        PossibleTypes = new [] { typeof(string) })]
+        string SecondaryCertificateData { get; set; }
 
     }
     /// SAML IDP meta data request
@@ -112,6 +127,8 @@ namespace Commvault.Powershell.Models
         string RedirectUrl { get; set; }
         /// <summary>SAML Protocol version</summary>
         string SamlProtocolVersion { get; set; }
+        /// <summary>IDP's secondary certificate</summary>
+        string SecondaryCertificateData { get; set; }
 
     }
 }

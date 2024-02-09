@@ -71,7 +71,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             {_plans = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("plans"), out var __jsonPlans) ? If( __jsonPlans as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPlanSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPlanSummary) (Commvault.Powershell.Models.PlanSummary.FromJson(__u) )) ))() : null : Plans;}
-            {_plansCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("plansCount"), out var __jsonPlansCount) ? (long?)__jsonPlansCount : PlansCount;}
             AfterFromJson(json);
         }
 
@@ -103,7 +102,6 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("plans",__w);
             }
-            AddIf( null != this._plansCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._plansCount) : null, "plansCount" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

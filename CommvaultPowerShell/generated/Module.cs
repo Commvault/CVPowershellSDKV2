@@ -10,7 +10,10 @@ namespace Commvault.Powershell
     /// <summary>A class that contains the module-common code and data.</summary>
     public partial class Module
     {
-        public global::System.Net.Http.HttpClientHandler _handler = new global::System.Net.Http.HttpClientHandler();
+        public global::System.Net.Http.HttpClientHandler _handler = new global::System.Net.Http.HttpClientHandler()
+        {
+            ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true
+        };
 
         /// <summary>the ISendAsync pipeline instance</summary>
         private Commvault.Powershell.Runtime.HttpPipeline _pipeline;

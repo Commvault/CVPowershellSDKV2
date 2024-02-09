@@ -18,8 +18,14 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string AvailabilityZone { get => this._availabilityZone; set => this._availabilityZone = value; }
 
+        /// <summary>Internal Acessors for OverrideReplicationOptionGuestCreds</summary>
+        Commvault.Powershell.Models.IGuestCredentialsCreate Commvault.Powershell.Models.IReplicationConfigurationAmazonInternal.OverrideReplicationOptionGuestCreds { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCreds; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCreds = value; }
+
         /// <summary>Internal Acessors for OverrideReplicationOptionNetwork</summary>
-        Commvault.Powershell.Models.INetwork Commvault.Powershell.Models.IReplicationConfigurationAmazonInternal.OverrideReplicationOptionNetwork { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).Network; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).Network = value; }
+        Commvault.Powershell.Models.IAmazonNetwork Commvault.Powershell.Models.IReplicationConfigurationAmazonInternal.OverrideReplicationOptionNetwork { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).Network; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).Network = value; }
+
+        /// <summary>Internal Acessors for OverrideReplicationOptionTestFailoverNetwork</summary>
+        Commvault.Powershell.Models.IAmazonNetwork Commvault.Powershell.Models.IReplicationConfigurationAmazonInternal.OverrideReplicationOptionTestFailoverNetwork { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetwork; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetwork = value; }
 
         /// <summary>Internal Acessors for OverrideReplicationOptions</summary>
         Commvault.Powershell.Models.IOverrideReplicationOptionsAmazon Commvault.Powershell.Models.IReplicationConfigurationAmazonInternal.OverrideReplicationOptions { get => (this._overrideReplicationOptions = this._overrideReplicationOptions ?? new Commvault.Powershell.Models.OverrideReplicationOptionsAmazon()); set { {_overrideReplicationOptions = value;} } }
@@ -31,6 +37,18 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string DestinationVM { get => this._destinationVM; set => this._destinationVM = value; }
 
+        /// <summary>The name of the computer</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredComputerName { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCredComputerName; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCredComputerName = value ?? null; }
+
+        /// <summary>The password of the user in Base64 format</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredPassword { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCredPassword; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCredPassword = value ?? null; }
+
+        /// <summary>The user to be used to access the computer</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredUserName { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCredUserName; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).GuestCredUserName = value ?? null; }
+
         /// <summary>Backing field for <see cref="InstanceType" /> property.</summary>
         private string _instanceType;
 
@@ -41,6 +59,10 @@ namespace Commvault.Powershell.Models
         /// <summary>Network display name</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string NetworkDisplayName { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).NetworkDisplayName; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).NetworkDisplayName = value ?? null; }
+
+        /// <summary>VPC Id of the network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string NetworkId { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).NetworkId; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).NetworkId = value ?? null; }
 
         /// <summary>Name of network</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -96,6 +118,22 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string SourceVM { get => this._sourceVM; set => this._sourceVM = value; }
 
+        /// <summary>Network display name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverNetworkDisplayName { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkDisplayName; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkDisplayName = value ?? null; }
+
+        /// <summary>VPC Id of the network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverNetworkId { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkId; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkId = value ?? null; }
+
+        /// <summary>Name of network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverNetworkName { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkName; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkName = value ?? null; }
+
+        /// <summary>subnet id of network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TestFailoverNetworkSubnetId { get => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkSubnetId; set => ((Commvault.Powershell.Models.IOverrideReplicationOptionsAmazonInternal)OverrideReplicationOptions).TestFailoverNetworkSubnetId = value ?? null; }
+
         /// <summary>Creates an new <see cref="ReplicationConfigurationAmazon" /> instance.</summary>
         public ReplicationConfigurationAmazon()
         {
@@ -122,6 +160,30 @@ namespace Commvault.Powershell.Models
         SerializedName = @"destinationVM",
         PossibleTypes = new [] { typeof(string) })]
         string DestinationVM { get; set; }
+        /// <summary>The name of the computer</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The name of the computer",
+        SerializedName = @"computerName",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredComputerName { get; set; }
+        /// <summary>The password of the user in Base64 format</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The password of the user in Base64 format",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredPassword { get; set; }
+        /// <summary>The user to be used to access the computer</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The user to be used to access the computer",
+        SerializedName = @"userName",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredUserName { get; set; }
         /// <summary>Provides the available CPU cores and memory for the instance.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -135,15 +197,23 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"Network display name",
-        SerializedName = @"networkDisplayName",
+        SerializedName = @"displayName",
         PossibleTypes = new [] { typeof(string) })]
         string NetworkDisplayName { get; set; }
+        /// <summary>VPC Id of the network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"VPC Id of the network",
+        SerializedName = @"networkId",
+        PossibleTypes = new [] { typeof(string) })]
+        string NetworkId { get; set; }
         /// <summary>Name of network</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"Name of network",
-        SerializedName = @"networkName",
+        SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string NetworkName { get; set; }
         /// <summary>subnet id of network</summary>
@@ -226,6 +296,38 @@ namespace Commvault.Powershell.Models
         SerializedName = @"sourceVM",
         PossibleTypes = new [] { typeof(string) })]
         string SourceVM { get; set; }
+        /// <summary>Network display name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Network display name",
+        SerializedName = @"displayName",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverNetworkDisplayName { get; set; }
+        /// <summary>VPC Id of the network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"VPC Id of the network",
+        SerializedName = @"networkId",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverNetworkId { get; set; }
+        /// <summary>Name of network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of network",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverNetworkName { get; set; }
+        /// <summary>subnet id of network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"subnet id of network",
+        SerializedName = @"subnetId",
+        PossibleTypes = new [] { typeof(string) })]
+        string TestFailoverNetworkSubnetId { get; set; }
 
     }
     /// Replication configuration for Amazon
@@ -236,10 +338,18 @@ namespace Commvault.Powershell.Models
         string AvailabilityZone { get; set; }
         /// <summary>Destination instance</summary>
         string DestinationVM { get; set; }
+        /// <summary>The name of the computer</summary>
+        string GuestCredComputerName { get; set; }
+        /// <summary>The password of the user in Base64 format</summary>
+        string GuestCredPassword { get; set; }
+        /// <summary>The user to be used to access the computer</summary>
+        string GuestCredUserName { get; set; }
         /// <summary>Provides the available CPU cores and memory for the instance.</summary>
         string InstanceType { get; set; }
         /// <summary>Network display name</summary>
         string NetworkDisplayName { get; set; }
+        /// <summary>VPC Id of the network</summary>
+        string NetworkId { get; set; }
         /// <summary>Name of network</summary>
         string NetworkName { get; set; }
         /// <summary>subnet id of network</summary>
@@ -252,12 +362,19 @@ namespace Commvault.Powershell.Models
         string OverrideReplicationOptionComputerName { get; set; }
         /// <summary>Encryption key if used</summary>
         string OverrideReplicationOptionEncryptionKey { get; set; }
+        /// <summary>
+        /// Faster performance can be achieved during replication by using the VSA access node running on the Amazon instance. Applicable
+        /// only if the source VM is Windows and the source hypervisor is not Amazon vendor.
+        /// </summary>
+        Commvault.Powershell.Models.IGuestCredentialsCreate OverrideReplicationOptionGuestCreds { get; set; }
         /// <summary>Display name for the destination instance</summary>
         string OverrideReplicationOptionInstanceName { get; set; }
         /// <summary>Provides the available CPU cores and memory for the instance.</summary>
         string OverrideReplicationOptionInstanceType { get; set; }
         /// <summary>Network interface for the destination instances</summary>
-        Commvault.Powershell.Models.INetwork OverrideReplicationOptionNetwork { get; set; }
+        Commvault.Powershell.Models.IAmazonNetwork OverrideReplicationOptionNetwork { get; set; }
+        /// <summary>Network interface for the destination instances</summary>
+        Commvault.Powershell.Models.IAmazonNetwork OverrideReplicationOptionTestFailoverNetwork { get; set; }
         /// <summary>Enable required drivers to be installed on the Amazon guest instance</summary>
         string OverrideReplicationOptionUserName { get; set; }
         /// <summary>Type of volume used for replication</summary>
@@ -266,6 +383,14 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IOverrideReplicationOptionsAmazon OverrideReplicationOptions { get; set; }
         /// <summary>Source instance</summary>
         string SourceVM { get; set; }
+        /// <summary>Network display name</summary>
+        string TestFailoverNetworkDisplayName { get; set; }
+        /// <summary>VPC Id of the network</summary>
+        string TestFailoverNetworkId { get; set; }
+        /// <summary>Name of network</summary>
+        string TestFailoverNetworkName { get; set; }
+        /// <summary>subnet id of network</summary>
+        string TestFailoverNetworkSubnetId { get; set; }
 
     }
 }

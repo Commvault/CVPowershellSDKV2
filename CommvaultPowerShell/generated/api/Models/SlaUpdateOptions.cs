@@ -35,6 +35,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ExclusionReason { get => this._exclusionReason; set => this._exclusionReason = value; }
 
+        /// <summary>Backing field for <see cref="LogSlaMinutes" /> property.</summary>
+        private long? _logSlaMinutes;
+
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? LogSlaMinutes { get => this._logSlaMinutes; set => this._logSlaMinutes = value; }
+
         /// <summary>Backing field for <see cref="SlaPeriod" /> property.</summary>
         private long? _slaPeriod;
 
@@ -84,6 +91,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"exclusionReason",
         PossibleTypes = new [] { typeof(string) })]
         string ExclusionReason { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Database log SLA period in Minutes",
+        SerializedName = @"logSLAMinutes",
+        PossibleTypes = new [] { typeof(long) })]
+        long? LogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -113,6 +128,8 @@ namespace Commvault.Powershell.Models
         bool? ExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
         string ExclusionReason { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        long? LogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>

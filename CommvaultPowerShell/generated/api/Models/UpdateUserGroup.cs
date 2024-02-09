@@ -53,6 +53,16 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ConsoleTypeOperationType { get => this._consoleTypeOperationType; set => this._consoleTypeOperationType = value; }
 
+        /// <summary>Backing field for <see cref="DoNotInheritRestrictConsoleTypes" /> property.</summary>
+        private bool? _doNotInheritRestrictConsoleTypes;
+
+        /// <summary>
+        /// Option to not inherit the RestrictConsoleTypes from the parent. By default the value is false, parent RestrictConsoleTypes
+        /// will be inherited.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? DoNotInheritRestrictConsoleTypes { get => this._doNotInheritRestrictConsoleTypes; set => this._doNotInheritRestrictConsoleTypes = value; }
+
         /// <summary>Backing field for <see cref="EnableLocalAuthentication" /> property.</summary>
         private string _enableLocalAuthentication;
 
@@ -235,6 +245,17 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string ConsoleTypeOperationType { get; set; }
         /// <summary>
+        /// Option to not inherit the RestrictConsoleTypes from the parent. By default the value is false, parent RestrictConsoleTypes
+        /// will be inherited.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Option to not inherit the RestrictConsoleTypes from the parent. By default the value is false, parent RestrictConsoleTypes will be inherited.",
+        SerializedName = @"doNotInheritRestrictConsoleTypes",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? DoNotInheritRestrictConsoleTypes { get; set; }
+        /// <summary>
         /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
         /// on user preferences. There will be usergroups that will not have this option.
         /// </summary>
@@ -398,6 +419,11 @@ namespace Commvault.Powershell.Models
         string AzureGuid { get; set; }
 
         string ConsoleTypeOperationType { get; set; }
+        /// <summary>
+        /// Option to not inherit the RestrictConsoleTypes from the parent. By default the value is false, parent RestrictConsoleTypes
+        /// will be inherited.
+        /// </summary>
+        bool? DoNotInheritRestrictConsoleTypes { get; set; }
         /// <summary>
         /// Allows two-factor authentication to be enabled for the specific types of usergroups. it can be turned on or off based
         /// on user preferences. There will be usergroups that will not have this option.

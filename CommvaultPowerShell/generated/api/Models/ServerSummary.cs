@@ -126,6 +126,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string OS { get => this._oS; set => this._oS = value; }
 
+        /// <summary>Backing field for <see cref="ServerGroups" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName[] _serverGroups;
+
+        /// <summary>List of server groups for this server</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IIdName[] ServerGroups { get => this._serverGroups; set => this._serverGroups = value; }
+
         /// <summary>Backing field for <see cref="Tags" /> property.</summary>
         private Commvault.Powershell.Models.IIdNameValue[] _tags;
 
@@ -281,6 +288,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"OS",
         PossibleTypes = new [] { typeof(string) })]
         string OS { get; set; }
+        /// <summary>List of server groups for this server</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of server groups for this server",
+        SerializedName = @"serverGroups",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
+        Commvault.Powershell.Models.IIdName[] ServerGroups { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -350,6 +365,8 @@ namespace Commvault.Powershell.Models
         string NetworkReadiness { get; set; }
         /// <summary>The operating system, for example, Windows Server 2008 R2 Enterprise.</summary>
         string OS { get; set; }
+        /// <summary>List of server groups for this server</summary>
+        Commvault.Powershell.Models.IIdName[] ServerGroups { get; set; }
 
         Commvault.Powershell.Models.IIdNameValue[] Tags { get; set; }
         /// <summary>Enum which specifies the status of update on a server</summary>

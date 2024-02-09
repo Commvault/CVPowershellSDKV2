@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using static Commvault.Powershell.Runtime.Extensions;
 
-    /// <summary>Create a hypervisor group with VMWare as the destination vendor</summary>
+    /// <summary>Create a hypervisor group with HyperV as the destination vendor</summary>
     public partial class CreateHypervisorGroupHyperV
     {
 

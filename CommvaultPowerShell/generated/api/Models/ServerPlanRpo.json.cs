@@ -76,6 +76,7 @@ namespace Commvault.Powershell.Models
             }
             {_backupFrequency = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("backupFrequency"), out var __jsonBackupFrequency) ? Commvault.Powershell.Models.PlanSchedules.FromJson(__jsonBackupFrequency) : BackupFrequency;}
             {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.SlaOptions.FromJson(__jsonSla) : Sla;}
+            {_synthfullCriteria = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SynthfullCriteria"), out var __jsonSynthfullCriteria) ? Commvault.Powershell.Models.SynthfullRetentionCriteria.FromJson(__jsonSynthfullCriteria) : SynthfullCriteria;}
             {_backupWindow = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("backupWindow"), out var __jsonBackupWindow) ? If( __jsonBackupWindow as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IDayAndTime[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IDayAndTime) (Commvault.Powershell.Models.DayAndTime.FromJson(__u) )) ))() : null : BackupWindow;}
             {_fullBackupWindow = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("fullBackupWindow"), out var __jsonFullBackupWindow) ? If( __jsonFullBackupWindow as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IDayAndTime[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IDayAndTime) (Commvault.Powershell.Models.DayAndTime.FromJson(__p) )) ))() : null : FullBackupWindow;}
             AfterFromJson(json);
@@ -102,6 +103,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._backupFrequency ? (Commvault.Powershell.Runtime.Json.JsonNode) this._backupFrequency.ToJson(null,serializationMode) : null, "backupFrequency" ,container.Add );
             AddIf( null != this._sla ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sla.ToJson(null,serializationMode) : null, "SLA" ,container.Add );
+            AddIf( null != this._synthfullCriteria ? (Commvault.Powershell.Runtime.Json.JsonNode) this._synthfullCriteria.ToJson(null,serializationMode) : null, "SynthfullCriteria" ,container.Add );
             if (null != this._backupWindow)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

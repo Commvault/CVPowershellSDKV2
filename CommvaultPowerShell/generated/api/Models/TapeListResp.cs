@@ -10,12 +10,12 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ITapeListRespInternal
     {
 
-        /// <summary>Backing field for <see cref="TapeList" /> property.</summary>
-        private Commvault.Powershell.Models.ITapeSummary[] _tapeList;
+        /// <summary>Backing field for <see cref="TapeStorage" /> property.</summary>
+        private Commvault.Powershell.Models.ITapeSummary[] _tapeStorage;
 
         /// <summary>List of tapes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.ITapeSummary[] TapeList { get => this._tapeList; set => this._tapeList = value; }
+        public Commvault.Powershell.Models.ITapeSummary[] TapeStorage { get => this._tapeStorage; set => this._tapeStorage = value; }
 
         /// <summary>Creates an new <see cref="TapeListResp" /> instance.</summary>
         public TapeListResp()
@@ -31,16 +31,16 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"List of tapes",
-        SerializedName = @"tapeList",
+        SerializedName = @"tapeStorage",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ITapeSummary) })]
-        Commvault.Powershell.Models.ITapeSummary[] TapeList { get; set; }
+        Commvault.Powershell.Models.ITapeSummary[] TapeStorage { get; set; }
 
     }
     internal partial interface ITapeListRespInternal
 
     {
         /// <summary>List of tapes</summary>
-        Commvault.Powershell.Models.ITapeSummary[] TapeList { get; set; }
+        Commvault.Powershell.Models.ITapeSummary[] TapeStorage { get; set; }
 
     }
 }

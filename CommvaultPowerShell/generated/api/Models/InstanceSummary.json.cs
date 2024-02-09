@@ -74,7 +74,6 @@ namespace Commvault.Powershell.Models
             {_client = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("client"), out var __jsonClient) ? Commvault.Powershell.Models.IdName.FromJson(__jsonClient) : Client;}
             {_lastBackup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("lastBackup"), out var __jsonLastBackup) ? Commvault.Powershell.Models.LastBackupJobInfo.FromJson(__jsonLastBackup) : LastBackup;}
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
-            {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.SlaDetails.FromJson(__jsonSla) : Sla;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_commcell = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("commcell"), out var __jsonCommcell) ? Commvault.Powershell.Models.CommcellInfo.FromJson(__jsonCommcell) : Commcell;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
@@ -85,6 +84,7 @@ namespace Commvault.Powershell.Models
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_notReadyReason = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("notReadyReason"), out var __jsonNotReadyReason) ? (string)__jsonNotReadyReason : (string)NotReadyReason;}
             {_applicationSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("applicationSize"), out var __jsonApplicationSize) ? (long?)__jsonApplicationSize : ApplicationSize;}
+            {_slaStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("SLAStatus"), out var __jsonSlaStatus) ? (string)__jsonSlaStatus : (string)SlaStatus;}
             AfterFromJson(json);
         }
 
@@ -110,7 +110,6 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._client ? (Commvault.Powershell.Runtime.Json.JsonNode) this._client.ToJson(null,serializationMode) : null, "client" ,container.Add );
             AddIf( null != this._lastBackup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._lastBackup.ToJson(null,serializationMode) : null, "lastBackup" ,container.Add );
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
-            AddIf( null != this._sla ? (Commvault.Powershell.Runtime.Json.JsonNode) this._sla.ToJson(null,serializationMode) : null, "SLA" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
             AddIf( null != this._commcell ? (Commvault.Powershell.Runtime.Json.JsonNode) this._commcell.ToJson(null,serializationMode) : null, "commcell" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
@@ -121,6 +120,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != (((object)this._notReadyReason)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._notReadyReason.ToString()) : null, "notReadyReason" ,container.Add );
             AddIf( null != this._applicationSize ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._applicationSize) : null, "applicationSize" ,container.Add );
+            AddIf( null != (((object)this._slaStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._slaStatus.ToString()) : null, "SLAStatus" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

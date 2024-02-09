@@ -20,6 +20,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ApplicationId { get => this._applicationId; set => this._applicationId = value; }
 
+        /// <summary>Backing field for <see cref="AuthType" /> property.</summary>
+        private string _authType;
+
+        /// <summary>
+        /// Aunthentication type applicable only for Cloud Accounts with Microsoft Azure as vendor.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AuthType { get => this._authType; set => this._authType = value; }
+
         /// <summary>Internal Acessors for Endpoints</summary>
         Commvault.Powershell.Models.IAzureEndpoints Commvault.Powershell.Models.IAzureCredentialContentWithTenantIdInternal.Endpoints { get => (this._endpoints = this._endpoints ?? new Commvault.Powershell.Models.AzureEndpoints()); set { {_endpoints = value;} } }
 
@@ -120,12 +129,22 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Unique Azure application ID</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Unique Azure application ID",
         SerializedName = @"applicationId",
         PossibleTypes = new [] { typeof(string) })]
         string ApplicationId { get; set; }
+        /// <summary>
+        /// Aunthentication type applicable only for Cloud Accounts with Microsoft Azure as vendor.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Aunthentication type applicable only for Cloud Accounts with Microsoft Azure as vendor.",
+        SerializedName = @"authType",
+        PossibleTypes = new [] { typeof(string) })]
+        string AuthType { get; set; }
         /// <summary>Updated description of Credential</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -160,7 +179,7 @@ namespace Commvault.Powershell.Models
         string EndpointStorage { get; set; }
         /// <summary>Azure cloud deployed region</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Azure cloud deployed region",
         SerializedName = @"environment",
@@ -168,7 +187,7 @@ namespace Commvault.Powershell.Models
         string Environment { get; set; }
         /// <summary>Application secret of Credential and must be in base64 encoded format.</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Application secret of Credential and must be in base64 encoded format.",
         SerializedName = @"newApplicationSecret",
@@ -192,7 +211,7 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ICredentialSecurityAssociations[] SecurityAssociations { get; set; }
         /// <summary>Unique Azure active directory ID</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Unique Azure active directory ID",
         SerializedName = @"tenantId",
@@ -238,6 +257,10 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Unique Azure application ID</summary>
         string ApplicationId { get; set; }
+        /// <summary>
+        /// Aunthentication type applicable only for Cloud Accounts with Microsoft Azure as vendor.
+        /// </summary>
+        string AuthType { get; set; }
         /// <summary>Updated description of Credential</summary>
         string Description { get; set; }
 

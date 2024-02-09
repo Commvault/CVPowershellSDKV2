@@ -11,6 +11,47 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IRoleInternal
     {
 
+        /// <summary>Internal Acessors for GlobalConfigInfo</summary>
+        Commvault.Powershell.Models.IGlobalConfigInfo Commvault.Powershell.Models.IRoleInternal.GlobalConfigInfo { get => (this._globalConfigInfo = this._globalConfigInfo ?? new Commvault.Powershell.Models.GlobalConfigInfo()); set { {_globalConfigInfo = value;} } }
+
+        /// <summary>Backing field for <see cref="GlobalConfigInfo" /> property.</summary>
+        private Commvault.Powershell.Models.IGlobalConfigInfo _globalConfigInfo;
+
+        /// <summary>Only applicable on Global CommCells</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IGlobalConfigInfo GlobalConfigInfo { get => (this._globalConfigInfo = this._globalConfigInfo ?? new Commvault.Powershell.Models.GlobalConfigInfo()); set => this._globalConfigInfo = value; }
+
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? GlobalConfigInfoApplyOnAllCommCells { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ApplyOnAllCommCells; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ApplyOnAllCommCells = value ?? default(bool); }
+
+        /// <summary>List of Service CommCells where the global configuration is applied</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Commcells; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Commcells = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoId { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Id; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Id = value ?? null; }
+
+        /// <summary>Indicates whether global configuration deletion has been started.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? GlobalConfigInfoIsMarkedForDeletion { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).IsMarkedForDeletion; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).IsMarkedForDeletion = value ?? default(bool); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoName { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Name; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Name = value ?? null; }
+
+        /// <summary>The entity level at which the config is applied.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoScope { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Scope; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Scope = value ?? null; }
+
+        /// <summary>CommCellEntityCache filter query string used for filtering the scope</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoScopeFilterQuery { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ScopeFilterQuery; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ScopeFilterQuery = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoStatus { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Status; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Status = value ?? null; }
+
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
 
@@ -26,11 +67,11 @@ namespace Commvault.Powershell.Models
         public string Name { get => this._name; set => this._name = value; }
 
         /// <summary>Backing field for <see cref="Permissions" /> property.</summary>
-        private Commvault.Powershell.Models.IPermissions[] _permissions;
+        private Commvault.Powershell.Models.IPermissionCategoryType[] _permissions;
 
         /// <summary>List of permissions associated with the role.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IPermissions[] Permissions { get => this._permissions; set => this._permissions = value; }
+        public Commvault.Powershell.Models.IPermissionCategoryType[] Permissions { get => this._permissions; set => this._permissions = value; }
 
         /// <summary>Backing field for <see cref="Security" /> property.</summary>
         private Commvault.Powershell.Models.ISecurityAssoc[] _security;
@@ -63,6 +104,72 @@ namespace Commvault.Powershell.Models
     public partial interface IRole :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones",
+        SerializedName = @"applyOnAllCommCells",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? GlobalConfigInfoApplyOnAllCommCells { get; set; }
+        /// <summary>List of Service CommCells where the global configuration is applied</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of Service CommCells where the global configuration is applied",
+        SerializedName = @"commcells",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IGlobalConfigCommcellInfo) })]
+        Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoId { get; set; }
+        /// <summary>Indicates whether global configuration deletion has been started.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Indicates whether global configuration deletion has been started.",
+        SerializedName = @"isMarkedForDeletion",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? GlobalConfigInfoIsMarkedForDeletion { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoName { get; set; }
+        /// <summary>The entity level at which the config is applied.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The entity level at which the config is applied.",
+        SerializedName = @"scope",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoScope { get; set; }
+        /// <summary>CommCellEntityCache filter query string used for filtering the scope</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"CommCellEntityCache filter query string used for filtering the scope",
+        SerializedName = @"scopeFilterQuery",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoScopeFilterQuery { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoStatus { get; set; }
         /// <summary>id of the role.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -85,8 +192,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"List of permissions associated with the role.",
         SerializedName = @"permissions",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPermissions) })]
-        Commvault.Powershell.Models.IPermissions[] Permissions { get; set; }
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPermissionCategoryType) })]
+        Commvault.Powershell.Models.IPermissionCategoryType[] Permissions { get; set; }
         /// <summary>Used to return the security association for the role</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -117,12 +224,32 @@ namespace Commvault.Powershell.Models
     internal partial interface IRoleInternal
 
     {
+        /// <summary>Only applicable on Global CommCells</summary>
+        Commvault.Powershell.Models.IGlobalConfigInfo GlobalConfigInfo { get; set; }
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        bool? GlobalConfigInfoApplyOnAllCommCells { get; set; }
+        /// <summary>List of Service CommCells where the global configuration is applied</summary>
+        Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get; set; }
+
+        string GlobalConfigInfoId { get; set; }
+        /// <summary>Indicates whether global configuration deletion has been started.</summary>
+        bool? GlobalConfigInfoIsMarkedForDeletion { get; set; }
+
+        string GlobalConfigInfoName { get; set; }
+        /// <summary>The entity level at which the config is applied.</summary>
+        string GlobalConfigInfoScope { get; set; }
+        /// <summary>CommCellEntityCache filter query string used for filtering the scope</summary>
+        string GlobalConfigInfoScopeFilterQuery { get; set; }
+
+        string GlobalConfigInfoStatus { get; set; }
         /// <summary>id of the role.</summary>
         long? Id { get; set; }
         /// <summary>name of the role.</summary>
         string Name { get; set; }
         /// <summary>List of permissions associated with the role.</summary>
-        Commvault.Powershell.Models.IPermissions[] Permissions { get; set; }
+        Commvault.Powershell.Models.IPermissionCategoryType[] Permissions { get; set; }
         /// <summary>Used to return the security association for the role</summary>
         Commvault.Powershell.Models.ISecurityAssoc[] Security { get; set; }
         /// <summary>Specifies whether the role has been enabled or disabled.</summary>

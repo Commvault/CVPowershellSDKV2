@@ -1,17 +1,17 @@
 Add-AEnums
-function Resubmit-CVJob {
+function Restart-CVJob {
     <#
     .SYNOPSIS
-        Resubmit the job specified by job Id.
+        Restart the job specified by job Id.
     
     .DESCRIPTION
-        Resubmit the job specified by job Id. 
+        Restart the job specified by job Id. 
     
     .PARAMETER JobId
-        Resubmit the job specified by JobId.
+        Restart the job specified by JobId.
     
     .EXAMPLE
-        Resubmit-CVJob -JobId 78
+        Restart-CVJob -JobId 78
         
     .OUTPUTS
         Outputs [PSCustomObject] containing result.

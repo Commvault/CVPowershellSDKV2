@@ -14,12 +14,12 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for SyncStatus</summary>
         Commvault.Powershell.Models.ISyncStatus1 Commvault.Powershell.Models.IServiceCommcellsInternal.SyncStatus { get => (this._syncStatus = this._syncStatus ?? new Commvault.Powershell.Models.SyncStatus1()); set { {_syncStatus = value;} } }
 
-        /// <summary>Backing field for <see cref="Hostname" /> property.</summary>
-        private string _hostname;
+        /// <summary>Backing field for <see cref="HostName" /> property.</summary>
+        private string _hostName;
 
         /// <summary>hostname of the Commcell</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string Hostname { get => this._hostname; set => this._hostname = value; }
+        public string HostName { get => this._hostName; set => this._hostName = value; }
 
         /// <summary>Backing field for <see cref="Id" /> property.</summary>
         private long? _id;
@@ -83,9 +83,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"hostname of the Commcell",
-        SerializedName = @"hostname",
+        SerializedName = @"hostName",
         PossibleTypes = new [] { typeof(string) })]
-        string Hostname { get; set; }
+        string HostName { get; set; }
         /// <summary>Id of the commcell</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -149,7 +149,7 @@ namespace Commvault.Powershell.Models
 
     {
         /// <summary>hostname of the Commcell</summary>
-        string Hostname { get; set; }
+        string HostName { get; set; }
         /// <summary>Id of the commcell</summary>
         long? Id { get; set; }
         /// <summary>Name of the commcell entity</summary>

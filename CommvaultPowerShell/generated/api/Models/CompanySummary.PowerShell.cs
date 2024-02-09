@@ -63,7 +63,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Tags = (Commvault.Powershell.Models.IIdNameValue) content.GetValueForProperty("Tags",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Tags, Commvault.Powershell.Models.IdNameValueTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Commcell = (Commvault.Powershell.Models.ICommcellNameDisplayNameInfo) content.GetValueForProperty("Commcell",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Commcell, Commvault.Powershell.Models.CommcellNameDisplayNameInfoTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name, global::System.Convert.ToString);
@@ -74,9 +73,6 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount = (long?) content.GetValueForProperty("AssociatedEntitiesCount",((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Operators = (Commvault.Powershell.Models.ICompanyOperator[]) content.GetValueForProperty("Operators",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Operators, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICompanyOperator>(__y, Commvault.Powershell.Models.CompanyOperatorTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagId = (long?) content.GetValueForProperty("TagId",((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagName = (string) content.GetValueForProperty("TagName",((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagValue = (string) content.GetValueForProperty("TagValue",((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagValue, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellName = (string) content.GetValueForProperty("CommcellName",((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellDisplayName = (string) content.GetValueForProperty("CommcellDisplayName",((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellDisplayName, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
@@ -96,7 +92,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Tags = (Commvault.Powershell.Models.IIdNameValue) content.GetValueForProperty("Tags",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Tags, Commvault.Powershell.Models.IdNameValueTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Commcell = (Commvault.Powershell.Models.ICommcellNameDisplayNameInfo) content.GetValueForProperty("Commcell",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Commcell, Commvault.Powershell.Models.CommcellNameDisplayNameInfoTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Name, global::System.Convert.ToString);
@@ -107,9 +102,6 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount = (long?) content.GetValueForProperty("AssociatedEntitiesCount",((Commvault.Powershell.Models.ICompanySummaryInternal)this).AssociatedEntitiesCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Status = (string) content.GetValueForProperty("Status",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Status, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).Operators = (Commvault.Powershell.Models.ICompanyOperator[]) content.GetValueForProperty("Operators",((Commvault.Powershell.Models.ICompanySummaryInternal)this).Operators, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICompanyOperator>(__y, Commvault.Powershell.Models.CompanyOperatorTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagId = (long?) content.GetValueForProperty("TagId",((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagId, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagName = (string) content.GetValueForProperty("TagName",((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagName, global::System.Convert.ToString);
-            ((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagValue = (string) content.GetValueForProperty("TagValue",((Commvault.Powershell.Models.ICompanySummaryInternal)this).TagValue, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellName = (string) content.GetValueForProperty("CommcellName",((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellName, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellDisplayName = (string) content.GetValueForProperty("CommcellDisplayName",((Commvault.Powershell.Models.ICompanySummaryInternal)this).CommcellDisplayName, global::System.Convert.ToString);
             AfterDeserializePSObject(content);

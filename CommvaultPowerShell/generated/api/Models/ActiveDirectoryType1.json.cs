@@ -62,6 +62,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             __ldapRequest = new Commvault.Powershell.Models.LdapRequest(json);
+            {_globalConfigInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("globalConfigInfo"), out var __jsonGlobalConfigInfo) ? Commvault.Powershell.Models.CreateGlobalConfigInfo.FromJson(__jsonGlobalConfigInfo) : GlobalConfigInfo;}
             {_directoryType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("directoryType"), out var __jsonDirectoryType) ? (string)__jsonDirectoryType : (string)DirectoryType;}
             {_netbiosName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("NETBIOSName"), out var __jsonNetbiosName) ? (string)__jsonNetbiosName : (string)NetbiosName;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
@@ -100,6 +101,7 @@ namespace Commvault.Powershell.Models
                 return container;
             }
             __ldapRequest?.ToJson(container, serializationMode);
+            AddIf( null != this._globalConfigInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._globalConfigInfo.ToJson(null,serializationMode) : null, "globalConfigInfo" ,container.Add );
             AddIf( null != (((object)this._directoryType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._directoryType.ToString()) : null, "directoryType" ,container.Add );
             AddIf( null != (((object)this._netbiosName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._netbiosName.ToString()) : null, "NETBIOSName" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );

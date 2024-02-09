@@ -10,6 +10,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal
     {
 
+        /// <summary>Backing field for <see cref="DdbDisks" /> property.</summary>
+        private Commvault.Powershell.Models.IDdbDiskInfo[] _ddbDisks;
+
+        /// <summary>List of DDB disks hosted on this MediaAgent</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IDdbDiskInfo[] DdbDisks { get => this._ddbDisks; set => this._ddbDisks = value; }
+
         /// <summary>Backing field for <see cref="DisplayName" /> property.</summary>
         private string _displayName;
 
@@ -75,6 +82,14 @@ namespace Commvault.Powershell.Models
     public partial interface IMediaAgentForDdbSummary :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>List of DDB disks hosted on this MediaAgent</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of DDB disks hosted on this MediaAgent",
+        SerializedName = @"DDBDisks",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IDdbDiskInfo) })]
+        Commvault.Powershell.Models.IDdbDiskInfo[] DdbDisks { get; set; }
         /// <summary>Display name of the media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -144,6 +159,8 @@ namespace Commvault.Powershell.Models
     internal partial interface IMediaAgentForDdbSummaryInternal
 
     {
+        /// <summary>List of DDB disks hosted on this MediaAgent</summary>
+        Commvault.Powershell.Models.IDdbDiskInfo[] DdbDisks { get; set; }
         /// <summary>Display name of the media agent.</summary>
         string DisplayName { get; set; }
         /// <summary>Id of the media agent.</summary>

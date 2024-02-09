@@ -99,6 +99,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExcludeFromSla = (bool?) content.GetValueForProperty("SlaExcludeFromSla",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaEnableAfterDelay = (long?) content.GetValueForProperty("SlaEnableAfterDelay",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaEnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExclusionReason = (string) content.GetValueForProperty("SlaExclusionReason",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExclusionReason, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaLogSlaMinutes = (long?) content.GetValueForProperty("SlaLogSlaMinutes",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaLogSlaMinutes, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -123,6 +124,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExcludeFromSla = (bool?) content.GetValueForProperty("SlaExcludeFromSla",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaEnableAfterDelay = (long?) content.GetValueForProperty("SlaEnableAfterDelay",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaEnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExclusionReason = (string) content.GetValueForProperty("SlaExclusionReason",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaExclusionReason, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaLogSlaMinutes = (long?) content.GetValueForProperty("SlaLogSlaMinutes",((Commvault.Powershell.Models.ILaptopPlanUpdateRpoInternal)this).SlaLogSlaMinutes, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

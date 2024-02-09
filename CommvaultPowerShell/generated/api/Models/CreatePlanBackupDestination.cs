@@ -46,7 +46,7 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IExtendedRetentionRules Commvault.Powershell.Models.ICreatePlanBackupDestinationInternal.ExtendedRetentionRules { get => (this._extendedRetentionRules = this._extendedRetentionRules ?? new Commvault.Powershell.Models.ExtendedRetentionRules()); set { {_extendedRetentionRules = value;} } }
 
         /// <summary>Internal Acessors for Region</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreatePlanBackupDestinationInternal.Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdName()); set { {_region = value;} } }
+        Commvault.Powershell.Models.IIdNameGuid Commvault.Powershell.Models.ICreatePlanBackupDestinationInternal.Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdNameGuid()); set { {_region = value;} } }
 
         /// <summary>Internal Acessors for SourceCopy</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreatePlanBackupDestinationInternal.SourceCopy { get => (this._sourceCopy = this._sourceCopy ?? new Commvault.Powershell.Models.IdName()); set { {_sourceCopy = value;} } }
@@ -86,6 +86,13 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string FullBackupTypesToCopy { get => this._fullBackupTypesToCopy; set => this._fullBackupTypesToCopy = value; }
+
+        /// <summary>Backing field for <see cref="IsConfiguredForReplication" /> property.</summary>
+        private bool? _isConfiguredForReplication;
+
+        /// <summary>Used if the copy is used for replication group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsConfiguredForReplication { get => this._isConfiguredForReplication; set => this._isConfiguredForReplication = value; }
 
         /// <summary>Backing field for <see cref="IsMirrorCopy" /> property.</summary>
         private bool? _isMirrorCopy;
@@ -134,16 +141,19 @@ namespace Commvault.Powershell.Models
         public bool? OverrideRetentionSettings { get => this._overrideRetentionSettings; set => this._overrideRetentionSettings = value; }
 
         /// <summary>Backing field for <see cref="Region" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _region;
+        private Commvault.Powershell.Models.IIdNameGuid _region;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdName()); set => this._region = value; }
+        internal Commvault.Powershell.Models.IIdNameGuid Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdNameGuid()); set => this._region = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id = value ?? default(long); }
+        public string RegionGuid { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Guid; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Guid = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionName { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name = value ?? null; }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RegionName { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
         private long? _retentionPeriodDays;
@@ -209,6 +219,15 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StoragePoolName { get => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)StoragePool).Name = value ?? null; }
+
+        /// <summary>Backing field for <see cref="StorageTemplateTags" /> property.</summary>
+        private Commvault.Powershell.Models.IIdNameValue[] _storageTemplateTags;
+
+        /// <summary>
+        /// It is used in Global config template plan creation. Needs in plan creation on global commcell
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IIdNameValue[] StorageTemplateTags { get => this._storageTemplateTags; set => this._storageTemplateTags = value; }
 
         /// <summary>Backing field for <see cref="StorageType" /> property.</summary>
         private string _storageType;
@@ -310,6 +329,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"fullBackupTypesToCopy",
         PossibleTypes = new [] { typeof(string) })]
         string FullBackupTypesToCopy { get; set; }
+        /// <summary>Used if the copy is used for replication group</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used if the copy is used for replication group",
+        SerializedName = @"isConfiguredForReplication",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsConfiguredForReplication { get; set; }
         /// <summary>Is this a mirror copy? Only considered when isSnapCopy is true.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -363,6 +390,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"overrideRetentionSettings",
         PossibleTypes = new [] { typeof(bool) })]
         bool? OverrideRetentionSettings { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"GUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string RegionGuid { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -467,6 +502,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string StoragePoolName { get; set; }
+        /// <summary>
+        /// It is used in Global config template plan creation. Needs in plan creation on global commcell
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"It is used in Global config template plan creation. Needs in plan creation on global commcell",
+        SerializedName = @"storageTemplateTags",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdNameValue) })]
+        Commvault.Powershell.Models.IIdNameValue[] StorageTemplateTags { get; set; }
         /// <summary>StorageType</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -545,6 +590,8 @@ namespace Commvault.Powershell.Models
         /// is LAST while adding new backup destination.
         /// </summary>
         string FullBackupTypesToCopy { get; set; }
+        /// <summary>Used if the copy is used for replication group</summary>
+        bool? IsConfiguredForReplication { get; set; }
         /// <summary>Is this a mirror copy? Only considered when isSnapCopy is true.</summary>
         bool? IsMirrorCopy { get; set; }
         /// <summary>Is this a snap copy? If isMirrorCopy is not set, then default is Vault/Replica.</summary>
@@ -563,7 +610,9 @@ namespace Commvault.Powershell.Models
         /// </summary>
         bool? OverrideRetentionSettings { get; set; }
 
-        Commvault.Powershell.Models.IIdName Region { get; set; }
+        Commvault.Powershell.Models.IIdNameGuid Region { get; set; }
+
+        string RegionGuid { get; set; }
 
         long? RegionId { get; set; }
 
@@ -600,6 +649,10 @@ namespace Commvault.Powershell.Models
         long? StoragePoolId { get; set; }
 
         string StoragePoolName { get; set; }
+        /// <summary>
+        /// It is used in Global config template plan creation. Needs in plan creation on global commcell
+        /// </summary>
+        Commvault.Powershell.Models.IIdNameValue[] StorageTemplateTags { get; set; }
         /// <summary>StorageType</summary>
         string StorageType { get; set; }
         /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>

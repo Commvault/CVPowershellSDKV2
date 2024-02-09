@@ -84,6 +84,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Notes { get => this._notes; set => this._notes = value; }
 
+        /// <summary>Backing field for <see cref="PinStatus" /> property.</summary>
+        private bool? _pinStatus;
+
+        /// <summary>Gives the Alert Pin Status. True if pinned and False if not pinned.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? PinStatus { get => this._pinStatus; set => this._pinStatus = value; }
+
         /// <summary>Backing field for <see cref="ReadStatus" /> property.</summary>
         private bool? _readStatus;
 
@@ -194,6 +201,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"notes",
         PossibleTypes = new [] { typeof(string) })]
         string Notes { get; set; }
+        /// <summary>Gives the Alert Pin Status. True if pinned and False if not pinned.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Gives the Alert Pin Status. True if pinned and False if not pinned.",
+        SerializedName = @"pinStatus",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? PinStatus { get; set; }
         /// <summary>Gives the Alert Read Status. True if Read and False if Unread</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -247,6 +262,8 @@ namespace Commvault.Powershell.Models
         long? JobId { get; set; }
         /// <summary>contains any descriptive note written for the alert</summary>
         string Notes { get; set; }
+        /// <summary>Gives the Alert Pin Status. True if pinned and False if not pinned.</summary>
+        bool? PinStatus { get; set; }
         /// <summary>Gives the Alert Read Status. True if Read and False if Unread</summary>
         bool? ReadStatus { get; set; }
         /// <summary>Alert Severity Level</summary>

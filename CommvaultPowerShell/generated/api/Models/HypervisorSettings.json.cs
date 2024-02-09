@@ -74,10 +74,10 @@ namespace Commvault.Powershell.Models
             {_regionInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("regionInfo"), out var __jsonRegionInfo) ? Commvault.Powershell.Models.RegionInfo.FromJson(__jsonRegionInfo) : RegionInfo;}
             {_timeZone = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("timeZone"), out var __jsonTimeZone) ? Commvault.Powershell.Models.IdName.FromJson(__jsonTimeZone) : TimeZone;}
             {_metricsMonitoringPolicy = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("metricsMonitoringPolicy"), out var __jsonMetricsMonitoringPolicy) ? Commvault.Powershell.Models.HypervisorMonitoringPolicy.FromJson(__jsonMetricsMonitoringPolicy) : MetricsMonitoringPolicy;}
-            {_customAttributes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("customAttributes"), out var __jsonCustomAttributes) ? Commvault.Powershell.Models.HypervisorCustomAttribute.FromJson(__jsonCustomAttributes) : CustomAttributes;}
-            {_guestCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("guestCredentials"), out var __jsonGuestCredentials) ? Commvault.Powershell.Models.IdName.FromJson(__jsonGuestCredentials) : GuestCredentials;}
-            {_applicationCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("applicationCredentials"), out var __jsonApplicationCredentials) ? Commvault.Powershell.Models.IdName.FromJson(__jsonApplicationCredentials) : ApplicationCredentials;}
+            {_guestCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("guestCredentials"), out var __jsonGuestCredentials) ? Commvault.Powershell.Models.UserNamePassword.FromJson(__jsonGuestCredentials) : GuestCredentials;}
+            {_applicationCredentials = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("applicationCredentials"), out var __jsonApplicationCredentials) ? Commvault.Powershell.Models.UserNamePassword.FromJson(__jsonApplicationCredentials) : ApplicationCredentials;}
             {_mountAccessNode = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("mountAccessNode"), out var __jsonMountAccessNode) ? Commvault.Powershell.Models.IdName.FromJson(__jsonMountAccessNode) : MountAccessNode;}
+            {_customAttributes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("customAttributes"), out var __jsonCustomAttributes) ? If( __jsonCustomAttributes as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IHypervisorCustomAttribute[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IHypervisorCustomAttribute) (Commvault.Powershell.Models.HypervisorCustomAttribute.FromJson(__u) )) ))() : null : CustomAttributes;}
             AfterFromJson(json);
         }
 
@@ -103,10 +103,18 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._regionInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._regionInfo.ToJson(null,serializationMode) : null, "regionInfo" ,container.Add );
             AddIf( null != this._timeZone ? (Commvault.Powershell.Runtime.Json.JsonNode) this._timeZone.ToJson(null,serializationMode) : null, "timeZone" ,container.Add );
             AddIf( null != this._metricsMonitoringPolicy ? (Commvault.Powershell.Runtime.Json.JsonNode) this._metricsMonitoringPolicy.ToJson(null,serializationMode) : null, "metricsMonitoringPolicy" ,container.Add );
-            AddIf( null != this._customAttributes ? (Commvault.Powershell.Runtime.Json.JsonNode) this._customAttributes.ToJson(null,serializationMode) : null, "customAttributes" ,container.Add );
             AddIf( null != this._guestCredentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._guestCredentials.ToJson(null,serializationMode) : null, "guestCredentials" ,container.Add );
             AddIf( null != this._applicationCredentials ? (Commvault.Powershell.Runtime.Json.JsonNode) this._applicationCredentials.ToJson(null,serializationMode) : null, "applicationCredentials" ,container.Add );
             AddIf( null != this._mountAccessNode ? (Commvault.Powershell.Runtime.Json.JsonNode) this._mountAccessNode.ToJson(null,serializationMode) : null, "mountAccessNode" ,container.Add );
+            if (null != this._customAttributes)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._customAttributes )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("customAttributes",__w);
+            }
             AfterToJson(ref container);
             return container;
         }

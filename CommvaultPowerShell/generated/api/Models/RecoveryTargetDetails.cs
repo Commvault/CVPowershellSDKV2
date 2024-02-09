@@ -42,10 +42,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CloudDestinationOptionAvailabilityZone { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).AvailabilityZone; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).AvailabilityZone = value ?? null; }
 
-        /// <summary>Encryption key name needed to configure the destination VM</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CloudDestinationOptionEncryptionKeyName { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKeyName; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKeyName = value ?? null; }
-
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] CloudDestinationOptionInstanceTypes { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).InstanceTypes; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).InstanceTypes = value ?? null /* arrayOf */; }
 
@@ -57,16 +53,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? CloudDestinationOptionPublicIP { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).PublicIP; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).PublicIP = value ?? default(bool); }
 
-        /// <summary>Region of destination</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CloudDestinationOptionRegion { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).Region; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).Region = value ?? null; }
-
         /// <summary>If true, restore creates the destination VM as a managed VM in Azure</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? CloudDestinationOptionRestoreAsManagedVM { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).RestoreAsManagedVM; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).RestoreAsManagedVM = value ?? default(bool); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.INameValue[] CloudDestinationOptionSoleTenancyNodes { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).SoleTenancyNodes; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).SoleTenancyNodes = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.INameValue[] CloudDestinationOptionTags { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).Tags; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).Tags = value ?? null /* arrayOf */; }
 
         /// <summary>Disk / Volume type for test failover VM</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -95,21 +90,26 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CloudNetworkName { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).CloudNetworkName; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).CloudNetworkName = value ?? null; }
 
-        /// <summary>Subnet names of cloud network</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string[] CloudNetworkSubnetNames { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).CloudNetworkSubnetNames; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).CloudNetworkSubnetNames = value ?? null /* arrayOf */; }
-
         /// <summary>Internal Acessors for AccessNode</summary>
         Commvault.Powershell.Models.IIdNameType Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.AccessNode { get => (this._accessNode = this._accessNode ?? new Commvault.Powershell.Models.IdNameType()); set { {_accessNode = value;} } }
 
         /// <summary>Internal Acessors for AssociatedClientGroup</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.AssociatedClientGroup { get => (this._associatedClientGroup = this._associatedClientGroup ?? new Commvault.Powershell.Models.IdName()); set { {_associatedClientGroup = value;} } }
 
+        /// <summary>Internal Acessors for CloudDestinationOptionEncryptionKey</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.CloudDestinationOptionEncryptionKey { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKey; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKey = value; }
+
         /// <summary>Internal Acessors for CloudDestinationOptionMachineType</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.CloudDestinationOptionMachineType { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).MachineType; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).MachineType = value; }
 
+        /// <summary>Internal Acessors for CloudDestinationOptionRegion</summary>
+        Commvault.Powershell.Models.IRegion Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.CloudDestinationOptionRegion { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).Region; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).Region = value; }
+
         /// <summary>Internal Acessors for CloudDestinationOptions</summary>
         Commvault.Powershell.Models.ICloudDestinationOptions Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.CloudDestinationOptions { get => (this._cloudDestinationOptions = this._cloudDestinationOptions ?? new Commvault.Powershell.Models.CloudDestinationOptions()); set { {_cloudDestinationOptions = value;} } }
+
+        /// <summary>Internal Acessors for CloudNetworkSubnetNames</summary>
+        Commvault.Powershell.Models.INameValue Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.CloudNetworkSubnetNames { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).CloudNetworkSubnetNames; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).CloudNetworkSubnetNames = value; }
 
         /// <summary>Internal Acessors for DestinationOptionIamRole</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IRecoveryTargetDetailsInternal.DestinationOptionIamRole { get => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).IamRole; set => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).IamRole = value; }
@@ -169,6 +169,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationOptionDataStore { get => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).DataStore; set => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).DataStore = value ?? null; }
 
+        /// <summary>
+        /// Datastore cluster for the destination VM to store disks and config files in the datastore associated with the datastore
+        /// cluster.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string DestinationOptionDataStoreClusterName { get => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).DataStoreClusterName; set => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).DataStoreClusterName = value ?? null; }
+
         /// <summary>Destination host for the VM to deploy</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationOptionDestinationHost { get => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).DestinationHost; set => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).DestinationHost = value ?? null; }
@@ -177,7 +184,7 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationOptionResourcePoolPath { get => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).ResourcePoolPath; set => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).ResourcePoolPath = value ?? null; }
 
-        /// <summary>Folder path where the destination VM will be located,</summary>
+        /// <summary>Folder path where the destination VM will be located</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string DestinationOptionVMFolder { get => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).VMFolder; set => ((Commvault.Powershell.Models.IDestinationOptionsInternal)DestinationOptions).VMFolder = value ?? null; }
 
@@ -187,6 +194,12 @@ namespace Commvault.Powershell.Models
         /// <summary>DestinationOptions</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IDestinationOptions DestinationOptions { get => (this._destinationOptions = this._destinationOptions ?? new Commvault.Powershell.Models.DestinationOptions()); set => this._destinationOptions = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? EncryptionKeyId { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKeyId; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKeyId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string EncryptionKeyName { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKeyName; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).EncryptionKeyName = value ?? null; }
 
         /// <summary>Backing field for <see cref="Entity" /> property.</summary>
         private Commvault.Powershell.Models.IGetRecoveryTargetListSummary _entity;
@@ -271,9 +284,17 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string NetworkCardNetworkDisplayName { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardNetworkDisplayName; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardNetworkDisplayName = value ?? null; }
 
+        /// <summary>VPC id for the amazon network</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string NetworkCardNetworkId { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardNetworkId; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardNetworkId = value ?? null; }
+
         /// <summary>Name of network to which the nic is connected</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string[] NetworkCardNetworkNames { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardNetworkNames; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardNetworkNames = value ?? null /* arrayOf */; }
+
+        /// <summary>Subnet id of the subnet</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string NetworkCardSubnetId { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardSubnetId; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).NetworkCardSubnetId = value ?? null; }
 
         /// <summary>Backing field for <see cref="NetworkOptions" /> property.</summary>
         private Commvault.Powershell.Models.INetworkOptions _networkOptions;
@@ -304,15 +325,25 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IProvisioningOptions ProvisioningOptions { get => (this._provisioningOptions = this._provisioningOptions ?? new Commvault.Powershell.Models.ProvisioningOptions()); set => this._provisioningOptions = value; }
 
-        /// <summary>Name of security group that provides controlled access of the VM in cloud</summary>
+        /// <summary>GUID of the destination region.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SecurityOptionSecurityGroup { get => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).SecurityGroup; set => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).SecurityGroup = value ?? null; }
+        public string RegionId { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).RegionId; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).RegionId = value ?? null; }
 
         /// <summary>
-        /// Name of security groups that provide controlled access of the VM in cloud for test failover
+        /// Region name of destination. In-case of VMWare, region name refers to the destination host cluster name.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string[] SecurityOptionTestSecurityGroups { get => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).TestSecurityGroups; set => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).TestSecurityGroups = value ?? null /* arrayOf */; }
+        public string RegionName { get => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).RegionName; set => ((Commvault.Powershell.Models.ICloudDestinationOptionsInternal)CloudDestinationOptions).RegionName = value ?? null; }
+
+        /// <summary>List of security groups that provide controlled access of the DR VM</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.ISecurityGroup[] SecurityOptionSecurityGroups { get => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).SecurityGroups; set => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).SecurityGroups = value ?? null /* arrayOf */; }
+
+        /// <summary>
+        /// List of security groups that provide controlled access of the VM in cloud for test failover
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.ISecurityGroup[] SecurityOptionTestSecurityGroups { get => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).TestSecurityGroups; set => ((Commvault.Powershell.Models.ISecurityOptionsInternal)SecurityOptions).TestSecurityGroups = value ?? null /* arrayOf */; }
 
         /// <summary>User groups that have access to the recovery target</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -328,6 +359,12 @@ namespace Commvault.Powershell.Models
         /// <summary>SecurityOptions</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.ISecurityOptions SecurityOptions { get => (this._securityOptions = this._securityOptions ?? new Commvault.Powershell.Models.SecurityOptions()); set => this._securityOptions = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SubnetName { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).SubnetName; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).SubnetName = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SubnetNameValue { get => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).SubnetNameValue; set => ((Commvault.Powershell.Models.INetworkOptionsInternal)NetworkOptions).SubnetNameValue = value ?? null; }
 
         /// <summary>Backing field for <see cref="VMDisplayName" /> property.</summary>
         private Commvault.Powershell.Models.IVMDisplayName _vMDisplayName;
@@ -379,7 +416,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="VirtualLabOptions" /> property.</summary>
         private Commvault.Powershell.Models.IVirtualLabOptions _virtualLabOptions;
 
-        /// <summary>VirtualLabOptions</summary>
+        /// <summary>Virtual lab options configured in the recovery target</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IVirtualLabOptions VirtualLabOptions { get => (this._virtualLabOptions = this._virtualLabOptions ?? new Commvault.Powershell.Models.VirtualLabOptions()); set => this._virtualLabOptions = value; }
 
@@ -455,14 +492,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"availabilityZone",
         PossibleTypes = new [] { typeof(string) })]
         string CloudDestinationOptionAvailabilityZone { get; set; }
-        /// <summary>Encryption key name needed to configure the destination VM</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Encryption key name needed to configure the destination VM",
-        SerializedName = @"encryptionKeyName",
-        PossibleTypes = new [] { typeof(string) })]
-        string CloudDestinationOptionEncryptionKeyName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -487,14 +516,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"publicIP",
         PossibleTypes = new [] { typeof(bool) })]
         bool? CloudDestinationOptionPublicIP { get; set; }
-        /// <summary>Region of destination</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Region of destination",
-        SerializedName = @"region",
-        PossibleTypes = new [] { typeof(string) })]
-        string CloudDestinationOptionRegion { get; set; }
         /// <summary>If true, restore creates the destination VM as a managed VM in Azure</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -511,6 +532,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"soleTenancyNodes",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.INameValue) })]
         Commvault.Powershell.Models.INameValue[] CloudDestinationOptionSoleTenancyNodes { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"tags",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.INameValue) })]
+        Commvault.Powershell.Models.INameValue[] CloudDestinationOptionTags { get; set; }
         /// <summary>Disk / Volume type for test failover VM</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -551,14 +580,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"networkName",
         PossibleTypes = new [] { typeof(string) })]
         string CloudNetworkName { get; set; }
-        /// <summary>Subnet names of cloud network</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Subnet names of cloud network",
-        SerializedName = @"subnetNames",
-        PossibleTypes = new [] { typeof(string) })]
-        string[] CloudNetworkSubnetNames { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -586,6 +607,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"dataStore",
         PossibleTypes = new [] { typeof(string) })]
         string DestinationOptionDataStore { get; set; }
+        /// <summary>
+        /// Datastore cluster for the destination VM to store disks and config files in the datastore associated with the datastore
+        /// cluster.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Datastore cluster for the destination VM to store disks and config files in the datastore associated with the datastore cluster.",
+        SerializedName = @"dataStoreClusterName",
+        PossibleTypes = new [] { typeof(string) })]
+        string DestinationOptionDataStoreClusterName { get; set; }
         /// <summary>Destination host for the VM to deploy</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -602,14 +634,30 @@ namespace Commvault.Powershell.Models
         SerializedName = @"resourcePoolPath",
         PossibleTypes = new [] { typeof(string) })]
         string DestinationOptionResourcePoolPath { get; set; }
-        /// <summary>Folder path where the destination VM will be located,</summary>
+        /// <summary>Folder path where the destination VM will be located</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Folder path where the destination VM will be located,",
+        Description = @"Folder path where the destination VM will be located",
         SerializedName = @"vmFolder",
         PossibleTypes = new [] { typeof(string) })]
         string DestinationOptionVMFolder { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? EncryptionKeyId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string EncryptionKeyName { get; set; }
         /// <summary>Recovery target application type</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -754,6 +802,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"networkDisplayName",
         PossibleTypes = new [] { typeof(string) })]
         string NetworkCardNetworkDisplayName { get; set; }
+        /// <summary>VPC id for the amazon network</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"VPC id for the amazon network",
+        SerializedName = @"networkId",
+        PossibleTypes = new [] { typeof(string) })]
+        string NetworkCardNetworkId { get; set; }
         /// <summary>Name of network to which the nic is connected</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -762,6 +818,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"networkNames",
         PossibleTypes = new [] { typeof(string) })]
         string[] NetworkCardNetworkNames { get; set; }
+        /// <summary>Subnet id of the subnet</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Subnet id of the subnet",
+        SerializedName = @"subnetId",
+        PossibleTypes = new [] { typeof(string) })]
+        string NetworkCardSubnetId { get; set; }
         /// <summary>Maximum cores for the VM</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -794,24 +858,42 @@ namespace Commvault.Powershell.Models
         SerializedName = @"templates",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ITemplate) })]
         Commvault.Powershell.Models.ITemplate[] ProvisioningOptionTemplates { get; set; }
-        /// <summary>Name of security group that provides controlled access of the VM in cloud</summary>
+        /// <summary>GUID of the destination region.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Name of security group that provides controlled access of the VM in cloud",
-        SerializedName = @"securityGroup",
+        Description = @"GUID of the destination region.",
+        SerializedName = @"id",
         PossibleTypes = new [] { typeof(string) })]
-        string SecurityOptionSecurityGroup { get; set; }
+        string RegionId { get; set; }
         /// <summary>
-        /// Name of security groups that provide controlled access of the VM in cloud for test failover
+        /// Region name of destination. In-case of VMWare, region name refers to the destination host cluster name.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Name of security groups that provide controlled access of the VM in cloud for test failover",
-        SerializedName = @"testSecurityGroups",
+        Description = @"Region name of destination. In-case of VMWare, region name refers to the destination host cluster name.",
+        SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string[] SecurityOptionTestSecurityGroups { get; set; }
+        string RegionName { get; set; }
+        /// <summary>List of security groups that provide controlled access of the DR VM</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of security groups that provide controlled access of the DR VM",
+        SerializedName = @"securityGroups",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ISecurityGroup) })]
+        Commvault.Powershell.Models.ISecurityGroup[] SecurityOptionSecurityGroups { get; set; }
+        /// <summary>
+        /// List of security groups that provide controlled access of the VM in cloud for test failover
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of security groups that provide controlled access of the VM in cloud for test failover",
+        SerializedName = @"testSecurityGroups",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ISecurityGroup) })]
+        Commvault.Powershell.Models.ISecurityGroup[] SecurityOptionTestSecurityGroups { get; set; }
         /// <summary>User groups that have access to the recovery target</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -828,6 +910,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"users",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdNameFullName) })]
         Commvault.Powershell.Models.IIdNameFullName[] SecurityOptionUsers { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string SubnetName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string SubnetNameValue { get; set; }
         /// <summary>
         /// A prefix string that will be appended to the source VM to create a display name for each destination VM
         /// </summary>
@@ -935,8 +1033,8 @@ namespace Commvault.Powershell.Models
         string AssociatedClientGroupName { get; set; }
         /// <summary>Availability zone name for the destination instance</summary>
         string CloudDestinationOptionAvailabilityZone { get; set; }
-        /// <summary>Encryption key name needed to configure the destination VM</summary>
-        string CloudDestinationOptionEncryptionKeyName { get; set; }
+
+        Commvault.Powershell.Models.IIdName CloudDestinationOptionEncryptionKey { get; set; }
 
         string[] CloudDestinationOptionInstanceTypes { get; set; }
         /// <summary>Name of key pair that associates with the VM for authentication</summary>
@@ -945,12 +1043,14 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName CloudDestinationOptionMachineType { get; set; }
         /// <summary>If true, public IP address are configured for destination VMs</summary>
         bool? CloudDestinationOptionPublicIP { get; set; }
-        /// <summary>Region of destination</summary>
-        string CloudDestinationOptionRegion { get; set; }
+        /// <summary>Region</summary>
+        Commvault.Powershell.Models.IRegion CloudDestinationOptionRegion { get; set; }
         /// <summary>If true, restore creates the destination VM as a managed VM in Azure</summary>
         bool? CloudDestinationOptionRestoreAsManagedVM { get; set; }
 
         Commvault.Powershell.Models.INameValue[] CloudDestinationOptionSoleTenancyNodes { get; set; }
+
+        Commvault.Powershell.Models.INameValue[] CloudDestinationOptionTags { get; set; }
         /// <summary>Disk / Volume type for test failover VM</summary>
         string CloudDestinationOptionTestDiskType { get; set; }
         /// <summary>Instance type that provides the available cpu cores and memory to the machine</summary>
@@ -963,8 +1063,8 @@ namespace Commvault.Powershell.Models
         string CloudNetworkLabel { get; set; }
         /// <summary>Cloud network name</summary>
         string CloudNetworkName { get; set; }
-        /// <summary>Subnet names of cloud network</summary>
-        string[] CloudNetworkSubnetNames { get; set; }
+        /// <summary>NameValue</summary>
+        Commvault.Powershell.Models.INameValue CloudNetworkSubnetNames { get; set; }
 
         long? DestinationHypervisorId { get; set; }
 
@@ -974,16 +1074,25 @@ namespace Commvault.Powershell.Models
         /// to the destination folder for restore when default folder is not set.
         /// </summary>
         string DestinationOptionDataStore { get; set; }
+        /// <summary>
+        /// Datastore cluster for the destination VM to store disks and config files in the datastore associated with the datastore
+        /// cluster.
+        /// </summary>
+        string DestinationOptionDataStoreClusterName { get; set; }
         /// <summary>Destination host for the VM to deploy</summary>
         string DestinationOptionDestinationHost { get; set; }
 
         Commvault.Powershell.Models.IIdName DestinationOptionIamRole { get; set; }
         /// <summary>Resource pool for the destination VM</summary>
         string DestinationOptionResourcePoolPath { get; set; }
-        /// <summary>Folder path where the destination VM will be located,</summary>
+        /// <summary>Folder path where the destination VM will be located</summary>
         string DestinationOptionVMFolder { get; set; }
         /// <summary>DestinationOptions</summary>
         Commvault.Powershell.Models.IDestinationOptions DestinationOptions { get; set; }
+
+        long? EncryptionKeyId { get; set; }
+
+        string EncryptionKeyName { get; set; }
         /// <summary>GetRecoveryTargetListSummary</summary>
         Commvault.Powershell.Models.IGetRecoveryTargetListSummary Entity { get; set; }
         /// <summary>Recovery target application type</summary>
@@ -1030,8 +1139,12 @@ namespace Commvault.Powershell.Models
         string NetworkCardNetwork { get; set; }
         /// <summary>Selected network display name</summary>
         string NetworkCardNetworkDisplayName { get; set; }
+        /// <summary>VPC id for the amazon network</summary>
+        string NetworkCardNetworkId { get; set; }
         /// <summary>Name of network to which the nic is connected</summary>
         string[] NetworkCardNetworkNames { get; set; }
+        /// <summary>Subnet id of the subnet</summary>
+        string NetworkCardSubnetId { get; set; }
         /// <summary>CloudNetwork</summary>
         Commvault.Powershell.Models.ICloudNetwork NetworkOptionCloudNetwork { get; set; }
         /// <summary>NetworkCard</summary>
@@ -1048,18 +1161,28 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ITemplate[] ProvisioningOptionTemplates { get; set; }
         /// <summary>ProvisioningOptions</summary>
         Commvault.Powershell.Models.IProvisioningOptions ProvisioningOptions { get; set; }
-        /// <summary>Name of security group that provides controlled access of the VM in cloud</summary>
-        string SecurityOptionSecurityGroup { get; set; }
+        /// <summary>GUID of the destination region.</summary>
+        string RegionId { get; set; }
         /// <summary>
-        /// Name of security groups that provide controlled access of the VM in cloud for test failover
+        /// Region name of destination. In-case of VMWare, region name refers to the destination host cluster name.
         /// </summary>
-        string[] SecurityOptionTestSecurityGroups { get; set; }
+        string RegionName { get; set; }
+        /// <summary>List of security groups that provide controlled access of the DR VM</summary>
+        Commvault.Powershell.Models.ISecurityGroup[] SecurityOptionSecurityGroups { get; set; }
+        /// <summary>
+        /// List of security groups that provide controlled access of the VM in cloud for test failover
+        /// </summary>
+        Commvault.Powershell.Models.ISecurityGroup[] SecurityOptionTestSecurityGroups { get; set; }
         /// <summary>User groups that have access to the recovery target</summary>
         Commvault.Powershell.Models.IIdName[] SecurityOptionUserGroups { get; set; }
         /// <summary>Users that have access to the recovery target</summary>
         Commvault.Powershell.Models.IIdNameFullName[] SecurityOptionUsers { get; set; }
         /// <summary>SecurityOptions</summary>
         Commvault.Powershell.Models.ISecurityOptions SecurityOptions { get; set; }
+
+        string SubnetName { get; set; }
+
+        string SubnetNameValue { get; set; }
         /// <summary>Prefix or Suffix appended to create display name for destination instance</summary>
         Commvault.Powershell.Models.IVMDisplayName VMDisplayName { get; set; }
         /// <summary>
@@ -1084,7 +1207,7 @@ namespace Commvault.Powershell.Models
         string VirtualLabOptionGatewayTemplate { get; set; }
 
         Commvault.Powershell.Models.IVirtualLabIPSettings[] VirtualLabOptionIPSettings { get; set; }
-        /// <summary>VirtualLabOptions</summary>
+        /// <summary>Virtual lab options configured in the recovery target</summary>
         Commvault.Powershell.Models.IVirtualLabOptions VirtualLabOptions { get; set; }
         /// <summary>Zone</summary>
         Commvault.Powershell.Models.IZone Zone { get; set; }

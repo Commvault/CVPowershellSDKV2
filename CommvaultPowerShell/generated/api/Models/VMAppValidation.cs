@@ -82,9 +82,7 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string CopyName { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).Name; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).Name = value ?? null; }
 
-        /// <summary>
-        /// Order of backup destination copy created in storage policy. Primary copy will be used as default copy.
-        /// </summary>
+        /// <summary>Order of backup destinaion copy created in storage policy</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? CopyPrecedence { get => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).CopyPrecedence; set => ((Commvault.Powershell.Models.IAppValidationSourceCopyInternal)Copy).CopyPrecedence = value ?? default(long); }
 
@@ -297,13 +295,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string CopyName { get; set; }
-        /// <summary>
-        /// Order of backup destination copy created in storage policy. Primary copy will be used as default copy.
-        /// </summary>
+        /// <summary>Order of backup destinaion copy created in storage policy</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Order of backup destination copy created in storage policy. Primary copy will be used as default copy.",
+        Description = @"Order of backup destinaion copy created in storage policy",
         SerializedName = @"copyPrecedence",
         PossibleTypes = new [] { typeof(long) })]
         long? CopyPrecedence { get; set; }
@@ -570,9 +566,7 @@ namespace Commvault.Powershell.Models
         bool? CopyIsSnapCopy { get; set; }
         /// <summary>Name of the source copy</summary>
         string CopyName { get; set; }
-        /// <summary>
-        /// Order of backup destination copy created in storage policy. Primary copy will be used as default copy.
-        /// </summary>
+        /// <summary>Order of backup destinaion copy created in storage policy</summary>
         long? CopyPrecedence { get; set; }
         /// <summary>username to access the network path</summary>
         string CredentialsName { get; set; }

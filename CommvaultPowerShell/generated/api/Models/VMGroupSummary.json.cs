@@ -91,7 +91,6 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._isDefaultVMGroup ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDefaultVMGroup) : null, "isDefaultVMGroup" ,container.Add );
             AddIf( null != this._storagePolicyRetentionExtension ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._storagePolicyRetentionExtension) : null, "storagePolicyRetentionExtension" ,container.Add );
             AddIf( null != (((object)this._indexingStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._indexingStatus.ToString()) : null, "indexingStatus" ,container.Add );
-            AddIf( null != (((object)this._vMLevelFileIndexingStatus)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMLevelFileIndexingStatus.ToString()) : null, "vmLevelFileIndexingStatus" ,container.Add );
             AddIf( null != this._snapBackupEnabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._snapBackupEnabled) : null, "SnapBackupEnabled" ,container.Add );
             if (null != this._tags)
             {
@@ -132,7 +131,6 @@ namespace Commvault.Powershell.Models
             {_isDefaultVMGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDefaultVMGroup"), out var __jsonIsDefaultVMGroup) ? (bool?)__jsonIsDefaultVMGroup : IsDefaultVMGroup;}
             {_storagePolicyRetentionExtension = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("storagePolicyRetentionExtension"), out var __jsonStoragePolicyRetentionExtension) ? (bool?)__jsonStoragePolicyRetentionExtension : StoragePolicyRetentionExtension;}
             {_indexingStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("indexingStatus"), out var __jsonIndexingStatus) ? (string)__jsonIndexingStatus : (string)IndexingStatus;}
-            {_vMLevelFileIndexingStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmLevelFileIndexingStatus"), out var __jsonVMLevelFileIndexingStatus) ? (string)__jsonVMLevelFileIndexingStatus : (string)VMLevelFileIndexingStatus;}
             {_snapBackupEnabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("SnapBackupEnabled"), out var __jsonSnapBackupEnabled) ? (bool?)__jsonSnapBackupEnabled : SnapBackupEnabled;}
             {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tags"), out var __jsonTags) ? If( __jsonTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdNameValue[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdNameValue) (Commvault.Powershell.Models.IdNameValue.FromJson(__u) )) ))() : null : Tags;}
             AfterFromJson(json);

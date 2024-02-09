@@ -107,6 +107,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExcludeFromSla = (bool?) content.GetValueForProperty("SlaExcludeFromSla",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaEnableAfterDelay = (long?) content.GetValueForProperty("SlaEnableAfterDelay",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaEnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExclusionReason = (string) content.GetValueForProperty("SlaExclusionReason",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExclusionReason, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaLogSlaMinutes = (long?) content.GetValueForProperty("SlaLogSlaMinutes",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaLogSlaMinutes, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -135,6 +136,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExcludeFromSla = (bool?) content.GetValueForProperty("SlaExcludeFromSla",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaEnableAfterDelay = (long?) content.GetValueForProperty("SlaEnableAfterDelay",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaEnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExclusionReason = (string) content.GetValueForProperty("SlaExclusionReason",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaExclusionReason, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaLogSlaMinutes = (long?) content.GetValueForProperty("SlaLogSlaMinutes",((Commvault.Powershell.Models.IServerPlanUpdateRpoInternal)this).SlaLogSlaMinutes, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

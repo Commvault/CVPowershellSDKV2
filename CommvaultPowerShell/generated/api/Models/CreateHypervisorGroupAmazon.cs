@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Models
         public string AccessKey { get => this._accessKey; set => this._accessKey = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).AccessNodes = value; }
 
         /// <summary>Internal Acessors for HypervisorType</summary>
         string Commvault.Powershell.Models.ICreateHypervisorGroupAmazonInternal.HypervisorType { get => this._hypervisorType; set { {_hypervisorType = value;} } }
@@ -37,6 +37,12 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public string CredentialsName { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).CredentialsName = value; }
+
+        /// <summary>Backing field for <see cref="EnableAwsAdminAccount" /> property.</summary>
+        private bool? _enableAwsAdminAccount;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? EnableAwsAdminAccount { get => this._enableAwsAdminAccount; set => this._enableAwsAdminAccount = value; }
 
         /// <summary>Create an application group etcd (system generated) with pre-defined content</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
@@ -99,12 +105,19 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public bool? SkipCredentialValidation { get => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).SkipCredentialValidation; set => ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)__createHypervisorGroupReq).SkipCredentialValidation = value; }
 
+        /// <summary>Backing field for <see cref="UseHostedInfrastructure" /> property.</summary>
+        private bool? _useHostedInfrastructure;
+
+        /// <summary>Use Metallic hosted infrastructure</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? UseHostedInfrastructure { get => this._useHostedInfrastructure; set => this._useHostedInfrastructure = value; }
+
         /// <summary>Backing field for <see cref="UseIamRole" /> property.</summary>
-        private bool _useIamRole;
+        private bool? _useIamRole;
 
         /// <summary>if Iam Role is used</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public bool UseIamRole { get => this._useIamRole; set => this._useIamRole = value; }
+        public bool? UseIamRole { get => this._useIamRole; set => this._useIamRole = value; }
 
         /// <summary>Backing field for <see cref="UseServiceAccount" /> property.</summary>
         private string _useServiceAccount;
@@ -138,12 +151,20 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Access Key of Amazon login</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"Access Key of Amazon login",
         SerializedName = @"accessKey",
         PossibleTypes = new [] { typeof(string) })]
         string AccessKey { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"enableAWSAdminAccount",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? EnableAwsAdminAccount { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -170,20 +191,28 @@ namespace Commvault.Powershell.Models
         string RoleArn { get; set; }
         /// <summary>secret Key of Amazon login</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"secret Key of Amazon login",
         SerializedName = @"secretKey",
         PossibleTypes = new [] { typeof(string) })]
         string SecretKey { get; set; }
+        /// <summary>Use Metallic hosted infrastructure</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Use Metallic hosted infrastructure",
+        SerializedName = @"useHostedInfrastructure",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? UseHostedInfrastructure { get; set; }
         /// <summary>if Iam Role is used</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"if Iam Role is used",
         SerializedName = @"useIamRole",
         PossibleTypes = new [] { typeof(bool) })]
-        bool UseIamRole { get; set; }
+        bool? UseIamRole { get; set; }
         /// <summary>Clientname to be used as Admin Account</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -201,6 +230,8 @@ namespace Commvault.Powershell.Models
         /// <summary>Access Key of Amazon login</summary>
         string AccessKey { get; set; }
 
+        bool? EnableAwsAdminAccount { get; set; }
+
         string HypervisorType { get; set; }
         /// <summary>AWS region if Iam role is used</summary>
         string Region { get; set; }
@@ -208,8 +239,10 @@ namespace Commvault.Powershell.Models
         string RoleArn { get; set; }
         /// <summary>secret Key of Amazon login</summary>
         string SecretKey { get; set; }
+        /// <summary>Use Metallic hosted infrastructure</summary>
+        bool? UseHostedInfrastructure { get; set; }
         /// <summary>if Iam Role is used</summary>
-        bool UseIamRole { get; set; }
+        bool? UseIamRole { get; set; }
         /// <summary>Clientname to be used as Admin Account</summary>
         string UseServiceAccount { get; set; }
 

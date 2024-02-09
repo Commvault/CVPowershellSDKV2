@@ -78,6 +78,7 @@ namespace Commvault.Powershell.Models
             {_isDdbSubclientConfigured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isDDBSubclientConfigured"), out var __jsonIsDdbSubclientConfigured) ? (bool?)__jsonIsDdbSubclientConfigured : IsDdbSubclientConfigured;}
             {_oSType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("OSType"), out var __jsonOSType) ? (string)__jsonOSType : (string)OSType;}
             {_isConfigured = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isConfigured"), out var __jsonIsConfigured) ? (bool?)__jsonIsConfigured : IsConfigured;}
+            {_ddbDisks = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("DDBDisks"), out var __jsonDdbDisks) ? If( __jsonDdbDisks as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IDdbDiskInfo[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IDdbDiskInfo) (Commvault.Powershell.Models.DdbDiskInfo.FromJson(__u) )) ))() : null : DdbDisks;}
             AfterFromJson(json);
         }
 
@@ -108,6 +109,15 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._isDdbSubclientConfigured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isDdbSubclientConfigured) : null, "isDDBSubclientConfigured" ,container.Add );
             AddIf( null != (((object)this._oSType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._oSType.ToString()) : null, "OSType" ,container.Add );
             AddIf( null != this._isConfigured ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isConfigured) : null, "isConfigured" ,container.Add );
+            if (null != this._ddbDisks)
+            {
+                var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __x in this._ddbDisks )
+                {
+                    AddIf(__x?.ToJson(null, serializationMode) ,__w.Add);
+                }
+                container.Add("DDBDisks",__w);
+            }
             AfterToJson(ref container);
             return container;
         }

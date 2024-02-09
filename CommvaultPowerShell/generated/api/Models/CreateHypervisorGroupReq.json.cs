@@ -66,7 +66,7 @@ namespace Commvault.Powershell.Models
             {_planEntity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("planEntity"), out var __jsonPlanEntity) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlanEntity) : PlanEntity;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_skipCredentialValidation = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("skipCredentialValidation"), out var __jsonSkipCredentialValidation) ? (bool?)__jsonSkipCredentialValidation : SkipCredentialValidation;}
-            {_accessNodes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNodes"), out var __jsonAccessNodes) ? If( __jsonAccessNodes as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__u) )) ))() : null : AccessNodes;}
+            {_accessNodes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("accessNodes"), out var __jsonAccessNodes) ? If( __jsonAccessNodes as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAccessNodeModel[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAccessNodeModel) (Commvault.Powershell.Models.AccessNodeModel.FromJson(__u) )) ))() : null : AccessNodes;}
             AfterFromJson(json);
         }
 

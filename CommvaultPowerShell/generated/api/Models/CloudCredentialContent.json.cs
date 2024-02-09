@@ -71,7 +71,7 @@ namespace Commvault.Powershell.Models
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("security"), out var __jsonSecurity) ? Commvault.Powershell.Models.UpdateCredentialSecurity.FromJson(__jsonSecurity) : Security;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_accessKeyId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("accessKeyId"), out var __jsonAccessKeyId) ? (string)__jsonAccessKeyId : (string)AccessKeyId;}
-            {_newSecretAccessKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newSecretAccessKey"), out var __jsonNewSecretAccessKey) ? (string)__jsonNewSecretAccessKey : (string)NewSecretAccessKey;}
+            {_secretAccessKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("secretAccessKey"), out var __jsonSecretAccessKey) ? (string)__jsonSecretAccessKey : (string)SecretAccessKey;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             AfterFromJson(json);
         }
@@ -108,7 +108,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._security ? (Commvault.Powershell.Runtime.Json.JsonNode) this._security.ToJson(null,serializationMode) : null, "security" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
             AddIf( null != (((object)this._accessKeyId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._accessKeyId.ToString()) : null, "accessKeyId" ,container.Add );
-            AddIf( null != (((object)this._newSecretAccessKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newSecretAccessKey.ToString()) : null, "newSecretAccessKey" ,container.Add );
+            AddIf( null != (((object)this._secretAccessKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._secretAccessKey.ToString()) : null, "secretAccessKey" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AfterToJson(ref container);
             return container;

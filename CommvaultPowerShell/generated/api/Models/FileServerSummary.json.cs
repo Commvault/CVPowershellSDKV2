@@ -61,9 +61,9 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_lastBackup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("lastBackup"), out var __jsonLastBackup) ? Commvault.Powershell.Models.LastBackupJobInfo.FromJson(__jsonLastBackup) : LastBackup;}
+            {_lastBackup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("lastBackup"), out var __jsonLastBackup) ? Commvault.Powershell.Models.LastBackupJobInfoWithLastSuccessfulBackup.FromJson(__jsonLastBackup) : LastBackup;}
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
-            {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.SlaDetails.FromJson(__jsonSla) : Sla;}
+            {_sla = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("SLA"), out var __jsonSla) ? Commvault.Powershell.Models.SlaDetailsWithReasonEntity.FromJson(__jsonSla) : Sla;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}

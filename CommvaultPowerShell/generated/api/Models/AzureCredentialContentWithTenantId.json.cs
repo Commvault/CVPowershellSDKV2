@@ -65,6 +65,7 @@ namespace Commvault.Powershell.Models
             }
             {_endpoints = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("endpoints"), out var __jsonEndpoints) ? Commvault.Powershell.Models.AzureEndpoints.FromJson(__jsonEndpoints) : Endpoints;}
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("security"), out var __jsonSecurity) ? Commvault.Powershell.Models.CredentialSecurity.FromJson(__jsonSecurity) : Security;}
+            {_authType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("authType"), out var __jsonAuthType) ? (string)__jsonAuthType : (string)AuthType;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_tenantId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("tenantId"), out var __jsonTenantId) ? (string)__jsonTenantId : (string)TenantId;}
             {_applicationId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("applicationId"), out var __jsonApplicationId) ? (string)__jsonApplicationId : (string)ApplicationId;}
@@ -106,6 +107,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._endpoints ? (Commvault.Powershell.Runtime.Json.JsonNode) this._endpoints.ToJson(null,serializationMode) : null, "endpoints" ,container.Add );
             AddIf( null != this._security ? (Commvault.Powershell.Runtime.Json.JsonNode) this._security.ToJson(null,serializationMode) : null, "security" ,container.Add );
+            AddIf( null != (((object)this._authType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._authType.ToString()) : null, "authType" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
             AddIf( null != (((object)this._tenantId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._tenantId.ToString()) : null, "tenantId" ,container.Add );
             AddIf( null != (((object)this._applicationId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._applicationId.ToString()) : null, "applicationId" ,container.Add );

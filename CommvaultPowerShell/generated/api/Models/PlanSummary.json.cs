@@ -73,6 +73,7 @@ namespace Commvault.Powershell.Models
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_parentPlan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("parentPlan"), out var __jsonParentPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonParentPlan) : ParentPlan;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
+            {_globalConfigInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("globalConfigInfo"), out var __jsonGlobalConfigInfo) ? Commvault.Powershell.Models.GlobalConfigInfo.FromJson(__jsonGlobalConfigInfo) : GlobalConfigInfo;}
             {_planType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("planType"), out var __jsonPlanType) ? (string)__jsonPlanType : (string)PlanType;}
             {_targetApp = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("targetApp"), out var __jsonTargetApp) ? If( __jsonTargetApp as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<string[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(string) (__u is Commvault.Powershell.Runtime.Json.JsonString __t ? (string)(__t.ToString()) : null)) ))() : null : TargetApp;}
             {_associatedEntities = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("associatedEntities"), out var __jsonAssociatedEntities) ? (long?)__jsonAssociatedEntities : AssociatedEntities;}
@@ -109,6 +110,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._parentPlan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._parentPlan.ToJson(null,serializationMode) : null, "parentPlan" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
+            AddIf( null != this._globalConfigInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._globalConfigInfo.ToJson(null,serializationMode) : null, "globalConfigInfo" ,container.Add );
             AddIf( null != (((object)this._planType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._planType.ToString()) : null, "planType" ,container.Add );
             if (null != this._targetApp)
             {

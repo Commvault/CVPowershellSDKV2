@@ -5,7 +5,7 @@ namespace Commvault.Powershell.Models
 {
     using Commvault.Powershell.Runtime.PowerShell;
 
-    /// <summary>Create a hypervisor group with VMWare as the destination vendor</summary>
+    /// <summary>Create a hypervisor group with HyperV as the destination vendor</summary>
     [System.ComponentModel.TypeConverter(typeof(CreateHypervisorGroupHyperVTypeConverter))]
     public partial class CreateHypervisorGroupHyperV
     {
@@ -81,7 +81,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).PlanEntity = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("PlanEntity",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).PlanEntity, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).SkipCredentialValidation = (bool?) content.GetValueForProperty("SkipCredentialValidation",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).SkipCredentialValidation, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("AccessNodes",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes = (Commvault.Powershell.Models.IAccessNodeModel[]) content.GetValueForProperty("AccessNodes",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAccessNodeModel>(__y, Commvault.Powershell.Models.AccessNodeModelTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -116,7 +116,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).PlanEntity = (Commvault.Powershell.Models.IIdName) content.GetValueForProperty("PlanEntity",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).PlanEntity, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).SkipCredentialValidation = (bool?) content.GetValueForProperty("SkipCredentialValidation",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).SkipCredentialValidation, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
-            ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes = (Commvault.Powershell.Models.IIdName[]) content.GetValueForProperty("AccessNodes",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IIdName>(__y, Commvault.Powershell.Models.IdNameTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes = (Commvault.Powershell.Models.IAccessNodeModel[]) content.GetValueForProperty("AccessNodes",((Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal)this).AccessNodes, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IAccessNodeModel>(__y, Commvault.Powershell.Models.AccessNodeModelTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 
@@ -158,7 +158,7 @@ namespace Commvault.Powershell.Models
         /// <returns>a <see cref="System.String" /> containing this model serialized to JSON text.</returns>
         public string ToJsonString() => ToJson(null, Commvault.Powershell.Runtime.SerializationMode.IncludeAll)?.ToString();
     }
-    /// Create a hypervisor group with VMWare as the destination vendor
+    /// Create a hypervisor group with HyperV as the destination vendor
     [System.ComponentModel.TypeConverter(typeof(CreateHypervisorGroupHyperVTypeConverter))]
     public partial interface ICreateHypervisorGroupHyperV
 

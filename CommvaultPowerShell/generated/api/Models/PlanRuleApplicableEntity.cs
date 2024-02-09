@@ -65,26 +65,8 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Instance</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanRuleApplicableEntityInternal.Instance { get => (this._instance = this._instance ?? new Commvault.Powershell.Models.IdName()); set { {_instance = value;} } }
 
-        /// <summary>Internal Acessors for RuleDetailCompany</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanRuleApplicableEntityInternal.RuleDetailCompany { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Company; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Company = value; }
-
-        /// <summary>Internal Acessors for RuleDetailPlan</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanRuleApplicableEntityInternal.RuleDetailPlan { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Plan; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Plan = value; }
-
-        /// <summary>Internal Acessors for RuleDetailRule</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanRuleApplicableEntityInternal.RuleDetailRule { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Rule; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Rule = value; }
-
-        /// <summary>Internal Acessors for RuleDetails</summary>
-        Commvault.Powershell.Models.IPlanEntityRuleInfo Commvault.Powershell.Models.IPlanRuleApplicableEntityInternal.RuleDetails { get => (this._ruleDetails = this._ruleDetails ?? new Commvault.Powershell.Models.PlanEntityRuleInfo()); set { {_ruleDetails = value;} } }
-
         /// <summary>Internal Acessors for Subclient</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPlanRuleApplicableEntityInternal.Subclient { get => (this._subclient = this._subclient ?? new Commvault.Powershell.Models.IdName()); set { {_subclient = value;} } }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? CompanyId { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).CompanyId; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).CompanyId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CompanyName { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).CompanyName; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).CompanyName = value ?? null; }
 
         /// <summary>Backing field for <see cref="CurrentPlan" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _currentPlan;
@@ -122,58 +104,12 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
 
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? PlanId { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).PlanId; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).PlanId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string PlanName { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).PlanName; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).PlanName = value ?? null; }
-
-        /// <summary>This will suggest rank/priority of the plan rule.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RuleDetailRank { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Rank; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Rank = value ?? default(long); }
-
-        /// <summary>
-        /// This will include list of regions that should be evaluated against workload region for plan association
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IIdName[] RuleDetailRegions { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Regions; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Regions = value ?? null /* arrayOf */; }
-
-        /// <summary>
-        /// This will include list of Server groups that should be evaluated against workload server group for plan association
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IIdName[] RuleDetailServerGroups { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).ServerGroups; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).ServerGroups = value ?? null /* arrayOf */; }
-
-        /// <summary>
-        /// This will include list of solutions that should be evaluated against workload for plan association.
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IIdName[] RuleDetailSolutions { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Solutions; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Solutions = value ?? null /* arrayOf */; }
-
-        /// <summary>
-        /// This will include list of tags that should be evaluated against workload tags (if any) for plan association
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IPlanEntityRuleTag[] RuleDetailTags { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Tags; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Tags = value ?? null /* arrayOf */; }
-
-        /// <summary>
-        /// This will include list of apptypes that should be evaluated against workload for plan association
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IIdName[] RuleDetailWorkloads { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Workloads; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).Workloads = value ?? null /* arrayOf */; }
-
         /// <summary>Backing field for <see cref="RuleDetails" /> property.</summary>
         private Commvault.Powershell.Models.IPlanEntityRuleInfo _ruleDetails;
 
         /// <summary>This object will hold each plan rule details.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IPlanEntityRuleInfo RuleDetails { get => (this._ruleDetails = this._ruleDetails ?? new Commvault.Powershell.Models.PlanEntityRuleInfo()); set => this._ruleDetails = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RuleId { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).RuleId; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).RuleId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RuleName { get => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).RuleName; set => ((Commvault.Powershell.Models.IPlanEntityRuleInfoInternal)RuleDetails).RuleName = value ?? null; }
+        public Commvault.Powershell.Models.IPlanEntityRuleInfo RuleDetails { get => (this._ruleDetails = this._ruleDetails ?? new Commvault.Powershell.Models.PlanEntityRuleInfo()); set => this._ruleDetails = value; }
 
         /// <summary>Backing field for <see cref="Subclient" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _subclient;
@@ -251,22 +187,6 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? CompanyId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string CompanyName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
         long? CurrentPlanId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
@@ -308,96 +228,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string InstanceName { get; set; }
-
+        /// <summary>This object will hold each plan rule details.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? PlanId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string PlanName { get; set; }
-        /// <summary>This will suggest rank/priority of the plan rule.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"This will suggest rank/priority of the plan rule.",
-        SerializedName = @"rank",
-        PossibleTypes = new [] { typeof(long) })]
-        long? RuleDetailRank { get; set; }
-        /// <summary>
-        /// This will include list of regions that should be evaluated against workload region for plan association
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"This will include list of regions that should be evaluated against workload region for plan association",
-        SerializedName = @"regions",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] RuleDetailRegions { get; set; }
-        /// <summary>
-        /// This will include list of Server groups that should be evaluated against workload server group for plan association
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"This will include list of Server groups that should be evaluated against workload server group for plan association",
-        SerializedName = @"serverGroups",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] RuleDetailServerGroups { get; set; }
-        /// <summary>
-        /// This will include list of solutions that should be evaluated against workload for plan association.
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"This will include list of solutions that should be evaluated against workload for plan association.",
-        SerializedName = @"solutions",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] RuleDetailSolutions { get; set; }
-        /// <summary>
-        /// This will include list of tags that should be evaluated against workload tags (if any) for plan association
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"This will include list of tags that should be evaluated against workload tags (if any) for plan association",
-        SerializedName = @"tags",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanEntityRuleTag) })]
-        Commvault.Powershell.Models.IPlanEntityRuleTag[] RuleDetailTags { get; set; }
-        /// <summary>
-        /// This will include list of apptypes that should be evaluated against workload for plan association
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"This will include list of apptypes that should be evaluated against workload for plan association",
-        SerializedName = @"workloads",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] RuleDetailWorkloads { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? RuleId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string RuleName { get; set; }
+        Description = @"This object will hold each plan rule details.",
+        SerializedName = @"ruleDetails",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanEntityRuleInfo) })]
+        Commvault.Powershell.Models.IPlanEntityRuleInfo RuleDetails { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -438,10 +276,6 @@ namespace Commvault.Powershell.Models
 
         string ClientName { get; set; }
 
-        long? CompanyId { get; set; }
-
-        string CompanyName { get; set; }
-
         Commvault.Powershell.Models.IIdName CurrentPlan { get; set; }
 
         long? CurrentPlanId { get; set; }
@@ -459,44 +293,8 @@ namespace Commvault.Powershell.Models
         long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
-
-        long? PlanId { get; set; }
-
-        string PlanName { get; set; }
-
-        Commvault.Powershell.Models.IIdName RuleDetailCompany { get; set; }
-
-        Commvault.Powershell.Models.IIdName RuleDetailPlan { get; set; }
-        /// <summary>This will suggest rank/priority of the plan rule.</summary>
-        long? RuleDetailRank { get; set; }
-        /// <summary>
-        /// This will include list of regions that should be evaluated against workload region for plan association
-        /// </summary>
-        Commvault.Powershell.Models.IIdName[] RuleDetailRegions { get; set; }
-
-        Commvault.Powershell.Models.IIdName RuleDetailRule { get; set; }
-        /// <summary>
-        /// This will include list of Server groups that should be evaluated against workload server group for plan association
-        /// </summary>
-        Commvault.Powershell.Models.IIdName[] RuleDetailServerGroups { get; set; }
-        /// <summary>
-        /// This will include list of solutions that should be evaluated against workload for plan association.
-        /// </summary>
-        Commvault.Powershell.Models.IIdName[] RuleDetailSolutions { get; set; }
-        /// <summary>
-        /// This will include list of tags that should be evaluated against workload tags (if any) for plan association
-        /// </summary>
-        Commvault.Powershell.Models.IPlanEntityRuleTag[] RuleDetailTags { get; set; }
-        /// <summary>
-        /// This will include list of apptypes that should be evaluated against workload for plan association
-        /// </summary>
-        Commvault.Powershell.Models.IIdName[] RuleDetailWorkloads { get; set; }
         /// <summary>This object will hold each plan rule details.</summary>
         Commvault.Powershell.Models.IPlanEntityRuleInfo RuleDetails { get; set; }
-
-        long? RuleId { get; set; }
-
-        string RuleName { get; set; }
 
         Commvault.Powershell.Models.IIdName Subclient { get; set; }
 

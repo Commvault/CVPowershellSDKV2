@@ -68,6 +68,7 @@ namespace Commvault.Powershell.Models
             __commonCredentialInfo = new Commvault.Powershell.Models.CommonCredentialInfo(json);
             {_authType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("authType"), out var __jsonAuthType) ? (string)__jsonAuthType : (string)AuthType;}
             {_roleArn = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("roleArn"), out var __jsonRoleArn) ? (string)__jsonRoleArn : (string)RoleArn;}
+            {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? (string)__jsonPassword : (string)Password;}
             AfterFromJson(json);
         }
 
@@ -104,6 +105,7 @@ namespace Commvault.Powershell.Models
             __commonCredentialInfo?.ToJson(container, serializationMode);
             AddIf( null != (((object)this._authType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._authType.ToString()) : null, "authType" ,container.Add );
             AddIf( null != (((object)this._roleArn)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._roleArn.ToString()) : null, "roleArn" ,container.Add );
+            AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._password.ToString()) : null, "password" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

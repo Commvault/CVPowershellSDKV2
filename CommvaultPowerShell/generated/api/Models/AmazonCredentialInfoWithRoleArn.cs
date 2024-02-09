@@ -52,6 +52,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inherited)]
         public Commvault.Powershell.Models.IIdName OwnerUserGroup { get => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).OwnerUserGroup; set => ((Commvault.Powershell.Models.ICommonCredentialInfoInternal)__commonCredentialInfo).OwnerUserGroup = value; }
 
+        /// <summary>Backing field for <see cref="Password" /> property.</summary>
+        private string _password;
+
+        /// <summary>Role ARN of credential</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string Password { get => this._password; set => this._password = value; }
+
         /// <summary>Backing field for <see cref="RoleArn" /> property.</summary>
         private string _roleArn;
 
@@ -123,6 +130,14 @@ namespace Commvault.Powershell.Models
         string AuthType { get;  }
         /// <summary>Role ARN of credential</summary>
         [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Role ARN of credential",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string Password { get; set; }
+        /// <summary>Role ARN of credential</summary>
+        [Commvault.Powershell.Runtime.Info(
         Required = true,
         ReadOnly = false,
         Description = @"Role ARN of credential",
@@ -139,6 +154,8 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Aunthentication type.</summary>
         string AuthType { get; set; }
+        /// <summary>Role ARN of credential</summary>
+        string Password { get; set; }
         /// <summary>Role ARN of credential</summary>
         string RoleArn { get; set; }
 

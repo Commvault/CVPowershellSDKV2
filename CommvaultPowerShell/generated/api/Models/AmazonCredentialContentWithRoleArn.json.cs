@@ -66,6 +66,7 @@ namespace Commvault.Powershell.Models
             }
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("security"), out var __jsonSecurity) ? Commvault.Powershell.Models.UpdateCredentialSecurity.FromJson(__jsonSecurity) : Security;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
+            {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? (string)__jsonPassword : (string)Password;}
             {_roleArn = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("roleArn"), out var __jsonRoleArn) ? (string)__jsonRoleArn : (string)RoleArn;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             AfterFromJson(json);
@@ -103,6 +104,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._security ? (Commvault.Powershell.Runtime.Json.JsonNode) this._security.ToJson(null,serializationMode) : null, "security" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
+            AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._password.ToString()) : null, "password" ,container.Add );
             AddIf( null != (((object)this._roleArn)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._roleArn.ToString()) : null, "roleArn" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AfterToJson(ref container);

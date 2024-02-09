@@ -71,6 +71,7 @@ namespace Commvault.Powershell.Models
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             {_detectedTime = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("detectedTime"), out var __jsonDetectedTime) ? (long?)__jsonDetectedTime : DetectedTime;}
             {_readStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("readStatus"), out var __jsonReadStatus) ? (bool?)__jsonReadStatus : ReadStatus;}
+            {_pinStatus = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("pinStatus"), out var __jsonPinStatus) ? (bool?)__jsonPinStatus : PinStatus;}
             {_jobId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("jobId"), out var __jsonJobId) ? (long?)__jsonJobId : JobId;}
             AfterFromJson(json);
         }
@@ -114,6 +115,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AddIf( null != this._detectedTime ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._detectedTime) : null, "detectedTime" ,container.Add );
             AddIf( null != this._readStatus ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._readStatus) : null, "readStatus" ,container.Add );
+            AddIf( null != this._pinStatus ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._pinStatus) : null, "pinStatus" ,container.Add );
             AddIf( null != this._jobId ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._jobId) : null, "jobId" ,container.Add );
             AfterToJson(ref container);
             return container;

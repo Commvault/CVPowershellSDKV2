@@ -33,21 +33,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for General</summary>
         Commvault.Powershell.Models.IDiskStorageGeneralInfo Commvault.Powershell.Models.IDiskStorageInternal.General { get => (this._general = this._general ?? new Commvault.Powershell.Models.DiskStorageGeneralInfo()); set { {_general = value;} } }
 
-        /// <summary>Internal Acessors for Security</summary>
-        Commvault.Powershell.Models.ISecurityAssoc Commvault.Powershell.Models.IDiskStorageInternal.Security { get => (this._security = this._security ?? new Commvault.Powershell.Models.SecurityAssoc()); set { {_security = value;} } }
-
-        /// <summary>Internal Acessors for SecurityExternalUserGroup</summary>
-        Commvault.Powershell.Models.IExternalUserGroup Commvault.Powershell.Models.IDiskStorageInternal.SecurityExternalUserGroup { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroup; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroup = value; }
-
-        /// <summary>Internal Acessors for SecurityRole</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IDiskStorageInternal.SecurityRole { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).Role; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).Role = value; }
-
-        /// <summary>Internal Acessors for SecurityUser</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IDiskStorageInternal.SecurityUser { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).User; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).User = value; }
-
-        /// <summary>Internal Acessors for SecurityUserGroup</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IDiskStorageInternal.SecurityUserGroup { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroup; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroup = value; }
-
         /// <summary>Backing field for <see cref="Encryption" /> property.</summary>
         private Commvault.Powershell.Models.IEncryption _encryption;
 
@@ -70,22 +55,6 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? EncryptionKeyLength { get => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength; set => ((Commvault.Powershell.Models.IEncryptionInternal)Encryption).KeyLength = value ?? default(long); }
-
-        /// <summary>User Group Id</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? ExternalUserGroupId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupId = value ?? default(long); }
-
-        /// <summary>External Group Name</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string ExternalUserGroupName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupName = value ?? null; }
-
-        /// <summary>Provider id</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? ExternalUserGroupProviderId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderId = value ?? default(long); }
-
-        /// <summary>Provider Name</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string ExternalUserGroupProviderName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).ExternalUserGroupProviderName = value ?? null; }
 
         /// <summary>Backing field for <see cref="General" /> property.</summary>
         private Commvault.Powershell.Models.IDiskStorageGeneralInfo _general;
@@ -133,39 +102,11 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Name { get => this._name; set => this._name = value; }
 
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RoleId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RoleName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).RoleName = value ?? null; }
-
         /// <summary>Backing field for <see cref="Security" /> property.</summary>
-        private Commvault.Powershell.Models.ISecurityAssoc _security;
+        private Commvault.Powershell.Models.ISecurityAssoc[] _security;
 
-        /// <summary>
-        /// A list of users or user groups each having a specific set of roles that determine the kind of operations they can perform
-        /// on the entity.
-        /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.ISecurityAssoc Security { get => (this._security = this._security ?? new Commvault.Powershell.Models.SecurityAssoc()); set => this._security = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SecurityIsCreatorAssociation { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).IsCreatorAssociation; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).IsCreatorAssociation = value ?? default(bool); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IPermissionResp[] SecurityPermissionList { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).PermissionList; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).PermissionList = value ?? null /* arrayOf */; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? UserGroupId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string UserGroupName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserGroupName = value ?? null; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? UserId { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserId; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string UserName { get => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserName; set => ((Commvault.Powershell.Models.ISecurityAssocInternal)Security).UserName = value ?? null; }
+        public Commvault.Powershell.Models.ISecurityAssoc[] Security { get => this._security; set => this._security = value; }
 
         /// <summary>Creates an new <see cref="DiskStorage" /> instance.</summary>
         public DiskStorage()
@@ -221,38 +162,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"keyLength",
         PossibleTypes = new [] { typeof(long) })]
         long? EncryptionKeyLength { get; set; }
-        /// <summary>User Group Id</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"User Group Id",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? ExternalUserGroupId { get; set; }
-        /// <summary>External Group Name</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"External Group Name",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string ExternalUserGroupName { get; set; }
-        /// <summary>Provider id</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Provider id",
-        SerializedName = @"providerId",
-        PossibleTypes = new [] { typeof(long) })]
-        long? ExternalUserGroupProviderId { get; set; }
-        /// <summary>Provider Name</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Provider Name",
-        SerializedName = @"providerName",
-        PossibleTypes = new [] { typeof(string) })]
-        string ExternalUserGroupProviderName { get; set; }
         /// <summary>specifies the capacity of the storage pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -326,65 +235,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? RoleId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string RoleName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"isCreatorAssociation",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SecurityIsCreatorAssociation { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"permissionList",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPermissionResp) })]
-        Commvault.Powershell.Models.IPermissionResp[] SecurityPermissionList { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? UserGroupId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string UserGroupName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? UserId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string UserName { get; set; }
+        SerializedName = @"security",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ISecurityAssoc) })]
+        Commvault.Powershell.Models.ISecurityAssoc[] Security { get; set; }
 
     }
     internal partial interface IDiskStorageInternal
@@ -409,14 +262,6 @@ namespace Commvault.Powershell.Models
         long? EncryptionKeyLength { get; set; }
 
         Commvault.Powershell.Models.IIdName EncryptionKeyProvider { get; set; }
-        /// <summary>User Group Id</summary>
-        long? ExternalUserGroupId { get; set; }
-        /// <summary>External Group Name</summary>
-        string ExternalUserGroupName { get; set; }
-        /// <summary>Provider id</summary>
-        long? ExternalUserGroupProviderId { get; set; }
-        /// <summary>Provider Name</summary>
-        string ExternalUserGroupProviderName { get; set; }
 
         Commvault.Powershell.Models.IDiskStorageGeneralInfo General { get; set; }
         /// <summary>specifies the capacity of the storage pool</summary>
@@ -440,34 +285,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Name of the Disk Storage Pool</summary>
         string Name { get; set; }
 
-        long? RoleId { get; set; }
-
-        string RoleName { get; set; }
-        /// <summary>
-        /// A list of users or user groups each having a specific set of roles that determine the kind of operations they can perform
-        /// on the entity.
-        /// </summary>
-        Commvault.Powershell.Models.ISecurityAssoc Security { get; set; }
-        /// <summary>External User Group Entity</summary>
-        Commvault.Powershell.Models.IExternalUserGroup SecurityExternalUserGroup { get; set; }
-
-        bool? SecurityIsCreatorAssociation { get; set; }
-
-        Commvault.Powershell.Models.IPermissionResp[] SecurityPermissionList { get; set; }
-
-        Commvault.Powershell.Models.IIdName SecurityRole { get; set; }
-
-        Commvault.Powershell.Models.IIdName SecurityUser { get; set; }
-
-        Commvault.Powershell.Models.IIdName SecurityUserGroup { get; set; }
-
-        long? UserGroupId { get; set; }
-
-        string UserGroupName { get; set; }
-
-        long? UserId { get; set; }
-
-        string UserName { get; set; }
+        Commvault.Powershell.Models.ISecurityAssoc[] Security { get; set; }
 
     }
 }

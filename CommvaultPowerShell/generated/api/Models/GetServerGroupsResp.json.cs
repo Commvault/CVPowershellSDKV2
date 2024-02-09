@@ -71,7 +71,6 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_serverGroupCount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("serverGroupCount"), out var __jsonServerGroupCount) ? (long?)__jsonServerGroupCount : ServerGroupCount;}
             {_serverGroups = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("serverGroups"), out var __jsonServerGroups) ? If( __jsonServerGroups as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IServerGroupList[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IServerGroupList) (Commvault.Powershell.Models.ServerGroupList.FromJson(__u) )) ))() : null : ServerGroups;}
             AfterFromJson(json);
         }
@@ -95,7 +94,6 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._serverGroupCount ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._serverGroupCount) : null, "serverGroupCount" ,container.Add );
             if (null != this._serverGroups)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

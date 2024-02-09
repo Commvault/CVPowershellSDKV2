@@ -485,6 +485,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.ILaptopPlanRpoInternal)Rpo).SlaInheritedSlaPeriod; set => ((Commvault.Powershell.Models.ILaptopPlanRpoInternal)Rpo).SlaInheritedSlaPeriod = value ?? default(long); }
 
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SlaLogSlaMinutes { get => ((Commvault.Powershell.Models.ILaptopPlanRpoInternal)Rpo).SlaLogSlaMinutes; set => ((Commvault.Powershell.Models.ILaptopPlanRpoInternal)Rpo).SlaLogSlaMinutes = value ?? default(long); }
+
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SlaPeriod { get => ((Commvault.Powershell.Models.ILaptopPlanRpoInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.ILaptopPlanRpoInternal)Rpo).SlaPeriod = value ?? default(long); }
@@ -1130,6 +1134,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"inheritedSLAPeriod",
         PossibleTypes = new [] { typeof(long) })]
         long? SlaInheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Database log SLA period in Minutes",
+        SerializedName = @"logSLAMinutes",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -1414,6 +1426,8 @@ namespace Commvault.Powershell.Models
         string SlaInheritedFrom { get; set; }
         /// <summary>Inherited SLA Period in Days</summary>
         long? SlaInheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>

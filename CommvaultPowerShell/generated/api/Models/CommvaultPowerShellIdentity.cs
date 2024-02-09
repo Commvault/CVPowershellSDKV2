@@ -98,6 +98,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? ClientId { get => this._clientId; set => this._clientId = value; }
 
+        /// <summary>Backing field for <see cref="CloneId" /> property.</summary>
+        private long? _cloneId;
+
+        /// <summary>ID of the cloned bucket</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? CloneId { get => this._cloneId; set => this._cloneId = value; }
+
         /// <summary>Backing field for <see cref="CloudStorageId" /> property.</summary>
         private long? _cloudStorageId;
 
@@ -108,6 +115,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="ClusterId" /> property.</summary>
         private long? _clusterId;
 
+        /// <summary>Id of the cluster whose modifier has to be listed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? ClusterId { get => this._clusterId; set => this._clusterId = value; }
 
@@ -160,7 +168,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="EntityId" /> property.</summary>
         private long? _entityId;
 
-        /// <summary>Unique id for the entity</summary>
+        /// <summary>Recovery entity Id</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? EntityId { get => this._entityId; set => this._entityId = value; }
 
@@ -267,6 +275,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? MetadataCacheId { get => this._metadataCacheId; set => this._metadataCacheId = value; }
 
+        /// <summary>Backing field for <see cref="ModifierName" /> property.</summary>
+        private string _modifierName;
+
+        /// <summary>Name of the modifier to be read.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string ModifierName { get => this._modifierName; set => this._modifierName = value; }
+
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
@@ -296,9 +311,16 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="PlanId" /> property.</summary>
         private long? _planId;
 
-        /// <summary>Id of the plan to fetch details</summary>
+        /// <summary>Id of the object store plan to fetch details</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? PlanId { get => this._planId; set => this._planId = value; }
+
+        /// <summary>Backing field for <see cref="RecoveryGroupId" /> property.</summary>
+        private long? _recoveryGroupId;
+
+        /// <summary>Recovery group Id</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? RecoveryGroupId { get => this._recoveryGroupId; set => this._recoveryGroupId = value; }
 
         /// <summary>Backing field for <see cref="RecoveryTargetId" /> property.</summary>
         private long? _recoveryTargetId;
@@ -310,6 +332,7 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="RegionId" /> property.</summary>
         private long? _regionId;
 
+        /// <summary>Region id to be deleted.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? RegionId { get => this._regionId; set => this._regionId = value; }
 
@@ -323,10 +346,10 @@ namespace Commvault.Powershell.Models
         public string RegionList { get => this._regionList; set => this._regionList = value; }
 
         /// <summary>Backing field for <see cref="ReplicationGroupId" /> property.</summary>
-        private string _replicationGroupId;
+        private long? _replicationGroupId;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string ReplicationGroupId { get => this._replicationGroupId; set => this._replicationGroupId = value; }
+        public long? ReplicationGroupId { get => this._replicationGroupId; set => this._replicationGroupId = value; }
 
         /// <summary>Backing field for <see cref="RequestId" /> property.</summary>
         private long? _requestId;
@@ -440,7 +463,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Backing field for <see cref="VMGuid" /> property.</summary>
         private string _vMGuid;
 
-        /// <summary>GUID of the Provisioned VM</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string VMGuid { get => this._vMGuid; set => this._vMGuid = value; }
 
@@ -570,6 +592,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"clientId",
         PossibleTypes = new [] { typeof(long) })]
         long? ClientId { get; set; }
+        /// <summary>ID of the cloned bucket</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"ID of the cloned bucket",
+        SerializedName = @"cloneId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CloneId { get; set; }
         /// <summary>Id of cloud Storage</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -578,11 +608,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"cloudStorageId",
         PossibleTypes = new [] { typeof(long) })]
         long? CloudStorageId { get; set; }
-
+        /// <summary>Id of the cluster whose modifier has to be listed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"Id of the cluster whose modifier has to be listed.",
         SerializedName = @"clusterId",
         PossibleTypes = new [] { typeof(long) })]
         long? ClusterId { get; set; }
@@ -642,11 +672,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"driveId",
         PossibleTypes = new [] { typeof(long) })]
         long? DriveId { get; set; }
-        /// <summary>Unique id for the entity</summary>
+        /// <summary>Recovery entity Id</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Unique id for the entity",
+        Description = @"Recovery entity Id",
         SerializedName = @"entityId",
         PossibleTypes = new [] { typeof(long) })]
         long? EntityId { get; set; }
@@ -770,6 +800,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"metadataCacheId",
         PossibleTypes = new [] { typeof(long) })]
         long? MetadataCacheId { get; set; }
+        /// <summary>Name of the modifier to be read.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Name of the modifier to be read.",
+        SerializedName = @"ModifierName",
+        PossibleTypes = new [] { typeof(string) })]
+        string ModifierName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -802,14 +840,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"pairId",
         PossibleTypes = new [] { typeof(long) })]
         long? PairId { get; set; }
-        /// <summary>Id of the plan to fetch details</summary>
+        /// <summary>Id of the object store plan to fetch details</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Id of the plan to fetch details",
+        Description = @"Id of the object store plan to fetch details",
         SerializedName = @"planId",
         PossibleTypes = new [] { typeof(long) })]
         long? PlanId { get; set; }
+        /// <summary>Recovery group Id</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Recovery group Id",
+        SerializedName = @"recoveryGroupId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? RecoveryGroupId { get; set; }
         /// <summary>id of recovery target</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -818,11 +864,11 @@ namespace Commvault.Powershell.Models
         SerializedName = @"recoveryTargetId",
         PossibleTypes = new [] { typeof(long) })]
         long? RecoveryTargetId { get; set; }
-
+        /// <summary>Region id to be deleted.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"",
+        Description = @"Region id to be deleted.",
         SerializedName = @"regionId",
         PossibleTypes = new [] { typeof(long) })]
         long? RegionId { get; set; }
@@ -842,8 +888,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"",
         SerializedName = @"replicationGroupId",
-        PossibleTypes = new [] { typeof(string) })]
-        string ReplicationGroupId { get; set; }
+        PossibleTypes = new [] { typeof(long) })]
+        long? ReplicationGroupId { get; set; }
         /// <summary>Unique identifier for the request</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -972,12 +1018,12 @@ namespace Commvault.Powershell.Models
         SerializedName = @"VmGroupId",
         PossibleTypes = new [] { typeof(long) })]
         long? VMGroupId { get; set; }
-        /// <summary>GUID of the Provisioned VM</summary>
+
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"GUID of the Provisioned VM",
-        SerializedName = @"vmGUID",
+        Description = @"",
+        SerializedName = @"vmGuid",
         PossibleTypes = new [] { typeof(string) })]
         string VMGuid { get; set; }
         /// <summary>The vmUUID can be obtained from GET /virtualMachines UUID property</summary>
@@ -1027,9 +1073,11 @@ namespace Commvault.Powershell.Models
         long? BucketId { get; set; }
 
         long? ClientId { get; set; }
+        /// <summary>ID of the cloned bucket</summary>
+        long? CloneId { get; set; }
         /// <summary>Id of cloud Storage</summary>
         long? CloudStorageId { get; set; }
-
+        /// <summary>Id of the cluster whose modifier has to be listed.</summary>
         long? ClusterId { get; set; }
         /// <summary>Id of the Company whose details have to be fetched</summary>
         long? CompanyId { get; set; }
@@ -1045,7 +1093,7 @@ namespace Commvault.Powershell.Models
         string DrOperation { get; set; }
         /// <summary>Id of the Drive of which the drive details has to be displayed</summary>
         long? DriveId { get; set; }
-        /// <summary>Unique id for the entity</summary>
+        /// <summary>Recovery entity Id</summary>
         long? EntityId { get; set; }
         /// <summary>Type of the entity</summary>
         string EntityType { get; set; }
@@ -1077,6 +1125,8 @@ namespace Commvault.Powershell.Models
         long? MediaAgentId { get; set; }
         /// <summary>Id of metadata cache</summary>
         long? MetadataCacheId { get; set; }
+        /// <summary>Name of the modifier to be read.</summary>
+        string ModifierName { get; set; }
 
         string Name { get; set; }
         /// <summary>Name of the namespace to browse for content</summary>
@@ -1085,18 +1135,20 @@ namespace Commvault.Powershell.Models
         long? NodeId { get; set; }
 
         long? PairId { get; set; }
-        /// <summary>Id of the plan to fetch details</summary>
+        /// <summary>Id of the object store plan to fetch details</summary>
         long? PlanId { get; set; }
+        /// <summary>Recovery group Id</summary>
+        long? RecoveryGroupId { get; set; }
         /// <summary>id of recovery target</summary>
         long? RecoveryTargetId { get; set; }
-
+        /// <summary>Region id to be deleted.</summary>
         long? RegionId { get; set; }
         /// <summary>
         /// List of region names/ids to be deleted. If region ids are passed, set isRegionIdList=true
         /// </summary>
         string RegionList { get; set; }
 
-        string ReplicationGroupId { get; set; }
+        long? ReplicationGroupId { get; set; }
         /// <summary>Unique identifier for the request</summary>
         long? RequestId { get; set; }
         /// <summary>Role Id</summary>
@@ -1129,7 +1181,7 @@ namespace Commvault.Powershell.Models
         long? UserId { get; set; }
         /// <summary>Id of the VMgroup to update</summary>
         long? VMGroupId { get; set; }
-        /// <summary>GUID of the Provisioned VM</summary>
+
         string VMGuid { get; set; }
         /// <summary>The vmUUID can be obtained from GET /virtualMachines UUID property</summary>
         string VMUuid { get; set; }

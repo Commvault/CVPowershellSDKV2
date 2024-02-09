@@ -80,6 +80,7 @@ namespace Commvault.Powershell.Models
             {_vMOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmOperationType"), out var __jsonVMOperationType) ? (string)__jsonVMOperationType : (string)VMOperationType;}
             {_backupType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("backupType"), out var __jsonBackupType) ? (string)__jsonBackupType : (string)BackupType;}
             {_forDatabasesOnly = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("forDatabasesOnly"), out var __jsonForDatabasesOnly) ? (bool?)__jsonForDatabasesOnly : ForDatabasesOnly;}
+            {_isRetentionBasedSyntheticFull = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isRetentionBasedSyntheticFull"), out var __jsonIsRetentionBasedSyntheticFull) ? (bool?)__jsonIsRetentionBasedSyntheticFull : IsRetentionBasedSyntheticFull;}
             AfterFromJson(json);
         }
 
@@ -111,6 +112,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._vMOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMOperationType.ToString()) : null, "vmOperationType" ,container.Add );
             AddIf( null != (((object)this._backupType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._backupType.ToString()) : null, "backupType" ,container.Add );
             AddIf( null != this._forDatabasesOnly ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._forDatabasesOnly) : null, "forDatabasesOnly" ,container.Add );
+            AddIf( null != this._isRetentionBasedSyntheticFull ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isRetentionBasedSyntheticFull) : null, "isRetentionBasedSyntheticFull" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

@@ -11,11 +11,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal
     {
 
-        /// <summary>Backing field for <see cref="AccessNode" /> property.</summary>
-        private Commvault.Powershell.Models.IAccessNodeModel[] _accessNode;
+        /// <summary>Backing field for <see cref="AccessNodes" /> property.</summary>
+        private Commvault.Powershell.Models.IAccessNodeModel[] _accessNodes;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get => this._accessNode; set => this._accessNode = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get => this._accessNodes; set => this._accessNodes = value; }
 
         /// <summary>Backing field for <see cref="ActivityControl" /> property.</summary>
         private Commvault.Powershell.Models.IActivityControlOptions _activityControl;
@@ -31,40 +31,102 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? ActivityControlEnableRestore { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).EnableRestore; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).EnableRestore = value ?? default(bool); }
 
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>username to access the network path</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string BackupActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionDelayTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionDelayTime = value ?? null; }
+        public string ApplicationCredentialsName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).ApplicationCredentialsName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).ApplicationCredentialsName = value ?? null; }
+
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string ApplicationCredentialsPassword { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).ApplicationCredentialsPassword; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).ApplicationCredentialsPassword = value ?? null; }
+
+        /// <summary>denotes the activity type being considered</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupActivityControlOptionActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionActivityType = value ?? null; }
+
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? BackupActivityControlOptionEnableActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableActivityType = value ?? default(bool); }
 
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? BackupActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterDelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterDelay = value ?? default(bool); }
+        public bool? BackupActivityControlOptionEnableAfterADelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterADelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionEnableAfterADelay = value ?? default(bool); }
+
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? BackupActivityControlOptionsDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTime = value ?? default(long); }
+
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupActivityControlOptionsDelayTimeValue { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeValue; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeValue = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneId = value ?? default(long); }
+        public long? BackupActivityControlOptionsDelayTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string BackupActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsTimeZoneName = value ?? null; }
+        public string BackupActivityControlOptionsDelayTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTimeZoneName = value ?? null; }
 
         /// <summary>Internal Acessors for ActivityControl</summary>
         Commvault.Powershell.Models.IActivityControlOptions Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.ActivityControl { get => (this._activityControl = this._activityControl ?? new Commvault.Powershell.Models.ActivityControlOptions()); set { {_activityControl = value;} } }
 
         /// <summary>Internal Acessors for ActivityControlBackupActivityControlOptions</summary>
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.ActivityControlBackupActivityControlOptions { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptions; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptions = value; }
+        Commvault.Powershell.Models.IActivityControlOptionsProp Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.ActivityControlBackupActivityControlOptions { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptions; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptions = value; }
 
         /// <summary>Internal Acessors for ActivityControlRestoreActivityControlOptions</summary>
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.ActivityControlRestoreActivityControlOptions { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptions; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptions = value; }
+        Commvault.Powershell.Models.IActivityControlOptionsProp Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.ActivityControlRestoreActivityControlOptions { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptions; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptions = value; }
 
-        /// <summary>Internal Acessors for BackupActivityControlOptionTimeZone</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.BackupActivityControlOptionTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionTimeZone = value; }
+        /// <summary>Internal Acessors for BackupActivityControlOptionDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.BackupActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionDelayTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionDelayTime = value; }
+
+        /// <summary>Internal Acessors for BackupActivityControlOptionsDelayTimeZone</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.BackupActivityControlOptionsDelayTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).BackupActivityControlOptionsDelayTimeTimeZone = value; }
+
+        /// <summary>Internal Acessors for Credentials</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.IdName()); set { {_credentials = value;} } }
 
         /// <summary>Internal Acessors for FbrUnixMediaAgent</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.FbrUnixMediaAgent { get => (this._fbrUnixMediaAgent = this._fbrUnixMediaAgent ?? new Commvault.Powershell.Models.IdName()); set { {_fbrUnixMediaAgent = value;} } }
 
-        /// <summary>Internal Acessors for RestoreActivityControlOptionTimeZone</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.RestoreActivityControlOptionTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionTimeZone = value; }
+        /// <summary>Internal Acessors for RestoreActivityControlOptionDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.RestoreActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionDelayTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionDelayTime = value; }
+
+        /// <summary>Internal Acessors for RestoreActivityControlOptionsDelayTimeZone</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.RestoreActivityControlOptionsDelayTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTimeZone = value; }
 
         /// <summary>Internal Acessors for Security</summary>
         Commvault.Powershell.Models.IVMHypervisorSecurityProp Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.Security { get => (this._security = this._security ?? new Commvault.Powershell.Models.VMHypervisorSecurityProp()); set { {_security = value;} } }
+
+        /// <summary>Internal Acessors for SettingApplicationCredentials</summary>
+        Commvault.Powershell.Models.IUserNamePassword Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.SettingApplicationCredentials { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).ApplicationCredentials; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).ApplicationCredentials = value; }
+
+        /// <summary>Internal Acessors for SettingGuestCredentials</summary>
+        Commvault.Powershell.Models.IUserNamePassword Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.SettingGuestCredentials { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).GuestCredentials; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).GuestCredentials = value; }
+
+        /// <summary>Internal Acessors for SettingMetricsMonitoringPolicy</summary>
+        Commvault.Powershell.Models.IHypervisorMonitoringPolicy Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.SettingMetricsMonitoringPolicy { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricsMonitoringPolicy; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricsMonitoringPolicy = value; }
+
+        /// <summary>Internal Acessors for SettingMountAccessNode</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.SettingMountAccessNode { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MountAccessNode; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MountAccessNode = value; }
+
+        /// <summary>Internal Acessors for SettingRegionInfo</summary>
+        Commvault.Powershell.Models.IRegionInfo Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.SettingRegionInfo { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfo; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfo = value; }
+
+        /// <summary>Internal Acessors for SettingTimeZone</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.SettingTimeZone { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZone; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZone = value; }
+
+        /// <summary>Internal Acessors for Settings</summary>
+        Commvault.Powershell.Models.IHypervisorSettings Commvault.Powershell.Models.IUpdateHypervisorGroupReqInternal.Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.HypervisorSettings()); set { {_settings = value;} } }
+
+        /// <summary>Backing field for <see cref="Credentials" /> property.</summary>
+        private Commvault.Powershell.Models.IIdName _credentials;
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IIdName Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.IdName()); set => this._credentials = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? CredentialsId { get => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string CredentialsName { get => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Credentials).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="FbrUnixMediaAgent" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _fbrUnixMediaAgent;
@@ -78,6 +140,32 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FbrUnixMediaAgentName { get => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)FbrUnixMediaAgent).Name = value ?? null; }
 
+        /// <summary>username to access the network path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredentialsName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).GuestCredentialsName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).GuestCredentialsName = value ?? null; }
+
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GuestCredentialsPassword { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).GuestCredentialsPassword; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).GuestCredentialsPassword = value ?? null; }
+
+        /// <summary>Metrics Moitoring PolicyId</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MetricMonitoringPolicyId { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyId; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyId = value ?? default(long); }
+
+        /// <summary>True if Metrics Monioring policy is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? MetricMonitoringPolicyIsEnabled { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyIsEnabled; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyIsEnabled = value ?? default(bool); }
+
+        /// <summary>Metrics Moitoring Policy Name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MetricMonitoringPolicyName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MetricMonitoringPolicyName = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? MountAccessNodeId { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MountAccessNodeId; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MountAccessNodeId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string MountAccessNodeName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MountAccessNodeName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).MountAccessNodeName = value ?? null; }
+
         /// <summary>Backing field for <see cref="NewName" /> property.</summary>
         private string _newName;
 
@@ -85,19 +173,51 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
 
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>Display Name of Region</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RestoreActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionDelayTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionDelayTime = value ?? null; }
+        public string RegionInfoDisplayName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoDisplayName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoDisplayName = value ?? null; }
+
+        /// <summary>Region Id</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? RegionInfoId { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoId; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoId = value ?? default(long); }
+
+        /// <summary>Geolocation Latitude</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RegionInfoLatitude { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLatitude; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLatitude = value ?? null; }
+
+        /// <summary>Geolocation Longitude</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RegionInfoLongitude { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLongitude; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoLongitude = value ?? null; }
+
+        /// <summary>Region Name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RegionInfoName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).RegionInfoName = value ?? null; }
+
+        /// <summary>denotes the activity type being considered</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RestoreActivityControlOptionActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionActivityType = value ?? null; }
+
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? RestoreActivityControlOptionEnableActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableActivityType = value ?? default(bool); }
 
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? RestoreActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterDelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterDelay = value ?? default(bool); }
+        public bool? RestoreActivityControlOptionEnableAfterADelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterADelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionEnableAfterADelay = value ?? default(bool); }
+
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? RestoreActivityControlOptionsDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTime = value ?? default(long); }
+
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RestoreActivityControlOptionsDelayTimeValue { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeValue; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeValue = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneId = value ?? default(long); }
+        public long? RestoreActivityControlOptionsDelayTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RestoreActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsTimeZoneName = value ?? null; }
+        public string RestoreActivityControlOptionsDelayTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsInternal)ActivityControl).RestoreActivityControlOptionsDelayTimeTimeZoneName = value ?? null; }
 
         /// <summary>Backing field for <see cref="Security" /> property.</summary>
         private Commvault.Powershell.Models.IVMHypervisorSecurityProp _security;
@@ -112,12 +232,16 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SecurityClientOwners { get => ((Commvault.Powershell.Models.IVMHypervisorSecurityPropInternal)Security).ClientOwners; set => ((Commvault.Powershell.Models.IVMHypervisorSecurityPropInternal)Security).ClientOwners = value ?? null; }
 
+        /// <summary>Array of all the customAttributes associated with hypervisor.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IHypervisorCustomAttribute[] SettingCustomAttributes { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).CustomAttributes; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).CustomAttributes = value ?? null /* arrayOf */; }
+
         /// <summary>Backing field for <see cref="Settings" /> property.</summary>
         private Commvault.Powershell.Models.IHypervisorSettings _settings;
 
         /// <summary>hypervisorSettings</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IHypervisorSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.HypervisorSettings()); set => this._settings = value; }
+        internal Commvault.Powershell.Models.IHypervisorSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.HypervisorSettings()); set => this._settings = value; }
 
         /// <summary>Backing field for <see cref="SkipCredentialValidation" /> property.</summary>
         private bool? _skipCredentialValidation;
@@ -125,6 +249,12 @@ namespace Commvault.Powershell.Models
         /// <summary>if credential validation has to be skipped.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? SkipCredentialValidation { get => this._skipCredentialValidation; set => this._skipCredentialValidation = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? TimeZoneId { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneId; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string TimeZoneName { get => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneName; set => ((Commvault.Powershell.Models.IHypervisorSettingsInternal)Settings).TimeZoneName = value ?? null; }
 
         /// <summary>Creates an new <see cref="UpdateHypervisorGroupReq" /> instance.</summary>
         public UpdateHypervisorGroupReq()
@@ -140,9 +270,9 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"accessNode",
+        SerializedName = @"accessNodes",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAccessNodeModel) })]
-        Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get; set; }
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get; set; }
         /// <summary>true if Backup is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -159,22 +289,62 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enableRestore",
         PossibleTypes = new [] { typeof(bool) })]
         bool? ActivityControlEnableRestore { get; set; }
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>username to access the network path</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Delayed by n Hrs",
-        SerializedName = @"delayTime",
+        Description = @"username to access the network path",
+        SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string BackupActivityControlOptionDelayTime { get; set; }
+        string ApplicationCredentialsName { get; set; }
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"password to access the network path",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string ApplicationCredentialsPassword { get; set; }
+        /// <summary>denotes the activity type being considered</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"denotes the activity type being considered",
+        SerializedName = @"activityType",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupActivityControlOptionActivityType { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if the activity type is enabled",
+        SerializedName = @"enableActivityType",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? BackupActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"True if the activity will be enabled after a delay time interval",
-        SerializedName = @"enableAfterDelay",
+        SerializedName = @"enableAfterADelay",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? BackupActivityControlOptionEnableAfterDelay { get; set; }
+        bool? BackupActivityControlOptionEnableAfterADelay { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"delay time in unix timestamp",
+        SerializedName = @"time",
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupActivityControlOptionsDelayTime { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"actual delay time value in string format according to the timezone",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupActivityControlOptionsDelayTimeValue { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -182,7 +352,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? BackupActivityControlOptionsTimeZoneId { get; set; }
+        long? BackupActivityControlOptionsDelayTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -190,7 +360,23 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string BackupActivityControlOptionsTimeZoneName { get; set; }
+        string BackupActivityControlOptionsDelayTimeZoneName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? CredentialsId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string CredentialsName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -207,6 +393,62 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string FbrUnixMediaAgentName { get; set; }
+        /// <summary>username to access the network path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"username to access the network path",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredentialsName { get; set; }
+        /// <summary>password to access the network path</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"password to access the network path",
+        SerializedName = @"password",
+        PossibleTypes = new [] { typeof(string) })]
+        string GuestCredentialsPassword { get; set; }
+        /// <summary>Metrics Moitoring PolicyId</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Metrics Moitoring PolicyId",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MetricMonitoringPolicyId { get; set; }
+        /// <summary>True if Metrics Monioring policy is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if Metrics Monioring policy is enabled",
+        SerializedName = @"isEnabled",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? MetricMonitoringPolicyIsEnabled { get; set; }
+        /// <summary>Metrics Moitoring Policy Name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Metrics Moitoring Policy Name",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string MetricMonitoringPolicyName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? MountAccessNodeId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string MountAccessNodeName { get; set; }
         /// <summary>The name of the hypervisor that has to be changed</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -215,22 +457,86 @@ namespace Commvault.Powershell.Models
         SerializedName = @"newName",
         PossibleTypes = new [] { typeof(string) })]
         string NewName { get; set; }
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>Display Name of Region</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Delayed by n Hrs",
-        SerializedName = @"delayTime",
+        Description = @"Display Name of Region",
+        SerializedName = @"displayName",
         PossibleTypes = new [] { typeof(string) })]
-        string RestoreActivityControlOptionDelayTime { get; set; }
+        string RegionInfoDisplayName { get; set; }
+        /// <summary>Region Id</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Region Id",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? RegionInfoId { get; set; }
+        /// <summary>Geolocation Latitude</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Geolocation Latitude",
+        SerializedName = @"latitude",
+        PossibleTypes = new [] { typeof(string) })]
+        string RegionInfoLatitude { get; set; }
+        /// <summary>Geolocation Longitude</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Geolocation Longitude",
+        SerializedName = @"longitude",
+        PossibleTypes = new [] { typeof(string) })]
+        string RegionInfoLongitude { get; set; }
+        /// <summary>Region Name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Region Name",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string RegionInfoName { get; set; }
+        /// <summary>denotes the activity type being considered</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"denotes the activity type being considered",
+        SerializedName = @"activityType",
+        PossibleTypes = new [] { typeof(string) })]
+        string RestoreActivityControlOptionActivityType { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if the activity type is enabled",
+        SerializedName = @"enableActivityType",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? RestoreActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"True if the activity will be enabled after a delay time interval",
-        SerializedName = @"enableAfterDelay",
+        SerializedName = @"enableAfterADelay",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? RestoreActivityControlOptionEnableAfterDelay { get; set; }
+        bool? RestoreActivityControlOptionEnableAfterADelay { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"delay time in unix timestamp",
+        SerializedName = @"time",
+        PossibleTypes = new [] { typeof(long) })]
+        long? RestoreActivityControlOptionsDelayTime { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"actual delay time value in string format according to the timezone",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string RestoreActivityControlOptionsDelayTimeValue { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -238,7 +544,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        long? RestoreActivityControlOptionsDelayTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -246,7 +552,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string RestoreActivityControlOptionsTimeZoneName { get; set; }
+        string RestoreActivityControlOptionsDelayTimeZoneName { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -263,14 +569,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"clientOwners",
         PossibleTypes = new [] { typeof(string) })]
         string SecurityClientOwners { get; set; }
-        /// <summary>hypervisorSettings</summary>
+        /// <summary>Array of all the customAttributes associated with hypervisor.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"hypervisorSettings",
-        SerializedName = @"settings",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IHypervisorSettings) })]
-        Commvault.Powershell.Models.IHypervisorSettings Settings { get; set; }
+        Description = @"Array of all the customAttributes associated with hypervisor.",
+        SerializedName = @"customAttributes",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IHypervisorCustomAttribute) })]
+        Commvault.Powershell.Models.IHypervisorCustomAttribute[] SettingCustomAttributes { get; set; }
         /// <summary>if credential validation has to be skipped.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -280,60 +586,144 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(bool) })]
         bool? SkipCredentialValidation { get; set; }
 
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? TimeZoneId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string TimeZoneName { get; set; }
+
     }
     /// Update a hypervisor group
     internal partial interface IUpdateHypervisorGroupReqInternal
 
     {
-        Commvault.Powershell.Models.IAccessNodeModel[] AccessNode { get; set; }
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get; set; }
 
         Commvault.Powershell.Models.IActivityControlOptions ActivityControl { get; set; }
 
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp ActivityControlBackupActivityControlOptions { get; set; }
+        Commvault.Powershell.Models.IActivityControlOptionsProp ActivityControlBackupActivityControlOptions { get; set; }
         /// <summary>true if Backup is enabled</summary>
         bool? ActivityControlEnableBackup { get; set; }
         /// <summary>true if Restore is enabled</summary>
         bool? ActivityControlEnableRestore { get; set; }
 
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp ActivityControlRestoreActivityControlOptions { get; set; }
-        /// <summary>Delayed by n Hrs</summary>
-        string BackupActivityControlOptionDelayTime { get; set; }
+        Commvault.Powershell.Models.IActivityControlOptionsProp ActivityControlRestoreActivityControlOptions { get; set; }
+        /// <summary>username to access the network path</summary>
+        string ApplicationCredentialsName { get; set; }
+        /// <summary>password to access the network path</summary>
+        string ApplicationCredentialsPassword { get; set; }
+        /// <summary>denotes the activity type being considered</summary>
+        string BackupActivityControlOptionActivityType { get; set; }
+        /// <summary>ActivityControlTileDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime BackupActivityControlOptionDelayTime { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        bool? BackupActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
-        bool? BackupActivityControlOptionEnableAfterDelay { get; set; }
+        bool? BackupActivityControlOptionEnableAfterADelay { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        long? BackupActivityControlOptionsDelayTime { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        string BackupActivityControlOptionsDelayTimeValue { get; set; }
 
-        Commvault.Powershell.Models.IIdName BackupActivityControlOptionTimeZone { get; set; }
+        Commvault.Powershell.Models.IIdName BackupActivityControlOptionsDelayTimeZone { get; set; }
 
-        long? BackupActivityControlOptionsTimeZoneId { get; set; }
+        long? BackupActivityControlOptionsDelayTimeZoneId { get; set; }
 
-        string BackupActivityControlOptionsTimeZoneName { get; set; }
+        string BackupActivityControlOptionsDelayTimeZoneName { get; set; }
+
+        Commvault.Powershell.Models.IIdName Credentials { get; set; }
+
+        long? CredentialsId { get; set; }
+
+        string CredentialsName { get; set; }
 
         Commvault.Powershell.Models.IIdName FbrUnixMediaAgent { get; set; }
 
         long? FbrUnixMediaAgentId { get; set; }
 
         string FbrUnixMediaAgentName { get; set; }
+        /// <summary>username to access the network path</summary>
+        string GuestCredentialsName { get; set; }
+        /// <summary>password to access the network path</summary>
+        string GuestCredentialsPassword { get; set; }
+        /// <summary>Metrics Moitoring PolicyId</summary>
+        long? MetricMonitoringPolicyId { get; set; }
+        /// <summary>True if Metrics Monioring policy is enabled</summary>
+        bool? MetricMonitoringPolicyIsEnabled { get; set; }
+        /// <summary>Metrics Moitoring Policy Name</summary>
+        string MetricMonitoringPolicyName { get; set; }
+
+        long? MountAccessNodeId { get; set; }
+
+        string MountAccessNodeName { get; set; }
         /// <summary>The name of the hypervisor that has to be changed</summary>
         string NewName { get; set; }
-        /// <summary>Delayed by n Hrs</summary>
-        string RestoreActivityControlOptionDelayTime { get; set; }
+        /// <summary>Display Name of Region</summary>
+        string RegionInfoDisplayName { get; set; }
+        /// <summary>Region Id</summary>
+        long? RegionInfoId { get; set; }
+        /// <summary>Geolocation Latitude</summary>
+        string RegionInfoLatitude { get; set; }
+        /// <summary>Geolocation Longitude</summary>
+        string RegionInfoLongitude { get; set; }
+        /// <summary>Region Name</summary>
+        string RegionInfoName { get; set; }
+        /// <summary>denotes the activity type being considered</summary>
+        string RestoreActivityControlOptionActivityType { get; set; }
+        /// <summary>ActivityControlTileDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime RestoreActivityControlOptionDelayTime { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        bool? RestoreActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
-        bool? RestoreActivityControlOptionEnableAfterDelay { get; set; }
+        bool? RestoreActivityControlOptionEnableAfterADelay { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        long? RestoreActivityControlOptionsDelayTime { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        string RestoreActivityControlOptionsDelayTimeValue { get; set; }
 
-        Commvault.Powershell.Models.IIdName RestoreActivityControlOptionTimeZone { get; set; }
+        Commvault.Powershell.Models.IIdName RestoreActivityControlOptionsDelayTimeZone { get; set; }
 
-        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        long? RestoreActivityControlOptionsDelayTimeZoneId { get; set; }
 
-        string RestoreActivityControlOptionsTimeZoneName { get; set; }
+        string RestoreActivityControlOptionsDelayTimeZoneName { get; set; }
 
         Commvault.Powershell.Models.IVMHypervisorSecurityProp Security { get; set; }
 
         Commvault.Powershell.Models.IIdName[] SecurityAssociatedUserGroups { get; set; }
         /// <summary>Client owners for the Hypervisor</summary>
         string SecurityClientOwners { get; set; }
+
+        Commvault.Powershell.Models.IUserNamePassword SettingApplicationCredentials { get; set; }
+        /// <summary>Array of all the customAttributes associated with hypervisor.</summary>
+        Commvault.Powershell.Models.IHypervisorCustomAttribute[] SettingCustomAttributes { get; set; }
+
+        Commvault.Powershell.Models.IUserNamePassword SettingGuestCredentials { get; set; }
+
+        Commvault.Powershell.Models.IHypervisorMonitoringPolicy SettingMetricsMonitoringPolicy { get; set; }
+
+        Commvault.Powershell.Models.IIdName SettingMountAccessNode { get; set; }
+        /// <summary>RegionInfo</summary>
+        Commvault.Powershell.Models.IRegionInfo SettingRegionInfo { get; set; }
+
+        Commvault.Powershell.Models.IIdName SettingTimeZone { get; set; }
         /// <summary>hypervisorSettings</summary>
         Commvault.Powershell.Models.IHypervisorSettings Settings { get; set; }
         /// <summary>if credential validation has to be skipped.</summary>
         bool? SkipCredentialValidation { get; set; }
+
+        long? TimeZoneId { get; set; }
+
+        string TimeZoneName { get; set; }
 
     }
 }

@@ -104,6 +104,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string InstanceName { get => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Instance).Name = value ?? null; }
 
+        /// <summary>Backing field for <see cref="IsManagedIdentity" /> property.</summary>
+        private bool? _isManagedIdentity;
+
+        /// <summary>True if hypervisor is configured using Azure Managed Service Identity.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsManagedIdentity { get => this._isManagedIdentity; set => this._isManagedIdentity = value; }
+
         /// <summary>Backing field for <see cref="ManageSnapshot" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _manageSnapshot;
 
@@ -142,6 +149,13 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string TimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)ClientActivityControl).TimeZoneName = value ?? null; }
+
+        /// <summary>Backing field for <see cref="UseHostedInfrastructure" /> property.</summary>
+        private bool? _useHostedInfrastructure;
+
+        /// <summary>Use Metallic hosted infrastructure</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? UseHostedInfrastructure { get => this._useHostedInfrastructure; set => this._useHostedInfrastructure = value; }
 
         /// <summary>Backing field for <see cref="Version" /> property.</summary>
         private string _version;
@@ -255,6 +269,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string InstanceName { get; set; }
+        /// <summary>True if hypervisor is configured using Azure Managed Service Identity.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if hypervisor is configured using Azure Managed Service Identity.",
+        SerializedName = @"isManagedIdentity",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsManagedIdentity { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -311,6 +333,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string TimeZoneName { get; set; }
+        /// <summary>Use Metallic hosted infrastructure</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Use Metallic hosted infrastructure",
+        SerializedName = @"useHostedInfrastructure",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? UseHostedInfrastructure { get; set; }
         /// <summary>VMware Vcenter Version</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -357,6 +387,8 @@ namespace Commvault.Powershell.Models
         long? InstanceId { get; set; }
 
         string InstanceName { get; set; }
+        /// <summary>True if hypervisor is configured using Azure Managed Service Identity.</summary>
+        bool? IsManagedIdentity { get; set; }
 
         Commvault.Powershell.Models.IIdName ManageSnapshot { get; set; }
 
@@ -373,6 +405,8 @@ namespace Commvault.Powershell.Models
         long? TimeZoneId { get; set; }
 
         string TimeZoneName { get; set; }
+        /// <summary>Use Metallic hosted infrastructure</summary>
+        bool? UseHostedInfrastructure { get; set; }
         /// <summary>VMware Vcenter Version</summary>
         string Version { get; set; }
 

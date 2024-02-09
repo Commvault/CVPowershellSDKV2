@@ -75,6 +75,7 @@ namespace Commvault.Powershell.Models
             {_redirectUrl = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("redirectUrl"), out var __jsonRedirectUrl) ? (string)__jsonRedirectUrl : (string)RedirectUrl;}
             {_logoutUrl = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("logoutUrl"), out var __jsonLogoutUrl) ? (string)__jsonLogoutUrl : (string)LogoutUrl;}
             {_certificateData = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("certificateData"), out var __jsonCertificateData) ? (string)__jsonCertificateData : (string)CertificateData;}
+            {_secondaryCertificateData = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("secondaryCertificateData"), out var __jsonSecondaryCertificateData) ? (string)__jsonSecondaryCertificateData : (string)SecondaryCertificateData;}
             {_samlProtocolVersion = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("SAMLProtocolVersion"), out var __jsonSamlProtocolVersion) ? (string)__jsonSamlProtocolVersion : (string)SamlProtocolVersion;}
             AfterFromJson(json);
         }
@@ -102,6 +103,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._redirectUrl)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._redirectUrl.ToString()) : null, "redirectUrl" ,container.Add );
             AddIf( null != (((object)this._logoutUrl)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._logoutUrl.ToString()) : null, "logoutUrl" ,container.Add );
             AddIf( null != (((object)this._certificateData)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._certificateData.ToString()) : null, "certificateData" ,container.Add );
+            AddIf( null != (((object)this._secondaryCertificateData)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._secondaryCertificateData.ToString()) : null, "secondaryCertificateData" ,container.Add );
             AddIf( null != (((object)this._samlProtocolVersion)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._samlProtocolVersion.ToString()) : null, "SAMLProtocolVersion" ,container.Add );
             AfterToJson(ref container);
             return container;

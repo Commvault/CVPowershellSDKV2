@@ -78,6 +78,8 @@ namespace Commvault.Powershell.Models
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_capacity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("capacity"), out var __jsonCapacity) ? (long?)__jsonCapacity : Capacity;}
             {_freeSpace = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("freeSpace"), out var __jsonFreeSpace) ? (long?)__jsonFreeSpace : FreeSpace;}
+            {_libraryVendorType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("libraryVendorType"), out var __jsonLibraryVendorType) ? (long?)__jsonLibraryVendorType : LibraryVendorType;}
+            {_storageType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("storageType"), out var __jsonStorageType) ? (string)__jsonStorageType : (string)StorageType;}
             AfterFromJson(json);
         }
 
@@ -108,6 +110,8 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._status)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._status.ToString()) : null, "status" ,container.Add );
             AddIf( null != this._capacity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._capacity) : null, "capacity" ,container.Add );
             AddIf( null != this._freeSpace ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._freeSpace) : null, "freeSpace" ,container.Add );
+            AddIf( null != this._libraryVendorType ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._libraryVendorType) : null, "libraryVendorType" ,container.Add );
+            AddIf( null != (((object)this._storageType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._storageType.ToString()) : null, "storageType" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

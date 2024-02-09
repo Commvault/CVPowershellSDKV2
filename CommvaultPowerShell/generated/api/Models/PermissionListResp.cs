@@ -10,37 +10,11 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IPermissionListRespInternal
     {
 
-        /// <summary>Backing field for <see cref="Category" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _category;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName Category { get => (this._category = this._category ?? new Commvault.Powershell.Models.IdName()); set => this._category = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? CategoryId { get => ((Commvault.Powershell.Models.IIdNameInternal)Category).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Category).Id = value ?? default(long); }
-
-        /// <summary>Backing field for <see cref="CategoryList" /> property.</summary>
-        private Commvault.Powershell.Models.ICategoryList[] _categoryList;
-
-        /// <summary>
-        /// Returns a list of categories and their permissions associated with the main category. eg: roles category is belongs to
-        /// User Management category.
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.ICategoryList[] CategoryList { get => this._categoryList; set => this._categoryList = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CategoryName { get => ((Commvault.Powershell.Models.IIdNameInternal)Category).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Category).Name = value ?? null; }
-
-        /// <summary>Internal Acessors for Category</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IPermissionListRespInternal.Category { get => (this._category = this._category ?? new Commvault.Powershell.Models.IdName()); set { {_category = value;} } }
-
         /// <summary>Backing field for <see cref="Permissions" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName[] _permissions;
+        private Commvault.Powershell.Models.ICategoryListResp[] _permissions;
 
-        /// <summary>Returns list of permissions associated with the category</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IIdName[] Permissions { get => this._permissions; set => this._permissions = value; }
+        public Commvault.Powershell.Models.ICategoryListResp[] Permissions { get => this._permissions; set => this._permissions = value; }
 
         /// <summary>Creates an new <see cref="PermissionListResp" /> instance.</summary>
         public PermissionListResp()
@@ -55,53 +29,15 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? CategoryId { get; set; }
-        /// <summary>
-        /// Returns a list of categories and their permissions associated with the main category. eg: roles category is belongs to
-        /// User Management category.
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Returns a list of categories and their permissions associated with the main category. eg: roles category is belongs to User Management category.",
-        SerializedName = @"categoryList",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICategoryList) })]
-        Commvault.Powershell.Models.ICategoryList[] CategoryList { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string CategoryName { get; set; }
-        /// <summary>Returns list of permissions associated with the category</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Returns list of permissions associated with the category",
         SerializedName = @"permissions",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] Permissions { get; set; }
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICategoryListResp) })]
+        Commvault.Powershell.Models.ICategoryListResp[] Permissions { get; set; }
 
     }
     internal partial interface IPermissionListRespInternal
 
     {
-        Commvault.Powershell.Models.IIdName Category { get; set; }
-
-        long? CategoryId { get; set; }
-        /// <summary>
-        /// Returns a list of categories and their permissions associated with the main category. eg: roles category is belongs to
-        /// User Management category.
-        /// </summary>
-        Commvault.Powershell.Models.ICategoryList[] CategoryList { get; set; }
-
-        string CategoryName { get; set; }
-        /// <summary>Returns list of permissions associated with the category</summary>
-        Commvault.Powershell.Models.IIdName[] Permissions { get; set; }
+        Commvault.Powershell.Models.ICategoryListResp[] Permissions { get; set; }
 
     }
 }

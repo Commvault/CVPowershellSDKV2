@@ -10,37 +10,55 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IActivityControlOptionsInternal
     {
 
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>denotes the activity type being considered</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string BackupActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTime; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTime = value ?? null; }
+        public string BackupActivityControlOptionActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).ActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).ActivityType = value ?? null; }
+
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? BackupActivityControlOptionEnableActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).EnableActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).EnableActivityType = value ?? default(bool); }
 
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? BackupActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).EnableAfterDelay; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).EnableAfterDelay = value ?? default(bool); }
+        public bool? BackupActivityControlOptionEnableAfterADelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).EnableAfterADelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).EnableAfterADelay = value ?? default(bool); }
 
         /// <summary>Backing field for <see cref="BackupActivityControlOptions" /> property.</summary>
-        private Commvault.Powershell.Models.IBackupActivityControlOptionsProp _backupActivityControlOptions;
+        private Commvault.Powershell.Models.IActivityControlOptionsProp _backupActivityControlOptions;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IBackupActivityControlOptionsProp BackupActivityControlOptions { get => (this._backupActivityControlOptions = this._backupActivityControlOptions ?? new Commvault.Powershell.Models.BackupActivityControlOptionsProp()); set => this._backupActivityControlOptions = value; }
+        internal Commvault.Powershell.Models.IActivityControlOptionsProp BackupActivityControlOptions { get => (this._backupActivityControlOptions = this._backupActivityControlOptions ?? new Commvault.Powershell.Models.ActivityControlOptionsProp()); set => this._backupActivityControlOptions = value; }
+
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? BackupActivityControlOptionsDelayTimeTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTimeTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTimeTime = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? BackupActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId = value ?? default(long); }
+        public long? BackupActivityControlOptionsDelayTimeTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string BackupActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneName; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneName = value ?? null; }
+        public string BackupActivityControlOptionsDelayTimeTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZoneName = value ?? null; }
 
-        /// <summary>Internal Acessors for BackupActivityControlOptionTimeZone</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IActivityControlOptionsInternal.BackupActivityControlOptionTimeZone { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZone; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)BackupActivityControlOptions).TimeZone = value; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string BackupActivityControlOptionsDelayTimeValue { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTimeValue; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTimeValue = value ?? null; }
+
+        /// <summary>Internal Acessors for BackupActivityControlOptionDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime Commvault.Powershell.Models.IActivityControlOptionsInternal.BackupActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTime = value; }
 
         /// <summary>Internal Acessors for BackupActivityControlOptions</summary>
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp Commvault.Powershell.Models.IActivityControlOptionsInternal.BackupActivityControlOptions { get => (this._backupActivityControlOptions = this._backupActivityControlOptions ?? new Commvault.Powershell.Models.BackupActivityControlOptionsProp()); set { {_backupActivityControlOptions = value;} } }
+        Commvault.Powershell.Models.IActivityControlOptionsProp Commvault.Powershell.Models.IActivityControlOptionsInternal.BackupActivityControlOptions { get => (this._backupActivityControlOptions = this._backupActivityControlOptions ?? new Commvault.Powershell.Models.ActivityControlOptionsProp()); set { {_backupActivityControlOptions = value;} } }
 
-        /// <summary>Internal Acessors for RestoreActivityControlOptionTimeZone</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IActivityControlOptionsInternal.RestoreActivityControlOptionTimeZone { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZone; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZone = value; }
+        /// <summary>Internal Acessors for BackupActivityControlOptionsDelayTimeTimeZone</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IActivityControlOptionsInternal.BackupActivityControlOptionsDelayTimeTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)BackupActivityControlOptions).DelayTimeZone = value; }
+
+        /// <summary>Internal Acessors for RestoreActivityControlOptionDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime Commvault.Powershell.Models.IActivityControlOptionsInternal.RestoreActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTime = value; }
 
         /// <summary>Internal Acessors for RestoreActivityControlOptions</summary>
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp Commvault.Powershell.Models.IActivityControlOptionsInternal.RestoreActivityControlOptions { get => (this._restoreActivityControlOptions = this._restoreActivityControlOptions ?? new Commvault.Powershell.Models.BackupActivityControlOptionsProp()); set { {_restoreActivityControlOptions = value;} } }
+        Commvault.Powershell.Models.IActivityControlOptionsProp Commvault.Powershell.Models.IActivityControlOptionsInternal.RestoreActivityControlOptions { get => (this._restoreActivityControlOptions = this._restoreActivityControlOptions ?? new Commvault.Powershell.Models.ActivityControlOptionsProp()); set { {_restoreActivityControlOptions = value;} } }
+
+        /// <summary>Internal Acessors for RestoreActivityControlOptionsDelayTimeTimeZone</summary>
+        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IActivityControlOptionsInternal.RestoreActivityControlOptionsDelayTimeTimeZone { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTimeZone; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTimeZone = value; }
 
         /// <summary>Backing field for <see cref="EnableBackup" /> property.</summary>
         private bool? _enableBackup;
@@ -56,25 +74,37 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? EnableRestore { get => this._enableRestore; set => this._enableRestore = value; }
 
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>denotes the activity type being considered</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RestoreActivityControlOptionDelayTime { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTime; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTime = value ?? null; }
+        public string RestoreActivityControlOptionActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).ActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).ActivityType = value ?? null; }
+
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? RestoreActivityControlOptionEnableActivityType { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).EnableActivityType; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).EnableActivityType = value ?? default(bool); }
 
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? RestoreActivityControlOptionEnableAfterDelay { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).EnableAfterDelay; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).EnableAfterDelay = value ?? default(bool); }
+        public bool? RestoreActivityControlOptionEnableAfterADelay { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).EnableAfterADelay; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).EnableAfterADelay = value ?? default(bool); }
 
         /// <summary>Backing field for <see cref="RestoreActivityControlOptions" /> property.</summary>
-        private Commvault.Powershell.Models.IBackupActivityControlOptionsProp _restoreActivityControlOptions;
+        private Commvault.Powershell.Models.IActivityControlOptionsProp _restoreActivityControlOptions;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IBackupActivityControlOptionsProp RestoreActivityControlOptions { get => (this._restoreActivityControlOptions = this._restoreActivityControlOptions ?? new Commvault.Powershell.Models.BackupActivityControlOptionsProp()); set => this._restoreActivityControlOptions = value; }
+        internal Commvault.Powershell.Models.IActivityControlOptionsProp RestoreActivityControlOptions { get => (this._restoreActivityControlOptions = this._restoreActivityControlOptions ?? new Commvault.Powershell.Models.ActivityControlOptionsProp()); set => this._restoreActivityControlOptions = value; }
+
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? RestoreActivityControlOptionsDelayTimeTime { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTimeTime; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTimeTime = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RestoreActivityControlOptionsTimeZoneId { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId = value ?? default(long); }
+        public long? RestoreActivityControlOptionsDelayTimeTimeZoneId { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneId = value ?? default(long); }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RestoreActivityControlOptionsTimeZoneName { get => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneName; set => ((Commvault.Powershell.Models.IBackupActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneName = value ?? null; }
+        public string RestoreActivityControlOptionsDelayTimeTimeZoneName { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneName; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).TimeZoneName = value ?? null; }
+
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RestoreActivityControlOptionsDelayTimeValue { get => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTimeValue; set => ((Commvault.Powershell.Models.IActivityControlOptionsPropInternal)RestoreActivityControlOptions).DelayTimeValue = value ?? null; }
 
         /// <summary>Creates an new <see cref="ActivityControlOptions" /> instance.</summary>
         public ActivityControlOptions()
@@ -85,22 +115,38 @@ namespace Commvault.Powershell.Models
     public partial interface IActivityControlOptions :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>denotes the activity type being considered</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Delayed by n Hrs",
-        SerializedName = @"delayTime",
+        Description = @"denotes the activity type being considered",
+        SerializedName = @"activityType",
         PossibleTypes = new [] { typeof(string) })]
-        string BackupActivityControlOptionDelayTime { get; set; }
+        string BackupActivityControlOptionActivityType { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if the activity type is enabled",
+        SerializedName = @"enableActivityType",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? BackupActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"True if the activity will be enabled after a delay time interval",
-        SerializedName = @"enableAfterDelay",
+        SerializedName = @"enableAfterADelay",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? BackupActivityControlOptionEnableAfterDelay { get; set; }
+        bool? BackupActivityControlOptionEnableAfterADelay { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"delay time in unix timestamp",
+        SerializedName = @"time",
+        PossibleTypes = new [] { typeof(long) })]
+        long? BackupActivityControlOptionsDelayTimeTime { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -108,7 +154,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? BackupActivityControlOptionsTimeZoneId { get; set; }
+        long? BackupActivityControlOptionsDelayTimeTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -116,7 +162,15 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string BackupActivityControlOptionsTimeZoneName { get; set; }
+        string BackupActivityControlOptionsDelayTimeTimeZoneName { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"actual delay time value in string format according to the timezone",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string BackupActivityControlOptionsDelayTimeValue { get; set; }
         /// <summary>true if Backup is enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -133,22 +187,38 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enableRestore",
         PossibleTypes = new [] { typeof(bool) })]
         bool? EnableRestore { get; set; }
-        /// <summary>Delayed by n Hrs</summary>
+        /// <summary>denotes the activity type being considered</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Delayed by n Hrs",
-        SerializedName = @"delayTime",
+        Description = @"denotes the activity type being considered",
+        SerializedName = @"activityType",
         PossibleTypes = new [] { typeof(string) })]
-        string RestoreActivityControlOptionDelayTime { get; set; }
+        string RestoreActivityControlOptionActivityType { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"True if the activity type is enabled",
+        SerializedName = @"enableActivityType",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? RestoreActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
         Description = @"True if the activity will be enabled after a delay time interval",
-        SerializedName = @"enableAfterDelay",
+        SerializedName = @"enableAfterADelay",
         PossibleTypes = new [] { typeof(bool) })]
-        bool? RestoreActivityControlOptionEnableAfterDelay { get; set; }
+        bool? RestoreActivityControlOptionEnableAfterADelay { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"delay time in unix timestamp",
+        SerializedName = @"time",
+        PossibleTypes = new [] { typeof(long) })]
+        long? RestoreActivityControlOptionsDelayTimeTime { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -156,7 +226,7 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
-        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        long? RestoreActivityControlOptionsDelayTimeTimeZoneId { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -164,40 +234,64 @@ namespace Commvault.Powershell.Models
         Description = @"",
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
-        string RestoreActivityControlOptionsTimeZoneName { get; set; }
+        string RestoreActivityControlOptionsDelayTimeTimeZoneName { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"actual delay time value in string format according to the timezone",
+        SerializedName = @"value",
+        PossibleTypes = new [] { typeof(string) })]
+        string RestoreActivityControlOptionsDelayTimeValue { get; set; }
 
     }
     internal partial interface IActivityControlOptionsInternal
 
     {
-        /// <summary>Delayed by n Hrs</summary>
-        string BackupActivityControlOptionDelayTime { get; set; }
+        /// <summary>denotes the activity type being considered</summary>
+        string BackupActivityControlOptionActivityType { get; set; }
+        /// <summary>ActivityControlTileDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime BackupActivityControlOptionDelayTime { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        bool? BackupActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
-        bool? BackupActivityControlOptionEnableAfterDelay { get; set; }
+        bool? BackupActivityControlOptionEnableAfterADelay { get; set; }
 
-        Commvault.Powershell.Models.IIdName BackupActivityControlOptionTimeZone { get; set; }
+        Commvault.Powershell.Models.IActivityControlOptionsProp BackupActivityControlOptions { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        long? BackupActivityControlOptionsDelayTimeTime { get; set; }
 
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp BackupActivityControlOptions { get; set; }
+        Commvault.Powershell.Models.IIdName BackupActivityControlOptionsDelayTimeTimeZone { get; set; }
 
-        long? BackupActivityControlOptionsTimeZoneId { get; set; }
+        long? BackupActivityControlOptionsDelayTimeTimeZoneId { get; set; }
 
-        string BackupActivityControlOptionsTimeZoneName { get; set; }
+        string BackupActivityControlOptionsDelayTimeTimeZoneName { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        string BackupActivityControlOptionsDelayTimeValue { get; set; }
         /// <summary>true if Backup is enabled</summary>
         bool? EnableBackup { get; set; }
         /// <summary>true if Restore is enabled</summary>
         bool? EnableRestore { get; set; }
-        /// <summary>Delayed by n Hrs</summary>
-        string RestoreActivityControlOptionDelayTime { get; set; }
+        /// <summary>denotes the activity type being considered</summary>
+        string RestoreActivityControlOptionActivityType { get; set; }
+        /// <summary>ActivityControlTileDelayTime</summary>
+        Commvault.Powershell.Models.IActivityControlTileDelayTime RestoreActivityControlOptionDelayTime { get; set; }
+        /// <summary>True if the activity type is enabled</summary>
+        bool? RestoreActivityControlOptionEnableActivityType { get; set; }
         /// <summary>True if the activity will be enabled after a delay time interval</summary>
-        bool? RestoreActivityControlOptionEnableAfterDelay { get; set; }
+        bool? RestoreActivityControlOptionEnableAfterADelay { get; set; }
 
-        Commvault.Powershell.Models.IIdName RestoreActivityControlOptionTimeZone { get; set; }
+        Commvault.Powershell.Models.IActivityControlOptionsProp RestoreActivityControlOptions { get; set; }
+        /// <summary>delay time in unix timestamp</summary>
+        long? RestoreActivityControlOptionsDelayTimeTime { get; set; }
 
-        Commvault.Powershell.Models.IBackupActivityControlOptionsProp RestoreActivityControlOptions { get; set; }
+        Commvault.Powershell.Models.IIdName RestoreActivityControlOptionsDelayTimeTimeZone { get; set; }
 
-        long? RestoreActivityControlOptionsTimeZoneId { get; set; }
+        long? RestoreActivityControlOptionsDelayTimeTimeZoneId { get; set; }
 
-        string RestoreActivityControlOptionsTimeZoneName { get; set; }
+        string RestoreActivityControlOptionsDelayTimeTimeZoneName { get; set; }
+        /// <summary>actual delay time value in string format according to the timezone</summary>
+        string RestoreActivityControlOptionsDelayTimeValue { get; set; }
 
     }
 }

@@ -34,6 +34,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? ForDatabasesOnly { get => this._forDatabasesOnly; set => this._forDatabasesOnly = value; }
 
+        /// <summary>Backing field for <see cref="IsRetentionBasedSyntheticFull" /> property.</summary>
+        private bool? _isRetentionBasedSyntheticFull;
+
+        /// <summary>Boolean to indicate if synthetic full schedule is based on retention rules</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsRetentionBasedSyntheticFull { get => this._isRetentionBasedSyntheticFull; set => this._isRetentionBasedSyntheticFull = value; }
+
         /// <summary>Backing field for <see cref="PolicyId" /> property.</summary>
         private long? _policyId;
 
@@ -83,6 +90,18 @@ namespace Commvault.Powershell.Models
         /// <summary>total job running time in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? ScheduleOptionJobRunningTimeInMins { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).JobRunningTimeInMins; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).JobRunningTimeInMins = value ?? default(long); }
+
+        /// <summary>The min number of archived log files before a backup job should start</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ScheduleOptionLogFilesThreshold { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).LogFilesThreshold; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).LogFilesThreshold = value ?? default(long); }
+
+        /// <summary>The min log destination disk threshold percentage</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ScheduleOptionLogsDiskUtilizationPercent { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).LogsDiskUtilizationPercent; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).LogsDiskUtilizationPercent = value ?? default(long); }
+
+        /// <summary>The min number of mins to check for file activity on automatic schedule.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? ScheduleOptionMinBackupIntervalInMins { get => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).MinBackupIntervalInMins; set => ((Commvault.Powershell.Models.IScheduleOptionInternal)ScheduleOption).MinBackupIntervalInMins = value ?? default(long); }
 
         /// <summary>item backup option for O365 V2 backup jobs</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -211,6 +230,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"forDatabasesOnly",
         PossibleTypes = new [] { typeof(bool) })]
         bool? ForDatabasesOnly { get; set; }
+        /// <summary>Boolean to indicate if synthetic full schedule is based on retention rules</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Boolean to indicate if synthetic full schedule is based on retention rules",
+        SerializedName = @"isRetentionBasedSyntheticFull",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsRetentionBasedSyntheticFull { get; set; }
         /// <summary>Schedule policy Id to which the schedule belongs</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -270,6 +297,30 @@ namespace Commvault.Powershell.Models
         SerializedName = @"jobRunningTimeInMins",
         PossibleTypes = new [] { typeof(long) })]
         long? ScheduleOptionJobRunningTimeInMins { get; set; }
+        /// <summary>The min number of archived log files before a backup job should start</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The min number of archived log files before a backup job should start",
+        SerializedName = @"logFilesThreshold",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleOptionLogFilesThreshold { get; set; }
+        /// <summary>The min log destination disk threshold percentage</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The min log destination disk threshold percentage",
+        SerializedName = @"logsDiskUtilizationPercent",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleOptionLogsDiskUtilizationPercent { get; set; }
+        /// <summary>The min number of mins to check for file activity on automatic schedule.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The min number of mins to check for file activity on automatic schedule.",
+        SerializedName = @"minBackupIntervalInMins",
+        PossibleTypes = new [] { typeof(long) })]
+        long? ScheduleOptionMinBackupIntervalInMins { get; set; }
         /// <summary>item backup option for O365 V2 backup jobs</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -459,6 +510,8 @@ namespace Commvault.Powershell.Models
         string BackupType { get; set; }
         /// <summary>Boolean to indicate if schedule is for database agents</summary>
         bool? ForDatabasesOnly { get; set; }
+        /// <summary>Boolean to indicate if synthetic full schedule is based on retention rules</summary>
+        bool? IsRetentionBasedSyntheticFull { get; set; }
         /// <summary>Schedule policy Id to which the schedule belongs</summary>
         long? PolicyId { get; set; }
         /// <summary>Id of the schedule if available, required for modifying, deleting schedule</summary>
@@ -478,6 +531,12 @@ namespace Commvault.Powershell.Models
         long? ScheduleOptionDaysBetweenAutoConvert { get; set; }
         /// <summary>total job running time in minutes</summary>
         long? ScheduleOptionJobRunningTimeInMins { get; set; }
+        /// <summary>The min number of archived log files before a backup job should start</summary>
+        long? ScheduleOptionLogFilesThreshold { get; set; }
+        /// <summary>The min log destination disk threshold percentage</summary>
+        long? ScheduleOptionLogsDiskUtilizationPercent { get; set; }
+        /// <summary>The min number of mins to check for file activity on automatic schedule.</summary>
+        long? ScheduleOptionMinBackupIntervalInMins { get; set; }
         /// <summary>item backup option for O365 V2 backup jobs</summary>
         string ScheduleOptionO365ItemSelectionOption { get; set; }
         /// <summary>

@@ -42,9 +42,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Commcell</summary>
         Commvault.Powershell.Models.ICommcellNameDisplayNameInfo Commvault.Powershell.Models.ICompanySummaryInternal.Commcell { get => (this._commcell = this._commcell ?? new Commvault.Powershell.Models.CommcellNameDisplayNameInfo()); set { {_commcell = value;} } }
 
-        /// <summary>Internal Acessors for Tags</summary>
-        Commvault.Powershell.Models.IIdNameValue Commvault.Powershell.Models.ICompanySummaryInternal.Tags { get => (this._tags = this._tags ?? new Commvault.Powershell.Models.IdNameValue()); set { {_tags = value;} } }
-
         /// <summary>Backing field for <see cref="Guid" /> property.</summary>
         private string _guid;
 
@@ -96,21 +93,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Gives the company status</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Status { get => this._status; set => this._status = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? TagId { get => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Id; set => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Id = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string TagName { get => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Name; set => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Name = value ?? null; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string TagValue { get => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Value; set => ((Commvault.Powershell.Models.IIdNameValueInternal)Tags).Value = value ?? null; }
-
-        /// <summary>Backing field for <see cref="Tags" /> property.</summary>
-        private Commvault.Powershell.Models.IIdNameValue _tags;
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdNameValue Tags { get => (this._tags = this._tags ?? new Commvault.Powershell.Models.IdNameValue()); set => this._tags = value; }
 
         /// <summary>Creates an new <see cref="CompanySummary" /> instance.</summary>
         public CompanySummary()
@@ -214,30 +196,6 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string Status { get; set; }
 
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? TagId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string TagName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"value",
-        PossibleTypes = new [] { typeof(string) })]
-        string TagValue { get; set; }
-
     }
     internal partial interface ICompanySummaryInternal
 
@@ -270,14 +228,6 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName[] PrimaryContacts { get; set; }
         /// <summary>Gives the company status</summary>
         string Status { get; set; }
-
-        long? TagId { get; set; }
-
-        string TagName { get; set; }
-
-        string TagValue { get; set; }
-
-        Commvault.Powershell.Models.IIdNameValue Tags { get; set; }
 
     }
 }

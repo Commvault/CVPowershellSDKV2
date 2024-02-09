@@ -87,6 +87,7 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("permissionList",__w);
             }
+            AddIf( null != (((object)this._permissionOperationType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._permissionOperationType.ToString()) : null, "permissionOperationType" ,container.Add );
             AddIf( null != this._enabled ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._enabled) : null, "enabled" ,container.Add );
             AddIf( null != this._visibleToAll ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._visibleToAll) : null, "visibleToAll" ,container.Add );
             if (null != this._security)
@@ -116,6 +117,7 @@ namespace Commvault.Powershell.Models
             }
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_permissionList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("permissionList"), out var __jsonPermissionList) ? If( __jsonPermissionList as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPermissions[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPermissions) (Commvault.Powershell.Models.Permissions.FromJson(__u) )) ))() : null : PermissionList;}
+            {_permissionOperationType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("permissionOperationType"), out var __jsonPermissionOperationType) ? (string)__jsonPermissionOperationType : (string)PermissionOperationType;}
             {_enabled = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("enabled"), out var __jsonEnabled) ? (bool?)__jsonEnabled : Enabled;}
             {_visibleToAll = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("visibleToAll"), out var __jsonVisibleToAll) ? (bool?)__jsonVisibleToAll : VisibleToAll;}
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("security"), out var __jsonSecurity) ? If( __jsonSecurity as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IUpdateSecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IUpdateSecurityAssoc) (Commvault.Powershell.Models.UpdateSecurityAssoc.FromJson(__p) )) ))() : null : Security;}

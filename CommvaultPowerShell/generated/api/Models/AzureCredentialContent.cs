@@ -13,6 +13,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IAzureCredentialContentInternal
     {
 
+        /// <summary>Backing field for <see cref="AccessKeyId" /> property.</summary>
+        private string _accessKeyId;
+
+        /// <summary>Access key ID of Credential and must be in base64 encoded format.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string AccessKeyId { get => this._accessKeyId; set => this._accessKeyId = value; }
+
         /// <summary>Backing field for <see cref="AccountName" /> property.</summary>
         private string _accountName;
 
@@ -40,13 +47,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Updated description of Credential</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Description { get => this._description; set => this._description = value; }
-
-        /// <summary>Backing field for <see cref="NewAccessKeyId" /> property.</summary>
-        private string _newAccessKeyId;
-
-        /// <summary>Access key ID of Credential and must be in base64 encoded format.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string NewAccessKeyId { get => this._newAccessKeyId; set => this._newAccessKeyId = value; }
 
         /// <summary>Backing field for <see cref="NewName" /> property.</summary>
         private string _newName;
@@ -87,11 +87,19 @@ namespace Commvault.Powershell.Models
     public partial interface IAzureCredentialContent :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Access key ID of Credential and must be in base64 encoded format.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = true,
+        ReadOnly = false,
+        Description = @"Access key ID of Credential and must be in base64 encoded format.",
+        SerializedName = @"accessKeyId",
+        PossibleTypes = new [] { typeof(string) })]
+        string AccessKeyId { get; set; }
         /// <summary>
         /// Account name of Credential. If updated the updated account name is considered else the existing account name is considered.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Account name of Credential. If updated the updated account name is considered else the existing account name is considered.",
         SerializedName = @"accountName",
@@ -105,14 +113,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"description",
         PossibleTypes = new [] { typeof(string) })]
         string Description { get; set; }
-        /// <summary>Access key ID of Credential and must be in base64 encoded format.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Access key ID of Credential and must be in base64 encoded format.",
-        SerializedName = @"newAccessKeyId",
-        PossibleTypes = new [] { typeof(string) })]
-        string NewAccessKeyId { get; set; }
         /// <summary>Updated name of credential</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -167,14 +167,14 @@ namespace Commvault.Powershell.Models
     internal partial interface IAzureCredentialContentInternal
 
     {
+        /// <summary>Access key ID of Credential and must be in base64 encoded format.</summary>
+        string AccessKeyId { get; set; }
         /// <summary>
         /// Account name of Credential. If updated the updated account name is considered else the existing account name is considered.
         /// </summary>
         string AccountName { get; set; }
         /// <summary>Updated description of Credential</summary>
         string Description { get; set; }
-        /// <summary>Access key ID of Credential and must be in base64 encoded format.</summary>
-        string NewAccessKeyId { get; set; }
         /// <summary>Updated name of credential</summary>
         string NewName { get; set; }
 

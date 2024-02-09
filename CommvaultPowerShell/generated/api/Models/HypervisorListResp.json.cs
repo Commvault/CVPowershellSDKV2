@@ -82,6 +82,8 @@ namespace Commvault.Powershell.Models
             {_status = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("status"), out var __jsonStatus) ? (string)__jsonStatus : (string)Status;}
             {_version = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("version"), out var __jsonVersion) ? (string)__jsonVersion : (string)Version;}
             {_tags = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("tags"), out var __jsonTags) ? If( __jsonTags as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdNameValue[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdNameValue) (Commvault.Powershell.Models.IdNameValue.FromJson(__u) )) ))() : null : Tags;}
+            {_isManagedIdentity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isManagedIdentity"), out var __jsonIsManagedIdentity) ? (bool?)__jsonIsManagedIdentity : IsManagedIdentity;}
+            {_useHostedInfrastructure = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useHostedInfrastructure"), out var __jsonUseHostedInfrastructure) ? (bool?)__jsonUseHostedInfrastructure : UseHostedInfrastructure;}
             AfterFromJson(json);
         }
 
@@ -124,6 +126,8 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("tags",__w);
             }
+            AddIf( null != this._isManagedIdentity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isManagedIdentity) : null, "isManagedIdentity" ,container.Add );
+            AddIf( null != this._useHostedInfrastructure ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useHostedInfrastructure) : null, "useHostedInfrastructure" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

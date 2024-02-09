@@ -89,6 +89,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string SlaExclusionReason { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).ExclusionReason; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).ExclusionReason = value ?? null; }
 
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SlaLogSlaMinutes { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).LogSlaMinutes; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).LogSlaMinutes = value ?? default(long); }
+
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaUpdateOptionsInternal)Sla).SlaPeriod = value ?? default(long); }
@@ -207,6 +211,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"exclusionReason",
         PossibleTypes = new [] { typeof(string) })]
         string SlaExclusionReason { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Database log SLA period in Minutes",
+        SerializedName = @"logSLAMinutes",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -264,6 +276,8 @@ namespace Commvault.Powershell.Models
         bool? SlaExcludeFromSla { get; set; }
         /// <summary>Reason for exclusion from SLA</summary>
         string SlaExclusionReason { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>

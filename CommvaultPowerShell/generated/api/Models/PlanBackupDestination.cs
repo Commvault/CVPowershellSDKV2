@@ -52,6 +52,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for StoragePool</summary>
         Commvault.Powershell.Models.IStoragePool Commvault.Powershell.Models.IPlanBackupDestinationInternal.StoragePool { get => (this._storagePool = this._storagePool ?? new Commvault.Powershell.Models.StoragePool()); set { {_storagePool = value;} } }
 
+        /// <summary>Internal Acessors for StoragePoolRegion</summary>
+        Commvault.Powershell.Models.IIdNameDisplayName Commvault.Powershell.Models.IPlanBackupDestinationInternal.StoragePoolRegion { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Region; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Region = value; }
+
         /// <summary>Backing field for <see cref="CopyPrecedence" /> property.</summary>
         private long? _copyPrecedence;
 
@@ -70,6 +73,9 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string CopyTypeName { get => this._copyTypeName; set => this._copyTypeName = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string DisplayName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).DisplayName; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).DisplayName = value ?? null; }
 
         /// <summary>Backing field for <see cref="EnableDataAging" /> property.</summary>
         private bool? _enableDataAging;
@@ -111,6 +117,16 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string FullBackupTypesToCopy { get => this._fullBackupTypesToCopy; set => this._fullBackupTypesToCopy = value; }
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? Id { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id = value ?? default(long); }
+
+        /// <summary>Backing field for <see cref="IsConfiguredForReplication" /> property.</summary>
+        private bool? _isConfiguredForReplication;
+
+        /// <summary>Used if the copy is used for replication group</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsConfiguredForReplication { get => this._isConfiguredForReplication; set => this._isConfiguredForReplication = value; }
+
         /// <summary>Backing field for <see cref="IsDefault" /> property.</summary>
         private bool? _isDefault;
 
@@ -132,11 +148,21 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? IsSnapCopy { get => this._isSnapCopy; set => this._isSnapCopy = value; }
 
+        /// <summary>Backing field for <see cref="IsSourceBackupCopy" /> property.</summary>
+        private bool? _isSourceBackupCopy;
+
+        /// <summary>Is this the source copy for backup copy operations?</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public bool? IsSourceBackupCopy { get => this._isSourceBackupCopy; set => this._isSourceBackupCopy = value; }
+
         /// <summary>Backing field for <see cref="Mappings" /> property.</summary>
         private Commvault.Powershell.Models.ISnapshotCopyMapping[] _mappings;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.ISnapshotCopyMapping[] Mappings { get => this._mappings; set => this._mappings = value; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string Name { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="NetAppCloudTarget" /> property.</summary>
         private bool? _netAppCloudTarget;
@@ -176,15 +202,6 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IIdNameDisplayName Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdNameDisplayName()); set => this._region = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionDisplayName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).DisplayName; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).DisplayName = value ?? null; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Id = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionName { get => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameDisplayNameInternal)Region).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="RetentionPeriodDays" /> property.</summary>
         private long? _retentionPeriodDays;
@@ -240,17 +257,38 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IStoragePool StoragePool { get => (this._storagePool = this._storagePool ?? new Commvault.Powershell.Models.StoragePool()); set => this._storagePool = value; }
 
+        /// <summary>Device type of the storage.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string StoragePoolDeviceType { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).DeviceType; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).DeviceType = value ?? null; }
+
         /// <summary>Id of Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? StoragePoolId { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Id; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Id = value ?? default(long); }
+
+        /// <summary>Flag indicating whether the storage tier is archive.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? StoragePoolIsArchiveStorage { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).IsArchiveStorage; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).IsArchiveStorage = value ?? default(bool); }
 
         /// <summary>Name of Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string StoragePoolName { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Name; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).Name = value ?? null; }
 
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string StoragePoolRegionDisplayName { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RegionDisplayName; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RegionDisplayName = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? StoragePoolRegionId { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RegionId; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RegionId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string StoragePoolRegionName { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RegionName; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RegionName = value ?? null; }
+
         /// <summary>Retention period of pool in days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? StoragePoolRetentionPeriodDays { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RetentionPeriodDays; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).RetentionPeriodDays = value ?? default(long); }
+
+        /// <summary>Storage container information of the storage.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string StoragePoolStorageClass { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).StorageClass; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).StorageClass = value ?? null; }
 
         /// <summary>Type of Storage Pool</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -262,6 +300,15 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? StoragePoolWormStoragePoolFlag { get => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).WormStoragePoolFlag; set => ((Commvault.Powershell.Models.IStoragePoolInternal)StoragePool).WormStoragePoolFlag = value ?? default(long); }
+
+        /// <summary>Backing field for <see cref="StorageTemplateTags" /> property.</summary>
+        private Commvault.Powershell.Models.IIdNameValue[] _storageTemplateTags;
+
+        /// <summary>
+        /// It is used in Global config template plan creation. Needs in plan creation on global commcell
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public Commvault.Powershell.Models.IIdNameValue[] StorageTemplateTags { get => this._storageTemplateTags; set => this._storageTemplateTags = value; }
 
         /// <summary>Backing field for <see cref="StorageType" /> property.</summary>
         private string _storageType;
@@ -344,6 +391,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"copyTypeName",
         PossibleTypes = new [] { typeof(string) })]
         string CopyTypeName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"displayName",
+        PossibleTypes = new [] { typeof(string) })]
+        string DisplayName { get; set; }
         /// <summary>Tells if this copy has data aging enabled</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -389,6 +444,22 @@ namespace Commvault.Powershell.Models
         SerializedName = @"fullBackupTypesToCopy",
         PossibleTypes = new [] { typeof(string) })]
         string FullBackupTypesToCopy { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? Id { get; set; }
+        /// <summary>Used if the copy is used for replication group</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Used if the copy is used for replication group",
+        SerializedName = @"isConfiguredForReplication",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsConfiguredForReplication { get; set; }
         /// <summary>Is this a default backup destination?</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -413,6 +484,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"isSnapCopy",
         PossibleTypes = new [] { typeof(bool) })]
         bool? IsSnapCopy { get; set; }
+        /// <summary>Is this the source copy for backup copy operations?</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Is this the source copy for backup copy operations?",
+        SerializedName = @"isSourceBackupCopy",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? IsSourceBackupCopy { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -421,6 +500,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"mappings",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ISnapshotCopyMapping) })]
         Commvault.Powershell.Models.ISnapshotCopyMapping[] Mappings { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string Name { get; set; }
         /// <summary>
         /// Only for snap copy. Tells if the snap copy supports SVM Mapping to NetApp cloud targets only.
         /// </summary>
@@ -458,30 +545,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string PlanBackupDestinationName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"displayName",
-        PossibleTypes = new [] { typeof(string) })]
-        string RegionDisplayName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? RegionId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string RegionName { get; set; }
         /// <summary>Retention period in days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -548,6 +611,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string SourceCopyName { get; set; }
+        /// <summary>Device type of the storage.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Device type of the storage.",
+        SerializedName = @"deviceType",
+        PossibleTypes = new [] { typeof(string) })]
+        string StoragePoolDeviceType { get; set; }
         /// <summary>Id of Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -556,6 +627,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? StoragePoolId { get; set; }
+        /// <summary>Flag indicating whether the storage tier is archive.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Flag indicating whether the storage tier is archive.",
+        SerializedName = @"isArchiveStorage",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? StoragePoolIsArchiveStorage { get; set; }
         /// <summary>Name of Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -564,6 +643,30 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string StoragePoolName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"displayName",
+        PossibleTypes = new [] { typeof(string) })]
+        string StoragePoolRegionDisplayName { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(long) })]
+        long? StoragePoolRegionId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string StoragePoolRegionName { get; set; }
         /// <summary>Retention period of pool in days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -572,6 +675,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"retentionPeriodDays",
         PossibleTypes = new [] { typeof(long) })]
         long? StoragePoolRetentionPeriodDays { get; set; }
+        /// <summary>Storage container information of the storage.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Storage container information of the storage.",
+        SerializedName = @"storageClass",
+        PossibleTypes = new [] { typeof(string) })]
+        string StoragePoolStorageClass { get; set; }
         /// <summary>Type of Storage Pool</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -591,6 +702,16 @@ namespace Commvault.Powershell.Models
         SerializedName = @"wormStoragePoolFlag",
         PossibleTypes = new [] { typeof(long) })]
         long? StoragePoolWormStoragePoolFlag { get; set; }
+        /// <summary>
+        /// It is used in Global config template plan creation. Needs in plan creation on global commcell
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"It is used in Global config template plan creation. Needs in plan creation on global commcell",
+        SerializedName = @"storageTemplateTags",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdNameValue) })]
+        Commvault.Powershell.Models.IIdNameValue[] StorageTemplateTags { get; set; }
         /// <summary>StorageType</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -652,6 +773,8 @@ namespace Commvault.Powershell.Models
         string CopyType { get; set; }
 
         string CopyTypeName { get; set; }
+
+        string DisplayName { get; set; }
         /// <summary>Tells if this copy has data aging enabled</summary>
         bool? EnableDataAging { get; set; }
 
@@ -677,14 +800,22 @@ namespace Commvault.Powershell.Models
         /// is LAST while adding new backup destination.
         /// </summary>
         string FullBackupTypesToCopy { get; set; }
+
+        long? Id { get; set; }
+        /// <summary>Used if the copy is used for replication group</summary>
+        bool? IsConfiguredForReplication { get; set; }
         /// <summary>Is this a default backup destination?</summary>
         bool? IsDefault { get; set; }
         /// <summary>Is this a mirror copy?</summary>
         bool? IsMirrorCopy { get; set; }
         /// <summary>Is this a snap copy?</summary>
         bool? IsSnapCopy { get; set; }
+        /// <summary>Is this the source copy for backup copy operations?</summary>
+        bool? IsSourceBackupCopy { get; set; }
 
         Commvault.Powershell.Models.ISnapshotCopyMapping[] Mappings { get; set; }
+
+        string Name { get; set; }
         /// <summary>
         /// Only for snap copy. Tells if the snap copy supports SVM Mapping to NetApp cloud targets only.
         /// </summary>
@@ -702,12 +833,6 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName PlanBackupDestinationPlanBackupDestination { get; set; }
 
         Commvault.Powershell.Models.IIdNameDisplayName Region { get; set; }
-
-        string RegionDisplayName { get; set; }
-
-        long? RegionId { get; set; }
-
-        string RegionName { get; set; }
         /// <summary>Retention period in days</summary>
         long? RetentionPeriodDays { get; set; }
         /// <summary>Which type of retention rule should be used for the given backup destination</summary>
@@ -730,12 +855,26 @@ namespace Commvault.Powershell.Models
         string SourceCopyName { get; set; }
         /// <summary>StoragePool</summary>
         Commvault.Powershell.Models.IStoragePool StoragePool { get; set; }
+        /// <summary>Device type of the storage.</summary>
+        string StoragePoolDeviceType { get; set; }
         /// <summary>Id of Storage Pool</summary>
         long? StoragePoolId { get; set; }
+        /// <summary>Flag indicating whether the storage tier is archive.</summary>
+        bool? StoragePoolIsArchiveStorage { get; set; }
         /// <summary>Name of Storage Pool</summary>
         string StoragePoolName { get; set; }
+
+        Commvault.Powershell.Models.IIdNameDisplayName StoragePoolRegion { get; set; }
+
+        string StoragePoolRegionDisplayName { get; set; }
+
+        long? StoragePoolRegionId { get; set; }
+
+        string StoragePoolRegionName { get; set; }
         /// <summary>Retention period of pool in days</summary>
         long? StoragePoolRetentionPeriodDays { get; set; }
+        /// <summary>Storage container information of the storage.</summary>
+        string StoragePoolStorageClass { get; set; }
         /// <summary>Type of Storage Pool</summary>
         string StoragePoolType { get; set; }
         /// <summary>
@@ -743,6 +882,10 @@ namespace Commvault.Powershell.Models
         /// lock, 4 means Object worm lock and 8 means bucket worm lock.
         /// </summary>
         long? StoragePoolWormStoragePoolFlag { get; set; }
+        /// <summary>
+        /// It is used in Global config template plan creation. Needs in plan creation on global commcell
+        /// </summary>
+        Commvault.Powershell.Models.IIdNameValue[] StorageTemplateTags { get; set; }
         /// <summary>StorageType</summary>
         string StorageType { get; set; }
         /// <summary>If this is set as true, no need to specify retentionPeriodDays.</summary>

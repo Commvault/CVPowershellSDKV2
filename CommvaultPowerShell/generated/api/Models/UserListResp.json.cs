@@ -78,7 +78,6 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._numberOfUsers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._numberOfUsers) : null, "numberOfUsers" ,container.Add );
             if (null != this._users)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -104,7 +103,6 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_numberOfUsers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("numberOfUsers"), out var __jsonNumberOfUsers) ? (long?)__jsonNumberOfUsers : NumberOfUsers;}
             {_users = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("users"), out var __jsonUsers) ? If( __jsonUsers as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IUserSummary[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IUserSummary) (Commvault.Powershell.Models.UserSummary.FromJson(__u) )) ))() : null : Users;}
             AfterFromJson(json);
         }

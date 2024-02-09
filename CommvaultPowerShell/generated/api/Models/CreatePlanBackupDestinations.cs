@@ -11,7 +11,7 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Internal Acessors for Region</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreatePlanBackupDestinationsInternal.Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdName()); set { {_region = value;} } }
+        Commvault.Powershell.Models.IIdNameGuid Commvault.Powershell.Models.ICreatePlanBackupDestinationsInternal.Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdNameGuid()); set { {_region = value;} } }
 
         /// <summary>Internal Acessors for SnapshotOptions</summary>
         Commvault.Powershell.Models.ICreatePlanSnapshotOptions Commvault.Powershell.Models.ICreatePlanBackupDestinationsInternal.SnapshotOptions { get => (this._snapshotOptions = this._snapshotOptions ?? new Commvault.Powershell.Models.CreatePlanSnapshotOptions()); set { {_snapshotOptions = value;} } }
@@ -24,16 +24,19 @@ namespace Commvault.Powershell.Models
         public Commvault.Powershell.Models.ICreatePlanBackupDestination[] Destinations { get => this._destinations; set => this._destinations = value; }
 
         /// <summary>Backing field for <see cref="Region" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _region;
+        private Commvault.Powershell.Models.IIdNameGuid _region;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdName()); set => this._region = value; }
+        internal Commvault.Powershell.Models.IIdNameGuid Region { get => (this._region = this._region ?? new Commvault.Powershell.Models.IdNameGuid()); set => this._region = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Id = value ?? default(long); }
+        public string RegionGuid { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Guid; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Guid = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RegionName { get => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Region).Name = value ?? null; }
+        public long? RegionId { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Id; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RegionName { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Name; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Region).Name = value ?? null; }
 
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -81,6 +84,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"destinations",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICreatePlanBackupDestination) })]
         Commvault.Powershell.Models.ICreatePlanBackupDestination[] Destinations { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"GUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string RegionGuid { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -143,7 +154,9 @@ namespace Commvault.Powershell.Models
         /// <summary>List of backup destinations to create</summary>
         Commvault.Powershell.Models.ICreatePlanBackupDestination[] Destinations { get; set; }
 
-        Commvault.Powershell.Models.IIdName Region { get; set; }
+        Commvault.Powershell.Models.IIdNameGuid Region { get; set; }
+
+        string RegionGuid { get; set; }
 
         long? RegionId { get; set; }
 

@@ -104,6 +104,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured = (bool?) content.GetValueForProperty("IsDdbSubclientConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType = (string) content.GetValueForProperty("OSType",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured = (bool?) content.GetValueForProperty("IsConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).DdbDisks = (Commvault.Powershell.Models.IDdbDiskInfo[]) content.GetValueForProperty("DdbDisks",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).DdbDisks, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IDdbDiskInfo>(__y, Commvault.Powershell.Models.DdbDiskInfoTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
 
@@ -129,6 +130,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured = (bool?) content.GetValueForProperty("IsDdbSubclientConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsDdbSubclientConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType = (string) content.GetValueForProperty("OSType",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).OSType, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured = (bool?) content.GetValueForProperty("IsConfigured",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).IsConfigured, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).DdbDisks = (Commvault.Powershell.Models.IDdbDiskInfo[]) content.GetValueForProperty("DdbDisks",((Commvault.Powershell.Models.IMediaAgentForDdbSummaryInternal)this).DdbDisks, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IDdbDiskInfo>(__y, Commvault.Powershell.Models.DdbDiskInfoTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }
 

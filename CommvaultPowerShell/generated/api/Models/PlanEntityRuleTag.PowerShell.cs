@@ -93,6 +93,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Guid = (string) content.GetValueForProperty("Guid",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Guid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Value = (string) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Value, global::System.Convert.ToString);
@@ -113,6 +114,7 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Guid = (string) content.GetValueForProperty("Guid",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Guid, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Id = (long?) content.GetValueForProperty("Id",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Id, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Value = (string) content.GetValueForProperty("Value",((Commvault.Powershell.Models.IPlanEntityRuleTagInternal)this).Value, global::System.Convert.ToString);

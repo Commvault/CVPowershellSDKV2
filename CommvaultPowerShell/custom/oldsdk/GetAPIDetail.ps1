@@ -241,7 +241,7 @@ function GetAPIDetail ([String] $Request) {
             
             }
             
-            'Resubmit-CVJob' = @{
+            'Restart-CVJob' = @{
         
                 Description = 'Resubmit the specified job'
                 Endpoint    = 'Job/{jobId}/action/resubmit'

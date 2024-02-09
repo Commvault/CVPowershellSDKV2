@@ -39,13 +39,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string NewName { get => this._newName; set => this._newName = value; }
 
-        /// <summary>Backing field for <see cref="NewSharedSecret" /> property.</summary>
-        private string _newSharedSecret;
-
-        /// <summary>Updated Shared secret of Credential and must be in base64 encoded format.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string NewSharedSecret { get => this._newSharedSecret; set => this._newSharedSecret = value; }
-
         /// <summary>Backing field for <see cref="Security" /> property.</summary>
         private Commvault.Powershell.Models.IUpdateCredentialSecurity _security;
 
@@ -55,6 +48,13 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public Commvault.Powershell.Models.ICredentialSecurityAssociations[] SecurityAssociations { get => ((Commvault.Powershell.Models.IUpdateCredentialSecurityInternal)Security).Associations; set => ((Commvault.Powershell.Models.IUpdateCredentialSecurityInternal)Security).Associations = value ?? null /* arrayOf */; }
+
+        /// <summary>Backing field for <see cref="SharedSecret" /> property.</summary>
+        private string _sharedSecret;
+
+        /// <summary>Updated Shared secret of Credential and must be in base64 encoded format.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string SharedSecret { get => this._sharedSecret; set => this._sharedSecret = value; }
 
         /// <summary>Backing field for <see cref="TokenId" /> property.</summary>
         private string _tokenId;
@@ -103,14 +103,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"newName",
         PossibleTypes = new [] { typeof(string) })]
         string NewName { get; set; }
-        /// <summary>Updated Shared secret of Credential and must be in base64 encoded format.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Updated Shared secret of Credential and must be in base64 encoded format.",
-        SerializedName = @"newSharedSecret",
-        PossibleTypes = new [] { typeof(string) })]
-        string NewSharedSecret { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -119,11 +111,19 @@ namespace Commvault.Powershell.Models
         SerializedName = @"associations",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ICredentialSecurityAssociations) })]
         Commvault.Powershell.Models.ICredentialSecurityAssociations[] SecurityAssociations { get; set; }
+        /// <summary>Updated Shared secret of Credential and must be in base64 encoded format.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = true,
+        ReadOnly = false,
+        Description = @"Updated Shared secret of Credential and must be in base64 encoded format.",
+        SerializedName = @"sharedSecret",
+        PossibleTypes = new [] { typeof(string) })]
+        string SharedSecret { get; set; }
         /// <summary>
         /// Token ID of Credential. If updated the updated token Id is considered else the existing token Id is considered.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Token ID of Credential. If updated the updated token Id is considered else the existing token Id is considered.",
         SerializedName = @"tokenId",
@@ -171,8 +171,6 @@ namespace Commvault.Powershell.Models
         string Description { get; set; }
         /// <summary>Updated name of credential</summary>
         string NewName { get; set; }
-        /// <summary>Updated Shared secret of Credential and must be in base64 encoded format.</summary>
-        string NewSharedSecret { get; set; }
 
         Commvault.Powershell.Models.IIdName OwnerUser { get; set; }
 
@@ -183,6 +181,8 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ICredentialSecurityAssociations[] SecurityAssociations { get; set; }
         /// <summary>Owner of a credential can be a user or user group</summary>
         Commvault.Powershell.Models.ICredentialOwner SecurityOwner { get; set; }
+        /// <summary>Updated Shared secret of Credential and must be in base64 encoded format.</summary>
+        string SharedSecret { get; set; }
         /// <summary>
         /// Token ID of Credential. If updated the updated token Id is considered else the existing token Id is considered.
         /// </summary>

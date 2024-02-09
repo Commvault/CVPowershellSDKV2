@@ -97,6 +97,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).RedirectUrl = (string) content.GetValueForProperty("RedirectUrl",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).RedirectUrl, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).LogoutUrl = (string) content.GetValueForProperty("LogoutUrl",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).LogoutUrl, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).CertificateData = (string) content.GetValueForProperty("CertificateData",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).CertificateData, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SecondaryCertificateData = (string) content.GetValueForProperty("SecondaryCertificateData",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SecondaryCertificateData, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SamlProtocolVersion = (string) content.GetValueForProperty("SamlProtocolVersion",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SamlProtocolVersion, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
@@ -119,6 +120,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).RedirectUrl = (string) content.GetValueForProperty("RedirectUrl",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).RedirectUrl, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).LogoutUrl = (string) content.GetValueForProperty("LogoutUrl",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).LogoutUrl, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).CertificateData = (string) content.GetValueForProperty("CertificateData",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).CertificateData, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SecondaryCertificateData = (string) content.GetValueForProperty("SecondaryCertificateData",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SecondaryCertificateData, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SamlProtocolVersion = (string) content.GetValueForProperty("SamlProtocolVersion",((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)this).SamlProtocolVersion, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }

@@ -31,6 +31,15 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string DestinationAlternateWins { get => this._destinationAlternateWins; set => this._destinationAlternateWins = value; }
 
+        /// <summary>Backing field for <see cref="DestinationDefaultGateway" /> property.</summary>
+        private string _destinationDefaultGateway;
+
+        /// <summary>
+        /// The default gateway for the destination VM. Provide only if DHCP is not enabled.
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string DestinationDefaultGateway { get => this._destinationDefaultGateway; set => this._destinationDefaultGateway = value; }
+
         /// <summary>Backing field for <see cref="DestinationIP" /> property.</summary>
         private string _destinationIP;
 
@@ -64,22 +73,6 @@ namespace Commvault.Powershell.Models
         /// <summary>The subnet mask for the destination VM. Provide only if DHCP is not enabled.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string DestinationSubnetMask { get => this._destinationSubnetMask; set => this._destinationSubnetMask = value; }
-
-        /// <summary>Backing field for <see cref="DestinationdefaultGateway" /> property.</summary>
-        private string _destinationdefaultGateway;
-
-        /// <summary>
-        /// The default gateway for the destination VM. Provide only if DHCP is not enabled.
-        /// </summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string DestinationdefaultGateway { get => this._destinationdefaultGateway; set => this._destinationdefaultGateway = value; }
-
-        /// <summary>Backing field for <see cref="Hostname" /> property.</summary>
-        private string _hostname;
-
-        /// <summary>The host name to be applied for the destination VM.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string Hostname { get => this._hostname; set => this._hostname = value; }
 
         /// <summary>Backing field for <see cref="SourceDefaultGateway" /> property.</summary>
         private string _sourceDefaultGateway;
@@ -142,6 +135,16 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(string) })]
         string DestinationAlternateWins { get; set; }
         /// <summary>
+        /// The default gateway for the destination VM. Provide only if DHCP is not enabled.
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The default gateway for the destination VM.  Provide only if DHCP is not enabled.",
+        SerializedName = @"destinationDefaultGateway",
+        PossibleTypes = new [] { typeof(string) })]
+        string DestinationDefaultGateway { get; set; }
+        /// <summary>
         /// The full IP address or an IP address pattern for the destination VM. Provide only if DHCP is not enabled.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
@@ -179,24 +182,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"destinationSubnetMask",
         PossibleTypes = new [] { typeof(string) })]
         string DestinationSubnetMask { get; set; }
-        /// <summary>
-        /// The default gateway for the destination VM. Provide only if DHCP is not enabled.
-        /// </summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"The default gateway for the destination VM.  Provide only if DHCP is not enabled.",
-        SerializedName = @"destinationdefaultGateway",
-        PossibleTypes = new [] { typeof(string) })]
-        string DestinationdefaultGateway { get; set; }
-        /// <summary>The host name to be applied for the destination VM.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"The host name to be applied for the destination VM.",
-        SerializedName = @"hostname",
-        PossibleTypes = new [] { typeof(string) })]
-        string Hostname { get; set; }
         /// <summary>The default gateway of the source VM.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -246,6 +231,10 @@ namespace Commvault.Powershell.Models
         /// </summary>
         string DestinationAlternateWins { get; set; }
         /// <summary>
+        /// The default gateway for the destination VM. Provide only if DHCP is not enabled.
+        /// </summary>
+        string DestinationDefaultGateway { get; set; }
+        /// <summary>
         /// The full IP address or an IP address pattern for the destination VM. Provide only if DHCP is not enabled.
         /// </summary>
         string DestinationIP { get; set; }
@@ -259,12 +248,6 @@ namespace Commvault.Powershell.Models
         string DestinationPreferredWins { get; set; }
         /// <summary>The subnet mask for the destination VM. Provide only if DHCP is not enabled.</summary>
         string DestinationSubnetMask { get; set; }
-        /// <summary>
-        /// The default gateway for the destination VM. Provide only if DHCP is not enabled.
-        /// </summary>
-        string DestinationdefaultGateway { get; set; }
-        /// <summary>The host name to be applied for the destination VM.</summary>
-        string Hostname { get; set; }
         /// <summary>The default gateway of the source VM.</summary>
         string SourceDefaultGateway { get; set; }
         /// <summary>The full IP address or an IP address pattern of the source VM.</summary>

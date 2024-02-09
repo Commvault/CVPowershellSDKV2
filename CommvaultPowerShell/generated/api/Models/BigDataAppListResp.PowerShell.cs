@@ -64,7 +64,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataAppCount = (long?) content.GetValueForProperty("BigDataAppCount",((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataAppCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataApps = (Commvault.Powershell.Models.IBigDataAppSummary[]) content.GetValueForProperty("BigDataApps",((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataApps, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IBigDataAppSummary>(__y, Commvault.Powershell.Models.BigDataAppSummaryTypeConverter.ConvertFrom));
             AfterDeserializeDictionary(content);
         }
@@ -83,7 +82,6 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
-            ((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataAppCount = (long?) content.GetValueForProperty("BigDataAppCount",((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataAppCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataApps = (Commvault.Powershell.Models.IBigDataAppSummary[]) content.GetValueForProperty("BigDataApps",((Commvault.Powershell.Models.IBigDataAppListRespInternal)this).BigDataApps, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IBigDataAppSummary>(__y, Commvault.Powershell.Models.BigDataAppSummaryTypeConverter.ConvertFrom));
             AfterDeserializePSObject(content);
         }

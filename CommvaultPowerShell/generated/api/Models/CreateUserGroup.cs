@@ -10,6 +10,9 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ICreateUserGroupInternal
     {
 
+        /// <summary>Internal Acessors for GlobalConfigInfo</summary>
+        Commvault.Powershell.Models.ICreateGlobalConfigInfo Commvault.Powershell.Models.ICreateUserGroupInternal.GlobalConfigInfo { get => (this._globalConfigInfo = this._globalConfigInfo ?? new Commvault.Powershell.Models.CreateGlobalConfigInfo()); set { {_globalConfigInfo = value;} } }
+
         /// <summary>Backing field for <see cref="Description" /> property.</summary>
         private string _description;
 
@@ -24,6 +27,40 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public bool? EnforceFsQuota { get => this._enforceFsQuota; set => this._enforceFsQuota = value; }
+
+        /// <summary>Backing field for <see cref="GlobalConfigInfo" /> property.</summary>
+        private Commvault.Powershell.Models.ICreateGlobalConfigInfo _globalConfigInfo;
+
+        /// <summary>Only applicable to Global CommCells</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.ICreateGlobalConfigInfo GlobalConfigInfo { get => (this._globalConfigInfo = this._globalConfigInfo ?? new Commvault.Powershell.Models.CreateGlobalConfigInfo()); set => this._globalConfigInfo = value; }
+
+        /// <summary>
+        /// Action that will be taken on the local entity that has the same name as the global entity that needs to be created
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoActionOnLocalEntity { get => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).ActionOnLocalEntity; set => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).ActionOnLocalEntity = value ?? null; }
+
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? GlobalConfigInfoApplyOnAllCommCells { get => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).ApplyOnAllCommCells; set => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).ApplyOnAllCommCells = value ?? default(bool); }
+
+        /// <summary>List of Service CommCells where the global configuration should be applied</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).Commcells; set => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).Commcells = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoName { get => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).Name; set => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).Name = value ?? null; }
+
+        /// <summary>The entity level at which the config has to be applied.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoScope { get => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).Scope; set => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).Scope = value ?? null; }
+
+        /// <summary>CommCellEntityCache filter query string using for filtering the scope</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoScopeFilterQuery { get => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).ScopeFilterQuery; set => ((Commvault.Powershell.Models.ICreateGlobalConfigInfoInternal)GlobalConfigInfo).ScopeFilterQuery = value ?? null; }
 
         /// <summary>Backing field for <see cref="LocalUserGroups" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _localUserGroups;
@@ -78,6 +115,58 @@ namespace Commvault.Powershell.Models
         PossibleTypes = new [] { typeof(bool) })]
         bool? EnforceFsQuota { get; set; }
         /// <summary>
+        /// Action that will be taken on the local entity that has the same name as the global entity that needs to be created
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Action that will be taken on the local entity that has the same name as the global entity that needs to be created",
+        SerializedName = @"actionOnLocalEntity",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoActionOnLocalEntity { get; set; }
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones",
+        SerializedName = @"applyOnAllCommCells",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? GlobalConfigInfoApplyOnAllCommCells { get; set; }
+        /// <summary>List of Service CommCells where the global configuration should be applied</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of Service CommCells where the global configuration should be applied",
+        SerializedName = @"commcells",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IGlobalConfigCommcellInfo) })]
+        Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoName { get; set; }
+        /// <summary>The entity level at which the config has to be applied.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The entity level at which the config has to be applied.",
+        SerializedName = @"scope",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoScope { get; set; }
+        /// <summary>CommCellEntityCache filter query string using for filtering the scope</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"CommCellEntityCache filter query string using for filtering the scope",
+        SerializedName = @"scopeFilterQuery",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoScopeFilterQuery { get; set; }
+        /// <summary>
         /// This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
@@ -116,6 +205,24 @@ namespace Commvault.Powershell.Models
         /// Used to determine if a backup data limit will be set for the user group being created
         /// </summary>
         bool? EnforceFsQuota { get; set; }
+        /// <summary>Only applicable to Global CommCells</summary>
+        Commvault.Powershell.Models.ICreateGlobalConfigInfo GlobalConfigInfo { get; set; }
+        /// <summary>
+        /// Action that will be taken on the local entity that has the same name as the global entity that needs to be created
+        /// </summary>
+        string GlobalConfigInfoActionOnLocalEntity { get; set; }
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        bool? GlobalConfigInfoApplyOnAllCommCells { get; set; }
+        /// <summary>List of Service CommCells where the global configuration should be applied</summary>
+        Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get; set; }
+
+        string GlobalConfigInfoName { get; set; }
+        /// <summary>The entity level at which the config has to be applied.</summary>
+        string GlobalConfigInfoScope { get; set; }
+        /// <summary>CommCellEntityCache filter query string using for filtering the scope</summary>
+        string GlobalConfigInfoScopeFilterQuery { get; set; }
         /// <summary>
         /// This option is for AD user groups being created. Local user groups can be added to the active directory user groups.
         /// </summary>

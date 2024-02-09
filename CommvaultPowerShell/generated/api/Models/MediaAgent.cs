@@ -14,25 +14,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IMediaAgentControl Commvault.Powershell.Models.IMediaAgentInternal.Control { get => (this._control = this._control ?? new Commvault.Powershell.Models.MediaAgentControl()); set { {_control = value;} } }
 
         /// <summary>Internal Acessors for General</summary>
-        Commvault.Powershell.Models.IMediaAgentSummary Commvault.Powershell.Models.IMediaAgentInternal.General { get => (this._general = this._general ?? new Commvault.Powershell.Models.MediaAgentSummary()); set { {_general = value;} } }
-
-        /// <summary>Internal Acessors for GeneralCompany</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IMediaAgentInternal.GeneralCompany { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Company; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Company = value; }
-
-        /// <summary>Internal Acessors for GeneralOperatingSystem</summary>
-        Commvault.Powershell.Models.IIdNameType Commvault.Powershell.Models.IMediaAgentInternal.GeneralOperatingSystem { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystem; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystem = value; }
+        Commvault.Powershell.Models.IMediaAgentGeneralSummary Commvault.Powershell.Models.IMediaAgentInternal.General { get => (this._general = this._general ?? new Commvault.Powershell.Models.MediaAgentGeneralSummary()); set { {_general = value;} } }
 
         /// <summary>Internal Acessors for IndexCache</summary>
         Commvault.Powershell.Models.IIndexCache Commvault.Powershell.Models.IMediaAgentInternal.IndexCache { get => (this._indexCache = this._indexCache ?? new Commvault.Powershell.Models.IndexCache()); set { {_indexCache = value;} } }
 
         /// <summary>Internal Acessors for IndexCacheLogsCache</summary>
         Commvault.Powershell.Models.IMediaAgentLogsCache Commvault.Powershell.Models.IMediaAgentInternal.IndexCacheLogsCache { get => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogsCache; set => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogsCache = value; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? CompanyId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyId; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string CompanyName { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyName; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).CompanyName = value ?? null; }
 
         /// <summary>Backing field for <see cref="Control" /> property.</summary>
         private Commvault.Powershell.Models.IMediaAgentControl _control;
@@ -69,52 +57,44 @@ namespace Commvault.Powershell.Models
         public bool? ControlRansomwareProtection { get => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).RansomwareProtection; set => ((Commvault.Powershell.Models.IMediaAgentControlInternal)Control).RansomwareProtection = value ?? default(bool); }
 
         /// <summary>Backing field for <see cref="General" /> property.</summary>
-        private Commvault.Powershell.Models.IMediaAgentSummary _general;
+        private Commvault.Powershell.Models.IMediaAgentGeneralSummary _general;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IMediaAgentSummary General { get => (this._general = this._general ?? new Commvault.Powershell.Models.MediaAgentSummary()); set => this._general = value; }
+        internal Commvault.Powershell.Models.IMediaAgentGeneralSummary General { get => (this._general = this._general ?? new Commvault.Powershell.Models.MediaAgentGeneralSummary()); set => this._general = value; }
 
         /// <summary>Description of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string GeneralDescription { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Description; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Description = value ?? null; }
+        public string GeneralDescription { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Description; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Description = value ?? null; }
 
         /// <summary>Display name of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string GeneralDisplayName { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).DisplayName; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).DisplayName = value ?? null; }
+        public string GeneralDisplayName { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).DisplayName; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).DisplayName = value ?? null; }
 
         /// <summary>Id of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? GeneralId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Id; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Id = value ?? default(long); }
-
-        /// <summary>Used to determine if the MA is licensed or not.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? GeneralIsUnlicensedMa { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).IsUnlicensedMa; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).IsUnlicensedMa = value ?? default(bool); }
+        public long? GeneralId { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Id; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Id = value ?? default(long); }
 
         /// <summary>Name of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string GeneralName { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Name; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Name = value ?? null; }
+        public string GeneralName { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Name; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Name = value ?? null; }
 
         /// <summary>
         /// Provides a reason for the media agent being offline. Only given when the media agent is offline.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string GeneralOfflineReason { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OfflineReason; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OfflineReason = value ?? null; }
+        public string GeneralOfflineReason { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).OfflineReason; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).OfflineReason = value ?? null; }
 
-        /// <summary>A flag for offline reason. Only given when the media agent is offline.</summary>
+        /// <summary>Name of the operating system of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? GeneralOfflineReasonValue { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OfflineReasonValue; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OfflineReasonValue = value ?? default(long); }
-
-        /// <summary>Release version of the media agent.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? GeneralReleaseId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).ReleaseId; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).ReleaseId = value ?? default(long); }
+        public string GeneralOperatingSystem { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).OperatingSystem; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).OperatingSystem = value ?? null; }
 
         /// <summary>Current status of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string GeneralStatus { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Status; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Status = value ?? null; }
+        public string GeneralStatus { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Status; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Status = value ?? null; }
 
         /// <summary>The service pack of the media agent.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string GeneralVersion { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Version; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).Version = value ?? null; }
+        public string GeneralVersion { get => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Version; set => ((Commvault.Powershell.Models.IMediaAgentGeneralSummaryInternal)General).Version = value ?? null; }
 
         /// <summary>Backing field for <see cref="IndexCache" /> property.</summary>
         private Commvault.Powershell.Models.IIndexCache _indexCache;
@@ -134,15 +114,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string LogCachePath { get => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogCachePath; set => ((Commvault.Powershell.Models.IIndexCacheInternal)IndexCache).LogCachePath = value ?? null; }
 
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? OperatingSystemId { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemId; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemId = value ?? default(long); }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string OperatingSystemName { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemName; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemName = value ?? null; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string OperatingSystemType { get => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemType; set => ((Commvault.Powershell.Models.IMediaAgentSummaryInternal)General).OperatingSystemType = value ?? null; }
-
         /// <summary>Backing field for <see cref="Security" /> property.</summary>
         private Commvault.Powershell.Models.ISecurityAssoc[] _security;
 
@@ -158,21 +129,6 @@ namespace Commvault.Powershell.Models
     public partial interface IMediaAgent :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? CompanyId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string CompanyName { get; set; }
         /// <summary>Determines if the media agent is currently enabled or disabled.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -245,14 +201,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? GeneralId { get; set; }
-        /// <summary>Used to determine if the MA is licensed or not.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Used to determine if the MA is licensed or not.",
-        SerializedName = @"isUnlicensedMA",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? GeneralIsUnlicensedMa { get; set; }
         /// <summary>Name of the media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -271,22 +219,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"offlineReason",
         PossibleTypes = new [] { typeof(string) })]
         string GeneralOfflineReason { get; set; }
-        /// <summary>A flag for offline reason. Only given when the media agent is offline.</summary>
+        /// <summary>Name of the operating system of the media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"A flag for offline reason. Only given when the media agent is offline.",
-        SerializedName = @"offlineReasonValue",
-        PossibleTypes = new [] { typeof(long) })]
-        long? GeneralOfflineReasonValue { get; set; }
-        /// <summary>Release version of the media agent.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Release version of the media agent.",
-        SerializedName = @"releaseId",
-        PossibleTypes = new [] { typeof(long) })]
-        long? GeneralReleaseId { get; set; }
+        Description = @"Name of the operating system of the media agent.",
+        SerializedName = @"operatingSystem",
+        PossibleTypes = new [] { typeof(string) })]
+        string GeneralOperatingSystem { get; set; }
         /// <summary>Current status of the media agent.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -332,30 +272,6 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
-        SerializedName = @"id",
-        PossibleTypes = new [] { typeof(long) })]
-        long? OperatingSystemId { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"name",
-        PossibleTypes = new [] { typeof(string) })]
-        string OperatingSystemName { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"type",
-        PossibleTypes = new [] { typeof(string) })]
-        string OperatingSystemType { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
         SerializedName = @"security",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.ISecurityAssoc) })]
         Commvault.Powershell.Models.ISecurityAssoc[] Security { get; set; }
@@ -364,10 +280,6 @@ namespace Commvault.Powershell.Models
     internal partial interface IMediaAgentInternal
 
     {
-        long? CompanyId { get; set; }
-
-        string CompanyName { get; set; }
-
         Commvault.Powershell.Models.IMediaAgentControl Control { get; set; }
         /// <summary>Determines if the media agent is currently enabled or disabled.</summary>
         bool? ControlEnabled { get; set; }
@@ -388,29 +300,21 @@ namespace Commvault.Powershell.Models
         /// </summary>
         bool? ControlRansomwareProtection { get; set; }
 
-        Commvault.Powershell.Models.IMediaAgentSummary General { get; set; }
-
-        Commvault.Powershell.Models.IIdName GeneralCompany { get; set; }
+        Commvault.Powershell.Models.IMediaAgentGeneralSummary General { get; set; }
         /// <summary>Description of the media agent.</summary>
         string GeneralDescription { get; set; }
         /// <summary>Display name of the media agent.</summary>
         string GeneralDisplayName { get; set; }
         /// <summary>Id of the media agent.</summary>
         long? GeneralId { get; set; }
-        /// <summary>Used to determine if the MA is licensed or not.</summary>
-        bool? GeneralIsUnlicensedMa { get; set; }
         /// <summary>Name of the media agent.</summary>
         string GeneralName { get; set; }
         /// <summary>
         /// Provides a reason for the media agent being offline. Only given when the media agent is offline.
         /// </summary>
         string GeneralOfflineReason { get; set; }
-        /// <summary>A flag for offline reason. Only given when the media agent is offline.</summary>
-        long? GeneralOfflineReasonValue { get; set; }
-
-        Commvault.Powershell.Models.IIdNameType GeneralOperatingSystem { get; set; }
-        /// <summary>Release version of the media agent.</summary>
-        long? GeneralReleaseId { get; set; }
+        /// <summary>Name of the operating system of the media agent.</summary>
+        string GeneralOperatingSystem { get; set; }
         /// <summary>Current status of the media agent.</summary>
         string GeneralStatus { get; set; }
         /// <summary>The service pack of the media agent.</summary>
@@ -425,12 +329,6 @@ namespace Commvault.Powershell.Models
         bool? LogCacheEnabled { get; set; }
         /// <summary>If the logs cache is enabled, this tag gives the path to store the logs cache.</summary>
         string LogCachePath { get; set; }
-
-        long? OperatingSystemId { get; set; }
-
-        string OperatingSystemName { get; set; }
-
-        string OperatingSystemType { get; set; }
 
         Commvault.Powershell.Models.ISecurityAssoc[] Security { get; set; }
 

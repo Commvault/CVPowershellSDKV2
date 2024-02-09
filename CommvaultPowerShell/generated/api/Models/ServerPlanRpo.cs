@@ -41,6 +41,9 @@ namespace Commvault.Powershell.Models
         /// <summary>Internal Acessors for Sla</summary>
         Commvault.Powershell.Models.ISlaOptions Commvault.Powershell.Models.IServerPlanRpoInternal.Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaOptions()); set { {_sla = value;} } }
 
+        /// <summary>Internal Acessors for SynthfullCriteria</summary>
+        Commvault.Powershell.Models.ISynthfullRetentionCriteria Commvault.Powershell.Models.IServerPlanRpoInternal.SynthfullCriteria { get => (this._synthfullCriteria = this._synthfullCriteria ?? new Commvault.Powershell.Models.SynthfullRetentionCriteria()); set { {_synthfullCriteria = value;} } }
+
         /// <summary>Backing field for <see cref="FullBackupWindow" /> property.</summary>
         private Commvault.Powershell.Models.IDayAndTime[] _fullBackupWindow;
 
@@ -78,6 +81,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).InheritedSlaPeriod; set => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).InheritedSlaPeriod = value ?? default(long); }
 
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SlaLogSlaMinutes { get => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).LogSlaMinutes; set => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).LogSlaMinutes = value ?? default(long); }
+
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public long? SlaPeriod { get => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).SlaPeriod; set => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).SlaPeriod = value ?? default(long); }
@@ -85,6 +92,53 @@ namespace Commvault.Powershell.Models
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public bool? SlaUseSystemDefaultSla { get => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).UseSystemDefaultSla; set => ((Commvault.Powershell.Models.ISlaOptionsInternal)Sla).UseSystemDefaultSla = value ?? default(bool); }
+
+        /// <summary>Backing field for <see cref="SynthfullCriteria" /> property.</summary>
+        private Commvault.Powershell.Models.ISynthfullRetentionCriteria _synthfullCriteria;
+
+        /// <summary>
+        /// Server plan storage copies extended retention critera used for calculating synthfull schedule pattern
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.ISynthfullRetentionCriteria SynthfullCriteria { get => (this._synthfullCriteria = this._synthfullCriteria ?? new Commvault.Powershell.Models.SynthfullRetentionCriteria()); set => this._synthfullCriteria = value; }
+
+        /// <summary>Tells us from where the rule was picked up</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SynthfullCriterionConfigType { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).ConfigType; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).ConfigType = value ?? null; }
+
+        /// <summary>storage policy copy</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SynthfullCriterionCopyId { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).CopyId; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).CopyId = value ?? default(long); }
+
+        /// <summary>storage policy copy name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SynthfullCriterionCopyName { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).CopyName; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).CopyName = value ?? null; }
+
+        /// <summary>
+        /// If set to true, will consider first full else will consider last full for the selective rule
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? SynthfullCriterionFirstFull { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).FirstFull; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).FirstFull = value ?? default(bool); }
+
+        /// <summary>Start Date in the month</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SynthfullCriterionMonthStart { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).MonthStart; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).MonthStart = value ?? default(long); }
+
+        /// <summary>Tells us the retention duration</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SynthfullCriterionSelectiveRule { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).SelectiveRule; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).SelectiveRule = value ?? null; }
+
+        /// <summary>storage Policy Id</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? SynthfullCriterionStoragePolicyId { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).StoragePolicyId; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).StoragePolicyId = value ?? default(long); }
+
+        /// <summary>Storage Policy Name</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SynthfullCriterionStoragePolicyName { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).StoragePolicyName; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).StoragePolicyName = value ?? null; }
+
+        /// <summary>Start day of the week</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string SynthfullCriterionWeekStart { get => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).WeekStart; set => ((Commvault.Powershell.Models.ISynthfullRetentionCriteriaInternal)SynthfullCriteria).WeekStart = value ?? null; }
 
         /// <summary>Creates an new <see cref="ServerPlanRpo" /> instance.</summary>
         public ServerPlanRpo()
@@ -169,6 +223,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"inheritedSLAPeriod",
         PossibleTypes = new [] { typeof(long) })]
         long? SlaInheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Database log SLA period in Minutes",
+        SerializedName = @"logSLAMinutes",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -185,6 +247,80 @@ namespace Commvault.Powershell.Models
         SerializedName = @"useSystemDefaultSLA",
         PossibleTypes = new [] { typeof(bool) })]
         bool? SlaUseSystemDefaultSla { get; set; }
+        /// <summary>Tells us from where the rule was picked up</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells us from where the rule was picked up",
+        SerializedName = @"configType",
+        PossibleTypes = new [] { typeof(string) })]
+        string SynthfullCriterionConfigType { get; set; }
+        /// <summary>storage policy copy</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"storage policy copy",
+        SerializedName = @"copyId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SynthfullCriterionCopyId { get; set; }
+        /// <summary>storage policy copy name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"storage policy copy name",
+        SerializedName = @"copyName",
+        PossibleTypes = new [] { typeof(string) })]
+        string SynthfullCriterionCopyName { get; set; }
+        /// <summary>
+        /// If set to true, will consider first full else will consider last full for the selective rule
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"If set to true, will consider first full else will consider last full for the selective rule",
+        SerializedName = @"firstFull",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? SynthfullCriterionFirstFull { get; set; }
+        /// <summary>Start Date in the month</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Start Date in the month",
+        SerializedName = @"monthStart",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SynthfullCriterionMonthStart { get; set; }
+        /// <summary>Tells us the retention duration</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tells us the retention duration",
+        SerializedName = @"selectiveRule",
+        PossibleTypes = new [] { typeof(string) })]
+        string SynthfullCriterionSelectiveRule { get; set; }
+        /// <summary>storage Policy Id</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"storage Policy Id",
+        SerializedName = @"storagePolicyId",
+        PossibleTypes = new [] { typeof(long) })]
+        long? SynthfullCriterionStoragePolicyId { get; set; }
+        /// <summary>Storage Policy Name</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Storage Policy Name",
+        SerializedName = @"storagePolicyName",
+        PossibleTypes = new [] { typeof(string) })]
+        string SynthfullCriterionStoragePolicyName { get; set; }
+        /// <summary>Start day of the week</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Start day of the week",
+        SerializedName = @"weekStart",
+        PossibleTypes = new [] { typeof(string) })]
+        string SynthfullCriterionWeekStart { get; set; }
 
     }
     /// Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO
@@ -217,10 +353,36 @@ namespace Commvault.Powershell.Models
         string SlaInheritedFrom { get; set; }
         /// <summary>Inherited SLA Period in Days</summary>
         long? SlaInheritedSlaPeriod { get; set; }
+        /// <summary>Database log SLA period in Minutes</summary>
+        long? SlaLogSlaMinutes { get; set; }
         /// <summary>SLA Period in Days</summary>
         long? SlaPeriod { get; set; }
         /// <summary>Flag to set to use System Default Service Level Agreement</summary>
         bool? SlaUseSystemDefaultSla { get; set; }
+        /// <summary>
+        /// Server plan storage copies extended retention critera used for calculating synthfull schedule pattern
+        /// </summary>
+        Commvault.Powershell.Models.ISynthfullRetentionCriteria SynthfullCriteria { get; set; }
+        /// <summary>Tells us from where the rule was picked up</summary>
+        string SynthfullCriterionConfigType { get; set; }
+        /// <summary>storage policy copy</summary>
+        long? SynthfullCriterionCopyId { get; set; }
+        /// <summary>storage policy copy name</summary>
+        string SynthfullCriterionCopyName { get; set; }
+        /// <summary>
+        /// If set to true, will consider first full else will consider last full for the selective rule
+        /// </summary>
+        bool? SynthfullCriterionFirstFull { get; set; }
+        /// <summary>Start Date in the month</summary>
+        long? SynthfullCriterionMonthStart { get; set; }
+        /// <summary>Tells us the retention duration</summary>
+        string SynthfullCriterionSelectiveRule { get; set; }
+        /// <summary>storage Policy Id</summary>
+        long? SynthfullCriterionStoragePolicyId { get; set; }
+        /// <summary>Storage Policy Name</summary>
+        string SynthfullCriterionStoragePolicyName { get; set; }
+        /// <summary>Start day of the week</summary>
+        string SynthfullCriterionWeekStart { get; set; }
 
     }
 }

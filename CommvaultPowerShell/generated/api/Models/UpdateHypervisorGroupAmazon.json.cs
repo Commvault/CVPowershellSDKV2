@@ -86,6 +86,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._region)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._region.ToString()) : null, "Region" ,container.Add );
             AddIf( null != this._useIamRole ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useIamRole) : null, "useIamRole" ,container.Add );
             AddIf( null != (((object)this._useServiceAccount)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._useServiceAccount.ToString()) : null, "useServiceAccount" ,container.Add );
+            AddIf( null != this._useHostedInfrastructure ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useHostedInfrastructure) : null, "useHostedInfrastructure" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -110,6 +111,7 @@ namespace Commvault.Powershell.Models
             {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("Region"), out var __jsonRegion) ? (string)__jsonRegion : (string)Region;}
             {_useIamRole = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useIamRole"), out var __jsonUseIamRole) ? (bool?)__jsonUseIamRole : UseIamRole;}
             {_useServiceAccount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("useServiceAccount"), out var __jsonUseServiceAccount) ? (string)__jsonUseServiceAccount : (string)UseServiceAccount;}
+            {_useHostedInfrastructure = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useHostedInfrastructure"), out var __jsonUseHostedInfrastructure) ? (bool?)__jsonUseHostedInfrastructure : UseHostedInfrastructure;}
             AfterFromJson(json);
         }
     }

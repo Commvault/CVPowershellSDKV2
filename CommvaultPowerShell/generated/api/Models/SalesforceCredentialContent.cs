@@ -32,19 +32,19 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string ConsumerKey { get => this._consumerKey; set => this._consumerKey = value; }
 
+        /// <summary>Backing field for <see cref="ConsumerSecret" /> property.</summary>
+        private string _consumerSecret;
+
+        /// <summary>Consumer secret of Credential</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string ConsumerSecret { get => this._consumerSecret; set => this._consumerSecret = value; }
+
         /// <summary>Backing field for <see cref="Description" /> property.</summary>
         private string _description;
 
         /// <summary>Updated description of Credential</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Description { get => this._description; set => this._description = value; }
-
-        /// <summary>Backing field for <see cref="NewConsumerSecret" /> property.</summary>
-        private string _newConsumerSecret;
-
-        /// <summary>Consumer secret of Credential</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string NewConsumerSecret { get => this._newConsumerSecret; set => this._newConsumerSecret = value; }
 
         /// <summary>Backing field for <see cref="NewName" /> property.</summary>
         private string _newName;
@@ -87,12 +87,20 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Consumer key of Credential</summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"Consumer key of Credential",
         SerializedName = @"consumerKey",
         PossibleTypes = new [] { typeof(string) })]
         string ConsumerKey { get; set; }
+        /// <summary>Consumer secret of Credential</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = true,
+        ReadOnly = false,
+        Description = @"Consumer secret of Credential",
+        SerializedName = @"consumerSecret",
+        PossibleTypes = new [] { typeof(string) })]
+        string ConsumerSecret { get; set; }
         /// <summary>Updated description of Credential</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -101,14 +109,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"description",
         PossibleTypes = new [] { typeof(string) })]
         string Description { get; set; }
-        /// <summary>Consumer secret of Credential</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Consumer secret of Credential",
-        SerializedName = @"newConsumerSecret",
-        PossibleTypes = new [] { typeof(string) })]
-        string NewConsumerSecret { get; set; }
         /// <summary>Updated name of credential</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -165,10 +165,10 @@ namespace Commvault.Powershell.Models
     {
         /// <summary>Consumer key of Credential</summary>
         string ConsumerKey { get; set; }
+        /// <summary>Consumer secret of Credential</summary>
+        string ConsumerSecret { get; set; }
         /// <summary>Updated description of Credential</summary>
         string Description { get; set; }
-        /// <summary>Consumer secret of Credential</summary>
-        string NewConsumerSecret { get; set; }
         /// <summary>Updated name of credential</summary>
         string NewName { get; set; }
 

@@ -64,8 +64,10 @@ namespace Commvault.Powershell.Models
             {_alertType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("alertType"), out var __jsonAlertType) ? Commvault.Powershell.Models.AlertDefinitionsCreateAlertType.FromJson(__jsonAlertType) : AlertType;}
             {_alertTarget = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("alertTarget"), out var __jsonAlertTarget) ? Commvault.Powershell.Models.AlertDefinitionsTarget.FromJson(__jsonAlertTarget) : AlertTarget;}
             {_templates = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("templates"), out var __jsonTemplates) ? Commvault.Powershell.Models.AlertDefinitionsTemplate.FromJson(__jsonTemplates) : Templates;}
+            {_tokens = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("tokens"), out var __jsonTokens) ? Commvault.Powershell.Models.TokenRuleGroups.FromJson(__jsonTokens) : Tokens;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_sendIndividualNotifications = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("sendIndividualNotifications"), out var __jsonSendIndividualNotifications) ? (bool?)__jsonSendIndividualNotifications : SendIndividualNotifications;}
+            {_subscriptionBasedAlert = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("subscriptionBasedAlert"), out var __jsonSubscriptionBasedAlert) ? (bool?)__jsonSubscriptionBasedAlert : SubscriptionBasedAlert;}
             {_associations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("associations"), out var __jsonAssociations) ? If( __jsonAssociations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IAlertAssociationIdNameType1[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IAlertAssociationIdNameType1) (Commvault.Powershell.Models.AlertAssociationIdNameType1.FromJson(__u) )) ))() : null : Associations;}
             AfterFromJson(json);
         }
@@ -102,8 +104,10 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._alertType ? (Commvault.Powershell.Runtime.Json.JsonNode) this._alertType.ToJson(null,serializationMode) : null, "alertType" ,container.Add );
             AddIf( null != this._alertTarget ? (Commvault.Powershell.Runtime.Json.JsonNode) this._alertTarget.ToJson(null,serializationMode) : null, "alertTarget" ,container.Add );
             AddIf( null != this._templates ? (Commvault.Powershell.Runtime.Json.JsonNode) this._templates.ToJson(null,serializationMode) : null, "templates" ,container.Add );
+            AddIf( null != this._tokens ? (Commvault.Powershell.Runtime.Json.JsonNode) this._tokens.ToJson(null,serializationMode) : null, "tokens" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != this._sendIndividualNotifications ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._sendIndividualNotifications) : null, "sendIndividualNotifications" ,container.Add );
+            AddIf( null != this._subscriptionBasedAlert ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._subscriptionBasedAlert) : null, "subscriptionBasedAlert" ,container.Add );
             if (null != this._associations)
             {
                 var __w = new Commvault.Powershell.Runtime.Json.XNodeArray();

@@ -65,7 +65,6 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies = (Commvault.Powershell.Models.ICompanySummary[]) content.GetValueForProperty("Companies",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICompanySummary>(__y, Commvault.Powershell.Models.CompanySummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount = (long?) content.GetValueForProperty("CompanyCount",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -84,7 +83,6 @@ namespace Commvault.Powershell.Models
             }
             // actually deserialize
             ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies = (Commvault.Powershell.Models.ICompanySummary[]) content.GetValueForProperty("Companies",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).Companies, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ICompanySummary>(__y, Commvault.Powershell.Models.CompanySummaryTypeConverter.ConvertFrom));
-            ((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount = (long?) content.GetValueForProperty("CompanyCount",((Commvault.Powershell.Models.ICompanyListResponseInternal)this).CompanyCount, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

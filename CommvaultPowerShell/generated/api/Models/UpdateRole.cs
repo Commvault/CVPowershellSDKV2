@@ -31,6 +31,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IPermissions[] PermissionList { get => this._permissionList; set => this._permissionList = value; }
 
+        /// <summary>Backing field for <see cref="PermissionOperationType" /> property.</summary>
+        private string _permissionOperationType;
+
+        /// <summary>Type of operation to be performed on the permissionList. Default is OVERWRITE.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string PermissionOperationType { get => this._permissionOperationType; set => this._permissionOperationType = value; }
+
         /// <summary>Backing field for <see cref="Security" /> property.</summary>
         private Commvault.Powershell.Models.IUpdateSecurityAssoc[] _security;
 
@@ -78,6 +85,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"permissionList",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPermissions) })]
         Commvault.Powershell.Models.IPermissions[] PermissionList { get; set; }
+        /// <summary>Type of operation to be performed on the permissionList. Default is OVERWRITE.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Type of operation to be performed on the permissionList. Default is OVERWRITE.",
+        SerializedName = @"permissionOperationType",
+        PossibleTypes = new [] { typeof(string) })]
+        string PermissionOperationType { get; set; }
         /// <summary>Used to update the security association for the role</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -105,6 +120,8 @@ namespace Commvault.Powershell.Models
         string NewName { get; set; }
         /// <summary>Used to update the list of permissions associated with the role.</summary>
         Commvault.Powershell.Models.IPermissions[] PermissionList { get; set; }
+        /// <summary>Type of operation to be performed on the permissionList. Default is OVERWRITE.</summary>
+        string PermissionOperationType { get; set; }
         /// <summary>Used to update the security association for the role</summary>
         Commvault.Powershell.Models.IUpdateSecurityAssoc[] Security { get; set; }
         /// <summary>Determines if the role is visible to everyone.</summary>

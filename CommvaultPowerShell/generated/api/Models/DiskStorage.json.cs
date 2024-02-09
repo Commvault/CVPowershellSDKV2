@@ -62,11 +62,11 @@ namespace Commvault.Powershell.Models
             }
             {_general = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("general"), out var __jsonGeneral) ? Commvault.Powershell.Models.DiskStorageGeneralInfo.FromJson(__jsonGeneral) : General;}
             {_encryption = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("encryption"), out var __jsonEncryption) ? Commvault.Powershell.Models.Encryption.FromJson(__jsonEncryption) : Encryption;}
-            {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("security"), out var __jsonSecurity) ? Commvault.Powershell.Models.SecurityAssoc.FromJson(__jsonSecurity) : Security;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_backupLocations = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("backupLocations"), out var __jsonBackupLocations) ? If( __jsonBackupLocations as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IIdNameStatus[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IIdNameStatus) (Commvault.Powershell.Models.IdNameStatus.FromJson(__u) )) ))() : null : BackupLocations;}
-            {_associatedPlanList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("associatedPlanList"), out var __jsonAssociatedPlanList) ? If( __jsonAssociatedPlanList as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__p) )) ))() : null : AssociatedPlanList;}
+            {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("security"), out var __jsonSecurity) ? If( __jsonSecurity as Commvault.Powershell.Runtime.Json.JsonArray, out var __q) ? new global::System.Func<Commvault.Powershell.Models.ISecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__q, (__p)=>(Commvault.Powershell.Models.ISecurityAssoc) (Commvault.Powershell.Models.SecurityAssoc.FromJson(__p) )) ))() : null : Security;}
+            {_associatedPlanList = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("associatedPlanList"), out var __jsonAssociatedPlanList) ? If( __jsonAssociatedPlanList as Commvault.Powershell.Runtime.Json.JsonArray, out var __l) ? new global::System.Func<Commvault.Powershell.Models.IIdName[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__l, (__k)=>(Commvault.Powershell.Models.IIdName) (Commvault.Powershell.Models.IdName.FromJson(__k) )) ))() : null : AssociatedPlanList;}
             AfterFromJson(json);
         }
 
@@ -101,7 +101,6 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._general ? (Commvault.Powershell.Runtime.Json.JsonNode) this._general.ToJson(null,serializationMode) : null, "general" ,container.Add );
             AddIf( null != this._encryption ? (Commvault.Powershell.Runtime.Json.JsonNode) this._encryption.ToJson(null,serializationMode) : null, "encryption" ,container.Add );
-            AddIf( null != this._security ? (Commvault.Powershell.Runtime.Json.JsonNode) this._security.ToJson(null,serializationMode) : null, "security" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             if (null != this._backupLocations)
@@ -113,14 +112,23 @@ namespace Commvault.Powershell.Models
                 }
                 container.Add("backupLocations",__w);
             }
-            if (null != this._associatedPlanList)
+            if (null != this._security)
             {
                 var __r = new Commvault.Powershell.Runtime.Json.XNodeArray();
-                foreach( var __s in this._associatedPlanList )
+                foreach( var __s in this._security )
                 {
                     AddIf(__s?.ToJson(null, serializationMode) ,__r.Add);
                 }
-                container.Add("associatedPlanList",__r);
+                container.Add("security",__r);
+            }
+            if (null != this._associatedPlanList)
+            {
+                var __m = new Commvault.Powershell.Runtime.Json.XNodeArray();
+                foreach( var __n in this._associatedPlanList )
+                {
+                    AddIf(__n?.ToJson(null, serializationMode) ,__m.Add);
+                }
+                container.Add("associatedPlanList",__m);
             }
             AfterToJson(ref container);
             return container;

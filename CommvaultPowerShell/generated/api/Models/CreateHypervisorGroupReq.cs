@@ -12,10 +12,10 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Backing field for <see cref="AccessNodes" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName[] _accessNodes;
+        private Commvault.Powershell.Models.IAccessNodeModel[] _accessNodes;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IIdName[] AccessNodes { get => this._accessNodes; set => this._accessNodes = value; }
+        public Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get => this._accessNodes; set => this._accessNodes = value; }
 
         /// <summary>Internal Acessors for Credentials</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICreateHypervisorGroupReqInternal.Credentials { get => (this._credentials = this._credentials ?? new Commvault.Powershell.Models.IdName()); set { {_credentials = value;} } }
@@ -95,12 +95,12 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Runtime.IJsonSerializable
     {
         [Commvault.Powershell.Runtime.Info(
-        Required = true,
+        Required = false,
         ReadOnly = false,
         Description = @"",
         SerializedName = @"accessNodes",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] AccessNodes { get; set; }
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IAccessNodeModel) })]
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -179,7 +179,7 @@ namespace Commvault.Powershell.Models
     internal partial interface ICreateHypervisorGroupReqInternal
 
     {
-        Commvault.Powershell.Models.IIdName[] AccessNodes { get; set; }
+        Commvault.Powershell.Models.IAccessNodeModel[] AccessNodes { get; set; }
 
         Commvault.Powershell.Models.IIdName Credentials { get; set; }
 

@@ -70,7 +70,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_general = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("general"), out var __jsonGeneral) ? Commvault.Powershell.Models.MediaAgentSummary.FromJson(__jsonGeneral) : General;}
+            {_general = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("general"), out var __jsonGeneral) ? Commvault.Powershell.Models.MediaAgentGeneralSummary.FromJson(__jsonGeneral) : General;}
             {_indexCache = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("indexCache"), out var __jsonIndexCache) ? Commvault.Powershell.Models.IndexCache.FromJson(__jsonIndexCache) : IndexCache;}
             {_control = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("control"), out var __jsonControl) ? Commvault.Powershell.Models.MediaAgentControl.FromJson(__jsonControl) : Control;}
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("security"), out var __jsonSecurity) ? If( __jsonSecurity as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.ISecurityAssoc[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.ISecurityAssoc) (Commvault.Powershell.Models.SecurityAssoc.FromJson(__u) )) ))() : null : Security;}

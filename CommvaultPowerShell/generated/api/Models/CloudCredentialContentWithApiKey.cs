@@ -14,6 +14,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.ICloudCredentialContentWithApiKeyInternal
     {
 
+        /// <summary>Backing field for <see cref="ApiKey" /> property.</summary>
+        private string _apiKey;
+
+        /// <summary>Updated API Key of Credential and must be in base64 encoded format.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string ApiKey { get => this._apiKey; set => this._apiKey = value; }
+
         /// <summary>Internal Acessors for OwnerUser</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.ICloudCredentialContentWithApiKeyInternal.OwnerUser { get => ((Commvault.Powershell.Models.IUpdateCredentialSecurityInternal)Security).OwnerUser; set => ((Commvault.Powershell.Models.IUpdateCredentialSecurityInternal)Security).OwnerUser = value; }
 
@@ -32,13 +39,6 @@ namespace Commvault.Powershell.Models
         /// <summary>Updated description of Credential</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string Description { get => this._description; set => this._description = value; }
-
-        /// <summary>Backing field for <see cref="NewApiKey" /> property.</summary>
-        private string _newApiKey;
-
-        /// <summary>Updated API Key of Credential and must be in base64 encoded format.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public string NewApiKey { get => this._newApiKey; set => this._newApiKey = value; }
 
         /// <summary>Backing field for <see cref="NewName" /> property.</summary>
         private string _newName;
@@ -89,6 +89,14 @@ namespace Commvault.Powershell.Models
     public partial interface ICloudCredentialContentWithApiKey :
         Commvault.Powershell.Runtime.IJsonSerializable
     {
+        /// <summary>Updated API Key of Credential and must be in base64 encoded format.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = true,
+        ReadOnly = false,
+        Description = @"Updated API Key of Credential and must be in base64 encoded format.",
+        SerializedName = @"apiKey",
+        PossibleTypes = new [] { typeof(string) })]
+        string ApiKey { get; set; }
         /// <summary>Updated description of Credential</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -97,14 +105,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"description",
         PossibleTypes = new [] { typeof(string) })]
         string Description { get; set; }
-        /// <summary>Updated API Key of Credential and must be in base64 encoded format.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Updated API Key of Credential and must be in base64 encoded format.",
-        SerializedName = @"newApiKey",
-        PossibleTypes = new [] { typeof(string) })]
-        string NewApiKey { get; set; }
         /// <summary>Updated name of credential</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -125,7 +125,7 @@ namespace Commvault.Powershell.Models
         /// User account of Credential. If updated the updated user account is considered else the existing user account is considered.
         /// </summary>
         [Commvault.Powershell.Runtime.Info(
-        Required = false,
+        Required = true,
         ReadOnly = false,
         Description = @"User account of Credential. If updated the updated user account is considered else the existing user account is considered.",
         SerializedName = @"userAccount",
@@ -170,10 +170,10 @@ namespace Commvault.Powershell.Models
     internal partial interface ICloudCredentialContentWithApiKeyInternal
 
     {
+        /// <summary>Updated API Key of Credential and must be in base64 encoded format.</summary>
+        string ApiKey { get; set; }
         /// <summary>Updated description of Credential</summary>
         string Description { get; set; }
-        /// <summary>Updated API Key of Credential and must be in base64 encoded format.</summary>
-        string NewApiKey { get; set; }
         /// <summary>Updated name of credential</summary>
         string NewName { get; set; }
 

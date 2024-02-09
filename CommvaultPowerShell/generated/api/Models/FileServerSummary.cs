@@ -29,13 +29,13 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IFileServerSummaryInternal.Company { get => (this._company = this._company ?? new Commvault.Powershell.Models.IdName()); set { {_company = value;} } }
 
         /// <summary>Internal Acessors for LastBackup</summary>
-        Commvault.Powershell.Models.ILastBackupJobInfo Commvault.Powershell.Models.IFileServerSummaryInternal.LastBackup { get => (this._lastBackup = this._lastBackup ?? new Commvault.Powershell.Models.LastBackupJobInfo()); set { {_lastBackup = value;} } }
+        Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackup Commvault.Powershell.Models.IFileServerSummaryInternal.LastBackup { get => (this._lastBackup = this._lastBackup ?? new Commvault.Powershell.Models.LastBackupJobInfoWithLastSuccessfulBackup()); set { {_lastBackup = value;} } }
 
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IFileServerSummaryInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
 
         /// <summary>Internal Acessors for Sla</summary>
-        Commvault.Powershell.Models.ISlaDetails Commvault.Powershell.Models.IFileServerSummaryInternal.Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaDetails()); set { {_sla = value;} } }
+        Commvault.Powershell.Models.ISlaDetailsWithReasonEntity Commvault.Powershell.Models.IFileServerSummaryInternal.Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaDetailsWithReasonEntity()); set { {_sla = value;} } }
 
         /// <summary>Backing field for <see cref="Company" /> property.</summary>
         private Commvault.Powershell.Models.IIdName _company;
@@ -78,28 +78,31 @@ namespace Commvault.Powershell.Models
         public long? Id { get => this._id; set => this._id = value; }
 
         /// <summary>Backing field for <see cref="LastBackup" /> property.</summary>
-        private Commvault.Powershell.Models.ILastBackupJobInfo _lastBackup;
+        private Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackup _lastBackup;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.ILastBackupJobInfo LastBackup { get => (this._lastBackup = this._lastBackup ?? new Commvault.Powershell.Models.LastBackupJobInfo()); set => this._lastBackup = value; }
+        internal Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackup LastBackup { get => (this._lastBackup = this._lastBackup ?? new Commvault.Powershell.Models.LastBackupJobInfoWithLastSuccessfulBackup()); set => this._lastBackup = value; }
 
         /// <summary>Gives the reason for the last backup job failing, if the last backup job fails.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string LastBackupFailureReason { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).FailureReason; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).FailureReason = value ?? null; }
+        public string LastBackupFailureReason { get => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).FailureReason; set => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).FailureReason = value ?? null; }
 
         /// <summary>Returns the job id of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).JobId = value ?? default(long); }
+        public long? LastBackupJobId { get => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).JobId; set => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).JobId = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public long? LastBackupLastSuccessfulBackup { get => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).LastSuccessfulBackup; set => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).LastSuccessfulBackup = value ?? default(long); }
 
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string LastBackupStatus { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).Status; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).Status = value ?? null; }
+        public string LastBackupStatus { get => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).Status; set => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).Status = value ?? null; }
 
         /// <summary>
         /// Shows the time when the last back up job was carried out. The time is provided in unix time format.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? LastBackupTime { get => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).Time; set => ((Commvault.Powershell.Models.ILastBackupJobInfoInternal)LastBackup).Time = value ?? default(long); }
+        public long? LastBackupTime { get => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).Time; set => ((Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackupInternal)LastBackup).Time = value ?? default(long); }
 
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
@@ -121,18 +124,22 @@ namespace Commvault.Powershell.Models
         public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Sla" /> property.</summary>
-        private Commvault.Powershell.Models.ISlaDetails _sla;
+        private Commvault.Powershell.Models.ISlaDetailsWithReasonEntity _sla;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.ISlaDetails Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaDetails()); set => this._sla = value; }
+        internal Commvault.Powershell.Models.ISlaDetailsWithReasonEntity Sla { get => (this._sla = this._sla ?? new Commvault.Powershell.Models.SlaDetailsWithReasonEntity()); set => this._sla = value; }
 
         /// <summary>Provides a reason on why the SLA might not be met.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IReasonDetails[] SlaReasonList { get => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).ReasonList; set => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).ReasonList = value ?? null /* arrayOf */; }
+        public string SlaReason { get => ((Commvault.Powershell.Models.ISlaDetailsWithReasonEntityInternal)Sla).Reason; set => ((Commvault.Powershell.Models.ISlaDetailsWithReasonEntityInternal)Sla).Reason = value ?? null; }
+
+        /// <summary>Provides a reason on why the SLA might not be met.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IReasonDetails[] SlaReasonList { get => ((Commvault.Powershell.Models.ISlaDetailsWithReasonEntityInternal)Sla).ReasonList; set => ((Commvault.Powershell.Models.ISlaDetailsWithReasonEntityInternal)Sla).ReasonList = value ?? null /* arrayOf */; }
 
         /// <summary>Provides the SLA status.</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SlaStatus { get => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).Status; set => ((Commvault.Powershell.Models.ISlaDetailsInternal)Sla).Status = value ?? null; }
+        public string SlaStatus { get => ((Commvault.Powershell.Models.ISlaDetailsWithReasonEntityInternal)Sla).Status; set => ((Commvault.Powershell.Models.ISlaDetailsWithReasonEntityInternal)Sla).Status = value ?? null; }
 
         /// <summary>Backing field for <see cref="Status" /> property.</summary>
         private string _status;
@@ -245,6 +252,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"jobId",
         PossibleTypes = new [] { typeof(long) })]
         long? LastBackupJobId { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"lastSuccessfulBackup",
+        PossibleTypes = new [] { typeof(long) })]
+        long? LastBackupLastSuccessfulBackup { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -287,6 +302,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"name",
         PossibleTypes = new [] { typeof(string) })]
         string PlanName { get; set; }
+        /// <summary>Provides a reason on why the SLA might not be met.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Provides a reason on why the SLA might not be met.",
+        SerializedName = @"reason",
+        PossibleTypes = new [] { typeof(string) })]
+        string SlaReason { get; set; }
         /// <summary>Provides a reason on why the SLA might not be met.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -352,11 +375,13 @@ namespace Commvault.Powershell.Models
         /// <summary>This gives the id of the file server.</summary>
         long? Id { get; set; }
 
-        Commvault.Powershell.Models.ILastBackupJobInfo LastBackup { get; set; }
+        Commvault.Powershell.Models.ILastBackupJobInfoWithLastSuccessfulBackup LastBackup { get; set; }
         /// <summary>Gives the reason for the last backup job failing, if the last backup job fails.</summary>
         string LastBackupFailureReason { get; set; }
         /// <summary>Returns the job id of the last backup job performed.</summary>
         long? LastBackupJobId { get; set; }
+
+        long? LastBackupLastSuccessfulBackup { get; set; }
         /// <summary>Status of the last backup job performed.</summary>
         string LastBackupStatus { get; set; }
         /// <summary>
@@ -372,7 +397,9 @@ namespace Commvault.Powershell.Models
 
         string PlanName { get; set; }
 
-        Commvault.Powershell.Models.ISlaDetails Sla { get; set; }
+        Commvault.Powershell.Models.ISlaDetailsWithReasonEntity Sla { get; set; }
+        /// <summary>Provides a reason on why the SLA might not be met.</summary>
+        string SlaReason { get; set; }
         /// <summary>Provides a reason on why the SLA might not be met.</summary>
         Commvault.Powershell.Models.IReasonDetails[] SlaReasonList { get; set; }
         /// <summary>Provides the SLA status.</summary>

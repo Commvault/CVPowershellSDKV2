@@ -70,7 +70,7 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
+            {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdNameGuid.FromJson(__jsonPlan) : Plan;}
             {_errors = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("errors"), out var __jsonErrors) ? If( __jsonErrors as Commvault.Powershell.Runtime.Json.JsonArray, out var __v) ? new global::System.Func<Commvault.Powershell.Models.IPlanComponentError[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__v, (__u)=>(Commvault.Powershell.Models.IPlanComponentError) (Commvault.Powershell.Models.PlanComponentError.FromJson(__u) )) ))() : null : Errors;}
             AfterFromJson(json);
         }

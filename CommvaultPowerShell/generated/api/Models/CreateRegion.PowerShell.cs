@@ -64,9 +64,16 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfo = (Commvault.Powershell.Models.ICreateGlobalConfigInfo) content.GetValueForProperty("GlobalConfigInfo",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfo, Commvault.Powershell.Models.CreateGlobalConfigInfoTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICreateRegionInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICreateRegionInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateRegionInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.ICreateRegionInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateRegionInternal)this).Locations = (Commvault.Powershell.Models.ILocationDetails[]) content.GetValueForProperty("Locations",((Commvault.Powershell.Models.ICreateRegionInternal)this).Locations, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILocationDetails>(__y, Commvault.Powershell.Models.LocationDetailsTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoName = (string) content.GetValueForProperty("GlobalConfigInfoName",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoCommcells = (Commvault.Powershell.Models.IGlobalConfigCommcellInfo[]) content.GetValueForProperty("GlobalConfigInfoCommcells",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoCommcells, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IGlobalConfigCommcellInfo>(__y, Commvault.Powershell.Models.GlobalConfigCommcellInfoTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScope = (string) content.GetValueForProperty("GlobalConfigInfoScope",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScope, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScopeFilterQuery = (string) content.GetValueForProperty("GlobalConfigInfoScopeFilterQuery",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScopeFilterQuery, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoApplyOnAllCommCells = (bool?) content.GetValueForProperty("GlobalConfigInfoApplyOnAllCommCells",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoApplyOnAllCommCells, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoActionOnLocalEntity = (string) content.GetValueForProperty("GlobalConfigInfoActionOnLocalEntity",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoActionOnLocalEntity, global::System.Convert.ToString);
             AfterDeserializeDictionary(content);
         }
 
@@ -84,9 +91,16 @@ namespace Commvault.Powershell.Models
                 return;
             }
             // actually deserialize
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfo = (Commvault.Powershell.Models.ICreateGlobalConfigInfo) content.GetValueForProperty("GlobalConfigInfo",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfo, Commvault.Powershell.Models.CreateGlobalConfigInfoTypeConverter.ConvertFrom);
             ((Commvault.Powershell.Models.ICreateRegionInternal)this).Name = (string) content.GetValueForProperty("Name",((Commvault.Powershell.Models.ICreateRegionInternal)this).Name, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateRegionInternal)this).Type = (string) content.GetValueForProperty("Type",((Commvault.Powershell.Models.ICreateRegionInternal)this).Type, global::System.Convert.ToString);
             ((Commvault.Powershell.Models.ICreateRegionInternal)this).Locations = (Commvault.Powershell.Models.ILocationDetails[]) content.GetValueForProperty("Locations",((Commvault.Powershell.Models.ICreateRegionInternal)this).Locations, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.ILocationDetails>(__y, Commvault.Powershell.Models.LocationDetailsTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoName = (string) content.GetValueForProperty("GlobalConfigInfoName",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoName, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoCommcells = (Commvault.Powershell.Models.IGlobalConfigCommcellInfo[]) content.GetValueForProperty("GlobalConfigInfoCommcells",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoCommcells, __y => TypeConverterExtensions.SelectToArray<Commvault.Powershell.Models.IGlobalConfigCommcellInfo>(__y, Commvault.Powershell.Models.GlobalConfigCommcellInfoTypeConverter.ConvertFrom));
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScope = (string) content.GetValueForProperty("GlobalConfigInfoScope",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScope, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScopeFilterQuery = (string) content.GetValueForProperty("GlobalConfigInfoScopeFilterQuery",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoScopeFilterQuery, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoApplyOnAllCommCells = (bool?) content.GetValueForProperty("GlobalConfigInfoApplyOnAllCommCells",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoApplyOnAllCommCells, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
+            ((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoActionOnLocalEntity = (string) content.GetValueForProperty("GlobalConfigInfoActionOnLocalEntity",((Commvault.Powershell.Models.ICreateRegionInternal)this).GlobalConfigInfoActionOnLocalEntity, global::System.Convert.ToString);
             AfterDeserializePSObject(content);
         }
 

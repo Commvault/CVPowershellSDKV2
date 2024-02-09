@@ -67,7 +67,7 @@ namespace Commvault.Powershell.Models
             {_security = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("security"), out var __jsonSecurity) ? Commvault.Powershell.Models.UpdateCredentialSecurity.FromJson(__jsonSecurity) : Security;}
             {_newName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newName"), out var __jsonNewName) ? (string)__jsonNewName : (string)NewName;}
             {_userAccount = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userAccount"), out var __jsonUserAccount) ? (string)__jsonUserAccount : (string)UserAccount;}
-            {_newApiKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("newApiKey"), out var __jsonNewApiKey) ? (string)__jsonNewApiKey : (string)NewApiKey;}
+            {_apiKey = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("apiKey"), out var __jsonApiKey) ? (string)__jsonApiKey : (string)ApiKey;}
             {_description = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("description"), out var __jsonDescription) ? (string)__jsonDescription : (string)Description;}
             AfterFromJson(json);
         }
@@ -104,7 +104,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != this._security ? (Commvault.Powershell.Runtime.Json.JsonNode) this._security.ToJson(null,serializationMode) : null, "security" ,container.Add );
             AddIf( null != (((object)this._newName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newName.ToString()) : null, "newName" ,container.Add );
             AddIf( null != (((object)this._userAccount)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userAccount.ToString()) : null, "userAccount" ,container.Add );
-            AddIf( null != (((object)this._newApiKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._newApiKey.ToString()) : null, "newApiKey" ,container.Add );
+            AddIf( null != (((object)this._apiKey)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._apiKey.ToString()) : null, "apiKey" ,container.Add );
             AddIf( null != (((object)this._description)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._description.ToString()) : null, "description" ,container.Add );
             AfterToJson(ref container);
             return container;

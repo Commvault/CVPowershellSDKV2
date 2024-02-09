@@ -85,6 +85,7 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._subscriptionId)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._subscriptionId.ToString()) : null, "subscriptionId" ,container.Add );
             AddIf( null != (((object)this._userName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._userName.ToString()) : null, "userName" ,container.Add );
             AddIf( null != (((object)this._password)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._password.ToString()) : null, "password" ,container.Add );
+            AddIf( null != this._useManagedIdentity ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._useManagedIdentity) : null, "useManagedIdentity" ,container.Add );
             AfterToJson(ref container);
             return container;
         }
@@ -108,6 +109,7 @@ namespace Commvault.Powershell.Models
             {_subscriptionId = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("subscriptionId"), out var __jsonSubscriptionId) ? (string)__jsonSubscriptionId : (string)SubscriptionId;}
             {_userName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("userName"), out var __jsonUserName) ? (string)__jsonUserName : (string)UserName;}
             {_password = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("password"), out var __jsonPassword) ? (string)__jsonPassword : (string)Password;}
+            {_useManagedIdentity = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("useManagedIdentity"), out var __jsonUseManagedIdentity) ? (bool?)__jsonUseManagedIdentity : UseManagedIdentity;}
             AfterFromJson(json);
         }
     }

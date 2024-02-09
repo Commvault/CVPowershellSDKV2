@@ -103,6 +103,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla = (bool?) content.GetValueForProperty("ExcludeFromSla",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay = (long?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason = (string) content.GetValueForProperty("ExclusionReason",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).LogSlaMinutes = (long?) content.GetValueForProperty("LogSlaMinutes",((Commvault.Powershell.Models.ISlaOptionsInternal)this).LogSlaMinutes, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializeDictionary(content);
         }
 
@@ -127,6 +128,7 @@ namespace Commvault.Powershell.Models
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla = (bool?) content.GetValueForProperty("ExcludeFromSla",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExcludeFromSla, (__y)=> (bool) global::System.Convert.ChangeType(__y, typeof(bool)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay = (long?) content.GetValueForProperty("EnableAfterDelay",((Commvault.Powershell.Models.ISlaOptionsInternal)this).EnableAfterDelay, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             ((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason = (string) content.GetValueForProperty("ExclusionReason",((Commvault.Powershell.Models.ISlaOptionsInternal)this).ExclusionReason, global::System.Convert.ToString);
+            ((Commvault.Powershell.Models.ISlaOptionsInternal)this).LogSlaMinutes = (long?) content.GetValueForProperty("LogSlaMinutes",((Commvault.Powershell.Models.ISlaOptionsInternal)this).LogSlaMinutes, (__y)=> (long) global::System.Convert.ChangeType(__y, typeof(long)));
             AfterDeserializePSObject(content);
         }
 

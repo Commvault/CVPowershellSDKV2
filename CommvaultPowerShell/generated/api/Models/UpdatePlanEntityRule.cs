@@ -16,22 +16,25 @@ namespace Commvault.Powershell.Models
     {
 
         /// <summary>Internal Acessors for Plan</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatePlanEntityRuleInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
+        Commvault.Powershell.Models.IIdNameGuid Commvault.Powershell.Models.IUpdatePlanEntityRuleInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdNameGuid()); set { {_plan = value;} } }
 
         /// <summary>Internal Acessors for Rule</summary>
-        Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IUpdatePlanEntityRuleInternal.Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdName()); set { {_rule = value;} } }
+        Commvault.Powershell.Models.IIdNameGuid Commvault.Powershell.Models.IUpdatePlanEntityRuleInternal.Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdNameGuid()); set { {_rule = value;} } }
 
         /// <summary>Backing field for <see cref="Plan" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _plan;
+        private Commvault.Powershell.Models.IIdNameGuid _plan;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set => this._plan = value; }
+        internal Commvault.Powershell.Models.IIdNameGuid Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdNameGuid()); set => this._plan = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Id = value ?? default(long); }
+        public string PlanGuid { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Guid; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Guid = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string PlanName { get => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Plan).Name = value ?? null; }
+        public long? PlanId { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Id; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string PlanName { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Name; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Plan).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="Rank" /> property.</summary>
         private long? _rank;
@@ -41,34 +44,37 @@ namespace Commvault.Powershell.Models
         public long? Rank { get => this._rank; set => this._rank = value; }
 
         /// <summary>Backing field for <see cref="Regions" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName[] _regions;
+        private Commvault.Powershell.Models.IIdNameGuid[] _regions;
 
         /// <summary>
         /// This will include list of regions that should be evaluated against workload region for plan association.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IIdName[] Regions { get => this._regions; set => this._regions = value; }
+        public Commvault.Powershell.Models.IIdNameGuid[] Regions { get => this._regions; set => this._regions = value; }
 
         /// <summary>Backing field for <see cref="Rule" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName _rule;
+        private Commvault.Powershell.Models.IIdNameGuid _rule;
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IIdName Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdName()); set => this._rule = value; }
+        internal Commvault.Powershell.Models.IIdNameGuid Rule { get => (this._rule = this._rule ?? new Commvault.Powershell.Models.IdNameGuid()); set => this._rule = value; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? RuleId { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Id = value ?? default(long); }
+        public string RuleGuid { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Rule).Guid; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Rule).Guid = value ?? null; }
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string RuleName { get => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name; set => ((Commvault.Powershell.Models.IIdNameInternal)Rule).Name = value ?? null; }
+        public long? RuleId { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Rule).Id; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Rule).Id = value ?? default(long); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string RuleName { get => ((Commvault.Powershell.Models.IIdNameGuidInternal)Rule).Name; set => ((Commvault.Powershell.Models.IIdNameGuidInternal)Rule).Name = value ?? null; }
 
         /// <summary>Backing field for <see cref="ServerGroups" /> property.</summary>
-        private Commvault.Powershell.Models.IIdName[] _serverGroups;
+        private Commvault.Powershell.Models.IIdNameGuid[] _serverGroups;
 
         /// <summary>
         /// This will include list of Server groups that should be evaluated against workload server group for plan association.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        public Commvault.Powershell.Models.IIdName[] ServerGroups { get => this._serverGroups; set => this._serverGroups = value; }
+        public Commvault.Powershell.Models.IIdNameGuid[] ServerGroups { get => this._serverGroups; set => this._serverGroups = value; }
 
         /// <summary>Backing field for <see cref="Solutions" /> property.</summary>
         private Commvault.Powershell.Models.IIdName[] _solutions;
@@ -113,6 +119,14 @@ namespace Commvault.Powershell.Models
         Required = false,
         ReadOnly = false,
         Description = @"",
+        SerializedName = @"GUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string PlanGuid { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? PlanId { get; set; }
@@ -140,8 +154,16 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This will include list of regions that should be evaluated against workload region for plan association.",
         SerializedName = @"regions",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] Regions { get; set; }
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdNameGuid) })]
+        Commvault.Powershell.Models.IIdNameGuid[] Regions { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"GUID",
+        PossibleTypes = new [] { typeof(string) })]
+        string RuleGuid { get; set; }
 
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -166,8 +188,8 @@ namespace Commvault.Powershell.Models
         ReadOnly = false,
         Description = @"This will include list of Server groups that should be evaluated against workload server group for plan association.",
         SerializedName = @"serverGroups",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdName) })]
-        Commvault.Powershell.Models.IIdName[] ServerGroups { get; set; }
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IIdNameGuid) })]
+        Commvault.Powershell.Models.IIdNameGuid[] ServerGroups { get; set; }
         /// <summary>
         /// This will include list of solutions that should be evaluated against workload for plan association.
         /// </summary>
@@ -206,7 +228,9 @@ namespace Commvault.Powershell.Models
     internal partial interface IUpdatePlanEntityRuleInternal
 
     {
-        Commvault.Powershell.Models.IIdName Plan { get; set; }
+        Commvault.Powershell.Models.IIdNameGuid Plan { get; set; }
+
+        string PlanGuid { get; set; }
 
         long? PlanId { get; set; }
 
@@ -216,9 +240,11 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// This will include list of regions that should be evaluated against workload region for plan association.
         /// </summary>
-        Commvault.Powershell.Models.IIdName[] Regions { get; set; }
+        Commvault.Powershell.Models.IIdNameGuid[] Regions { get; set; }
 
-        Commvault.Powershell.Models.IIdName Rule { get; set; }
+        Commvault.Powershell.Models.IIdNameGuid Rule { get; set; }
+
+        string RuleGuid { get; set; }
 
         long? RuleId { get; set; }
 
@@ -226,7 +252,7 @@ namespace Commvault.Powershell.Models
         /// <summary>
         /// This will include list of Server groups that should be evaluated against workload server group for plan association.
         /// </summary>
-        Commvault.Powershell.Models.IIdName[] ServerGroups { get; set; }
+        Commvault.Powershell.Models.IIdNameGuid[] ServerGroups { get; set; }
         /// <summary>
         /// This will include list of solutions that should be evaluated against workload for plan association.
         /// </summary>

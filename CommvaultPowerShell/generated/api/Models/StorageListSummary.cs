@@ -61,6 +61,13 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public long? Id { get => this._id; set => this._id = value; }
 
+        /// <summary>Backing field for <see cref="LibraryVendorType" /> property.</summary>
+        private long? _libraryVendorType;
+
+        /// <summary>Gives the storage vendor of the storage pool.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public long? LibraryVendorType { get => this._libraryVendorType; set => this._libraryVendorType = value; }
+
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
@@ -80,6 +87,13 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public string StoragePoolType { get => this._storagePoolType; set => this._storagePoolType = value; }
+
+        /// <summary>Backing field for <see cref="StorageType" /> property.</summary>
+        private string _storageType;
+
+        /// <summary>Indicates the type of storage for a storage pool.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        public string StorageType { get => this._storageType; set => this._storageType = value; }
 
         /// <summary>Creates an new <see cref="StorageListSummary" /> instance.</summary>
         public StorageListSummary()
@@ -146,6 +160,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"id",
         PossibleTypes = new [] { typeof(long) })]
         long? Id { get; set; }
+        /// <summary>Gives the storage vendor of the storage pool.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Gives the storage vendor of the storage pool.",
+        SerializedName = @"libraryVendorType",
+        PossibleTypes = new [] { typeof(long) })]
+        long? LibraryVendorType { get; set; }
         /// <summary>storage pool name</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -170,6 +192,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"storagePoolType",
         PossibleTypes = new [] { typeof(string) })]
         string StoragePoolType { get; set; }
+        /// <summary>Indicates the type of storage for a storage pool.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Indicates the type of storage for a storage pool.",
+        SerializedName = @"storageType",
+        PossibleTypes = new [] { typeof(string) })]
+        string StorageType { get; set; }
 
     }
     internal partial interface IStorageListSummaryInternal
@@ -193,12 +223,16 @@ namespace Commvault.Powershell.Models
         long? FreeSpace { get; set; }
         /// <summary>id of the storage pool</summary>
         long? Id { get; set; }
+        /// <summary>Gives the storage vendor of the storage pool.</summary>
+        long? LibraryVendorType { get; set; }
         /// <summary>storage pool name</summary>
         string Name { get; set; }
         /// <summary>mentions if the storage pool is enabled</summary>
         string Status { get; set; }
 
         string StoragePoolType { get; set; }
+        /// <summary>Indicates the type of storage for a storage pool.</summary>
+        string StorageType { get; set; }
 
     }
 }

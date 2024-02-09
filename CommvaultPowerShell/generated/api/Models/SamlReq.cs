@@ -77,6 +77,10 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string IdentityProviderMetaDataSamlProtocolVersion { get => ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)IdentityProviderMetaData).SamlProtocolVersion; set => ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)IdentityProviderMetaData).SamlProtocolVersion = value ; }
 
+        /// <summary>IDP's secondary certificate</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string IdentityProviderMetaDataSecondaryCertificateData { get => ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)IdentityProviderMetaData).SecondaryCertificateData; set => ((Commvault.Powershell.Models.ISamlidpMetaDataReqInternal)IdentityProviderMetaData).SecondaryCertificateData = value ?? null; }
+
         /// <summary>Backing field for <see cref="Name" /> property.</summary>
         private string _name;
 
@@ -216,6 +220,14 @@ namespace Commvault.Powershell.Models
         SerializedName = @"SAMLProtocolVersion",
         PossibleTypes = new [] { typeof(string) })]
         string IdentityProviderMetaDataSamlProtocolVersion { get; set; }
+        /// <summary>IDP's secondary certificate</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"IDP's secondary certificate",
+        SerializedName = @"secondaryCertificateData",
+        PossibleTypes = new [] { typeof(string) })]
+        string IdentityProviderMetaDataSecondaryCertificateData { get; set; }
         /// <summary>SAML name.</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = true,
@@ -326,6 +338,8 @@ namespace Commvault.Powershell.Models
         string IdentityProviderMetaDataRedirectUrl { get; set; }
         /// <summary>SAML Protocol version</summary>
         string IdentityProviderMetaDataSamlProtocolVersion { get; set; }
+        /// <summary>IDP's secondary certificate</summary>
+        string IdentityProviderMetaDataSecondaryCertificateData { get; set; }
         /// <summary>SAML name.</summary>
         string Name { get; set; }
         /// <summary>SAML service provider meta data</summary>

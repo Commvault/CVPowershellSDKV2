@@ -168,13 +168,6 @@ namespace Commvault.Powershell.Models
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         public Commvault.Powershell.Models.IPlanBackupDestination[] BackupDestinations { get => this._backupDestinations; set => this._backupDestinations = value; }
 
-        /// <summary>Operation type for the list</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string BackupFrequencyOperationType { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequencyOperationType; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequencyOperationType = value ?? null; }
-
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequencySchedules; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequencySchedules = value ?? null /* arrayOf */; }
-
         /// <summary>Internal Acessors for AdditionalProperties</summary>
         Commvault.Powershell.Models.IPlanAdditionalProperties Commvault.Powershell.Models.IServerPlanInternal.AdditionalProperties { get => (this._additionalProperties = this._additionalProperties ?? new Commvault.Powershell.Models.PlanAdditionalProperties()); set { {_additionalProperties = value;} } }
 
@@ -195,6 +188,9 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Internal Acessors for DatabaseOptions</summary>
         Commvault.Powershell.Models.IServerPlanDatabaseOptionsInfo Commvault.Powershell.Models.IServerPlanInternal.DatabaseOptions { get => (this._databaseOptions = this._databaseOptions ?? new Commvault.Powershell.Models.ServerPlanDatabaseOptionsInfo()); set { {_databaseOptions = value;} } }
+
+        /// <summary>Internal Acessors for GlobalConfigInfo</summary>
+        Commvault.Powershell.Models.IGlobalConfigInfo Commvault.Powershell.Models.IServerPlanInternal.GlobalConfigInfo { get => (this._globalConfigInfo = this._globalConfigInfo ?? new Commvault.Powershell.Models.GlobalConfigInfo()); set { {_globalConfigInfo = value;} } }
 
         /// <summary>Internal Acessors for InheritSettingBackupContent</summary>
         Commvault.Powershell.Models.IPlanOverridenOptions Commvault.Powershell.Models.IServerPlanInternal.InheritSettingBackupContent { get => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BackupContent; set => ((Commvault.Powershell.Models.IServerPlanInheritSettingsInternal)InheritSettings).BackupContent = value; }
@@ -231,15 +227,6 @@ namespace Commvault.Powershell.Models
 
         /// <summary>Internal Acessors for Plan</summary>
         Commvault.Powershell.Models.IIdName Commvault.Powershell.Models.IServerPlanInternal.Plan { get => (this._plan = this._plan ?? new Commvault.Powershell.Models.IdName()); set { {_plan = value;} } }
-
-        /// <summary>Internal Acessors for Rpo</summary>
-        Commvault.Powershell.Models.IServerPlanRpo Commvault.Powershell.Models.IServerPlanInternal.Rpo { get => (this._rpo = this._rpo ?? new Commvault.Powershell.Models.ServerPlanRpo()); set { {_rpo = value;} } }
-
-        /// <summary>Internal Acessors for RpoBackupFrequency</summary>
-        Commvault.Powershell.Models.IPlanSchedules Commvault.Powershell.Models.IServerPlanInternal.RpoBackupFrequency { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequency; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupFrequency = value; }
-
-        /// <summary>Internal Acessors for RpoSla</summary>
-        Commvault.Powershell.Models.ISlaOptions Commvault.Powershell.Models.IServerPlanInternal.RpoSla { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).Sla; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).Sla = value; }
 
         /// <summary>Internal Acessors for SettingFileSearch</summary>
         Commvault.Powershell.Models.IPlanFileSearch Commvault.Powershell.Models.IServerPlanInternal.SettingFileSearch { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearch; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearch = value; }
@@ -298,6 +285,44 @@ namespace Commvault.Powershell.Models
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
         public string FileSearchStatusMessage { get => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchStatusMessage; set => ((Commvault.Powershell.Models.IServerPlanSettingsInternal)Settings).FileSearchStatusMessage = value ?? null; }
+
+        /// <summary>Backing field for <see cref="GlobalConfigInfo" /> property.</summary>
+        private Commvault.Powershell.Models.IGlobalConfigInfo _globalConfigInfo;
+
+        /// <summary>Only applicable on Global CommCells</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
+        internal Commvault.Powershell.Models.IGlobalConfigInfo GlobalConfigInfo { get => (this._globalConfigInfo = this._globalConfigInfo ?? new Commvault.Powershell.Models.GlobalConfigInfo()); set => this._globalConfigInfo = value; }
+
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? GlobalConfigInfoApplyOnAllCommCells { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ApplyOnAllCommCells; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ApplyOnAllCommCells = value ?? default(bool); }
+
+        /// <summary>List of Service CommCells where the global configuration is applied</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Commcells; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Commcells = value ?? null /* arrayOf */; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoId { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Id; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Id = value ?? null; }
+
+        /// <summary>Indicates whether global configuration deletion has been started.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public bool? GlobalConfigInfoIsMarkedForDeletion { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).IsMarkedForDeletion; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).IsMarkedForDeletion = value ?? default(bool); }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoName { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Name; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Name = value ?? null; }
+
+        /// <summary>The entity level at which the config is applied.</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoScope { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Scope; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Scope = value ?? null; }
+
+        /// <summary>CommCellEntityCache filter query string used for filtering the scope</summary>
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoScopeFilterQuery { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ScopeFilterQuery; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).ScopeFilterQuery = value ?? null; }
+
+        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
+        public string GlobalConfigInfoStatus { get => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Status; set => ((Commvault.Powershell.Models.IGlobalConfigInfoInternal)GlobalConfigInfo).Status = value ?? null; }
 
         /// <summary>Backing field for <see cref="InheritSettings" /> property.</summary>
         private Commvault.Powershell.Models.IServerPlanInheritSettings _inheritSettings;
@@ -429,15 +454,7 @@ namespace Commvault.Powershell.Models
         /// determines the frequency of your backup jobs.
         /// </summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
-        internal Commvault.Powershell.Models.IServerPlanRpo Rpo { get => (this._rpo = this._rpo ?? new Commvault.Powershell.Models.ServerPlanRpo()); set => this._rpo = value; }
-
-        /// <summary>Backup window for incremental backup</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IDayAndTime[] RpoBackupWindow { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupWindow; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).BackupWindow = value ?? null /* arrayOf */; }
-
-        /// <summary>Backup window for full backup</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public Commvault.Powershell.Models.IDayAndTime[] RpoFullBackupWindow { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).FullBackupWindow; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).FullBackupWindow = value ?? null /* arrayOf */; }
+        public Commvault.Powershell.Models.IServerPlanRpo Rpo { get => (this._rpo = this._rpo ?? new Commvault.Powershell.Models.ServerPlanRpo()); set => this._rpo = value; }
 
         /// <summary>
         /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
@@ -450,34 +467,6 @@ namespace Commvault.Powershell.Models
 
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Owned)]
         internal Commvault.Powershell.Models.IServerPlanSettings Settings { get => (this._settings = this._settings ?? new Commvault.Powershell.Models.ServerPlanSettings()); set => this._settings = value; }
-
-        /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? SlaEnableAfterDelay { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaEnableAfterDelay; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaEnableAfterDelay = value ?? default(long); }
-
-        /// <summary>Flag to set to exclude plan from SLA</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SlaExcludeFromSla { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaExcludeFromSla; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaExcludeFromSla = value ?? default(bool); }
-
-        /// <summary>Reason for exclusion from SLA</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SlaExclusionReason { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaExclusionReason; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaExclusionReason = value ?? null; }
-
-        /// <summary>Tells us from where SLA Period was inherited</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public string SlaInheritedFrom { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedFrom; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedFrom = value ?? null; }
-
-        /// <summary>Inherited SLA Period in Days</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? SlaInheritedSlaPeriod { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedSlaPeriod; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaInheritedSlaPeriod = value ?? default(long); }
-
-        /// <summary>SLA Period in Days</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public long? SlaPeriod { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaPeriod; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaPeriod = value ?? default(long); }
-
-        /// <summary>Flag to set to use System Default Service Level Agreement</summary>
-        [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
-        public bool? SlaUseSystemDefaultSla { get => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaUseSystemDefaultSla; set => ((Commvault.Powershell.Models.IServerPlanRpoInternal)Rpo).SlaUseSystemDefaultSla = value ?? default(bool); }
 
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Origin(Commvault.Powershell.PropertyOrigin.Inlined)]
@@ -804,22 +793,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"backupDestinations",
         PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanBackupDestination) })]
         Commvault.Powershell.Models.IPlanBackupDestination[] BackupDestinations { get; set; }
-        /// <summary>Operation type for the list</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Operation type for the list",
-        SerializedName = @"operationType",
-        PossibleTypes = new [] { typeof(string) })]
-        string BackupFrequencyOperationType { get; set; }
-
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"",
-        SerializedName = @"schedules",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IPlanSchedule) })]
-        Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Commit frequency in hours</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -888,6 +861,72 @@ namespace Commvault.Powershell.Models
         SerializedName = @"statusMessage",
         PossibleTypes = new [] { typeof(string) })]
         string FileSearchStatusMessage { get; set; }
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones",
+        SerializedName = @"applyOnAllCommCells",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? GlobalConfigInfoApplyOnAllCommCells { get; set; }
+        /// <summary>List of Service CommCells where the global configuration is applied</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"List of Service CommCells where the global configuration is applied",
+        SerializedName = @"commcells",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IGlobalConfigCommcellInfo) })]
+        Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"id",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoId { get; set; }
+        /// <summary>Indicates whether global configuration deletion has been started.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Indicates whether global configuration deletion has been started.",
+        SerializedName = @"isMarkedForDeletion",
+        PossibleTypes = new [] { typeof(bool) })]
+        bool? GlobalConfigInfoIsMarkedForDeletion { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoName { get; set; }
+        /// <summary>The entity level at which the config is applied.</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The entity level at which the config is applied.",
+        SerializedName = @"scope",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoScope { get; set; }
+        /// <summary>CommCellEntityCache filter query string used for filtering the scope</summary>
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"CommCellEntityCache filter query string used for filtering the scope",
+        SerializedName = @"scopeFilterQuery",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoScopeFilterQuery { get; set; }
+
+        [Commvault.Powershell.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"",
+        SerializedName = @"status",
+        PossibleTypes = new [] { typeof(string) })]
+        string GlobalConfigInfoStatus { get; set; }
         /// <summary>Flag telling if this setting is currently being overriden</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -1090,22 +1129,17 @@ namespace Commvault.Powershell.Models
         SerializedName = @"regionsConfigured",
         PossibleTypes = new [] { typeof(bool) })]
         bool? RegionsConfigured { get; set; }
-        /// <summary>Backup window for incremental backup</summary>
+        /// <summary>
+        /// Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO
+        /// determines the frequency of your backup jobs.
+        /// </summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
         ReadOnly = false,
-        Description = @"Backup window for incremental backup",
-        SerializedName = @"backupWindow",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IDayAndTime) })]
-        Commvault.Powershell.Models.IDayAndTime[] RpoBackupWindow { get; set; }
-        /// <summary>Backup window for full backup</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Backup window for full backup",
-        SerializedName = @"fullBackupWindow",
-        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IDayAndTime) })]
-        Commvault.Powershell.Models.IDayAndTime[] RpoFullBackupWindow { get; set; }
+        Description = @"Recovery Point Objective (RPO) is the maximum amount of time that data can be lost during a service disruption. Your RPO determines the frequency of your backup jobs.",
+        SerializedName = @"rpo",
+        PossibleTypes = new [] { typeof(Commvault.Powershell.Models.IServerPlanRpo) })]
+        Commvault.Powershell.Models.IServerPlanRpo Rpo { get; set; }
         /// <summary>
         /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
         /// </summary>
@@ -1116,62 +1150,6 @@ namespace Commvault.Powershell.Models
         SerializedName = @"enableAdvancedView",
         PossibleTypes = new [] { typeof(bool) })]
         bool? SettingEnableAdvancedView { get; set; }
-        /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Time provided in Unix format. Give 0 to reset any existing delay.",
-        SerializedName = @"enableAfterDelay",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SlaEnableAfterDelay { get; set; }
-        /// <summary>Flag to set to exclude plan from SLA</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Flag to set to exclude plan from SLA",
-        SerializedName = @"excludeFromSLA",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SlaExcludeFromSla { get; set; }
-        /// <summary>Reason for exclusion from SLA</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Reason for exclusion from SLA",
-        SerializedName = @"exclusionReason",
-        PossibleTypes = new [] { typeof(string) })]
-        string SlaExclusionReason { get; set; }
-        /// <summary>Tells us from where SLA Period was inherited</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Tells us from where SLA Period was inherited",
-        SerializedName = @"inheritedFrom",
-        PossibleTypes = new [] { typeof(string) })]
-        string SlaInheritedFrom { get; set; }
-        /// <summary>Inherited SLA Period in Days</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Inherited SLA Period in Days",
-        SerializedName = @"inheritedSLAPeriod",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SlaInheritedSlaPeriod { get; set; }
-        /// <summary>SLA Period in Days</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"SLA Period in Days",
-        SerializedName = @"SLAPeriod",
-        PossibleTypes = new [] { typeof(long) })]
-        long? SlaPeriod { get; set; }
-        /// <summary>Flag to set to use System Default Service Level Agreement</summary>
-        [Commvault.Powershell.Runtime.Info(
-        Required = false,
-        ReadOnly = false,
-        Description = @"Flag to set to use System Default Service Level Agreement",
-        SerializedName = @"useSystemDefaultSLA",
-        PossibleTypes = new [] { typeof(bool) })]
-        bool? SlaUseSystemDefaultSla { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>
         [Commvault.Powershell.Runtime.Info(
         Required = false,
@@ -1337,10 +1315,6 @@ namespace Commvault.Powershell.Models
         long[] BackupDestinationIds { get; set; }
         /// <summary>Backup destinations for the plan</summary>
         Commvault.Powershell.Models.IPlanBackupDestination[] BackupDestinations { get; set; }
-        /// <summary>Operation type for the list</summary>
-        string BackupFrequencyOperationType { get; set; }
-
-        Commvault.Powershell.Models.IPlanSchedule[] BackupFrequencySchedules { get; set; }
         /// <summary>Commit frequency in hours</summary>
         long? DatabaseOptionCommitFrequencyInHours { get; set; }
         /// <summary>Log backup RPO in minutes</summary>
@@ -1363,6 +1337,26 @@ namespace Commvault.Powershell.Models
         /// Tells what is happening behind the scene, so that user can knows why indexing is not enabled or if its in progress
         /// </summary>
         string FileSearchStatusMessage { get; set; }
+        /// <summary>Only applicable on Global CommCells</summary>
+        Commvault.Powershell.Models.IGlobalConfigInfo GlobalConfigInfo { get; set; }
+        /// <summary>
+        /// Decides whether the global configuration should be applied to all the Service commcells, including the newly created ones
+        /// </summary>
+        bool? GlobalConfigInfoApplyOnAllCommCells { get; set; }
+        /// <summary>List of Service CommCells where the global configuration is applied</summary>
+        Commvault.Powershell.Models.IGlobalConfigCommcellInfo[] GlobalConfigInfoCommcells { get; set; }
+
+        string GlobalConfigInfoId { get; set; }
+        /// <summary>Indicates whether global configuration deletion has been started.</summary>
+        bool? GlobalConfigInfoIsMarkedForDeletion { get; set; }
+
+        string GlobalConfigInfoName { get; set; }
+        /// <summary>The entity level at which the config is applied.</summary>
+        string GlobalConfigInfoScope { get; set; }
+        /// <summary>CommCellEntityCache filter query string used for filtering the scope</summary>
+        string GlobalConfigInfoScopeFilterQuery { get; set; }
+
+        string GlobalConfigInfoStatus { get; set; }
         /// <summary>PlanOverridenOptions</summary>
         Commvault.Powershell.Models.IPlanOverridenOptions InheritSettingBackupContent { get; set; }
 
@@ -1447,17 +1441,6 @@ namespace Commvault.Powershell.Models
         /// determines the frequency of your backup jobs.
         /// </summary>
         Commvault.Powershell.Models.IServerPlanRpo Rpo { get; set; }
-        /// <summary>PlanSchedules</summary>
-        Commvault.Powershell.Models.IPlanSchedules RpoBackupFrequency { get; set; }
-        /// <summary>Backup window for incremental backup</summary>
-        Commvault.Powershell.Models.IDayAndTime[] RpoBackupWindow { get; set; }
-        /// <summary>Backup window for full backup</summary>
-        Commvault.Powershell.Models.IDayAndTime[] RpoFullBackupWindow { get; set; }
-        /// <summary>
-        /// A server meets SLA (Service Level Agreement) when all of its subclients have at least one successful backup during the
-        /// number of days specified at the CommCell, Server Group or plan level.
-        /// </summary>
-        Commvault.Powershell.Models.ISlaOptions RpoSla { get; set; }
         /// <summary>
         /// Setting to suggest plan has some advanced settings present. Setting is OEM specific and not applicable for all cases.
         /// </summary>
@@ -1469,20 +1452,6 @@ namespace Commvault.Powershell.Models
         Commvault.Powershell.Models.IPlanFileSearch SettingFileSearch { get; set; }
 
         Commvault.Powershell.Models.IServerPlanSettings Settings { get; set; }
-        /// <summary>Time provided in Unix format. Give 0 to reset any existing delay.</summary>
-        long? SlaEnableAfterDelay { get; set; }
-        /// <summary>Flag to set to exclude plan from SLA</summary>
-        bool? SlaExcludeFromSla { get; set; }
-        /// <summary>Reason for exclusion from SLA</summary>
-        string SlaExclusionReason { get; set; }
-        /// <summary>Tells us from where SLA Period was inherited</summary>
-        string SlaInheritedFrom { get; set; }
-        /// <summary>Inherited SLA Period in Days</summary>
-        long? SlaInheritedSlaPeriod { get; set; }
-        /// <summary>SLA Period in Days</summary>
-        long? SlaPeriod { get; set; }
-        /// <summary>Flag to set to use System Default Service Level Agreement</summary>
-        bool? SlaUseSystemDefaultSla { get; set; }
         /// <summary>Used to describe the frequency of backup</summary>
         Commvault.Powershell.Models.IBackupFrequencyPattern SnapshotOptionBackupCopyFrequency { get; set; }
         /// <summary>Backup copy RPO in minutes</summary>

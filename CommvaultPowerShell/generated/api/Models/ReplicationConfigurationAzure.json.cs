@@ -71,7 +71,6 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_overrideReplicationOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("overrideReplicationOptions"), out var __jsonOverrideReplicationOptions) ? Commvault.Powershell.Models.OverrideReplicationOptionsAzure.FromJson(__jsonOverrideReplicationOptions) : OverrideReplicationOptions;}
             {_sourceVM = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("sourceVM"), out var __jsonSourceVM) ? (string)__jsonSourceVM : (string)SourceVM;}
             {_destinationVM = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("destinationVM"), out var __jsonDestinationVM) ? (string)__jsonDestinationVM : (string)DestinationVM;}
             {_resourceGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("resourceGroup"), out var __jsonResourceGroup) ? (string)__jsonResourceGroup : (string)ResourceGroup;}
@@ -79,6 +78,11 @@ namespace Commvault.Powershell.Models
             {_vMSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmSize"), out var __jsonVMSize) ? (string)__jsonVMSize : (string)VMSize;}
             {_createPublicIP = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("createPublicIP"), out var __jsonCreatePublicIP) ? (bool?)__jsonCreatePublicIP : CreatePublicIP;}
             {_restoreAsManagedVM = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("restoreAsManagedVm"), out var __jsonRestoreAsManagedVM) ? (bool?)__jsonRestoreAsManagedVM : RestoreAsManagedVM;}
+            {_diskType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("diskType"), out var __jsonDiskType) ? (string)__jsonDiskType : (string)DiskType;}
+            {_sourceVMGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("sourceVMGuid"), out var __jsonSourceVMGuid) ? (string)__jsonSourceVMGuid : (string)SourceVMGuid;}
+            {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("region"), out var __jsonRegion) ? (string)__jsonRegion : (string)Region;}
+            {_testFailoverVMSize = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("testFailoverVmSize"), out var __jsonTestFailoverVMSize) ? (string)__jsonTestFailoverVMSize : (string)TestFailoverVMSize;}
+            {_overrideReplicationOptions = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("overrideReplicationOptions"), out var __jsonOverrideReplicationOptions) ? Commvault.Powershell.Models.OverrideReplicationOptionsAzure.FromJson(__jsonOverrideReplicationOptions) : OverrideReplicationOptions;}
             AfterFromJson(json);
         }
 
@@ -101,7 +105,6 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != this._overrideReplicationOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._overrideReplicationOptions.ToJson(null,serializationMode) : null, "overrideReplicationOptions" ,container.Add );
             AddIf( null != (((object)this._sourceVM)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._sourceVM.ToString()) : null, "sourceVM" ,container.Add );
             AddIf( null != (((object)this._destinationVM)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._destinationVM.ToString()) : null, "destinationVM" ,container.Add );
             AddIf( null != (((object)this._resourceGroup)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._resourceGroup.ToString()) : null, "resourceGroup" ,container.Add );
@@ -109,6 +112,11 @@ namespace Commvault.Powershell.Models
             AddIf( null != (((object)this._vMSize)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMSize.ToString()) : null, "vmSize" ,container.Add );
             AddIf( null != this._createPublicIP ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._createPublicIP) : null, "createPublicIP" ,container.Add );
             AddIf( null != this._restoreAsManagedVM ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._restoreAsManagedVM) : null, "restoreAsManagedVm" ,container.Add );
+            AddIf( null != (((object)this._diskType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._diskType.ToString()) : null, "diskType" ,container.Add );
+            AddIf( null != (((object)this._sourceVMGuid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._sourceVMGuid.ToString()) : null, "sourceVMGuid" ,container.Add );
+            AddIf( null != (((object)this._region)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._region.ToString()) : null, "region" ,container.Add );
+            AddIf( null != (((object)this._testFailoverVMSize)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._testFailoverVMSize.ToString()) : null, "testFailoverVmSize" ,container.Add );
+            AddIf( null != this._overrideReplicationOptions ? (Commvault.Powershell.Runtime.Json.JsonNode) this._overrideReplicationOptions.ToJson(null,serializationMode) : null, "overrideReplicationOptions" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

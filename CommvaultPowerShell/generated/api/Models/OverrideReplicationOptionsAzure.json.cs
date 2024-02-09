@@ -71,7 +71,10 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
-            {_vMDisplayName = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("vmDisplayName"), out var __jsonVMDisplayName) ? (string)__jsonVMDisplayName : (string)VMDisplayName;}
+            {_securityGroup = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("securityGroup"), out var __jsonSecurityGroup) ? Commvault.Powershell.Models.SecurityGroup.FromJson(__jsonSecurityGroup) : SecurityGroup;}
+            {_testFailoverVirtualNetwork = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("testFailoverVirtualNetwork"), out var __jsonTestFailoverVirtualNetwork) ? Commvault.Powershell.Models.AzureNetwork.FromJson(__jsonTestFailoverVirtualNetwork) : TestFailoverVirtualNetwork;}
+            {_virtualNetwork = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("virtualNetwork"), out var __jsonVirtualNetwork) ? Commvault.Powershell.Models.AzureNetwork.FromJson(__jsonVirtualNetwork) : VirtualNetwork;}
+            {_availabilityZone = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("availabilityZone"), out var __jsonAvailabilityZone) ? (string)__jsonAvailabilityZone : (string)AvailabilityZone;}
             AfterFromJson(json);
         }
 
@@ -94,7 +97,10 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
-            AddIf( null != (((object)this._vMDisplayName)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._vMDisplayName.ToString()) : null, "vmDisplayName" ,container.Add );
+            AddIf( null != this._securityGroup ? (Commvault.Powershell.Runtime.Json.JsonNode) this._securityGroup.ToJson(null,serializationMode) : null, "securityGroup" ,container.Add );
+            AddIf( null != this._testFailoverVirtualNetwork ? (Commvault.Powershell.Runtime.Json.JsonNode) this._testFailoverVirtualNetwork.ToJson(null,serializationMode) : null, "testFailoverVirtualNetwork" ,container.Add );
+            AddIf( null != this._virtualNetwork ? (Commvault.Powershell.Runtime.Json.JsonNode) this._virtualNetwork.ToJson(null,serializationMode) : null, "virtualNetwork" ,container.Add );
+            AddIf( null != (((object)this._availabilityZone)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._availabilityZone.ToString()) : null, "availabilityZone" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

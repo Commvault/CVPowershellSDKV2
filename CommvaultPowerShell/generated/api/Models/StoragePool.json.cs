@@ -71,11 +71,15 @@ namespace Commvault.Powershell.Models
             {
                 return;
             }
+            {_region = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("region"), out var __jsonRegion) ? Commvault.Powershell.Models.IdNameDisplayName.FromJson(__jsonRegion) : Region;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("id"), out var __jsonId) ? (long?)__jsonId : Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_type = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("type"), out var __jsonType) ? (string)__jsonType : (string)Type;}
             {_retentionPeriodDays = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("retentionPeriodDays"), out var __jsonRetentionPeriodDays) ? (long?)__jsonRetentionPeriodDays : RetentionPeriodDays;}
             {_wormStoragePoolFlag = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonNumber>("wormStoragePoolFlag"), out var __jsonWormStoragePoolFlag) ? (long?)__jsonWormStoragePoolFlag : WormStoragePoolFlag;}
+            {_deviceType = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("deviceType"), out var __jsonDeviceType) ? (string)__jsonDeviceType : (string)DeviceType;}
+            {_storageClass = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("storageClass"), out var __jsonStorageClass) ? (string)__jsonStorageClass : (string)StorageClass;}
+            {_isArchiveStorage = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("isArchiveStorage"), out var __jsonIsArchiveStorage) ? (bool?)__jsonIsArchiveStorage : IsArchiveStorage;}
             AfterFromJson(json);
         }
 
@@ -98,11 +102,15 @@ namespace Commvault.Powershell.Models
             {
                 return container;
             }
+            AddIf( null != this._region ? (Commvault.Powershell.Runtime.Json.JsonNode) this._region.ToJson(null,serializationMode) : null, "region" ,container.Add );
             AddIf( null != this._id ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._id) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._type)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._type.ToString()) : null, "type" ,container.Add );
             AddIf( null != this._retentionPeriodDays ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._retentionPeriodDays) : null, "retentionPeriodDays" ,container.Add );
             AddIf( null != this._wormStoragePoolFlag ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonNumber((long)this._wormStoragePoolFlag) : null, "wormStoragePoolFlag" ,container.Add );
+            AddIf( null != (((object)this._deviceType)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._deviceType.ToString()) : null, "deviceType" ,container.Add );
+            AddIf( null != (((object)this._storageClass)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._storageClass.ToString()) : null, "storageClass" ,container.Add );
+            AddIf( null != this._isArchiveStorage ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._isArchiveStorage) : null, "isArchiveStorage" ,container.Add );
             AfterToJson(ref container);
             return container;
         }

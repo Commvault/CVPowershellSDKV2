@@ -79,6 +79,7 @@ namespace Commvault.Powershell.Models
             }
             AddIf( null != this._plan ? (Commvault.Powershell.Runtime.Json.JsonNode) this._plan.ToJson(null,serializationMode) : null, "plan" ,container.Add );
             AddIf( null != this._company ? (Commvault.Powershell.Runtime.Json.JsonNode) this._company.ToJson(null,serializationMode) : null, "company" ,container.Add );
+            AddIf( null != this._globalConfigInfo ? (Commvault.Powershell.Runtime.Json.JsonNode) this._globalConfigInfo.ToJson(null,serializationMode) : null, "globalConfigInfo" ,container.Add );
             AddIf( null != (((object)this._id)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._id.ToString()) : null, "id" ,container.Add );
             AddIf( null != (((object)this._name)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._name.ToString()) : null, "name" ,container.Add );
             AddIf( null != (((object)this._guid)?.ToString()) ? (Commvault.Powershell.Runtime.Json.JsonNode) new Commvault.Powershell.Runtime.Json.JsonString(this._guid.ToString()) : null, "GUID" ,container.Add );
@@ -132,6 +133,7 @@ namespace Commvault.Powershell.Models
                 AddIf( null != this._eligibleToAllowMultipleCompanyMembers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._eligibleToAllowMultipleCompanyMembers) : null, "eligibleToAllowMultipleCompanyMembers" ,container.Add );
             }
             AddIf( null != this._allowMultipleCompanyMembers ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._allowMultipleCompanyMembers) : null, "allowMultipleCompanyMembers" ,container.Add );
+            AddIf( null != this._doNotInheritRestrictConsoleTypes ? (Commvault.Powershell.Runtime.Json.JsonNode)new Commvault.Powershell.Runtime.Json.JsonBoolean((bool)this._doNotInheritRestrictConsoleTypes) : null, "doNotInheritRestrictConsoleTypes" ,container.Add );
             if (null != this._restrictedConsoleTypes)
             {
                 var __c = new Commvault.Powershell.Runtime.Json.XNodeArray();
@@ -164,6 +166,7 @@ namespace Commvault.Powershell.Models
             }
             {_plan = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("plan"), out var __jsonPlan) ? Commvault.Powershell.Models.IdName.FromJson(__jsonPlan) : Plan;}
             {_company = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("company"), out var __jsonCompany) ? Commvault.Powershell.Models.IdName.FromJson(__jsonCompany) : Company;}
+            {_globalConfigInfo = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonObject>("globalConfigInfo"), out var __jsonGlobalConfigInfo) ? Commvault.Powershell.Models.GlobalConfigInfo.FromJson(__jsonGlobalConfigInfo) : GlobalConfigInfo;}
             {_id = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("id"), out var __jsonId) ? (string)__jsonId : (string)Id;}
             {_name = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("name"), out var __jsonName) ? (string)__jsonName : (string)Name;}
             {_guid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("GUID"), out var __jsonGuid) ? (string)__jsonGuid : (string)Guid;}
@@ -182,6 +185,7 @@ namespace Commvault.Powershell.Models
             {_associatedEntities = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("associatedEntities"), out var __jsonAssociatedEntities) ? If( __jsonAssociatedEntities as Commvault.Powershell.Runtime.Json.JsonArray, out var __g) ? new global::System.Func<Commvault.Powershell.Models.IAssocEntity[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__g, (__f)=>(Commvault.Powershell.Models.IAssocEntity) (Commvault.Powershell.Models.AssocEntity.FromJson(__f) )) ))() : null : AssociatedEntities;}
             {_eligibleToAllowMultipleCompanyMembers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("eligibleToAllowMultipleCompanyMembers"), out var __jsonEligibleToAllowMultipleCompanyMembers) ? (bool?)__jsonEligibleToAllowMultipleCompanyMembers : EligibleToAllowMultipleCompanyMembers;}
             {_allowMultipleCompanyMembers = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("allowMultipleCompanyMembers"), out var __jsonAllowMultipleCompanyMembers) ? (bool?)__jsonAllowMultipleCompanyMembers : AllowMultipleCompanyMembers;}
+            {_doNotInheritRestrictConsoleTypes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("doNotInheritRestrictConsoleTypes"), out var __jsonDoNotInheritRestrictConsoleTypes) ? (bool?)__jsonDoNotInheritRestrictConsoleTypes : DoNotInheritRestrictConsoleTypes;}
             {_restrictedConsoleTypes = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonArray>("restrictedConsoleTypes"), out var __jsonRestrictedConsoleTypes) ? If( __jsonRestrictedConsoleTypes as Commvault.Powershell.Runtime.Json.JsonArray, out var __b) ? new global::System.Func<Commvault.Powershell.Models.IRestrictedConsoleTypes[]>(()=> global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(__b, (__a)=>(Commvault.Powershell.Models.IRestrictedConsoleTypes) (Commvault.Powershell.Models.RestrictedConsoleTypes.FromJson(__a) )) ))() : null : RestrictedConsoleTypes;}
             {_azureGuid = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonString>("azureGUID"), out var __jsonAzureGuid) ? (string)__jsonAzureGuid : (string)AzureGuid;}
             {_showAzureGuidOption = If( json?.PropertyT<Commvault.Powershell.Runtime.Json.JsonBoolean>("showAzureGuidOption"), out var __jsonShowAzureGuidOption) ? (bool?)__jsonShowAzureGuidOption : ShowAzureGuidOption;}
