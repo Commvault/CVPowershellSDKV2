@@ -36,7 +36,7 @@ namespace Commvault.Powershell
 
             request.RequestUri = TranslateIncomingRequestToCommvaultAPI(request);
             request.Headers.Add("Authtoken", System.Environment.GetEnvironmentVariable("CVToken"));
-            //request.Headers.Add("EnumNames", "true");
+            request.Headers.Add("EnumNames", "true");
             request.Headers.Add("Accept", "application/json");
             // let it go on.
             return await next.SendAsync(request, callback);
