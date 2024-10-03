@@ -15,7 +15,7 @@ The latest version of the SDK combines both the CVPowershellSDK and CVPowershell
 
 Requirements
 ------------
-- Windows PowerShell version 5.1 or above
+- Windows PowerShell version 6.1 [Powershell Core](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows) or above
 - Commvault Software v11 SP28 or later release with WebServer installed
 
 Installation
