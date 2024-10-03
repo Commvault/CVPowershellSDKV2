@@ -33,6 +33,7 @@ Link to the PowershellGallery
 
 Versions
 -------------
+Version 0.3.1  - SDK is supported on Commvault Version 2024E or 11.36<br/>
 Version 0.2.15 - SDK is supported on Commvault Version 2024 or 11.34<br />
 Version 0.2.14 - SDK is supported on Commvault Version 2023E or 11.32<br />
 Version 0.2.11 to 0.2.13 - SDK is supported on Commvault Version 2023 or 11.30<br/>
