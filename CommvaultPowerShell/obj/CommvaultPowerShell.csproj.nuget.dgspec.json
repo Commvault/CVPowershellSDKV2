@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowershell.csproj": {}
+    "D:\\CVPowershellSDKV2-main\\output\\CommvaultPowershell\\CommvaultPowershell.csproj": {}
   },
   "projects": {
-    "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowershell.csproj": {
-      "version": "0.2.15",
+    "D:\\CVPowershellSDKV2-main\\output\\CommvaultPowershell\\CommvaultPowershell.csproj": {
+      "version": "0.2.22",
       "restore": {
-        "projectUniqueName": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowershell.csproj",
-        "projectName": "CommvaultPowershell.private",
-        "projectPath": "C:\\cvpowers\\CommvaultPowerShell\\CommvaultPowershell.csproj",
+        "projectUniqueName": "D:\\CVPowershellSDKV2-main\\output\\CommvaultPowershell\\CommvaultPowershell.csproj",
+        "projectName": "CommvaultPowerShell.private",
+        "projectPath": "D:\\CVPowershellSDKV2-main\\output\\CommvaultPowershell\\CommvaultPowershell.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\cvpowers\\CommvaultPowerShell\\obj\\",
+        "outputPath": "D:\\CVPowershellSDKV2-main\\output\\CommvaultPowershell\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -30,6 +30,11 @@
         },
         "warningProperties": {
           "allWarningsAsErrors": true
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -57,11 +62,12 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

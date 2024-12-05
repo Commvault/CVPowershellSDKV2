@@ -17,7 +17,7 @@ namespace Commvault.Powershell
         }
     }
 
-    [AttributeUsage(AttributeTargets.Class)]
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property)]
     public class DoNotExportAttribute : Attribute
     {
     }
@@ -46,6 +46,18 @@ namespace Commvault.Powershell
         {
             Profiles = profiles;
         }
+    }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public class HttpPathAttribute : Attribute
+    {
+        public string Path { get; set; }
+        public string ApiVersion { get; set; }
+    }
+
+    [AttributeUsage(AttributeTargets.Class)]
+    public class NotSuggestDefaultParameterSetAttribute : Attribute
+    {
     }
 
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
@@ -100,6 +112,11 @@ namespace Commvault.Powershell
         Inherited = 0,
         Owned,
         Inlined
+    }
+
+    [AttributeUsage(AttributeTargets.Property)]
+    public class ConstantAttribute : Attribute
+    {
     }
 
     [AttributeUsage(AttributeTargets.Property)]

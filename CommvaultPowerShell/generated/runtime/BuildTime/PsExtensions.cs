@@ -13,6 +13,13 @@ namespace Commvault.Powershell.Runtime.PowerShell
 {
     internal static class PsExtensions
     {
+        public static PSObject AddMultipleTypeNameIntoPSObject(this object obj, string multipleTag = "#Multiple")
+        {
+            var psObj = new PSObject(obj);
+            psObj.TypeNames.Insert(0, $"{psObj.TypeNames[0]}{multipleTag}");
+            return psObj;
+        }
+
         // https://stackoverflow.com/a/863944/294804
         // https://stackoverflow.com/a/4452598/294804
         // https://stackoverflow.com/a/28701974/294804
@@ -156,5 +163,14 @@ namespace Commvault.Powershell.Runtime.PowerShell
 
         public static void RunScript(this EngineIntrinsics engineIntrinsics, ScriptBlock block)
             => engineIntrinsics.RunScript<PSObject>(block.ToString());
+
+        /// <summary>
+        /// Returns if a parameter should be hidden by checking for <see cref="DoNotExportAttribute" />.
+        /// </summary>
+        /// <param name="parameter">A PowerShell parameter.</param>
+        public static bool IsHidden(this Parameter parameter)
+        {
+            return parameter.Attributes.Any(attr => attr is DoNotExportAttribute);
+        }
     }
 }

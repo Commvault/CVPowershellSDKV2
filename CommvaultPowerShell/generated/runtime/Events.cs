@@ -22,6 +22,6 @@ namespace Commvault.Powershell.Runtime
         public const string FollowingNextLink = nameof(FollowingNextLink);
         public const string DelayBeforePolling = nameof(DelayBeforePolling);
         public const string Polling = nameof(Polling);
-
+        public const string Progress = nameof(Progress);
     }
 }

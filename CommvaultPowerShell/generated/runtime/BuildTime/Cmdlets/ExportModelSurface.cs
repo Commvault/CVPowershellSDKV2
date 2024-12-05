@@ -24,7 +24,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
     public bool UseExpandedFormat { get; set; }
 
     private const string ModelNamespace = @"Commvault.Powershell.Models";
-    private const string SupportNamespace = @"Commvault.Powershell.Support";
+    private const string SupportNamespace = @"${$project.supportNamespace.fullName}";
 
     protected override void ProcessRecord()
     {

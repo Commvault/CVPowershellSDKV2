@@ -11,6 +11,9 @@ namespace Commvault.Powershell.Runtime
     using System.Threading.Tasks;
     using System.Collections;
     using System.Linq;
+    using System;
+    using System.Security.Cryptography.X509Certificates;
+
 
     /// <summary>
     /// The interface for sending an HTTP request across the wire.
@@ -49,11 +52,20 @@ namespace Commvault.Powershell.Runtime
     public class HttpClientFactory : ISendAsyncTerminalFactory, ISendAsync
     {
         HttpClient client;
-        public HttpClientFactory() : this(new HttpClient())
+        public HttpClientFactory() : this(CreateHttpClient())
         {
         }
         public HttpClientFactory(HttpClient client) => this.client = client;
         public ISendAsync Create() => this;
+
+        private static HttpClient CreateHttpClient()
+        {
+            Console.WriteLine("Meh");
+            var handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => true;
+
+            return new HttpClient(handler);
+        }
 
         public Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, IEventListener callback) => client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, callback.Token);
     }
@@ -70,6 +82,7 @@ namespace Commvault.Powershell.Runtime
 
     public partial class HttpPipeline : ISendAsync
     {
+        private const int DefaultMaxRetry = 3;
         private ISendAsync pipeline;
         private ISendAsyncTerminalFactory terminal;
         private List<ISendAsyncFactory> steps = new List<ISendAsyncFactory>();
@@ -91,6 +104,111 @@ namespace Commvault.Powershell.Runtime
         /// Returns an HttpPipeline with the current state of this pipeline.
         /// </summary>
         public HttpPipeline Clone() => new HttpPipeline(terminal) { steps = this.steps.ToList(), pipeline = this.pipeline };
+
+        private bool shouldRetry429(HttpResponseMessage response)
+        {
+            if (response.StatusCode == (System.Net.HttpStatusCode)429)
+            {
+                var retryAfter = response.Headers.RetryAfter;
+                if (retryAfter != null && retryAfter.Delta.HasValue)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// The step to handle 429 response with retry-after header.
+        /// </summary>
+        public async Task<HttpResponseMessage> Retry429(HttpRequestMessage request, IEventListener callback, ISendAsync next)
+        {
+            int retryCount = int.MaxValue;
+
+            try
+            {
+                try
+                {
+                    retryCount = int.Parse(System.Environment.GetEnvironmentVariable("PS_HTTP_MAX_RETRIES_FOR_429"));
+                }
+                finally
+                {
+                    retryCount = int.Parse(System.Environment.GetEnvironmentVariable("AZURE_PS_HTTP_MAX_RETRIES_FOR_429"));
+                }
+            }
+            catch (System.Exception)
+            {
+                //no action
+            }
+            var cloneRequest = await request.CloneWithContent();
+            var response = await next.SendAsync(request, callback);
+            int count = 0;
+            while (shouldRetry429(response) && count++ < retryCount)
+            {
+                request = await cloneRequest.CloneWithContent();
+                var retryAfter = response.Headers.RetryAfter;
+                await Task.Delay(retryAfter.Delta.Value, callback.Token);
+                await callback.Signal("Debug", $"Start to retry {count} time(s) on status code 429 after waiting {retryAfter.Delta.Value.TotalSeconds} seconds.");
+                response = await next.SendAsync(request, callback);
+            }
+            return response;
+        }
+
+        private bool shouldRetryError(HttpResponseMessage response)
+        {
+            if (response.StatusCode >= System.Net.HttpStatusCode.InternalServerError)
+            {
+                if (response.StatusCode != System.Net.HttpStatusCode.NotImplemented &&
+                    response.StatusCode != System.Net.HttpStatusCode.HttpVersionNotSupported)
+                {
+                    return true;
+                }
+            }
+            else if (response.StatusCode == System.Net.HttpStatusCode.RequestTimeout)
+            {
+                return true;
+            }
+            else if (response.StatusCode == (System.Net.HttpStatusCode)429 && response.Headers.RetryAfter == null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Returns true if status code in HttpRequestExceptionWithStatus exception is greater 
+        /// than or equal to 500 and not NotImplemented (501) or HttpVersionNotSupported (505).
+        /// Or it's 429 (TOO MANY REQUESTS) without Retry-After header.
+        /// </summary>
+        public async Task<HttpResponseMessage> RetryError(HttpRequestMessage request, IEventListener callback, ISendAsync next)
+        {
+            int retryCount = DefaultMaxRetry;
+
+            try
+            {
+                try
+                {
+                    retryCount = int.Parse(System.Environment.GetEnvironmentVariable("PS_HTTP_MAX_RETRIES"));
+                }
+                finally
+                {
+                    retryCount = int.Parse(System.Environment.GetEnvironmentVariable("AZURE_PS_HTTP_MAX_RETRIES"));
+                }
+            }
+            catch (System.Exception)
+            {
+                //no action
+            }
+            var cloneRequest = await request.CloneWithContent();
+            var response = await next.SendAsync(request, callback);
+            int count = 0;
+            while (shouldRetryError(response) && count++ < retryCount)
+            {
+                await callback.Signal("Debug", $"Start to retry {count} time(s) on status code {response.StatusCode}");
+                request = await cloneRequest.CloneWithContent();
+                response = await next.SendAsync(request, callback);
+            }
+            return response;
+        }
 
         public ISendAsyncTerminalFactory TerminalFactory
         {
@@ -117,6 +235,11 @@ namespace Commvault.Powershell.Runtime
 
                 // create the pipeline from scratch.
                 var next = terminal.Create();
+                if (Convert.ToBoolean(@"true"))
+                {
+                    next = (new SendAsyncFactory(Retry429)).Create(next) ?? next;
+                    next = (new SendAsyncFactory(RetryError)).Create(next) ?? next;
+                }
                 foreach (var factory in steps)
                 {
                     // skip factories that return null.
@@ -238,6 +361,8 @@ namespace Commvault.Powershell.Runtime
         /// Clones an HttpRequestMessage (without the content)
         /// </summary>
         /// <param name="original">Original HttpRequestMessage (Will be diposed before returning)</param>
+        /// <param name="requestUri"></param>
+        /// <param name="method"></param>
         /// <returns>A clone of the HttpRequestMessage</returns>
         internal static HttpRequestMessage Clone(this HttpRequestMessage original, System.Uri requestUri = null, System.Net.Http.HttpMethod method = null)
         {
@@ -252,9 +377,9 @@ namespace Commvault.Powershell.Runtime
             {
                 clone.Properties.Add(prop);
             }
-            
+
             foreach (KeyValuePair<string, IEnumerable<string>> header in original.Headers)
-            {   
+            {
                 /*
                 **temporarily skip cloning telemetry related headers**
                 clone.Headers.TryAddWithoutValidation(header.Key, header.Value);
@@ -264,7 +389,7 @@ namespace Commvault.Powershell.Runtime
                     clone.Headers.TryAddWithoutValidation(header.Key, header.Value);
                 }
             }
-            
+
             return clone;
         }
 
@@ -272,6 +397,8 @@ namespace Commvault.Powershell.Runtime
         /// Clones an HttpRequestMessage (including the content stream and content headers) 
         /// </summary>
         /// <param name="original">Original HttpRequestMessage (Will be diposed before returning)</param>
+        /// <param name="requestUri"></param>
+        /// <param name="method"></param>
         /// <returns>A clone of the HttpRequestMessage</returns>
         internal static async Task<HttpRequestMessage> CloneWithContent(this HttpRequestMessage original, System.Uri requestUri = null, System.Net.Http.HttpMethod method = null)
         {

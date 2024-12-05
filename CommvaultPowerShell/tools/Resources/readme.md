@@ -3,9 +3,6 @@
 This directory contains the PowerShell module for the Resources service.
 
 ---
-## Status
-[![Az.Resources.TestSupport](https://img.shields.io/powershellgallery/v/Az.Resources.TestSupport.svg?style=flat-square&label=Az.Resources.TestSupport "Az.Resources.TestSupport")](https://www.powershellgallery.com/packages/Az.Resources.TestSupport/)
-
 ## Info
 - Modifiable: yes
 - Generated: all
@@ -17,7 +14,7 @@ This directory contains the PowerShell module for the Resources service.
 This module was primarily generated via [AutoRest](https://github.com/Azure/autorest) using the [PowerShell](https://github.com/Azure/autorest.powershell) extension.
 
 ## Module Requirements
-- [Az.Accounts module](https://www.powershellgallery.com/packages/Az.Accounts/), version 2.2.3 or greater
+- [Az.Accounts module](https://www.powershellgallery.com/packages/Az.Accounts/), version 2.7.5 or greater
 
 ## Authentication
 AutoRest does not generate authentication code for the module. Authentication is handled via Az.Accounts by altering the HTTP payload before it is sent.
@@ -83,6 +80,7 @@ module-version: 0.0.1
 title: Resources
 
 directive:
+  - remove-operation: Deployments_CreateOrUpdateAtSubscriptionScope
   - where:
       subject: Operation
     hide: true

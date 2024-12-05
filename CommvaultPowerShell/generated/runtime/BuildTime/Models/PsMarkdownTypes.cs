@@ -31,7 +31,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
         public string[] Inputs { get; }
         public string[] Outputs { get; }
         public ComplexInterfaceInfo[] ComplexInterfaceInfos { get; }
-        public string[] RelatedLinks { get; }
+        public MarkdownRelatedLinkInfo[] RelatedLinks { get; }
 
         public bool SupportsShouldProcess { get; }
         public bool SupportsPaging { get; }
@@ -39,7 +39,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
         public MarkdownHelpInfo(VariantGroup variantGroup, string examplesFolder, string externalHelpFilename = "")
         {
             ExternalHelpFilename = externalHelpFilename;
-            ModuleName = variantGroup.ModuleName;
+            ModuleName = variantGroup.RootModuleName != "" ? variantGroup.RootModuleName : variantGroup.ModuleName;
             var helpInfo = variantGroup.HelpInfo;
             var commentInfo = variantGroup.CommentInfo;
             Schema = Version.Parse("2.0.0");
@@ -52,12 +52,12 @@ namespace Commvault.Powershell.Runtime.PowerShell
             SyntaxInfos = variantGroup.Variants
                 .Select(v => new MarkdownSyntaxHelpInfo(v, variantGroup.ParameterGroups, v.VariantName == variantGroup.DefaultParameterSetName))
                 .OrderByDescending(v => v.IsDefault).ThenBy(v => v.ParameterSetName).ToArray();
-            Examples = GetExamplesFromMarkdown(examplesFolder).NullIfEmpty() 
+            Examples = GetExamplesFromMarkdown(examplesFolder).NullIfEmpty()
                        ?? helpInfo.Examples.Select(e => e.ToExampleHelpInfo()).ToArray().NullIfEmpty()
                        ?? DefaultExampleHelpInfos;
 
             Parameters = variantGroup.ParameterGroups
-                .Where(pg => !pg.DontShow)
+                .Where(pg => !pg.DontShow && !pg.Parameters.All(p => p.IsHidden()))
                 .Select(pg => new MarkdownParameterHelpInfo(
                     variantGroup.Variants.SelectMany(v => v.HelpInfo.Parameters).Where(phi => phi.Name == pg.ParameterName).ToArray(), pg))
                 .OrderBy(phi => phi.Name).ToArray();
@@ -67,7 +67,11 @@ namespace Commvault.Powershell.Runtime.PowerShell
 
             ComplexInterfaceInfos = variantGroup.ComplexInterfaceInfos;
             OnlineVersion = commentInfo.OnlineVersion;
-            RelatedLinks = commentInfo.RelatedLinks;
+            
+            var relatedLinkLists = new List<MarkdownRelatedLinkInfo>();
+            relatedLinkLists.AddRange(commentInfo.RelatedLinks?.Select(link => new MarkdownRelatedLinkInfo(link)));
+            relatedLinkLists.AddRange(variantGroup.Variants.SelectMany(v => v.Attributes).OfType<ExternalDocsAttribute>()?.Distinct()?.Select(link => new MarkdownRelatedLinkInfo(link.Url, link.Description)));
+            RelatedLinks = relatedLinkLists?.ToArray(); 
 
             SupportsShouldProcess = variantGroup.SupportsShouldProcess;
             SupportsPaging = variantGroup.SupportsPaging;
@@ -91,12 +95,17 @@ namespace Commvault.Powershell.Runtime.PowerShell
                 var code = codeStartIndex.HasValue && codeEndIndex.HasValue
                     ? String.Join(Environment.NewLine, eg.Skip(codeStartIndex.Value + 1).Take(codeEndIndex.Value - (codeStartIndex.Value + 1)))
                     : String.Empty;
-                var descriptionStartIndex = (codeEndIndex ?? 0) + 1;
+                var outputStartIndex = eg.Select((l, i) => l.StartsWith(ExampleOutputHeader) ? (int?)i : null).FirstOrDefault(i => i.HasValue);
+                var outputEndIndex = eg.Select((l, i) => l.StartsWith(ExampleOutputFooter) ? (int?)i : null).FirstOrDefault(i => i.HasValue && i > outputStartIndex);
+                var output = outputStartIndex.HasValue && outputEndIndex.HasValue
+                    ? String.Join(Environment.NewLine, eg.Skip(outputStartIndex.Value + 1).Take(outputEndIndex.Value - (outputStartIndex.Value + 1)))
+                    : String.Empty;
+                var descriptionStartIndex = (outputEndIndex ?? (codeEndIndex ?? 0)) + 1;
                 descriptionStartIndex = String.IsNullOrWhiteSpace(eg[descriptionStartIndex]) ? descriptionStartIndex + 1 : descriptionStartIndex;
                 var descriptionEndIndex = eg.Length - 1;
                 descriptionEndIndex = String.IsNullOrWhiteSpace(eg[descriptionEndIndex]) ? descriptionEndIndex - 1 : descriptionEndIndex;
                 var description = String.Join(Environment.NewLine, eg.Skip(descriptionStartIndex).Take((descriptionEndIndex + 1) - descriptionStartIndex));
-                return new MarkdownExampleHelpInfo(name, code, description);
+                return new MarkdownExampleHelpInfo(name, code, output, description);
             }).ToArray();
         }
     }
@@ -115,7 +124,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
             IsDefault = isDefault;
             ParameterSetName = Variant.VariantName;
             Parameters = Variant.Parameters
-                .Where(p => !p.DontShow).OrderByDescending(p => p.IsMandatory)
+                .Where(p => !p.DontShow && !p.IsHidden()).OrderByDescending(p => p.IsMandatory)
                 //https://stackoverflow.com/a/6461526/294804
                 .ThenByDescending(p => p.Position.HasValue).ThenBy(p => p.Position)
                 // Use the OrderCategory of the parameter group because the final order category is the highest of the group, and not the order category of the individual parameters from the variants.
@@ -131,10 +140,6 @@ namespace Commvault.Powershell.Runtime.PowerShell
             if (Variant.SupportsShouldProcess)
             {
                 parameterStrings = parameterStrings.Append(" [-Confirm]").Append(" [-WhatIf]");
-            }
-            if (Variant.SupportsPaging)
-            {
-                parameterStrings = parameterStrings.Append(" [-First <UInt64>]").Append(" [-IncludeTotalCount]").Append(" [-Skip <UInt64>]");
             }
             parameterStrings = parameterStrings.Append(" [<CommonParameters>]");
 
@@ -158,12 +163,14 @@ namespace Commvault.Powershell.Runtime.PowerShell
     {
         public string Name { get; }
         public string Code { get; }
+        public string Output { get; }
         public string Description { get; }
 
-        public MarkdownExampleHelpInfo(string name, string code, string description)
+        public MarkdownExampleHelpInfo(string name, string code, string output, string description)
         {
             Name = name;
             Code = code;
+            Output = output;
             Description = description;
         }
     }
@@ -215,14 +222,45 @@ namespace Commvault.Powershell.Runtime.PowerShell
         }
     }
 
+    internal class MarkdownRelatedLinkInfo
+    {
+        public string Url { get; }
+        public string Description { get; }
+
+        public MarkdownRelatedLinkInfo(string url)
+        {
+            Url = url;
+        }
+
+        public MarkdownRelatedLinkInfo(string url, string description)
+        {
+            Url = url;
+            Description = description;
+        }
+
+        public override string ToString()
+        {
+            if (string.IsNullOrEmpty(Description))
+            {
+                return Url;
+            }
+            else
+            {
+                return $@"[{Description}]({Url})";
+
+            }
+            
+        }
+    }
+
     internal static class MarkdownTypesExtensions
     {
-        public static MarkdownExampleHelpInfo ToExampleHelpInfo(this PsHelpExampleInfo exampleInfo) => new MarkdownExampleHelpInfo(exampleInfo.Title, exampleInfo.Code, exampleInfo.Remarks);
+        public static MarkdownExampleHelpInfo ToExampleHelpInfo(this PsHelpExampleInfo exampleInfo) => new MarkdownExampleHelpInfo(exampleInfo.Title, exampleInfo.Code, exampleInfo.Output, exampleInfo.Remarks);
 
         public static MarkdownExampleHelpInfo[] DefaultExampleHelpInfos =
         {
-            new MarkdownExampleHelpInfo("Example 1: {{ Add title here }}", $@"PS C:\> {{{{ Add code here }}}}{Environment.NewLine}{Environment.NewLine}{{{{ Add output here }}}}", @"{{ Add description here }}"),
-            new MarkdownExampleHelpInfo("Example 2: {{ Add title here }}", $@"PS C:\> {{{{ Add code here }}}}{Environment.NewLine}{Environment.NewLine}{{{{ Add output here }}}}", @"{{ Add description here }}")
+            new MarkdownExampleHelpInfo("Example 1: {{ Add title here }}", $@"{{{{ Add code here }}}}", $@"{{{{ Add output here (remove the output block if the example doesn't have an output) }}}}", @"{{ Add description here }}"),
+            new MarkdownExampleHelpInfo("Example 2: {{ Add title here }}", $@"{{{{ Add code here }}}}", $@"{{{{ Add output here (remove the output block if the example doesn't have an output) }}}}", @"{{ Add description here }}"),
         };
 
         public static MarkdownParameterHelpInfo[] SupportsShouldProcessParameters =

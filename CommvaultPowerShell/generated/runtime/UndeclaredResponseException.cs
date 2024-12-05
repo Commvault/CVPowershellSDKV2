@@ -63,7 +63,10 @@ namespace Commvault.Powershell.Runtime
             catch
             {
                 // couldn't get the code/message from the body response. 
-                // we'll create one below.
+                // In this case, we will assume the response is the expected error message
+                if(!string.IsNullOrEmpty(ResponseBody)) {
+                    message = ResponseBody;
+                }
             }
 #endif
             if (string.IsNullOrEmpty(message))

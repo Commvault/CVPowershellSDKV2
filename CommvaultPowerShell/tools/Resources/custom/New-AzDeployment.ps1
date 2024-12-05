@@ -1,5 +1,5 @@
 function New-AzDeployment {
-    [OutputType('Microsoft.Azure.PowerShell.Cmdlets.Resources.Models.Api20180501.IDeploymentExtended')]
+    [OutputType('Microsoft.Azure.PowerShell.Cmdlets.Resources.Models.IDeploymentExtended')]
     [CmdletBinding(DefaultParameterSetName='CreateWithTemplateFileParameterFile', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
     [Microsoft.Azure.PowerShell.Cmdlets.Resources.Description('You can provide the template and parameters directly in the request or link to JSON files.')]
     param(
@@ -116,12 +116,12 @@ function New-AzDeployment {
         # The location to store the deployment data.
         ${Location},
 
-        [Parameter(HelpMessage='The credentials, account, tenant, and subscription used for communication with Azure.')]
+        [Parameter(HelpMessage='The DefaultProfile parameter is not functional. Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.')]
         [Alias('AzureRMContext', 'AzureCredential')]
         [ValidateNotNull()]
         [Microsoft.Azure.PowerShell.Cmdlets.Resources.Category('Azure')]
         [System.Management.Automation.PSObject]
-        # The credentials, account, tenant, and subscription used for communication with Azure.
+        # The DefaultProfile parameter is not functional. Use the SubscriptionId parameter when available if executing the cmdlet against a different subscription.
         ${DefaultProfile},
 
         [Parameter(HelpMessage='Run the command as a job')]

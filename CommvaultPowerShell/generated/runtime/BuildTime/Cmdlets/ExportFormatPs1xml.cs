@@ -20,9 +20,13 @@ namespace Commvault.Powershell.Runtime.PowerShell
     public string FilePath { get; set; }
 
     private const string ModelNamespace = @"Commvault.Powershell.Models";
-    private const string SupportNamespace = @"Commvault.Powershell.Support";
+    private const string SupportNamespace = @"${$project.supportNamespace.fullName}";
+    private const string PropertiesExcludedForTableview = @"";
+
     private static readonly bool IsAzure = Convert.ToBoolean(@"false");
 
+    private static string SelectedBySuffix = @"#Multiple";
+    
     protected override void ProcessRecord()
     {
       try
@@ -55,7 +59,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
       return types.Select(t => new ViewParameters(t, t.GetProperties()
           .Select(p => new PropertyFormat(p))
           .Where(pf => !pf.Property.GetCustomAttributes<DoNotFormatAttribute>().Any()
-                       && (!IsAzure || pf.Property.Name != "Id")
+                       && (!PropertiesExcludedForTableview.Split(',').Contains(pf.Property.Name))
                        && (pf.FormatTable != null || (pf.Origin != PropertyOrigin.Inlined && pf.Property.PropertyType.IsPsSimple())))
           .OrderByDescending(pf => pf.Index.HasValue)
           .ThenBy(pf => pf.Index)
@@ -74,7 +78,7 @@ namespace Commvault.Powershell.Runtime.PowerShell
         Name = viewParameters.Type.FullName,
         ViewSelectedBy = new ViewSelectedBy
         {
-          TypeName = viewParameters.Type.FullName
+          TypeName = string.Concat(viewParameters.Type.FullName, SelectedBySuffix)
         },
         TableControl = new TableControl
         {
