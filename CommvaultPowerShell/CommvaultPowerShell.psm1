@@ -1,17 +1,16 @@
 # region Generated 
   # Load the private module dll
-  $null = Import-Module -Name (Join-Path $PSScriptRoot './bin/CommvaultPowershell.private.dll')
+  $null = Import-Module -Name (Join-Path $PSScriptRoot './bin/CommvaultPowerShell.private.dll')
 
   # Get the private module's instance
   $instance = [Commvault.Powershell.Module]::Instance
 
- 
   # Load the custom module
-  $customModulePath = Join-Path $PSScriptRoot './custom/CommvaultPowershell.custom.psm1'
+  $customModulePath = Join-Path $PSScriptRoot './custom/CommvaultPowerShell.custom.psm1'
   if(Test-Path $customModulePath) {
     $null = Import-Module -Name $customModulePath
   }
-  
+
   # Export nothing to clear implicit exports
   Export-ModuleMember
 
@@ -31,12 +30,12 @@
     # Load the last folder if no profile is selected
     $profileDirectory = $directories | Select-Object -Last 1
   }
-  
+
   if($profileDirectory) {
     Write-Information "Loaded Azure profile '$($profileDirectory.Name)' for module '$($instance.Name)'"
     $exportsPath = $profileDirectory.FullName
   }
-  
+
   if($exportsPath) {
     Get-ChildItem -Path $exportsPath -Recurse -Include '*.ps1' -File | ForEach-Object { . $_.FullName }
     $cmdletNames = Get-ScriptCmdlet -ScriptFolder $exportsPath

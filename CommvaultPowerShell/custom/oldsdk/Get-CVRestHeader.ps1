@@ -19,54 +19,50 @@ function Get-CVRESTHeader {
         [uint64] $Offset
     )
 
-    begin { Write-Debug -Message "$($MyInvocation.MyCommand): begin"
+    begin { 
+        Write-Debug -Message "$($MyInvocation.MyCommand): begin"
 
         try {
-            $output = @{ }
+            $output = @{
+                method = $SessionObject.requestProps.method
+                baseUrl = $SessionObject.server
+                endpoint = $SessionObject.requestProps.endpoint
+            }
         }
         catch {
             throw $_
         }
     }
 
-    process { Write-Debug -Message "$($MyInvocation.MyCommand): process"
+    process { 
+        Write-Debug -Message "$($MyInvocation.MyCommand): process"
 
         try {
-            
-            if ($PSCmdlet.ParameterSetName -eq 'Default') {
-                if ($SessionObject.requestProps.ContainsKey('ContentType')) {
-                    $output.Add("header", @{Accept = $SessionObject.requestProps.ContentType; Authtoken = $SessionObject.sessionToken })
-                }
-                else {
-                    $output.Add("header", @{Accept = 'application/json'; Authtoken = $SessionObject.sessionToken })
-                }
-            }
-            elseif ($PSCmdlet.ParameterSetName -eq 'ByPagingInfo') { # paging support with pagingInfo header '{startPage},{pageSize}'
-                if ($SessionObject.requestProps.ContainsKey('ContentType')) {
-                    $output.Add("header", @{Accept = $SessionObject.requestProps.ContentType; Authtoken = $SessionObject.sessionToken; pagingInfo = $PagingInfo })
-                }
-                else {
-                    $output.Add("header", @{Accept = 'application/json'; Authtoken = $SessionObject.sessionToken; pagingInfo = $PagingInfo })
-                }
-            }
-            elseif ($PSCmdlet.ParameterSetName -eq 'ByLimit') { # paging support with limit/offset header combo
-                if ($SessionObject.requestProps.ContainsKey('ContentType')) {
-                    $output.Add("header", @{Accept = $SessionObject.requestProps.ContentType; Authtoken = $SessionObject.sessionToken; limit = $Limit; offset = $Offset })
-                }
-                else {
-                    $output.Add("header", @{Accept = 'application/json'; Authtoken = $SessionObject.sessionToken; limit = $Limit; offset = $Offset })
-                }
-            }
-            
+            $header = @{}
+
             if ($SessionObject.requestProps.ContainsKey('ContentType')) {
-                $output.Add("ContentType", $SessionObject.requestProps.ContentType)
+                $header.Add("Accept", $SessionObject.requestProps.ContentType)
+            }
+            else {
+                $header.Add("Accept", 'application/json')
             }
 
-            $output.Add("method", $SessionObject.requestProps.method)
-            $output.Add("endpoint", $SessionObject.requestProps.endpoint)
-                
-            $baseUrl = $SessionObject.server
-            $output.Add("baseUrl", $baseUrl)
+            if ($SessionObject.server -like '*metallic*') {
+                $header.Add("Authorization", 'Bearer ' + $SessionObject.sessionToken)
+            }
+            else {
+                $header.Add("Authtoken", $SessionObject.sessionToken)
+            }
+
+            if ($PSCmdlet.ParameterSetName -eq 'ByPagingInfo') {
+                $header.Add("pagingInfo", $PagingInfo)
+            }
+            elseif ($PSCmdlet.ParameterSetName -eq 'ByLimit') {
+                $header.Add("limit", $Limit)
+                $header.Add("offset", $Offset)
+            }
+
+            $output.Add("header", $header)
         }
         catch {
             throw $_
@@ -76,6 +72,7 @@ function Get-CVRESTHeader {
         }
     }
 
-    end { Write-Debug -Message "$($MyInvocation.MyCommand): end"
+    end { 
+        Write-Debug -Message "$($MyInvocation.MyCommand): end"
     }
 }

@@ -241,7 +241,7 @@ function GetAPIDetail ([String] $Request) {
             
             }
             
-            'Resubmit-CVJob' = @{
+            'Restart-CVJob' = @{
         
                 Description = 'Resubmit the specified job'
                 Endpoint    = 'Job/{jobId}/action/resubmit'
@@ -538,6 +538,14 @@ function GetAPIDetail ([String] $Request) {
         
                 Description = 'Backup SQL database'
                 Endpoint    = 'v2/sql/instance/{instanceId}/databases/{databaseId}/backup'
+                Method      = 'Post'
+                Body        = ''
+            }
+
+            'Backup-CVSQLDatabaseCopyOnly' = @{
+
+                Description = 'Backup SQL database'
+                Endpoint    = 'v2/sql/instance/{instanceId}/backup'
                 Method      = 'Post'
                 Body        = ''
             }
@@ -849,6 +857,13 @@ function GetAPIDetail ([String] $Request) {
                 Description = "This operation creates a credential"
                 Endpoint    = "V4/credential"
                 Method      = "Post"
+                Body        = ""
+            }
+
+            'Get-CVManagedAccounts' = @{
+                Description = "This operation gets the list of managed accounts"
+                Endpoint    = "api/v1/partner/accounts"
+                Method      = "Get"
                 Body        = ""
             }
         }

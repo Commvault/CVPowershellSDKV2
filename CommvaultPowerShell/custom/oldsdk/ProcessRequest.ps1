@@ -27,10 +27,14 @@ function ProcessRequest () {
         $output.Add('RecommendedAction', '')
         $output.Add('Body', $null)
         if ($Method.ToLower() -eq 'post' -or $Method.ToLower() -eq 'put' -or $Method.ToLower() -eq 'delete') {
-            $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop
+            Write-Debug $url
+            Write-Debug $method
+            Write-Debug $body
+            $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            Write-Debug $response
         }
         elseif ($Method.ToLower() -eq 'get') {
-            $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop
+            $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
         }
     
         $output['Status'] = $response.StatusCode

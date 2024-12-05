@@ -1,17 +1,21 @@
 ### Example 1: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
+{{ Add code here }}
+```
 
-{{ Add output here }}
+```output
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
 
 ### Example 2: {{ Add title here }}
 ```powershell
-PS C:\> {{ Add code here }}
+{{ Add code here }}
+```
 
-{{ Add output here }}
+```output
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}

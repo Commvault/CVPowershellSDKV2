@@ -1,20 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Version>0.2.15</Version>
+    <Version>0.2.22</Version>
     <LangVersion>7.1</LangVersion>
     <TargetFramework>netstandard2.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AssemblyName>CommvaultPowershell.private</AssemblyName>
+    <AssemblyName>CommvaultPowerShell.private</AssemblyName>
     <RootNamespace>Commvault.Powershell</RootNamespace>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>./bin</OutputPath>
     <PublishDir>$(OutputPath)</PublishDir>
-    <NuspecFile>CommvaultPowershell.nuspec</NuspecFile>
+    <NuspecFile>CommvaultPowerShell.nuspec</NuspecFile>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <!-- Some methods are marked async and don't have an await in them -->
-    <NoWarn>1998</NoWarn>
+    <!-- warning CS1591: Missing XML comment for publicly visible type or member -->
+    <NoWarn>1998, 1591</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>

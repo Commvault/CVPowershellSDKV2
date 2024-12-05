@@ -1,9 +1,9 @@
 # region Generated 
   # Load the private module dll
-  $null = Import-Module -PassThru -Name (Join-Path $PSScriptRoot '..\bin\CommvaultPowershell.private.dll')
+  $null = Import-Module -PassThru -Name (Join-Path $PSScriptRoot '..\bin\CommvaultPowerShell.private.dll')
 
   # Load the internal module
-  $internalModulePath = Join-Path $PSScriptRoot '..\internal\CommvaultPowershell.internal.psm1'
+  $internalModulePath = Join-Path $PSScriptRoot '..\internal\CommvaultPowerShell.internal.psm1'
   if(Test-Path $internalModulePath) {
     $null = Import-Module -Name $internalModulePath
   }

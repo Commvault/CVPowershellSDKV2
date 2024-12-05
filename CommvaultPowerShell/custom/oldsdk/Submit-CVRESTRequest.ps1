@@ -26,6 +26,16 @@ function Submit-CVRESTRequest {
     process { Write-Debug -Message "$($MyInvocation.MyCommand): process"
 
         try {
+
+            # Metallic API gateway needs lhAccountId if user if a service principle or MSP admin 
+            $envLhAccountId = [System.Environment]::GetEnvironmentVariable("lhAccountId")
+            if ($envLhAccountId) {
+                if (-not $Payload.headerObject.header.ContainsKey('lhAccountId')) {
+                    $Payload.headerObject.header.Add('lhAccountId', $envLhAccountId)
+                    Write-Debug -Message "$($MyInvocation.MyCommand): Added lhAccountId to headers from environment variable: $envLhAccountId"
+                }
+            }
+
             $Payload.headerObject.header.GetEnumerator() | Foreach-Object { 
                 if ($_.Key -eq 'Authtoken') {
                     Write-Debug -Message "$($MyInvocation.MyCommand): header: $($_.Key): QSDK..." 
@@ -54,6 +64,7 @@ function Submit-CVRESTRequest {
                 else {
                     $response = (ProcessRequest $Payload.headerObject.header $Payload.body $Payload.headerObject.baseUrl $Payload.headerObject.endpoint $Payload.headerObject.method $Payload.headerObject.ContentType)
                 }
+
                 ValidateResponse $response $output $ValidateProperty
             }
         }
