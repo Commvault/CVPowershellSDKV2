@@ -43,9 +43,16 @@ Version <a href="https://www.powershellgallery.com/packages/CommvaultPowerShell/
 Usage
 -----
 Login to Commcell:
-- PS > Invoke-SetupLogin -Username "#username" -Password "#base64Encodedpassword" -WebServerURL "http://#csName/webconsole/api"
+- PS > Connect-CVServer -Username <username> -Server <serverhostname>
 
-To get all the command:
+Login to Commvault Cloud SaaS:
+- PS > Connect-CVCloud -Username "username" -isServicePrinciple $true
+### Run the below cmdlets if the user is ServicePrincple or MSP Admin 
+- PS > Get-CVManagedAccounts # Outputs list of accounts of the service principle or MSP admin 
+- PS > Set-CVManagedAccount -lhAccountId 33906CA1-9295-4D4C-ACFC-62E8E28FD10E
+- After this you can execute cmdlets in the context of that account
+
+### To get all the command:
 -PS > Get-Command -Module CommvaultPowershell
 
 - For information on any Commvault PowerShell command, run Get-Help [command] 
