@@ -30,11 +30,11 @@ function ProcessRequest () {
             Write-Debug $url
             Write-Debug $method
             Write-Debug $body
-            $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck -UseBasicParsing
             Write-Debug $response
         }
         elseif ($Method.ToLower() -eq 'get') {
-            $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck -UseBasicParsing
         }
     
         $output['Status'] = $response.StatusCode
