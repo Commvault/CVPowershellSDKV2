@@ -6,6 +6,7 @@ $CVPS_ERROR_ID = @{
     1001 = 'Empty or null secure password: Please provide secure password for web service login'
     1002 = 'Invalid CommServe session token: Please login to CommServe with Invoke-SetupLogin'
 }
+
 function ProcessRequest () {
     
     param (
@@ -30,11 +31,21 @@ function ProcessRequest () {
             Write-Debug $url
             Write-Debug $method
             Write-Debug $body
-            $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck -UseBasicParsing
+            if ($PSVersionTable.PSVersion.Major -ge 6) {
+                $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            }
+            else {
+                $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -UseBasicParsing
+            }
             Write-Debug $response
         }
         elseif ($Method.ToLower() -eq 'get') {
-            $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck -UseBasicParsing
+            if ($PSVersionTable.PSVersion.Major -ge 6) {
+                $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            }
+            else {
+                $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -UseBasicParsing
+            }
         }
     
         $output['Status'] = $response.StatusCode
