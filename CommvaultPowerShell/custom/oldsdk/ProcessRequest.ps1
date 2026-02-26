@@ -6,6 +6,26 @@ $CVPS_ERROR_ID = @{
     1001 = 'Empty or null secure password: Please provide secure password for web service login'
     1002 = 'Invalid CommServe session token: Please login to CommServe with Invoke-SetupLogin'
 }
+
+# Initialize certificate validation bypass for PS 5.1
+if ($PSVersionTable.PSVersion.Major -lt 6) {
+    if (-not ([System.Management.Automation.PSTypeName]'TrustAllCertsPolicy').Type) {
+        Add-Type @"
+            using System.Net;
+            using System.Security.Cryptography.X509Certificates;
+            public class TrustAllCertsPolicy : ICertificatePolicy {
+                public bool CheckValidationResult(
+                    ServicePoint srvPoint, X509Certificate certificate,
+                    WebRequest request, int certificateProblem) {
+                    return true;
+                }
+            }
+"@
+    }
+    [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+}
+
 function ProcessRequest () {
     
     param (
@@ -30,11 +50,21 @@ function ProcessRequest () {
             Write-Debug $url
             Write-Debug $method
             Write-Debug $body
-            $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            if ($PSVersionTable.PSVersion.Major -ge 6) {
+                $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            }
+            else {
+                $response = Invoke-WebRequest -Uri $url -Method $Method -Body $Body -Headers $Header -ContentType $ContentType -ErrorAction Stop -UseBasicParsing
+            }
             Write-Debug $response
         }
         elseif ($Method.ToLower() -eq 'get') {
-            $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            if ($PSVersionTable.PSVersion.Major -ge 6) {
+                $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -SkipCertificateCheck
+            }
+            else {
+                $response = Invoke-WebRequest -Uri $url -Headers $Header -ContentType $ContentType -ErrorAction Stop -UseBasicParsing
+            }
         }
     
         $output['Status'] = $response.StatusCode
